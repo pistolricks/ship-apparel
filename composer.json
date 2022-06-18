@@ -12,12 +12,11 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/cashier": "^13.8",
         "laravel/framework": "^9.5",
-        "laravel/nova": "^3.31",
+        "laravel/nova": "^4.0",
         "laravel/telescope": "^4.8",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.0",
         "stancl/tenancy": "^3.5",
-        "tightenco/nova-stripe": "^1.0",
         "league/flysystem-aws-s3-v3": "^3.0"
     },
     "require-dev": {
