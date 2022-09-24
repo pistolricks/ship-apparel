@@ -1,8 +1,11 @@
 # Multi-tenant SaaS boilerplate
 
-# Gumroad / GitHub
+# License information
 
-The boilerplate is delivered as a file via Gumroad (for accessibility & legal reasons), but I recommend using the GitHub repo. During purchase, you were asked for your GH username. If you supplied one, you will be invited to the GitHub repository. There you'll be able to view changes, interact with the community, suggest features, report bugs, and even make PRs. Like any other GitHub repo, except it's private.
+- Your license includes access to this repo for 1 GitHub user.
+- You may share the codebase with your entire team.
+- You may use the codebase for an unlimited number of projects.
+- **YOU MAY NOT REPUBLISH ANY PARTS OF THE CODE PUBLICLY**. Your repo will get removed if we contact GitHub, so make sure you keep all repos private! You'll also get kicked from this repo and will not receive any future updates.
 
 # Basic information
 
@@ -21,9 +24,11 @@ These are the steps to get the app up and running. Once you're using the app, fe
 > Note: If you don't want to use Nova, remove it like this: https://github.com/tenancy-for-laravel/saas-boilerplate/issues/6. See the *Nova admin panel* section for an explanation why I chose Nova.
 >
 > Also note that **for production deploys, you will need to have Nova credentials in auth.json**
+> 
+> And final Note about Nova: the master branch uses Nova 3, **if you want to use Nova 4 see [#92](https://github.com/tenancy-for-laravel/saas-boilerplate/issues/92)**
 
 1. Clone the repository
-2. `composer install`
+2. `composer install` (or `composer update` if you see errors related to your PHP version)
 3. Copy `.env.example` to `.env` and run `php artisan key:generate`
 4. Create a MySQL database. If you want to use a non-root user, make sure that the user has permissions to create other users and access all databases (or change the DB manager used for `mysql` to the one that does not create permissions). Add the database name to your `.env`
 5. Start Redis (it's used as the queue driver — feel free to change this to any other *asynchronous* driver)
