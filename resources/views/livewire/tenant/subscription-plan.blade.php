@@ -4,7 +4,7 @@
             <div class="fixed inset-0">
                 <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
             </div>
-            <div @click.outside="cancelModalOpen = false" class="bg-white rounded-lg overflow-hidden shadow-xl transform sm:max-w-lg sm:w-full">
+            <div @mousedown.outside="cancelModalOpen = false" class="bg-white rounded-lg overflow-hidden shadow-xl transform sm:max-w-lg sm:w-full">
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="sm:flex sm:items-start">
                         <div class="mt-3 text-center sm:mt-0 sm:text-left">
@@ -58,19 +58,19 @@
             </label>
         </div>
         @endforeach
-        
+
         @error('plan')
         <p class="text-sm mt-4 text-red-500">
             {{ $message }}
         </p>
         @enderror
-        
+
         @if($success)
         <p class="text-sm mt-4 text-green-500">
             {{ $success }}
         </p>
         @endif
-        
+
         @if($error)
         <p class="text-sm mt-4 text-red-500">
             {{ $error }}
