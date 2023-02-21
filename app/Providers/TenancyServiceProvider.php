@@ -2,23 +2,23 @@
 
 namespace App\Providers;
 
-use App\Jobs\AddDomainToPloi;
-use App\Jobs\CreateTenantAdmin;
-use App\Jobs\RemoveDomainFromPloi;
-use App\Models\Tenant;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider;
-use Laravel\Cashier\Cashier;
-use Stancl\JobPipeline\JobPipeline;
-use Stancl\Tenancy\Events;
-use Stancl\Tenancy\Events\DatabaseCreated;
-use Stancl\Tenancy\Events\DatabaseDeleted;
-use Stancl\Tenancy\Events\DomainCreated;
-use Stancl\Tenancy\Events\DomainDeleted;
 use Stancl\Tenancy\Jobs;
+use Stancl\Tenancy\Events;
+use App\Jobs\AddDomainToPloi;
 use Stancl\Tenancy\Listeners;
 use Stancl\Tenancy\Middleware;
+use App\Jobs\CreateTenantAdmin;
+use App\Jobs\RemoveDomainFromPloi;
+use Stancl\JobPipeline\JobPipeline;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Route;
+use Stancl\Tenancy\Events\DomainSaved;
+use Illuminate\Support\ServiceProvider;
+use Stancl\Tenancy\Events\DomainCreated;
+use Stancl\Tenancy\Events\DomainDeleted;
+use Stancl\Tenancy\Events\DatabaseCreated;
+use Stancl\Tenancy\Events\DatabaseDeleted;
+use App\Jobs\InvalidateDomainTenantResolverCache;
 use Stancl\Tenancy\Resolvers\DomainTenantResolver;
 
 class TenancyServiceProvider extends ServiceProvider
@@ -64,12 +64,19 @@ class TenancyServiceProvider extends ServiceProvider
                 })->shouldBeQueued(false),
             ],
             Events\SavingDomain::class => [],
-            Events\DomainSaved::class => [],
+            Events\DomainSaved::class => [
+                JobPipeline::make([
+                    InvalidateDomainTenantResolverCache::class,
+                ])->send(function (DomainSaved $event) {
+                    return $event->domain;
+                })->shouldBeQueued(false),
+            ],
             Events\UpdatingDomain::class => [],
             Events\DomainUpdated::class => [],
             Events\DeletingDomain::class => [],
             Events\DomainDeleted::class => [
                 JobPipeline::make([
+                    InvalidateDomainTenantResolverCache::class,
                     RemoveDomainFromPloi::class,
                 ])->send(function (DomainDeleted $event) {
                     return $event->domain;

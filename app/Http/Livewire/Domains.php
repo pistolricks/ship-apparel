@@ -24,6 +24,8 @@ class Domains extends Component
         $domain = tenant()->domains()->firstWhere('id', $domain);
 
         $domain->delete();
+
+        $this->emit('domainsUpdated');
     }
 
     public function requestCertificate($domain)
