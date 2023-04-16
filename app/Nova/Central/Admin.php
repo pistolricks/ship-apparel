@@ -3,11 +3,11 @@
 namespace App\Nova\Central;
 
 use App\Nova\Resource;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Admin extends Resource
 {
@@ -40,7 +40,7 @@ class Admin extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             ID::make()->sortable(),
@@ -70,7 +70,7 @@ class Admin extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -81,7 +81,7 @@ class Admin extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -92,7 +92,7 @@ class Admin extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -103,7 +103,7 @@ class Admin extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }

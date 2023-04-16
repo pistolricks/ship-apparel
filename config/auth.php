@@ -38,17 +38,17 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'users', // tenant app
         ],
 
         'admin' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'admins', // central app
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'users', // tenant app
             'hash' => false,
         ],
     ],

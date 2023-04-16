@@ -2,15 +2,15 @@
 
 namespace App\Providers;
 
+use App\Models\Tenant;
 use App\Nova\Central\Admin;
 use App\Nova\Central\Domain;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
+use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
-use App\Models\Tenant;
 use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -43,9 +43,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function routes()
     {
-        Nova::routes(['tenant', 'universal'])
-                ->withAuthenticationRoutes(['tenant', 'universal'])
-                ->withPasswordResetRoutes(['tenant', 'universal'])
+        Nova::routes()
+                ->withAuthenticationRoutes(['tenant', 'universal', 'nova'])
+                ->withPasswordResetRoutes(['tenant', 'universal', 'nova'])
                 ->register();
     }
 
@@ -60,35 +60,27 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         Gate::define('viewNova', function ($user) {
             if ($user instanceof \App\Models\User) {
+                // In the tenant app, only the owner of the tenant can view Nova
                 return $user->isOwner();
+            } else if ($user instanceof \App\Models\Admin) {
+                // In the central app, the only logged in users are admins
+                return true;
             }
 
-            /** @var \App\Models\Admin $user */
-
-            return true;
+            return false;
         });
     }
 
     /**
-     * Get the cards that should be displayed on the default Nova dashboard.
-     *
-     * @return array
-     */
-    protected function cards()
-    {
-        return [
-            new Help,
-        ];
-    }
-
-    /**
-     * Get the extra dashboards that should be displayed on the Nova dashboard.
+     * Get the dashboards that should be listed in the Nova sidebar.
      *
      * @return array
      */
     protected function dashboards()
     {
-        return [];
+        return [
+            new Main,
+        ];
     }
 
     /**
@@ -98,23 +90,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        if (tenancy()->initialized) {
-            return [];
-        } else {
-            return [
-                new \Tighten\NovaStripe\NovaStripe,
-            ];
-        }
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
+        return [];
     }
 
     protected function resources()
@@ -132,5 +108,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 SubscriptionCancelation::class,
             ]);
         }
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 }
