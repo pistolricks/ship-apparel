@@ -1,6 +1,5 @@
 <?php
 
-use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
 
 return [
@@ -45,7 +44,7 @@ return [
     |
     */
 
-    'asset_url'  => null,
+    'asset_url' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +57,7 @@ return [
     |
     */
 
-    'middleware_group'  => [
+    'middleware_group' => [
         'web',
         'universal',
         InitializeTenancyByDomainOrSubdomain::class,

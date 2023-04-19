@@ -3,11 +3,11 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Stancl\Tenancy\Contracts\Domain;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Stancl\Tenancy\Contracts\Domain;
 use Stancl\Tenancy\Resolvers\DomainTenantResolver;
 
 class InvalidateDomainTenantResolverCache implements ShouldQueue
@@ -21,14 +21,13 @@ class InvalidateDomainTenantResolverCache implements ShouldQueue
      */
     public function __construct(
         protected Domain $domain,
-    ) {}
+    ) {
+    }
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle(DomainTenantResolver $resolver)
+    public function handle(DomainTenantResolver $resolver): void
     {
         $resolver->invalidateCache($this->domain->tenant);
     }

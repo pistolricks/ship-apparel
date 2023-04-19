@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +10,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     use HasFactory;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -52,10 +52,8 @@ class User extends Authenticatable
 
     /**
      * Is this user the "organization" owner.
-     *
-     * @return bool
      */
-    public function isOwner()
+    public function isOwner(): bool
     {
         // We assume the superadmin is the first user in the DB.
         // Feel free to change this logic.
@@ -69,6 +67,6 @@ class User extends Authenticatable
 
     public function getGravatarUrlAttribute()
     {
-        return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($this->email)));
+        return 'https://www.gravatar.com/avatar/'.md5(strtolower(trim($this->email)));
     }
 }

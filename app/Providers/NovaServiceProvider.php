@@ -18,10 +18,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
 
@@ -38,10 +36,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register the Nova routes.
-     *
-     * @return void
      */
-    protected function routes()
+    protected function routes(): void
     {
         Nova::routes()
                 ->withAuthenticationRoutes(['tenant', 'universal', 'nova'])
@@ -53,16 +49,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      * Register the Nova gate.
      *
      * This gate determines who can access Nova in non-local environments.
-     *
-     * @return void
      */
-    protected function gate()
+    protected function gate(): void
     {
         Gate::define('viewNova', function ($user) {
             if ($user instanceof \App\Models\User) {
                 // In the tenant app, only the owner of the tenant can view Nova
                 return $user->isOwner();
-            } else if ($user instanceof \App\Models\Admin) {
+            } elseif ($user instanceof \App\Models\Admin) {
                 // In the central app, the only logged in users are admins
                 return true;
             }
@@ -73,10 +67,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Get the dashboards that should be listed in the Nova sidebar.
-     *
-     * @return array
      */
-    protected function dashboards()
+    protected function dashboards(): array
     {
         return [
             new Main,
@@ -85,10 +77,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Get the tools that should be listed in the Nova sidebar.
-     *
-     * @return array
      */
-    public function tools()
+    public function tools(): array
     {
         return [];
     }
@@ -112,10 +102,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }

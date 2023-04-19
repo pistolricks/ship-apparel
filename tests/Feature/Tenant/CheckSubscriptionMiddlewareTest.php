@@ -2,22 +2,17 @@
 
 namespace Tests\Feature\Tenant;
 
-use App\Actions\CreateTenantAction;
-use App\Models\Tenant;
+use PHPUnit\Framework\Attributes\Test;
 use Carbon\Carbon;
-use Carbon\CarbonInterval;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TenantTestCase;
-use Tests\TestCase;
 
-class CheckSubscriptionMiddlewareTest extends TenantTestCase
+final class CheckSubscriptionMiddlewareTest extends TenantTestCase
 {
     use DatabaseMigrations;
 
-    /** @test */
-    public function the_tenant_is_taken_to_the_billing_screen_if_he_doesnt_have_a_subscription_or_trial()
+    #[Test]
+    public function the_tenant_is_taken_to_the_billing_screen_if_he_doesnt_have_a_subscription_or_trial(): void
     {
         $this->get('posts')
             ->assertStatus(200);

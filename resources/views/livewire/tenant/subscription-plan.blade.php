@@ -82,7 +82,7 @@
           <button id="cancelSub" name="cancelSub" type="button" @click="cancelModalOpen = true" class="mr-2 items-center py-1 px-4 border border-gray-300 text-sm font-medium rounded-md text-red-700 bg-white hover:text-red-500 focus:outline-none focus:border-blue-300 focus:ring-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150">
             Cancel subscription
           </button>
-        @elseif(tenant()->subscribed('default') && tenant()->subscription('default')->cancelled())
+        @elseif(tenant()->subscribed('default') && tenant()->subscription('default')->canceled())
           <button id="resumeSub" name="resumeSub" type="button" wire:click="resume" class="mr-2 items-center py-1 px-4 border border-gray-300 text-sm font-medium rounded-md text-green-700 bg-white hover:text-green-500 focus:outline-none focus:border-blue-300 focus:ring-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150">
               Resume subscription ({{ tenant()->plan_name }})
           </button>

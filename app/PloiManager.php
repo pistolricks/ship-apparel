@@ -26,9 +26,6 @@ class PloiManager
 
     /**
      * Add tenant :80 vhost
-     *
-     * @param Domain $domain
-     * @return void
      */
     public function addDomain(Domain $domain): void
     {
@@ -44,16 +41,13 @@ class PloiManager
             ->post("https://ploi.io/api/servers/{$this->server}/sites/{$this->site}/tenants", [
                 'tenants' => [$domain->domain],
             ]
-        );
+            );
     }
 
     /**
      * Remove a tenant :80 host.
-     *
-     * @param Domain $domain
-     * @return void
      */
-    public function removeDomain(Domain $domain)
+    public function removeDomain(Domain $domain): void
     {
         if ($domain->isSubdomain() || ! $this->token) {
             return;
@@ -65,9 +59,6 @@ class PloiManager
 
     /**
      * Request a certificate for a tenant host.
-     *
-     * @param Domain $domain
-     * @return void
      */
     public function requestCertificate(Domain $domain): void
     {
@@ -79,16 +70,13 @@ class PloiManager
             ->post("https://ploi.io/api/servers/{$this->server}/sites/{$this->site}/tenants/{$domain->domain}/request-certificate", [
                 'webhook' => tenant()->route('tenant.ploi.certificate.issued'),
             ]
-        );
+            );
 
         $domain->update(['certificate_status' => 'pending']);
     }
 
     /**
      * Revoke a certificate for a tenant host.
-     *
-     * @param Domain $domain
-     * @return void
      */
     public function revokeCertificate(Domain $domain): void
     {
@@ -100,16 +88,13 @@ class PloiManager
             ->post("https://ploi.io/api/servers/{$this->server}/sites/{$this->site}/tenants/{$domain->domain}/revoke-certificate", [
                 'webhook' => tenant()->route('tenant.ploi.certificate.revoked'),
             ]
-        );
+            );
 
         $domain->update(['certificate_status' => 'pending']);
     }
 
     /**
      * Let ploi know about a tenant's database.
-     *
-     * @param string $databaseName
-     * @return void
      */
     public function acknowledgeDatabase(string $databaseName): void
     {
@@ -122,16 +107,13 @@ class PloiManager
                 'name' => $databaseName,
                 'description' => 'Tenant database',
             ]
-        );
+            );
 
         // Create a backup if you want: https://developers.ploi.io/database-backups/create-backup
     }
 
     /**
      * Make ploi forget a tenant database.
-     *
-     * @param string $databaseName
-     * @return void
      */
     public function forgetDatabase(string $databaseName): void
     {

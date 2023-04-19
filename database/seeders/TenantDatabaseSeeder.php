@@ -9,10 +9,8 @@ class TenantDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         Post::create([
             'user_id' => 1,

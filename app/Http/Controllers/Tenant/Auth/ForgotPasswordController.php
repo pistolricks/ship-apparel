@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Tenant\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\View\View;
 
 class ForgotPasswordController extends Controller
 {
@@ -21,7 +22,7 @@ class ForgotPasswordController extends Controller
     use SendsPasswordResetEmails;
 
     /** @override */
-    public function showLinkRequestForm()
+    public function showLinkRequestForm(): View
     {
         return view('tenant.auth.passwords.email');
     }

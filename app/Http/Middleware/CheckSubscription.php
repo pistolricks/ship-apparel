@@ -3,17 +3,15 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CheckSubscription
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         if (! tenant()->can_use_app && request()->route()->getName() !== 'tenant.settings.application') {
             return redirect(route('tenant.settings.application'));

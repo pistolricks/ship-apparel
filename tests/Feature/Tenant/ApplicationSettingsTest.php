@@ -2,15 +2,16 @@
 
 namespace Tests\Feature\Tenant;
 
+use PHPUnit\Framework\Attributes\Test;
 use App\Models\User;
 use Tests\TenantTestCase;
 
-class ApplicationSettingsTest extends TenantTestCase
+final class ApplicationSettingsTest extends TenantTestCase
 {
     protected $createStripeCustomer = true;
 
-    /** @test */
-    public function only_owner_can_view_application_settings()
+    #[Test]
+    public function only_owner_can_view_application_settings(): void
     {
         $owner = User::first();
         $this->actingAs($owner)->get(route('tenant.settings.application'))

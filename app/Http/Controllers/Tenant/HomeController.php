@@ -3,16 +3,14 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
     /**
      * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         return view('tenant.home');
     }

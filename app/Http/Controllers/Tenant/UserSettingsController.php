@@ -5,19 +5,21 @@ namespace App\Http\Controllers\Tenant;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\View\View;
 
 class UserSettingsController extends Controller
 {
-    public function show()
+    public function show(): View
     {
         return view('tenant.settings.user', [
             'user' => auth()->user(),
         ]);
     }
 
-    public function personal(Request $request)
+    public function personal(Request $request): RedirectResponse
     {
         $validated = $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
@@ -46,7 +48,7 @@ class UserSettingsController extends Controller
         return redirect()->back()->with('success', 'Personal information updated.');
     }
 
-    public function password(Request $request)
+    public function password(Request $request): RedirectResponse
     {
         $validated = $this->validate($request, [
             'password' => 'required|current_password',

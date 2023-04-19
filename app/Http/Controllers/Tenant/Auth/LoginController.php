@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Tenant\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\View\View;
 
 class LoginController extends Controller
 {
@@ -22,7 +23,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /** @override */
-    public function showLoginForm()
+    public function showLoginForm(): View
     {
         return view('tenant.auth.login');
     }

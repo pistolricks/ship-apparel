@@ -15,6 +15,7 @@ abstract class TenantTestCase extends TestCase
      * @var bool
      */
     protected $tenancy = true;
+
     protected $shouldSeed = true;
 
     protected function setUp(): void

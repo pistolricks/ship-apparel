@@ -2,14 +2,15 @@
 
 namespace Tests\Feature\Tenant;
 
+use PHPUnit\Framework\Attributes\Test;
 use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Tests\TenantTestCase;
 
-class UserSettingsTest extends TenantTestCase
+final class UserSettingsTest extends TenantTestCase
 {
-    /** @test */
-    public function owner_cannot_use_a_different_tenants_email()
+    #[Test]
+    public function owner_cannot_use_a_different_tenants_email(): void
     {
         $tenant2 = $this->createTenant([
             'email' => 'second@tenant',
@@ -22,8 +23,8 @@ class UserSettingsTest extends TenantTestCase
         ]);
     }
 
-    /** @test */
-    public function normal_user_can_use_a_different_tenants_email()
+    #[Test]
+    public function normal_user_can_use_a_different_tenants_email(): void
     {
         $tenant2 = $this->createTenant([
             'email' => 'second@tenant',

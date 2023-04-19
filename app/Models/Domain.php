@@ -46,7 +46,7 @@ class Domain extends BaseDomain
 
     public static function domainFromSubdomain(string $subdomain): string
     {
-        return $subdomain . '.' . config('tenancy.central_domains')[0];
+        return $subdomain.'.'.config('tenancy.central_domains')[0];
     }
 
     public function makePrimary(): self
@@ -79,8 +79,6 @@ class Domain extends BaseDomain
     /**
      * Get the domain type.
      * Returns 'subdomain' or 'domain'.
-     *
-     * @return string
      */
     public function getTypeAttribute(): string
     {

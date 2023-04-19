@@ -3,14 +3,11 @@
 namespace App\Jobs;
 
 use App\Models\Domain;
-use GuzzleHttp\Client;
-use GuzzleHttp\RequestOptions;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Http;
 
 class RemoveDomainFromPloi implements ShouldQueue
 {
@@ -30,10 +27,8 @@ class RemoveDomainFromPloi implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         if ($this->domain->certificate_status === 'issued') {
             ploi()->revokeCertificate($this->domain);

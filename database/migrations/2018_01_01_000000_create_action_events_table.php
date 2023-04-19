@@ -6,14 +6,12 @@ use Illuminate\Database\Schema\Builder;
 use Illuminate\Support\Facades\Schema;
 use Laravel\Nova\Util;
 
-class CreateActionEventsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('action_events', function (Blueprint $table) {
             $table->id();
@@ -41,11 +39,9 @@ class CreateActionEventsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('action_events');
     }
-}
+};

@@ -2,18 +2,16 @@
 
 namespace Tests\Feature\Tenant;
 
+use PHPUnit\Framework\Attributes\Test;
 use App\Models\Post;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TenantTestCase;
-use Tests\TestCase;
 
-class PostsTest extends TenantTestCase
+final class PostsTest extends TenantTestCase
 {
     protected $shouldSeed = false;
 
-    /** @test */
-    public function posts_can_be_created()
+    #[Test]
+    public function posts_can_be_created(): void
     {
         $this->post('/posts', [
             'title' => 'Foo',
@@ -24,8 +22,8 @@ class PostsTest extends TenantTestCase
         $this->assertSame('Bar', Post::first()->body);
     }
 
-    /** @test */
-    public function posts_appear_on_the_post_index()
+    #[Test]
+    public function posts_appear_on_the_post_index(): void
     {
         auth()->user()->posts()->create([
             'title' => 'Foo post',
@@ -36,8 +34,8 @@ class PostsTest extends TenantTestCase
             ->assertSee('Foo post');
     }
 
-    /** @test */
-    public function each_post_has_a_detail_page()
+    #[Test]
+    public function each_post_has_a_detail_page(): void
     {
         $this->post('/posts', [
             'title' => 'Foo post',

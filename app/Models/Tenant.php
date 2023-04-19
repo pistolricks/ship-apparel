@@ -15,7 +15,6 @@ use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
  * @property-read string $plan_name The tenant's subscription plan name
  * @property-read bool $on_active_subscription Is the tenant actively subscribed (not on grace period)
  * @property-read bool $can_use_app Can the tenant use the application (is on trial or subscription)
- *
  * @property-read Domain[]|Collection $domains
  */
 class Tenant extends BaseTenant implements TenantWithDatabase
@@ -74,8 +73,6 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 
     /**
      * Get the tenant's subscription plan name.
-     *
-     * @return string
      */
     public function getPlanNameAttribute(): string
     {
@@ -84,18 +81,14 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 
     /**
      * Is the tenant actively subscribed (not on grace period).
-     *
-     * @return string
      */
     public function getOnActiveSubscriptionAttribute(): bool
     {
-        return $this->subscribed('default') && ! $this->subscription('default')->cancelled();
+        return $this->subscribed('default') && ! $this->subscription('default')->canceled();
     }
 
     /**
      * Can the tenant use the application (is on trial or subscription).
-     *
-     * @return bool
      */
     public function getCanUseAppAttribute(): bool
     {

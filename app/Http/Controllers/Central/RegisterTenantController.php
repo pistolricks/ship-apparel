@@ -4,17 +4,18 @@ namespace App\Http\Controllers\Central;
 
 use App\Actions\CreateTenantAction;
 use App\Http\Controllers\Controller;
-use App\Models\Tenant;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RegisterTenantController extends Controller
 {
-    public function show()
+    public function show(): View
     {
         return view('central.tenants.register');
     }
 
-    public function submit(Request $request)
+    public function submit(Request $request): RedirectResponse
     {
         $data = $this->validate($request, [
             'domain' => 'required|string|unique:domains',

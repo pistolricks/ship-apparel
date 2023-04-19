@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ApplicationSettingsController extends Controller
 {
-    public function show()
+    public function show(): View
     {
         return view('tenant.settings.application');
     }
 
-    public function storeConfiguration(Request $request)
+    public function storeConfiguration(Request $request): RedirectResponse
     {
         $validated = $this->validate($request, [
             'company' => 'required|string|max:255',

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Central;
 
+use PHPUnit\Framework\Attributes\Test;
 use App\Exceptions\NoPrimaryDomainException;
 use App\Models\Tenant;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Events\TenantCreated;
 use Tests\TestCase;
 
-class PrimaryDomainTest extends TestCase
+final class PrimaryDomainTest extends TestCase
 {
     use DatabaseMigrations;
 
@@ -29,8 +30,8 @@ class PrimaryDomainTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function tenant_has_one_primary_domain()
+    #[Test]
+    public function tenant_has_one_primary_domain(): void
     {
         $tenant = Tenant::factory()->create();
         $domain = $tenant->createDomain([
@@ -44,8 +45,8 @@ class PrimaryDomainTest extends TestCase
         $this->assertTrue($domain->is($tenant->primary_domain));
     }
 
-    /** @test */
-    public function making_a_domain_primary_will_make_previous_primary_domains_secondary()
+    #[Test]
+    public function making_a_domain_primary_will_make_previous_primary_domains_secondary(): void
     {
         $tenant = Tenant::factory()->create();
         $foo = $tenant->createDomain([
@@ -66,8 +67,8 @@ class PrimaryDomainTest extends TestCase
         $this->assertSame(true, $bar->refresh()->is_primary);
     }
 
-    /** @test */
-    public function tenant_routes_are_generated_using_the_primary_domain()
+    #[Test]
+    public function tenant_routes_are_generated_using_the_primary_domain(): void
     {
         $tenant = Tenant::factory()->create();
         $domain = $tenant->createDomain([
@@ -82,8 +83,8 @@ class PrimaryDomainTest extends TestCase
         );
     }
 
-    /** @test */
-    public function a_primary_domain_is_needed_to_generate_a_tenant_route()
+    #[Test]
+    public function a_primary_domain_is_needed_to_generate_a_tenant_route(): void
     {
         $tenant = Tenant::factory()->create();
         $domain = $tenant->createDomain([
@@ -95,8 +96,8 @@ class PrimaryDomainTest extends TestCase
         $tenant->route('foo', ['bar' => 'xyz']);
     }
 
-    /** @test */
-    public function subdomains_are_converted_to_domains_when_generating_a_tenant_route()
+    #[Test]
+    public function subdomains_are_converted_to_domains_when_generating_a_tenant_route(): void
     {
         config(['tenancy.central_domains' => [
             'localhost',

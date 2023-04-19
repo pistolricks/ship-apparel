@@ -2,23 +2,23 @@
 
 namespace App\Providers;
 
-use Stancl\Tenancy\Jobs;
-use Stancl\Tenancy\Events;
 use App\Jobs\AddDomainToPloi;
-use Stancl\Tenancy\Listeners;
-use Stancl\Tenancy\Middleware;
 use App\Jobs\CreateTenantAdmin;
+use App\Jobs\InvalidateDomainTenantResolverCache;
 use App\Jobs\RemoveDomainFromPloi;
-use Stancl\JobPipeline\JobPipeline;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
-use Stancl\Tenancy\Events\DomainSaved;
 use Illuminate\Support\ServiceProvider;
-use Stancl\Tenancy\Events\DomainCreated;
-use Stancl\Tenancy\Events\DomainDeleted;
+use Stancl\JobPipeline\JobPipeline;
+use Stancl\Tenancy\Events;
 use Stancl\Tenancy\Events\DatabaseCreated;
 use Stancl\Tenancy\Events\DatabaseDeleted;
-use App\Jobs\InvalidateDomainTenantResolverCache;
+use Stancl\Tenancy\Events\DomainCreated;
+use Stancl\Tenancy\Events\DomainDeleted;
+use Stancl\Tenancy\Events\DomainSaved;
+use Stancl\Tenancy\Jobs;
+use Stancl\Tenancy\Listeners;
+use Stancl\Tenancy\Middleware;
 use Stancl\Tenancy\Resolvers\DomainTenantResolver;
 
 class TenancyServiceProvider extends ServiceProvider
@@ -124,12 +124,12 @@ class TenancyServiceProvider extends ServiceProvider
         ];
     }
 
-    public function register()
+    public function register(): void
     {
         //
     }
 
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->environment('production')) {
             DomainTenantResolver::$shouldCache = true;

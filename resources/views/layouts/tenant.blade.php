@@ -11,10 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    @vite('resources/js/app.js')
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     @stack('head')
