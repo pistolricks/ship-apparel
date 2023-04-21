@@ -15,7 +15,7 @@ Think of this as `laravel new`, except it comes with many more features you'd ha
 
 ### Requirements
 
-The boilerplate uses Laravel 9. PHP 7.4 and 8.\* are supported.
+The boilerplate uses Laravel 10. PHP 8.1+ is required.
 
 # Setting it up
 
