@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\SubscriptionCancelation;
 use Illuminate\Support\Carbon;
@@ -23,7 +23,7 @@ class SubscriptionPlan extends Component
         $this->refreshPlan();
     }
 
-    public function update()
+    public function updatePlan()
     {
         $this->validate([
             'plan' => ['required', Rule::in(array_keys(config('saas.plans')))],
@@ -56,7 +56,7 @@ class SubscriptionPlan extends Component
             $this->error = '';
         }
 
-        $this->emit('billingUpdated');
+        $this->dispatch('billingUpdated');
     }
 
     public function cancel($cancelationReason)
@@ -72,7 +72,7 @@ class SubscriptionPlan extends Component
 
         $this->plan = '';
 
-        $this->emit('billingUpdated');
+        $this->dispatch('billingUpdated');
     }
 
     public function resume()
@@ -81,7 +81,7 @@ class SubscriptionPlan extends Component
 
         $this->refreshPlan();
 
-        $this->emit('billingUpdated');
+        $this->dispatch('billingUpdated');
     }
 
     protected function refreshPlan()

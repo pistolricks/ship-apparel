@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -51,7 +51,7 @@ class BillingAddress extends Component
 
         $this->success = 'Address saved.';
 
-        $this->emit('billingUpdated');
+        $this->dispatch('billingUpdated');
     }
 
     public function render()

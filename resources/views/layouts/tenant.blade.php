@@ -17,6 +17,7 @@
     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    @livewireStyles
     @stack('head')
 </head>
 
@@ -117,6 +118,7 @@
     </main>
     </div>
 
+    @livewireScripts
     @stack('body')
 </body>
 

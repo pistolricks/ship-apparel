@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Domain;
 use Livewire\Component;
@@ -25,7 +25,7 @@ class Domains extends Component
 
         $domain->delete();
 
-        $this->emit('domainsUpdated');
+        $this->dispatch('domainsUpdated');
     }
 
     public function requestCertificate($domain)

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -25,6 +25,6 @@ class PaymentMethod extends Component
 
         tenant()->updateDefaultPaymentMethod($this->paymentMethod);
 
-        $this->emit('billingUpdated');
+        $this->dispatch('billingUpdated');
     }
 }

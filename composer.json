@@ -15,7 +15,7 @@
         "laravel/nova": "^4.0",
         "laravel/telescope": "^4.12",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.11",
+        "livewire/livewire": "^3.0",
         "stancl/tenancy": "^3.7",
         "league/flysystem-aws-s3-v3": "^3.0"
     },

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
-class SubscriptionBanner extends Component
+class Invoices extends Component
 {
     protected $listeners = ['billingUpdated' => '$refresh'];
 
     public function render()
     {
-        return view('livewire.tenant.subscription-banner');
+        return view('livewire.tenant.invoices');
     }
 }

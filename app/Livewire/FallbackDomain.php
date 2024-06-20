@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Domain;
 use Illuminate\Validation\Rule;
@@ -40,7 +40,7 @@ class FallbackDomain extends Component
         // We don't want them squatting multiple subdomains.
         $oldFallback->delete();
 
-        $this->emit('domainsUpdated');
+        $this->dispatch('domainsUpdated');
 
         $this->domain = '';
 

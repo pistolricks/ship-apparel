@@ -1,13 +1,5 @@
 @extends('layouts.tenant', ['title' => 'Application settings'])
 
-@push('head')
-@livewireStyles
-@endpush
-
-@push('body')
-@livewireScripts
-@endpush
-
 @section('content')
 
 <x-section title="Configuration" description="Settings for your application.">

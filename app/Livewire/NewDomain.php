@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -28,7 +28,7 @@ class NewDomain extends Component
 
         $domain = tenant()->createDomain($this->domain);
 
-        $this->emit('domainsUpdated');
+        $this->dispatch('domainsUpdated');
 
         $this->domain = '';
     }
