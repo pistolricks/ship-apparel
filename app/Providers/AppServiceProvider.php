@@ -23,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Cashier::ignoreMigrations();
         Cashier::useCustomerModel(Tenant::class);
         ResetPassword::createUrlUsing(function (User $notifiable, string $token) {
             return route('tenant.password.reset', ['token' => $token, 'email' => $notifiable->getEmailForPasswordReset()]);
