@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Tenant;
+use App\Models\User;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
 
@@ -23,5 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Cashier::ignoreMigrations();
         Cashier::useCustomerModel(Tenant::class);
+        ResetPassword::createUrlUsing(function (User $notifiable, string $token) {
+            return route('tenant.password.reset', ['token' => $token, 'email' => $notifiable->getEmailForPasswordReset()]);
+        });
     }
 }
