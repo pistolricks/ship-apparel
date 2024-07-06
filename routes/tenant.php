@@ -38,6 +38,12 @@ Route::middleware('tenant', PreventAccessFromCentralDomains::class)->name('tenan
     });
 
     Route::namespace('App\\Http\\Controllers\\Tenant')->group(function () {
-        Auth::routes();
+        Auth::routes(['verify' => true]);
     });
+
+    // Example API route:
+    // Route::middleware(['api'])->prefix('api/')->group(function () {
+    //     // E.g. GET http://tenantapp.test/api/tenant will return the tenant key of a tenant that has the domain tenantapp.test
+    //     Route::get('/tenant', fn () => ['tenant_id' => tenant()->getTenantKey()]);
+    // });
 });

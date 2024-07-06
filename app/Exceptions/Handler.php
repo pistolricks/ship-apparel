@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use Facade\Ignition\Exceptions\ViewException;
+use Spatie\LaravelIgnition\Exceptions\ViewException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Stancl\Tenancy\Contracts\TenantCouldNotBeIdentifiedException;

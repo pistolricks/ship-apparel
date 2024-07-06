@@ -5,10 +5,13 @@ namespace App\Livewire;
 use App\Models\Domain;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Livewire\Features\SupportValidation\HandlesValidation;
 use Stancl\Tenancy\Resolvers\DomainTenantResolver;
 
 class FallbackDomain extends Component
 {
+    use HandlesValidation;
+
     public $domain = '';
 
     public function mount()
@@ -19,7 +22,13 @@ class FallbackDomain extends Component
     public function save()
     {
         $this->validate([
-            'domain' => ['required', 'string', Rule::unique('central.domains')->ignoreModel(tenant()->fallback_domain), 'regex:/^[A-Za-z0-9-]+$/'],
+            'domain' => [
+                'required',
+                'string',
+                Rule::unique('central.domains')->ignoreModel(tenant()->fallback_domain),
+                'regex:/^[A-Za-z0-9-]+$/',
+                Rule::notIn(config('saas.reserved_subdomains')),
+            ],
         ]);
 
         if ($this->domain === tenant()->fallback_domain->domain) {

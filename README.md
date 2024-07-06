@@ -28,7 +28,7 @@ These are the steps to get the app up and running. Once you're using the app, fe
 > And final note about Nova: this branch uses Nova 4, **if you want to use Nova 3, use the [`nova3`](https://github.com/tenancy-for-laravel/saas-boilerplate/tree/nova3) branch**. The `nova3` branch uses Laravel 9 and is not being actively updated anymore so it's recommended to use Nova 4 with the `master` branch of the boilerplate.
 
 1. Clone the repository
-2. `composer update`
+2. `composer update` and `npm run build`
 3. Copy `.env.example` to `.env` and run `php artisan key:generate`
 4. Create a MySQL database. If you want to use a non-root user, make sure that the user has permissions to create other users and access all databases (or change the DB manager used for `mysql` to the one that does not create permissions). Add the database name to your `.env`
 5. Start Redis (it's used as the queue driver — feel free to change this to any other *asynchronous* driver)

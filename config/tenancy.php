@@ -31,6 +31,7 @@ return [
         // Stancl\Tenancy\Bootstrappers\RedisTenancyBootstrapper::class, // Note: phpredis is needed
 
         App\TenancyBootstrappers\NovaAuthGuardBootstrapper::class,
+        App\TenancyBootstrappers\RootUrlBootstrapper::class,
     ],
 
     /**

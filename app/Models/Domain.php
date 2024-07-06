@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Exceptions\DomainCannotBeChangedException;
+use App\Exceptions\SubdomainReservedException;
 use Illuminate\Support\Str;
 use Stancl\Tenancy\Database\Models\Domain as BaseDomain;
 
@@ -24,6 +25,12 @@ class Domain extends BaseDomain
 
     public static function booted()
     {
+        static::saving(function (self $model) {
+            if (in_array($model->domain, config('saas.reserved_subdomains'))) {
+                throw new SubdomainReservedException($model->domain);
+            }
+        });
+
         static::updating(function (self $model) {
             if ($model->getAttribute('domain') !== $model->getOriginal('domain')) {
                 throw new DomainCannotBeChangedException;

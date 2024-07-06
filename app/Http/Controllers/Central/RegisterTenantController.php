@@ -6,6 +6,7 @@ use App\Actions\CreateTenantAction;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class RegisterTenantController extends Controller
@@ -18,7 +19,12 @@ class RegisterTenantController extends Controller
     public function submit(Request $request): RedirectResponse
     {
         $data = $this->validate($request, [
-            'domain' => 'required|string|unique:domains',
+            'domain' => [
+                'required',
+                'string',
+                'unique:domains',
+                Rule::notIn(config('saas.reserved_subdomains')),
+            ],
             'company' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:tenants',
