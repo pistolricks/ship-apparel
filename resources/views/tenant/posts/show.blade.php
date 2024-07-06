@@ -1,5 +1,3 @@
-@extends('layouts.tenant', ['title' => $post->title])
-
-@section('content')
+<x-layouts.tenant :title="$post->title">
     {{ $post->body }}
-@endsection
+</x-layouts.tenant>

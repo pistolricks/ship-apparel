@@ -35,7 +35,7 @@
         <div class="py-10">
             <main class="container mx-auto">
                 <div class="max-w-7xl sm:px-6 lg:px-8">
-                    @yield('content')
+                    {{ $slot }}
                 </div>
             </main>
         </div>

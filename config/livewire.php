@@ -46,7 +46,7 @@ return [
     // If you'd like to use full-page components in the central app, change this to
     // `layouts.central`. If you need to use them in both applications, you should
     // be able to change the value of this dynamically using e.g. a bootstrapper.
-    'layout' => 'layouts.tenant',
+    'layout' => 'components.layouts.tenant',
 
     /*
     |---------------------------------------------------------------------------
