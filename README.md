@@ -107,9 +107,12 @@ Again, sticking with this is recommended. The exception would be if your central
     - `central.landing`
 - `errors` (technically part of the tenant app)
     - `errors.building`
-- `layouts`
-    - `layouts.central`
-    - `layouts.tenant`
+- `components`
+    - `layouts`
+        - `layouts.central`
+        - `layouts.tenant`
+    - `form`
+    - (misc)
 - `livewire`
     - `livewire.tenant.*`
     - `livewire.central.*` - nothing here yet, but I recommend using a structure like this
