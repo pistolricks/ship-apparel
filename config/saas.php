@@ -16,4 +16,8 @@ return [
 
     'stripe_key' => env('STRIPE_KEY'),
     'stripe_secret' => env('STRIPE_SECRET'),
+
+    // Subdomains that tenants may not use for their domains
+    // You can use common keywords here, like blog, app, docs, ...
+    'reserved_subdomains' => [],
 ];
