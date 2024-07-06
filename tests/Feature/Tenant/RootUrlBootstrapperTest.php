@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Central;
+namespace Tests\Feature\Tenant;
 
 use Tests\TestCase;
 use App\Models\Tenant;
