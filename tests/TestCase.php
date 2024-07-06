@@ -25,6 +25,19 @@ abstract class TestCase extends BaseTestCase
         config(['tenancy.database.prefix' => 'test_tenant']);
     }
 
+    public function tearDown(): void
+    {
+        tenancy()->end();
+
+        foreach(Tenant::cursor() as $tenant) {
+            try {
+                $tenant->delete();
+            } catch (\Throwable) {}
+        }
+
+        parent::tearDown();
+    }
+
     protected function createTenant(array $data = [], string $domain = null, bool $createStriperCustomer = null): Tenant
     {
         $domain = $domain ?? Str::random('10');
