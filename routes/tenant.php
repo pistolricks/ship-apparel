@@ -38,6 +38,6 @@ Route::middleware('tenant', PreventAccessFromCentralDomains::class)->name('tenan
     });
 
     Route::namespace('App\\Http\\Controllers\\Tenant')->group(function () {
-        Auth::routes();
+        Auth::routes(['verify' => true]);
     });
 });
