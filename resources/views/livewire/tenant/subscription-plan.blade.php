@@ -87,7 +87,7 @@
               Resume subscription ({{ tenant()->plan_name }})
           </button>
         @endif
-        <x-button wire:click="update" >Change plan</x-button>
+        <x-button wire:click="updatePlan">Change plan</x-button>
     </div>
 </div>
 </div>

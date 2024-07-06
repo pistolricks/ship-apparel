@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('action_events', function (Blueprint $table) {
             $table->string('actionable_id')->change();
             $table->string('target_id')->change();
-            $table->string('model_id')->change();
+            $table->string('model_id')->nullable()->change();
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
         Schema::table('action_events', function (Blueprint $table) {
             $table->unsignedBigInteger('actionable_id')->change();
             $table->unsignedBigInteger('target_id')->change();
-            $table->unsignedBigInteger('model_id')->change();
+            $table->unsignedBigInteger('model_id')->nullable()->change();
         });
     }
 };
