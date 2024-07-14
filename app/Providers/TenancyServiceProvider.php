@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Stancl\JobPipeline\JobPipeline;
+use Stancl\Tenancy\Controllers\TenantAssetsController;
 use Stancl\Tenancy\Events;
 use Stancl\Tenancy\Events\DatabaseCreated;
 use Stancl\Tenancy\Events\DatabaseDeleted;
@@ -133,6 +134,8 @@ class TenancyServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        TenantAssetsController::$tenancyMiddleware = InitializeTenancyByDomainOrSubdomain::class;
+
         if ($this->app->environment('production')) {
             DomainTenantResolver::$shouldCache = true;
         }
