@@ -19,7 +19,7 @@
 </head>
 <body class="min-h-screen h-screen flex flex-col antialiased font-sans">
     <header class="bg-gray-900 py-2">
-        <nav class="container mx-auto flex justify-between">
+        <nav class="@container mx-auto px-2 flex justify-between">
             <div>
                 <a href="/" class="block py-2 px-4 text-white font-medium">
                     Home
@@ -32,13 +32,13 @@
         </nav>
     </header>
     <div class="flex-1 flex flex-row overflow-y-hidden">
-            <main class="flex-1 bg-indigo-100 overflow-y-auto">
-                <div class="max-w-7xl sm:px-6 lg:px-8">
+            <main class="@container flex-1 bg-indigo-100 overflow-y-auto">
+                <div class="max-w-7xl  sm:px-6 lg:px-8">
                     {{ $slot }}
                 </div>
             </main>
     </div>
-    <footer class="bg-gray-100 h-16">
+    <footer class="bg-gray-100 h-8">
 
     </footer>
 </body>
