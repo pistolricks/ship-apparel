@@ -47,7 +47,7 @@
         </div>
         @else
         <p class="p-4 text-sm text-gray-600">
-            You're not subscribed yet. Please select a plan below.
+            Please add a payment method.
         </p>
         @endif
     </div>

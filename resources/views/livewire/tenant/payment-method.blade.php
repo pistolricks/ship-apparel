@@ -1,11 +1,11 @@
 <div class="mt-8">
-    <h3 class="text-lg font-medium text-gray-900">Change payment method</h3>
-    <div class="mt-2 shadow overflow-hidden sm:rounded-md">
+
+    <div class="shadow overflow-hidden sm:rounded-md">
+        <h3 class="bg-white px-4 py-2 text-base font-medium text-gray-900">Current payment method</h3>
         <div class="px-4 py-5 bg-white sm:p-6">
             <div>
-                <h4 class="font-medium text-gray-900">Current payment method</h4>
                 @if(tenant()->hasDefaultPaymentMethod())
-                    <p class="mt-2 text-sm text-gray-600">
+                    <p class="text-sm text-gray-600">
                         {{ ucfirst(tenant()->defaultPaymentMethod()->asStripePaymentMethod()->card->brand) }} ending in
                         {{ tenant()->defaultPaymentMethod()->asStripePaymentMethod()->card->last4 }}
                     </p>
@@ -28,7 +28,7 @@
 
             <!-- Stripe Elements Placeholder -->
             <div class="mt-2 relative rounded-md shadow-sm" wire:ignore>
-                <div id="card-element" class="form-input py-3 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 placeholder-gray-400 rounded-md shadow-sm mt-1 block w-full"></div>
+                <div id="card-element" class="form-input p-3 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 placeholder-gray-400 rounded-md shadow-sm mt-1 block w-full"></div>
             </div>
             <p id="payment-method-message" class="text-sm"></p>
         </div>

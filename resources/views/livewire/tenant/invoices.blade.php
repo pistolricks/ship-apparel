@@ -1,6 +1,6 @@
-<div class="mt-8">
-    <h3 class="text-lg font-medium text-gray-900">Invoices</h3>
-    <div class="bg-white shadow overflow-hidden sm:rounded-md mt-2">
+<div class="mt-8 ">
+    <div class="bg-white shadow overflow-hidden sm:rounded-md">
+        <h3 class="bg-white px-4 py-2 text-base font-medium text-gray-900">Invoices</h3>
         @if($invoices = tenant()->invoicesIncludingPending()->all())
         <ul x-data>
             @foreach($invoices as $invoice)
@@ -8,7 +8,7 @@
             @if(! $loop->first)
             class="border-t border-gray-200"
             @endif>
-            <div class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
+            <div class="bg-white block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
                 <div class="px-4 py-4 sm:px-6">
                     <div class="flex items-center justify-between">
                         <div class="text-sm leading-5 font-medium text-indigo-600 truncate">

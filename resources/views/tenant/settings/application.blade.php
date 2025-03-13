@@ -30,14 +30,25 @@
     </x-section>
 
     <x-section-divider />
-
-    <x-section title="Billing" description="Manage your subscription and payment methods.">
+    <x-section title="Address" description="Manage your billing address.">
         <div class="mt-4 md:mt-0 w-full md:w-2/3 pl-0 md:pl-2">
-            @livewire('subscription-banner')
-            @livewire('upcoming-payment')
-            @livewire('billing-address')
+        @livewire('billing-address')
+        </div>
+    </x-section>
+    <x-section-divider />
+    <x-section title="Invoices" description="Manage your invoices.">
+        <div class="mt-4 md:mt-0 w-full md:w-2/3 pl-0 md:pl-2">
             @livewire('invoices')
+        </div>
+    </x-section>
+    <x-section-divider />
+    <x-section title="Payment Methods" description="Manage your payment methods.">
+        <div class="mt-4 md:mt-0 w-full md:w-2/3 pl-0 md:pl-2">
+            {{--
+            @livewire('subscription-banner')
             @livewire('subscription-plan')
+            @livewire('upcoming-payment')
+            --}}
             @livewire('payment-method')
         </div>
     </x-section>

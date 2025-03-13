@@ -1,6 +1,6 @@
 <div class="mt-8">
-    <h3 class="text-lg font-medium text-gray-900">Billing address</h3>
-    <div class="mt-2 shadow overflow-hidden sm:rounded-md">
+    <div class="shadow overflow-hidden sm:rounded-md">
+        <h3 class="bg-white px-4 py-4 text-base font-medium text-gray-900">Billing address</h3>
         <div class="px-4 py-5 bg-white sm:p-6 flex flex-row flex-wrap">
             <div class="w-1/2 p-2">
                 <x-form.label for="line1" value="Line 1"/>
@@ -41,7 +41,9 @@
             <div class="mt-4 w-1/2 p-2">
                 <x-form.label for="country" value="Country"/>
                 <div class="mt-1 relative rounded-md shadow-sm">
-                    <select id="country" wire:model="country" type="text" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 placeholder-gray-400 rounded-md shadow-sm mt-1 block w-full">
+                    <select
+                        placeholder="United States"
+                        id="country" wire:model="country" type="text" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 placeholder-gray-400 rounded-md shadow-sm mt-1 block w-full py-2 px-3">
                         @include('partials.countries')
                     </select>
                 </div>

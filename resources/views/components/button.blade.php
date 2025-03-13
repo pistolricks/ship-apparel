@@ -2,7 +2,7 @@
 
 @php
   $variantClass = [
-      'primary' => 'text-white bg-indigo-500 hover:bg-indigo-600 focus:border-indigo-700 focus:bg-indigo-700 active:bg-indigo-700',
+      'primary' => 'text-white bg-gray-500 hover:bg-gray-600 focus:border-gray-700 focus:bg-gray-700 active:bg-gray-700',
       'secondary' => 'bg-white text-red-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500',
   ][$variant];
 @endphp

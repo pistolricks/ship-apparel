@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-4 sm:px-6 py-2 bg-gray-50 flex justify-end">
+                <div class="px-4 sm:px-6 py-2 bg-gray-50 flex justify-end sm:rounded-b-md">
                     <x-button type="submit">Save</x-button>
                 </div>
             </form>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="px-4 sm:px-6 py-2 bg-gray-50 flex justify-end">
+                <div class="px-4 sm:px-6 py-2 bg-gray-50 flex justify-end sm:rounded-b-md">
                     <x-button type="submit">Save</x-button>
                 </div>
             </form>

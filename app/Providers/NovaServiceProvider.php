@@ -10,12 +10,15 @@ use App\Nova\Central\Tenant as TenantResource;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
+
     /**
      * Bootstrap any application services.
      */
@@ -31,6 +34,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             Tenant::created(function (Tenant $tenant) {
                 $tenant->createAsStripeCustomer();
             });
+        });
+
+        Nova::footer(function (Request $request) {
+            return Blade::render('
+                <p class="mt-8 text-center text-xs text-80">
+                    <a href="/" class="text-primary dim no-underline">CustomInk and Thread</a>
+                </p>
+
+        ');
         });
     }
 

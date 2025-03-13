@@ -1,13 +1,13 @@
 <x-layouts.central>
     <div>
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+            <h2 class="mt-6 text-2xl font-semibold text-center text-gray-900 leading-9">
                 Log in to your account
             </h2>
 
             <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
                 Or
-                <a href="{{ route('central.tenants.register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                <a href="{{ route('central.tenants.register') }}" class="font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                     create a new account
                 </a>
             </p>
