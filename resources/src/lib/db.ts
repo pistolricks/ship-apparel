@@ -32,7 +32,7 @@ const fetchResendActivateEmail = async (resendInput: { email: string }) =>
     ).json()
 
 const fetchLogin = async (userInput: { email: string, password: string }) =>
-    (await fetch(`${baseApi}/tokens/authentication`, {
+    (await fetch(`http://localhost:4000/v1/tokens/authentication`, {
             method: "POST",
             body: JSON.stringify(userInput),
         })
@@ -55,10 +55,10 @@ const fetchUser = async (userInput: { email: string, token: string }) =>
     ).json()
 
 
-
 export const db = {
     user: {
-        async register({where: {userInput}}: { where: { userInput: { name: string; email: string; password: string } }
+        async register({where: {userInput}}: {
+            where: { userInput: { name: string; email: string; password: string } }
         }) {
             return await fetchRegister(userInput);
         },

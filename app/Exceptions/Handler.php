@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($exception instanceof TenantCouldNotBeIdentifiedException) {
-            return redirect()->route('central.landing');
+            return redirect()->route('app');
         }
 
         return parent::render($request, $exception);

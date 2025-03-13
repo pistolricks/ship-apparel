@@ -9,6 +9,8 @@ Route::view('/register', 'app')->name('app');
 Route::view('/resend', 'app')->name('app');
 Route::view('/activate', 'app')->name('app');
 
+Route::get('/v1/products', Controllers\ProductController::class)->name('central.products.index');
+
 Route::get('/clients/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
 Route::post('/clients/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
 
