@@ -14,7 +14,9 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
-
+    <script defer src="https://unpkg.com/@alpinejs/ui@3.14.9/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/@alpinejs/focus@3.14.9/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 <body class="min-h-screen h-screen flex flex-col antialiased font-sans">
@@ -25,11 +27,6 @@
                     <img class="h-10 w-full" src="/logo.svg" alt="logo">
 
                 </a>
-
-            <div class="flex">
-                <x-button as="a" href="{{ route('central.tenants.login') }}">Login</x-button>
-                <x-button class="ml-2" as="a" href="{{ route('central.tenants.register') }}">Register</x-button>
-            </div>
         </nav>
     </header>
     <div class="flex-1 flex flex-row overflow-y-hidden">
