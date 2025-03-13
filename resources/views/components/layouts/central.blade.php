@@ -17,9 +17,9 @@
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-<body class="bg-gray-100 h-screen antialiased font-sans">
-    <nav class="bg-gray-900 py-2">
-        <div class="container mx-auto flex justify-between">
+<body class="min-h-screen h-screen flex flex-col antialiased font-sans">
+    <header class="bg-gray-900 py-2">
+        <nav class="container mx-auto flex justify-between">
             <div>
                 <a href="/" class="block py-2 px-4 text-white font-medium">
                     Home
@@ -29,16 +29,17 @@
                 <x-button as="a" href="{{ route('central.tenants.login') }}">Login</x-button>
                 <x-button class="ml-2" as="a" href="{{ route('central.tenants.register') }}">Register</x-button>
             </div>
-        </div>
-    </nav>
-    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 min-h-screen bg-gray-100">
-        <div class="py-10">
-            <main class="container mx-auto">
+        </nav>
+    </header>
+    <div class="flex-1 flex flex-row overflow-y-hidden">
+            <main class="flex-1 bg-indigo-100 overflow-y-auto">
                 <div class="max-w-7xl sm:px-6 lg:px-8">
                     {{ $slot }}
                 </div>
             </main>
-        </div>
-  </div>
+    </div>
+    <footer class="bg-gray-100 h-16">
+
+    </footer>
 </body>
 </html>
