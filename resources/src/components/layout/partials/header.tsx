@@ -1,13 +1,17 @@
 import {Component, Show, VoidComponent} from "solid-js";
 import {A} from "@solidjs/router";
+import Drawer from "@corvu/drawer";
+import {logo} from "~/app";
 
 
 
 const Header: Component<{
-
+    contextId: string;
 }> = props => {
 
-    const logo = () => "/logo.svg"
+
+
+    const contextId = () => props.contextId;
 
     return (
         <>
@@ -44,14 +48,14 @@ const Header: Component<{
 
                                         <div class="flex items-center lg:ml-8">
 
-
+                                            <Drawer.Trigger contextId={contextId()}>
                                                 <span class="sr-only">Open menu</span>
                                                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                      stroke="currentColor" aria-hidden="true" data-slot="icon">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                           d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                                                 </svg>
-
+                                            </Drawer.Trigger>
 
                                         </div>
                                     </div>

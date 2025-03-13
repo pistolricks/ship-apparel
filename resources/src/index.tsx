@@ -19,8 +19,8 @@ const routes = [
         component: lazy(() => import("./routes/index")),
     },
     {
-        path: "/hello-world",
-        component: () => <h1>Hello, World!</h1>
+        path: "/login",
+        component: lazy(() => import("./routes/login")),
     }
 ]
 
