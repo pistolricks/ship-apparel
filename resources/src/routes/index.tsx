@@ -5,6 +5,7 @@ import PromoWithTileOverlap from "~/components/section/promo/promo-with-tile-ove
 import {Tabs} from "@kobalte/core/tabs";
 import style from "~/components/ui/tab/tabs.module.css"
 import PromoWithBackgroundImage from "~/components/section/promo/promo-with-background-image";
+import Category1c2c from "~/components/section/category/category-1c-2c";
 type PROPS = {}
 
 const Home: Component<PROPS> = props => {
@@ -46,6 +47,8 @@ const Home: Component<PROPS> = props => {
                     <PromoWithBackgroundImage src={"storage/promo_reversible_1.jpg"} title={"reversible"} description={"Need description here."} cta={"Shop Now"}/>
                 </Tabs.Content>
             </Tabs>
+            
+            <Category1c2c/>
 
 
 

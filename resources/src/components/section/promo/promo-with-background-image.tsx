@@ -19,13 +19,13 @@ const PromoWithBackgroundImage: Component<PROPS> = props => {
         <div class="bg-white">
             <div class="mx-auto max-w-7xl">
                 <div class="relative overflow-hidden">
-                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="absolute inset-0">
                         <img
                             src={src()}
                             alt="" class="size-full object-cover"/>
                     </div>
-                    <div class="relative pb-16 pt-48 sm:pb-24">
+                    <div class="relative px-2 sm:px-0 pb-16 pt-48 sm:pb-24">
                         <div>
                             <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-white md:text-5xl">
                                 {title()}

@@ -17,7 +17,7 @@ const CentralLayout: Component<PROPS> = props => {
             <Header contextId={contextId()}/>
             <div class={'flex-1 flex flex-row overflow-y-hidden'}>
             <main
-                class={'scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs p-2 overflow-y-auto'}
+                class={'scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs sm:p-2 overflow-y-auto'}
             >
                 {children()}
             </main>
