@@ -10,13 +10,10 @@
     <title>{{ config('app.name', 'CustomInk and Thread') }}</title>
 
     <!-- Scripts -->
-    @vite('resources/js/app.js')
+
 
     <!-- Styles -->
     @vite('resources/css/app.css')
-    <script defer src="https://unpkg.com/@alpinejs/ui@3.14.9/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/@alpinejs/focus@3.14.9/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 <body class="min-h-screen h-screen flex flex-col antialiased font-sans">

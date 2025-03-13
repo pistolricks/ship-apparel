@@ -16,7 +16,6 @@
     <title>{{ config('app.name', 'CustomInk and Thread') }}</title>
 
     <!-- Scripts -->
-    @vite('resources/js/app.js')
 
     <!-- Styles -->
     @vite('resources/css/app.css')
