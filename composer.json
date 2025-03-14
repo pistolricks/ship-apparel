@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-zip": "*",
         "calebporzio/sushi": "^2.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/cashier": "^15.0",
@@ -17,10 +18,15 @@
         "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",
         "league/flysystem-aws-s3-v3": "^3.0",
+        "league/flysystem-ftp": "^3.29",
+        "league/flysystem-path-prefixing": "^3.28",
+        "league/flysystem-sftp-v3": "^3.29",
+        "league/flysystem-ziparchive": "^3.29",
         "livewire/livewire": "^3.0",
         "spatie/laravel-data": "^4.13",
         "spatie/simple-excel": "^3.7",
-        "stancl/tenancy": "^3.7"
+        "stancl/tenancy": "^3.7",
+        "zanysoft/laravel-zip": "^3.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.4.4",

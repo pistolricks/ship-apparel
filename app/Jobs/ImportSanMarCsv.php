@@ -26,7 +26,7 @@ class ImportSanMarCsv implements ShouldQueue
      */
     public function handle(): void
     {
-        SimpleExcelReader::create('csv/SanMarPI-AmericanApparel-174381.csv')
+        SimpleExcelReader::create('storage/app/SanMar_SDL_N.csv')
             ->useDelimiter(',')
             ->useHeaders([
                 "UNIQUE_KEY",

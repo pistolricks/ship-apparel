@@ -54,11 +54,12 @@ const Home: Component<PROPS> = props => {
                             <CarouselItemCard {...item()}/>
                         }/>
                 </BaseTabs>
-
-
                 <Button
                     onClick={importProducts}
                     variant={'default'} >TEST</Button>
+
+
+
 
                 <div class={'hidden md:block'}>
                     <CtaWithImageTiles>

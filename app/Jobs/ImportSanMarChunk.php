@@ -11,10 +11,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Str;
+
 
 class ImportSanMarChunk implements ShouldBeUnique, ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+
+    public $uniqueFor = 3600;
 
 
     /**
@@ -41,5 +46,10 @@ class ImportSanMarChunk implements ShouldBeUnique, ShouldQueue
                 $data->toArray())
             );
         });
+    }
+
+    public function uniqueId(): string
+    {
+        return Str::uuid()->toString();
     }
 }
