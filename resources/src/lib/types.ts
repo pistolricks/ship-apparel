@@ -1,4 +1,6 @@
 import {GeoJsonObject} from "geojson";
+import { Component } from "solid-js";
+import {IconProps} from "~/components/svg";
 
 export type SessionUser = {
     id: number;
@@ -12,6 +14,15 @@ export type SessionUser = {
     folder: string;
     current_location?: Feature
 }
+
+export type MenuItemType = {
+    title: string;
+    href: string;
+    description?: string;
+    icon?: Component<IconProps>;
+}
+
+
 
 export type AUTHENTICATION_TOKEN = {
     token: string;

@@ -68,8 +68,9 @@ const BaseTabs: Component<PROPS> = props => {
 
             </TabsContent>
             <Tabs.Content class={style.tabs__content} value="spirit">
-                <PromoWithBackgroundImage src={"storage/promo_banner_1.jpg"} title={"brands"}
-                                          description={"Need description here."} cta={"Shop Now"}/>
+                <PromoWithBackgroundImage src={"storage/promo_banner_1.jpg"}
+                                          title={"Custom School Spirit"}
+                                          description={"Bring your school’s pride to life with custom graphics!  From screen printing to embroidery, heat press and DTG printing.  We offer endless options to showcase your school spirit. T-shirts, sweatshirts, hoodies, and more - designed just for you!"} cta={"Shop Now"}/>
             </Tabs.Content>
             <Tabs.Content class={style.tabs__content} value="activewear">
                 <PromoWithBackgroundImage src={"storage/promo_banner_2.jpg"} title={"activewear"} description={"Need description here."}

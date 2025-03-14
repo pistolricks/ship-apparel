@@ -2,13 +2,26 @@ import {action, query, redirect} from "@solidjs/router";
 
 import {capitalizeFirstLetter} from "~/lib/utils";
 import {activateUser, getUserDetails, getUserToken, login, logout, register, resendActivateEmail} from "~/lib/server";
+import {getSession} from "~/lib/session";
+import {db} from "~/lib/db";
 
 export const getUser = query(async () => {
     "use server";
-    // let userData = (await getSessionUser()) as SessionUser;
-    // console.log("getUser", userData)
-    // return userData;
-}, "user")
+    try {
+        let token = await getUserToken();
+        if (!token) throw redirect("/")
+
+        const session = await getSession();
+        const email = session.data.email;
+        if (email === undefined) throw new Error("User not found");
+        const user = await db.user.findUser({ where: { userInput: { email: email, token: token.token } } });
+        if (!user) throw new Error("User not found");
+        return { user };
+    } catch {
+        await logout();
+        throw redirect("/login");
+    }
+}, "user");
 
 
 export const getUserDetailsHandler = action(async (data: FormData) => {

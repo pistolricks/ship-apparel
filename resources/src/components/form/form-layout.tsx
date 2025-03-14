@@ -3,13 +3,13 @@ import {Component, createEffect, createSignal, JSXElement, Show, splitProps, Val
 import {cn} from "~/lib/utils";
 
 const FormLayout: Component<{
-    action: Action<[any], any, unknown>;
+    action?: Action<[any], any, FormData>;
     title?: string
     imageSrc?: string
     hideLogo?: boolean
     children: JSXElement;
 }> = props => {
-    const submission = useSubmission(props.action, (formData: FormData) => {
+    const submission = useSubmission(props.action!, (formData: FormData) => {
         for (let value of formData.values()) {
             if (value) return true;
         }

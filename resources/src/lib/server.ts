@@ -1,4 +1,4 @@
-import {clearSessionUser, getSessionFolder, getSessionToken, updateSessionUser} from "~/lib/session";
+import {clearSessionUser, getSession, getSessionFolder, getSessionToken, updateSessionUser} from "~/lib/session";
 import {query, redirect} from "@solidjs/router";
 import {AUTHENTICATION_TOKEN} from "~/lib/types";
 import {db} from "~/lib/db";
@@ -34,6 +34,7 @@ export async function login(userInput: { email: string, password: string }) {
 }
 
 export async function logout() {
+    const session = await getSession();
     await clearSessionUser();
     return await db.user.logout();
 

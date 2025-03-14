@@ -5,17 +5,17 @@ import {handleUserName} from "~/lib/utils";
 
 
 export type SessionUser = {
-    id: number | undefined;
-    name: string | undefined;
-    email: string | undefined;
-    display_name: string | undefined;
-    activated: boolean | undefined;
-    created_at: string | undefined;
-    token: string | undefined;
-    expiry: string | undefined;
-    folder: string | undefined;
-    current_location?: Feature | undefined
-}
+    id?: number;
+    name?: string;
+    email?: string;
+    display_name?: string;
+    activated?: boolean;
+    created_at?: string;
+    token?: string;
+    expiry?: string;
+    folder?: string;
+    current_location?: Feature
+};
 
 
 export function getSession() {
@@ -29,7 +29,8 @@ export async function updateSessionUser(user: USER, authentication_token: AUTHEN
     "use server";
     try {
         const session = await getSession();
-        await session.update((d: SessionUser) => {
+        await session.update((d: SessionUser | undefined) => {
+            if (!d) return;
             d.id = user?.id;
             d.name = user?.name;
             d.email = user?.email;
@@ -46,27 +47,7 @@ export async function updateSessionUser(user: USER, authentication_token: AUTHEN
     }
 }
 
-export async function updateSessionCurrentLocation(user: SessionUser, currentLocation: Feature, authentication_token: AUTHENTICATION_TOKEN) {
-    "use server";
-    try {
-        const session = await getSession();
-        await session.update((d: SessionUser) => {
-            d.id = user?.id;
-            d.name = user?.name;
-            d.email = user?.email;
-            d.display_name = user?.display_name;
-            d.activated = user?.activated;
-            d.created_at = user?.created_at;
-            d.token = authentication_token?.token;
-            d.expiry = authentication_token?.expiry;
-            d.folder = user?.folder;
-            d.current_location = currentLocation
-        });
 
-    } catch (err) {
-        return err as Error;
-    }
-}
 
 
 export async function getSessionUser(): Promise<SessionUser | undefined> {

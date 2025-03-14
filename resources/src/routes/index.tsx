@@ -1,16 +1,17 @@
-import {Component, lazy} from "solid-js";
+import {Component, lazy, onMount} from "solid-js";
 import CtaWithImageTiles from "~/components/section/cta/cta-with-image-tiles";
 import BaseTabs from "~/components/ui/tab/tabs";
 import CtaText from "~/components/section/cta/cta-text";
 import {CarouselItemCard, CarouselItemProps} from "~/components/ui/carousel/carousel";
 import {Button} from "~/components/ui/button";
+import {RouteSectionProps} from "@solidjs/router";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
-type PROPS = {}
+type PROPS = RouteSectionProps
 
 const importProducts = async () =>
-    (await fetch(`/v1/products/import`)).json();
+    (await fetch(`/v1/products`)).json();
 
 const Home: Component<PROPS> = props => {
 
@@ -30,6 +31,7 @@ const Home: Component<PROPS> = props => {
             src: "storage/cta_sports_pack_1.png",
         }
     ];
+
 
     return (
         <div
