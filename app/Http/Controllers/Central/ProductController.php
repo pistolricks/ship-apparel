@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Central;
 
-use App\Data\ProductData;
-use App\Data\ProductDataCollection;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 

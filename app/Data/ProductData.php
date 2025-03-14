@@ -3,18 +3,20 @@
 namespace App\Data;
 
 use Illuminate\Support\Collection;
+use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Data;
 
 
 class ProductData extends Data
 {
     public function __construct(
+        #[MapInputName('UNIQUE_KEY')]
         public ?int $id,
         public ?string $created_at,
         public ?string $updated_at,
-        public string $UNIQUE_KEY,
         public string $PRODUCT_TITLE,
         public ?string $PRODUCT_DESCRIPTION,
+        #[MapInputName('STYLE#')]
         public ?string $STYLE,
         public ?string $AVAILABLE_SIZES,
         public ?string $BRAND_LOGO_IMAGE,

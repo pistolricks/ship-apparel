@@ -19,7 +19,8 @@ class ProductSeeder extends Seeder
 
         $collection->map(function ($item, $index) {
             $item['id'] = $index + 1;
-           $data = ProductData::from($item);
+
+           $data = ProductData::from($item, ["style" => $item['style#']]);
            Product::query()->create($data->toArray());
         });
 

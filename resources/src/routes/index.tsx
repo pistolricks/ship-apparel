@@ -1,45 +1,74 @@
-import {Component} from "solid-js";
+import {Component, lazy} from "solid-js";
 import CtaWithImageTiles from "~/components/section/cta/cta-with-image-tiles";
-import StyledTabs from "~/components/ui/tab/styled-tabs";
+import BaseTabs from "~/components/ui/tab/tabs";
 import CtaText from "~/components/section/cta/cta-text";
-import PromoWithMultiOverlap from "~/components/section/promo/promo-with-multi-overlap";
+import {CarouselItemCard, CarouselItemProps} from "~/components/ui/carousel/carousel";
+import {Button} from "~/components/ui/button";
+
+const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
 type PROPS = {}
 
+const importProducts = async () =>
+    (await fetch(`/v1/products/import`)).json();
+
 const Home: Component<PROPS> = props => {
 
+    const list: () => CarouselItemProps[] = () => [
+        {
+            title: "Title",
+            description: "description",
+            cta: "cta",
+            href: "#",
+            src: "storage/category_sports_1.jpg",
+        },
+        {
+            title: "Title",
+            description: "description",
+            cta: "cta",
+            href: "#",
+            src: "storage/cta_sports_pack_1.png",
+        }
+    ];
 
     return (
         <div
+            class={''}
             style={{
                 'background-image': 'linear-gradient(120deg, #fccb90 0%, #d57eeb 100%)'
             }}
         >
 
-            <div
+            <div class={'mx-auto max-w-7xl'}>
+                <BaseTabs class="" menu={[]}>
+                    <BaseCarousel
+                        list={list()}
+                        children={(
+                            item) =>
+                            <CarouselItemCard {...item()}/>
+                        }/>
+                    <BaseCarousel
+                        list={list()}
+                        children={(
+                            item) =>
+                            <CarouselItemCard {...item()}/>
+                        }/>
+                </BaseTabs>
 
-                class={'mx-auto max-w-7xl'}>
-                <div class={''}>
-                    <StyledTabs class="" menu={[]}/>
+
+                <Button
+                    onClick={importProducts}
+                    variant={'default'} >TEST</Button>
+
+                <div class={'hidden md:block'}>
+                    <CtaWithImageTiles>
+                        <CtaText title={"Browse Our Vast Product Line"}
+                                 description={"Find Any Brand/Style From Our Top Catalogs"}
+                                 information={"Representing the top 50 brands with over 2,890 styles, including 458 new trending styles."}
+                                 cta={"Shop"}
+                        />
+                    </CtaWithImageTiles>
                 </div>
-
-                <div class={''}>
-
-
-                        <div class={'hidden md:block'}>
-                            <CtaWithImageTiles>
-                            <CtaText title={"Browse Our Vast Product Line"}
-                                     description={"Find Any Brand/Style From Our Top Catalogs"}
-                                     information={"Representing the top 50 brands with over 2,890 styles, including 458 new trending styles."}
-                                     cta={"Shop"}
-                            />
-                            </CtaWithImageTiles>
-                        </div>
-
-
-                    <PromoWithMultiOverlap images={[]}/>
-                </div>
-
 
 
             </div>
