@@ -37,16 +37,16 @@ const PromoWithTileOverlap: Component<PROPS> = props => {
 
 
     return (
-        <div class="bg-white">
+        <div class="">
             <div class="overflow-hidden">
-                <div class="bg-gray-800">
+                <div class="bg-linear-to-b  pt-32 sm:pt-14 from-[#fccb90] to-bg-gray-800/25">
                     <div class="mx-auto max-w-7xl sm:px-4 lg:px-8">
-                        <div class="relative px-2 sm:px-0 pb-16 pt-48 sm:pb-24">
+                        <div class="relative px-2 sm:px-0 pb-16 pt-32 xl:pt-48 sm:pb-24">
                             <div>
-                                <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-white md:text-5xl">
+                                <h2 id="sale-heading" class="text-4xl font-bold tracking-tight text-white/80 md:text-5xl">
                                     {title()}
                                 </h2>
-                                <h3 class="text-xl font-semibold tracking-tight text-white">
+                                <h3 class="text-xl font-semibold tracking-tight text-white/80">
                                     {description()}
                                 </h3>
                                 <div class="mt-6 text-base">
@@ -58,7 +58,7 @@ const PromoWithTileOverlap: Component<PROPS> = props => {
                             </div>
 
                             <div
-                                class="absolute -top-32 left-1/2 min-w-max -translate-x-1/2 transform sm:top-6 sm:translate-x-0">
+                                class="absolute -top-28 left-1/2 min-w-max -translate-x-1/2 transform sm:top-10 sm:translate-x-0">
                                 <div class="ml-24 flex space-x-6 sm:ml-3 lg:space-x-8">
 
                                     <div class="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">

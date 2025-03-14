@@ -1,64 +1,53 @@
 import {Component} from "solid-js";
-import CentralLayout from "~/components/layout/central-layout";
-import {DrawerContent} from "~/components/ui/drawer/drawer";
-import PromoWithTileOverlap from "~/components/section/promo/promo-with-tile-overlap";
-import {Tabs} from "@kobalte/core/tabs";
-import style from "~/components/ui/tab/tabs.module.css"
-import PromoWithBackgroundImage from "~/components/section/promo/promo-with-background-image";
-import Category1c2c from "~/components/section/category/category-1c-2c";
+import CtaWithImageTiles from "~/components/section/cta/cta-with-image-tiles";
+import StyledTabs from "~/components/ui/tab/styled-tabs";
+import CtaText from "~/components/section/cta/cta-text";
+import PromoWithMultiOverlap from "~/components/section/promo/promo-with-multi-overlap";
+
 type PROPS = {}
 
 const Home: Component<PROPS> = props => {
+
+
     return (
-        <div class={'mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8'}>
-            <Tabs
-                aria-label="Main navigation"
-                orientation="vertical"
-                class={style.tabs}
-            >
-                <Tabs.List class={style.tabs__list}>
-                    <Tabs.Trigger  value="custom" class={style.tabs__trigger + "inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 shadow focus-visible:outline-none justify-self-center whitespace-nowrap bg-corvu-100 text-sky-500 shadow-sky-100 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 disabled:cursor-not-allowed disabled:border-sky-300 disabled:bg-sky-100 disabled:text-sky-400 disabled:shadow-none"}>
-                       Custom
+        <div
+            style={{
+                'background-image': 'linear-gradient(120deg, #fccb90 0%, #d57eeb 100%)'
+            }}
+        >
 
-                    </Tabs.Trigger>
+            <div
 
-                    <Tabs.Trigger value="spirit" class={style.tabs__trigger + "inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 shadow focus-visible:outline-none justify-self-center whitespace-nowrap bg-corvu-100 text-sky-500 shadow-sky-100 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 disabled:cursor-not-allowed disabled:border-sky-300 disabled:bg-sky-100 disabled:text-sky-400 disabled:shadow-none"}>
-                        Spirit
-                    </Tabs.Trigger>
-                    <Tabs.Trigger  value="activewear" class={style.tabs__trigger + "inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 shadow focus-visible:outline-none justify-self-center whitespace-nowrap bg-corvu-100 text-sky-500 shadow-sky-100 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 disabled:cursor-not-allowed disabled:border-sky-300 disabled:bg-sky-100 disabled:text-sky-400 disabled:shadow-none"}>
-                        Activewear
-                    </Tabs.Trigger>
-                    <Tabs.Trigger  value="reversible" class={style.tabs__trigger + "inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 shadow focus-visible:outline-none justify-self-center whitespace-nowrap bg-corvu-100 text-sky-500 shadow-sky-100 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 disabled:cursor-not-allowed disabled:border-sky-300 disabled:bg-sky-100 disabled:text-sky-400 disabled:shadow-none"}>
-                        Reversible
-                    </Tabs.Trigger>
+                class={'mx-auto max-w-7xl'}>
+                <div class={''}>
+                    <StyledTabs class="" menu={[]}/>
+                </div>
 
-                    <Tabs.Indicator class={style.tabs__indicator} />
-                </Tabs.List>
-                <Tabs.Content class={style.tabs__content} value="custom">
-                    <PromoWithTileOverlap title={'custom'} description={'Need description here.'} cta={'Shop Now'}/>
-                </Tabs.Content>
-                <Tabs.Content class={style.tabs__content} value="spirit">
-                    <PromoWithBackgroundImage src={"storage/promo_reversible_3.jpg"} title={"brands"} description={"Need description here."} cta={"Shop Now"}/>
-                </Tabs.Content>
-                <Tabs.Content class={style.tabs__content} value="activewear">
-                    <PromoWithBackgroundImage title={"activewear"} description={"Need description here."} cta={"Shop Now"}/>
-                </Tabs.Content>
-                <Tabs.Content class={style.tabs__content} value="reversible">
-                    <PromoWithBackgroundImage src={"storage/promo_reversible_1.jpg"} title={"reversible"} description={"Need description here."} cta={"Shop Now"}/>
-                </Tabs.Content>
-            </Tabs>
-            
-            <Category1c2c/>
+                <div class={''}>
+
+
+                        <div class={'hidden md:block'}>
+                            <CtaWithImageTiles>
+                            <CtaText title={"Browse Our Vast Product Line"}
+                                     description={"Find Any Brand/Style From Our Top Catalogs"}
+                                     information={"Representing the top 50 brands with over 2,890 styles, including 458 new trending styles."}
+                                     cta={"Shop"}
+                            />
+                            </CtaWithImageTiles>
+                        </div>
+
+
+                    <PromoWithMultiOverlap images={[]}/>
+                </div>
 
 
 
+            </div>
+            <div class={'mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8'}>
 
-
-
-
-
+            </div>
         </div>
-    );
-};
+    )
+}
 
 export default Home;

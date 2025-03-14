@@ -36,8 +36,8 @@ const Category1c2c: Component<PROPS> = props => {
     ]
 
     return (
-        <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-2 lg:gap-2">
-            <div class="group relative aspect-[2/1] overflow-hidden sm:row-span-2 sm:aspect-square">
+        <div class="p-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
+            <div class="group relative aspect-[2/1] overflow-hidden rounded-lg sm:row-span-2 sm:aspect-square">
                 <img src={categories()?.[0]?.src}
                      alt="Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
                      class="absolute size-full object-cover group-hover:opacity-75"/>
@@ -55,7 +55,7 @@ const Category1c2c: Component<PROPS> = props => {
                     </div>
                 </div>
             </div>
-            <div class="group relative aspect-[2/1] overflow-hidden sm:aspect-auto">
+            <div class="group relative aspect-[2/1] overflow-hidden rounded-lg sm:aspect-auto">
                 <img src={categories()?.[1]?.src}
                      alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
                      class="absolute size-full object-cover group-hover:opacity-75"/>
@@ -73,7 +73,7 @@ const Category1c2c: Component<PROPS> = props => {
                     </div>
                 </div>
             </div>
-            <div class="group relative aspect-[2/1] overflow-hidden sm:aspect-auto">
+            <div class="group relative aspect-[2/1] overflow-hidden rounded-lg sm:aspect-auto">
                 <img src={categories()?.[2]?.src}
                      alt="Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
                      class="absolute size-full object-cover group-hover:opacity-75"/>

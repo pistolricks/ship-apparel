@@ -1,11 +1,12 @@
 .tabs {
     width: 100%;
+
 }
 
 .tabs[data-orientation="vertical"] {
     display: flex;
     height: 100%;
-    background-color: var(--color-cerulean-blue-50);
+    border-bottom: 1px solid hsl(240 5% 84%);
 
 }
 
@@ -13,11 +14,14 @@
     position: relative;
     display: flex;
 
+
 }
 
 .tabs__list[data-orientation="horizontal"] {
-    align-items: center;
-    border-bottom: 1px solid hsl(240 5% 84%);
+
+    background-color: rgb(255 255 255 / 0.2);
+
+
 }
 
 .tabs__list[data-orientation="vertical"] {
@@ -28,33 +32,47 @@
 
 .tabs__indicator {
     position: absolute;
-    background-color: hsl(200 98% 39%);
     transition: all 250ms;
 }
 
 .tabs__indicator[data-orientation="horizontal"] {
     bottom: -1px;
-    height: 2px;
+    height: 100%;
+    background-color: rgb(255 255 255 / 0.2);
+
 }
 
 .tabs__indicator[data-orientation="vertical"] {
-    right: -1px;
-    width: 2px;
+    right: 0.5px;
+    top: -1px;
+    bottom: -1px;
+    width: 150px;
+    background-image: linear-gradient(to right, transparent, #a8a29e);
 }
 
-.tabs__trigger {
+.tabs__trigger[data-orientation="vertical"] {
     display: inline-block;
     padding: 8px 16px;
     outline: none;
+    text-align: left;
+
 }
 
+.tabs__trigger[data-orientation="horizontal"] {
+    display: inline-block;
+    padding: 8px 16px;
+    outline: none;
+    text-align: center;
+
+}
+
+
 .tabs__trigger:hover {
-    background-color: hsl(0 0% 98%);
-    color: hsl(240 5% 34%);
+    background-color: rgb(255 255 255 / 0.2);
 }
 
 .tabs__trigger:focus-visible {
-    background-color: hsl(240 5% 96%);
+    background-color: rgb(255 255 255 / 0.4);
 }
 
 .tabs__trigger[data-disabled],
