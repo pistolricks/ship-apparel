@@ -4,9 +4,12 @@ namespace App\Http\Integrations\SanMar\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Contracts\Body\HasBody;
+use Saloon\Traits\Body\HasXmlBody;
 
-class GetProductDateModified extends Request
+class GetProductDateModified extends Request implements HasBody
 {
+    use HasXmlBody;
     /**
      * The HTTP method of the request
      */

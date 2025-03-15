@@ -28,6 +28,7 @@
         "oriondevelops/nova-greeter": "^0.0.3",
         "saloonphp/laravel-plugin": "^3.0",
         "saloonphp/saloon": "^3.0",
+        "saloonphp/xml-wrangler": "^1.4",
         "spatie/laravel-data": "^4.13",
         "spatie/laravel-medialibrary": "^11.12",
         "spatie/simple-excel": "^3.7",

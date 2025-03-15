@@ -4,9 +4,13 @@ namespace App\Http\Integrations\SanMar\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Contracts\Body\HasBody;
+use Saloon\Traits\Body\HasXmlBody;
 
-class GetInventoryQtyForStyleColorSizeByWhse extends Request
+class GetInventoryQtyForStyleColorSizeByWhse extends Request implements HasBody
 {
+    use HasXmlBody;
+    use HasXmlBody;
     /**
      * The HTTP method of the request
      */

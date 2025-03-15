@@ -4,13 +4,13 @@ namespace App\Http\Integrations\SanMar\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Contracts\Body\HasBody;
+use Saloon\Traits\Body\HasXmlBody;
 
-class GetFobPoints extends Request
+class GetFobPoints extends Request implements HasBody
 {
-    /**
-     * The HTTP method of the request
-     */
-    protected Method $method = Method::GET;
+    use HasXmlBody;
+
 
     /**
      * The endpoint for the request

@@ -199,6 +199,10 @@
       <path value="$PROJECT_DIR$/vendor/lorisleiva/laravel-actions" />
       <path value="$PROJECT_DIR$/vendor/saloonphp/saloon" />
       <path value="$PROJECT_DIR$/vendor/saloonphp/laravel-plugin" />
+      <path value="$PROJECT_DIR$/vendor/spatie/array-to-xml" />
+      <path value="$PROJECT_DIR$/vendor/saloonphp/xml-wrangler" />
+      <path value="$PROJECT_DIR$/vendor/veewee/xml" />
+      <path value="$PROJECT_DIR$/vendor/azjezz/psl" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

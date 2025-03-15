@@ -4,13 +4,14 @@ namespace App\Http\Integrations\SanMar\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Contracts\Body\HasBody;
+use Saloon\Traits\Body\HasXmlBody;
+use Saloon\XmlWrangler\XmlReader;
 
-class GetConfigurationAndPricing extends Request
+class GetConfigurationAndPricing extends Request implements HasBody
 {
-    /**
-     * The HTTP method of the request
-     */
-    protected Method $method = Method::GET;
+    use HasXmlBody;
+
 
     /**
      * The endpoint for the request
@@ -25,4 +26,15 @@ class GetConfigurationAndPricing extends Request
         return [
             'SOAPAction' => 'getConfigurationAndPricing',
         ];
-    }}
+    }
+
+
+    protected function defaultBody()
+    {
+
+    }
+
+
+
+}
+
