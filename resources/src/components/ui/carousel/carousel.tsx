@@ -1,13 +1,7 @@
-import {Accessor, Component, For, Index, JSX, Match, Switch} from "solid-js"
+import {Accessor, Component, Index, JSX, Match, Switch} from "solid-js"
 
 import {Card, CardContent, CardFooter, CardHeader} from "~/components/ui/card"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious
-} from "~/components/ui/carousel"
+import {Carousel, CarouselContent, CarouselItem} from "~/components/ui/carousel"
 
 
 export type CarouselItemProps = {
@@ -24,7 +18,7 @@ type PROPS = {
     children: (item: Accessor<CarouselItemProps>, index: number) => JSX.Element;
 }
 
-const BaseCarousel:Component<PROPS> = props => {
+const BaseCarousel: Component<PROPS> = props => {
 
     const list: () => CarouselItemProps[] = () => props.list ?? [
         {
@@ -55,9 +49,6 @@ const BaseCarousel:Component<PROPS> = props => {
 export default BaseCarousel;
 
 
-
-
-
 const CarouselItemCard: Component<CarouselItemProps> = props => {
 
     const title = () => props.title;
@@ -74,31 +65,32 @@ const CarouselItemCard: Component<CarouselItemProps> = props => {
                 <Card class={'h-[80dvh] bg-white/40 relative'}>
 
                     <CardContent class="relative flex w-full h-[80dvh] items-center justify-center">
-                        <img src={src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'} alt={""}/>
+                        <img src={src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'}
+                             alt={""}/>
                     </CardContent>
 
                     <Switch>
                         <Match when={side() === "top"}>
-                    <CardHeader
-                        class={'absolute top-0 w-full p-2  bg-white/40 glass rounded-t-lg'}>
-                        <div class="flex-1 px-6 py-2 rounded-b-lg">
-                            <div class="font-bold text-xl mb-2">{title()}</div>
-                            <p class="text-gray-700 text-base">
-                                {description()}
-                            </p>
-                        </div>
-                    </CardHeader>
+                            <CardHeader
+                                class={'absolute top-0 w-full p-2  bg-white/40 glass rounded-t-lg'}>
+                                <div class="flex-1 px-6 py-2 rounded-b-lg">
+                                    <div class="font-bold text-xl mb-2">{title()}</div>
+                                    <p class="text-gray-700 text-base">
+                                        {description()}
+                                    </p>
+                                </div>
+                            </CardHeader>
                         </Match>
                         <Match when={side() === "bottom"}>
-                    <CardFooter
-                        class={'absolute bottom-0 w-full p-2 bg-white/40 glass rounded-b-lg'}>
-                        <div class="flex-1 px-6 py-4 rounded-b-lg">
-                            <div class="font-bold text-xl mb-2">{title()}</div>
-                            <p class="text-gray-700 text-base">
-                                {description()}
-                            </p>
-                        </div>
-                    </CardFooter>
+                            <CardFooter
+                                class={'absolute bottom-0 w-full p-2 bg-white/40 glass rounded-b-lg'}>
+                                <div class="flex-1 px-6 py-4 rounded-b-lg">
+                                    <div class="font-bold text-xl mb-2">{title()}</div>
+                                    <p class="text-gray-700 text-base">
+                                        {description()}
+                                    </p>
+                                </div>
+                            </CardFooter>
                         </Match>
 
 

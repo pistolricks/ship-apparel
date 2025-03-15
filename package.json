@@ -25,6 +25,7 @@
         "vite-tsconfig-paths": "^5.1.4"
     },
     "dependencies": {
+        "@ark-ui/solid": "^5.1.0",
         "@corvu/drawer": "^0.2.3",
         "@kobalte/core": "^0.13.9",
         "@solid-primitives/media": "^2.3.0",
