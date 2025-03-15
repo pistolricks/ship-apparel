@@ -17,7 +17,7 @@ type PROPS = {
 
 const ProfileMenu: Component<PROPS> = props => {
 
-    const {menu, apps} = useLayoutContext();
+
     const user = () => props.user;
     const title = () => user()?.name ?? import.meta.env.VITE_APP_NAME;
 

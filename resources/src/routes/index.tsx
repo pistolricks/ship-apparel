@@ -5,6 +5,7 @@ import CtaText from "~/components/section/cta/cta-text";
 import {CarouselItemCard, CarouselItemProps} from "~/components/ui/carousel/carousel";
 import {Button} from "~/components/ui/button";
 import {RouteSectionProps} from "@solidjs/router";
+import {useLayoutContext} from "~/context/layout-provider";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
@@ -14,6 +15,8 @@ const importProducts = async () =>
     (await fetch(`/v1/products`)).json();
 
 const Home: Component<PROPS> = props => {
+
+    const {apps} = useLayoutContext();
 
     const list: () => CarouselItemProps[] = () => [
         {
@@ -42,7 +45,7 @@ const Home: Component<PROPS> = props => {
         >
 
             <div class={'mx-auto max-w-7xl'}>
-                <BaseTabs class="" menu={[]}>
+                <BaseTabs class="" menu={apps}>
                     <BaseCarousel
                         list={list()}
                         children={(

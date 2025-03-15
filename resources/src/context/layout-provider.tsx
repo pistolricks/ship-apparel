@@ -7,6 +7,9 @@ import {createStore, SetStoreFunction, Store} from "solid-js/store";
 import {SessionUser} from "~/lib/session";
 import {Extent} from "ol/extent";
 import {IconVendors} from "~/components/svg";
+import PromoWithTileOverlap from "~/components/section/promo/promo-with-tile-overlap";
+import PromoWithBackgroundImage from "~/components/section/promo/promo-with-background-image";
+import PromoTextImage from "~/components/section/promo/promo-text-image";
 
 
 type POSITION = [number, number] | undefined
@@ -46,18 +49,18 @@ export const LayoutContext = createContext<LayoutType>();
 export function LayoutProvider(props: { children: JSX.Element }) {
 
     const [currentUser, setCurrentUser] = createStore<SessionUser>({
-        id: undefined,
-        name: undefined,
-        email: undefined,
-        display_name: undefined,
-        activated: undefined,
-        created_at: undefined,
-        token: undefined,
-        expiry: undefined,
-        folder: undefined,
+        id: 0,
+        name: "",
+        email: "",
+        display_name: "",
+        activated: false,
+        created_at: "",
+        token: "",
+        expiry: "",
+        folder: "",
         current_location: undefined,
     })
-    const [getMyLocation, setMyLocation] = createSignal<Feature | undefined>(undefined)
+    const [getMyLocation, setMyLocation] = createSignal<Feature | undefined>()
     const [getStoreCollection, setStoreCollection] = createStore<FeatureCollection>({
         type: "FeatureCollection",
         features: []
@@ -81,13 +84,39 @@ export function LayoutProvider(props: { children: JSX.Element }) {
 
 
     const category1: MenuItemType[] = [
-        {title: "T-Shirts", href: "t-shirts"},
-        {title: "Polos/Knits", href: "polos_knits"},
-        {title: "Sweatshirts/Fleece", href: "sweatshirts_fleece"},
-        {title: "Woven/Dress Shirts", href: "woven_dress&shirts"},
-        {title: "Women's", href: "womens"},
-        {title: "Tall", href: "tall"},
-        {title: "Bottoms", href: "bottoms"},
+        {
+            title: "T-Shirts",
+            href: "t-shirts",
+
+        },
+        {
+            title: "Polos/Knits",
+            href: "polos_knits",
+
+        },
+        {
+            title: "Sweatshirts/Fleece",
+            href: "sweatshirts_fleece",
+
+        },
+        {
+            title: "Woven/Dress Shirts",
+            href: "woven_dress&shirts",
+        },
+        {
+            title: "Women's",
+            href: "womens",
+        },
+        {
+            title: "Tall",
+            href: "tall",
+
+        },
+        {
+            title: "Bottoms",
+            href: "bottoms",
+
+        },
     ]
 
     const category2: MenuItemType[] = [
@@ -166,14 +195,66 @@ export function LayoutProvider(props: { children: JSX.Element }) {
 
     ]
 
+
+
+
     const apps: MenuItemType[] = [
-        {title: "reversibles", href: "/reversibles"},
-        {title: "schools", href: "/schools"},
-        {title: "activewear", href: "/activewear"},
-        {title: "outerware", href: "/outerware"},
-        {title: "workwear", href: "/workwear"},
-        {title: "uniforms", href: "/uniform"},
-        {title: "brands", href: "/vendors"},
+        {
+            title: "school spirit",
+            description: "Show your spirit with our custom clothing!",
+            information: "Bring your school's pride to life with custom graphics! From screen printing to embroidery, heat press and DTG printing. We offer endless options.",
+            cta: "Shop Now",
+            src: "storage/cta_group_1.webp",
+            href: "/schools",
+            component: PromoTextImage
+
+
+        },
+        {
+            title: "custom",
+            description: "Custom t-shirts and embroidery services offer a unique way to express individuality, promote businesses, commemorate events, or create team unity. At **CustomInk and Thread**, we specialize in transforming ordinary garments into personalized statements through cutting-edge printing techniques and meticulous embroidery craftsmanship.",
+            information: "",
+            cta: "Shop Now",
+            src: "storage/cta_group_1.webp",
+            href: "/activewear",
+            component: PromoWithTileOverlap
+        },
+        {
+            title: "outerware",
+            href: "/outerware",
+            src: "storage/cta_sports_pack_1.png",
+            cta: "Shop Now",
+            component: PromoTextImage
+        },
+        {
+            title: "workwear",
+            href: "/workwear",
+            src: "storage/cta_kid_1.jpg",
+            cta: "Shop Now",
+            component: PromoTextImage
+        },
+        {
+            title: "uniforms",
+            href: "/uniform",
+            src: "storage/category_sports_1.jpg",
+            cta: "Shop Now",
+            component: PromoTextImage
+        },
+        {
+            title: "reversibles",
+            cta: "Shop Now",
+            src: "storage/category_sports_1.jpg",
+            href: "/reversibles",
+            value: "reversibles",
+            component: PromoTextImage
+        },
+        {
+            title: "brands",
+            href: "/vendors",
+            src: "storage/category_sports_1.jpg",
+            cta: "Shop Now",
+            component: PromoTextImage,
+        },
     ]
 
 

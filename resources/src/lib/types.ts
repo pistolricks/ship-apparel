@@ -1,5 +1,5 @@
 import {GeoJsonObject} from "geojson";
-import { Component } from "solid-js";
+import {Component, JSXElement, ValidComponent} from "solid-js";
 import {IconProps} from "~/components/svg";
 
 export type SessionUser = {
@@ -19,7 +19,14 @@ export type MenuItemType = {
     title: string;
     href: string;
     description?: string;
+    information?: string;
+    src?: string;
+    cta?: string;
+    value?: string;
+    data?: unknown;
+    component?: ValidComponent;
     icon?: Component<IconProps>;
+    children?: JSXElement
 }
 
 

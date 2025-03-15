@@ -1,16 +1,25 @@
-import {Component, ParentProps} from "solid-js";
+import {Component, createEffect, JSXElement, ParentProps, Show, type ValidComponent} from "solid-js";
 import Header from "~/components/layout/partials/header";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
+import ProfileMenu from "~/components/layout/partials/side/profile-menu";
+import {Dynamic} from "solid-js/web";
+import {useLayoutContext} from "~/context/layout-provider";
+import MenuComponent from "~/components/layout/partials/menu-component";
 
 type PROPS = ParentProps & {
-    name: string
+    name: string,
 }
 
 const CentralLayout: Component<PROPS> = props => {
 
+
+
     const contextId = () => "cl-1"
     const side: () => 'top' | 'right' | 'bottom' | 'left' = () => "right"
     const children = () => props.children;
+
+
+
     return (
         <BaseDrawer side={side()} contextId={contextId()}>
         <div class="min-h-screen h-screen flex flex-col">
@@ -22,7 +31,16 @@ const CentralLayout: Component<PROPS> = props => {
                 {children()}
             </main>
             </div>
-            <DrawerContent side={side()} contextId={contextId()} />
+            <DrawerContent
+                side={side()}
+                contextId={contextId()}
+            >
+
+                <ProfileMenu contextId={contextId()} />
+
+                <MenuComponent contextId={contextId()}/>
+
+            </DrawerContent>
             <footer class={'bg-gray-200/50'}>
                 <div class="">
                     <div class="flex  items-center px-4">

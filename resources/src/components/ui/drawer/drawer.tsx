@@ -1,7 +1,9 @@
 import Drawer from '@corvu/drawer'
 import DrawerPrimitive, {type ContentProps, type DynamicProps} from '@corvu/drawer'
-import {type JSX, JSXElement, splitProps, type ValidComponent} from "solid-js";
+import {Accessor, Index, type JSX, JSXElement, splitProps, type ValidComponent} from "solid-js";
 import {cn} from "~/lib/utils";
+import {CarouselItemProps} from "~/components/ui/carousel/carousel";
+import ProfileMenu from "~/components/layout/partials/side/profile-menu";
 
 
 type PROPS = {
@@ -46,17 +48,19 @@ export default BaseDrawer
 
 
 type DrawerContentProps<T extends ValidComponent = "div"> = ContentProps<T> & {
-    contextId?: string
+    contextId: string
     class?: string,
     side?: 'top' | 'right' | 'bottom' | 'left',
-    children?: JSX.Element
+    children?: JSXElement
 }
 const DrawerContent = <T extends ValidComponent = "div">(
     props: DynamicProps<T, DrawerContentProps<T>>
 ) => {
-    const [, rest] = splitProps(props as DrawerContentProps, ["contextId", "class","side", "children"])
+    const [, rest] = splitProps(props as DrawerContentProps, ["children","contextId", "class","side", "children"])
 
+    const list = () => props.list ?? [];
     const side = () => props.side ?? 'bottom'
+
 
     let sides = {
         top: "fixed w-full inset-x-0 top-0 z-50 flex h-full border-l-2 border-b-2 border-r-2  rounded-b-lg after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 z-50 flex flex-col pt-3 after:bg-inherit data-transitioning:transition-transform data-transitioning:duration-500 data-transitioning:ease-[cubic-bezier(0.32,0.72,0,1)] md:select-none",
@@ -78,7 +82,9 @@ const DrawerContent = <T extends ValidComponent = "div">(
             {...rest}
         >
 
-            {props.children}
+
+                {props.children}
+
         </DrawerPrimitive.Content>
 
     )
