@@ -5,6 +5,7 @@ import {activateUser, getUserDetails, getUserToken, login, logout, register, res
 // import {getSession} from "~/lib/session";
 import {db} from "~/lib/db";
 
+
 export const getUser = query(async () => {
     "use server";
     try {
