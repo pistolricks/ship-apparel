@@ -2,11 +2,20 @@
 
 namespace App\Console;
 
+use App\Actions\ExtractSanMarFile;
+use App\Actions\FtpSanMarFile;
+use App\Actions\ImportSanMarFile;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+    protected $commands = [
+        FtpSanMarFile::class,
+        ExtractSanMarFile::class,
+        ImportSanMarFile::class,
+    ];
+
     /**
      * Define the application's command schedule.
      */

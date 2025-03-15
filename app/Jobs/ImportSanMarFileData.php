@@ -9,7 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\SimpleExcel\SimpleExcelReader;
 
-class ImportSanMarCsv implements ShouldQueue
+class ImportSanMarFileData implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -72,9 +72,9 @@ class ImportSanMarCsv implements ShouldQueue
                 "CATEGORY",
             ])
             ->getRows()
-            ->chunk(5000)
+            ->chunk(3500)
             ->each(
-                fn ($chunk) => ImportSanMarChunk::dispatch($chunk)
+                fn ($chunk) => SaveSanMarFileData::dispatch($chunk)
             );
     }
 }

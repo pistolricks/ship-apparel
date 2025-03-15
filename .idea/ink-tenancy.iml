@@ -178,6 +178,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/inertiajs/inertia-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/nova" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lorisleiva/laravel-actions" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lorisleiva/lody" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/openspout/openspout" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rap2hpoutre/fast-excel" />

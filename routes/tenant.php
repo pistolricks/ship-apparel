@@ -6,7 +6,20 @@ use App\Http\Middleware\OwnerOnly;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Features\UserImpersonation;
+use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+
+
+// curl -H "X-Tenant: e83eec07-1345-47ad-a272-9864153a782a" https://ollivr.ink-tenancy.test/foo
+
+Route::middleware([
+    'web',
+    InitializeTenancyByRequestData::class
+])->group(function () {
+    Route::get('/foo', function () {
+        return response('The ID of the current tenant is ' . tenant('id') . "\n");
+    });
+});
 
 Route::middleware('tenant', PreventAccessFromCentralDomains::class)->name('tenant.')->group(function () {
     Route::redirect('/', '/home');
@@ -47,3 +60,6 @@ Route::middleware('tenant', PreventAccessFromCentralDomains::class)->name('tenan
     //     Route::get('/tenant', fn () => ['tenant_id' => tenant()->getTenantKey()]);
     // });
 });
+
+
+

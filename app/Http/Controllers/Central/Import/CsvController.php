@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Central\Import;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\GetSanMarFtpFiles;
+use App\Jobs\FtpSanMarFileData;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemException;
@@ -17,7 +17,7 @@ class CsvController extends Controller
      */
     public function __invoke()
     {
-        GetSanMarFtpFiles::dispatch();
+        FtpSanMarFileData::dispatch();
 
         return response()->json(['message' => 'CSV Import']);
     }

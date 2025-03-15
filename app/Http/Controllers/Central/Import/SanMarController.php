@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Central\Import;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\ImportSanMarCsv;
+use App\Jobs\ImportSanMarFileData;
 
 class SanMarController extends Controller
 {
     public function __invoke()
     {
-        ImportSanMarCsv::dispatch();
+        ImportSanMarFileData::dispatch();
 
         return response()->json(['message' => 'Importing']);
     }

@@ -14,7 +14,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Str;
 
 
-class ImportSanMarChunk implements ShouldBeUnique, ShouldQueue
+class SaveSanMarFileData implements ShouldBeUnique, ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 

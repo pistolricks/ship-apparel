@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Central\Import;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\UnzipSanMarFtpFile;
+use App\Jobs\ExtractSanMarFileData;
 
 class UnzipController extends Controller
 {
     public function __invoke()
     {
-        UnzipSanMarFtpFile::dispatch();
+        ExtractSanMarFileData::dispatch();
 
         return response()->json(['message' => 'Unzipping']);
     }

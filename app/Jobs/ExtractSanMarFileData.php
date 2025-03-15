@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use League\Flysystem\FilesystemException;
 use Zip;
 
-class UnzipSanMarFtpFile implements ShouldQueue
+class ExtractSanMarFileData implements ShouldQueue
 {
 
 
