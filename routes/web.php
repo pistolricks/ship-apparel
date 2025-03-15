@@ -15,8 +15,8 @@ Route::get('/v1/products/import', Controllers\Import\SanMarController::class)->n
 Route::get('/v1/products/csv', Controllers\Import\CsvController::class)->name('central.products.csv');
 Route::get('/v1/products/unzip', Controllers\Import\UnzipController::class)->name('central.products.unzip');
 
-Route::get('/admin/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
-Route::post('/admin/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
+Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
+Route::post('/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
 
-Route::get('/admin/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
-Route::post('/admin/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');
+Route::get('/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
+Route::post('/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');
