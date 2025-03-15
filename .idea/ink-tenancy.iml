@@ -183,6 +183,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/openspout/openspout" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rap2hpoutre/fast-excel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/saloonphp/laravel-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/saloonphp/saloon" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

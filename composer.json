@@ -26,6 +26,8 @@
         "livewire/livewire": "^3.0",
         "lorisleiva/laravel-actions": "^2.9",
         "oriondevelops/nova-greeter": "^0.0.3",
+        "saloonphp/laravel-plugin": "^3.0",
+        "saloonphp/saloon": "^3.0",
         "spatie/laravel-data": "^4.13",
         "spatie/laravel-medialibrary": "^11.12",
         "spatie/simple-excel": "^3.7",
