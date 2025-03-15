@@ -19,7 +19,7 @@ const Header: Component<{
             <header class="h-16">
                 <nav class={''} aria-label="Top">
 
-                    <div class="bg-gray-200/50 backdrop-blur-md backdrop-filter">
+                    <div class="bg-gray-200/20 backdrop-blur-md backdrop-filter">
                         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                             <div>
                                 <div class="flex h-16 items-center justify-between">

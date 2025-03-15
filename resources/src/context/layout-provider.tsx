@@ -215,7 +215,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             title: "custom",
             description: "Custom t-shirts and embroidery services offer a unique way to express individuality, promote businesses, commemorate events, or create team unity. At **CustomInk and Thread**, we specialize in transforming ordinary garments into personalized statements through cutting-edge printing techniques and meticulous embroidery craftsmanship.",
             cta: "Shop Now",
-            src: "storage/cta_group_1.webp",
+            src: "storage/sweaters_1.jpg",
             href: "/activewear",
             side: "bottom",
             component: PromoWithTileOverlap
