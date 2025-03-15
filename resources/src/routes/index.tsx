@@ -29,6 +29,7 @@ const Home: Component<PROPS> = props => {
 
             <div class={'mx-auto max-w-7xl'}>
                 <BaseTabs class="" menu={apps}>
+
                     <BaseCarousel
                         list={apps}
                         children={(
@@ -41,11 +42,6 @@ const Home: Component<PROPS> = props => {
                             item) =>
                             <CarouselItemCard {...item()}/>
                         }/>
-                </BaseTabs>
-
-
-
-
                     <CtaWithImageTiles>
                         <CtaText title={"Unite, Identify, Inspire"}
                                  description={"Selecting the perfect canvas for your custom designs"}
@@ -53,6 +49,12 @@ const Home: Component<PROPS> = props => {
                                  cta={"Shop"}
                         />
                     </CtaWithImageTiles>
+
+                </BaseTabs>
+
+
+
+
 
 
 

@@ -21,6 +21,7 @@ export type MenuItemType = {
     description?: string;
     information?: string;
     src?: string;
+    vert_src?: string;
     cta?: string;
     value?: string;
     data?: unknown;

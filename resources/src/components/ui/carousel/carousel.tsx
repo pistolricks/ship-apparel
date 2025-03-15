@@ -16,6 +16,7 @@ export type CarouselItemProps = {
 }
 
 type PROPS = {
+    class?: string;
     list?: MenuItemType[]
     children: (item: Accessor<MenuItemType>, index: number) => JSX.Element;
 }
@@ -40,7 +41,7 @@ const BaseCarousel: Component<PROPS> = props => {
             opts={{
                 align: "start"
             }}
-            class="w-full h-full"
+            class={`w-full h-full py-1 ${props.class}`}
         >
             <CarouselContent>
                 <Index each={list()}>
@@ -61,16 +62,16 @@ const CarouselItemCard: Component<MenuItemType> = props => {
     const cta = () => props.cta;
     const href = () => props.href;
     const src = () => props.src;
-
+    const vert_src = () => props.vert_src;
     const side = () => props.side ?? "top";
 
     return (
-        <CarouselItem class="basis-full">
-            <div class="p-1">
-                <Card class={'h-[84dvh] bg-white/40 relative'}>
+        <CarouselItem class="basis-full ">
+
+                <Card class={'h-[89dvh] bg-white/40 relative'}>
 
                     <CardContent class="relative flex w-full h-[80dvh] items-center justify-center">
-                        <img src={src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'}
+                        <img src={vert_src() ?? src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'}
                              alt={""}/>
                     </CardContent>
 
@@ -121,7 +122,7 @@ const CarouselItemCard: Component<MenuItemType> = props => {
                         </Match>
                     </Switch>
                 </Card>
-            </div>
+
         </CarouselItem>
     );
 };

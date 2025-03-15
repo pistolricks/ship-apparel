@@ -31,7 +31,7 @@ const CtaText: Component<PROPS> = props => {
             <p class=" lg:mt-2  text-xl/8 text-gray-600 hidden lg:block">
                 {description()}
             </p>
-            <p class="lg:mt-6 text-base/7 text-gray-600">
+            <p class="lg:mt-6 text-base/7 text-gray-600 line-clamp-3">
                 {information()}
             </p>
             <div class={'hidden lg:block  mt-6'}>

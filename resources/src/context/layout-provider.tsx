@@ -227,7 +227,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             description: "Custom Outerwear",
             information: "Outerwear represents the perfect blend of functionality and style—a highly visible canvas for personal expression, team unity, or brand representation. At **CustomInk and Thread**, we transform standard jackets, coats, and vests into distinctive statements that protect from the elements while showcasing your unique identity.",
             src: "storage/cta_sports_pack_1.png",
-            cta: "Shop Premium Custom Outerwear ",
+            cta: "Shop Now",
             component: PromoTextImage
         },
         {
@@ -236,7 +236,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             information: "Workwear represents the critical intersection of functionality, safety, and professional identity. At **CustomInk and Thread**, we specialize in creating custom workwear solutions that protect your team while prominently displaying your company brand—turning necessary equipment into powerful marketing assets.",
             href: "/workwear",
             side: "bottom",
-            src: "storage/cta_kid_1.jpg",
+            vert_src: "storage/promo_woman_1.jpeg",
             cta: "Shop Now",
             component: PromoTextImage
         },
@@ -247,7 +247,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             information: "Uniforms serve as powerful visual ambassadors for your organization, instantly communicating professionalism, unity, and brand identity. At **CustomInk and Thread**, we specialize in creating custom uniforms that blend functionality, comfort, and distinctive style to elevate your team's presence and performance.",
             href: "/uniform",
             side: "bottom",
-            src: "storage/category_sports_1.jpg",
+            vert_src: "storage/promo_woman_2.jpeg",
             cta: "Shop Now",
             component: PromoTextImage
         },
@@ -268,7 +268,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             side: "bottom",
             description: "Selecting the perfect canvas for your custom designs",
             information: "The foundation of any outstanding custom apparel project begins with selecting the right t-shirt brand. At **CustomInk and Thread**, we partner with the industry's most respected manufacturers to provide a comprehensive selection of quality blanks that ensure your designs look exceptional and perform beautifully wear after wear.",
-            src: "storage/category_sports_1.jpg",
+            src: "storage/cta_merchandise_1.jpg",
             cta: "Shop Now",
             component: PromoTextImage,
         },
