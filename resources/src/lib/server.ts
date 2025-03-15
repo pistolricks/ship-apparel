@@ -1,6 +1,4 @@
-import {clearSessionUser, getSession, getSessionFolder, getSessionToken, updateSessionUser} from "~/lib/session";
 import {query, redirect} from "@solidjs/router";
-import {AUTHENTICATION_TOKEN} from "~/lib/types";
 import {db} from "~/lib/db";
 
 export const baseApi = (`http://localhost:${import.meta.env.VITE_SERVER_PORT}/${import.meta.env.VITE_API_VERSION}`)
@@ -26,7 +24,7 @@ export async function resendActivateEmail(resendInput: { email: string }) {
 
 export async function login(userInput: { email: string, password: string }) {
     const res = await db.user.login({where: {userInput}});
-    await updateSessionUser(res.user, res.authentication_token, res.folder)
+    // await updateSessionUser(res.user, res.authentication_token, res.folder)
     if (!res.user.activated) throw redirect("/activate");
     if (res.user.activated) throw redirect("/");
     else return res;
@@ -34,20 +32,20 @@ export async function login(userInput: { email: string, password: string }) {
 }
 
 export async function logout() {
-    const session = await getSession();
-    await clearSessionUser();
+    //  const session = await getSession();
+    //  await clearSessionUser();
     return await db.user.logout();
 
 }
 
 export const getUserToken = query(async () => {
     console.log("getUserToken")
-    return (await getSessionToken() as AUTHENTICATION_TOKEN);
+    return  // (await getSessionToken() as AUTHENTICATION_TOKEN);
 }, 'token')
 
 export const getUserFolder = query(async () => {
     console.log("getUserFolder")
-    return (await getSessionFolder() as string);
+    return // (await getSessionFolder() as string);
 }, 'folder')
 
 export async function getUserDetails(userInput: { email: string, token: string }) {

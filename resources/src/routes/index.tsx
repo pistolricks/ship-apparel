@@ -1,9 +1,8 @@
-import {Component, lazy, onMount} from "solid-js";
+import {Component, lazy} from "solid-js";
 import CtaWithImageTiles from "~/components/section/cta/cta-with-image-tiles";
 import BaseTabs from "~/components/ui/tab/tabs";
 import CtaText from "~/components/section/cta/cta-text";
-import {CarouselItemCard, CarouselItemProps} from "~/components/ui/carousel/carousel";
-import {Button} from "~/components/ui/button";
+import {CarouselItemCard} from "~/components/ui/carousel/carousel";
 import {RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 
@@ -51,11 +50,6 @@ const Home: Component<PROPS> = props => {
                     </CtaWithImageTiles>
 
                 </BaseTabs>
-
-
-
-
-
 
 
             </div>
