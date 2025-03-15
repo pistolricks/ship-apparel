@@ -15,7 +15,7 @@ const PromoTextImage: Component<{
 
     const title = () => props.title ?? "Browse Our Vast Product Line";
     const description = () => props.description ?? "Find Any Brand/Style From Our Top Catalogs";
-    const information = () => props.information ??  "Representing the top 50 brands with over 2,890 styles, including 458 new trending styles."
+    const information = () => props.information;
     const cta = () => props.cta ??  "Shop";
     const href = () => props.href ?? "#";
 

@@ -18,23 +18,6 @@ const Home: Component<PROPS> = props => {
 
     const {apps} = useLayoutContext();
 
-    const list: () => CarouselItemProps[] = () => [
-        {
-            title: "Title",
-            description: "description",
-            cta: "cta",
-            href: "#",
-            src: "storage/category_sports_1.jpg",
-        },
-        {
-            title: "Title",
-            description: "description",
-            cta: "cta",
-            href: "#",
-            src: "storage/cta_sports_pack_1.png",
-        }
-    ];
-
 
     return (
         <div
@@ -47,13 +30,13 @@ const Home: Component<PROPS> = props => {
             <div class={'mx-auto max-w-7xl'}>
                 <BaseTabs class="" menu={apps}>
                     <BaseCarousel
-                        list={list()}
+                        list={apps}
                         children={(
                             item) =>
                             <CarouselItemCard {...item()}/>
                         }/>
                     <BaseCarousel
-                        list={list()}
+                        list={apps.reverse()}
                         children={(
                             item) =>
                             <CarouselItemCard {...item()}/>
@@ -62,15 +45,15 @@ const Home: Component<PROPS> = props => {
 
 
 
-                <div class={'hidden md:block'}>
+
                     <CtaWithImageTiles>
-                        <CtaText title={"Browse Our Vast Product Line"}
-                                 description={"Find Any Brand/Style From Our Top Catalogs"}
-                                 information={"Representing the top 50 brands with over 2,890 styles, including 458 new trending styles."}
+                        <CtaText title={"Unite, Identify, Inspire"}
+                                 description={"Selecting the perfect canvas for your custom designs"}
+                                 information={"With state-of-the-art equipment and skilled artisans, we ensure every product meets the highest standards of quality. From concept development to final production, our team works closely with you to bring your vision to life."}
                                  cta={"Shop"}
                         />
                     </CtaWithImageTiles>
-                </div>
+
 
 
             </div>

@@ -66,6 +66,7 @@ const BaseTabs: Component<PROPS> = props => {
                             <Dynamic
                                 component={item.component}
                                 title={item.title}
+                                information={item.information}
                                 description={item.description}
                                 cta={item.cta}
                                 src={item.src}

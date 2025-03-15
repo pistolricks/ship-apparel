@@ -201,11 +201,12 @@ export function LayoutProvider(props: { children: JSX.Element }) {
     const apps: MenuItemType[] = [
         {
             title: "school spirit",
-            description: "Show your spirit with our custom clothing!",
-            information: "Bring your school's pride to life with custom graphics! From screen printing to embroidery, heat press and DTG printing. We offer endless options.",
+            description: "Elevate Your School's Identity with Custom Apparel!",
+            information: "Custom school clothing does more than just dress students and staff—it creates a sense of belonging, fosters school spirit, and builds a unified community identity. At **CustomInk and Thread**, we specialize in creating high-quality school apparel that represents your educational institution with pride.",
             cta: "Shop Now",
             src: "storage/cta_group_1.webp",
             href: "/schools",
+            side: "bottom",
             component: PromoTextImage
 
 
@@ -213,29 +214,39 @@ export function LayoutProvider(props: { children: JSX.Element }) {
         {
             title: "custom",
             description: "Custom t-shirts and embroidery services offer a unique way to express individuality, promote businesses, commemorate events, or create team unity. At **CustomInk and Thread**, we specialize in transforming ordinary garments into personalized statements through cutting-edge printing techniques and meticulous embroidery craftsmanship.",
-            information: "",
             cta: "Shop Now",
             src: "storage/cta_group_1.webp",
             href: "/activewear",
+            side: "bottom",
             component: PromoWithTileOverlap
         },
         {
-            title: "outerware",
-            href: "/outerware",
+            title: "Outerwear",
+            href: "/outerwear",
+            side: "bottom",
+            description: "Custom Outerwear",
+            information: "Outerwear represents the perfect blend of functionality and style—a highly visible canvas for personal expression, team unity, or brand representation. At **CustomInk and Thread**, we transform standard jackets, coats, and vests into distinctive statements that protect from the elements while showcasing your unique identity.",
             src: "storage/cta_sports_pack_1.png",
-            cta: "Shop Now",
+            cta: "Shop Premium Custom Outerwear ",
             component: PromoTextImage
         },
         {
             title: "workwear",
+            description: "Elevate Your Workforce with our Professional Custom Workwear",
+            information: "Workwear represents the critical intersection of functionality, safety, and professional identity. At **CustomInk and Thread**, we specialize in creating custom workwear solutions that protect your team while prominently displaying your company brand—turning necessary equipment into powerful marketing assets.",
             href: "/workwear",
+            side: "bottom",
             src: "storage/cta_kid_1.jpg",
             cta: "Shop Now",
             component: PromoTextImage
         },
         {
+
             title: "uniforms",
+            description: "Transform Your Team with Tailored Uniform Solutions",
+            information: "Uniforms serve as powerful visual ambassadors for your organization, instantly communicating professionalism, unity, and brand identity. At **CustomInk and Thread**, we specialize in creating custom uniforms that blend functionality, comfort, and distinctive style to elevate your team's presence and performance.",
             href: "/uniform",
+            side: "bottom",
             src: "storage/category_sports_1.jpg",
             cta: "Shop Now",
             component: PromoTextImage
@@ -244,13 +255,19 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             title: "reversibles",
             cta: "Shop Now",
             src: "storage/category_sports_1.jpg",
+            description: "Maximize Style and Functionality with Reversible Shirts and Sweaters",
+            information: "Reversible apparel represents the pinnacle of versatility in clothing design, offering two distinct looks and functionalities in a single garment. At **CustomInk and Thread**, we specialize in creating premium reversible shirts and sweaters that provide exceptional value while showcasing your creativity through innovative dual-sided customization.",
             href: "/reversibles",
+            side: "bottom",
             value: "reversibles",
             component: PromoTextImage
         },
         {
             title: "brands",
             href: "/vendors",
+            side: "bottom",
+            description: "Selecting the perfect canvas for your custom designs",
+            information: "The foundation of any outstanding custom apparel project begins with selecting the right t-shirt brand. At **CustomInk and Thread**, we partner with the industry's most respected manufacturers to provide a comprehensive selection of quality blanks that ensure your designs look exceptional and perform beautifully wear after wear.",
             src: "storage/category_sports_1.jpg",
             cta: "Shop Now",
             component: PromoTextImage,

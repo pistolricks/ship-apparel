@@ -2,6 +2,8 @@ import {Accessor, Component, Index, JSX, Match, Switch} from "solid-js"
 
 import {Card, CardContent, CardFooter, CardHeader} from "~/components/ui/card"
 import {Carousel, CarouselContent, CarouselItem} from "~/components/ui/carousel"
+import {MenuItemType} from "~/lib/types";
+import PromoTextImage from "~/components/section/promo/promo-text-image";
 
 
 export type CarouselItemProps = {
@@ -14,19 +16,22 @@ export type CarouselItemProps = {
 }
 
 type PROPS = {
-    list?: CarouselItemProps[]
-    children: (item: Accessor<CarouselItemProps>, index: number) => JSX.Element;
+    list?: MenuItemType[]
+    children: (item: Accessor<MenuItemType>, index: number) => JSX.Element;
 }
 
 const BaseCarousel: Component<PROPS> = props => {
 
-    const list: () => CarouselItemProps[] = () => props.list ?? [
+    const list: () => MenuItemType[] = () => props.list ?? [
         {
-            title: "Title",
-            description: "description",
-            cta: "cta",
-            href: "#",
-            src: "storage/cta_sports_pack_1.png",
+            title: "reversibles",
+            cta: "Shop Now",
+            src: "storage/category_sports_1.jpg",
+            description: "Maximize Style and Functionality with Reversible Shirts and Sweaters",
+            information: "Reversible apparel represents the pinnacle of versatility in clothing design, offering two distinct looks and functionalities in a single garment. At **CustomInk and Thread**, we specialize in creating premium reversible shirts and sweaters that provide exceptional value while showcasing your creativity through innovative dual-sided customization.",
+            href: "/reversibles",
+            value: "reversibles",
+            component: PromoTextImage
         }
     ];
 
@@ -49,7 +54,7 @@ const BaseCarousel: Component<PROPS> = props => {
 export default BaseCarousel;
 
 
-const CarouselItemCard: Component<CarouselItemProps> = props => {
+const CarouselItemCard: Component<MenuItemType> = props => {
 
     const title = () => props.title;
     const description = () => props.description;
@@ -62,7 +67,7 @@ const CarouselItemCard: Component<CarouselItemProps> = props => {
     return (
         <CarouselItem class="basis-full">
             <div class="p-1">
-                <Card class={'h-[80dvh] bg-white/40 relative'}>
+                <Card class={'h-[84dvh] bg-white/40 relative'}>
 
                     <CardContent class="relative flex w-full h-[80dvh] items-center justify-center">
                         <img src={src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'}

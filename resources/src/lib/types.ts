@@ -24,6 +24,7 @@ export type MenuItemType = {
     cta?: string;
     value?: string;
     data?: unknown;
+    side?:  "top" | "bottom" | "both" | "left" | "right"
     component?: ValidComponent;
     icon?: Component<IconProps>;
     children?: JSXElement
