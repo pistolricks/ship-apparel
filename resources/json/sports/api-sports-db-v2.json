@@ -1,0 +1,266 @@
+[
+    {
+        "name": "Search for team by name",
+        "path": "/api/v1/json/3/searchteams.php?t=Arsenal",
+        "category": "Search"
+    },
+    {
+        "name": "Search for team short code",
+        "path": "/api/v1/json/3/searchteams.php?sname=ARS",
+        "category": "Search"
+    },
+    {
+        "name": "Search for all players from team",
+        "path": "/api/v1/json/3/searchplayers.php?t=Arsenal",
+        "category": "Search",
+        "isPremium": true
+    },
+    {
+        "name": "Search for players by name",
+        "path": "/api/v1/json/3/searchplayers.php?p=Danny_Welbeck",
+        "category": "Search"
+    },
+    {
+        "name": "Search for players by team and name",
+        "path": "/api/v1/json/{APIKEY}/searchplayers.php?t={TeamName}&p={Playername}",
+        "category": "Search"
+    },
+    {
+        "name": "Search for event by event name",
+        "path": "/api/v1/json/3/searchevents.php?e=Arsenal_vs_Chelsea",
+        "category": "Search"
+    },
+    {
+        "name": "Search for event by event name and season",
+        "path": "/api/v1/json/3/searchevents.php?e=Arsenal_vs_Chelsea&s=2016-2017",
+        "category": "Search"
+    },
+    {
+        "name": "Search for event by event file name",
+        "path": "/api/v1/json/3/searchfilename.php?e=English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+        "category": "Search"
+    },
+    {
+        "name": "Search for Venue",
+        "path": "/api/v1/json/3/searchvenues.php?t=Wembley",
+        "category": "Search"
+    },
+    {
+        "name": "List all sports",
+        "path": "/api/v1/json/3/all_sports.php",
+        "category": "List",
+        "isPremium": true
+    },
+    {
+        "name": "List all leagues",
+        "path": "/api/v1/json/3/all_leagues.php",
+        "category": "List",
+        "note": "Limited 50 on free tier"
+    },
+    {
+        "name": "List all countries",
+        "path": "/api/v1/json/3/all_countries.php",
+        "category": "List"
+    },
+    {
+        "name": "List all Leagues in a country",
+        "path": "/api/v1/json/3/search_all_leagues.php?c=England",
+        "category": "List",
+        "note": "Limited 50 on free tier"
+    },
+    {
+        "name": "List all Leagues in a country by sport",
+        "path": "/api/v1/json/3/search_all_leagues.php?c=England&s=Soccer",
+        "category": "List",
+        "note": "Limited 50 on free tier"
+    },
+    {
+        "name": "List all Seasons in a League",
+        "path": "/api/v1/json/3/search_all_seasons.php?id=4328",
+        "category": "List"
+    },
+    {
+        "name": "List all Seasons with posters in a League",
+        "path": "/api/v1/json/3/search_all_seasons.php?id=4328&poster=1",
+        "category": "List"
+    },
+    {
+        "name": "List all Seasons with badges in a League",
+        "path": "/api/v1/json/3/search_all_seasons.php?id=4328&badge=1",
+        "category": "List"
+    },
+    {
+        "name": "List all Teams in a League",
+        "path": "/api/v1/json/3/search_all_teams.php?l=English%20Premier%20League",
+        "category": "List"
+    },
+    {
+        "name": "List all Teams by sport and country",
+        "path": "/api/v1/json/3/search_all_teams.php?s=Soccer&c=Spain",
+        "category": "List"
+    },
+    {
+        "name": "List All teams details in a league by Id",
+        "path": "/api/v1/json/3/lookup_all_teams.php?id=4328",
+        "category": "List",
+        "isPremium": true
+    },
+    {
+        "name": "List All players in a team by Team Id",
+        "path": "/api/v1/json/3/lookup_all_players.php?id=133604",
+        "category": "List",
+        "isPremium": true
+    },
+    {
+        "name": "List all users loved teams and players",
+        "path": "/api/v1/json/3/searchloves.php?u=zag",
+        "category": "List"
+    },
+    {
+        "name": "League Details by Id",
+        "path": "/api/v1/json/3/lookupleague.php?id=4346",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "Team Details by Id",
+        "path": "/api/v1/json/3/lookupteam.php?id=133604",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "Player Details by Id",
+        "path": "/api/v1/json/3/lookupplayer.php?id=34145937",
+        "category": "Lookups"
+    },
+    {
+        "name": "Venue Details by Id",
+        "path": "/api/v1/json/3/lookupvenue.php?id=16163",
+        "category": "Lookups"
+    },
+    {
+        "name": "Event Details by Id",
+        "path": "/api/v1/json/3/lookupevent.php?id=441613",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "Event Statistics by Id",
+        "path": "/api/v1/json/3/lookupeventstats.php?id=1032723",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "Event Lineup by Id",
+        "path": "/api/v1/json/3/lookuplineup.php?id=1032723",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "List timeline for events by event ID",
+        "path": "/api/v1/json/3/lookuptimeline.php?id=1032718",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "Player Honours by Player Id",
+        "path": "/api/v1/json/3/lookuphonours.php?id=34147178",
+        "category": "Lookups"
+    },
+    {
+        "name": "Player Milestones by Player Id",
+        "path": "/api/v1/json/3/lookupmilestones.php?id=34161397",
+        "category": "Lookups"
+    },
+    {
+        "name": "Player Former Teams by Player Id",
+        "path": "/api/v1/json/3/lookupformerteams.php?id=34147178",
+        "category": "Lookups"
+    },
+    {
+        "name": "Player Contracts by Player Id",
+        "path": "/api/v1/json/3/lookupcontracts.php?id=34147178",
+        "category": "Lookups"
+    },
+    {
+        "name": "Event Player Results by Event Id",
+        "path": "/api/v1/json/3/eventresults.php?id=652890",
+        "category": "Lookups"
+    },
+    {
+        "name": "Event TV by Event Id",
+        "path": "/api/v1/json/3/lookuptv.php?id=584911",
+        "category": "Lookups",
+        "isPremium": true
+    },
+    {
+        "name": "Lookup Table by League ID and Season",
+        "path": "/api/v1/json/3/lookuptable.php?l=4328&s=2020-2021",
+        "category": "Lookups",
+        "note": "Featured Soccer Leagues only"
+    },
+    {
+        "name": "Lookup Equipment by Team ID",
+        "path": "/api/v1/json/3/lookupequipment.php?id=133597",
+        "category": "Lookups"
+    },
+    {
+        "name": "Next 5 Events by Team Id",
+        "path": "/api/v1/json/3/eventsnext.php?id=133602",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "Next 25 Events by League Id",
+        "path": "/api/v1/json/3/eventsnextleague.php?id=4328",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "Last 5 Events by Team Id",
+        "path": "/api/v1/json/3/eventslast.php?id=133602",
+        "category": "Schedules",
+        "note": "Limited to home team for free tier"
+    },
+    {
+        "name": "Last 15 Events by League Id",
+        "path": "/api/v1/json/3/eventspastleague.php?id=4328",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "Events in a specific round by league id/round/season",
+        "path": "/api/v1/json/3/eventsround.php?id=4328&r=38&s=2014-2015",
+        "category": "Schedules"
+    },
+    {
+        "name": "Events on a specific day",
+        "path": "/api/v1/json/3/eventsday.php?d=2014-10-10",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "Events on a specific day by sport",
+        "path": "/api/v1/json/3/eventsday.php?d=2014-10-10&s=Soccer",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "Events on a specific day by league ID",
+        "path": "/api/v1/json/3/eventsday.php?d=2014-10-10&l=4356",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "Events on a specific day by league name",
+        "path": "/api/v1/json/3/eventsday.php?d=2014-10-10&l=Australian_A-League",
+        "category": "Schedules",
+        "isPremium": true
+    },
+    {
+        "name": "TV Events on a day",
+        "path": "/api/v1/json/3/eventstv.php?d=2022-10-10",
+        "category": "Schedules",
+        "note": "By Sport/Date/TV Station Country"
+    }
+]

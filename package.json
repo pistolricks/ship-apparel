@@ -28,13 +28,20 @@
         "@ark-ui/solid": "^5.1.0",
         "@corvu/drawer": "^0.2.3",
         "@kobalte/core": "^0.13.9",
+        "@responsive-image/core": "^1.1.0",
+        "@responsive-image/solid": "^1.1.0",
+        "@responsive-image/vite-plugin": "^1.1.0",
         "@solid-primitives/media": "^2.3.0",
         "@solidjs/router": "^0.15.3",
         "@tailwindcss/vite": "^4.0.13",
+        "@tokens-studio/types": "^0.5.2",
         "class-variance-authority": "^0.7.1",
         "embla-carousel-solid": "^8.5.2",
         "ol": "^10.4.0",
+        "solid-canvas": "^0.0.8",
         "solid-js": "^1.9.5",
+        "swapy": "^1.0.5",
+        "swapy-solid": "^0.1.0",
         "tailwindcss-animate": "^1.0.7"
     }
 }

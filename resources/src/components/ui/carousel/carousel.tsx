@@ -41,7 +41,7 @@ const BaseCarousel: Component<PROPS> = props => {
             opts={{
                 align: "start"
             }}
-            class={`w-full h-full py-1 ${props.class}`}
+            class={`w-full py-1 ${props.class}`}
         >
             <CarouselContent>
                 <Index each={list()}>

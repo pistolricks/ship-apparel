@@ -41,6 +41,45 @@
 }
 
 @theme inline {
+    /* Primary Colors */
+    --color-primary: var(--color-cerulean-blue-800); /* Deep Indigo */
+    --color-primary-light:  var(--color-cerulean-blue-500);
+    --color-primary-dark:  var(--color-cerulean-blue-900);
+
+    --color-teal: #16A085; /* Vibrant Teal */
+    --color-teal-light: #1ABC9C;
+    --color-teal-dark: #0E8C73;
+
+    --color-coral: #E74C3C; /* Warm Coral */
+    --color-coral-light: #F16A59;
+    --color-coral-dark: #C93A2F;
+
+    /* Secondary Colors */
+    --color-cream: #ECF0F1; /* Soft Cream */
+    --color-cream-light: #F5F7F8;
+    --color-cream-dark: #D6DBDD;
+
+    --color-gold: #F39C12; /* Muted Gold */
+    --color-gold-light: #F7B84B;
+    --color-gold-dark: #D68910;
+
+    --color-denim: #3498DB; /* Light Denim */
+    --color-denim-light: #5DADE2;
+    --color-denim-dark: #2874A6;
+
+    /* Neutral Shades */
+    --color-charcoal: #34495E; /* Charcoal */
+    --color-charcoal-light: #4A6178;
+    --color-charcoal-dark: #2C3E50;
+
+    --color-silver: #95A5A6; /* Silver Gray */
+    --color-silver-light: #ABB2B3;
+    --color-silver-dark: #7F8C8D;
+
+    --color-lightgray: #BDC3C7; /* Light Gray */
+    --color-lightgray-light: #D0D3D4;
+    --color-lightgray-dark: #A6ACAF;
+
 
     --color-background: var(--color-white);
     --color-foreground: var(--color-glacier-950);
@@ -73,7 +112,50 @@
     --color-corvu-200: var(--color-cerulean-blue-200);
     --color-corvu-300: var(--color-cerulean-blue-300);
     --color-corvu-400: var(--color-cerulean-blue-400);
+
+    /* CSS HEX */
+    --persian-green: #55988fff;
+    --tickle-me-pink: #f088a0ff;
+    --sunset: #fbca95ff;
+    --cambridge-blue: #95c1bbff;
+
+    /* CSS HSL */
+    --persian-green: hsla(172, 28%, 46%, 1);
+    --tickle-me-pink: hsla(346, 78%, 74%, 1);
+    --sunset: hsla(31, 93%, 78%, 1);
+    --cambridge-blue: hsla(172, 26%, 67%, 1);
+
+    /* CSS HEX */
+    --gunmetal: #333745ff;
+    --cerise: #e63462ff;
+    --bittersweet: #fe5f55ff;
+    --tea-green: #c7efcfff;
+    --beige: #eef5dbff;
+
+    /* CSS HSL */
+    --gunmetal: hsla(227, 15%, 24%, 1);
+    --cerise: hsla(344, 78%, 55%, 1);
+    --bittersweet: hsla(4, 99%, 66%, 1);
+    --tea-green: hsla(132, 56%, 86%, 1);
+    --beige: hsla(76, 57%, 91%, 1);
+
+    /* CSS HEX */
+    --vivid-sky-blue: #32c6ecff;
+    --xanthous: #febd3fff;
+    --raspberry: #e30b54ff;
+    --mint: #48bd88ff;
+    --steel-blue: #1585cfff;
+
+    /* CSS HSL */
+    --vivid-sky-blue: hsla(192, 83%, 56%, 1);
+    --xanthous: hsla(40, 99%, 62%, 1);
+    --raspberry: hsla(340, 91%, 47%, 1);
+    --mint: hsla(153, 47%, 51%, 1);
+    --steel-blue: hsla(204, 82%, 45%, 1);
+
 }
+
+
 
 
 .glass {
@@ -82,4 +164,11 @@
     backdrop-filter: blur( 9.5px );
     -webkit-backdrop-filter: blur( 9.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+.snap-y-section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
 }

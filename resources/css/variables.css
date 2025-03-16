@@ -1,0 +1,30 @@
+/* Place this in your main CSS file or in a dedicated :root block */
+
+/*
+### Implementing Brand Guidelines
+For consistency across your application, you might want to create a set of utility classes or components that use these colors appropriately:
+1. **Text Hierarchy**:
+    - Primary headings: `text-primary`
+    - Secondary headings: `text-charcoal`
+    - Body text: `text-charcoal-light`
+    - Subtle text: `text-silver`
+
+2. **Interactive Elements**:
+    - Primary buttons: `bg-primary text-cream`
+    - Secondary buttons: `bg-cream text-primary border border-primary`
+    - Call-to-action buttons: `bg-teal text-white`
+    - Destructive actions: `bg-coral text-white`
+
+3. **Status Indicators**:
+    - Success: `bg-teal-light`
+    - Warning: `bg-gold`
+    - Error: `bg-coral`
+    - Info: `bg-denim`
+
+
+*/
+
+
+:root {
+
+}

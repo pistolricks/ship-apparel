@@ -5,6 +5,8 @@ import CtaText from "~/components/section/cta/cta-text";
 import {CarouselItemCard} from "~/components/ui/carousel/carousel";
 import {RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
+import UserProfile from "~/components/profile/user-profile";
+import LocationProfile from "~/components/profile/location-profile";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
@@ -25,6 +27,10 @@ const Home: Component<PROPS> = props => {
                 'background-image': 'linear-gradient(120deg, #fccb90 0%, #d57eeb 100%)'
             }}
         >
+
+
+
+
 
             <div class={'mx-auto max-w-7xl'}>
                 <BaseTabs class="" menu={apps}>
@@ -55,9 +61,42 @@ const Home: Component<PROPS> = props => {
             </div>
             <div class={'mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8'}>
 
+
+
+
+
+
+
             </div>
         </div>
     )
 }
 
 export default Home;
+const FeatureCard = (props: {
+    title: string;
+    description: string;
+    onClick: () => void;
+    buttonText: string;
+}) => {
+    return (
+        <div class="bg-cream rounded-lg shadow-md overflow-hidden">
+            <div class="bg-primary p-4">
+                <h3 class="text-cream text-lg font-bold">{props.title}</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-charcoal">{props.description}</p>
+                <div class="mt-4 flex justify-end">
+                    <button
+                        class="bg-teal text-white px-4 py-2 rounded hover:bg-teal-dark transition-colors"
+                        onClick={props.onClick}
+                    >
+                        {props.buttonText}
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export  {FeatureCard};

@@ -4,7 +4,7 @@ import {Feature, FeatureCollection, MenuItemType} from "~/lib/types";
 import {createStore, SetStoreFunction, Store} from "solid-js/store";
 
 
-import {SessionUser} from "~/lib/session";
+import {SessionUser} from "~/lib/types";
 import {Extent} from "ol/extent";
 import {IconVendors} from "~/components/svg";
 import PromoWithTileOverlap from "~/components/section/promo/promo-with-tile-overlap";

@@ -1,0 +1,22 @@
+OPENDATA_API_KEY=fa993d638d531be1de44f87281d1cc61f34d821dc250ffe535216904
+
+
+# PUBLIC SCHOOLS #
+https://public.opendatasoft.com/
+https://documentation-resources.opendatasoft.com/explore/?sort=modified
+
+
+https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/us-public-schools/records?limit=20
+https://nces.ed.gov/opengis/rest/services/K12_School_Locations/EDGE_ADMINDATA_PUBLICSCH_2223/MapServer/0?f=pjson
+/api/explore/v2.1/catalog/datasets/us-public-schools/records?limit=20
+
+
+/api/explore/v2.1/catalog/datasets/us-colleges-and-universities/records?limit=20
+Authorization: Apikey <API_KEY>
+
+
+MySportsFeed
+d2b55d49-e51c-43a4-b586-d4d87e
+https://scrambled-api.mysportsfeeds.com/
+
+

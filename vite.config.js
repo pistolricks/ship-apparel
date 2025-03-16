@@ -3,10 +3,14 @@ import tailwindcss from '@tailwindcss/vite'
 import laravel from 'laravel-vite-plugin';
 import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { setupPlugins } from '@responsive-image/vite-plugin';
 
 
 export default defineConfig({
     plugins: [
+        setupPlugins({
+            include: /^[^?]+\.jpg\?.*responsive.*$/,
+        }),
         solidPlugin({
 
         }),
