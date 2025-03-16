@@ -1,25 +1,29 @@
 import {action, query, redirect} from "@solidjs/router";
 
 import {capitalizeFirstLetter} from "~/lib/utils";
-import {activateUser, getUserDetails, getUserToken, login, logout, register, resendActivateEmail} from "~/lib/server";
-// import {getSession} from "~/lib/session";
+
+export const getUserToken = async () =>  {
+    return {
+        token: "<PASSWORD>",
+        expiry: "123456789"
+    }
+
+}
+
 import {db} from "~/lib/db";
 
-
-export const getUser = query(async () => {
+export const getUser = query(async (email) => {
     "use server";
     try {
         let token = await getUserToken();
-   //     if (!token) throw redirect("/")
+        if (!token) throw redirect("/")
 
-     //   const session = await getSession();
-     //   const email = session.data.email;
-      //  if (email === undefined) throw new Error("User not found");
-      //  const user = await db.user.findUser({ where: { userInput: { email: email, token: token.token } } });
-      //  if (!user) throw new Error("User not found");
-      //  return { user };
+        if (email === undefined) throw new Error("User not found");
+        const user = await db.user.findUser({ where: { userInput: { email: email, token: token.token } } });
+        if (!user) throw new Error("User not found");
+        return { user };
     } catch {
-        await logout();
+        await db.user.logout();
         throw redirect("/login");
     }
 }, "user");
@@ -27,16 +31,21 @@ export const getUser = query(async () => {
 
 export const getUserDetailsHandler = action(async (data: FormData) => {
     "use server";
- //   let token = await getUserToken();
- //   if (!token) throw redirect("/")
+    let token = await getUserToken();
+    if (!token) throw redirect("/")
 
     const userInput = {
         email: String(data.get("email")),
-   //     token: token.token,
+        token: token.token,
     }
- //   let res = await getUserDetails(userInput)
- //   console.log("getUserDetailsHandler", res)
- //   return res;
+    try {
+        const res = await db.user.findUser({where: {userInput}});
+        console.log("getUserDetailsHandler", res)
+        return res;
+    } catch (err) {
+        throw redirect("/register")
+    }
+
 })
 
 
@@ -57,9 +66,13 @@ export const registerUserHandler = action(async (data: FormData) => {
         email: email.toLowerCase(),
         password: String(data.get("password")),
     }
-    let res = await register(userInput)
-    if (res.user?.id) throw redirect("/activate")
-    else return res;
+
+    try {
+        const res = await db.user.register({where: {userInput}});
+    } catch (err) {
+        throw redirect("/register")
+    }
+    throw redirect("/")
 })
 
 export const activateUserHandler = async (token: string) => {
@@ -67,7 +80,12 @@ export const activateUserHandler = async (token: string) => {
     const activateInput = {
         token: token,
     }
-    return activateUser(activateInput)
+    try {
+        await db.user.activate({where: {activateInput}});
+    } catch (err) {
+        throw redirect("/")
+    }
+
 }
 
 export const resendActivateEmailHandler = action(async (data: FormData) => {
@@ -75,21 +93,36 @@ export const resendActivateEmailHandler = action(async (data: FormData) => {
     const resendInput = {
         email: String(data.get("email")),
     }
-    return resendActivateEmail(resendInput)
-})
+    try {
+        const res = await db.user.resendActivateEmail({where: {resendInput}});
+        console.log("resendActivateEmailHandler", res)
+    } catch (err) {
+        throw redirect("/activate")
+    }
+    throw redirect("/activate")
+}, 'resendActivateEmail')
 
 export const loginUserHandler = action(async (data: FormData) => {
-    "use server";
+    'use server'
     const userInput = {
         email: String(data.get("email")),
         password: String(data.get("password")),
     }
+    try {
+        const user = await db.user.login({where: {userInput}});
+        if (!user) throw Error("Invalid user")
+    } catch (err) {
+        return err as Error
+    }
+    throw redirect('/')
+}, 'login')
 
-    console.log("loginUserHandler", userInput)
-    return await login(userInput)
-})
+
+
+
 
 export const logoutUserHandler = action(async () => {
     "use server";
-    return await logout()
-})
+    await db.user.logout();
+
+}, 'logout')

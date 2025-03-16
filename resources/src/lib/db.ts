@@ -1,4 +1,4 @@
-import {baseApi} from "~/lib/server";
+export const baseApi = (`http://localhost:${import.meta.env.VITE_SERVER_PORT}/${import.meta.env.VITE_API_VERSION}`)
 
 export type USER = {
     id: number;
