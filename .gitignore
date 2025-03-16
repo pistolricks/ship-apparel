@@ -1,13 +1,59 @@
+# Laravel specific
 /node_modules
 /public/hot
 /public/storage
+/public/build
 /storage/*.key
 /vendor
 .env
 .env.backup
-/.phpunit.cache
+.env.production
+.phpunit.result.cache
 Homestead.json
 Homestead.yaml
+auth.json
 npm-debug.log
 yarn-error.log
+
+# TypeScript/JavaScript specific
+/node_modules
+/dist
+/build
+*.tsbuildinfo
+.npm
+.eslintcache
+.node_repl_history
+
+# IDE specific
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 .DS_Store
+
+# Production assets
+/public/js
+/public/css
+/public/mix-manifest.json
+/public/fonts
+/public/images
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+# Misc
+.htaccess
+.cache
+.tmp
+.history
+.project
+.settings
+.tmproj
+.vercel
+.netlify
