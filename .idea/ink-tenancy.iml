@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aws/aws-crt-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aws/aws-sdk-php" />
@@ -189,6 +190,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/saloonphp/xml-wrangler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/array-to-xml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/veewee/xml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/digital-creative/custom-relationship-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/digital-creative/nova-dashboard" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dniccum/phone-number" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/giggsey/libphonenumber-for-php-lite" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/inspheric/nova-email-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nova-kit/nova-packages-tool" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/propaganistas/laravel-phone" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/r64/nova-image-cropper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sanmar/inventory" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

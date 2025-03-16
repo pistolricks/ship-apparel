@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Nova;
+namespace App\Nova\Tenant;
 
-use App\Models\Product;
+
+use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
@@ -11,9 +12,9 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\URL;
 
-class ProductResource extends Resource
+class Product extends Resource
 {
-    public static $model = Product::class;
+    public static $model = \App\Models\Product::class;
 
     public static $title = 'id';
 
