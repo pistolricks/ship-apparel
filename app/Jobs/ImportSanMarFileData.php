@@ -26,7 +26,7 @@ class ImportSanMarFileData implements ShouldQueue
      */
     public function handle(): void
     {
-        SimpleExcelReader::create('storage/app/SanMar_SDL_N.csv')
+        $writer = SimpleExcelReader::create('storage/app/SanMar_SDL_N.csv')
             ->useDelimiter(',')
             ->useHeaders([
                 "UNIQUE_KEY",
@@ -77,5 +77,8 @@ class ImportSanMarFileData implements ShouldQueue
             ->each(
                 fn ($chunk) => SaveSanMarFileData::dispatch($chunk)
             );
+
+        $writer->close();
+
     }
 }

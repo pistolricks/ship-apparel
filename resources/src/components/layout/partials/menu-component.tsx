@@ -22,7 +22,7 @@ const MenuComponent: Component<PROPS> = props => {
                     <div class="grid grid-cols-2 gap-x-4">
                         <div class="group relative text-sm">
                             <img
-                                src="storage/cta_sports_pack_1.png"
+                                src="storage/static/cta_sports_pack_1.png"
                                 alt="Models sitting back to back, wearing Basic Tee in black and bone."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/new-arrivals"} class="mt-6 block font-medium text-gray-900">
@@ -33,7 +33,7 @@ const MenuComponent: Component<PROPS> = props => {
                         </div>
                         <div class="group relative text-sm">
                             <img
-                                src="/storage/promo_reversible_3.jpg"
+                                src="/storage/static/promo_reversible_3.jpg"
                                 alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/reversibles"} class="mt-6 block font-medium text-gray-900">
