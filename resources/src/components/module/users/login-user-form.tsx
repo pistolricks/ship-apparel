@@ -13,7 +13,7 @@ const LoginUserForm: Component<PROPS> = props => {
 
     return (
         <>
-            <form class={'space-y-4'} action={loginUserHandler} method="post">
+            <form class={'space-y-4 w-full max-w-md mx-auto'} action={loginUserHandler} method="post">
                 <TextField>
                     <TextFieldInput type="email" autocomplete={'username'} name="email" placeholder="Email"/>
                 </TextField>

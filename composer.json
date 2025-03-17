@@ -11,10 +11,15 @@
         "php": "^8.2",
         "ext-zip": "*",
         "calebporzio/sushi": "^2.5",
+        "digital-creative/custom-relationship-field": "^1.1",
+        "digital-creative/nova-dashboard": "^1.1",
+        "dniccum/phone-number": "^2.3",
         "ebess/advanced-nova-media-library": "^4.4",
         "guzzlehttp/guzzle": "^7.2",
+        "inspheric/nova-email-field": "^2.0",
         "laravel/cashier": "^15.0",
         "laravel/framework": "^11.0",
+        "laravel/horizon": "^5.31",
         "laravel/nova": "4.35.2",
         "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",
@@ -26,9 +31,11 @@
         "livewire/livewire": "^3.0",
         "lorisleiva/laravel-actions": "^2.9",
         "oriondevelops/nova-greeter": "^0.0.3",
+        "r64/nova-image-cropper": "^1.1",
         "saloonphp/laravel-plugin": "^3.0",
         "saloonphp/saloon": "^3.0",
         "saloonphp/xml-wrangler": "^1.4",
+        "sanmar/inventory": "@dev",
         "spatie/laravel-data": "^4.13",
         "spatie/laravel-medialibrary": "^11.12",
         "spatie/simple-excel": "^3.7",
@@ -66,6 +73,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Inventory"
         }
     ],
     "autoload-dev": {

@@ -10,8 +10,8 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->unsignedBigInteger("id")->primary();
-            $table->string("PRODUCT_TITLE");
-            $table->text("PRODUCT_DESCRIPTION")->nullable();
+            $table->string("PRODUCT_TITLE")->nullable();
+            $table->string("PRODUCT_DESCRIPTION")->nullable();
             $table->string("STYLE")->nullable();
             $table->string("AVAILABLE_SIZES")->nullable();
             $table->string("BRAND_LOGO_IMAGE")->nullable();
@@ -19,13 +19,10 @@ class CreateProductsTable extends Migration
             $table->string("COLOR_SWATCH_IMAGE")->nullable();
             $table->string("PRODUCT_IMAGE")->nullable();
             $table->string("SPEC_SHEET")->nullable();
-            $table->string("FRONT_FLAT")->nullable();
-            $table->string("BACK_FLAT")->nullable();
-            $table->string("FRONT_MODEL")->nullable();
-            $table->string("BACK_MODEL")->nullable();
-            $table->string("SIDE_MODEL")->nullable();
-            $table->string("THREE_Q_MODEL")->nullable();
             $table->string("PRICE_TEXT")->nullable();
+            $table->string("SUGGESTED_PRICE")->nullable();
+            $table->string("CATEGORY_NAME")->nullable();
+            $table->string("SUBCATEGORY_NAME")->nullable();
             $table->string("COLOR_NAME")->nullable();
             $table->string("COLOR_SQUARE_IMAGE")->nullable();
             $table->string("COLOR_PRODUCT_IMAGE")->nullable();
@@ -33,23 +30,30 @@ class CreateProductsTable extends Migration
             $table->string("SIZE")->nullable();
             $table->string("PIECE_WEIGHT")->nullable();
             $table->string("PIECE_PRICE")->nullable();
-            $table->string("DOZEN_PRICE")->nullable();
+            $table->string("DOZENS_PRICE")->nullable();
             $table->string("CASE_PRICE")->nullable();
-            $table->string("PIECE_SALE_PRICE")->nullable();
-            $table->string("DOZEN_SALE_PRICE")->nullable();
-            $table->string("CASE_SALE_PRICE")->nullable();
-            $table->string("SALE_START_DATE")->nullable();
-            $table->string("SALE_END_DATE")->nullable();
+            $table->string("PRICE_GROUP")->nullable();
             $table->string("CASE_SIZE")->nullable();
             $table->string("INVENTORY_KEY")->nullable();
             $table->string("SIZE_INDEX")->nullable();
-            $table->string("CATALOG_COLOR")->nullable();
-            $table->string("PRICE_CODE")->nullable();
+            $table->string("SANMAR_MAINFRAME_COLOR")->nullable();
+            $table->string("MILL")->nullable();
             $table->string("PRODUCT_STATUS")->nullable();
-            $table->string("TITLE_IMAGE")->nullable();
-            $table->string("BRAND_NAME")->nullable();
-            $table->string("KEYWORDS")->nullable();
-            $table->string("CATEGORY")->nullable();
+            $table->string("COMPANION_STYLES")->nullable();
+            $table->string("MSRP")->nullable();
+            $table->string("MAP_PRICING")->nullable();
+            $table->string("FRONT_MODEL_IMAGE_URL")->nullable();
+            $table->string("BACK_MODEL_IMAGE_URL")->nullable();
+            $table->string("FRONT_FLAT_IMAGE_URL")->nullable();
+            $table->string("BACK_FLAT_IMAGE_URL")->nullable();
+            $table->string("PRODUCT_MEASUREMENTS")->nullable();
+            $table->string("PMS_COLOR")->nullable();
+            $table->string("GTIN")->nullable();
+            $table->string("DECORATOR_SPEC_SHEET")->nullable();
+            $table->string("QTY")->nullable();
+            $table->string("BACK_MODEL_IMAGE")->nullable();
+            $table->string("FRONT_FLAT_IMAGE")->nullable();
+            $table->string("BACK_FLAT_IMAGE")->nullable();
 
 
             $table->timestamps();

@@ -10,6 +10,7 @@ use App\Nova\Central\Tenant as TenantResource;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
+use App\Nova\Tenant\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
@@ -39,7 +40,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::footer(function (Request $request) {
             return Blade::render('
                 <p class="mt-8 text-center text-xs text-80">
-                    <a href="/" class="text-primary dim no-underline uppercase">Back to Site</a>
+                 
                 </p>
 
         ');
@@ -101,6 +102,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             Nova::resources([
                 Post::class,
                 User::class,
+
             ]);
         } else {
             Nova::resources([
@@ -108,6 +110,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 TenantResource::class,
                 Domain::class,
                 SubscriptionCancelation::class,
+                Product::class,
             ]);
         }
     }

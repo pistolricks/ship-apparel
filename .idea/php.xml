@@ -203,6 +203,17 @@
       <path value="$PROJECT_DIR$/vendor/saloonphp/xml-wrangler" />
       <path value="$PROJECT_DIR$/vendor/veewee/xml" />
       <path value="$PROJECT_DIR$/vendor/azjezz/psl" />
+      <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
+      <path value="$PROJECT_DIR$/vendor/dniccum/phone-number" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/libphonenumber-for-php-lite" />
+      <path value="$PROJECT_DIR$/vendor/nova-kit/nova-packages-tool" />
+      <path value="$PROJECT_DIR$/vendor/propaganistas/laravel-phone" />
+      <path value="$PROJECT_DIR$/vendor/r64/nova-image-cropper" />
+      <path value="$PROJECT_DIR$/vendor/inspheric/nova-email-field" />
+      <path value="$PROJECT_DIR$/vendor/digital-creative/nova-dashboard" />
+      <path value="$PROJECT_DIR$/vendor/digital-creative/custom-relationship-field" />
+      <path value="$PROJECT_DIR$/vendor/sanmar/inventory" />
+      <path value="$PROJECT_DIR$/vendor/laravel/horizon" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

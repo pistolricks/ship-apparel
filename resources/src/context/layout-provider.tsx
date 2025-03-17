@@ -218,7 +218,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             src: "storage/static/sweaters_1.jpg",
             href: "/activewear",
             side: "bottom",
-            component: PromoWithTileOverlap
+            component: PromoTextImage
         },
         {
             title: "Outerwear",
@@ -236,7 +236,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             information: "Workwear represents the critical intersection of functionality, safety, and professional identity. At **CustomInk and Thread**, we specialize in creating custom workwear solutions that protect your team while prominently displaying your company brand—turning necessary equipment into powerful marketing assets.",
             href: "/workwear",
             side: "bottom",
-            vert_src: "storage/static/promo_woman_1.jpeg",
+            src: "storage/static/promo_woman_1.jpeg",
             cta: "Shop Now",
             component: PromoTextImage
         },
@@ -247,7 +247,7 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             information: "Uniforms serve as powerful visual ambassadors for your organization, instantly communicating professionalism, unity, and brand identity. At **CustomInk and Thread**, we specialize in creating custom uniforms that blend functionality, comfort, and distinctive style to elevate your team's presence and performance.",
             href: "/uniform",
             side: "bottom",
-            vert_src: "storage/static/promo_woman_2.jpeg",
+            src: "storage/static/promo_woman_2.jpeg",
             cta: "Shop Now",
             component: PromoTextImage
         },

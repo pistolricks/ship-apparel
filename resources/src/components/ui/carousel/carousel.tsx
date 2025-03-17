@@ -67,9 +67,7 @@ const CarouselItemCard: Component<MenuItemType> = props => {
 
     return (
         <CarouselItem class="basis-full ">
-
                 <Card class={'h-[89dvh] bg-white/40 relative'}>
-
                     <CardContent class="relative flex w-full h-[80dvh] items-center justify-center">
                         <img src={vert_src() ?? src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'}
                              alt={""}/>

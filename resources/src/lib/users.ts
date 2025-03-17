@@ -15,11 +15,9 @@ import {db} from "~/lib/db";
 export const getUser = query(async (email) => {
     "use server";
     try {
-        let token = await getUserToken();
-        if (!token) throw redirect("/")
 
         if (email === undefined) throw new Error("User not found");
-        const user = await db.user.findUser({ where: { userInput: { email: email, token: token.token } } });
+        const user = await db.user.findUser({ where: { userInput: { email: email} } });
         if (!user) throw new Error("User not found");
         return { user };
     } catch {
@@ -52,27 +50,22 @@ export const getUserDetailsHandler = action(async (data: FormData) => {
 export const registerUserHandler = action(async (data: FormData) => {
     "use server";
 
-    let fName = String(data.get("firstName"));
-    let lName = String(data.get("lastName"));
 
-    let firstName = fName.toLowerCase();
-    let lastName = lName.toLowerCase();
-
-    let name = capitalizeFirstLetter(firstName) + " " + capitalizeFirstLetter(lastName)
     let email = String(data.get("email"));
 
     const userInput = {
-        name: name,
+        name:  String(data.get("name")),
         email: email.toLowerCase(),
         password: String(data.get("password")),
+        confirm_password: String(data.get("confirm_password"))
     }
 
     try {
-        const res = await db.user.register({where: {userInput}});
+     return await db.user.register({where: {userInput}});
     } catch (err) {
         throw redirect("/register")
     }
-    throw redirect("/")
+
 })
 
 export const activateUserHandler = async (token: string) => {

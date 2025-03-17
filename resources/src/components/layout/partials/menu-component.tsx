@@ -13,16 +13,14 @@ const MenuComponent: Component<PROPS> = props => {
     const contextId = () => props.contextId;
 
     return (
-        <div class="relative flex w-full flex-col  bg-white pb-12 shadow-xl">
+        <div class="relative flex w-full flex-col h-full overflow-y-auto  bg-white pb-12 shadow-xl">
             <div class="">
-
-
                 <div class="space-y-10 px-4 pb-8 pt-4"
                      role="tabpanel" tabindex="0">
                     <div class="grid grid-cols-2 gap-x-4">
                         <div class="group relative text-sm">
                             <img
-                                src="storage/cta_sports_pack_1.png"
+                                src="storage/static/cta_sports_pack_1.png"
                                 alt="Models sitting back to back, wearing Basic Tee in black and bone."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/new-arrivals"} class="mt-6 block font-medium text-gray-900">
@@ -33,7 +31,7 @@ const MenuComponent: Component<PROPS> = props => {
                         </div>
                         <div class="group relative text-sm">
                             <img
-                                src="/storage/promo_reversible_3.jpg"
+                                src="/storage/static/promo_reversible_3.jpg"
                                 alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/reversibles"} class="mt-6 block font-medium text-gray-900">
@@ -44,7 +42,7 @@ const MenuComponent: Component<PROPS> = props => {
                         </div>
                     </div>
 
-                    <div>
+                    <div class={''}>
                         <Drawer.Trigger contextId={contextId()} as={A} href={"/apparel"}>
                             <p id="apparel" class="font-medium text-gray-900">
                                 Apparel
@@ -57,7 +55,8 @@ const MenuComponent: Component<PROPS> = props => {
                             <For each={apps}>
                                 {(app) => (
                                     <li class="flow-root">
-                                        <Drawer.Trigger contextId={contextId()} as={A} href={app.href} class="-m-2 block p-2 text-gray-500">
+                                        <Drawer.Trigger contextId={contextId()} as={A} href={app.href}
+                                                        class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                                             {app.title}
                                         </Drawer.Trigger>
                                     </li>
@@ -71,12 +70,12 @@ const MenuComponent: Component<PROPS> = props => {
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/company"} class="-m-2 block p-2 font-medium text-gray-900">
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/company"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Company
                     </Drawer.Trigger>
                 </div>
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/wholesale"} class="-m-2 block p-2 font-medium text-gray-900">
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/wholesale"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Wholesale
                     </Drawer.Trigger>
                 </div>
@@ -84,12 +83,12 @@ const MenuComponent: Component<PROPS> = props => {
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/login"} class="-m-2 block p-2 font-medium text-gray-900">
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/login"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Login
                     </Drawer.Trigger>
                 </div>
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/register"} class="-m-2 block p-2 font-medium text-gray-900">
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/register"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Register
                     </Drawer.Trigger>
                 </div>
