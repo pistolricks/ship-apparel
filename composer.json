@@ -11,6 +11,7 @@
         "php": "^8.2",
         "ext-zip": "*",
         "calebporzio/sushi": "^2.5",
+        "dedmytro/laravel-cloudflare-images": "^0.2.1",
         "digital-creative/custom-relationship-field": "^1.1",
         "digital-creative/nova-dashboard": "^1.1",
         "dniccum/phone-number": "^2.3",

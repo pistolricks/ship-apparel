@@ -1,7 +1,7 @@
 import {Component, Show, VoidComponent} from "solid-js";
 import {A} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
-import {logo} from "~/app";
+import {LogoIcon} from "~/components/svg";
 
 
 
@@ -27,11 +27,7 @@ const Header: Component<{
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
                                             <span class="sr-only"></span>
-                                            <img
-                                                src={logo()}
-                                                class={'h-12'}
-                                                alt="Custom Ink and Thread"
-                                            />
+                                            <LogoIcon class={'h-12'}/>
 
                                         </A>
                                     </div>

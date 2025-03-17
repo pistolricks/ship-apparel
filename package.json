@@ -38,6 +38,7 @@
         "@tailwindcss/vite": "^4.0.13",
         "@tokens-studio/types": "^0.5.2",
         "class-variance-authority": "^0.7.1",
+        "cloudflare": "^4.1.0",
         "embla-carousel-solid": "^8.5.2",
         "ol": "^10.4.0",
         "solid-canvas": "^0.0.8",
