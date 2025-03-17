@@ -1,6 +1,6 @@
-import {A, Action, useSubmission} from "@solidjs/router";
+import {A, Action, useNavigate, useSubmission} from "@solidjs/router";
 import {Component, createEffect, createSignal, JSXElement, Show, splitProps, ValidComponent} from "solid-js";
-import {cn} from "~/lib/utils";
+import {logo} from "~/app";
 
 const FormLayout: Component<{
     action?: Action<[any], any, FormData>;
@@ -16,9 +16,10 @@ const FormLayout: Component<{
         return false;
     });
 
+    const navigate =  useNavigate();
     const hideLogo = () => props.hideLogo ?? false;
     const title = () => props.title ?? '';
-    const imageSrc = () => props.imageSrc ?? import.meta.env.VITE_APP_LOGO;
+    const imageSrc = () => props.imageSrc ?? logo();
 
     const children = () => props.children;
 
