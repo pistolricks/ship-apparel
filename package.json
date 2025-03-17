@@ -3,7 +3,9 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "build-inventory": "cd nova-components/Inventory && npm run dev",
+        "build-inventory-prod": "cd nova-components/Inventory && npm run prod"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",

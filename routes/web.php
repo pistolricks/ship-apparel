@@ -7,12 +7,10 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
 
 Route::view('/', 'app')->name('app');
-Route::view('/login', 'app')->name('app');
-Route::view('/register', 'app')->name('app');
-Route::view('/resend', 'app')->name('app');
-Route::view('/activate', 'app')->name('app');
-
-Route::get('/v1/products', Controllers\ProductController::class)->name('central.products.index');
+Route::view('/login', 'app')->name('central.tenants.login');
+Route::view('/register', 'app')->name('central.tenants.register');
+// Route::view('/resend', 'app')->name('app');
+// Route::view('/activate', 'app')->name('app');
 
 
 Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');

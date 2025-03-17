@@ -1,12 +1,11 @@
 import {Component, JSXElement, lazy, Show} from "solid-js";
-import {useLayoutContext} from "~/context/layout-provider";
 import {handleUserName} from "~/lib/utils";
 
-import {SessionUser} from "~/lib/session";
 import {Avatar} from "~/components/ui/avatar/avatar-ui";
 import Drawer from "@corvu/drawer";
 import {Button} from "~/components/ui/button";
 import {A} from "@solidjs/router";
+import {SessionUser} from "~/lib/types";
 
 const LogoutUserForm = lazy(() => import("~/components/module/users/logout-user-form"));
 type PROPS = {
@@ -56,7 +55,8 @@ const ProfileMenu: Component<PROPS> = props => {
                     when={user()?.id}>
 
                     <Drawer.Trigger contextId={'sd1'} as={"div"}>
-                    <Button as={A} href={'/dashboard'} variant={"link"} size={"sm"} type={"button"}>DASHBOARD</Button>
+                        <Button as={A} href={'/dashboard'} variant={"link"} size={"sm"}
+                                type={"button"}>DASHBOARD</Button>
                     </Drawer.Trigger>
                     <Drawer.Trigger contextId={'sd1'} as={"div"}>
                         <Button as={A} href={'/profile'} variant={"link"} size={"sm"} type={"button"}>PROFILE</Button>
@@ -64,8 +64,6 @@ const ProfileMenu: Component<PROPS> = props => {
                     <LogoutUserForm/>
                 </Show>
             </div>
-
-
 
 
             {children()}

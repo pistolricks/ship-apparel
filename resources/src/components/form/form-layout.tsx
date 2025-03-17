@@ -1,6 +1,7 @@
-import {A, Action, useSubmission} from "@solidjs/router";
+import {A, Action, useNavigate, useSubmission} from "@solidjs/router";
 import {Component, createEffect, createSignal, JSXElement, Show, splitProps, ValidComponent} from "solid-js";
-import {cn} from "~/lib/utils";
+import {logo} from "~/app";
+import {IconX} from "~/components/svg";
 
 const FormLayout: Component<{
     action?: Action<[any], any, FormData>;
@@ -9,24 +10,27 @@ const FormLayout: Component<{
     hideLogo?: boolean
     children: JSXElement;
 }> = props => {
-    const submission = useSubmission(props.action!, (formData: FormData) => {
+    const sub = useSubmission(props.action!, (formData: FormData) => {
         for (let value of formData.values()) {
             if (value) return true;
         }
         return false;
     });
 
+    const navigate =  useNavigate();
     const hideLogo = () => props.hideLogo ?? false;
     const title = () => props.title ?? '';
-    const imageSrc = () => props.imageSrc ?? import.meta.env.VITE_APP_LOGO;
-
+    const imageSrc = () => props.imageSrc ?? logo();
     const children = () => props.children;
 
-    createEffect(() => console.log(submission))
+
+
+
+    createEffect(() => console.log(sub))
 
     return (
         <div>
-            <div class="h-full w-full items-center justify-center  bg-gray-50 py-4 sm:p-4">
+            <div class="h-full w-full max-w-xl mx-auto items-center justify-center  py-4 sm:p-4">
                 <div class="flex h-full min-h-full flex-col justify-center">
                     <div class="sm:mx-auto">
                         <Show when={!hideLogo()}>
@@ -42,6 +46,17 @@ const FormLayout: Component<{
                     <div class="w-full space-y-6 text-gray-600">
                         <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
                             <div class="mx-auto max-w-lg container">
+                                <Show when={sub.error} keyed>
+
+                                    {(error: Error) => (
+                                            <div class="rounded-md bg-red-50 p-4 text-sm text-red-500"><b>Error alert</b>  {error?.message}
+                                                <button onClick={() => sub.clear()}>
+                                                <IconX/>
+                                                </button>
+                                            </div>
+                                    )}
+                                </Show>
+
                                 {children()}
                             </div>
                         </div>
