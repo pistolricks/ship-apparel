@@ -10,8 +10,8 @@ export type USER = {
 }
 
 /*USER*/
-const fetchRegister = async (userInput: { name: string, email: string, password: string }) =>
-    (await fetch(`${baseApi}/users`, {
+const fetchRegister = async (userInput: { name: string, email: string, password: string, confirm_password: string }) =>
+    (await fetch("/api/register", {
             method: "POST",
             body: JSON.stringify(userInput),
         })
@@ -44,11 +44,8 @@ const fetchLogout = async () =>
         })
     ).json()
 
-const fetchUser = async (userInput: { email: string, token: string }) =>
+const fetchUser = async (userInput: { email: string }) =>
     (await fetch(`${baseApi}/users/find`, {
-            headers: {
-                Authorization: `Bearer ${userInput.token}`
-            },
             method: "POST",
             body: JSON.stringify(userInput),
         })
@@ -57,9 +54,8 @@ const fetchUser = async (userInput: { email: string, token: string }) =>
 
 export const db = {
     user: {
-        async register({where: {userInput}}: {
-            where: { userInput: { name: string; email: string; password: string } }
-        }) {
+        async register({where: {userInput}}: { where: { userInput: { name: string; email: string; password: string, confirm_password: string }}}
+        ) {
             return await fetchRegister(userInput);
         },
         async activate({where: {activateInput}}: { where: { activateInput: { token: string }; } }) {
@@ -74,7 +70,7 @@ export const db = {
         async logout() {
             return await fetchLogout();
         },
-        async findUser({where: {userInput}}: { where: { userInput: { email: string; token: string } } }) {
+        async findUser({where: {userInput}}: { where: { userInput: { email: string; } } }) {
             return await fetchUser(userInput);
         },
     }

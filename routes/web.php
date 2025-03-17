@@ -11,8 +11,10 @@ Route::view('/login', 'app')->name('central.tenants.login');
 Route::view('/register', 'app')->name('central.tenants.register');
 // Route::view('/resend', 'app')->name('app');
 // Route::view('/activate', 'app')->name('app');
-// Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
 
+
+Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
+Route::post('/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
 
 Route::get('/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
 Route::post('/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');

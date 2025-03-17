@@ -18,14 +18,14 @@ const routes = [
         path: "/",
         component: lazy(() => import("./routes/index")),
     },
-    {
-        path: "/login",
-        component: lazy(() => import("./routes/login")),
-    },
-    {
-        path: "/register",
-        component: lazy(() => import("./routes/register")),
-    }
+ //   {
+ //       path: "/login",
+ //       component: lazy(() => import("./routes/login")),
+ //   },
+ //   {
+ //       path: "/register",
+ //       component: lazy(() => import("./routes/register")),
+ //   }
 ]
 
 render(() => <Router root={(props) => <App>{props.children}</App>}>{routes}</Router>, root!);

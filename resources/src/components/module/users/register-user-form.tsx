@@ -1,9 +1,7 @@
-import {Component, createEffect, createMemo, Show} from "solid-js";
-import {useSubmission} from "@solidjs/router";
+import {Component} from "solid-js";
 import {registerUserHandler} from "~/lib/users";
-import {TextField, TextFieldErrorMessage, TextFieldInput} from "~/components/ui/field/text-field";
+import {TextField, TextFieldInput} from "~/components/ui/field/text-field";
 import {Button} from "~/components/ui/button";
-import {showToast} from "~/components/ui/toast";
 import {IconMapPin} from "~/components/svg";
 
 
@@ -45,7 +43,7 @@ const RegisterUserForm: Component<PROPS> = props => {
                     <TextFieldInput
                         required
                         name="password_confirmation"
-                        type="text"
+                        type="password"
                         placeholder="Confirm Password"
                         class={'capitalize'}
                     />

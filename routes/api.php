@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('/api/register', [Controllers\RegisterTenantController::class, 'submit'])->name('api.register');
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

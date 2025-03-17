@@ -30,7 +30,7 @@ const FormLayout: Component<{
 
     return (
         <div>
-            <div class="h-full w-full items-center justify-center  bg-gray-50 py-4 sm:p-4">
+            <div class="h-full w-full max-w-xl mx-auto items-center justify-center  py-4 sm:p-4">
                 <div class="flex h-full min-h-full flex-col justify-center">
                     <div class="sm:mx-auto">
                         <Show when={!hideLogo()}>
