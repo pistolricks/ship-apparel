@@ -9,10 +9,9 @@ class CreateLargeDataExportStatusTable extends Migration{
     {
         Schema::create('large_data_export_status', function (Blueprint $table) {
             $table->id();
-
-//
-
-$table->timestamps();
+            $table->string('job_batch_id');
+            $table->boolean('is_completed');
+            $table->timestamps();
         });
     }
 
