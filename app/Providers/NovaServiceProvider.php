@@ -40,7 +40,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::footer(function (Request $request) {
             return Blade::render('
                 <p class="mt-8 text-center text-xs text-80">
-                    <a href="/" class="text-primary dim no-underline uppercase">Back to Site</a>
+                 
                 </p>
 
         ');

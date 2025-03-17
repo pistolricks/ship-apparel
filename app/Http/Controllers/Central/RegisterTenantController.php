@@ -16,7 +16,7 @@ class RegisterTenantController extends Controller
         return view('central.tenants.register');
     }
 
-    public function submit(Request $request): string
+    public function submit(Request $request): RedirectResponse
     {
         $data = $this->validate($request, [
             'domain' => [
@@ -39,6 +39,6 @@ class RegisterTenantController extends Controller
         $tenant = (new CreateTenantAction)($data, $domain);
 
         // We impersonate user with id 1. This user will be created by the CreateTenantAdmin job.
-        return response()->json("path", $tenant->impersonationUrl(1));
+        return redirect($tenant->impersonationUrl(1));
     }
 }
