@@ -2,12 +2,13 @@
 
 namespace App\Data;
 
-use Illuminate\Support\Collection;
+
+
+
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Data;
 
-
-class ProductData extends Data
+class ProductEPData extends Data
 {
     public function __construct(
         #[MapInputName('UNIQUE_KEY')]
@@ -55,6 +56,5 @@ class ProductData extends Data
         public ?string $DECORATOR_SPEC_SHEET,
 
 
-    ) {
-    }
+    ) {}
 }
