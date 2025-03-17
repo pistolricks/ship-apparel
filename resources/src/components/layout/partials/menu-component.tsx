@@ -2,15 +2,16 @@ import {Component, For} from "solid-js";
 import {useLayoutContext} from "~/context/layout-provider";
 import {A} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
-
+import image1 from "~/components/img/cta_sports_pack_1.png";
+import image2 from "~/components/img/cta_mercandise_1.jpg";
 type PROPS = {
     contextId: string;
 }
 
 const MenuComponent: Component<PROPS> = props => {
     const {apps} = useLayoutContext();
-
     const contextId = () => props.contextId;
+
 
     return (
         <div class="relative flex w-full flex-col h-full overflow-y-auto  bg-white pb-12 shadow-xl">
@@ -20,7 +21,7 @@ const MenuComponent: Component<PROPS> = props => {
                     <div class="grid grid-cols-2 gap-x-4">
                         <div class="group relative text-sm">
                             <img
-                                src="storage/static/cta_sports_pack_1.png"
+                                src={image1}
                                 alt="Models sitting back to back, wearing Basic Tee in black and bone."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/new-arrivals"} class="mt-6 block font-medium text-gray-900">
@@ -31,7 +32,7 @@ const MenuComponent: Component<PROPS> = props => {
                         </div>
                         <div class="group relative text-sm">
                             <img
-                                src="/storage/static/promo_reversible_3.jpg"
+                                src={image2}
                                 alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/reversibles"} class="mt-6 block font-medium text-gray-900">
