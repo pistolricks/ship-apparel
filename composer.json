@@ -19,6 +19,7 @@
         "inspheric/nova-email-field": "^2.0",
         "laravel/cashier": "^15.0",
         "laravel/framework": "^11.0",
+        "laravel/horizon": "^5.31",
         "laravel/nova": "4.35.2",
         "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",
@@ -34,12 +35,12 @@
         "saloonphp/laravel-plugin": "^3.0",
         "saloonphp/saloon": "^3.0",
         "saloonphp/xml-wrangler": "^1.4",
+        "sanmar/inventory": "@dev",
         "spatie/laravel-data": "^4.13",
         "spatie/laravel-medialibrary": "^11.12",
         "spatie/simple-excel": "^3.7",
         "stancl/tenancy": "^3.7",
-        "zanysoft/laravel-zip": "^3.0",
-        "sanmar/inventory": "@dev"
+        "zanysoft/laravel-zip": "^3.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.4.4",
