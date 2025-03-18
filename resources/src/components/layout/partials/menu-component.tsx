@@ -37,19 +37,20 @@ const MenuComponent: Component<PROPS> = props => {
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
                             <Drawer.Trigger contextId={contextId()} as={A} href={"/reversibles"} class="mt-6 block font-medium text-gray-900">
                                 <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                Reversibles
+                                Reversible Apparel
                             <p aria-hidden="true" class="mt-1">Shop now</p>
                             </Drawer.Trigger>
                         </div>
                     </div>
 
                     <div class={''}>
+                        {/*
                         <Drawer.Trigger contextId={contextId()} as={A} href={"/apparel"}>
                             <p id="apparel" class="font-medium text-gray-900">
-                                Apparel
+                                Menu
                             </p>
                         </Drawer.Trigger>
-
+                        */}
                         <ul role="list" aria-labelledby="apparel"
                             class="mt-6 flex flex-col space-y-6">
 
@@ -71,13 +72,13 @@ const MenuComponent: Component<PROPS> = props => {
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/company"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
-                        Company
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/about-us"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                        About Us
                     </Drawer.Trigger>
                 </div>
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/wholesale"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
-                        Wholesale
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/contact-us"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                        Contact Us
                     </Drawer.Trigger>
                 </div>
             </div>

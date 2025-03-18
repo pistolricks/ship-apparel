@@ -32,7 +32,7 @@ const Home: Component<PROPS> = props => {
 
 
 
-            <div class={'mx-auto max-w-7xl'}>
+            <div class={'mx-auto'}>
                 <BaseTabs class="" menu={apps}>
 
                     <BaseCarousel

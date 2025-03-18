@@ -100,7 +100,7 @@ const BaseTabs: Component<PROPS> = props => {
                                 {(item, index) => (
 
                             <Tabs.Trigger value={item?.value ?? item.title}
-                                          class={`${style.tabs__trigger} sm:w-[150px] sm:inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:border-gray-400 focus:border-gray-100 focus-visible:outline-none justify-self-center whitespace-nowrap   hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700  disabled:cursor-not-allowed disabled:border-amber-300 disabled:bg-amber-100 disabled:text-amber-400 disabled:shadow-none"`}>
+                                          class={`${style.tabs__trigger} sm:w-[200px] sm:inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:border-gray-400 focus:border-gray-100 focus-visible:outline-none justify-self-center whitespace-nowrap   hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700  disabled:cursor-not-allowed disabled:border-amber-300 disabled:bg-amber-100 disabled:text-amber-400 disabled:shadow-none"`}>
                                 {item.title}
                             </Tabs.Trigger>
 

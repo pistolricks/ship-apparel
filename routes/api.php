@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\Central as Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/api/products/v1', Controllers\ProductController::class)->name('api.products.index');
+Route::get('/api/shop/v1', Controllers\Api\Shop\ShopController::class)->name('api.shop.index');

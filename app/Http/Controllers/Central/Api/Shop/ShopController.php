@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Central;
+namespace App\Http\Controllers\Central\Api\Shop;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 
-class ProductController extends Controller
+class ShopController extends Controller
 {
     public function __invoke()
     {

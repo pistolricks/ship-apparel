@@ -25,13 +25,13 @@ const BaseCarousel: Component<PROPS> = props => {
 
     const list: () => MenuItemType[] = () => props.list ?? [
         {
-            title: "reversibles",
+            title: "reversible-apparel",
             cta: "Shop Now",
             src: "storage/category_sports_1.jpg",
             description: "Maximize Style and Functionality with Reversible Shirts and Sweaters",
             information: "Reversible apparel represents the pinnacle of versatility in clothing design, offering two distinct looks and functionalities in a single garment. At **CustomInk and Thread**, we specialize in creating premium reversible shirts and sweaters that provide exceptional value while showcasing your creativity through innovative dual-sided customization.",
-            href: "/reversibles",
-            value: "reversibles",
+            href: "/reversible-apparel",
+            value: "reversible-apparel",
             component: PromoTextImage
         }
     ];
@@ -67,8 +67,8 @@ const CarouselItemCard: Component<MenuItemType> = props => {
 
     return (
         <CarouselItem class="basis-full ">
-                <Card class={'h-[89dvh] bg-white/40 relative'}>
-                    <CardContent class="relative flex w-full h-[80dvh] items-center justify-center">
+                <Card class={'h-[89dvh] sm:h-full bg-white/40 relative'}>
+                    <CardContent class="relative flex w-full h-[80dvh] sm:h-full items-center justify-center">
                         <img src={vert_src() ?? src()} class={'absolute inset-0 rounded-lg p-0.5 w-full h-full object-cover'}
                              alt={""}/>
                     </CardContent>

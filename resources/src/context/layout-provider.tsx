@@ -206,32 +206,31 @@ export function LayoutProvider(props: { children: JSX.Element }) {
 
     const apps: MenuItemType[] = [
         {
-            title: "school spirit",
-            description: "Elevate Your School's Identity with Custom Apparel!",
-            information: "Custom school clothing does more than just dress students and staff—it creates a sense of belonging, fosters school spirit, and builds a unified community identity. At **CustomInk and Thread**, we specialize in creating high-quality school apparel that represents your educational institution with pride.",
+            title: "Shop",
+            description: "Browse Our Vast Product Line",
+            information: "Shop the top 50 brands with over 2,890 styles, including 458 new trending styles.",
             cta: "Shop Now",
             src: image1,
-            href: "/schools",
+            href: "/shop",
             side: "bottom",
             component: PromoTextImage
 
-
         },
         {
-            title: "custom",
-            description: "Custom t-shirts and embroidery services offer a unique way to express individuality, promote businesses, commemorate events, or create team unity. At **CustomInk and Thread**, we specialize in transforming ordinary garments into personalized statements through cutting-edge printing techniques and meticulous embroidery craftsmanship.",
+            title: "Reversible Apparel",
+            description: "Looking for a unique and comfortable sweatshirt that will have you turning heads. Our reversible sweatshirts allow you to have two looks in one.",
             cta: "Shop Now",
             src: image2,
-            href: "/activewear",
+            href: "/reversible-apparel",
             side: "bottom",
             component: PromoTextImage
         },
         {
-            title: "Outerwear",
-            href: "/outerwear",
+            title: "School Specials",
+            href: "/school-specials",
             side: "bottom",
-            description: "Custom Outerwear",
-            information: "Outerwear represents the perfect blend of functionality and style—a highly visible canvas for personal expression, team unity, or brand representation. At **CustomInk and Thread**, we transform standard jackets, coats, and vests into distinctive statements that protect from the elements while showcasing your unique identity.",
+            description: "Outerwear represents the perfect blend of functionality and style—a highly visible canvas for personal expression, team unity, or brand representation. At **CustomInk and Thread**, we transform standard jackets, coats, and vests into distinctive statements that protect from the elements while showcasing your unique identity.",
+            information: "",
             src: image3,
             cta: "Shop Now",
             component: PromoTextImage
