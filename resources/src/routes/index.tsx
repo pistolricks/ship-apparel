@@ -34,7 +34,6 @@ const Home: Component<PROPS> = props => {
 
             <div class={'mx-auto'}>
                 <BaseTabs class="" menu={apps}>
-
                     <BaseCarousel
                         list={apps}
                         children={(
@@ -42,7 +41,7 @@ const Home: Component<PROPS> = props => {
                             <CarouselItemCard {...item()}/>
                         }/>
                     <BaseCarousel
-                        list={apps.reverse()}
+                        list={apps}
                         children={(
                             item) =>
                             <CarouselItemCard {...item()}/>
@@ -54,7 +53,6 @@ const Home: Component<PROPS> = props => {
                                  cta={"Shop"}
                         />
                     </CtaWithImageTiles>
-
                 </BaseTabs>
 
 
@@ -79,6 +77,7 @@ const FeatureCard = (props: {
     onClick: () => void;
     buttonText: string;
 }) => {
+    const onClick = () => () => props.onClick();
     return (
         <div class="bg-cream rounded-lg shadow-md overflow-hidden">
             <div class="bg-primary p-4">
@@ -88,8 +87,8 @@ const FeatureCard = (props: {
                 <p class="text-charcoal">{props.description}</p>
                 <div class="mt-4 flex justify-end">
                     <button
+                        onClick={onClick()}
                         class="bg-teal text-white px-4 py-2 rounded hover:bg-teal-dark transition-colors"
-                        onClick={props.onClick}
                     >
                         {props.buttonText}
                     </button>

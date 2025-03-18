@@ -1,0 +1,23 @@
+[
+    {"title": "NEW", "href": "new"},
+    {"title": "Brands", "href": "brands"},
+    {"title": "T-Shirts", "href": "t-shirts"},
+    {"title": "Polos/Knits", "href": "polos-knits"},
+    {"title": "Sweatshirts/Fleece", "href": "sweatshirts-fleece"},
+    {"title": "Caps", "href": "caps"},
+    {"title": "Activewear", "href": "activewear"},
+    {"title": "Outerwear", "href": "outerwear"},
+    {"title": "Woven/Dress Shirts", "href": "woven-dress-shirts"},
+    {"title": "Bottoms", "href": "bottoms"},
+    {"title": "Workwear", "href": "workwear"},
+    {"title": "Bags", "href": "bags"},
+    {"title": "Accessories", "href": "accessories"},
+    {"title": "Personal Protection", "href": "personal-protection"},
+    {"title": "Women's", "href": "womens"},
+    {"title": "Youth", "href": "youth"},
+    {"title": "Outlet", "href": "outlet"},
+    {"title": "Marketing", "href": "marketing"},
+    {"title": "Resources", "href": "resources"},
+    {"title": "Sale", "href": "sale"}
+]
+

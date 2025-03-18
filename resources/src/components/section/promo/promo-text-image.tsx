@@ -38,6 +38,7 @@ const PromoTextImage: Component<{
                             description={description()}
                             information={information()}
                             cta={cta()}
+                            href={href()}
                         />
                         </div>
 

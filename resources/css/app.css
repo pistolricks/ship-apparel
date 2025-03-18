@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @source "../views";
-
+@plugin "tailwind-scrollbar-hide";
 :root {
     --color-cerulean-blue-50: hsl(203, 100%, 96%);
     --color-cerulean-blue-100: hsl(206, 100%, 92%);

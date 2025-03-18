@@ -22,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/api/shop/v1', Controllers\Api\Shop\ShopController::class)->name('api.shop.index');
+Route::get('/shop/v1', Controllers\Api\Shop\ShopController::class)->name('api.shop.index');
+Route::get('/shop/v1/products', [Controllers\Api\Shop\ProductController::class, "index"])->name('api.products.index');

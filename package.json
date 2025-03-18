@@ -45,6 +45,7 @@
         "solid-js": "^1.9.5",
         "swapy": "^1.0.5",
         "swapy-solid": "^0.1.0",
+        "tailwind-scrollbar-hide": "^2.0.0",
         "tailwindcss-animate": "^1.0.7"
     }
 }

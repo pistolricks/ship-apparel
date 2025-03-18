@@ -48,7 +48,7 @@ const BaseTabs: Component<PROPS> = props => {
                 class={`${style.tabs} ${className()}`}
             >
                 <Show when={!matches.xl}>
-                    <TabsList>
+                    <TabsList class={' overflow-y-auto scrollbar-hide'}>
                         <For each={menu()}>
                             {(item, index) => (
                                 <TabsTrigger value={item.value ?? item.title}>
@@ -70,7 +70,7 @@ const BaseTabs: Component<PROPS> = props => {
                                 description={item.description}
                                 cta={item.cta}
                                 src={item.src}
-
+                                href={item.href}
                             >
                                 <CtaText
                                     class={"hidden lg:block"}
@@ -78,6 +78,7 @@ const BaseTabs: Component<PROPS> = props => {
                                     description={item.description}
                                     information={item.information}
                                     cta={item.cta}
+                                    href={item.href}
                                 />
                             </Dynamic>
 
@@ -93,7 +94,7 @@ const BaseTabs: Component<PROPS> = props => {
                         }}
                         class={'flex justify-center items-center border-t border-b border-gray-300'}>
 
-                        <Tabs.List class={`${style.tabs__list}`}>
+                        <Tabs.List class={`${style.tabs__list} overflow-x-auto scrollbar-hide`}>
 
 
                             <For each={menu()}>

@@ -229,54 +229,33 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             title: "School Specials",
             href: "/school-specials",
             side: "bottom",
-            description: "Outerwear represents the perfect blend of functionality and style—a highly visible canvas for personal expression, team unity, or brand representation. At **CustomInk and Thread**, we transform standard jackets, coats, and vests into distinctive statements that protect from the elements while showcasing your unique identity.",
+            description: "Bring your school’s pride to life with custom graphics!  From screen printing to embroidery, heat press and DTG printing.  We offer endless options to showcase your school spirit. T-shirts, sweatshirts, hoodies, and more - designed just for you!",
             information: "",
             src: image3,
             cta: "Shop Now",
             component: PromoTextImage
         },
         {
-            title: "workwear",
-            description: "Elevate Your Workforce with our Professional Custom Workwear",
-            information: "Workwear represents the critical intersection of functionality, safety, and professional identity. At **CustomInk and Thread**, we specialize in creating custom workwear solutions that protect your team while prominently displaying your company brand—turning necessary equipment into powerful marketing assets.",
-            href: "/workwear",
+            title: "Our Company",
+            href: "/our-company",
             side: "bottom",
-            src: image4,
+            description: "You envision It. We create It.",
+            information: "Making Custom Designs and any creative vision into a enjoyable and appealing apparel.",
+            src: image3,
             cta: "Shop Now",
             component: PromoTextImage
         },
         {
+            title: "Contact Us",
+            href: "/contact-us",
+            side: "bottom",
+            description: "We're happy to answer questions and get you acquainted with Custom Ink and Thread.",
+            information: "",
+            src: image3,
+            cta: "Shop Now",
+            component: PromoTextImage
+        }
 
-            title: "uniforms",
-            description: "Transform Your Team with Tailored Uniform Solutions",
-            information: "Uniforms serve as powerful visual ambassadors for your organization, instantly communicating professionalism, unity, and brand identity. At **CustomInk and Thread**, we specialize in creating custom uniforms that blend functionality, comfort, and distinctive style to elevate your team's presence and performance.",
-            href: "/uniform",
-            side: "bottom",
-            src: image5,
-            cta: "Shop Now",
-            component: PromoTextImage
-        },
-        {
-            title: "reversibles",
-            cta: "Shop Now",
-            src: image6,
-            description: "Maximize Style and Functionality with Reversible Shirts and Sweaters",
-            information: "Reversible apparel represents the pinnacle of versatility in clothing design, offering two distinct looks and functionalities in a single garment. At **CustomInk and Thread**, we specialize in creating premium reversible shirts and sweaters that provide exceptional value while showcasing your creativity through innovative dual-sided customization.",
-            href: "/reversibles",
-            side: "bottom",
-            value: "reversibles",
-            component: PromoTextImage
-        },
-        {
-            title: "brands",
-            href: "/vendors",
-            side: "bottom",
-            description: "Selecting the perfect canvas for your custom designs",
-            information: "The foundation of any outstanding custom apparel project begins with selecting the right t-shirt brand. At **CustomInk and Thread**, we partner with the industry's most respected manufacturers to provide a comprehensive selection of quality blanks that ensure your designs look exceptional and perform beautifully wear after wear.",
-            src: image7,
-            cta: "Shop Now",
-            component: PromoTextImage,
-        },
     ]
 
 

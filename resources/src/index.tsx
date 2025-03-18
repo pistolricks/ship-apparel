@@ -18,6 +18,30 @@ const routes = [
         path: "/",
         component: lazy(() => import("./routes/index")),
     },
+    {
+        path: "/shop",
+        component: lazy(() => import("./routes/shop")),
+    },
+    {
+        path: "/shop/:id",
+        component: lazy(() => import("./routes/shop/view")),
+    },
+    {
+        path: "/shop/:id",
+        component: lazy(() => import("./routes/shop")),
+    },
+    {
+        path: "/reversible-apparel",
+        component: lazy(() => import("./routes/shop")),
+    },
+    {
+        path: "/school-specials",
+        component: lazy(() => import("./routes/school-specials")),
+    },
+    {
+        path: "/our-company",
+        component: lazy(() => import("./routes/our-company")),
+    },
  //   {
  //       path: "/login",
  //       component: lazy(() => import("./routes/login")),

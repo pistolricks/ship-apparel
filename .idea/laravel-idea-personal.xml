@@ -5,6 +5,7 @@
       <map>
         <entry key="createController.singleAction" value="1" />
         <entry key="createDatabaseMigration.anonymous" value="" />
+        <entry key="createResourceController.apiOnly" value="1" />
         <entry key="postGeneration:migration2" value="" />
       </map>
     </option>
