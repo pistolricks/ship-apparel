@@ -1,23 +1,35 @@
-import {Component, lazy} from "solid-js";
+import {Component, createEffect, lazy} from "solid-js";
 import CtaWithImageTiles from "~/components/section/cta/cta-with-image-tiles";
-import BaseTabs from "~/components/ui/tab/tabs";
+import ApparelTabs from "~/components/ui/tab/apparel-tabs";
 import CtaText from "~/components/section/cta/cta-text";
 import {CarouselItemCard} from "~/components/ui/carousel/carousel";
-import {RouteSectionProps} from "@solidjs/router";
+import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import UserProfile from "~/components/profile/user-profile";
 import LocationProfile from "~/components/profile/location-profile";
+import {getProducts} from "~/lib/shop";
+import {fetchHome} from "~/lib/home";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
 type PROPS = RouteSectionProps
 
-const importProducts = async () =>
-    (await fetch(`/v1/products`)).json();
+
+export const route = {
+    preload() {
+        fetchHome()
+    }
+} satisfies RouteDefinition
+
 
 const Home: Component<PROPS> = props => {
+    const res = createAsync(async () => fetchHome());
 
     const {apps} = useLayoutContext();
+
+    createEffect(() => {
+    console.log(res()?.menu?.[0]?.sub)
+    })
 
 
     return (
@@ -28,12 +40,8 @@ const Home: Component<PROPS> = props => {
             }}
         >
 
-
-
-
-
             <div class={'mx-auto'}>
-                <BaseTabs class="" menu={apps}>
+                <ApparelTabs class="" menu={res()?.menu?.[0]?.sub}>
                     <BaseCarousel
                         list={apps}
                         children={(
@@ -53,7 +61,7 @@ const Home: Component<PROPS> = props => {
                                  cta={"Shop"}
                         />
                     </CtaWithImageTiles>
-                </BaseTabs>
+                </ApparelTabs>
 
 
             </div>

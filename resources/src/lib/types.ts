@@ -28,6 +28,7 @@ export type MenuItemType = {
     side?:  "top" | "bottom" | "both" | "left" | "right"
     component?: ValidComponent;
     icon?: Component<IconProps>;
+    sub?: MenuItemType[];
     children?: JSXElement
 }
 

@@ -21,6 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('/home/v1', Controllers\Api\HomeController::class)->name('api.home.index');
 Route::get('/shop/v1', Controllers\Api\Shop\ShopController::class)->name('api.shop.index');
 Route::get('/shop/v1/products', [Controllers\Api\Shop\ProductController::class, "index"])->name('api.products.index');

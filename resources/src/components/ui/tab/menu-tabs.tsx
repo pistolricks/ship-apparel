@@ -14,7 +14,7 @@ type PROPS = {
     children?: JSXElement;
 }
 
-const BaseTabs: Component<PROPS> = props => {
+const MenuTabs: Component<PROPS> = props => {
 
     const className = () => props.class;
 
@@ -118,4 +118,4 @@ const BaseTabs: Component<PROPS> = props => {
     );
 };
 
-export default BaseTabs;
+export default MenuTabs;
