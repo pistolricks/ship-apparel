@@ -1,13 +1,7 @@
 import {Component, createEffect, createSelector, createSignal, For} from "solid-js";
-import {A, AccessorWithLatest, createAsync, RouteDefinition} from "@solidjs/router";
-import {getProducts} from "~/lib/shop";
-
-import shopMenu from "./shop.json"
+import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
+import {getCategory, getProducts} from "~/lib/products";
 import {Grid} from "~/components/ui/grid";
-import style from "~/components/ui/tab/tabs.module.css";
-import List from "~/components/list/list";
-import {CarouselItemCard} from "~/components/ui/carousel/carousel";
-import {Flex} from "~/components/ui/flex";
 import ProductListView from "~/components/module/products/product-list-view";
 import {SM_PRODUCT} from "~/lib/types";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
@@ -19,20 +13,23 @@ type PROPS = {}
 
 
 export const route = {
-    preload() {
-        getProducts()
+
+    preload({ params }) {
+        return getCategory(params.category)
     }
 } satisfies RouteDefinition
 
 const Shop: Component<PROPS> = props => {
-    const products = createAsync(async () => getProducts());
+    const params = useParams();
+
+    const category = createAsync(async () => getCategory(params.category));
 
 
-    createEffect(() => console.log(products()))
+    createEffect(() => console.log(category()))
 
 
     const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(products()?.data?.data?.[0])
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(category()?.data?.data?.[0])
     const isSelected = createSelector(getSelectedId)
 
     function handler(data: SM_PRODUCT) {
@@ -44,12 +41,11 @@ const Shop: Component<PROPS> = props => {
     };
 
 
-
     return (
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
             <div class="bg-white">
                 <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={3} colsLg={4}>
-                    <For each={products()?.data?.data}>
+                    <For each={category()?.products?.data}>
                         {(product: SM_PRODUCT) => (
                             <Drawer.Trigger
                                 contextId={'product-preview-1'}>
@@ -60,7 +56,8 @@ const Shop: Component<PROPS> = props => {
                     </For>
                 </Grid>
 
-                <DrawerContent side={"bottom"} contextId={'product-preview-1'} class={'px-2 bg-white overflow-y-hidden'}>
+                <DrawerContent side={"bottom"} contextId={'product-preview-1'}
+                               class={'px-2 bg-white overflow-y-hidden'}>
                     <>
                         <Drawer.Trigger
                             contextId={'product-preview-1'}

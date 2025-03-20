@@ -1,9 +1,10 @@
 
 import {render} from 'solid-js/web';
 import App from "~/app";
-import {Router} from "@solidjs/router";
+import {RouteDefinition, Router} from "@solidjs/router";
 import {lazy} from "solid-js";
 import "../css/app.css"
+import {getBrand, getCategory, getProducts} from "~/lib/products";
 
 const root = document.getElementById('root');
 
@@ -13,26 +14,42 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     );
 }
 
+
+function preloadProducts() {
+   void getProducts()
+}
+
+function preloadBrand({ params,  }: { params: any }) {
+        void getBrand(params.brand)
+}
+
+function preloadCategory({ params }: { params: any }) {
+    void getCategory(params.category)
+}
+
 const routes = [
     {
         path: "/",
         component: lazy(() => import("./routes/index")),
     },
     {
-        path: "/shop",
-        component: lazy(() => import("./routes/shop")),
+        path: "/products",
+        component: lazy(() => import("./routes/products")),
+        preload: preloadProducts,
     },
     {
-        path: "/shop/:id",
-        component: lazy(() => import("./routes/shop/view")),
+        path: "/products/brands/:brand",
+        component: lazy(() => import("~/routes/products/brand")),
+        preload: preloadBrand,
     },
     {
-        path: "/shop/:id",
-        component: lazy(() => import("./routes/shop")),
+        path: "/products/category/:category",
+        component: lazy(() => import("~/routes/products/category")),
+        preload: preloadCategory,
     },
     {
         path: "/reversible-apparel",
-        component: lazy(() => import("./routes/shop")),
+        component: lazy(() => import("./routes/products")),
     },
     {
         path: "/school-specials",

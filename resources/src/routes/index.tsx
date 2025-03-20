@@ -7,7 +7,7 @@ import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import UserProfile from "~/components/profile/user-profile";
 import LocationProfile from "~/components/profile/location-profile";
-import {getProducts} from "~/lib/shop";
+import {getProducts} from "~/lib/products";
 import {fetchHome} from "~/lib/home";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));

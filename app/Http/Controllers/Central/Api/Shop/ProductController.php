@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
         return response()->json([
             "menu" => config('menu'),
-            "products" => ProductData::collect(Product::query()->paginate(100)),
+            "products" => Product::query()->paginate(100),
             "user" => $request->user(),
         ]);
     }

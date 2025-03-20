@@ -8,7 +8,7 @@ const ProductListView: Component<PROPS> = props => {
     return (
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
             <img
-                src={props.FRONT_FLAT_IMAGE_URL}
+                src={props.FRONT_MODEL_IMAGE_URL ?? props.FRONT_FLAT_IMAGE_URL}
                 alt="TODO" class="aspect-square rounded-lg bg-gray-200 object-cover group-hover:opacity-75"/>
             <div class="pb-4 pt-10 text-center">
                 <h3 class="text-sm font-medium text-gray-900">

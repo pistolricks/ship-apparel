@@ -34,6 +34,27 @@ class RequestXml
     }
 
 
+    public function getProductInfoByBrand($brand, $SanMarUsername, $SanMarPassword): string
+    {
+        return XmlWriter::make()->write('root', [
+                "soapenv:Envelope" => [
+                    "soapenv:Header" => "",
+                    "soapenv:Body" => [
+                        "impl:getProductInfoByBrand" => [
+                            "arg0" => [
+                                "brandName" => $brand,
+                            ],
+                            "arg1" => [
+                                "sanMarCustomerNumber" => "5",
+                                "sanMarUserName" => $SanMarUsername,
+                                "sanMarUserPassword" => $SanMarPassword,
+                            ],
+                        ],
+                    ],
+                ],
+        ]);
+    }
+
     public function GetFobPoints($title, $SanMarUsername, $SanMarPassword): string
     {
         return XmlWriter::make()->write('root', [

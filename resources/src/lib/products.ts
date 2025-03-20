@@ -1,0 +1,50 @@
+import {query} from "@solidjs/router";
+
+
+
+export const getProducts = query(async () => {
+    "use server";
+
+    console.log("Product Api was called")
+    const response = await fetch(`/api/shop/v1/products`, {
+        headers: {
+            "content-Type": "application/json",
+        },
+    })
+    const res: any = await response.json();
+
+    console.log(res);
+    return res;
+}, "products")
+
+export const getBrand = query(async (brand: string) => {
+    "use server";
+
+    console.log("Brand Api was called")
+    const response = await fetch(`/api/shop/v1/products/brands/${brand}`, {
+        headers: {
+            "content-Type": "application/json",
+        },
+    })
+    const res: any = await response.json();
+
+    console.log(res);
+    return res;
+}, "brands")
+
+export const getCategory = query(async (category: string) => {
+    "use server";
+
+    console.log("category Api was called")
+    const response = await fetch(`/api/shop/v1/products/category/${category}`, {
+        headers: {
+            "content-Type": "application/json",
+        },
+    })
+    const res: any = await response.json();
+
+    console.log(res);
+    return res;
+}, "category")
+
+
