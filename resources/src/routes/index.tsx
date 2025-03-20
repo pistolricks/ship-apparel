@@ -54,13 +54,7 @@ const Home: Component<PROPS> = props => {
                             item) =>
                             <CarouselItemCard {...item()}/>
                         }/>
-                    <CtaWithImageTiles>
-                        <CtaText title={"Unite, Identify, Inspire"}
-                                 description={"Selecting the perfect canvas for your custom designs"}
-                                 information={"With state-of-the-art equipment and skilled artisans, we ensure every product meets the highest standards of quality. From concept development to final production, our team works closely with you to bring your vision to life."}
-                                 cta={"Shop"}
-                        />
-                    </CtaWithImageTiles>
+
                 </ApparelTabs>
 
 
