@@ -2,8 +2,10 @@
 
 namespace App\Actions;
 
+use App\Jobs\ImportJob;
 use App\Jobs\ImportSanMarFileData;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Bus;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class ImportSanMarFile
@@ -15,7 +17,9 @@ class ImportSanMarFile
 
     public function handle(): void
     {
-        ImportSanMarFileData::dispatch();
+         Bus::batch([
+            new ImportJob('storage/app/SanMar_SDL_N.csv'),
+        ])->dispatch();
     }
 
     public function asCommand(Command $command): void

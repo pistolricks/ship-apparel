@@ -21,6 +21,3 @@ Route::post('/register/submit', [Controllers\RegisterTenantController::class, 's
 
 Route::get('/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
 Route::post('/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');
-
-
-Route::get('/import/products', Controllers\Imports\ProductsController::class)->name('central.import.products');
