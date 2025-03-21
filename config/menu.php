@@ -6,10 +6,6 @@ return [
         'href' => '/products',
         'sub' => [
             [
-                'title' => 'NEW',
-                'href' => 'products/new',
-            ],
-            [
                 'title' => 'Brands',
                 'href' => 'products/brands',
                 'sub' => [
@@ -354,10 +350,6 @@ return [
                     ['title' => 'bottoms', 'href' => 'products/category/youth/bottoms'],
                     ['title' => 'Infant & Toddler', 'href' => 'products/category/youth/infant-and-toddler'],
                 ]
-            ],
-            [
-                'title' => 'Outlet',
-                'href' => 'products/category/outlet',
             ],
         ]
     ],

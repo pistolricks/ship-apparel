@@ -1,13 +1,8 @@
 import {Component, createEffect, lazy} from "solid-js";
-import CtaWithImageTiles from "~/components/section/cta/cta-with-image-tiles";
-import ApparelTabs from "~/components/ui/tab/apparel-tabs";
-import CtaText from "~/components/section/cta/cta-text";
+import ApparelTabs from "~/components/layout/partials/apparel-tabs";
 import {CarouselItemCard} from "~/components/ui/carousel/carousel";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
-import UserProfile from "~/components/profile/user-profile";
-import LocationProfile from "~/components/profile/location-profile";
-import {getProducts} from "~/lib/products";
 import {fetchHome} from "~/lib/home";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
@@ -28,7 +23,7 @@ const Home: Component<PROPS> = props => {
     const {apps} = useLayoutContext();
 
     createEffect(() => {
-    console.log(res()?.menu?.[0]?.sub)
+        console.log(res()?.menu?.[0]?.sub)
     })
 
 
@@ -60,11 +55,6 @@ const Home: Component<PROPS> = props => {
 
             </div>
             <div class={'mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8'}>
-
-
-
-
-
 
 
             </div>
@@ -100,4 +90,4 @@ const FeatureCard = (props: {
     );
 };
 
-export  {FeatureCard};
+export {FeatureCard};
