@@ -64,8 +64,8 @@ const ProductView: Component<{
                         <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
                             <div class="lg:col-span-5 lg:col-start-8">
                                 <div class="flex justify-between">
-                                    <h1 class="text-xl font-medium text-gray-900">{product()?.PRODUCT_TITLE}</h1>
-                                    <p class="text-xl font-medium text-gray-900">{product()?.MSRP}</p>
+                                    <h1 class="text-xl font-medium text-gray-900">{product()?.product_title}</h1>
+                                    <p class="text-xl font-medium text-gray-900">{product()?.msrp}</p>
                                 </div>
                             </div>
 
@@ -74,7 +74,7 @@ const ProductView: Component<{
                                 <h2 class="sr-only">Images</h2>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                                    <img src={product()?.FRONT_FLAT_IMAGE_URL} class={'rounded-lg'} alt={product()?.PRODUCT_TITLE} />
+                                    <img src={product()?.front_flat_image_url} class={'rounded-lg'} alt={product()?.product_title} />
 
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ const ProductView: Component<{
                                     <h2 class="text-sm font-medium text-gray-900">Description</h2>
 
                                     <div class="mt-4 space-y-4 text-sm/6 text-gray-500">
-                                        {product()?.PRODUCT_DESCRIPTION}
+                                        {product()?.product_description}
                                     </div>
                                 </div>
 

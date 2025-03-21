@@ -27,126 +27,125 @@ class Product extends Resource
         return [
             ID::make()->sortable(),
 
-
-            Text::make('Title', 'PRODUCT_TITLE')
+            Text::make('Title', 'product_title')
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Description', 'PRODUCT_DESCRIPTION')
+            Text::make('Description', 'product_description')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Style", "STYLE")
+            Text::make("Style", "style")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Available Sizes", "AVAILABLE_SIZES")
+            Text::make("Available Sizes", "available_sizes")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Brand Logo Image", "BRAND_LOGO_IMAGE")
+            Text::make("Brand Logo Image", "brand_logo_image")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Thumbnail Image", "THUMBNAIL_IMAGE")
+            Text::make("Thumbnail Image", "thumbnail_image")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Color Swatch Image", "COLOR_SWATCH_IMAGE")
+            Text::make("Color Swatch Image", "color_swatch_image")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Product Image", "PRODUCT_IMAGE")
+            Text::make("Product Image", "product_image")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Spec Sheet", "SPEC_SHEET")
+            Text::make("Spec Sheet", "spec_sheet")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Price Text", "PRICE_TEXT")
+            Text::make("Price Text", "price_text")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Suggested Price", "SUGGESTED_PRICE")
+            Text::make("Suggested Price", "suggested_price")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Category Name", "CATEGORY_NAME")
+            Text::make("Category Name", "category_name")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Subcategory Name", "SUBCATEGORY_NAME")
+            Text::make("Subcategory Name", "subcategory_name")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Color Name", "COLOR_NAME")
+            Text::make("Color Name", "color_name")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Color Square Image", "COLOR_SQUARE_IMAGE")
+            Text::make("Color Square Image", "color_square_image")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Color Product Image", "COLOR_PRODUCT_IMAGE")
+            Text::make("Color Product Image", "color_product_image")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Color Product Image Thumbnail", "COLOR_PRODUCT_IMAGE_THUMBNAIL")
+            Text::make("Color Product Image Thumbnail", "color_product_image_thumbnail")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Size", "SIZE")
+            Text::make("Size", "size")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Piece Weight", "PIECE_WEIGHT")
+            Text::make("Piece Weight", "piece_weight")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Piece Price", "PIECE_PRICE")
+            Text::make("Piece Price", "piece_price")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Dozens Price", "DOZENS_PRICE")
+            Text::make("Dozens Price", "dozens_price")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Case Price", "CASE_PRICE")
+            Text::make("Case Price", "case_price")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Price Group", "PRICE_GROUP")
+            Text::make("Price Group", "price_group")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Case Size", "CASE_SIZE")
+            Text::make("Case Size", "case_size")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Inventory Key", "INVENTORY_KEY")
+            Text::make("Inventory Key", "inventory_key")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Size Index", "SIZE_INDEX")
+            Text::make("Size Index", "size_index")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Sanmar Mainframe Color", "SANMAR_MAINFRAME_COLOR")
+            Text::make("Sanmar Mainframe Color", "sanmar_mainframe_color")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Mill", "MILL")
+            Text::make("Mill", "mill")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Product Status", "PRODUCT_STATUS")
+            Text::make("Product Status", "product_status")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Companion Styles", "COMPANION_STYLES")
+            Text::make("Companion Style", "companion_style")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Msrp", "MSRP")
+            Text::make("Msrp", "msrp")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Map Pricing", "MAP_PRICING")
+            Text::make("Map Pricing", "map_pricing")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Front Model ImageUrl", "FRONT_MODEL_IMAGE_URL")
+            Text::make("Front Model ImageUrl", "front_model_image_url")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Back Model ImageUrl", "BACK_MODEL_IMAGE_URL")
+            Text::make("Back Model ImageUrl", "back_model_image_url")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Front Flat ImageUrl", "FRONT_FLAT_IMAGE_URL")
+            Text::make("Front Flat ImageUrl", "front_flat_image_url")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Back Flat ImageUrl", "BACK_FLAT_IMAGE_URL")
+            Text::make("Back Flat ImageUrl", "back_flat_image_url")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Product Measurements", "PRODUCT_MEASUREMENTS")
+            Text::make("Product Measurements", "product_measurements")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Pms Color", "PMS_COLOR")
+            Text::make("Pms Color", "pms_color")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Gtin", "GTIN")
+            Text::make("Gtin", "gtin")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Decorator Spec Sheet", "DECORATOR_SPEC_SHEET")
+            Text::make("Decoration Spec Sheet", "decoration_spec_sheet")
                 ->sortable()
                 ->rules('nullable'),
 

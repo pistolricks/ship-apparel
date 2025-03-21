@@ -1,6 +1,6 @@
 import {A, Action, useNavigate, useSubmission} from "@solidjs/router";
 import {Component, createEffect, createSignal, JSXElement, Show, splitProps, ValidComponent} from "solid-js";
-import {logo} from "~/app";
+
 import {IconX} from "~/components/svg";
 
 const FormLayout: Component<{
@@ -20,7 +20,7 @@ const FormLayout: Component<{
     const navigate =  useNavigate();
     const hideLogo = () => props.hideLogo ?? false;
     const title = () => props.title ?? '';
-    const imageSrc = () => props.imageSrc ?? logo();
+    const imageSrc = () => props.imageSrc;
     const children = () => props.children;
 
 

@@ -8,17 +8,17 @@ const ProductListView: Component<PROPS> = props => {
     return (
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
             <img
-                src={props.FRONT_MODEL_IMAGE_URL ?? props.FRONT_FLAT_IMAGE_URL}
+                src={props.front_model_image_url ?? props.front_flat_image_url}
                 alt="TODO" class="aspect-square rounded-lg bg-gray-200 object-cover group-hover:opacity-75"/>
             <div class="pb-4 pt-10 text-center">
                 <h3 class="text-sm font-medium text-gray-900">
                     <button onClick={props.onClick} type={'button'}>
                         <span aria-hidden="true" class="absolute inset-0"></span>
-                        {props.PRODUCT_TITLE}
+                        {props.product_title}
                     </button>
                 </h3>
 
-                <p class="mt-4 text-base font-medium text-gray-900">{props.MSRP}</p>
+                <p class="mt-4 text-base font-medium text-gray-900">{props.msrp}</p>
             </div>
         </div>
     );
