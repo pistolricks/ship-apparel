@@ -13,8 +13,6 @@
 .tabs__list {
     position: relative;
     display: flex;
-
-
 }
 
 .tabs__list[data-orientation="horizontal"] {

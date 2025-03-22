@@ -48,7 +48,7 @@ readonly class BrandSupport
                 'travis-mathew' => 'TravisMathew',
                 'volunteer-knitwear' => 'Volunteer Knitwear',
                 'win' => 'Wink',
-        ])->get($brand, 'none');
+        ])->get($brand, 'Gildan');
     }
 
 }
