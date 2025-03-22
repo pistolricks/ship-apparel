@@ -1,4 +1,4 @@
-import {Component, createEffect, createSelector, createSignal, For} from "solid-js";
+import {Component, createEffect, createMemo, createSelector, createSignal, For} from "solid-js";
 import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
 import {getBrand, getProducts} from "~/lib/products";
 import {Grid} from "~/components/ui/grid";
@@ -24,7 +24,7 @@ const Shop: Component<PROPS> = props => {
 
 
     const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(brand()?.data?.data?.[0])
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(brand()?.products?.data?.[0])
     const isSelected = createSelector(getSelectedId)
 
     function handler(data: SM_PRODUCT) {
@@ -35,12 +35,21 @@ const Shop: Component<PROPS> = props => {
 
     }
 
+    const key = 'style';
+
+    const productData = createMemo(() => {
+        const data = brand()?.products?.data || [];
+        let arr: SM_PRODUCT[] =  [...new Map((data as SM_PRODUCT[]).map((item: SM_PRODUCT) =>
+            [item[key], item])).values()]
+        return arr;
+    })
+
 
     return (
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
             <div class="bg-white">
                 <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={3} colsLg={4}>
-                    <For each={brand()?.products?.data}>
+                    <For each={productData()}>
                         {(product: SM_PRODUCT) => (
                             <Drawer.Trigger
                                 contextId={'product-preview-1'}>

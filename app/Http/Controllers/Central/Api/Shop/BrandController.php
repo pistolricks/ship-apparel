@@ -12,9 +12,12 @@ class BrandController extends Controller
     public function __invoke(Request $request, string $brand)
     {
         $brandName = BrandSupport::lookupBrand($brand);
+
+        $products = Product::query()->where('mill', $brandName)->where('product_status', '!=', 'Discontinued')->paginate(1000);
+
         return response()->json([
             "menu" => config('menu'),
-            "products" => Product::query()->where('MILL', $brandName)->paginate(100),
+            "products" => $products,
             "user" => $request->user(),
         ]);
     }

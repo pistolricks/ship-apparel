@@ -15,10 +15,10 @@ class ProductResource extends Resource
 {
     public static $model = Product::class;
 
-    public static $title = 'id';
+    public static $id = 'id';
 
     public static $search = [
-        'id', 'PRODUCT_TITLE'
+        'id', 'product_title','mill'
     ];
 
     public function fields(Request $request): array

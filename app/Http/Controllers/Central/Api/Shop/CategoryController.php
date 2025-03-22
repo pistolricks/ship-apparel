@@ -11,11 +11,11 @@ class CategoryController extends Controller
     public function __invoke(Request $request, string $category)
     {
 
-
+        $products = Product::query()->where('category_name', $category)->where('product_status', '!=', 'Discontinued')->paginate(1000);
 
         return response()->json([
             "menu" => config('menu'),
-            "products" => Product::query()->where('CATEGORY_NAME', $category)->paginate(100),
+            "products" => $products,
             "user" => $request->user(),
         ]);
     }

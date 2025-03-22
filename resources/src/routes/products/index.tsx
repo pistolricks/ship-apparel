@@ -1,4 +1,4 @@
-import {Component, createEffect, createSelector, createSignal, For} from "solid-js";
+import {Component, createEffect, createMemo, createSelector, createSignal, For} from "solid-js";
 import {A, AccessorWithLatest, createAsync, RouteDefinition} from "@solidjs/router";
 import {getProducts} from "~/lib/products";
 
@@ -18,7 +18,6 @@ import ProductView from "~/components/module/products/product-view";
 type PROPS = {}
 
 
-
 const Shop: Component<PROPS> = props => {
     const products = createAsync(async () => getProducts());
 
@@ -36,7 +35,16 @@ const Shop: Component<PROPS> = props => {
             setSelected(data)
         }
 
-    };
+    }
+
+    const key = 'style';
+
+    const productData = createMemo(() => {
+        const data = products()?.products?.data || [];
+        let arr: SM_PRODUCT[] =  [...new Map((data as SM_PRODUCT[]).map((item: SM_PRODUCT) =>
+            [item[key], item])).values()]
+        return arr;
+    })
 
 
 
@@ -44,7 +52,7 @@ const Shop: Component<PROPS> = props => {
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
             <div class="bg-white">
                 <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={3} colsLg={4}>
-                    <For each={products()?.products?.data}>
+                    <For each={productData()}>
                         {(product: SM_PRODUCT) => (
                             <Drawer.Trigger
                                 contextId={'product-preview-1'}>
@@ -55,7 +63,8 @@ const Shop: Component<PROPS> = props => {
                     </For>
                 </Grid>
 
-                <DrawerContent side={"bottom"} contextId={'product-preview-1'} class={'px-2 bg-white overflow-y-hidden'}>
+                <DrawerContent side={"bottom"} contextId={'product-preview-1'}
+                               class={'px-2 bg-white overflow-y-hidden'}>
                     <>
                         <Drawer.Trigger
                             contextId={'product-preview-1'}
