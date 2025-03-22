@@ -42,7 +42,7 @@ const ProductSection: Component<PROPS> = props => {
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
             <div class="bg-white flex justify-start">
 
-                <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={3} colsLg={5}>
+                <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
                     <For each={productData()}>
                         {(product: SM_PRODUCT) => (
                             <Drawer.Trigger
