@@ -6,6 +6,7 @@ import {A} from "@solidjs/router";
 type PROPS = {
     title: string;
     href: string;
+    src?: string;
     list?: MenuItemType[]
 }
 
@@ -13,6 +14,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
 
     const title = () => props.title;
     const href = () => props.href;
+    const src = () => props.src;
     const list = () => props.list;
 
     return (
@@ -63,10 +65,10 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                             )}
                         </For>
                     </ul>
-                    <div class={'w-full h-full'}>
+                    <div class={'w-full h-full hidden lg:flex lg:justify-end '}>
                         <img
-                            class={'object-cover rounded-xl'}
-                            src={'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-01-featured-collection.jpg'} />
+                            class={'object-cover rounded-xl max-h-[50dvh]'}
+                            src={src()} />
                     </div>
                 </div>
             </div>

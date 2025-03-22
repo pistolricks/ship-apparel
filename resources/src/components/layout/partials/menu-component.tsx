@@ -2,8 +2,8 @@ import {Component, For} from "solid-js";
 import {useLayoutContext} from "~/context/layout-provider";
 import {A} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
-import image1 from "~/components/img/cta_sports_pack_1.png";
-import image2 from "~/components/img/cta_mercandise_1.jpg";
+import image1 from "~/img/cta_sports_pack_1.png";
+import image2 from "~/img/cta_mercandise_1.jpg";
 type PROPS = {
     contextId: string;
 }
@@ -24,9 +24,9 @@ const MenuComponent: Component<PROPS> = props => {
                                 src={image1}
                                 alt="Models sitting back to back, wearing Basic Tee in black and bone."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
-                            <Drawer.Trigger contextId={contextId()} as={A} href={"/new-arrivals"} class="mt-6 block font-medium text-gray-900">
+                            <Drawer.Trigger contextId={contextId()} as={A} href={"/products"} class="mt-6 block font-medium text-gray-900">
                                 <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                New Arrivals
+                                Products
                                 <p aria-hidden="true" class="mt-1">Shop now</p>
                             </Drawer.Trigger>
                         </div>
@@ -35,7 +35,7 @@ const MenuComponent: Component<PROPS> = props => {
                                 src={image2}
                                 alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
                                 class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"/>
-                            <Drawer.Trigger contextId={contextId()} as={A} href={"/reversibles"} class="mt-6 block font-medium text-gray-900">
+                            <Drawer.Trigger contextId={contextId()} as={A} href={"#"} class="mt-6 block font-medium text-gray-900">
                                 <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                                 Reversible Apparel
                             <p aria-hidden="true" class="mt-1">Shop now</p>

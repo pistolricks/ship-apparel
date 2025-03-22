@@ -65,7 +65,7 @@ const ApparelTabs: Component<PROPS> = props => {
                 <For each={menu()}>
                     {(item, index) => (
                         <TabsContent value={item?.value ?? item.title}>
-                       <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
+                       <MenuLeftImagesRight title={item.title} href={item.href} src={item.src} list={item?.sub}/>
 
                         </TabsContent>
                     )}
