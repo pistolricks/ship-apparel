@@ -58,7 +58,7 @@ const ProductView: Component<{
     return (
         <Show when={product()}>
             <div class="relative bg-white rounded-xl overflow-y-auto scrollbar-hide">
-                <div class="pb-16 pt-6 sm:pb-24">
+                <div class="pb-16 sm:pt-6 sm:pb-24">
                     <div class="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 
                         <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">

@@ -63,6 +63,11 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                             )}
                         </For>
                     </ul>
+                    <div class={'w-full h-full'}>
+                        <img
+                            class={'object-cover rounded-xl'}
+                            src={'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-01-featured-collection.jpg'} />
+                    </div>
                 </div>
             </div>
         </div>

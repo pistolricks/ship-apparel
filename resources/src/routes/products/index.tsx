@@ -68,7 +68,7 @@ const Shop: Component<PROPS> = props => {
                     <>
                         <Drawer.Trigger
                             contextId={'product-preview-1'}
-                            class="absolute p-1 top-1 right-1 z-50 border border-gray-400 rounded-full hover:border-accent/80 backdrop-blur-2xl">
+                            class="hidden sm:block absolute p-1 top-1 right-1 z-50 border border-gray-400 rounded-full hover:border-accent/80 backdrop-blur-2xl">
                             <IconX class={'size-8 hover:stroke-accent/50'}/>
                         </Drawer.Trigger>
 
