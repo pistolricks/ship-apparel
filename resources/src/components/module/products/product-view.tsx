@@ -1,8 +1,7 @@
-import {IconCircle, IconCreditCard, IconStar, IconX} from "~/components/svg";
-import {Component, createSelector, createSignal, For, Show} from "solid-js";
-import {RadioGroup, RadioGroupItem} from "~/components/ui/radio-group/radio-group";
-import Drawer from "@corvu/drawer";
+import {IconCircle, IconCreditCard} from "~/components/svg";
+import {Component, For, Show} from "solid-js";
 import {SM_PRODUCT} from "~/lib/types";
+import {Format} from '@ark-ui/solid/format'
 
 
 const policies = [
@@ -40,6 +39,11 @@ const ProductView: Component<{
 
     const product = () => props.product;
 
+
+    const NumberWithCurrency = () => {
+        return <Format.Number value={Number(product()?.msrp)} style="currency" currency="USD"/>
+    }
+
     const defaultColor = {
         name: "",
         bgColor: "",
@@ -64,8 +68,8 @@ const ProductView: Component<{
                         <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
                             <div class="lg:col-span-5 lg:col-start-8">
                                 <div class="flex justify-between">
-                                    <h1 class="text-xl font-medium text-gray-900">{product()?.product_title}</h1>
-                                    <p class="text-xl font-medium text-gray-900">{product()?.msrp}</p>
+                                    <h1 class="text-xl font-medium text-gray-900">{product()?.product_title?.replace(`${product()?.mill} - `, '')}</h1>
+                                    <p class="text-xl font-medium text-gray-900">{NumberWithCurrency()}</p>
                                 </div>
                             </div>
 
@@ -74,7 +78,8 @@ const ProductView: Component<{
                                 <h2 class="sr-only">Images</h2>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                                    <img src={product()?.front_flat_image_url} class={'rounded-lg'} alt={product()?.product_title} />
+                                    <img src={product()?.front_flat_image_url} class={'rounded-lg'}
+                                         alt={product()?.product_title}/>
 
                                 </div>
                             </div>
@@ -97,7 +102,7 @@ const ProductView: Component<{
                                     <div class="mt-4">
                                         <ul role="list"
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-500 marker:text-gray-300">
-                                           {/*
+                                            {/*
 
                                             <For each={details()}>
                                                 {(item) => (
