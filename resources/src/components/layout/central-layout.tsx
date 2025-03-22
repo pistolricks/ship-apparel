@@ -1,10 +1,10 @@
-import {Component, createEffect, JSXElement, ParentProps, Show, type ValidComponent} from "solid-js";
+import {Component, ParentProps} from "solid-js";
 import Header from "~/components/layout/partials/header";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import ProfileMenu from "~/components/layout/partials/side/profile-menu";
-import {Dynamic} from "solid-js/web";
-import {useLayoutContext} from "~/context/layout-provider";
 import MenuComponent from "~/components/layout/partials/menu-component";
+import {SidebarProvider, SidebarTrigger} from "../ui/sidebar";
+import {AppSidebar} from "~/components/layout/partials/side/app-sidebar";
 
 type PROPS = ParentProps & {
     name: string,
@@ -13,43 +13,42 @@ type PROPS = ParentProps & {
 const CentralLayout: Component<PROPS> = props => {
 
 
-
     const contextId = () => "cl-1"
     const side: () => 'top' | 'right' | 'bottom' | 'left' = () => "right"
     const children = () => props.children;
 
 
-
     return (
-        <BaseDrawer side={side()} contextId={contextId()}>
-        <div class="min-h-screen h-screen flex flex-col">
-            <Header contextId={contextId()}/>
-            <div class={'flex-1 flex flex-row overflow-y-hidden'}>
-            <main
-                class={'scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
-            >
-                {children()}
-            </main>
-            </div>
-            <DrawerContent
-                side={side()}
-                contextId={contextId()}
-            >
+            <BaseDrawer side={side()} contextId={contextId()}>
+                <div class="min-h-screen h-screen flex flex-col">
+                    <Header contextId={contextId()}/>
+                    <div class={'flex-1 flex flex-row overflow-y-hidden'}>
 
-                <ProfileMenu contextId={contextId()} />
-
-                <MenuComponent contextId={contextId()}/>
-
-            </DrawerContent>
-            <footer class={'bg-gray-200/50'}>
-                <div class="">
-                    <div class="flex  items-center px-4">
-
+                        <main
+                            class={'scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
+                        >
+                            {children()}
+                        </main>
                     </div>
+                    <DrawerContent
+                        side={side()}
+                        contextId={contextId()}
+                    >
+
+                        <ProfileMenu contextId={contextId()}/>
+
+                        <MenuComponent contextId={contextId()}/>
+
+                    </DrawerContent>
+                    <footer class={'bg-gray-200/50'}>
+                        <div class="">
+                            <div class="flex  items-center px-4">
+
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-            </footer>
-        </div>
-        </BaseDrawer>
+            </BaseDrawer>
     );
 };
 

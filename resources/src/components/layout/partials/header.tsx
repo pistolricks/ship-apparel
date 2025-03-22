@@ -1,7 +1,9 @@
 import {Component, Show, VoidComponent} from "solid-js";
-import {A} from "@solidjs/router";
+import {A, useLocation} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
 import {LogoIcon} from "~/components/svg";
+import Breadcrumbs from "~/components/layout/partials/breadcrumbs";
+import {SidebarTrigger} from "~/components/ui/sidebar";
 
 
 
@@ -9,8 +11,7 @@ const Header: Component<{
     contextId: string;
 }> = props => {
 
-
-
+    const location = useLocation();
     const contextId = () => props.contextId;
 
     return (
@@ -61,6 +62,9 @@ const Header: Component<{
                     </div>
                 </nav>
             </header>
+            <div class={'flex justify-start items-center'}>
+            <Breadcrumbs path={location?.pathname}/>
+            </div>
         </>
     )
 
