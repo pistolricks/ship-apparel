@@ -6,7 +6,6 @@ import Breadcrumbs from "~/components/layout/partials/breadcrumbs";
 import {SidebarTrigger} from "~/components/ui/sidebar";
 
 
-
 const Header: Component<{
     contextId: string;
 }> = props => {
@@ -62,8 +61,10 @@ const Header: Component<{
                     </div>
                 </nav>
             </header>
-            <div class={'flex justify-start items-center'}>
-            <Breadcrumbs path={location?.pathname}/>
+            <div class={'w-full bg-gray-100'}>
+                <div class={'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 '}>
+                    <Breadcrumbs path={location?.pathname}/>
+                </div>
             </div>
         </>
     )

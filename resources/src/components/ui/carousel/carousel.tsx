@@ -4,6 +4,7 @@ import {Card, CardContent, CardFooter, CardHeader} from "~/components/ui/card"
 import {Carousel, CarouselContent, CarouselItem} from "~/components/ui/carousel"
 import {MenuItemType} from "~/lib/types";
 import PromoTextImage from "~/components/section/promo/promo-text-image";
+import {A} from "@solidjs/router";
 
 
 export type CarouselItemProps = {
@@ -88,12 +89,12 @@ const CarouselItemCard: Component<MenuItemType> = props => {
                         <Match when={side() === "bottom"}>
                             <CardFooter
                                 class={'absolute bottom-0 w-full p-2 bg-white/40 glass rounded-b-lg'}>
-                                <div class="flex-1 px-6 py-4 rounded-b-lg">
-                                    <div class="font-bold text-xl mb-2">{title()}</div>
+                                <A href={href()} class="flex-1 px-6 py-4 rounded-b-lg">
+                                    <div class="font-bold text-xl">{title()}</div>
                                     <p class="text-gray-700 text-base">
                                         {description()}
                                     </p>
-                                </div>
+                                </A>
                             </CardFooter>
                         </Match>
 
@@ -102,7 +103,7 @@ const CarouselItemCard: Component<MenuItemType> = props => {
                             <CardHeader
                                 class={'absolute top-0 w-full p-2  bg-white/40 glass rounded-t-lg'}>
                                 <div class="flex-1 px-6 py-2 rounded-b-lg">
-                                    <div class="font-bold text-xl mb-2">{title()}</div>
+                                    <div class="font-bold text-xl">{title()}</div>
                                     <p class="text-gray-700 text-base">
                                         {description()}
                                     </p>
@@ -111,7 +112,7 @@ const CarouselItemCard: Component<MenuItemType> = props => {
                             <CardFooter
                                 class={'absolute bottom-0 w-full p-2 bg-white/40 glass rounded-b-lg'}>
                                 <div class="flex-1 px-6 py-4 rounded-b-lg">
-                                    <div class="font-bold text-xl mb-2">{title()}</div>
+                                    <div class="font-bold text-xl">{title()}</div>
                                     <p class="text-gray-700 text-base">
                                         {description()}
                                     </p>

@@ -1,22 +1,13 @@
 import {Accessor, createContext, createSignal, JSX, onMount, Setter, useContext} from "solid-js";
-import {Feature, FeatureCollection, MenuItemType} from "~/lib/types";
+import {Feature, FeatureCollection, MenuItemType, SessionUser} from "~/lib/types";
 
 import {createStore, SetStoreFunction, Store} from "solid-js/store";
-
-
-import {SessionUser} from "~/lib/types";
 import {Extent} from "ol/extent";
 import {IconVendors} from "~/components/svg";
-import PromoWithTileOverlap from "~/components/section/promo/promo-with-tile-overlap";
-import PromoWithBackgroundImage from "~/components/section/promo/promo-with-background-image";
 import PromoTextImage from "~/components/section/promo/promo-text-image";
-import image1 from "~/components/img/cta_group_1.webp"
-import image2 from "~/components/img/cta_group_1.webp"
-import image3 from "~/components/img/cta_group_1.webp"
-import image4 from "~/components/img/cta_group_1.webp"
-import image5 from "~/components/img/cta_group_1.webp"
-import image6 from "~/components/img/cta_group_1.webp"
-import image7 from "~/components/img/cta_group_1.webp"
+import image1 from "~/img/cta_group_1.webp"
+import image2 from "~/img/cta_group_1.webp"
+import image3 from "~/img/cta_group_1.webp"
 
 type POSITION = [number, number] | undefined
 
@@ -200,8 +191,6 @@ export function LayoutProvider(props: { children: JSX.Element }) {
         {title: "Design Lab", href: "/design-lab", icon: IconVendors},
 
     ]
-
-
 
 
     const apps: MenuItemType[] = [

@@ -7,7 +7,8 @@ return [
         'sub' => [
             [
                 'title' => 'Brands',
-                'href' => 'products/brands',
+                'href' => 'products',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2014/f17/L455_jetblack_model_front_072014.jpg',
                 'sub' => [
                     ['title' => 'A4', 'href' => 'products/brands/a4'],
                     ['title' => 'Allmade', 'href' => 'products/brands/allmade'],
@@ -51,6 +52,7 @@ return [
             [
                 'title' => 'T-Shirts',
                 'href' => 'products/category/t-shirts',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2017/f4/29M_oxford_model_front_032017.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/t-shirts/new'],
                     ['title' => 'Sale', 'href' => 'products/category/t-shirts/sale'],
@@ -78,6 +80,7 @@ return [
             [
                 'title' => 'Polos/Knits',
                 'href' => 'products/category/polos-knits',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2014/f13/K500P_ultramarineblue_model_front_072014.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/polos-knits/new'],
                     ['title' => 'Sale', 'href' => 'products/category/polos-knits/sale'],
@@ -100,6 +103,7 @@ return [
             [
                 'title' => 'Sweatshirts/Fleece',
                 'href' => 'products/category/sweatshirts-fleece',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2019/f15/PC78H_sangria_model_front_092019.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/sweatshirts-fleece/new'],
                     ['title' => 'Sale', 'href' => 'products/category/sweatshirts-fleece/sale'],
@@ -123,6 +127,7 @@ return [
             [
                 'title' => 'Caps',
                 'href' => 'products/category/caps',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/333114_VarsityRoyal_FlatFront_2009.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/caps/new'],
                     ['title' => 'Sale', 'href' => 'products/category/caps/sale'],
@@ -149,6 +154,7 @@ return [
             [
                 'title' => 'Activewear',
                 'href' => 'products/category/activewear',
+                'src' => '//cdnp.sanmar.com/medias/sys_master/images/h06/h4c/16690109939742/424Wx635H_46779_DpRdWht-0-LST441DpRdWhtModelFront/424Wx635H-46779-DpRdWht-0-LST441DpRdWhtModelFront.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/activewear/new'],
                     ['title' => 'Sale', 'href' => 'products/category/activewear/sale'],
@@ -171,6 +177,7 @@ return [
             [
                 'title' => 'Outerwear',
                 'href' => 'products/category/outerwear',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2016/f19/J777_navy_model_front_102016.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/outerwear/new'],
                     ['title' => 'Sale', 'href' => 'products/category/outerwear/sale'],
@@ -196,6 +203,7 @@ return [
             [
                 'title' => 'Woven/Dress Shirts',
                 'href' => 'products/category/woven-dress-shirts',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2016/f17/S654_greenaqua_model_front_102016.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/woven-dress-shirts/new'],
                     ['title' => 'Sale', 'href' => 'products/category/woven-dress-shirts/sale'],
@@ -220,6 +228,7 @@ return [
             [
                 'title' => 'Bottoms',
                 'href' => 'products/category/bottoms',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/LPST880_Black_Model_Front_121010.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/bottoms/new'],
                     ['title' => 'Sale', 'href' => 'products/category/bottoms/sale'],
@@ -239,6 +248,7 @@ return [
             [
                 'title' => 'Workwear',
                 'href' => 'products/category/workwear',
+                'src' => '//cdnp.sanmar.com/medias/sys_master/images/h95/h25/26574300545054/424Wx635H_8006_DarkNavy-0-CS419DarkNavyModelFront3/424Wx635H-8006-DarkNavy-0-CS419DarkNavyModelFront3.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/workwear/new'],
                     ['title' => 'Sale', 'href' => 'products/category/workwear/sale'],
@@ -261,6 +271,7 @@ return [
             [
                 'title' => 'Bags',
                 'href' => 'products/category/bags',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2011/f7/411047_Black_GA12.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/bags/new'],
                     ['title' => 'Sale', 'href' => 'products/category/bags/sale'],
@@ -284,6 +295,7 @@ return [
             [
                 'title' => 'Accessories',
                 'href' => 'products/category/accessories',
+                'src' => '//cdnp.sanmar.com/medias/sys_master/images/had/h7e/26568764719134/424Wx635H_6251_Black-0-A706BlackModelFront2/424Wx635H-6251-Black-0-A706BlackModelFront2.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/accessories/new'],
                     ['title' => 'Sale', 'href' => 'products/category/accessories/sale'],
@@ -302,6 +314,7 @@ return [
             [
                 'title' => 'Personal Protection',
                 'href' => 'products/category/personal-protection',
+                'src' => '//cdnp.sanmar.com/medias/sys_master/images/hb1/hed/26664827650078/424Wx635H_5726_SftyOrg-0-CS401LSSftyOrgModelFront3/424Wx635H-5726-SftyOrg-0-CS401LSSftyOrgModelFront3.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/personal-protection/new'],
                     ['title' => 'Sale', 'href' => 'products/category/personal-protection/sale'],
@@ -316,6 +329,7 @@ return [
             [
                 'title' => "Women's",
                 'href' => 'products/category/womens',
+                'src' => 'https://cdnp.sanmar.com/medias/sys_master/images/h92/h34/17156006510622/1200W_6297_Black-0-FS07BlackModelFront3/1200W-6297-Black-0-FS07BlackModelFront3.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/womens/new'],
                     ['title' => 'Sale', 'href' => 'products/category/womens/sale'],
@@ -335,6 +349,7 @@ return [
             [
                 'title' => 'Youth',
                 'href' => 'products/category/youth',
+                'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2015/f9/5400B_royal_model_front_042015.jpg',
                 'special' => [
                     ['title' => 'New', 'href' => 'products/category/youth/new'],
                     ['title' => 'Sale', 'href' => 'products/category/youth/sale'],

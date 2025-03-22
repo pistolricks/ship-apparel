@@ -38,17 +38,13 @@ const Home: Component<PROPS> = props => {
             <div class={'mx-auto'}>
                 <ApparelTabs class="" menu={res()?.menu?.[0]?.sub}>
                     <BaseCarousel
-                        list={apps}
+
+                        list={res()?.menu?.[0]?.sub}
                         children={(
                             item) =>
-                            <CarouselItemCard {...item()}/>
+                            <CarouselItemCard side={'bottom'} {...item()}/>
                         }/>
-                    <BaseCarousel
-                        list={apps}
-                        children={(
-                            item) =>
-                            <CarouselItemCard {...item()}/>
-                        }/>
+
 
                 </ApparelTabs>
 

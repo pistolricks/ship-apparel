@@ -6,6 +6,7 @@ import ProductListView from "~/components/module/products/product-list-view";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import {IconX} from "~/components/svg";
 import ProductView from "~/components/module/products/product-view";
+import CategoryFilters from "~/components/layout/partials/side/category-filters";
 
 type PROPS = {
     list: SM_PRODUCT[]
@@ -37,10 +38,11 @@ const ProductSection: Component<PROPS> = props => {
     })
 
 
-    return (
+    return (<>
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
-            <div class="bg-white">
-                <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={5} colsLg={5}>
+            <div class="bg-white flex justify-start">
+
+                <Grid class={'h-full w-full'} cols={1} colsSm={2} colsMd={3} colsLg={5}>
                     <For each={productData()}>
                         {(product: SM_PRODUCT) => (
                             <Drawer.Trigger
@@ -57,7 +59,7 @@ const ProductSection: Component<PROPS> = props => {
                     <>
                         <Drawer.Trigger
                             contextId={'product-preview-1'}
-                            class="hidden sm:block absolute p-1 top-1 right-1 z-50 border border-gray-400 rounded-full hover:border-accent/80 backdrop-blur-2xl">
+                            class="hidden sm:block absolute p-1 top-1 left-1 z-50 border border-gray-400 rounded-full hover:border-accent/80 backdrop-blur-2xl">
                             <IconX class={'size-8 hover:stroke-accent/50'}/>
                         </Drawer.Trigger>
 
@@ -69,7 +71,7 @@ const ProductSection: Component<PROPS> = props => {
             </div>
 
         </BaseDrawer>
-    );
+    </>);
 };
 
 export default ProductSection;

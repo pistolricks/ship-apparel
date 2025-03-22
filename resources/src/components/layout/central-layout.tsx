@@ -1,10 +1,10 @@
-import {Component, ParentProps} from "solid-js";
+import {Component, ParentProps, Show} from "solid-js";
 import Header from "~/components/layout/partials/header";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import ProfileMenu from "~/components/layout/partials/side/profile-menu";
 import MenuComponent from "~/components/layout/partials/menu-component";
-import {SidebarProvider, SidebarTrigger} from "../ui/sidebar";
-import {AppSidebar} from "~/components/layout/partials/side/app-sidebar";
+import CategoryFilters from "~/components/layout/partials/side/category-filters";
+import {useLocation} from "@solidjs/router";
 
 type PROPS = ParentProps & {
     name: string,
@@ -12,6 +12,7 @@ type PROPS = ParentProps & {
 
 const CentralLayout: Component<PROPS> = props => {
 
+    const location = useLocation();
 
     const contextId = () => "cl-1"
     const side: () => 'top' | 'right' | 'bottom' | 'left' = () => "right"
@@ -19,36 +20,39 @@ const CentralLayout: Component<PROPS> = props => {
 
 
     return (
-            <BaseDrawer side={side()} contextId={contextId()}>
-                <div class="min-h-screen h-screen flex flex-col">
-                    <Header contextId={contextId()}/>
-                    <div class={'flex-1 flex flex-row overflow-y-hidden'}>
+        <BaseDrawer side={side()} contextId={contextId()}>
+            <div class="min-h-screen h-screen flex flex-col">
+                <Header contextId={contextId()}/>
+                <div class={'flex-1 flex flex-row overflow-y-hidden'}>
 
-                        <main
-                            class={'scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
-                        >
-                            {children()}
-                        </main>
-                    </div>
-                    <DrawerContent
-                        side={side()}
-                        contextId={contextId()}
+                    <main
+                        class={'scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
                     >
-
-                        <ProfileMenu contextId={contextId()}/>
-
-                        <MenuComponent contextId={contextId()}/>
-
-                    </DrawerContent>
-                    <footer class={'bg-gray-200/50'}>
-                        <div class="">
-                            <div class="flex  items-center px-4">
-
-                            </div>
-                        </div>
-                    </footer>
+                        {children()}
+                    </main>
+                    <Show when={location.pathname?.includes('products')}>
+                        <nav class="order-first sm:w-[200px] bg-gray-100 overflow-y-auto"><CategoryFilters name={""}/></nav>
+                    </Show>
                 </div>
-            </BaseDrawer>
+                <DrawerContent
+                    side={side()}
+                    contextId={contextId()}
+                >
+
+                    <ProfileMenu contextId={contextId()}/>
+
+                    <MenuComponent contextId={contextId()}/>
+
+                </DrawerContent>
+                <footer class={'bg-gray-200/50'}>
+                    <div class="">
+                        <div class="flex  items-center px-4">
+
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </BaseDrawer>
     );
 };
 
