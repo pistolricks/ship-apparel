@@ -6,7 +6,9 @@
         <entry key="createController.singleAction" value="1" />
         <entry key="createDatabaseMigration.anonymous" value="" />
         <entry key="createResourceController.apiOnly" value="1" />
-        <entry key="postGeneration:migration2" value="" />
+        <entry key="newModelSimpleOption:addFillable" value="1" />
+        <entry key="newModelSimpleOption:idField" value="" />
+        <entry key="postGeneration:novaResource" value="1" />
       </map>
     </option>
     <option name="lastContentRoot" value="$PROJECT_DIR$" />

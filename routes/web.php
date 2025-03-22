@@ -8,7 +8,8 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
 Route::view('/', 'app')->name('central.app');
 Route::view('/products', 'app')->name('central.products');
-Route::view('/products/brands/{brand}', 'app')->name('central.products.brand');
+Route::view('/products/brands', 'app')->name('central.products.brand.index');
+Route::view('/products/brands/{brand}', 'app')->name('central.products.brand.show');
 Route::view('/products/category/{category}', 'app')->name('central.products.category');
 // Route::view('/login', 'app')->name('central.tenants.login');
 // Route::view('/register', 'app')->name('central.tenants.register');

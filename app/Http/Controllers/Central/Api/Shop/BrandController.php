@@ -13,7 +13,11 @@ class BrandController extends Controller
     {
         $brandName = BrandSupport::lookupBrand($brand);
 
-        $products = Product::query()->where('mill', $brandName)->where('product_status', '!=', 'Discontinued')->paginate(2000);
+        $products = Product::query()
+            ->where('mill', $brandName)
+            ->where('product_status', '!=', 'Discontinued')
+            ->where('size', 'S')
+            ->paginate(100);
 
         return response()->json([
             "menu" => config('menu'),

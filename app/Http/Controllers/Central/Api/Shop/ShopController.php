@@ -12,7 +12,11 @@ class ShopController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $products = Product::query()->where('product_status', '!=', 'Discontinued')->paginate(1000);
+        $products = Product::query()
+            ->where('product_status', '!=', 'Discontinued')
+            ->where('size', 'S')
+            ->orderBy('mill')
+            ->paginate(1000);
 
         return response()->json([
             "menu" => config('menu'),

@@ -13,7 +13,11 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $products = Product::query()->where('product_status', '!=', 'Discontinued')->paginate(2000);
+        $products = Product::query()
+            ->where('product_status', '!=', 'Discontinued')
+            ->where('size', 'S')
+            ->orderBy('mill')
+            ->paginate(100);
 
 
         return response()->json([

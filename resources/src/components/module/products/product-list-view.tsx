@@ -19,7 +19,7 @@ const ProductListView: Component<PROPS> = props => {
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
             <img
                 src={props.front_model_image_url ?? props.front_flat_image_url}
-                alt={props.product_title} class="aspect-square sm:aspect-[9/16] rounded-lg bg-white object-contain sm:object-cover group-hover:opacity-75"/>
+                alt={props.product_title} class="aspect-square sm:aspect-[9/16] rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75"/>
             <div class="pb-4 pt-10 text-center sm:min-h-[170px]">
                 <h3 class="text-sm font-semibold text-gray-900">
                     <button class={'flex flex-col w-full justify-center'} onClick={props.onClick} type={'button'}>

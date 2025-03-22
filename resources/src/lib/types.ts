@@ -103,3 +103,24 @@ export type SM_PRODUCT = {
     gtin?: string;
     decoration_spec_sheet?: string;
 }
+
+
+export type PaginationType = {
+    current_page: number;
+    first_page_url: string;
+    from: number;
+    last_page: number;
+    last_page_url: string;
+    links: {
+        url?: string;
+        label: string;
+        active: boolean;
+        disabled?: boolean;
+    }[];
+    next_page_url?: string;
+    path: string;
+    per_page: number;
+    prev_page_url?: number;
+    to?: number;
+    total?: number;
+}

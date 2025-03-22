@@ -29,7 +29,7 @@ const Shop: Component<PROPS> = props => {
     createEffect(() => console.log(category()))
 
     return (
-        <ProductSection list={category()?.products?.data}/>
+        <ProductSection {...category()?.products}/>
     );
 };
 
