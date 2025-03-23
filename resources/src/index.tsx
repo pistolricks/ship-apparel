@@ -48,12 +48,12 @@ const routes = [
         preload: preloadBrand,
     },
     {
-        path: "/products/category/:category",
+        path: "/products/:category",
         component: lazy(() => import("~/routes/products/category")),
         preload: preloadCategory,
     },
     {
-        path: "/products/category/:category/:subCategory",
+        path: "/products/:category/:subCategory",
         component: lazy(() => import("~/routes/products/sub-category")),
         preload: preloadSubCategory,
     },
