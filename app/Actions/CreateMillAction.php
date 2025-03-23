@@ -2,6 +2,8 @@
 
 namespace App\Actions;
 
+use App\Models\Mill;
+use App\Models\Style;
 use Spatie\QueueableAction\QueueableAction;
 
 class CreateMillAction
@@ -23,8 +25,16 @@ class CreateMillAction
      *
      * @return mixed
      */
-    public function execute()
+    public function execute(string $name, ?string $description = null)
     {
-        // The business logic goes here.
+       return Mill::updateOrCreate(
+            [
+                'name' => $name
+            ],
+       [
+           'description' => $description,
+       ]
+       );
+
     }
 }

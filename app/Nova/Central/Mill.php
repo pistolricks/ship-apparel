@@ -5,6 +5,7 @@ namespace App\Nova\Central;
 use App\Nova\Resource;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
@@ -34,6 +35,8 @@ class Mill extends Resource
             Images::make('Logo', 'logo')->rules('nullable'),
             Images::make('Banners', 'banners')->rules('nullable')->withResponsiveImages(),
 
+
+            HasMany::make('Styles', 'styles', StyleCollection::class)->sortable(),
 
         ];
     }

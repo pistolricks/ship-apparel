@@ -44,6 +44,10 @@ class Mill extends Model implements HasMedia
         ];
     }
 
+    public function styles(): Style|\Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Style::class, 'mill', 'id');
+    }
     public function registerMediaCollections(): void
     {
         $this

@@ -4,6 +4,7 @@ namespace App\Nova\Central;
 
 use App\Nova\Resource;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
@@ -23,16 +24,18 @@ class StyleCollection extends Resource
     {
         return [
             ID::make()->sortable(),
-
-            Text::make('mill', 'mill')
-            ->sortable()
-            ->rules('nullable'),
+            Images::make('Gallery', 'gallery')->rules('nullable')->enableExistingMedia()->withResponsiveImages(),
+            BelongsTo::make('Miller', 'miller', Mill::class)->sortable(),
             Text::make('title', 'title')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('description', 'description')
-                ->sortable()
-                ->rules('nullable'),
+
+            Tags::make('Menus', 'menus')->type('menus'),
+
+            Tags::make('Colors','colors')->type('colors'),
+
+            Tags::make('Sizes','sizes')->type('sizes'),
+
             Text::make('msrp', 'msrp')
                 ->sortable()
                 ->rules('nullable'),
@@ -45,28 +48,32 @@ class StyleCollection extends Resource
             Text::make('price_group', 'price_group')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('categories', 'categories')
-                ->sortable()
-                ->rules('nullable'),
+
             Text::make('subcategories', 'subcategories')
                 ->sortable()
                 ->rules('nullable'),
 
-            Tags::make('Menus', 'menus')->type('menus'),
 
-            Tags::make('Colors','colors')->type('colors'),
 
-            Tags::make('Sizes','sizes')->type('sizes'),
+            Text::make('description', 'description')
+                ->sortable()
+                ->rules('nullable'),
 
             Text::make('companion_style', 'companion_style')
                 ->sortable()
                 ->rules('nullable'),
 
-            BelongsTo::make('Miller', 'miller', Mill::class),
 
-            Images::make('Gallery', 'gallery')->rules('nullable')->withResponsiveImages(),
+
+
+            Files::make('Specs', 'specs')->rules('nullable')->enableExistingMedia(),
+
 
             HasMany::make('Products', 'products', Product::class)->sortable(),
+
+            Text::make('Mill', 'mill')
+                ->sortable()
+                ->rules('nullable'),
         ];
     }
 

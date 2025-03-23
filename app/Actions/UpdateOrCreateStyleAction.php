@@ -5,10 +5,9 @@ namespace App\Actions;
 use App\Console\Commands\UpdateOrCreateStyle;
 use App\Models\Product;
 use App\Models\Style;
-use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\QueueableAction\QueueableAction;
-use Spatie\Tags\Tag;
 
 class UpdateOrCreateStyleAction
 {
@@ -21,8 +20,7 @@ class UpdateOrCreateStyleAction
      */
     public function __construct(
         private readonly UpdateOrCreateStyle $updateOrCreateStyleCollection,
-    )
-    {
+    ) {
         // Prepare the action for execution, leveraging constructor injection.
     }
 
@@ -35,8 +33,16 @@ class UpdateOrCreateStyleAction
      */
     public function execute(Product $product): Style
     {
+        $s = Str::replace($product->style, '', $product->product_title);
+        $r = Str::replace($product->mill, '', $s);
+        $title = Str::replace('.', '', $r);
+        $product->product_title = Str::trim($title);
 
-       return $this->updateOrCreateStyleCollection->handle($product);
+        $slug = Str::slug($product->mill);
+
+        $product->mill = Str::trim($slug);
+
+        return $this->updateOrCreateStyleCollection->handle($product);
 
     }
 }

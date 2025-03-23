@@ -5,6 +5,7 @@ namespace App\Actions;
 use App\Console\Commands\UpdateOrCreateStyle;
 use App\Models\Product;
 use App\Models\Style;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\QueueableAction\QueueableAction;
 use Spatie\Tags\Tag;
@@ -34,7 +35,9 @@ class AddTagToStyleAction
 
         // gallery, specs
 
-        $m = Tag::findOrCreate($value, $type);
+        $trimmed = Str::trim($value);
+
+        $m = Tag::findOrCreate($trimmed, $type);
 
         $style->attachTag($m);
 

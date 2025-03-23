@@ -2,10 +2,15 @@
 
 namespace App\Console;
 
-use App\Actions\CreateProductStyles;
+use App\Actions\ImportSanMarFile2;
+use App\Actions\MillBatch;
+use App\Actions\StyleGalleryImage;
+use App\Actions\StyleMenuTags;
+use App\Actions\StyleProducts;
 use App\Actions\ExtractSanMarFile;
 use App\Actions\FtpSanMarFile;
 use App\Actions\ImportSanMarFile;
+use App\Actions\StyleProductTags;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +20,12 @@ class Kernel extends ConsoleKernel
         FtpSanMarFile::class,
         ExtractSanMarFile::class,
         ImportSanMarFile::class,
-        CreateProductStyles::class
+        ImportSanMarFile2::class,
+        StyleProducts::class,
+        StyleMenuTags::class,
+        StyleGalleryImage::class,
+        StyleProductTags::class,
+        MillBatch::class
     ];
 
     /**

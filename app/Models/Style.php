@@ -74,7 +74,8 @@ class Style extends Model implements HasMedia
             ->withResponsiveImages();
 
         $this
-            ->addMediaCollection('specs');
+            ->addMediaCollection('specs')
+            ->singleFile();
 
     }
 
