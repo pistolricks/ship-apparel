@@ -4,9 +4,8 @@ import style from "~/components/ui/tab/tabs.module.css";
 import {createBreakpoints} from "@solid-primitives/media";
 import {TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {MenuItemType} from "~/lib/types";
-import {Dynamic} from "solid-js/web";
-import CtaText from "~/components/section/cta/cta-text";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
+import ApparelNavigation from "~/components/layout/partials/apparel-navigation";
 
 
 type PROPS = {
@@ -40,9 +39,10 @@ const ApparelTabs: Component<PROPS> = props => {
 
 
     return (
-        <Show
+        <Show<boolean>
             fallback={children()}
             when={matches.sm}>
+
 
 
 
@@ -52,22 +52,22 @@ const ApparelTabs: Component<PROPS> = props => {
                 class={`${style.tabs} ${className()}`}
             >
 
-                    <TabsList class={' overflow-y-auto scrollbar-hide'}>
-                        <For each={menu()}>
-                            {(item, index) => (
-                                <TabsTrigger value={item.value ?? item.title} class={'text-xs h-8'}>
-                                    {item?.title}
-                                </TabsTrigger>
-                            )}
-                        </For>
-                        <Tabs.Indicator class={style.tabs__indicator}/>
-                    </TabsList>
+                <TabsList class={' overflow-y-auto scrollbar-hide'}>
+                    <For<MenuItemType[]> each={menu()}>
+                        {(item, index) => (
+                            <TabsTrigger value={item.value ?? item.title} class={'text-xs h-8'}>
+                                {item?.title}
+                            </TabsTrigger>
+                        )}
+                    </For>
+                    <Tabs.Indicator class={style.tabs__indicator}/>
+                </TabsList>
 
 
-                <For each={menu()}>
+                <For<MenuItemType[]> each={menu()}>
                     {(item, index) => (
                         <TabsContent value={item?.value ?? item.title}>
-                       <MenuLeftImagesRight title={item.title} href={item.href} src={item.src} list={item?.sub}/>
+                            <MenuLeftImagesRight title={item.title} href={item.href} src={item.src} list={item?.sub}/>
 
                         </TabsContent>
                     )}

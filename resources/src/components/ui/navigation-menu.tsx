@@ -45,7 +45,7 @@ const NavigationMenuTrigger = <T extends ValidComponent = "button">(
   return (
     <NavigationMenuPrimitive.Trigger
       class={cn(
-        "group/trigger inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[expanded]:bg-accent/50",
+        "group/trigger inline-flex h-10 w-full items-center justify-center whitespace-nowrap  bg-gray-100 px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground focus:bg-secondary focus:text-secondary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-secondary/50 data-[expanded]:bg-secondary/50",
         local.class
       )}
       {...others}

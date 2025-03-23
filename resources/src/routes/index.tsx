@@ -40,21 +40,10 @@ const Home: Component<PROPS> = props => {
             <div class={'mx-auto'}>
 
 
+                <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
 
 
 
-
-                <ApparelTabs class="" menu={res()?.menu?.[0]?.sub}>
-                    <BaseCarousel
-
-                        list={res()?.menu?.[0]?.sub}
-                        children={(
-                            item) =>
-                            <CarouselItemCard side={'bottom'} {...item()}/>
-                        }/>
-
-
-                </ApparelTabs>
 
 
             </div>
