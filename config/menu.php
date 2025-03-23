@@ -19,7 +19,7 @@ return [
                     ['title' => 'Carhartt', 'href' => 'products/brands/carhartt', 'src' => 'carhartt_banner'],
                     ['title' => 'Champion', 'href' => 'products/brands/champion', 'src' => 'champion_banner'],
                     ['title' => 'Comfort Colors', 'href' => 'products/brands/comfort-colors', 'src' => 'comfort_colors_banner'],
-                    ['title' => 'CornerStone', 'href' => 'products/brands/corner-stone', 'src' => 'corner_stone_banner'],
+                    ['title' => 'CornerStone', 'href' => 'products/brands/cornerstone', 'src' => 'cornerstone_banner'],
                     ['title' => 'Cotopaxi', 'href' => 'products/brands/cotopaxi', 'src' => 'cotopaxi_banner'],
                     ['title' => 'District', 'href' => 'products/brands/district', 'src' => 'district_banner'],
                     ['title' => 'Eddie Bauer', 'href' => 'products/brands/eddie-bauer', 'src' => 'eddie_bauer_banner'],

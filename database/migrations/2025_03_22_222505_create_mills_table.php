@@ -14,7 +14,6 @@ class CreateMillsTable extends Migration
             $table->string('description')->nullable();
             $table->string('src')->nullable();
             $table->string('logo_src')->nullable();
-            $table->string('slug');
             $table->json('data');
             $table->timestamps();
         });

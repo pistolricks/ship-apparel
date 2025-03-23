@@ -16,7 +16,7 @@ class CategoryController extends Controller
         $categoryName = CategorySupport::lookupCategory($category);
 
         $products = Product::query()
-            ->where('category_name', $categoryName)
+            ->where('category_name','LIKE', '%'.$categoryName.'%')
             ->where('product_status', '!=', 'Discontinued')
             ->where('size', 'S')
             ->orderBy('mill')

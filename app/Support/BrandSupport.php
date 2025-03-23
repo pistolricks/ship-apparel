@@ -21,7 +21,7 @@ readonly class BrandSupport
                 'carhartt' => 'Carhartt',
                 'champion' => 'Champion',
                 'comfort-colors' => 'Comfort Colors',
-                'corner-stone' => 'CornerStone',
+                'cornerstone' => 'CornerStone',
                 'cotopaxi' => 'Cotopaxi',
                 'district' => 'District',
                 'eddie-bauer' => 'Eddie Bauer',

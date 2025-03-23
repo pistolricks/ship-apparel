@@ -5,18 +5,22 @@ namespace App\Models;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Tags\HasTags;
 
 class Mill extends Model
 {
     use HasSlug;
+    use HasTags;
 
     public $primaryKey = 'id';
+    public $incrementing = false;
 
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug');
+            ->saveSlugsTo('id')
+            ->allowDuplicateSlugs();
     }
 
     protected $fillable = [
@@ -25,7 +29,13 @@ class Mill extends Model
         'description',
         'src',
         'logo_src',
-        'slug',
         'data',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'data' => 'json',
+        ];
+    }
 }

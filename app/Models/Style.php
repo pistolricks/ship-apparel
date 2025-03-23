@@ -3,16 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Nova\Fields\HasMany;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Tags\HasTags;
 
 class Style extends Model
 {
 
     use HasSlug;
+    use HasTags;
 
     public $primaryKey = 'id';
-
+    public $incrementing = false;
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
@@ -45,7 +48,17 @@ class Style extends Model
     protected function casts(): array
     {
         return [
-            'data' => 'array',
+            'data' => 'json',
         ];
+    }
+
+    public function milled(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Mill::class, 'mill','id');
+    }
+
+    public function products(): Style|\Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Product::class, 'style', 'id');
     }
 }

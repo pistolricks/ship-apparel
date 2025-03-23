@@ -10,7 +10,6 @@ class SanMarProduct extends Model
 
     public function getRows()
     {
-        return CSV::fromFile(__DIR__.'/roles.csv')->toArray();
     }
 
 }

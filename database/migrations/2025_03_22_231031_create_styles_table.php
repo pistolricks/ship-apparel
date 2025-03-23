@@ -11,7 +11,7 @@ class CreateStylesTable extends Migration
         Schema::create('styles', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('mill')->nullable();
             $table->string('categories')->nullable();
             $table->string('subcategories')->nullable();
@@ -29,9 +29,6 @@ class CreateStylesTable extends Migration
             $table->string('back_flat_image_url')->nullable();
             $table->json('data')->nullable();
             $table->string('slug');
-            $table->string('mill_id');
-
-
             $table->timestamps();
         });
     }
