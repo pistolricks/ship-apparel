@@ -19,7 +19,7 @@ class BrandController extends Controller
             ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
             ->with('tags:id,name,slug,type')
             ->where('mill', $brandName)
-            ->paginate(1000);
+            ->paginate(200);
 
         return response()->json([
             "menu" => config('menu'),

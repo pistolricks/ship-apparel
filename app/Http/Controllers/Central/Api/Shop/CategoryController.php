@@ -21,7 +21,7 @@ class CategoryController extends Controller
             ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
             ->with('tags:id,name,slug,type')
             ->orderBy('mill')
-            ->paginate(1000);
+            ->paginate(200);
 
 
 

@@ -23,7 +23,7 @@ class ShopController extends Controller
         $styles = Style::query()
             ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
             ->with('tags:id,name,slug,type')
-            ->orderBy('mill')->paginate(1000);
+            ->orderBy('mill')->paginate(200);
 
         return response()->json([
             "menu" => config('menu'),
