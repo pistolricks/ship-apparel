@@ -36,7 +36,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                 {item.title}
                             </NavigationMenuTrigger>
 
-                            <NavigationMenuContent class="sm:h-[45dvh]">
+                            <NavigationMenuContent class="h-[540px]">
 
                                 <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
 

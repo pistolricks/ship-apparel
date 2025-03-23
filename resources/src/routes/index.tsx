@@ -34,7 +34,8 @@ const Home: Component<PROPS> = props => {
             }}
         >
 
-            <div class={'mx-auto'}>
+            <div class={''}>
+
 
 
                 <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>

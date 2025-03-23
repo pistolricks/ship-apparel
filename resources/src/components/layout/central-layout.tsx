@@ -26,7 +26,7 @@ const CentralLayout: Component<PROPS> = props => {
                 <div class={'flex-1 flex flex-row overflow-y-hidden'}>
 
                     <main
-                        class={'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
+                        class={'mx-auto max-w-7xl md:px-6 lg:px-8 scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
                     >
                         {children()}
                     </main>
