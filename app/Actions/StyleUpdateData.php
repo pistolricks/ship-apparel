@@ -19,7 +19,7 @@ class StyleUpdateData
 
 
     public function __construct(
-        private readonly AddTagToStyleAction $action
+        private readonly StyleUpdateDataAction $action
     ) {
     }
 
@@ -27,26 +27,15 @@ class StyleUpdateData
     {
         $styles = Style::query()->with('tags')->get();
 
-            $styles->map(function ($style) {
-
-                $style->update([
-                    'data' => [...$style->tags->map(function (Tag $tag) {
-                        $td =  TagData::from([
-                            'name' => $tag->getTranslation('name', 'en'),
-                            'slug' => $tag->getTranslation('slug', 'en'),
-                            'type' => $tag->type
-                        ]);
-                        return $td;
-                    })]
-                ]);
-            });
+        $styles->map(function ($style) {
+            $this->action->onQueue()->execute($style);
+        });
     }
 
     public function asCommand(Command $command): void
     {
 
-            $this->handle();
-
+        $this->handle();
 
 
         $command->info('Beginning Extraction!');

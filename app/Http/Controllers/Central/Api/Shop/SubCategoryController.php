@@ -7,18 +7,23 @@ use App\Models\Product;
 use App\Models\Style;
 use App\Support\BrandSupport;
 use App\Support\CategorySupport;
+use App\Support\SubCategorySupport;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
-    public function __invoke(Request $request, string $category)
+    public function __invoke(Request $request, string $category, string $subCategory)
     {
 
         $categoryName = CategorySupport::lookupCategory($category);
 
+        $subCategoryName = SubCategorySupport::lookupSubCategory($subCategory);
+
         $styles = Style::query()
             ->select('id','title','description','mill','data', 'msrp', 'front_model_image_url','back_model_image_url', 'front_flat_image_url', 'back_flat_image_url', 'slug')
             ->where('categories','LIKE', '%'.$categoryName.'%')
+            ->orWhere('title','LIKE', '%'.$subCategoryName.'%')
+            ->orWhere('description','LIKE', '%'.$subCategoryName.'%')
             ->with(['miller' => function ($query) {
                 $query->select('id','name');
             }])

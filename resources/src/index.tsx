@@ -4,7 +4,7 @@ import App from "~/app";
 import {RouteDefinition, Router} from "@solidjs/router";
 import {lazy} from "solid-js";
 import "../css/app.css"
-import {getBrand, getCategory, getProducts} from "~/lib/products";
+import {getBrand, getCategory, getProducts, getSubCategory} from "~/lib/products";
 
 const root = document.getElementById('root');
 
@@ -27,6 +27,11 @@ function preloadCategory({ params }: { params: any }) {
     void getCategory(params.category)
 }
 
+function preloadSubCategory({ params }: { params: any }) {
+    void getSubCategory(params.category, params.subCategory)
+}
+
+
 const routes = [
     {
         path: "/",
@@ -46,6 +51,11 @@ const routes = [
         path: "/products/category/:category",
         component: lazy(() => import("~/routes/products/category")),
         preload: preloadCategory,
+    },
+    {
+        path: "/products/category/:category/:subCategory",
+        component: lazy(() => import("~/routes/products/sub-category")),
+        preload: preloadSubCategory,
     },
     {
         path: "/reversible-apparel",

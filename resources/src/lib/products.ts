@@ -47,4 +47,20 @@ export const getCategory = query(async (category: string) => {
     return res;
 }, "category")
 
+export const getSubCategory = query(async (category: string, subCategory: string) => {
+    "use server";
+
+    console.log("category Api was called")
+    const response = await fetch(`/api/shop/v1/products/category/${category}/${subCategory}`, {
+        headers: {
+            "content-Type": "application/json",
+        },
+    })
+    const res: any = await response.json();
+
+    console.log(res);
+    return res;
+}, "subcategory")
+
+
 

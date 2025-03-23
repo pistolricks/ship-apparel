@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Tag;
 use Laravel\Nova\Fields\Text;
-use Spatie\TagsField\Tags;
+use Spatie\TagsField\Tags as STags;
 
 class StyleCollection extends Resource
 {
@@ -30,11 +31,12 @@ class StyleCollection extends Resource
                 ->sortable()
                 ->rules('nullable'),
 
-            Tags::make('Menus', 'menus')->type('menus'),
+            STags::make('Menus', 'menus')->type('menus'),
 
-            Tags::make('Colors','colors')->type('colors'),
+            STags::make('Colors','colors')->type('colors'),
 
-            Tags::make('Sizes','sizes')->type('sizes'),
+
+            STags::make('Sizes','sizes')->type('sizes'),
             Text::make('msrp', 'msrp')
                 ->sortable()
                 ->rules('nullable'),
