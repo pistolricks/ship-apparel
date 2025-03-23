@@ -1,15 +1,7 @@
 import {Component, createEffect} from "solid-js";
 import {createAsync, useParams} from "@solidjs/router";
 import {getBrand} from "~/lib/products";
-import ProductSection from "~/components/module/products/product-section";
-import {
-    Pagination,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationItems,
-    PaginationNext,
-    PaginationPrevious
-} from "~/components/ui/pagination";
+import StyleSection from "~/components/module/styles/style-section";
 
 type PROPS = {}
 
@@ -24,7 +16,7 @@ const Brand: Component<PROPS> = props => {
 
     return (
         <>
-        <ProductSection {...brand()?.products}/>
+            <StyleSection {...brand()?.products}/>
         </>
     );
 };

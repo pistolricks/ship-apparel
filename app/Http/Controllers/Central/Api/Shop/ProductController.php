@@ -6,6 +6,7 @@ use App\Data\ProductData;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Product;
+use App\Models\Style;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,16 +14,14 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $products = Product::query()
-            ->where('product_status', '!=', 'Discontinued')
-            ->where('size', 'S')
-            ->orderBy('mill')
-            ->paginate(100);
-
+        $styles = Style::query()
+            ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
+            ->with('tags:id,name,slug,type')
+            ->orderBy('mill')->paginate(1000);
 
         return response()->json([
             "menu" => config('menu'),
-            "products" => $products,
+            "products" => $styles,
             "user" => $request->user(),
         ]);
     }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Central\Api\Shop;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Style;
 use App\Support\BrandSupport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BrandController extends Controller
 {
@@ -13,11 +15,11 @@ class BrandController extends Controller
     {
         $brandName = BrandSupport::lookupBrand($brand);
 
-        $products = Product::query()
+        $products = Style::query()
+            ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
+            ->with('tags:id,name,slug,type')
             ->where('mill', $brandName)
-            ->where('product_status', '!=', 'Discontinued')
-            ->where('size', 'S')
-            ->paginate(100);
+            ->paginate(1000);
 
         return response()->json([
             "menu" => config('menu'),

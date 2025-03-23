@@ -85,12 +85,12 @@ const MenuComponent: Component<PROPS> = props => {
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/login"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                    <Drawer.Trigger contextId={contextId()} as={'a'} href={"/login"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Login
                     </Drawer.Trigger>
                 </div>
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/register"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                    <Drawer.Trigger contextId={contextId()} as={'a'} href={"/register"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Register
                     </Drawer.Trigger>
                 </div>

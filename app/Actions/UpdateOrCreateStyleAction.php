@@ -35,7 +35,8 @@ class UpdateOrCreateStyleAction
     {
         $s = Str::replace($product->style, '', $product->product_title);
         $r = Str::replace($product->mill, '', $s);
-        $title = Str::replace('.', '', $r);
+        $q = Str::replace('- ', '', $r);
+        $title = Str::replace('.', '', $q);
         $product->product_title = Str::trim($title);
 
         $slug = Str::slug($product->mill);

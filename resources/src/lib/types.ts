@@ -124,3 +124,26 @@ export type PaginationType = {
     to?: number;
     total?: number;
 }
+
+export type StyleType = {
+    id: string,
+    mill?: string,
+    title: string,
+    description: string,
+    spec_sheet?: string,
+    decoration_spec_sheet?: string,
+    product_measurements?: string,
+    categories?: string,
+    subcategories?: string,
+    companion_style?: string,
+    msrp?: string,
+    map_pricing?: string,
+    suggested_pricing?: string,
+    price_group?: string,
+    front_model_image_url?: string,
+    back_model_image_url?: string,
+    front_flat_image_url?: string,
+    back_flat_image_url?: string,
+    tags?: {}[],
+    data?: any,
+}

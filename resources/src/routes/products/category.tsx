@@ -8,7 +8,7 @@ import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import Drawer from "@corvu/drawer";
 import {IconX} from "~/components/svg";
 import ProductView from "~/components/module/products/product-view";
-import ProductSection from "~/components/module/products/product-section";
+import StyleSection from "~/components/module/styles/style-section";
 
 type PROPS = {}
 
@@ -29,7 +29,7 @@ const Shop: Component<PROPS> = props => {
     createEffect(() => console.log(category()))
 
     return (
-        <ProductSection {...category()?.products}/>
+        <StyleSection {...category()?.products}/>
     );
 };
 
