@@ -16,8 +16,8 @@ class ProductController extends Controller
 
         $styles = Style::query()
             ->select('id','title','description','mill','data', 'msrp', 'front_model_image_url','back_model_image_url', 'front_flat_image_url', 'back_flat_image_url', 'slug')
-         //   ->with('tags:id,name,slug,type')
-            ->orderBy('mill')->paginate(1000);
+            ->where('title', 'NOT LIKE', '%'.'Discontinued'.'%')
+            ->orderBy('id')->paginate(1000);
 
         return response()->json([
             "menu" => config('menu'),

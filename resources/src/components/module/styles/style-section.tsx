@@ -37,7 +37,7 @@ const StyleSection: Component<PROPS> = props => {
     return (<>
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
 
-            <Grid class={' w-full'} cols={1} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
+            <Grid class={' w-full'} cols={2} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
                 <For each={data()}>
                     {(product: StyleType) => (
                         <Drawer.Trigger

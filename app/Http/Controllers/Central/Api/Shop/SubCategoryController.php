@@ -24,11 +24,12 @@ class SubCategoryController extends Controller
             ->where('categories','LIKE', '%'.$categoryName.'%')
             ->orwhere('title','LIKE', '%'.$subCategoryName.'%')
             ->orWhere('description','LIKE', '%'.$subCategoryName.'%')
+            ->where('title', 'NOT LIKE', '%'.'Discontinued'.'%')
             ->with(['miller' => function ($query) {
                 $query->select('id','name');
             }])
            // ->with('tags:id,name,slug,type')
-            ->orderBy('mill')
+            ->orderBy('id')
             ->paginate(1000);
 
 

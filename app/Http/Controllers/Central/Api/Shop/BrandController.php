@@ -19,6 +19,8 @@ class BrandController extends Controller
             ->select('id','title','description','mill','data', 'msrp', 'front_model_image_url','back_model_image_url', 'front_flat_image_url', 'back_flat_image_url', 'slug')
            // ->with('tags:id,name,slug,type')
             ->where('mill', $brand)
+            ->where('title', 'NOT LIKE', '%'.'Discontinued'.'%')
+            ->orderBy('id')
             ->paginate(1000);
 
         return response()->json([

@@ -26,15 +26,6 @@ type LayoutType = {
     getIsDesktop: Accessor<boolean>
     getQuery: Accessor<string>
     setQuery: Setter<string>
-    menu: MenuItemType[]
-    apps: MenuItemType[]
-    category1: MenuItemType[]
-    category2: MenuItemType[]
-    category3: MenuItemType[]
-    brand1: MenuItemType[]
-    brand2: MenuItemType[]
-    brand3: MenuItemType[]
-    brand4: MenuItemType[]
 }
 
 let headerHeight = import.meta.env.VITE_HEADER_HEIGHT
@@ -80,172 +71,6 @@ export function LayoutProvider(props: { children: JSX.Element }) {
     const [getIsDesktop, setIsDesktop] = createSignal(false)
 
 
-    const category1: MenuItemType[] = [
-        {
-            title: "T-Shirts",
-            href: "t-shirts",
-
-        },
-        {
-            title: "Polos/Knits",
-            href: "polos_knits",
-
-        },
-        {
-            title: "Sweatshirts/Fleece",
-            href: "sweatshirts_fleece",
-
-        },
-        {
-            title: "Woven/Dress Shirts",
-            href: "woven_dress&shirts",
-        },
-        {
-            title: "Women's",
-            href: "womens",
-        },
-        {
-            title: "Tall",
-            href: "tall",
-
-        },
-        {
-            title: "Bottoms",
-            href: "bottoms",
-
-        },
-    ]
-
-    const category2: MenuItemType[] = [
-        {title: "Activewear", href: "activewear"},
-        {title: "Workwear", href: "workwear"},
-        {title: "Personal Protection", href: "personal&protection"},
-        {title: "Young Men", href: "young&men"},
-        {title: "Juniors", href: "juniors"},
-        {title: "Youth", href: "youth"},
-    ]
-
-    const category3: MenuItemType[] = [
-        {title: "Caps", href: "caps"},
-        {title: "Bags", href: "bags"},
-        {title: "Accessories", href: "accessories"},
-    ]
-
-
-    const brand1: MenuItemType[] = [
-        {title: "A4", href: "a4"},
-        {title: "Allmade", href: "allmade"},
-        {title: "American Apparel", href: "american&apparel"},
-        {title: "BELLA+CANVAS", href: "bella+canvas"},
-        {title: "Brooks Brothers", href: "brooks&brothers"},
-        {title: "Bulwark", href: "bulwark"},
-        {title: "Carhartt", href: "carhartt"},
-        {title: "Champion", href: "champion"},
-        //    {title: "Comfort Colors", href: "comfort-colors"},
-        //     {title: "CornerStone", href: "cornerstone"},
-        //     {title: "Cotopaxi", href: "cotopaxi"},
-        //     {title: "District", href: "district"},
-        //     {title: "Eddie Bauer", href: "eddie-bauer"},
-
-
-    ]
-
-    const brand2: MenuItemType[] = [
-        {title: "Gildan", href: "gildan"},
-        {title: "Hanes", href: "hanes"},
-        {title: "Jerzees", href: "jerzees"},
-        {title: "Mercer+Mettle", href: "mercer+mettle"},
-        {title: "New Era", href: "new era"},
-        {title: "Next Level Apparel", href: "next&level&apparel"},
-        {title: "Nike", href: "nike"},
-        //    {title: "OGIOOutdoor", href: "ogiooutdoor"},
-        //    {title: "ResearchPort & CompanyPort", href: "researchport-&-companyport"},
-        //    {title: "Authority", href: "authority"},
-        //    {title: "Rabbi", href: "rabbi"},
-    ]
-
-    const brand3: MenuItemType[] = [
-        {title: "Skins", href: "skins"},
-        {title: "Re", href: "re"},
-        {title: "Kap", href: "kap"},
-        {title: "Russel", href: "russel"},
-        {title: "Outdoors", href: "outdoors"},
-        {title: "Spacecraft", href: "spacecraft"},
-        //    {title: "Sport - Tek", href: "sport---tek"},
-        //    {title: "Stanley / Stella", href: "stanley-/-stella"},
-        //    {title: "tentree", href: "tentree"},
-    ]
-
-    const brand4: MenuItemType[] = [
-        {title: "The North Face", href: "the&north&face"},
-        {title: "Tommy Bahamas", href: "tommy&bahama"},
-        {title: "TravisMathew", href: "travismathew"},
-        {title: "Volunteer", href: "volunteer"},
-        {title: "Knitwear", href: "knitwear"},
-        {title: "Wink", href: "wink"},
-    ]
-
-    const menu: MenuItemType[] = [
-        {title: "New Arrivals", href: "/new-arrivals", icon: IconVendors},
-        {title: "apparel", href: "/apparel", icon: IconVendors},
-        {title: "Design Lab", href: "/design-lab", icon: IconVendors},
-
-    ]
-
-
-    const apps: MenuItemType[] = [
-        {
-            title: "Shop",
-            description: "Browse Our Vast Product Line",
-            information: "Shop the top 50 brands with over 2,890 styles, including 458 new trending styles.",
-            cta: "Shop Now",
-            src: image1,
-            href: "/shop",
-            side: "bottom",
-            component: PromoTextImage
-
-        },
-        {
-            title: "Reversible Apparel",
-            description: "Looking for a unique and comfortable sweatshirt that will have you turning heads. Our reversible sweatshirts allow you to have two looks in one.",
-            cta: "Shop Now",
-            src: image2,
-            href: "/reversible-apparel",
-            side: "bottom",
-            component: PromoTextImage
-        },
-        {
-            title: "School Specials",
-            href: "/school-specials",
-            side: "bottom",
-            description: "Bring your school’s pride to life with custom graphics!  From screen printing to embroidery, heat press and DTG printing.  We offer endless options to showcase your school spirit. T-shirts, sweatshirts, hoodies, and more - designed just for you!",
-            information: "",
-            src: image3,
-            cta: "Shop Now",
-            component: PromoTextImage
-        },
-        {
-            title: "Our Company",
-            href: "/our-company",
-            side: "bottom",
-            description: "You envision It. We create It.",
-            information: "Making Custom Designs and any creative vision into a enjoyable and appealing apparel.",
-            src: image3,
-            cta: "Shop Now",
-            component: PromoTextImage
-        },
-        {
-            title: "Contact Us",
-            href: "/contact-us",
-            side: "bottom",
-            description: "We're happy to answer questions and get you acquainted with Custom Ink and Thread.",
-            information: "",
-            src: image3,
-            cta: "Shop Now",
-            component: PromoTextImage
-        }
-
-    ]
 
 
     onMount(() => {
@@ -269,15 +94,6 @@ export function LayoutProvider(props: { children: JSX.Element }) {
             setPosition,
             getHeight,
             getIsDesktop,
-            menu,
-            apps,
-            category1,
-            category2,
-            category3,
-            brand1,
-            brand2,
-            brand3,
-            brand4,
         }}>
             {props.children}
         </LayoutContext.Provider>

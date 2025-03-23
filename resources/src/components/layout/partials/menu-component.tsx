@@ -9,7 +9,6 @@ type PROPS = {
 }
 
 const MenuComponent: Component<PROPS> = props => {
-    const {apps} = useLayoutContext();
     const contextId = () => props.contextId;
 
 
@@ -54,7 +53,7 @@ const MenuComponent: Component<PROPS> = props => {
                         <ul role="list" aria-labelledby="apparel"
                             class="mt-6 flex flex-col space-y-6">
 
-                            <For each={apps}>
+                            <For each={[]}>
                                 {(app) => (
                                     <li class="flow-root">
                                         <Drawer.Trigger contextId={contextId()} as={A} href={app.href}
