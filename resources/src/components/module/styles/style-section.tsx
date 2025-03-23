@@ -40,10 +40,8 @@ const StyleSection: Component<PROPS> = props => {
             <Grid class={' w-full'} cols={2} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
                 <For each={data()}>
                     {(product: StyleType) => (
-                        <Drawer.Trigger
-                            contextId={'product-preview-1'}>
+
                             <StyleListView onClick={() => handler(product)} {...product} />
-                        </Drawer.Trigger>
 
                     )}
                 </For>
