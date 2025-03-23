@@ -45,7 +45,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
                             <NavigationMenuContent class="sm:h-[45dvh]">
 
-                                <MenuLeftImagesRight title={item.title} href={item.href} src={item.src} list={item?.sub}/>
+                                <MenuLeftImagesRight title={item.title} href={item.href}  list={item?.sub}/>
 
                             </NavigationMenuContent>
                         </NavigationMenuItem>
