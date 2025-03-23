@@ -41,7 +41,7 @@ const Home: Component<PROPS> = props => {
 
 
 
-                <ApparelNavigation orientation={'vertical'} menu={res()?.menu?.[0]?.sub}/>
+
 
 
                 <ApparelTabs class="" menu={res()?.menu?.[0]?.sub}>
