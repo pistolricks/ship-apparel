@@ -34,7 +34,7 @@ const ProductListView: Component<PROPS> = props => {
             </div>
 
             <Drawer.Trigger
-                class="absolute bottom-0 right-0 w-6 h-6"
+                class="absolute bottom-1 right-1 w-6 h-6"
                 contextId={'product-preview-1'}>
                 <IconTablet class={'stroke-gray-500 hover:stroke-amber-700 hover:fill-amber-300 size-6'}/>
             </Drawer.Trigger>
