@@ -66,9 +66,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                         </For>
                     </ul>
                     <div class={'w-full h-full hidden lg:flex lg:justify-end '}>
-                        <img
-                            class={'object-cover rounded-xl max-h-[50dvh]'}
-                            src={src()} />
+
                     </div>
                 </div>
             </div>
