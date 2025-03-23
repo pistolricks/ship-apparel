@@ -72,6 +72,10 @@ class Style extends Model implements HasMedia
         $this
             ->addMediaCollection('gallery')
             ->withResponsiveImages();
+
+        $this
+            ->addMediaCollection('specs');
+
     }
 
     public function registerMediaConversions(?Media $media = null): void

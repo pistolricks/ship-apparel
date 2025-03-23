@@ -6,8 +6,10 @@ use App\Nova\Resource;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Spatie\TagsField\Tags;
 
 class StyleCollection extends Resource
 {
@@ -31,24 +33,6 @@ class StyleCollection extends Resource
             Text::make('description', 'description')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('spec_sheet', 'spec_sheet')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('decoration_spec_sheet', 'decoration_spec_sheet')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('product_measurements', 'product_measurements')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('categories', 'categories')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('subcategories', 'subcategories')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('companion_style', 'companion_style')
-                ->sortable()
-                ->rules('nullable'),
             Text::make('msrp', 'msrp')
                 ->sortable()
                 ->rules('nullable'),
@@ -61,22 +45,28 @@ class StyleCollection extends Resource
             Text::make('price_group', 'price_group')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('front_model_image_url', 'front_model_image_url')
+            Text::make('categories', 'categories')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('back_model_image_url', 'back_model_image_url')
+            Text::make('subcategories', 'subcategories')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('front_flat_image_url', 'front_flat_image_url')
+
+            Tags::make('Menus', 'menus')->type('menus'),
+
+            Tags::make('Colors','colors')->type('colors'),
+
+            Tags::make('Sizes','sizes')->type('sizes'),
+
+            Text::make('companion_style', 'companion_style')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('back_flat_image_url', 'back_flat_image_url')
-                ->sortable()
-                ->rules('nullable'),
+
+            BelongsTo::make('Miller', 'miller', Mill::class),
 
             Images::make('Gallery', 'gallery')->rules('nullable')->withResponsiveImages(),
 
-            BelongsTo::make('Miller', 'miller', Mill::class),
+            HasMany::make('Products', 'products', Product::class)->sortable(),
         ];
     }
 

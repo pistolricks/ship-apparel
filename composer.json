@@ -42,8 +42,10 @@
         "sanmar/inventory": "@dev",
         "spatie/laravel-data": "^4.13",
         "spatie/laravel-medialibrary": "^11.12",
+        "spatie/laravel-queueable-action": "^2.16",
         "spatie/laravel-sluggable": "^3.7",
         "spatie/laravel-tags": "^4.10",
+        "spatie/nova-tags-field": "^4.1",
         "spatie/simple-excel": "^3.7",
         "stancl/tenancy": "^3.7",
         "zanysoft/laravel-zip": "^3.0"

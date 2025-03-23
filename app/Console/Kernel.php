@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Actions\CreateProductStyles;
 use App\Actions\ExtractSanMarFile;
 use App\Actions\FtpSanMarFile;
 use App\Actions\ImportSanMarFile;
@@ -14,6 +15,7 @@ class Kernel extends ConsoleKernel
         FtpSanMarFile::class,
         ExtractSanMarFile::class,
         ImportSanMarFile::class,
+        CreateProductStyles::class
     ];
 
     /**

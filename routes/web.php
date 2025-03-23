@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Central as Controllers;
+use App\Http\Controllers\CreateStyleController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
@@ -22,3 +23,5 @@ Route::post('/register/submit', [Controllers\RegisterTenantController::class, 's
 
 Route::get('/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
 Route::post('/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');
+
+Route::get('/style', CreateStyleController::class)->name('central.style');
