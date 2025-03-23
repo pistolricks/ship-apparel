@@ -77,3 +77,5 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
 };
 
 export default MenuLeftImagesRight;
+
+
