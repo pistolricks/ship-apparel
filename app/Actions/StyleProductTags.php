@@ -2,10 +2,12 @@
 
 namespace App\Actions;
 
+use App\Data\TagData;
 use App\Models\Style;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Lorisleiva\Actions\Concerns\AsAction;
+use Spatie\Tags\Tag;
 
 class StyleProductTags
 {
@@ -28,9 +30,9 @@ class StyleProductTags
             $styles->map(function ($style) {
 
                 $products = $style?->products;
-                $products->map(function ($product) use ($style) {
+                $products->map(function ($product, $index) use ($style) {
                   $this->action->onQueue()->execute($style, $product->color_name, 'colors');
-                   $this->action->onQueue()->execute($style, $product->size, 'sizes');
+                  $this->action->onQueue()->execute($style, $product->size, 'sizes');
                });
             });
 

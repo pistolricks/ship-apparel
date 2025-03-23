@@ -35,7 +35,6 @@ class StyleCollection extends Resource
             Tags::make('Colors','colors')->type('colors'),
 
             Tags::make('Sizes','sizes')->type('sizes'),
-
             Text::make('msrp', 'msrp')
                 ->sortable()
                 ->rules('nullable'),

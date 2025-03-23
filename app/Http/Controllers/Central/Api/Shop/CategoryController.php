@@ -17,11 +17,17 @@ class CategoryController extends Controller
         $categoryName = CategorySupport::lookupCategory($category);
 
         $styles = Style::query()
+            ->select('id','title','mill','data', 'msrp', 'front_model_image_url','back_model_image_url','slug')
             ->where('categories','LIKE', '%'.$categoryName.'%')
-            ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
-            ->with('tags:id,name,slug,type')
+            ->with(['miller' => function ($query) {
+                $query->select('id','name');
+            }])
+            ->with(['tags' => function ($query) {
+                $query->select('name','type');
+            }])
+           // ->with('tags:id,name,slug,type')
             ->orderBy('mill')
-            ->paginate(200);
+            ->paginate(1000);
 
 
 

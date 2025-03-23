@@ -13,13 +13,13 @@ class BrandController extends Controller
 {
     public function __invoke(Request $request, string $brand)
     {
-        $brandName = BrandSupport::lookupBrand($brand);
+        // $brandName = BrandSupport::lookupBrand($brand);
 
         $products = Style::query()
-            ->select('id','title','description','mill', 'msrp', 'front_model_image_url')
-            ->with('tags:id,name,slug,type')
-            ->where('mill', $brandName)
-            ->paginate(200);
+            ->select('id','title','description','mill','data', 'msrp', 'front_model_image_url','back_model_image_url')
+           // ->with('tags:id,name,slug,type')
+            ->where('mill', $brand)
+            ->paginate(1000);
 
         return response()->json([
             "menu" => config('menu'),

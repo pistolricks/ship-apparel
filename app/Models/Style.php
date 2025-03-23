@@ -49,12 +49,9 @@ class Style extends Model implements HasMedia
         'data',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'data' => 'json',
-        ];
-    }
+    protected  $casts = [
+            'data' => 'json'
+       ];
 
     public function miller(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

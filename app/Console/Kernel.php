@@ -11,6 +11,7 @@ use App\Actions\ExtractSanMarFile;
 use App\Actions\FtpSanMarFile;
 use App\Actions\ImportSanMarFile;
 use App\Actions\StyleProductTags;
+use App\Actions\StyleUpdateData;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -25,6 +26,7 @@ class Kernel extends ConsoleKernel
         StyleMenuTags::class,
         StyleGalleryImage::class,
         StyleProductTags::class,
+        StyleUpdateData::class,
         MillBatch::class
     ];
 
