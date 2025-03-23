@@ -13,7 +13,7 @@ class StyleProductTags
 {
     use AsAction;
 
-    public string $commandSignature = 'style:product-tags';
+    public string $commandSignature = 'style:product-tags {selected}';
     public string $commandDescription = 'Create menu tags.';
     public string $commandHelp = 'pretty self explanatory';
 
@@ -23,16 +23,20 @@ class StyleProductTags
     ) {
     }
 
-    public function handle(): void
+    public function handle(string $selected): void
     {
         $styles = Style::query()->with('products')->get();
 
-            $styles->map(function ($style) {
+            $styles->map(function ($style) use ($selected) {
 
                 $products = $style?->products;
-                $products->map(function ($product, $index) use ($style) {
-                  $this->action->onQueue()->execute($style, $product->color_name, 'colors');
-                  $this->action->onQueue()->execute($style, $product->size, 'sizes');
+                $products->map(function ($product, $index) use ($style, $selected) {
+                    if($selected === 'colors') {
+                        $this->action->onQueue()->execute($style, $product->color_name, 'colors');
+                    }
+                    if($selected === 'sizes') {
+                        $this->action->onQueue()->execute($style, $product->size, 'sizes');
+                    }
                });
             });
 
@@ -41,7 +45,7 @@ class StyleProductTags
     public function asCommand(Command $command): void
     {
 
-            $this->handle();
+            $this->handle($command->argument('selected'));
 
 
 

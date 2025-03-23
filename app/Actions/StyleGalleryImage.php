@@ -6,6 +6,7 @@ use App\Models\Style;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Lorisleiva\Actions\Concerns\AsAction;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 
 class StyleGalleryImage
 {
@@ -17,32 +18,18 @@ class StyleGalleryImage
 
 
     public function __construct(
-        private readonly AddTagToStyleAction $action
+        private readonly StyleSelectImageAction $action
     ) {
     }
 
+    /**
+     * @throws FileCannotBeAdded
+     */
     public function handle($selected): void
     {
-        $styles = Style::all();
 
-        $styles->map(function ($style) use($selected) {
+        $this->action->onQueue()->execute($selected);
 
-            if($selected === 'front-model' && Str::contains($style?->front_model_image_url, 'http')) {
-                $style->addMediaFromUrl($style?->front_model_image_url)->toMediaCollection('gallery');
-            }
-            if($selected === 'back-model' && Str::contains($style?->back_model_image_url, 'http')) {
-                $style->addMediaFromUrl($style?->back_model_image_url)->toMediaCollection('gallery');
-            }
-            if($selected === 'front-flat' && Str::contains($style?->front_flat_image_url, 'http')) {
-                $style->addMediaFromUrl($style?->front_flat_image_url)->toMediaCollection('gallery');
-            }
-            if($selected === 'back-flat' && Str::contains($style?->back_flat_image_url, 'http')) {
-                $style->addMediaFromUrl($style?->back_flat_image_url)->toMediaCollection('gallery');
-            }
-            if($selected === 'spec' && Str::contains($style?->decoration_spec_sheet, 'http')) {
-                $style->addMediaFromUrl($style?->decoration_spec_sheet)->toMediaCollection('specs');
-            }
-        });
 
     }
 
