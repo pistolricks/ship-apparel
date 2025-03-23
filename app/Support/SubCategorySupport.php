@@ -11,8 +11,9 @@ readonly class SubCategorySupport
     {
         return collect([
             '100-cotton' => '100% Cotton',
-            '6-6-1' => '6-6.1 100% Cotton',
-            '5-5-6' => '5-5.6 100% Cotton',
+            '100-polyester' => '100% Polyester',
+            'cotton-poly' => 'Cotton Poly',
+            'jersey' => 'Jersey',
             'tri-blend' => 'Tri-Blend',
             '50-50-blend' => '50/50 Blend',
             'tanks' => 'Tanks',
