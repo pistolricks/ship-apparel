@@ -1,19 +1,12 @@
-import { createSignal, For, Component } from "solid-js"
+import {Component, createSignal, For} from "solid-js"
 
-import type { Orientation } from "@kobalte/core/navigation-menu"
-
-import { IconLogo } from "~/components/svg"
+import type {Orientation} from "@kobalte/core/navigation-menu"
 import {
     NavigationMenu,
     NavigationMenuContent,
-    NavigationMenuDescription,
-    NavigationMenuIcon,
     NavigationMenuItem,
-    NavigationMenuLabel,
-    NavigationMenuLink,
     NavigationMenuTrigger
 } from "~/components/ui/navigation-menu"
-import { RadioGroup, RadioGroupItem, RadioGroupItemLabel } from "~/components/ui/radio-group"
 import {MenuItemType} from "~/lib/types";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
 
@@ -45,7 +38,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
                             <NavigationMenuContent class="sm:h-[45dvh]">
 
-                                <MenuLeftImagesRight title={item.title} href={item.href}  list={item?.sub}/>
+                                <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
 
                             </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -58,4 +51,4 @@ const ApparelNavigation: Component<PROPS> = props => {
     )
 }
 
-export default ApparelNavigation
+export {ApparelNavigation}

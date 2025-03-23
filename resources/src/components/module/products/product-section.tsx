@@ -31,7 +31,7 @@ const ProductSection: Component<PROPS> = props => {
 
     }
 
-    console.log(pagination())
+    console?.log(pagination())
 
     const key = 'style';
 

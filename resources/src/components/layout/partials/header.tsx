@@ -1,10 +1,8 @@
-import {Component, Show, VoidComponent} from "solid-js";
+import {Component} from "solid-js";
 import {A, useLocation} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
 import {LogoIcon} from "~/components/svg";
 import Breadcrumbs from "~/components/layout/partials/breadcrumbs";
-import {SidebarTrigger} from "~/components/ui/sidebar";
-import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 
 
 const Header: Component<{
@@ -28,7 +26,7 @@ const Header: Component<{
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
                                             <span class="sr-only"></span>
-                                            <LogoIcon class={'h-12'}/>
+                                            <LogoIcon className={'h-12'}/>
 
                                         </A>
                                     </div>
@@ -37,7 +35,6 @@ const Header: Component<{
 
 
                                         <div class="flex h-full justify-center items-center space-x-8 p-2">
-
 
 
                                         </div>

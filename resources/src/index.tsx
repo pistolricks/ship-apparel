@@ -4,7 +4,7 @@ import App from "~/app";
 import {RouteDefinition, Router} from "@solidjs/router";
 import {lazy} from "solid-js";
 import "../css/app.css"
-import {getBrand, getCategory, getProducts, getSubCategory} from "~/lib/products";
+import {getStyle, getBrand, getCategory, getProducts, getSubCategory} from "~/lib/products";
 
 const root = document.getElementById('root');
 
@@ -14,6 +14,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     );
 }
 
+function preloadStyle() {
+    void getStyle()
+}
 
 function preloadProducts() {
    void getProducts()
@@ -37,6 +40,12 @@ const routes = [
         path: "/",
         component: lazy(() => import("./routes/index")),
     },
+    {
+        path: "/styles/:id",
+        component: lazy(() => import("./routes/products/view")),
+        preload: preloadStyle,
+    },
+
     {
         path: "/products",
         component: lazy(() => import("./routes/products")),

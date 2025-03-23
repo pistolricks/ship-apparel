@@ -1,4 +1,4 @@
-import {Component, createMemo, createSelector, createSignal, For} from "solid-js";
+import {Component, createSelector, createSignal, For} from "solid-js";
 import {PaginationType, StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import Drawer from "@corvu/drawer";
@@ -34,9 +34,6 @@ const StyleSection: Component<PROPS> = props => {
     console.log(pagination())
 
 
-
-
-
     return (<>
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
 
@@ -54,8 +51,7 @@ const StyleSection: Component<PROPS> = props => {
             </Grid>
 
 
-            <DrawerContent side={"bottom"} contextId={'product-preview-1'}
-                           class={'px-2 bg-white overflow-y-hidden'}>
+            <DrawerContent side={"bottom"} contextId={'product-preview-1'} class={'px-2 bg-white overflow-y-hidden'}>
                 <>
                     <Drawer.Trigger
                         contextId={'product-preview-1'}

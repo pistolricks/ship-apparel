@@ -5,6 +5,7 @@ import type { PolymorphicProps } from "@kobalte/core"
 import * as BreadcrumbPrimitive from "@kobalte/core/breadcrumbs"
 
 import { cn } from "~/lib/utils"
+import {ClassValue} from "clsx";
 
 const Breadcrumb = BreadcrumbPrimitive.Root
 
@@ -81,7 +82,7 @@ const BreadcrumbSeparator = <T extends ValidComponent = "span">(
 const BreadcrumbEllipsis: Component<ComponentProps<"span">> = (props) => {
   const [local, others] = splitProps(props, ["class"])
   return (
-    <span class={cn("flex size-9 items-center justify-center", local.class)} {...others}>
+    <span class={cn("flex w-9 h-9 items-center justify-center", local.class as ClassValue)} {...others}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

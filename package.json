@@ -13,7 +13,6 @@
         "axios": "1.8.3",
         "clsx": "^2.1.1",
         "laravel-vite-plugin": "^1.2.0",
-        "lodash": "^4.17.21",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.85.1",
         "sass-loader": "^16.0.5",
