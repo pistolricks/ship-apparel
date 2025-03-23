@@ -1,8 +1,8 @@
-import {Component, createMemo, createSignal, JSX} from "solid-js";
+import {Component, createMemo, createSignal, JSX, ValidComponent} from "solid-js";
 import {activateUserHandler} from "~/lib/users";
 import {TextField, TextFieldInput} from "~/components/ui/field/text-field";
 import {showToast} from "~/components/ui/toast";
-import {useNavigate} from "@solidjs/router";
+import {A, useNavigate} from "@solidjs/router";
 import {Button} from "~/components/ui/button";
 import {IconChevronLeft} from "~/components/svg";
 
@@ -62,14 +62,14 @@ const ActivateUserForm: Component<PROPS> = props => {
                                     placeholder="activation token"/>
                 </TextField>
                 <div class={'flex justify-end space-x-2'}>
-                    <Button as={"A"} href={'/resend'} variant={'secondary'} type={"button"}>Resend</Button>
+                    <A href={'/resend'} class="button secondary">Resend</A>
                     <div class={'items-center flex flex-row-reverse space-x-2 space-x-reverse'}>
-                        <Button as={"button"} variant={'default'} type={"submit"}>Login</Button>
-                        <Button
-                            as={"A"}
-                            href={'/'}
-                            variant={'secondary'}
-                            size={"icon"}
+                        <Button<"button"> as={"button"} variant="default" type="submit">Login</Button>
+                        <Button<typeof A>
+                            as={A}
+                            href="/"
+                            variant="secondary"
+                            size="icon"
                             type={"button"}
                         >
                             <IconChevronLeft/>

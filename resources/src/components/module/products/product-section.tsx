@@ -20,7 +20,7 @@ const ProductSection: Component<PROPS> = props => {
     const pagination = () => props.pagination;
 
     const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(list()?.[0])
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(list()?.[0] as SM_PRODUCT)
     const isSelected = createSelector(getSelectedId)
 
     function handler(data: SM_PRODUCT) {
@@ -47,7 +47,7 @@ const ProductSection: Component<PROPS> = props => {
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
 
             <Grid class={' w-full'} cols={1} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
-                <For each={list()}>
+                <For<SM_PRODUCT[]> each={list()}>
                     {(product: SM_PRODUCT) => (
                         <Drawer.Trigger
                             contextId={'product-preview-1'}>

@@ -9,7 +9,7 @@ type PROPS = {
 const List: Component<PROPS> = props => {
     const list = () => props.list;
     return (
-        <Index each={list()}>
+        <Index<any[]> each={list()}>
             {props.children}
         </Index>
     );

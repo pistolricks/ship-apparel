@@ -1,11 +1,8 @@
-import {Component, createEffect, For, lazy} from "solid-js";
-import ApparelTabs from "~/components/layout/partials/apparel-tabs";
-import {CarouselItemCard} from "~/components/ui/carousel/carousel";
+import {Component, createEffect, lazy} from "solid-js";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
-import ApparelNavigation from "~/components/layout/partials/apparel-navigation";
-import {TabsTrigger} from "~/components/ui/tabs";
+import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
@@ -41,9 +38,6 @@ const Home: Component<PROPS> = props => {
 
 
                 <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
-
-
-
 
 
             </div>

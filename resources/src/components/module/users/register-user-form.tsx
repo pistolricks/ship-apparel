@@ -3,6 +3,7 @@ import {registerUserHandler} from "~/lib/users";
 import {TextField, TextFieldInput} from "~/components/ui/field/text-field";
 import {Button} from "~/components/ui/button";
 import {IconMapPin} from "~/components/svg";
+import {A} from "@solidjs/router";
 
 
 type PROPS = {}
@@ -49,13 +50,13 @@ const RegisterUserForm: Component<PROPS> = props => {
                     />
                 </TextField>
                 <div class={'items-center flex flex-row-reverse space-x-2 space-x-reverse'}>
-                    <Button as={"button"} variant={'default'} type={"submit"}>Register</Button>
-                    <Button
-                        as={"A"}
-                        href={'/'}
-                        variant={'secondary'}
-                        size={"icon"}
-                        type={"button"}
+                    <Button as="button" variant="default" type="submit">Register</Button>
+                    <Button<typeof A>
+                        as="A"
+                        href="/"
+                        variant="secondary"
+                        size="icon"
+                        type="button"
                     >
                         <IconMapPin/>
                     </Button>
@@ -67,4 +68,4 @@ const RegisterUserForm: Component<PROPS> = props => {
     );
 };
 
-export default RegisterUserForm;
+export {RegisterUserForm};

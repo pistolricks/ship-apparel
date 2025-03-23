@@ -5,7 +5,6 @@ import {createBreakpoints} from "@solid-primitives/media";
 import {TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {MenuItemType} from "~/lib/types";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
-import ApparelNavigation from "~/components/layout/partials/apparel-navigation";
 
 
 type PROPS = {

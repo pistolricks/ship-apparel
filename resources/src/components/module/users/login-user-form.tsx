@@ -1,5 +1,5 @@
 import {Component, createEffect, createMemo, Show} from "solid-js";
-import {useSubmission} from "@solidjs/router";
+import {A, useSubmission} from "@solidjs/router";
 import {loginUserHandler} from "~/lib/users";
 import {TextField, TextFieldInput} from "~/components/ui/field/text-field";
 import {Button} from "../../ui/button";
@@ -22,13 +22,13 @@ const LoginUserForm: Component<PROPS> = props => {
                                     placeholder="Password"/>
                 </TextField>
                 <div class={'items-center flex flex-row-reverse space-x-2 space-x-reverse'}>
-                    <Button as={"button"} variant={'outline'} type={"submit"}>Login</Button>
-                    <Button
-                        as={"A"}
+                    <Button<"button"> as="button" variant="outline" type="submit">Login</Button>
+                    <Button<typeof A>
+                        as={A}
                         href={'/'}
-                        variant={'outline'}
-                        size={"icon"}
-                        type={"button"}
+                        variant="outline"
+                        size="icon"
+                        type="button"
                     >
                         <IconChevronLeft/>
                     </Button>

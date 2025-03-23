@@ -1,5 +1,5 @@
-import {IconCalendar, IconCircle, IconClock, IconCreditCard} from "~/components/svg";
-import {Component, For, Show} from "solid-js";
+import {IconCalendar, IconCircle, IconClock, IconCreditCard, IconProps} from "~/components/svg";
+import {Component, For, JSX, Show} from "solid-js";
 import {SM_PRODUCT} from "~/lib/types";
 import {Format} from '@ark-ui/solid/format'
 
@@ -49,10 +49,10 @@ const ProductView: Component<{
         return <Format.Number value={Number(product()?.msrp)} style="currency" currency="USD"/>
     }
 
-    const images = () => [product()?.front_model_image_url, product()?.back_model_image_url, product()?.front_flat_image_url, product()?.back_flat_image_url]
+    const images = () => [product()?.front_model_image_url, product()?.back_model_image_url, product()?.front_flat_image_url, product()?.back_flat_image_url].filter((image): image is string => !!image)
 
 
-    const details = () => [`Brand: ${product()?.mill}`, `Style: ${product()?.style}`, `Status: ${product()?.product_status}`, product()?.available_sizes, `GTIN: ${product()?.gtin}`]
+    const details = () => [`Brand: ${product()?.mill}`, `Style: ${product()?.style}`, `Status: ${product()?.product_status}`, product()?.available_sizes, `GTIN: ${product()?.gtin}`].filter((detail): detail is string => detail !== undefined)
 
     const defaultColor = {
         name: "",
@@ -71,7 +71,7 @@ const ProductView: Component<{
     console.log(product())
 
     return (
-        <Show when={product()}>
+        <Show<boolean> when={!!product()}>
             <div class="relative bg-white rounded-xl overflow-y-auto scrollbar-hide">
                 <div class="pb-16 sm:pt-6 sm:pb-24">
                     <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -89,7 +89,7 @@ const ProductView: Component<{
                                 <h2 class="sr-only">Images</h2>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                                    <For each={images()}>
+                                    <For<string[]> each={images()}>
                                         {(image, i) => (
                                             <img
                                                 alt={`${product()?.product_title}-${i()}`}
@@ -124,7 +124,7 @@ const ProductView: Component<{
                                             class="space-y-1 pl-2 text-sm/6 text-gray-500 marker:text-gray-300">
 
 
-                                            <For each={details()}>
+                                            <For<string[]> each={details()}>
                                                 {(item) => (
                                                     <li class="pl-2">
                                                         {item}
@@ -143,7 +143,11 @@ const ProductView: Component<{
                                     </h2>
 
                                     <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                                        <For each={policies}>
+                                        <For<{
+                                            name: string,
+                                            icon: (props: IconProps) => JSX.Element,
+                                            description: string
+                                        }[]> each={policies}>
                                             {(policy) => (
                                                 <div
                                                     class="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">

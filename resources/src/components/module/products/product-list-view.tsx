@@ -8,7 +8,7 @@ type PROPS = SM_PRODUCT & { onClick: () => void}
 const ProductListView: Component<PROPS> = props => {
 
     const cleanTitle = () => {
-        return props?.product_title?.replace(`${props?.mill}`, '')?.replace(`${props.style}`, '')?.replace(' - ', '')?.replace('.','')
+        return String(props?.product_title ?? '').replace(String(props?.mill ?? ''), '').replace(String(props?.style ?? ''), '').replace(' - ', '').replace('.', '')
     }
 
     const NumberWithCurrency = () => {

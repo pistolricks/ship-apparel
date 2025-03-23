@@ -19,7 +19,7 @@ const Breadcrumbs: Component<{
 
     const splitPath = createMemo(() => {
         let s = path()?.replace(import.meta.env.VITE_APP_URL, "")
-        let split = s?.split("/")
+        let split = (s ?? "").split("/")
         console.log(split)
         return split
     })
@@ -33,7 +33,7 @@ const Breadcrumbs: Component<{
                         <BreadcrumbItem>
                             <BreadcrumbLink href="/" as="a">Home</BreadcrumbLink>
                         </BreadcrumbItem>
-                        <For each={splitPath()}>
+                        <For<string[]> each={splitPath()}>
                             {(path, i) => (
                                 <Show<boolean> when={i() > 0 && path?.length > 2}>
                                     <BreadcrumbSeparator>
@@ -53,4 +53,4 @@ const Breadcrumbs: Component<{
     );
 };
 
-export default Breadcrumbs;
+export  {Breadcrumbs};

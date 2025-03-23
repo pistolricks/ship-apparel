@@ -2,7 +2,7 @@ import {Component} from "solid-js";
 import {A, useLocation} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
 import {LogoIcon} from "~/components/svg";
-import Breadcrumbs from "~/components/layout/partials/breadcrumbs";
+import {Breadcrumbs} from "~/components/layout/partials/breadcrumbs";
 
 
 const Header: Component<{
@@ -26,7 +26,7 @@ const Header: Component<{
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
                                             <span class="sr-only"></span>
-                                            <LogoIcon className={'h-12'}/>
+                                            <LogoIcon class={'h-12'}/>
 
                                         </A>
                                     </div>
