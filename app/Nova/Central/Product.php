@@ -5,6 +5,7 @@ namespace App\Nova\Central;
 
 use App\Nova\Resource;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -148,6 +149,8 @@ class Product extends Resource
             Text::make("Decoration Spec Sheet", "decoration_spec_sheet")
                 ->sortable()
                 ->rules('nullable'),
+
+            BelongsTo::make('Style Collection', 'collection', StyleCollection::class),
 
         ];
     }

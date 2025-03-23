@@ -3,20 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Nova\Fields\HasMany;
+use Spatie\Image\Enums\Fit;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
 
-class Style extends Model
+class Style extends Model implements HasMedia
 {
-
+    use InteractsWithMedia;
     use HasSlug;
     use HasTags;
 
     public $primaryKey = 'id';
     public $incrementing = false;
-    public function getSlugOptions() : SlugOptions
+
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('id')
@@ -52,13 +56,29 @@ class Style extends Model
         ];
     }
 
-    public function milled(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function miller(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Mill::class, 'mill','id');
+        return $this->belongsTo(Mill::class, 'mill', 'id');
     }
 
     public function products(): Style|\Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Product::class, 'style', 'id');
+    }
+
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('gallery')
+            ->withResponsiveImages();
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('preview')
+            ->fit(Fit::Contain, 300, 300)
+            ->nonQueued();
     }
 }

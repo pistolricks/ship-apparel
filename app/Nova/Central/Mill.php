@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Nova;
+namespace App\Nova\Central;
 
-use App\Models\Mill;
+use App\Nova\Resource;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
-class MillResource extends Resource
+class Mill extends Resource
 {
-    public static $model = Mill::class;
+    public static $model = \App\Models\Mill::class;
 
     public static $title = 'name';
 
@@ -22,9 +23,18 @@ class MillResource extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make('Name', 'name')
                 ->sortable()
                 ->rules('required'),
+            Text::make('Description', 'description')
+                ->sortable()
+                ->rules('nullable'),
+            Text::make('Data', 'data')->rules('nullable'),
+
+            Images::make('Logo', 'logo')->rules('nullable'),
+            Images::make('Banners', 'banners')->rules('nullable')->withResponsiveImages(),
+
+
         ];
     }
 

@@ -2,15 +2,20 @@
 
 namespace App\Models;
 
+use Spatie\Image\Enums\Fit;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
 
-class Mill extends Model
+class Mill extends Model implements HasMedia
 {
     use HasSlug;
     use HasTags;
+    use InteractsWithMedia;
 
     public $primaryKey = 'id';
     public $incrementing = false;
@@ -37,5 +42,24 @@ class Mill extends Model
         return [
             'data' => 'json',
         ];
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('logo')
+            ->singleFile();
+
+        $this
+            ->addMediaCollection('banners')
+            ->withResponsiveImages();
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('preview')
+            ->fit(Fit::Contain, 300, 300)
+            ->nonQueued();
     }
 }

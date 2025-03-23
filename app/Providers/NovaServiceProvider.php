@@ -2,15 +2,20 @@
 
 namespace App\Providers;
 
+
 use App\Models\Tenant;
 use App\Nova\Central\Admin;
 use App\Nova\Central\Domain;
+use App\Nova\Central\Mill;
+
+use App\Nova\Central\Product;
+use App\Nova\Central\StyleCollection;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
-use App\Nova\Tenant\Product;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
@@ -40,7 +45,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::footer(function (Request $request) {
             return Blade::render('
                 <p class="mt-8 text-center text-xs text-80">
-                 
+
                 </p>
 
         ');
@@ -111,6 +116,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 Domain::class,
                 SubscriptionCancelation::class,
                 Product::class,
+                Mill::class,
+                StyleCollection::class
             ]);
         }
     }
