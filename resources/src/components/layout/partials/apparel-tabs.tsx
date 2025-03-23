@@ -44,6 +44,8 @@ const ApparelTabs: Component<PROPS> = props => {
             fallback={children()}
             when={matches.sm}>
 
+
+
             <Tabs
                 aria-label="Main navigation"
                 orientation={"vertical"}

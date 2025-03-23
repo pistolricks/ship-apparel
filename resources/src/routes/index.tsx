@@ -1,9 +1,11 @@
-import {Component, createEffect, lazy} from "solid-js";
+import {Component, createEffect, For, lazy} from "solid-js";
 import ApparelTabs from "~/components/layout/partials/apparel-tabs";
 import {CarouselItemCard} from "~/components/ui/carousel/carousel";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
+import ApparelNavigation from "~/components/layout/partials/apparel-navigation";
+import {TabsTrigger} from "~/components/ui/tabs";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
@@ -36,6 +38,12 @@ const Home: Component<PROPS> = props => {
         >
 
             <div class={'mx-auto'}>
+
+
+
+                <ApparelNavigation orientation={'vertical'} menu={res()?.menu?.[0]?.sub}/>
+
+
                 <ApparelTabs class="" menu={res()?.menu?.[0]?.sub}>
                     <BaseCarousel
 
