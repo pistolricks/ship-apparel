@@ -229,8 +229,6 @@ const StyleSmView: Component<PROPS> = props => {
                         </section>
                     </div>
                 </div>
-
-
             </div>
         </div>
     );
