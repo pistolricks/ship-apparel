@@ -45,7 +45,7 @@ const NavigationMenuTrigger = <T extends ValidComponent = "button">(
   return (
     <NavigationMenuPrimitive.Trigger
       class={cn(
-        "group/trigger inline-flex h-9 w-full items-center justify-start whitespace-nowrap   bg-gray-100 px-4 py-2 text-xs transition-colors hover:bg-secondary hover:text-secondary-foreground focus:bg-secondary focus:text-secondary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-secondary/50 data-[expanded]:bg-secondary/50",
+        "group/trigger inline-flex h-9 w-full items-center justify-start whitespace-nowrap   bg-gray-100 px-8 py-2 text-xs transition-colors hover:bg-bgBase/50 hover:text-content focus:bg-bgBase/50 focus:text-content focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-secondary/50 data-[expanded]:bg-bgBase/50",
         local.class
       )}
       {...others}
@@ -82,7 +82,7 @@ const NavigationMenuViewport = <T extends ValidComponent = "li">(
     <NavigationMenuPrimitive.Viewport
       class={cn(
         // base settings
-        "pointer-events-none z-[1000] flex h-[var(--kb-navigation-menu-viewport-height)] w-[var(--kb-navigation-menu-viewport-width)] origin-[var(--kb-menu-content-transform-origin)] items-center justify-center overflow-x-clip overflow-y-visible rounded-md border bg-popover opacity-0 shadow-lg data-[expanded]:pointer-events-auto data-[orientation=vertical]:overflow-y-clip data-[orientation=vertical]:overflow-x-visible data-[expanded]:rounded-md",
+        "pointer-events-none z-[1000] flex h-[var(--kb-navigation-menu-viewport-height)] w-[var(--kb-navigation-menu-viewport-width)] origin-[var(--kb-menu-content-transform-origin)] items-center justify-center overflow-x-clip overflow-y-visible rounded-md bg-bgBase/40 opacity-0 shadow data-[expanded]:pointer-events-auto data-[orientation=vertical]:overflow-y-clip data-[orientation=vertical]:overflow-x-visible data-[expanded]:rounded-xs",
         // animate
         "animate-content-hide transition-[width,height] duration-200 ease-in data-[expanded]:animate-content-show data-[expanded]:opacity-100 data-[expanded]:ease-out",
         local.class
@@ -135,7 +135,7 @@ const NavigationMenuLink = <T extends ValidComponent = "a">(
   return (
     <NavigationMenuPrimitive.Item
       class={cn(
-        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  hover:text-content/50 focus:bg-bgBase/80 focus:text-content",
         local.class
       )}
       {...others}
@@ -167,7 +167,7 @@ const NavigationMenuDescription = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as NavigationMenuDescriptionProps, ["class"])
   return (
     <NavigationMenuPrimitive.ItemDescription
-      class={cn("text-sm leading-snug text-muted-foreground", local.class)}
+      class={cn("text-sm leading-snug text-content/80", local.class)}
       {...others}
     />
   )

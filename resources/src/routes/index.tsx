@@ -3,7 +3,7 @@ import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
-
+import "../lib/color-themer"
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 
 type PROPS = RouteSectionProps
@@ -31,7 +31,6 @@ const Home: Component<PROPS> = props => {
         <div
             class={''}
             style={{
-                'background-image': 'linear-gradient(120deg, #fccb90 0%, #d57eeb 100%)'
             }}
         >
 
@@ -40,11 +39,11 @@ const Home: Component<PROPS> = props => {
                 <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
 
 
-            </div>
-            <div class={'mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8'}>
 
 
             </div>
+
+
         </div>
         </>
     )

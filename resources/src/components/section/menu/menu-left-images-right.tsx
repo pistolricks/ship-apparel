@@ -19,8 +19,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
 
     return (
         <div class={''}>
-            <div id="tabs-1-panel-1" class="space-y-10 px-4 pb-8" aria-labelledby="tabs-1-tab-1" role="tabpanel"
-                 tabindex="0">
+            <div tabindex="0">
                 <div class={'flex justify-start items-start w-screen max-w-[300px] sm:max-w-sm md:max-w-md space-x-4'}>
                     <ul role="list" aria-labelledby={title()}
                         class="flex flex-col space-y-4 md:w-full">

@@ -216,8 +216,9 @@ const StyleSmView: Component<PROPS> = props => {
                                     <div class="mt-6 pb-6" id="disclosure-1">
                                         <ul role="list"
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
-                                            <li class="pl-2">Style {style()?.id}</li>
-                                            <li class="pl-2">GTIN {getSelected()?.gtin}</li>
+                                            <li class="pl-2">{style()?.miller?.name}</li>
+                                            <li class="pl-2"><span class="text-[10px] uppercase font-semibold">Style</span> {style()?.id}</li>
+                                            <li class="pl-2"><span class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.gtin}</li>
                                             <li class="pl-2">{getSelected()?.piece_weight} lbs</li>
                                             <li class="pl-2">case x{getSelected()?.case_size}</li>
                                         </ul>

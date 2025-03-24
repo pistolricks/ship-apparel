@@ -66,7 +66,7 @@ const Header: Component<{
                 <div class="mx-auto flex max-w-7xl   h-[40px] items-center  justify-between px-6  lg:px-8" aria-label="Global">
 
                     <Show
-                        fallback={<A href="/products" class="w-[224px]  h-[40px] flex items-center text-content px-4   text-base font-semibold tracking-wide  hover:text-secondary">Products</A>}
+                        fallback={<A href="/products" class="w-[224px]  h-[40px] flex items-center text-content    text-base font-semibold tracking-wide  hover:text-secondary">Products</A>}
                         when={location.pathname.includes('products')}>
                         <Breadcrumbs path={location?.pathname}/>
                     </Show>
