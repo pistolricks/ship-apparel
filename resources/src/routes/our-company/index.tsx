@@ -4,7 +4,7 @@ type PROPS = {}
 
 const OurCompany: Component<PROPS> = props => {
     return (
-        <main class="isolate">
+        <div class="isolate">
 
             <div class="relative isolate -z-10">
                 <svg
@@ -35,13 +35,13 @@ const OurCompany: Component<PROPS> = props => {
                     <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                         <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                             <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                                <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">We’re
-                                    changing the way people connect</h1>
-                                <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">Cupidatat
-                                    minim id magna ipsum sint dolor qui. Sunt sit in quis cupidatat mollit aute velit.
-                                    Et labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint
-                                    aliqua anim nulla sunt mollit id pariatur in voluptate cillum. Eu voluptate tempor
-                                    esse minim amet fugiat veniam occaecat aliqua.</p>
+                                <h1 class="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                                Custom Ink & Thread
+                                </h1>
+                                <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                                    Custom t-shirts and embroidery services offer a unique way to express individuality, promote businesses, commemorate events, or create team unity. At *CustomInk and Thread*, we specialize in transforming ordinary garments into personalized statements through cutting-edge printing techniques and meticulous embroidery craftsmanship.
+
+                                </p>
                             </div>
                             <div
                                 class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -105,29 +105,29 @@ const OurCompany: Component<PROPS> = props => {
                         mission</h2>
                     <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
                         <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
-                            <p class="text-xl/8 text-gray-600">Aliquet nec orci mattis amet quisque ullamcorper neque,
-                                nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat
-                                egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla
-                                sapien.</p>
-                            <p class="mt-10 max-w-xl text-base/7 text-gray-700">Faucibus commodo massa rhoncus,
-                                volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis
-                                id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
-                                Mattis mauris semper sed amet vitae sed turpis id.</p>
+                            <p class="text-xl/8 text-gray-600">
+                                Perfect for bulk orders and vibrant designs, screen printing creates durable, high-quality images that withstand multiple washes. Ideal for team uniforms, company events, or promotional merchandise.
+                                 Direct-to-Garment (DTG) Printing
+                                For intricate designs with multiple colors or photographic elements, DTG printing delivers exceptional detail and color accuracy. Great for small orders or one-off custom pieces.
+
+                            </p>
+                            <p class="mt-10 max-w-xl text-base/7 text-gray-700">
+                                A versatile option that works on various fabrics and materials, heat transfer creates vibrant designs with excellent durability for both small and large orders.
+                            </p>
                         </div>
                         <div class="lg:flex lg:flex-auto lg:justify-center">
                             <dl class="w-64 space-y-8 xl:w-80">
                                 <div class="flex flex-col-reverse gap-y-4">
-                                    <dt class="text-base/7 text-gray-600">Transactions every 24 hours</dt>
-                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900">44 million</dd>
+                                    <dt class="text-base/7 text-gray-600"></dt>
+                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900"></dd>
                                 </div>
                                 <div class="flex flex-col-reverse gap-y-4">
-                                    <dt class="text-base/7 text-gray-600">Assets under holding</dt>
-                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900">$119 trillion</dd>
+                                    <dt class="text-base/7 text-gray-600"></dt>
+                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900"></dd>
                                 </div>
                                 <div class="flex flex-col-reverse gap-y-4">
-                                    <dt class="text-base/7 text-gray-600">New users annually</dt>
-                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900">46,000</dd>
+                                    <dt class="text-base/7 text-gray-600"></dt>
+                                    <dd class="text-5xl font-semibold tracking-tight text-gray-900"></dd>
                                 </div>
                             </dl>
                         </div>
@@ -137,59 +137,40 @@ const OurCompany: Component<PROPS> = props => {
 
             <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
                 <img
-                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+                    src="https://imagedelivery.net/jYAILuSxmZBHJW3H5LQP5g/1c49bffb-72dc-48d9-d359-dbfe46402200/public"
                     alt="" class="aspect-[5/2] w-full object-cover xl:rounded-3xl"/>
             </div>
 
             <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0">
-                    <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Our
-                        values</h2>
-                    <p class="mt-6 text-lg/8 text-gray-600">Lorem ipsum dolor sit amet consect adipisicing elit.
-                        Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+                    <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                    Embroidery
+                    </h2>
+                    <p class="mt-6 text-lg/8 text-gray-600">
+
+                    </p>
                 </div>
                 <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     <div>
-                        <dt class="font-semibold text-gray-900">Be world-class</dt>
-                        <dd class="mt-1 text-gray-600">Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed
-                            sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid
-                            velit porro vero.
+                        <dt class="font-semibold text-gray-900">Logo Embroidery</dt>
+                        <dd class="mt-1 text-gray-600">
+                            Perfect for business attire, corporate gifts, and team uniforms
                         </dd>
                     </div>
                     <div>
-                        <dt class="font-semibold text-gray-900">Share everything you know</dt>
-                        <dd class="mt-1 text-gray-600">Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime
-                            adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia
-                            quaerat minima.
+                        <dt class="font-semibold text-gray-900">Monogramming</dt>
+                        <dd class="mt-1 text-gray-600">
+                            Add a personal touch to garments with initials or names
+
                         </dd>
                     </div>
                     <div>
-                        <dt class="font-semibold text-gray-900">Always learning</dt>
-                        <dd class="mt-1 text-gray-600">Aut repellendus et officiis dolor possimus. Deserunt velit quasi
-                            sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.
+                        <dt class="font-semibold text-gray-900">Custom</dt>
+                        <dd class="mt-1 text-gray-600">
+                            Create custom designs that elevate standard apparel to unique fashion pieces
                         </dd>
                     </div>
-                    <div>
-                        <dt class="font-semibold text-gray-900">Be supportive</dt>
-                        <dd class="mt-1 text-gray-600">Magnam provident veritatis odit. Vitae eligendi repellat non. Eum
-                            fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error
-                            deserunt harum.
-                        </dd>
-                    </div>
-                    <div>
-                        <dt class="font-semibold text-gray-900">Take responsibility</dt>
-                        <dd class="mt-1 text-gray-600">Sit minus expedita quam in ullam molestiae dignissimos in harum.
-                            Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas
-                            perspiciatis error.
-                        </dd>
-                    </div>
-                    <div>
-                        <dt class="font-semibold text-gray-900">Enjoy downtime</dt>
-                        <dd class="mt-1 text-gray-600">Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum
-                            dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur
-                            distinctio.
-                        </dd>
-                    </div>
+
                 </dl>
             </div>
 
@@ -210,92 +191,14 @@ const OurCompany: Component<PROPS> = props => {
                               fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)"/>
                     </svg>
                 </div>
-                <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <h2 class="text-center text-lg/8 font-semibold text-gray-900">Trusted by the world’s most innovative
-                        teams</h2>
-                    <div
-                        class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                             src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
-                             alt="Transistor" width="158" height="48"/>
-                        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                             src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg"
-                             alt="Reform" width="158" height="48"/>
-                        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                             src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg"
-                             alt="Tuple" width="158" height="48"/>
-                        <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                             src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg"
-                             alt="SavvyCal" width="158" height="48"/>
-                        <img
-                            class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                            src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg"
-                            alt="Statamic" width="158" height="48"/>
-                    </div>
-                </div>
+
             </div>
 
-            <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0">
-                    <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Our
-                        team</h2>
-                    <p class="mt-6 text-lg/8 text-gray-600">We’re a dynamic group of individuals who are passionate
-                        about what we do and dedicated to delivering the best results for our clients.</p>
-                </div>
-                <ul role="list"
-                    class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
-                    <li>
-                        <img class="mx-auto size-24 rounded-full"
-                             src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                             alt=""/>
-                        <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Michael Foster</h3>
-                        <p class="text-sm/6 text-gray-600">Co-Founder / CTO</p>
-                    </li>
 
-                </ul>
-            </div>
 
-            <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                    <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">From the
-                        blog</h2>
-                    <p class="mt-2 text-lg/8 text-gray-600">Learn how to grow your business with our expert advice.</p>
-                </div>
-                <div
-                    class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                    <article
-                        class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-                        <img
-                            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
-                            alt="" class="absolute inset-0 -z-10 size-full object-cover"/>
-                        <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                        <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
 
-                        <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
-                            <time datetime="2020-03-16" class="mr-8">Mar 16, 2020</time>
-                            <div class="-ml-4 flex items-center gap-x-4">
-                                <svg viewBox="0 0 2 2" class="-ml-0.5 size-0.5 flex-none fill-white/50">
-                                    <circle cx="1" cy="1" r="1"/>
-                                </svg>
-                                <div class="flex gap-x-2.5">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                        alt="" class="size-6 flex-none rounded-full bg-white/10"/>
-                                    Michael Foster
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="mt-3 text-lg/6 font-semibold text-white">
-                            <a href="#">
-                                <span class="absolute inset-0"></span>
-                                Vel expedita assumenda placeat aut nisi optio voluptates quas
-                            </a>
-                        </h3>
-                    </article>
 
-                </div>
-            </div>
-        </main>
+        </div>
     );
 };
 

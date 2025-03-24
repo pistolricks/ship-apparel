@@ -71,7 +71,7 @@ const Header: Component<{
                         <Breadcrumbs path={location?.pathname}/>
                     </Show>
 
-                    <div class="hidden lg:flex lg:gap-x-12">
+                    <div class="hidden lg:flex lg:gap-x-12 w-full  justify-end">
 
                         <A href="/reversible-apparel" class="text-sm/6 font-semibold text-gray-900">Reversible Apparel</A>
                         <A href="/school-specials" class="text-sm/6 font-semibold text-gray-900">School Specials</A>
