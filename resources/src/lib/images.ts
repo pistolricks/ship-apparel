@@ -9,3 +9,5 @@ export const fetchImage = async ( id: string) =>
         })
     ).json()
 
+
+

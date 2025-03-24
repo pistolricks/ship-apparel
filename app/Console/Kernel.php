@@ -12,6 +12,7 @@ use App\Actions\FtpSanMarFile;
 use App\Actions\ImportSanMarFile;
 use App\Actions\StyleProductTags;
 use App\Actions\StyleUpdateData;
+use App\Actions\UploadImageCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -27,7 +28,8 @@ class Kernel extends ConsoleKernel
         StyleGalleryImage::class,
         StyleProductTags::class,
         StyleUpdateData::class,
-        MillBatch::class
+        MillBatch::class,
+        UploadImageCommand::class,
     ];
 
     /**

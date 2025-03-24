@@ -183,4 +183,9 @@ return [
         '--class' => 'TenantDatabaseSeeder', // root seeder class
         '--force' => true,
     ],
+    'image_api' => [
+        'account_id' => env('VITE_IMAGE_ACCOUNT_ID'),
+        'token' => env('VITE_IMAGE_TOKEN'),
+        'url' => env('VITE_IMAGE_URL'),
+    ],
 ];
