@@ -368,17 +368,22 @@ return [
     [
         'title' => 'Reversible Apparel',
         'href' => 'reversible-apparel',
+        'description' => "Looking for a unique and comfortable sweatshirt that will have you turning heads. Our reversible sweatshirts allow you to have two looks in one.",
+
     ],
     [
         'title' => 'School Specials',
         'href' => 'school-specials',
+        'description' => "Bring your school’s pride to life with custom graphics!  From screen printing to embroidery, heat press and DTG printing.  We offer endless options to showcase your school spirit. T-shirts, sweatshirts, hoodies, and more - designed just for you!",
     ],
     [
         'title' => 'Our Company',
         'href' => 'our-company',
+        'description' => "You envision It. We create It.",
     ],
     [
         'title' => 'Contact Us',
         'href' => 'contact-us',
+        'description' => "We're happy to answer questions and get you acquainted with Custom Ink and Thread.",
     ]
 ];

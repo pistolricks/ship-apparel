@@ -42,6 +42,24 @@ const routes = [
         component: lazy(() => import("./routes/index")),
     },
     {
+        path: "/reversible-apparel",
+        component: lazy(() => import("./routes/reversible-apparel")),
+    },
+    {
+        path: "/school-specials",
+        component: lazy(() => import("./routes/school-specials")),
+    },
+    {
+        path: "/our-company",
+        component: lazy(() => import("./routes/our-company")),
+    },
+    {
+        path: "/contact-us",
+        component: lazy(() => import("./routes/contact-us")),
+    },
+
+
+    {
         path: "/products/view/:id",
         component: lazy(() => import("./routes/products/view")),
         preload: preloadStyle,
@@ -67,18 +85,7 @@ const routes = [
         component: lazy(() => import("~/routes/products/sub-category")),
         preload: preloadSubCategory,
     },
-    {
-        path: "/reversible-apparel",
-        component: lazy(() => import("./routes/products")),
-    },
-    {
-        path: "/school-specials",
-        component: lazy(() => import("./routes/school-specials")),
-    },
-    {
-        path: "/our-company",
-        component: lazy(() => import("./routes/our-company")),
-    },
+
  //   {
  //       path: "/login",
  //       component: lazy(() => import("./routes/login")),

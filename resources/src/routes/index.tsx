@@ -39,7 +39,8 @@ const Home: Component<PROPS> = props => {
             }}
         >
 
-            <div class={''}>
+            <div class={'relative w-full h-full'}>
+
 
                 <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
 

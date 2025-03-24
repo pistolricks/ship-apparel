@@ -73,9 +73,10 @@ const Header: Component<{
 
                     <div class="hidden lg:flex lg:gap-x-12">
 
-                        <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
-                        <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
-                        <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
+                        <A href="/reversible-apparel" class="text-sm/6 font-semibold text-gray-900">Reversible Apparel</A>
+                        <A href="/school-specials" class="text-sm/6 font-semibold text-gray-900">School Specials</A>
+                        <A href="/our-company" class="text-sm/6 font-semibold text-gray-900">Our Company</A>
+                        <A href="/contact-us" class="text-sm/6 font-semibold text-gray-900">Contact Us</A>
                     </div>
 
                 </div>
