@@ -84,7 +84,7 @@ const StyleSmView: Component<PROPS> = props => {
         <div
             class="mx-auto max-w-7xl sm:px-6 sm:pt-8 lg:px-8 relative bg-white rounded-xl overflow-y-auto scrollbar-hide">
             <div class="mx-auto max-w-2xl lg:max-w-none">
-                <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+                <div class="px-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
                             <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
@@ -113,27 +113,27 @@ const StyleSmView: Component<PROPS> = props => {
                         </div>
 
                         <div>
-                            <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" role="tabpanel" tabindex="0">
+                            <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" class={'h-95 sm:h-full'} role="tabpanel" tabindex="0">
 
 
                                 <img
                                     src={src()}
-                                    alt="Angled front view with bag zipped and handles upright."
-                                    class="aspect-square w-full object-contain sm:rounded-lg"/>
+                                    alt=""
+                                    class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"/>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="mt-10  sm:mt-16 sm:px-0 lg:mt-0">
+                    <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-                            <img src={style()?.miller?.media?.[0]?.original_url} class={'w-[60px] h-[60px] object-contain'} alt={''} />
+                            <img src={style()?.miller?.media?.[0]?.original_url} class={'absolute top-0 sm:static  w-[60px] h-[60px] rounded-xl object-contain'} alt={''} />
                         </div>
 
-                        <h1 class="text-xl font-medium tracking-tight text-right text-gray-900">{style()?.title}</h1>
+                        <h1 class="text-xl font-medium tracking-tight text-right text-gray-900 text-balance">{style()?.title}</h1>
                         <form class="mt-2 w-full pt-4 border-t border-gray-200">
-                            <div class={'flex justify-between items-center'}>
+                            <div class={'flex justify-between items-center space-x-5 sm:space-x-0'}>
                                 <div class="">
                                     <h2 class="sr-only">Product information</h2>
                                     <p class="text-xl font-semibold tracking-tight text-gray-600">{numberWithCurrency()} <span class="text-sm font-normal">msrp</span></p>
@@ -141,8 +141,8 @@ const StyleSmView: Component<PROPS> = props => {
 
 
                                 <button type="button"
-                                        class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-blue-500 px-8 py-1.5 text-base font-light text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
-                                    Login for Inventory / Pricing
+                                        class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-blue-500 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
+                                    Login for <span class={'hidden sm:block px-1'}> Inventory / </span> Pricing
                                 </button>
                             </div>
 
@@ -160,7 +160,7 @@ const StyleSmView: Component<PROPS> = props => {
 
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]}</p>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.','')}</p>
                                     </div>
                                 </div>
                                 <fieldset aria-label="Choose a color"
