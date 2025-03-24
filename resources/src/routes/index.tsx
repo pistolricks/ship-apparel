@@ -27,6 +27,7 @@ const Home: Component<PROPS> = props => {
 
 
     return (
+        <>
         <div
             class={''}
             style={{
@@ -35,8 +36,6 @@ const Home: Component<PROPS> = props => {
         >
 
             <div class={''}>
-
-
 
                 <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
 
@@ -47,6 +46,7 @@ const Home: Component<PROPS> = props => {
 
             </div>
         </div>
+        </>
     )
 }
 

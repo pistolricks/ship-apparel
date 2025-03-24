@@ -12,16 +12,18 @@ const Header: Component<{
     const location = useLocation();
     const contextId = () => props.contextId;
 
+    let path = 'products'
+
     return (
         <>
 
-            <header class="h-16">
+            <header class="h-16 sm:h-20">
                 <nav class={''} aria-label="Top">
 
-                    <div class="bg-gray-200/20 backdrop-blur-md backdrop-filter">
+                    <div class="bg-primary/10 backdrop-blur-md backdrop-filter h-16 sm:h-20">
                         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                             <div>
-                                <div class="flex h-16 items-center justify-between">
+                                <div class="flex h-16 sm:h-20 items-center justify-between">
 
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
@@ -60,11 +62,25 @@ const Header: Component<{
                     </div>
                 </nav>
             </header>
-            <div class={'w-full bg-gray-100'}>
-                <div class={'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 '}>
-                    <Breadcrumbs path={location?.pathname}/>
+            <div class={'w-full  bg-secondary/20 shadow-accent/70'}>
+                <div class="mx-auto flex max-w-7xl   h-[40px] items-center  justify-between px-6  lg:px-8" aria-label="Global">
+
+                    <Show
+                        fallback={<A href="/products" class="w-[224px]  h-[40px] flex items-center text-content px-4   text-base font-semibold tracking-wide  hover:text-secondary">Products</A>}
+                        when={location.pathname.includes('products')}>
+                        <Breadcrumbs path={location?.pathname}/>
+                    </Show>
+
+                    <div class="hidden lg:flex lg:gap-x-12">
+
+                        <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
+                        <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
+                        <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
+                    </div>
+
                 </div>
             </div>
+
         </>
     )
 

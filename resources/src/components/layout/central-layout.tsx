@@ -18,20 +18,22 @@ const CentralLayout: Component<PROPS> = props => {
     const side: () => 'top' | 'right' | 'bottom' | 'left' = () => "right"
     const children = () => props.children;
 
-
+/* md:px-6 lg:px-8 */
     return (
         <BaseDrawer side={side()} contextId={contextId()}>
-            <div class="min-h-screen h-screen flex flex-col">
+            <div class="min-h-dvh h-dvh flex flex-col">
                 <Header contextId={contextId()}/>
                 <div class={'flex-1 flex flex-row overflow-y-hidden'}>
 
                     <main
-                        class={'mx-auto max-w-7xl md:px-6 lg:px-8 scrollbar-hide flex-1 bg-background border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
+                        class={'mx-auto max-w-7xl  scrollbar-hide flex-1 bg-bgBase/10 border-l border-r border-gray-200/50 text-xs overflow-y-auto'}
                     >
                         {children()}
                     </main>
                     <Show when={location.pathname?.includes('products') && !location.pathname?.includes('view')}>
+                        {/*
                         <nav class="order-first sm:w-[200px] bg-gray-100 overflow-y-auto"><CategoryFilters name={""}/></nav>
+                        */}
                     </Show>
                 </div>
                 <DrawerContent

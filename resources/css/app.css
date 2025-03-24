@@ -2,6 +2,10 @@
 @source "../views";
 @plugin "tailwind-scrollbar-hide";
 :root {
+
+    --color-bgBase: hsl(39deg 85% 95%);
+    --color-content: hsl(0deg 0% 20%);
+
     --color-cerulean-blue-50: hsl(203, 100%, 96%);
     --color-cerulean-blue-100: hsl(206, 100%, 92%);
     --color-cerulean-blue-200: hsl(205, 100%, 86%);
@@ -38,14 +42,42 @@
     --color-red-orange-900: hsl(5, 72%, 31%);
     --color-red-orange-950: hsl(4, 85%, 15%);
 
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-bgBase: 240deg 27% 18%;
+            --color-content: 210deg 14% 53%;
+        }
+    }
+
+    /* If the user switchs dark mode */
+    :root[data-theme="dark"] {
+        --color-bgBase: 240deg 27% 18%;
+        --color-content: 210deg 14% 53%;
+    }
+
+    /* If the user switchs light mode */
+    :root[data-theme="light"] {
+        --color-bgBase: 39deg 85% 95%;
+        --color-content: 0deg 0% 20%;
+    }
+
 }
+
+
+
 
 @theme inline {
     /* Primary Colors */
-    --color-primary: var(--color-cerulean-blue-800); /* Deep Indigo */
-    --color-primary-light:  var(--color-cerulean-blue-500);
-    --color-primary-dark:  var(--color-cerulean-blue-900);
+    --color-bgBase: var(--color-bgBase);
+    --color-content: var(--color-content);
 
+    --color-primary: var(--color-glacier-400); /* Deep Indigo */
+    --color-primary-light:  var(--color-glacier-100);
+    --color-primary-dark:  var(--color-glacier-700);
+
+    --color-secondary: var(--color-glacier-300);
+    --color-accent: var(--color-coral);
     --color-teal: #16A085; /* Vibrant Teal */
     --color-teal-light: #1ABC9C;
     --color-teal-dark: #0E8C73;
@@ -97,14 +129,11 @@
     --color-card: var(--color-glacier-200);
     --color-card-foreground: var(--color-glacier-400);
 
-    --color-primary: var(--color-cerulean-blue-800);
-    --color-primary-foreground: var(--color-cerulean-blue-950);
 
-    --color-secondary: var(--color-glacier-300);
-    --color-secondary-foreground: var(--color-glacier-950);
 
-    --color-accent: var(--color-red-orange-500);
-    --color-accent-foreground: var(--color-red-orange-950);
+
+
+
 
     --color-corvu-text: var(--color-cerulean-blue-950);
     --color-corvu-bg: var(--color-white);

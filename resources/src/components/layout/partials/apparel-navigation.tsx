@@ -26,13 +26,13 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     return (
         <div class="flex flex-col items-left space-y-4">
-            <NavigationMenu orientation={orientation()}>
+            <NavigationMenu class={'shadow'} orientation={orientation()}>
 
 
                 <For<MenuItemType[]> each={menu()}>
                     {(item) => (
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger>
+                        <NavigationMenuItem >
+                            <NavigationMenuTrigger class={'w-56 font-medium tracking-wide'}>
                                 {item.title}
                             </NavigationMenuTrigger>
 
