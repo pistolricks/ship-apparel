@@ -140,7 +140,7 @@ const StyleSmView: Component<PROPS> = props => {
                                 <div class="">
                                     <h2 class="sr-only">Product information</h2>
                                     <p class="text-xl font-semibold tracking-tight text-gray-600">{numberWithCurrency()}
-                                        <span class="text-sm font-normal">msrp</span></p>
+                                        <span class="text-sm font-normal pl-1">msrp</span></p>
                                 </div>
 
 
