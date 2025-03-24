@@ -17,12 +17,12 @@ const View: Component<ParentProps> = props => {
 
     console.log(params)
 
-   // const style = createAsync(async () => getStyle(params.id));
+    const style = createAsync(async () => getStyle(params.id));
 
 
     return (
         <div>
-            <StyleSmView/>
+            <StyleSmView style={style()?.style}/>
         </div>
     );
 };

@@ -40,7 +40,7 @@ const Breadcrumbs: Component<{
                                     </BreadcrumbSeparator>
 
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink current={i() + 1 === splitPath()?.length} href={splitPath()?.[1] === 'products' ? `/products/${path}` : `${path}`} class={"capitalize"}>{path}</BreadcrumbLink>
+                                        <BreadcrumbLink current={i() + 1 === splitPath()?.length} href={splitPath()?.[1] === 'products' ? `/products/${path}` : `${path}`} class={"capitalize"}>{splitPath()?.[i()] }</BreadcrumbLink>
                                     </BreadcrumbItem>
 
                                 </Show>
