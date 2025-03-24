@@ -145,5 +145,6 @@ export type StyleType = {
     front_flat_image_url?: string,
     back_flat_image_url?: string,
     tags?: {}[],
+    products?: SM_PRODUCT[]
     data?: any,
 }

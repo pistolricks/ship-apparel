@@ -2,7 +2,7 @@ import {Component, createSelector, createSignal, For} from "solid-js";
 import {PaginationType, StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import Drawer from "@corvu/drawer";
-import StyleListView from "~/components/module/styles/style-list-view";
+import {StyleListView} from "~/components/module/styles/style-list-view";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import {IconX} from "~/components/svg";
 import StyleView from "~/components/module/styles/style-view";
@@ -41,7 +41,7 @@ const StyleSection: Component<PROPS> = props => {
                 <For each={data()}>
                     {(product: StyleType) => (
 
-                            <StyleListView onClick={() => handler(product)} {...product} />
+                        <StyleListView href={`/products/view/${product.id}`} onClick={() => handler(product)} {...product} />
 
                     )}
                 </For>

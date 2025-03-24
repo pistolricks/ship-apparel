@@ -15,7 +15,9 @@ export const route = {
 const View: Component<ParentProps> = props => {
     const params = useParams();
 
-    const style = createAsync(async () => getStyle(params.id));
+    console.log(params)
+
+   // const style = createAsync(async () => getStyle(params.id));
 
 
     return (

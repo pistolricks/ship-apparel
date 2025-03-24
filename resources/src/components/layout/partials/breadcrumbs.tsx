@@ -35,12 +35,12 @@ const Breadcrumbs: Component<{
                         </BreadcrumbItem>
                         <For<string[]> each={splitPath()}>
                             {(path, i) => (
-                                <Show<boolean> when={i() > 0 && path?.length > 2}>
+                                <Show<boolean> when={i() > 0 && path?.length > 2 }>
                                     <BreadcrumbSeparator>
                                     </BreadcrumbSeparator>
 
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink current={i() + 1 === splitPath()?.length} href={`/${path}`} class={"capitalize"}>{path}</BreadcrumbLink>
+                                        <BreadcrumbLink current={i() + 1 === splitPath()?.length} href={splitPath()?.[1] === 'products' ? `/products/${path}` : `${path}`} class={"capitalize"}>{path}</BreadcrumbLink>
                                     </BreadcrumbItem>
 
                                 </Show>

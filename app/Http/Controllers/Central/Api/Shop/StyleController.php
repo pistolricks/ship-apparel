@@ -14,9 +14,11 @@ class StyleController extends Controller
     public function __invoke(Request $request, Style $style)
     {
 
+        $s = $style->load('miller','products');
+
         return response()->json([
             "menu" => config('menu'),
-            "style" => $style->load('miller','products')->first(),
+            "style" => $s,
             "user" => $request->user(),
         ]);
     }

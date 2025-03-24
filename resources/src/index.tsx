@@ -14,9 +14,10 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     );
 }
 
-function preloadStyle() {
-    void getStyle()
+function preloadStyle({ params  }: { params: any }) {
+    void getStyle(params.id)
 }
+
 
 function preloadProducts() {
    void getProducts()
@@ -41,7 +42,7 @@ const routes = [
         component: lazy(() => import("./routes/index")),
     },
     {
-        path: "/styles/:id",
+        path: "/products/view/:id",
         component: lazy(() => import("./routes/products/view")),
         preload: preloadStyle,
     },
