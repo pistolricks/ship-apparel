@@ -37,7 +37,7 @@ const StyleSmView: Component<PROPS> = props => {
 
     const [getImages, setImages] = createSignal([getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url])
 
-    const [getSrc, setSrc] = createSignal(style()?.front_flat_image_url)
+    const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
 
     const isSrc = createSelector<string>(getSrc)
 
@@ -75,9 +75,9 @@ const StyleSmView: Component<PROPS> = props => {
 
     onMount(() => {
         setSelected(style()?.products?.[0])
-        setSrc(style()?.products?.[0]?.front_flat_image_url)
+        setSrc(style()?.products?.[0]?.front_model_image_url)
         setImages([style()?.products?.[0]?.front_model_image_url, style()?.products?.[0]?.back_model_image_url, style()?.products?.[0]?.front_flat_image_url, style()?.products?.[0]?.back_flat_image_url])
-        isSrc(style()?.products?.[0]?.front_flat_image_url)
+        isSrc(style()?.products?.[0]?.front_model_image_url)
     })
 
     return (
