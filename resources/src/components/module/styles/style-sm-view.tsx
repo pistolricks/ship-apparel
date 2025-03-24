@@ -1,4 +1,4 @@
-import {Component, createSelector, createSignal, createMemo, onMount} from "solid-js";
+import {Component, createMemo, createSelector, createSignal, onMount} from "solid-js";
 import {StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
@@ -113,7 +113,8 @@ const StyleSmView: Component<PROPS> = props => {
                         </div>
 
                         <div>
-                            <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" class={'h-95 sm:h-full'} role="tabpanel" tabindex="0">
+                            <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" class={'h-95 sm:h-full'}
+                                 role="tabpanel" tabindex="0">
 
 
                                 <img
@@ -128,7 +129,9 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-                            <img src={style()?.miller?.media?.[0]?.original_url} class={'absolute top-0 sm:static  w-[60px] h-[60px] rounded-xl object-contain'} alt={''} />
+                            <img src={style()?.miller?.media?.[0]?.original_url}
+                                 class={'absolute top-0 sm:static  w-[60px] h-[60px] rounded-xl object-contain'}
+                                 alt={''}/>
                         </div>
 
                         <h1 class="text-xl font-medium tracking-tight text-right text-gray-900 text-balance">{style()?.title}</h1>
@@ -136,7 +139,8 @@ const StyleSmView: Component<PROPS> = props => {
                             <div class={'flex justify-between items-center space-x-5 sm:space-x-0'}>
                                 <div class="">
                                     <h2 class="sr-only">Product information</h2>
-                                    <p class="text-xl font-semibold tracking-tight text-gray-600">{numberWithCurrency()} <span class="text-sm font-normal">msrp</span></p>
+                                    <p class="text-xl font-semibold tracking-tight text-gray-600">{numberWithCurrency()}
+                                        <span class="text-sm font-normal">msrp</span></p>
                                 </div>
 
 
@@ -160,7 +164,7 @@ const StyleSmView: Component<PROPS> = props => {
 
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.','')}</p>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
                                     </div>
                                 </div>
                                 <fieldset aria-label="Choose a color"
@@ -208,26 +212,8 @@ const StyleSmView: Component<PROPS> = props => {
 
                             <div class="divide-y divide-gray-200 border-t">
                                 <div>
-                                    <h3>
-                                        <button type="button"
-                                                class="group relative flex w-full items-center justify-between py-6 text-left"
-                                                aria-controls="disclosure-1" aria-expanded="false">
-                                            <span class="text-sm font-medium text-gray-900">Features</span>
-                                            <span class="ml-6 flex items-center">
-                                                <svg class="block size-6 text-gray-400 group-hover:text-gray-500"
-                                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                     stroke="currentColor" aria-hidden="true" data-slot="icon">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
-                      </svg>
-                                                <svg class="hidden size-6 text-blue-400 group-hover:text-blue-500"
-                                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                     stroke="currentColor" aria-hidden="true" data-slot="icon">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/>
-                      </svg>
-                    </span>
-                                        </button>
-                                    </h3>
-                                    <div class="pb-6" id="disclosure-1">
+
+                                    <div class="mt-6 pb-6" id="disclosure-1">
                                         <ul role="list"
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
                                             <li class="pl-2">Style {style()?.id}</li>
@@ -243,38 +229,7 @@ const StyleSmView: Component<PROPS> = props => {
                     </div>
                 </div>
 
-                <section aria-labelledby="related-heading" class="mt-10 border-t border-gray-200 px-4 py-16 sm:px-0">
-                    <h2 id="related-heading" class="text-xl font-bold text-gray-900">Customers also bought</h2>
 
-                    <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-                        <div>
-                            <div class="relative">
-                                <div class="relative h-72 w-full overflow-hidden rounded-lg">
-                                    <img
-                                        src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-related-product-01.jpg"
-                                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                                        class="size-full object-cover"/>
-                                </div>
-                                <div class="relative mt-4">
-                                    <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-                                    <p class="mt-1 text-sm text-gray-500">White and black</p>
-                                </div>
-                                <div
-                                    class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-                                    <div aria-hidden="true"
-                                         class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-                                    <p class="relative text-lg font-semibold text-white">$140</p>
-                                </div>
-                            </div>
-                            <div class="mt-6">
-                                <a href="#"
-                                   class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Add
-                                    to bag<span class="sr-only">, Zip Tote Basket</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
             </div>
         </div>
     );
