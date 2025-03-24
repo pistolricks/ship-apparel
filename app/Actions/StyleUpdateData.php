@@ -3,10 +3,14 @@
 namespace App\Actions;
 
 use App\Data\TagData;
+use App\Models\Product;
 use App\Models\Style;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Lorisleiva\Actions\Concerns\AsAction;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\Tags\Tag;
 
 class StyleUpdateData
@@ -25,11 +29,20 @@ class StyleUpdateData
 
     public function handle(): void
     {
-        $styles = Style::query()->with('tags')->get();
 
-        $styles->map(function ($style) {
-            $this->action->onQueue()->execute($style);
+
+        DB::table('styles')->orderBy('id')->chunkById(/**
+         * @throws FileCannotBeAdded
+         */ 100, function (Collection $styles) {
+            foreach ($styles as $style) {
+
+                $this->action->onQueue()->execute($style);
+
+            }
         });
+
+
+
     }
 
     public function asCommand(Command $command): void

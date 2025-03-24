@@ -6,6 +6,7 @@ use App\Console\Commands\UpdateOrCreateStyle;
 use App\Data\TagData;
 use App\Models\Product;
 use App\Models\Style;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\QueueableAction\QueueableAction;
@@ -28,22 +29,25 @@ class StyleUpdateDataAction
     /**
      * Execute the action.
      *
-     * @return Style
+     * @return mixed
      * @throws FileCannotBeAdded
      */
-    public function execute(Style $style): void
+    public function execute($style): void
     {
-        $style->update([
-            'data' => [
-                ...$style->tags->map(function (Tag $tag) {
-                    $td = TagData::from([
-                        'name' => $tag->getTranslation('name', 'en'),
-                        'slug' => $tag->getTranslation('slug', 'en'),
-                        'type' => $tag->type
-                    ]);
-                    return $td;
-                })
-            ]
-        ]);
+        $st = Style::query()->where('id', $style->id)->with('tags')->first();
+
+
+        $st->update([
+                'data' => [
+                    ...$st->tags->map(function (Tag $tag) {
+                        $td = TagData::from([
+                            'name' => $tag->getTranslation('name', 'en'),
+                            'slug' => $tag->getTranslation('slug', 'en'),
+                            'type' => $tag->type
+                        ]);
+                        return $td;
+                    })
+                ]
+            ]);
     }
 }
