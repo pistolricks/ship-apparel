@@ -2,15 +2,11 @@
 
 namespace App\Actions;
 
-use App\Console\Commands\UpdateOrCreateStyle;
-use App\Models\Product;
-use App\Models\Style;
-use Illuminate\Support\Str;
+use App\Data\TagData;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\QueueableAction\QueueableAction;
-use Spatie\Tags\Tag;
 
-class AddTagToStyleAction
+class TagDataAction
 {
     use QueueableAction;
 
@@ -27,20 +23,18 @@ class AddTagToStyleAction
     /**
      * Execute the action.
      *
-     * @return Style
+     * @return TagData
      * @throws FileCannotBeAdded
      */
-    public function execute(Style $style, string $value, string $type): Style
+    public function execute($tag): TagData
     {
 
-        // gallery, specs
+        return TagData::from([
+            'name' => $tag->getTranslation('name', 'en'),
+            'slug' => $tag->getTranslation('slug', 'en'),
+            'type' => $tag->type
+        ]);
 
-        $trimmed = Str::trim($value);
 
-        $m = Tag::findOrCreate($trimmed, $type);
-
-        $style->attachTag($m);
-
-        return $style;
     }
 }

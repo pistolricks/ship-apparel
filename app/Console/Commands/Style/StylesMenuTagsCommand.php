@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Actions;
+namespace App\Console\Commands\Style;
 
-use App\Models\Style;
+use App\Actions\ModelTagsAction;
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class StyleMenuTags
+class StylesMenuTagsCommand
 {
     use AsAction;
 
@@ -17,15 +17,14 @@ class StyleMenuTags
 
 
     public function __construct(
-        private readonly AddTagToStyleAction $action
+        private readonly ModelTagsAction $action
     ) {
     }
 
-    public function handle(): void
+    public function handle(Collection $collection): void
     {
-        $styles = Style::all();
 
-        $styles->map(function ($style) {
+        $collection->map(function ($style) {
 
             $cats = explode(";", $style->categories);
 

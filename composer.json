@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-curl": "*",
         "ext-zip": "*",
         "calebporzio/sushi": "^2.5",
         "dedmytro/laravel-cloudflare-images": "^0.2.1",
@@ -20,7 +21,7 @@
         "inspheric/nova-email-field": "^2.0",
         "laravel/cashier": "^15.0",
         "laravel/framework": "^11.0",
-        "laravel/horizon": "^5.31",
+        "laravel/horizon": "*",
         "laravel/nova": "4.35.2",
         "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",

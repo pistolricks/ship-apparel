@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Actions\UpdateOrCreateStyleAction;
+use App\Actions\Style\StyleAction;
 use App\Models\Product;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection;
@@ -26,7 +26,7 @@ class CreateStyleJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $action = new UpdateOrCreateStyleAction;
+        $action = new StyleAction;
 
         $action->onQueue()->execute($this->product);
 

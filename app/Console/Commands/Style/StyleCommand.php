@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\Style;
 
 use App\Models\Product;
 use App\Models\Style;
 use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-class UpdateOrCreateStyle extends Command
+class StyleCommand extends Command
 {
     /**
      * The name and signature of the console command.

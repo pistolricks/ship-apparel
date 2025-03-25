@@ -2,34 +2,33 @@
 
 namespace App\Console;
 
-use App\Actions\ImportSanMarFile2;
-use App\Actions\MillBatch;
-use App\Actions\StyleGalleryImage;
-use App\Actions\StyleMenuTags;
-use App\Actions\StyleProducts;
-use App\Actions\ExtractSanMarFile;
-use App\Actions\FtpSanMarFile;
-use App\Actions\ImportSanMarFile;
-use App\Actions\StyleProductTags;
-use App\Actions\StyleUpdateData;
-use App\Actions\UploadImageCommand;
+
+use App\Console\Commands\Image\ImagesUploadCommand;
+use App\Console\Commands\Mill\MillsCommand;
+use App\Console\Commands\SanMar\ExtractSanMarFileCommand;
+use App\Console\Commands\SanMar\FtpSanMarFileCommand;
+use App\Console\Commands\SanMar\ImportSanMarFile2Command;
+use App\Console\Commands\SanMar\ImportSanMarFileCommand;
+use App\Console\Commands\Style\StylesMenuTagsCommand;
+use App\Console\Commands\Style\StylesProductsCommand;
+use App\Console\Commands\Style\StylesProductTagsCommand;
+use App\Console\Commands\Style\StylesUpdateCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
     protected $commands = [
-        FtpSanMarFile::class,
-        ExtractSanMarFile::class,
-        ImportSanMarFile::class,
-        ImportSanMarFile2::class,
-        StyleProducts::class,
-        StyleMenuTags::class,
-        StyleGalleryImage::class,
-        StyleProductTags::class,
-        StyleUpdateData::class,
-        MillBatch::class,
-        UploadImageCommand::class,
+        FtpSanMarFileCommand::class,
+        ExtractSanMarFileCommand::class,
+        ImportSanMarFileCommand::class,
+        ImportSanMarFile2Command::class,
+        StylesProductsCommand::class,
+        StylesMenuTagsCommand::class,
+        StylesProductTagsCommand::class,
+        StylesUpdateCommand::class,
+        MillsCommand::class,
+        ImagesUploadCommand::class,
     ];
 
     /**

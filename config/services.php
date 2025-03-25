@@ -41,5 +41,11 @@ return [
         'server' => env('PLOI_SERVER'),
         'site' => env('PLOI_SITE'),
     ],
+    'image_api' => [
+        'email' => env('VITE_IMAGE_EMAIL'),
+        'account_id' => env('VITE_IMAGE_ACCOUNT_ID'),
+        'token' => env('VITE_IMAGE_TOKEN'),
+        'url' => env('VITE_IMAGE_URL'),
+    ],
 
 ];

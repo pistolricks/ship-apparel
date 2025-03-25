@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Actions;
+namespace App\Console\Commands\SanMar;
 
 use App\Jobs\ExtractSanMarFileData;
 use Illuminate\Console\Command;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class ExtractSanMarFile
+class ExtractSanMarFileCommand
 {
     use AsAction;
 

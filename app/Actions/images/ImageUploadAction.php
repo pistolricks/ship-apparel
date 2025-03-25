@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\images;
 
+use GuzzleHttp\Client;
 use Spatie\QueueableAction\QueueableAction;
 
-class UploadImageAction
+class ImageUploadAction
 {
     use QueueableAction;
 
@@ -21,11 +22,9 @@ class UploadImageAction
     /**
      * Execute the action.
      *
-     * @return mixed
      */
-    public function execute(string $imageUrl, string $id)
+    public function execute(string $imageUrl, string $id): void
     {
-
 
         $url = config('tenancy.image_api.url');
 
@@ -59,5 +58,6 @@ class UploadImageAction
 
         // Close the cURL session
         curl_close($ch);
+
     }
 }

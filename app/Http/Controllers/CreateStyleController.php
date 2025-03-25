@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Actions\AddImageToStyleAction;
-use App\Actions\AddTagToStyleAction;
-use App\Actions\UpdateOrCreateStyleAction;
-use App\Console\Commands\UpdateOrCreateStyle;
+use App\Actions\Style\StyleAction;
 use App\Models\Product;
-use Illuminate\Support\Collection;
 
 class CreateStyleController extends Controller
 {
     public function __construct(
-        private readonly UpdateOrCreateStyleAction $action
+        private readonly StyleAction $action
     )
     {}
 

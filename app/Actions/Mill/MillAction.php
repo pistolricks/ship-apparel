@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Mill;
 
 use App\Models\Mill;
-use App\Models\Style;
 use Spatie\QueueableAction\QueueableAction;
 
-class CreateMillAction
+class MillAction
 {
     use QueueableAction;
 

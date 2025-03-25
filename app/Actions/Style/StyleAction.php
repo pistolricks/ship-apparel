@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Style;
 
-use App\Console\Commands\UpdateOrCreateStyle;
+use App\Console\Commands\Style\StyleCommand;
 use App\Models\Product;
 use App\Models\Style;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\QueueableAction\QueueableAction;
 
-class UpdateOrCreateStyleAction
+class StyleAction
 {
     use QueueableAction;
 
@@ -19,7 +19,7 @@ class UpdateOrCreateStyleAction
      * @return void
      */
     public function __construct(
-        private readonly UpdateOrCreateStyle $updateOrCreateStyleCollection,
+        private readonly StyleCommand $updateOrCreateStyleCollection,
     ) {
         // Prepare the action for execution, leveraging constructor injection.
     }

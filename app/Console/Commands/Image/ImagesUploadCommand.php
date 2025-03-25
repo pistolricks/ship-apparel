@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Actions;
+namespace App\Console\Commands\Image;
 
-use App\Models\Style;
+use App\Actions\images\ImageUploadAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 
-class UploadImageCommand
+class ImagesUploadCommand
 {
     use AsAction;
 
@@ -20,7 +20,7 @@ class UploadImageCommand
 
 
     public function __construct(
-        private readonly UploadImageAction $action
+        private readonly ImageUploadAction $action
     ) {
     }
 
@@ -30,9 +30,7 @@ class UploadImageCommand
     public function handle(): void
     {
 
-        DB::table('products')->orderBy('id')->chunkById(/**
-         * @throws FileCannotBeAdded
-         */ 100, function (Collection $product) {
+        DB::table('products')->orderBy('id')->chunkById(100, function (Collection $product) {
             foreach ($product as $product) {
                 if (Str::contains($product?->front_model_image_url, 'http')) {
 

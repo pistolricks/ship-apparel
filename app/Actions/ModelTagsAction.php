@@ -2,15 +2,12 @@
 
 namespace App\Actions;
 
-use App\Console\Commands\UpdateOrCreateStyle;
-use App\Models\Product;
-use App\Models\Style;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\QueueableAction\QueueableAction;
 use Spatie\Tags\Tag;
 
-class StyleAddImageAction
+class ModelTagsAction
 {
     use QueueableAction;
 
@@ -27,13 +24,20 @@ class StyleAddImageAction
     /**
      * Execute the action.
      *
-     *
+     * @return \App\Models\Model
      * @throws FileCannotBeAdded
      */
-    public function execute(Style $style, string $image): void
+    public function execute(\App\Models\Model $model, string $value, string $type): \App\Models\Model
     {
-        if (Str::contains($image, 'http')) {
-            $style->addMediaFromUrl($image)->toMediaCollection('gallery');
-        }
+
+        // gallery, specs
+
+        $trimmed = Str::trim($value);
+
+        $m = Tag::findOrCreate($trimmed, $type);
+
+        $model->attachTag($m);
+
+        return $model;
     }
 }

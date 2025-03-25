@@ -9,6 +9,7 @@ use App\Nova\Central\Domain;
 use App\Nova\Central\Mill;
 
 use App\Nova\Central\Product;
+use App\Nova\Central\Project;
 use App\Nova\Central\StyleCollection;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
@@ -117,7 +118,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 SubscriptionCancelation::class,
                 Product::class,
                 Mill::class,
-                StyleCollection::class
+                StyleCollection::class,
+                Project::class
             ]);
         }
     }

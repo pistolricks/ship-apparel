@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Actions;
+namespace App\Console\Commands\SanMar;
 
 use App\Jobs\FtpSanMarFileData;
-use Lorisleiva\Actions\Concerns\AsAction;
 use Illuminate\Console\Command;
+use Lorisleiva\Actions\Concerns\AsAction;
 
-class FtpSanMarFile
+class FtpSanMarFileCommand
 {
     use AsAction;
 
