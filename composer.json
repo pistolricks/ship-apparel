@@ -11,6 +11,7 @@
         "php": "^8.2",
         "ext-curl": "*",
         "ext-zip": "*",
+        "anaseqal/nova-import": "^0.0.6",
         "bissolli/nova-phone-field": "^0.0.4",
         "calebporzio/sushi": "^2.5",
         "chaseconey/nova-external-image": "^1.0",

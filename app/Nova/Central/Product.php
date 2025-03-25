@@ -15,7 +15,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\URL;
 use Pdewit\ExternalUrl\ExternalUrl;
-
+use App\Nova\Actions\ImportProducts;
 class Product extends Resource
 {
     public static $model = \App\Models\Product::class;
@@ -183,6 +183,7 @@ class Product extends Resource
 
     public function actions(Request $request): array
     {
-        return [];
+        return []; // new ImportProducts
+
     }
 }

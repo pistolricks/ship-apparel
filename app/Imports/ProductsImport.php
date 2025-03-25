@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\Product;
+use Maatwebsite\Excel\Concerns\RemembersRowNumber;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
@@ -12,6 +13,8 @@ use Maatwebsite\Excel\Concerns\WithSkipDuplicates;
 class ProductsImport implements ToModel, WithHeadingRow, WithBatchInserts, WithSkipDuplicates, WithChunkReading, \Illuminate\Contracts\Queue\ShouldQueue
 {
 
+    use RemembersRowNumber;
+
     public function __construct()
     {
 
@@ -19,6 +22,8 @@ class ProductsImport implements ToModel, WithHeadingRow, WithBatchInserts, WithS
 
     public function model(array $row): Product
     {
+
+        $currentRowNumber = $this->getRowNumber();
 
 
 
@@ -69,11 +74,11 @@ class ProductsImport implements ToModel, WithHeadingRow, WithBatchInserts, WithS
 
     public function batchSize(): int
     {
-        return 1000;
+        return 300;
     }
 
     public function chunkSize(): int
     {
-        return 1000;
+        return 300;
     }
 }

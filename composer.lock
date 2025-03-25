@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bb222a21d9992494a4b41148210c847",
+    "content-hash": "1fd210f6fa0b2a25a96c0d15ceb1ad67",
     "packages": [
         {
             "name": "amphp/amp",
@@ -813,6 +813,53 @@
                 }
             ],
             "time": "2024-08-03T19:31:26+00:00"
+        },
+        {
+            "name": "anaseqal/nova-import",
+            "version": "0.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anaseqal/nova-import.git",
+                "reference": "94d4ab1991d5c86ae70b7219d94fe56e3d234d5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anaseqal/nova-import/zipball/94d4ab1991d5c86ae70b7219d94fe56e3d234d5f",
+                "reference": "94d4ab1991d5c86ae70b7219d94fe56e3d234d5f",
+                "shasum": ""
+            },
+            "require": {
+                "maatwebsite/excel": "*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anaseqal\\NovaImport\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anaseqal\\NovaImport\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova import tool.",
+            "keywords": [
+                "import",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/anaseqal/nova-import/issues",
+                "source": "https://github.com/anaseqal/nova-import/tree/0.0.6"
+            },
+            "time": "2020-08-26T16:13:47+00:00"
         },
         {
             "name": "aws/aws-crt-php",

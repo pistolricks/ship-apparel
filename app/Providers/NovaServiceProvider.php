@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 
+use Anaseqal\NovaImport\NovaImport;
 use App\Models\Tenant;
 use App\Nova\Central\Admin;
 use App\Nova\Central\Domain;
@@ -105,6 +106,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools(): array
     {
         return [
+           // new NovaImport,
             new LaravelNovaCsvImport,
 
         ];
