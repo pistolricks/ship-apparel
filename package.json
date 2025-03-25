@@ -39,6 +39,7 @@
         "class-variance-authority": "^0.7.1",
         "cloudflare": "^4.1.0",
         "embla-carousel-solid": "^8.5.2",
+        "fabric": "^6.6.1",
         "ol": "^10.4.0",
         "solid-canvas": "^0.0.8",
         "solid-js": "^1.9.5",

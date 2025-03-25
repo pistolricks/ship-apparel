@@ -4,6 +4,7 @@ import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 import "../lib/color-themer"
+import DefaultDesigner from "~/components/ui/designer/default-designer";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -28,27 +29,23 @@ const Home: Component<PROPS> = props => {
     })
 
 
-
-
-
     return (
         <>
-        <div
-            class={''}
-            style={{
-            }}
-        >
+            <div
+                class={''}
+                style={{}}
+            >
 
-            <div class={'relative w-full h-full'}>
+                <div class={'relative w-full h-full'}>
 
 
-                <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
+                    <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
+
+
+                </div>
 
 
             </div>
-
-
-        </div>
         </>
     )
 }
