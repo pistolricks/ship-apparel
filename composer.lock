@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc244b2e504f1e5e086924599ff451f8",
+    "content-hash": "6bb222a21d9992494a4b41148210c847",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1039,6 +1039,61 @@
             "time": "2025-01-23T06:25:16+00:00"
         },
         {
+            "name": "bissolli/nova-phone-field",
+            "version": "v0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bissolli/nova-phone-field.git",
+                "reference": "29e0e26c17366aa7e4e290c311419735e4b05b94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bissolli/nova-phone-field/zipball/29e0e26c17366aa7e4e290c311419735e4b05b94",
+                "reference": "29e0e26c17366aa7e4e290c311419735e4b05b94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bissolli\\NovaPhoneField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bissolli\\NovaPhoneField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Bissolli",
+                    "email": "gustavo.bissolli@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Nova Phone Number field with a dynamic mask based on the country code inserted by the user.",
+            "homepage": "https://github.com/bissolli/nova-phone-field",
+            "keywords": [
+                "input mask",
+                "laravel",
+                "nova",
+                "phone mask"
+            ],
+            "support": {
+                "issues": "https://github.com/bissolli/nova-phone-field/issues",
+                "source": "https://github.com/bissolli/nova-phone-field/tree/v0.0.4"
+            },
+            "time": "2019-09-08T06:05:47+00:00"
+        },
+        {
             "name": "brick/math",
             "version": "0.12.3",
             "source": {
@@ -1278,6 +1333,57 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "chaseconey/nova-external-image",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chaseconey/nova-external-image.git",
+                "reference": "f0d1fda7519da0678ea45d35bbbea3f52316957c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chaseconey/nova-external-image/zipball/f0d1fda7519da0678ea45d35bbbea3f52316957c",
+                "reference": "f0d1fda7519da0678ea45d35bbbea3f52316957c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Chaseconey\\ExternalImage\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Chaseconey\\ExternalImage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/chaseconey/nova-external-image/issues",
+                "source": "https://github.com/chaseconey/nova-external-image/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/chaseconey",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-12-14T21:16:13+00:00"
         },
         {
             "name": "composer/pcre",
@@ -2307,6 +2413,62 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "emiliogrv/nova-batch-load",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/emiliogrv/nova-batch-load.git",
+                "reference": "fe65ffc686b9323414a74ab106eae62e66afde09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/emiliogrv/nova-batch-load/zipball/fe65ffc686b9323414a74ab106eae62e66afde09",
+                "reference": "fe65ffc686b9323414a74ab106eae62e66afde09",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Emiliogrv\\NovaBatchLoad\\BatchLoadServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Emiliogrv\\NovaBatchLoad\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emilio Romero",
+                    "email": "emilio.romero1989@gmail.com"
+                }
+            ],
+            "description": "A Laravel Nova XLS & CSV importer",
+            "keywords": [
+                "csv",
+                "excel",
+                "import",
+                "laravel",
+                "nova",
+                "xls",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/emiliogrv/nova-batch-load/issues",
+                "source": "https://github.com/emiliogrv/nova-batch-load/tree/master"
+            },
+            "time": "2019-10-23T22:31:55+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -5545,16 +5707,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.8.1",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4"
+                "reference": "10d85740180ecba7896c87e06a166e0c95a0e3b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
-                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/10d85740180ecba7896c87e06a166e0c95a0e3b6",
+                "reference": "10d85740180ecba7896c87e06a166e0c95a0e3b6",
                 "shasum": ""
             },
             "require": {
@@ -5632,7 +5794,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.8.1"
+                "source": "https://github.com/Seldaek/monolog/tree/3.9.0"
             },
             "funding": [
                 {
@@ -5644,7 +5806,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-05T17:15:07+00:00"
+            "time": "2025-03-24T10:02:05+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -6423,6 +6585,51 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "pdewit/nova-external-url",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdewit/nova-external-url.git",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdewit/nova-external-url/zipball/3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pdewit\\ExternalUrl\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pdewit\\ExternalUrl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An external URL Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/pdewit/nova-external-url/issues",
+                "source": "https://github.com/pdewit/nova-external-url/tree/master"
+            },
+            "time": "2018-11-26T14:51:33+00:00"
         },
         {
             "name": "phpdocumentor/reflection",
@@ -8262,6 +8469,62 @@
             "transport-options": {
                 "relative": true
             }
+        },
+        {
+            "name": "simonhamp/laravel-nova-csv-import",
+            "version": "v0.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simonhamp/laravel-nova-csv-import.git",
+                "reference": "d7b53fa6a6e92a603caa10e1065cff0577f15147"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simonhamp/laravel-nova-csv-import/zipball/d7b53fa6a6e92a603caa10e1065cff0577f15147",
+                "reference": "d7b53fa6a6e92a603caa10e1065cff0577f15147",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "maatwebsite/excel": "^3.1",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SimonHamp\\LaravelNovaCsvImport\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SimonHamp\\LaravelNovaCsvImport\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A fully-fledged CSV import tool for Laravel Nova.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/simonhamp/laravel-nova-csv-import/issues",
+                "source": "https://github.com/simonhamp/laravel-nova-csv-import/tree/v0.7.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/simonhamp",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-08-15T02:53:55+00:00"
         },
         {
             "name": "spatie/array-to-xml",
@@ -12181,6 +12444,114 @@
                 }
             ],
             "time": "2024-11-21T01:49:47+00:00"
+        },
+        {
+            "name": "wdelfuego/nova-calendar",
+            "version": "v2.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wdelfuego/nova-calendar.git",
+                "reference": "06c5ceab02a896132c3a748389c4c89ce71c80a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wdelfuego/nova-calendar/zipball/06c5ceab02a896132c3a748389c4c89ce71c80a2",
+                "reference": "06c5ceab02a896132c3a748389c4c89ce71c80a2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0|^10|^11",
+                "laravel/nova": "^4.2.4",
+                "php": "^7.4|^8.0",
+                "wdelfuego/nova-datetime": "^1.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Wdelfuego\\NovaCalendar\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wdelfuego\\NovaCalendar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL-3.0-or-later",
+                "proprietary"
+            ],
+            "description": "A powerful event calendar Tool for Laravel's Nova 4.",
+            "keywords": [
+                "calendar",
+                "date",
+                "event-calendar",
+                "events",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/wdelfuego/nova-calendar/issues",
+                "source": "https://github.com/wdelfuego/nova-calendar/tree/v2.1.7"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/wdelfuego",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-10-11T06:17:51+00:00"
+        },
+        {
+            "name": "wdelfuego/nova-datetime",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wdelfuego/nova-datetime.git",
+                "reference": "67006e24ae7bcd728ed707d943668387511c0abc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wdelfuego/nova-datetime/zipball/67006e24ae7bcd728ed707d943668387511c0abc",
+                "reference": "67006e24ae7bcd728ed707d943668387511c0abc",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.2.4",
+                "php": "^7.4|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": [],
+                    "providers": [
+                        "Wdelfuego\\Nova\\DateTime\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wdelfuego\\Nova\\DateTime\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Willem Vervuurt",
+                    "email": "willem@studiodelfuego.com"
+                }
+            ],
+            "description": "Makes working with DateTime fields in Laravel's Nova 4 easier",
+            "support": {
+                "issues": "https://github.com/wdelfuego/nova-datetime/issues",
+                "source": "https://github.com/wdelfuego/nova-datetime/tree/v1.1.2"
+            },
+            "time": "2022-07-18T20:57:27+00:00"
         },
         {
             "name": "webmozart/assert",

@@ -20,8 +20,10 @@ use App\Nova\Tenant\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use SimonHamp\LaravelNovaCsvImport\LaravelNovaCsvImport;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -42,6 +44,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 $tenant->createAsStripeCustomer();
             });
         });
+        MenuSection::make('CSV Import')
+            ->path('/csv-import')
+            ->icon('upload');
 
         Nova::footer(function (Request $request) {
             return Blade::render('
@@ -99,7 +104,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools(): array
     {
-        return [];
+        return [
+            new LaravelNovaCsvImport,
+
+        ];
     }
 
     protected function resources()

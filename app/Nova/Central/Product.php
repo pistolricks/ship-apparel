@@ -4,6 +4,8 @@ namespace App\Nova\Central;
 
 
 use App\Nova\Resource;
+use Chaseconey\ExternalImage\ExternalImage;
+use Emiliogrv\NovaBatchLoad\BatchLoadField;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
@@ -12,6 +14,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\URL;
+use Pdewit\ExternalUrl\ExternalUrl;
 
 class Product extends Resource
 {
@@ -26,6 +29,20 @@ class Product extends Resource
     public function fields(Request $request): array
     {
         return [
+
+            ExternalImage::make("Front Model ImageUrl", "front_model_image_url")
+                ->sortable()
+                ->rules('nullable'),
+            ExternalImage::make("Back Model ImageUrl", "back_model_image_url")
+                ->sortable()
+                ->rules('nullable'),
+            ExternalImage::make("Front Flat ImageUrl", "front_flat_image_url")
+                ->sortable()
+                ->rules('nullable'),
+            ExternalImage::make("Back Flat ImageUrl", "back_flat_image_url")
+                ->sortable()
+                ->rules('nullable'),
+
             ID::make()->sortable(),
 
             Text::make('Title', 'product_title')
@@ -125,18 +142,6 @@ class Product extends Resource
             Text::make("Map Pricing", "map_pricing")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Front Model ImageUrl", "front_model_image_url")
-                ->sortable()
-                ->rules('nullable'),
-            Text::make("Back Model ImageUrl", "back_model_image_url")
-                ->sortable()
-                ->rules('nullable'),
-            Text::make("Front Flat ImageUrl", "front_flat_image_url")
-                ->sortable()
-                ->rules('nullable'),
-            Text::make("Back Flat ImageUrl", "back_flat_image_url")
-                ->sortable()
-                ->rules('nullable'),
             Text::make("Product Measurements", "product_measurements")
                 ->sortable()
                 ->rules('nullable'),
@@ -146,11 +151,17 @@ class Product extends Resource
             Text::make("Gtin", "gtin")
                 ->sortable()
                 ->rules('nullable'),
-            Text::make("Decoration Spec Sheet", "decoration_spec_sheet")
+            ExternalUrl::make("Decoration Spec Sheet", "decoration_spec_sheet")
                 ->sortable()
                 ->rules('nullable'),
 
             BelongsTo::make('Style Collection', 'collection', StyleCollection::class),
+
+
+            BatchLoadField::make('Products')
+                ->accept('.csv') // Optional
+
+
 
         ];
     }
