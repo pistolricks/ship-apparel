@@ -25,35 +25,37 @@ const ApparelNavigation: Component<PROPS> = props => {
     const [orientation, setOrientation] = createSignal<Orientation>(oz())
 
     return (
-        <div class="flex flex-col items-left space-y-4">
 
-            <NavigationMenu class={'shadow'} orientation={orientation()}>
+            <div class="relative max-h-[540px] flex flex-col items-left space-y-4">
 
-                <img
-                    src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/9d3d236f-83da-4094-7b64-850936c9db00/public"
-                    class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-full -z-10 h-[540px]'}
-                    alt=""
-                />
-                <For<MenuItemType[]> each={menu()}>
-                    {(item) => (
-                        <NavigationMenuItem >
+                <NavigationMenu class={'max-h-[540px] shadow'} orientation={orientation()}>
 
-                            <NavigationMenuTrigger class={'w-56 font-medium tracking-wide'}>
-                                {item.title}
-                            </NavigationMenuTrigger>
+                    <img
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/9d3d236f-83da-4094-7b64-850936c9db00/public"
+                        class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-full -z-10 h-[540px]'}
+                        alt=""
+                    />
+                    <For<MenuItemType[]> each={menu()}>
+                        {(item) => (
+                            <NavigationMenuItem>
 
-                            <NavigationMenuContent class="h-[530px]">
+                                <NavigationMenuTrigger class={'w-56 font-medium tracking-wide'}>
+                                    {item.title}
+                                </NavigationMenuTrigger>
 
-                                <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
+                                <NavigationMenuContent class="h-[530px]">
 
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    )}
-                </For>
+                                    <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
 
-            </NavigationMenu>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                        )}
+                    </For>
 
-        </div>
+                </NavigationMenu>
+
+            </div>
+
     )
 }
 

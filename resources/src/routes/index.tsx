@@ -4,7 +4,7 @@ import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 import "../lib/color-themer"
-import DefaultDesigner from "~/components/ui/designer/default-designer";
+import RowItemsCard from "~/components/section/rows/row-items-card";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -30,23 +30,20 @@ const Home: Component<PROPS> = props => {
 
 
     return (
-        <>
-            <div
-                class={''}
-                style={{}}
-            >
 
-                <div class={'relative w-full h-full'}>
+        <div class={'w-full flex flex-col space-y-4 mx-auto'}>
 
-
-                    <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
-
-
-                </div>
-
+            <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
+            <RowItemsCard class={'h-[300px]'} start={0} end={4} list={res()?.menu}/>
+            <RowItemsCard class={'h-[300px]'} start={2} end={5} list={res()?.menu}/>
+            <RowItemsCard class={'h-[300px]'} start={0} end={5} list={res()?.menu}/>
+            <div class={'h-24'}>
 
             </div>
-        </>
+
+        </div>
+
+
     )
 }
 
