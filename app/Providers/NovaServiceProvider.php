@@ -4,6 +4,7 @@ namespace App\Providers;
 
 
 use Anaseqal\NovaImport\NovaImport;
+use App\Models\Section;
 use App\Models\Tenant;
 use App\Nova\Central\Admin;
 use App\Nova\Central\Domain;
@@ -14,6 +15,8 @@ use App\Nova\Central\Project;
 use App\Nova\Central\StyleCollection;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
+use App\Nova\Central\WebContent;
+use App\Nova\Central\WebSection;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
@@ -129,7 +132,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 Product::class,
                 Mill::class,
                 StyleCollection::class,
-                Project::class
+                Project::class,
+                WebContent::class,
+                WebSection::class
             ]);
         }
     }

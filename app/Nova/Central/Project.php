@@ -50,7 +50,7 @@ class Project extends Resource
                 ->sortable()
                 ->rules('nullable', 'date'),
 
-            Select::make('Status')->options([
+            Select::make('Status')->default('I')->options([
                     'I' => 'Inactive',
                     'A' => 'Active',
                     'P' => 'In Progress',
