@@ -28,8 +28,9 @@ const Header: Component<{
 
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
+                                            <img src={'https://ink-and-thread.com/storage/167/logo.png'} class="h-16" />
                                             <span class="sr-only"></span>
-                                            <LogoIcon class={'h-12'}/>
+
 
                                         </A>
                                     </div>
