@@ -31,8 +31,8 @@ const ApparelNavigation: Component<PROPS> = props => {
                 <NavigationMenu class={'max-h-[540px] shadow'} orientation={orientation()}>
 
                     <img
-                        src="https://ink-and-thread.com/storage/166/LST420LS_LIGHT-BLUE_Multi_Model_SPRING24_1.jpg"
-                        class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-4/7 -z-10 h-[540px]'}
+                        src="https://ink-tenancy.test/storage/10/032819_Bella.jpg"
+                        class={'absolute top-0 object-cover right-0 object-top align-right backdrop-opacity-25  w-7/8 -z-10 h-[540px]'}
                         alt=""
                     />
                     <For<MenuItemType[]> each={menu()}>
