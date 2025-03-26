@@ -20,10 +20,10 @@ const RowItemsCard: Component<PROPS> = props => {
 
     const menu = createMemo(() => list()?.slice(start(), end()))
 
-    console.log(list())
+    console.log('contents' , list())
 
     return (
-        <div class={`relative `}>
+        <div class={`relative ${className()}}`}>
 
             <div class="bg-gray-900">
 
@@ -35,9 +35,9 @@ const RowItemsCard: Component<PROPS> = props => {
                             <Grid class={`gap-x-4`} cols={menu()?.length}>
                                 <For each={menu()}>
                                     {(item) => (
-                                        <div class={`group relative rounded-md  ${className()}`}>
+                                        <div class={`group relative rounded-md  ${item.class}`}>
                                             <img
-                                                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-01-men-category-01.jpg"
+                                                src={item.src}
                                                 alt={item.description}
                                                 class={`h-full w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75 `}/>
                                         </div>

@@ -34,9 +34,15 @@ const Home: Component<PROPS> = props => {
         <div class={'w-full flex flex-col space-y-4 mx-auto'}>
 
             <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
-            <RowItemsCard class={'h-[300px]'} start={0} end={4} list={res()?.menu}/>
-            <RowItemsCard class={'h-[300px]'} start={2} end={5} list={res()?.menu}/>
-            <RowItemsCard class={'h-[300px]'} start={0} end={5} list={res()?.menu}/>
+
+            <For each={res()?.page?.sections}>
+                {(item) => (
+                    <RowItemsCard class={item.class} list={item?.contents} start={item.start} end={item?.end ?? res()?.page?.sections?.length} />
+                )}
+            </For>
+
+
+
             <div class={'h-24'}>
 
             </div>

@@ -15,6 +15,12 @@ class HomeController extends Controller
 
         $page = Page::query()->where('name', 'home')->with('sections.contents.media')->first();
 
+        $page->sections->each(function($section) {
+           $section->contents->each(function($content) {
+             $content->src = $content?->getMedia('images')[0]->getUrl();
+           });
+        });
+
         return response()->json([
             "menu" => config('menu'),
             'page' => $page,
