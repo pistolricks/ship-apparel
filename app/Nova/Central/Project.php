@@ -28,7 +28,7 @@ class Project extends Resource
             ID::make()->sortable(),
 
             Panel::make('Gallery', [
-                Images::make('Gallery', 'gallery')->rules('nullable'),
+                Images::make('Gallery', 'gallery')->enableExistingMedia(),
             ])->collapsable(),
 
             Panel::make('General', [

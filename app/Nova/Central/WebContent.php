@@ -2,11 +2,13 @@
 
 namespace App\Nova\Central;
 
+use App\Nova\Repeater\ClassItem;
 use App\Nova\Resource;
 use Chaseconey\ExternalImage\ExternalImage;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Repeater;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Panel;
@@ -36,7 +38,7 @@ class WebContent extends Resource
 
 
             Panel::make('Media', [
-                Images::make('Images', 'images')->rules('nullable'),
+                Images::make('Images', 'images')->enableExistingMedia(),
                 ExternalImage::make('Image', 'src')
                     ->sortable()
                     ->rules('nullable'),
@@ -45,6 +47,14 @@ class WebContent extends Resource
                     ->rules('nullable'),
             ]),
             Panel::make('Details', [
+                Text::make('Class', 'class'),
+                /*
+                Repeater::make('Class', 'class')
+                    ->repeatables([
+                        ClassItem::make()
+                    ]),
+
+                */
                 Text::make('Description', 'description')
                     ->sortable()
                     ->rules('nullable'),

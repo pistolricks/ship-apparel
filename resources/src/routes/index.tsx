@@ -5,6 +5,7 @@ import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 import "../lib/color-themer"
 import RowItemsCard from "~/components/section/rows/row-items-card";
+import {CarouselCard} from "~/components/section/rows/carousel-card";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -28,6 +29,11 @@ const Home: Component<PROPS> = props => {
 
     })
 
+    const components = {
+        carousel_card: CarouselCard,
+        row_items_card: RowItemsCard
+    }
+
 
     return (
 
@@ -37,10 +43,15 @@ const Home: Component<PROPS> = props => {
 
             <For each={res()?.page?.sections}>
                 {(item) => (
-                    <RowItemsCard class={item.class} list={item?.contents} start={item.start} end={item?.end ?? res()?.page?.sections?.length} />
+                    <>
+                        <CarouselCard compoent={components[item.component]} class={item.class} list={item?.contents}
+                                      start={item.start} end={item?.end ?? res()?.page?.sections?.length}/>
+
+                        <Dynamic compoent={components[item.component]} class={item.class} list={item?.contents}
+                                 start={item.start} end={item?.end ?? res()?.page?.sections?.length}/>
+                    </>
                 )}
             </For>
-
 
 
             <div class={'h-24'}>

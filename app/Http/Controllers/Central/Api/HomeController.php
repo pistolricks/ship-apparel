@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Central\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Page;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -13,18 +14,21 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
 
-        $page = Page::query()->where('name', 'home')->with('sections.contents.media')->first();
+        $page = Page::query()->where('name', 'home')->with('sections.contents')->first();
 
         $page->sections->each(function($section) {
            $section->contents->each(function($content) {
                $content->src = $content?->getMedia('images')[0]?->getUrl();
-               if($content->getMedia('images')->count() > 1) {
-                   $content->media = $content?->getMedia('images')->each(function($media) {
-                       return $media->getUrl();
-                   });
-               }
+               $mediaItems = $content?->getMedia('images');
+               $content->images = $mediaItems->map(function($m) {
+                 return $m->getUrl();
+               });
            });
         });
+
+
+
+
 
         return response()->json([
             "menu" => config('menu'),

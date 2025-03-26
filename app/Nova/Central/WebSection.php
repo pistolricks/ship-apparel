@@ -34,19 +34,24 @@ class WebSection extends Resource
                 ->default('default')
                 ->options([
                     'default' => 'Default',
-                    'row-items-card' => 'RowItemsCard',
+                    'carousel_card' => 'Carousel',
+                    'row_items_card' => 'RowItemsCard',
                 ])
                 ->sortable()
                 ->rules('required'),
+
 
             Panel::make('Details', [
                 Text::make('Title', 'title')
                     ->sortable()
                     ->rules('nullable'),
+
+               /*
                 Repeater::make('Class', 'class')
                     ->repeatables([
-                        ClassItem::make('class')
+                        ClassItem::make()
                     ]),
+               */
                 Text::make('Href', 'href')
                     ->sortable()
                     ->default('#')
@@ -71,7 +76,8 @@ class WebSection extends Resource
             BelongsToMany::make('WebContent', 'contents')
                 ->showCreateRelationButton(),
 
-            Panel::make('Start and End', [
+            Panel::make('Attributes', [
+                Text::make('Class', 'class'),
                 Number::make('Start', 'start')
                     ->default(0),
                 Number::make('End', 'end')

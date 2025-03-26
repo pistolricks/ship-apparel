@@ -18,10 +18,11 @@ type PROPS = {
     class?: string
 }
 
-export function CarouselCard(PROPS) {
+export function CarouselCard(props: PROPS) {
 
-    const  isCollection = () => props.isCollection ?? false;
     const list = () => props.list;
+
+    const images = () => props.list?.images;
     const start = () => props.start ?? 0;
     const end = () => props.end ?? list()?.length;
 
@@ -29,53 +30,30 @@ export function CarouselCard(PROPS) {
 
     const menu = createMemo(() => list()?.slice(start(), end()))
 
-    console.log('contents' , list())
+
+
+
+    console.log('contents' , menu())
 
     return (
         <Carousel
             opts={{
                 align: "start"
             }}
-            class="w-full max-w-sm"
-        >
+            class="w-full">
             <CarouselContent>
+                <Index each={list()}>
+                    {(item, index) => (
+                        <CarouselItem class={`${className()}}`}>
 
-                <Show
-                    fallback={
-                        <Index each={menu()}>
-                            {(item, index) => (
-                                <CarouselItem class="h-full w-full">
-                                    <div class="p-1">
-                                        <Card>
-                                            <CardContent class="flex w-full h-full items-center justify-center p-6">
-                                                <img src={item.src} class="h-full w-full object-cover" alt={''} />
-                                            </CardContent>
-                                        </Card>
-                                    </div>
-                                </CarouselItem>
-                            )}
-                        </Index>
-                    }
-                    when={isCollection()}>
-                    <Index each={menu()}>
-                        {(item, index) => (
-                            <CarouselItem class="h-full w-full">
-                                <div class="p-1">
-                                    <Card>
-                                        <CardContent class="flex aspect-square items-center justify-center p-6">
-                                            <img src={item.src} alt={''} />
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            </CarouselItem>
-                        )}
-                    </Index>
-                </Show>
-
+                            <div class={list()[index]?.class}>
+                                        <img src={list()[index]?.src} class={"w-full h-full"} alt={''} />
+                            </div>
+                        </CarouselItem>
+                    )}
+                </Index>
 
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
         </Carousel>
     )
 }
