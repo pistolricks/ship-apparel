@@ -26,16 +26,16 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     return (
 
-            <div class="relative max-h-[540px] flex flex-col items-left space-y-4">
+            <div class="relative h-[540px] flex flex-col items-left space-y-4">
 
                 <NavigationMenu class={'max-h-[540px] shadow'} orientation={orientation()}>
 
                     <img
-                        src="https://ink-tenancy.test/storage/10/032819_Bella.jpg"
+                        src={menu()?.[0]?.src}
                         class={'absolute top-0 object-cover right-0 object-top align-right backdrop-opacity-25  w-7/8 -z-10 h-[540px]'}
                         alt=""
                     />
-                    <For<MenuItemType[]> each={menu()}>
+                    <For<MenuItemType[]> each={menu()?.[0]?.sub}>
                         {(item) => (
                             <NavigationMenuItem>
 

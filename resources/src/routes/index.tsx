@@ -39,7 +39,7 @@ const Home: Component<PROPS> = props => {
 
         <div class={'w-full flex flex-col space-y-4 mx-auto'}>
 
-            <ApparelNavigation menu={res()?.menu?.[0]?.sub} carousel={res()?.carousel} orientation={'vertical'}/>
+            <ApparelNavigation menu={res()?.menu} carousel={res()?.carousel} orientation={'vertical'}/>
 
 
 

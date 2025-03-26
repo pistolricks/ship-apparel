@@ -4,6 +4,7 @@ return [
     [
         'title' => 'Products',
         'href' => '/products',
+        'src' => 'https://ink-and-thread.com/storage/176/032819_Bella.jpg',
         'sub' => [
             [
                 'title' => 'Brands',
