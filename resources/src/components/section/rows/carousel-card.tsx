@@ -20,13 +20,14 @@ type PROPS = {
 
 export function CarouselCard(props: PROPS) {
 
-    const list = () => props.list;
 
+    const list = () => props.list;
     const images = () => props.list?.images;
     const start = () => props.start ?? 0;
     const end = () => props.end ?? list()?.length;
 
     const className = () => props.class;
+
 
     const menu = createMemo(() => list()?.slice(start(), end()))
 
@@ -40,14 +41,14 @@ export function CarouselCard(props: PROPS) {
             opts={{
                 align: "start"
             }}
-            class="w-full">
+            class={className()}>
             <CarouselContent>
-                <Index each={list()}>
+                <Index each={menu()}>
                     {(item, index) => (
                         <CarouselItem class={`${className()}}`}>
 
                             <div class={list()[index]?.class}>
-                                        <img src={list()[index]?.src} class={"w-full h-full"} alt={''} />
+                                        <img src={list()[index]?.src} class={className()} alt={''} />
                             </div>
                         </CarouselItem>
                     )}

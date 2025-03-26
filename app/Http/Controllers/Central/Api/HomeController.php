@@ -32,6 +32,7 @@ class HomeController extends Controller
 
         return response()->json([
             "menu" => config('menu'),
+            "carousel" => $page->sections->where('name', 'main_carousel')->first(),
             'page' => $page,
             "user" => $request->user(),
         ]);

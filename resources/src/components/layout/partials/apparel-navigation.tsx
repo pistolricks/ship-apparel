@@ -31,15 +31,15 @@ const ApparelNavigation: Component<PROPS> = props => {
                 <NavigationMenu class={'max-h-[540px] shadow'} orientation={orientation()}>
 
                     <img
-                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/9d3d236f-83da-4094-7b64-850936c9db00/public"
-                        class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-full -z-10 h-[540px]'}
+                        src="https://ink-and-thread.com/storage/166/LST420LS_LIGHT-BLUE_Multi_Model_SPRING24_1.jpg"
+                        class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-4/5 -z-10 h-[540px]'}
                         alt=""
                     />
                     <For<MenuItemType[]> each={menu()}>
                         {(item) => (
                             <NavigationMenuItem>
 
-                                <NavigationMenuTrigger class={'w-56 font-medium tracking-wide'}>
+                                <NavigationMenuTrigger class={'w-40 font-medium tracking-wide'}>
                                     {item.title}
                                 </NavigationMenuTrigger>
 

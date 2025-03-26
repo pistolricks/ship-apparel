@@ -39,16 +39,20 @@ const Home: Component<PROPS> = props => {
 
         <div class={'w-full flex flex-col space-y-4 mx-auto'}>
 
-            <ApparelNavigation menu={res()?.menu?.[0]?.sub} orientation={'vertical'}/>
+            <ApparelNavigation menu={res()?.menu?.[0]?.sub} carousel={res()?.carousel} orientation={'vertical'}/>
+
+
 
             <For each={res()?.page?.sections}>
                 {(item) => (
                     <>
-                        <CarouselCard compoent={components[item.component]} class={item.class} list={item?.contents}
-                                      start={item.start} end={item?.end ?? res()?.page?.sections?.length}/>
-
-                        <Dynamic compoent={components[item.component]} class={item.class} list={item?.contents}
-                                 start={item.start} end={item?.end ?? res()?.page?.sections?.length}/>
+                        <Dynamic
+                            component={components[item.component]}
+                            class={item.class}
+                            list={item?.contents}
+                            start={item.start}
+                            end={item?.end ?? res()?.page?.sections?.length}
+                        />
                     </>
                 )}
             </For>
