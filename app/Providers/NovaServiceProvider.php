@@ -21,6 +21,7 @@ use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
 
+use App\Nova\Central\WebPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
@@ -134,7 +135,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 StyleCollection::class,
                 Project::class,
                 WebContent::class,
-                WebSection::class
+                WebSection::class,
+                WebPage::class
             ]);
         }
     }

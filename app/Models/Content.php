@@ -15,7 +15,9 @@ class Content extends Model implements HasMedia
         'id',
         'name',
         'title',
+        'component',
         'href',
+        'class',
         'description',
         'information',
         'src',
@@ -34,9 +36,10 @@ class Content extends Model implements HasMedia
     protected function casts(): array
     {
         return [
-            'description' => 'array',
-            'information' => 'array',
-            'data' => 'array',
+            'href' => 'json',
+            'description' => 'json',
+            'information' => 'json',
+            'data' => 'json',
         ];
     }
 

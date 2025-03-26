@@ -13,7 +13,7 @@ class CreateSectionsTable extends Migration
             $table->string('name');
             $table->string('component')->default('default');
             $table->string('title')->nullable();
-            $table->string('href')->default('#');
+            $table->json('href')->nullable();
             $table->json('class')->nullable();
             $table->json('data')->nullable();
             $table->integer('start')->default(0);

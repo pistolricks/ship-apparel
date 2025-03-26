@@ -26,12 +26,19 @@ class Section extends Model
         return $this->belongsToMany(Content::class, 'section_content', 'section_id', 'content_id');
     }
 
+    public function pages(): BelongsToMany
+    {
+        return $this->belongsToMany(Page::class, 'page_section', 'section_id', 'page_id');
+    }
+
     protected function casts(): array
     {
         return [
-            'class' => 'array',
-            'data' => 'array',
+            'href' => 'json',
+            'class' => 'json',
+            'data' => 'json',
             'active' => 'boolean',
+
         ];
     }
 }

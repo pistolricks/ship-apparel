@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Panel;
 
 class WebContent extends Resource
 {
@@ -23,9 +24,8 @@ class WebContent extends Resource
     public function fields(Request $request): array
     {
         return [
-            Images::make('Images', 'images')->rules('nullable')->enableExistingMedia(),
-            Images::make('Vertical Images', 'vertical_images')->rules('nullable')->enableExistingMedia(),
-            Images::make('Child Images', 'child_images')->rules('nullable')->enableExistingMedia(),
+
+
             ID::make()->sortable(),
             Text::make('Name', 'name')
                 ->sortable()
@@ -33,40 +33,52 @@ class WebContent extends Resource
             Text::make('Title', 'title')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('Href', 'href')
-                ->default('#')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('Description', 'description')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('Information', 'information')
-                ->sortable()
-                ->rules('nullable'),
-            ExternalImage::make('Image', 'src')
-                ->sortable()
-                ->rules('nullable'),
-            ExternalImage::make('Vertical Image', 'vert_src')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('CTA', 'cta')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('Value', 'value')
-                ->sortable()
-                ->rules('nullable'),
-            Text::make('Data', 'data')
-                ->sortable()
-                ->rules('nullable'),
-            Select::make('Side')->default('xy')->options([
-                'top' => 'Top',
-                'bottom' => 'Bottom',
-                'left' => 'Left',
-                'right' => 'Right',
-                'x' => 'X',
-                'y' => 'Y',
-                'xy' => 'XY'
+
+
+            Panel::make('Media', [
+                Images::make('Images', 'images')->rules('nullable'),
+                ExternalImage::make('Image', 'src')
+                    ->sortable()
+                    ->rules('nullable'),
+                ExternalImage::make('Vertical Image', 'vert_src')
+                    ->sortable()
+                    ->rules('nullable'),
             ]),
+            Panel::make('Details', [
+                Text::make('Description', 'description')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('Information', 'information')
+                    ->sortable()
+                    ->rules('nullable'),
+            ])->collapsedByDefault(),
+            Panel::make('Action', [
+                Text::make('Href', 'href')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('CTA', 'cta')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('Value', 'value')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('Data', 'data')
+                    ->sortable()
+                    ->rules('nullable'),
+                Select::make('Side')->default('xy')->options([
+                    'top' => 'Top',
+                    'bottom' => 'Bottom',
+                    'left' => 'Left',
+                    'right' => 'Right',
+                    'x' => 'X',
+                    'y' => 'Y',
+                    'xy' => 'XY'
+                ]),
+            ])->collapsedByDefault(),
+            Panel::make('Child Images', [
+                Images::make('Child Images', 'child_images')->rules('nullable'),
+            ])->collapsedByDefault(),
+
         ];
     }
 

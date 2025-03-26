@@ -11,8 +11,10 @@ class CreateContentsTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('component')->default('default');
             $table->string('title')->nullable();
-            $table->string('href')->default('#');
+            $table->json('href')->nullable();
+            $table->json('class')->nullable();
             $table->json('description')->nullable();
             $table->json('information')->nullable();
             $table->string('src')->nullable();
