@@ -23,7 +23,7 @@ const RowItemsCard: Component<PROPS> = props => {
     console.log('contents' , list())
 
     return (
-        <div class={`relative ${className()}}`}>
+        <div class={`relative ${className()}`}>
 
             <div class="bg-gray-900">
 
