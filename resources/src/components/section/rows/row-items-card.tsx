@@ -23,7 +23,7 @@ const RowItemsCard: Component<PROPS> = props => {
     console.log('contents' , list())
 
     return (
-        <div class={`relative ${className()}`}>
+        <div class={`relative`}>
 
             <div class="bg-gray-900">
 
@@ -32,7 +32,7 @@ const RowItemsCard: Component<PROPS> = props => {
                     <div class="relative  px-4 bg-white">
                         <div class="mx-auto max-w-7xl">
 
-                            <Grid class={`gap-x-4`} cols={menu()?.length}>
+                            <Grid class={className()} cols={menu()?.length}>
                                 <For each={menu()}>
                                     {(item) => (
                                         <div class={`group relative rounded-md  ${item.class}`}>
