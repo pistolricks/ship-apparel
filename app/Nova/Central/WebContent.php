@@ -4,6 +4,7 @@ namespace App\Nova\Central;
 
 use App\Nova\Resource;
 use Chaseconey\ExternalImage\ExternalImage;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
@@ -13,7 +14,7 @@ class WebContent extends Resource
 {
     public static $model = \App\Models\Content::class;
 
-    public static $title = 'id';
+    public static $title = 'name';
 
     public static $search = [
         'id', 'name'
@@ -22,6 +23,9 @@ class WebContent extends Resource
     public function fields(Request $request): array
     {
         return [
+            Images::make('Images', 'images')->rules('nullable')->enableExistingMedia(),
+            Images::make('Vertical Images', 'vertical_images')->rules('nullable')->enableExistingMedia(),
+            Images::make('Child Images', 'child_images')->rules('nullable')->enableExistingMedia(),
             ID::make()->sortable(),
             Text::make('Name', 'name')
                 ->sortable()
@@ -30,6 +34,7 @@ class WebContent extends Resource
                 ->sortable()
                 ->rules('nullable'),
             Text::make('Href', 'href')
+                ->default('#')
                 ->sortable()
                 ->rules('nullable'),
             Text::make('Description', 'description')
@@ -53,7 +58,7 @@ class WebContent extends Resource
             Text::make('Data', 'data')
                 ->sortable()
                 ->rules('nullable'),
-            Select::make('Side')->default('XY')->options([
+            Select::make('Side')->default('xy')->options([
                 'top' => 'Top',
                 'bottom' => 'Bottom',
                 'left' => 'Left',

@@ -18,6 +18,7 @@ class Section extends Model
         'end',
         'active',
         'status',
+        'component'
     ];
 
     public function contents(): BelongsToMany

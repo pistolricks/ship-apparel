@@ -4,6 +4,7 @@ namespace App\Nova\Central;
 
 use App\Nova\Resource;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
@@ -23,7 +24,14 @@ class WebSection extends Resource
     {
         return [
             ID::make()->sortable(),
-
+            Select::make('Component', 'component')
+                ->default('default')
+                ->options([
+                    'default' => 'Default',
+                    'row-items-card' => 'RowItemsCard',
+                ])
+                ->sortable()
+                ->rules('required'),
             Text::make('Name', 'name')
                 ->sortable()
                 ->rules('required'),
@@ -34,10 +42,14 @@ class WebSection extends Resource
 
             Text::make('Href', 'href')
                 ->sortable()
+                ->default('#')
                 ->rules('required'),
             Number::make('Start', 'start')
                 ->default(0),
             Number::make('End', 'end')
+                ->rules('nullable'),
+            Text::make('Class', 'class')
+                ->sortable()
                 ->rules('nullable'),
             Select::make('Active', 'active')
                 ->default(true)
@@ -54,6 +66,9 @@ class WebSection extends Resource
                 ])
                 ->sortable()
                 ->rules('required'),
+
+            BelongsToMany::make('WebContent','contents')
+                ->showCreateRelationButton(),
         ];
     }
 
