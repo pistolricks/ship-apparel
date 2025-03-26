@@ -17,7 +17,12 @@ class HomeController extends Controller
 
         $page->sections->each(function($section) {
            $section->contents->each(function($content) {
-             $content->src = $content?->getMedia('images')[0]->getUrl();
+               $content->src = $content?->getMedia('images')[0]?->getUrl();
+               if($content->getMedia('images')->count() > 1) {
+                   $content->media = $content?->getMedia('images')->each(function($media) {
+                       return $media->getUrl();
+                   });
+               }
            });
         });
 

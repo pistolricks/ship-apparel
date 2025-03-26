@@ -18,6 +18,7 @@ export type SessionUser = {
 export type MenuItemType = {
     title: string;
     href: string;
+    class?: string;
     description?: string;
     information?: string;
     src?: string;
