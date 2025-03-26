@@ -86,8 +86,8 @@ class WebContent extends Resource
                 ]),
             ])->collapsedByDefault(),
             Panel::make('Child Images', [
-                Images::make('Child Images', 'child_images')->rules('nullable'),
-            ])->enableExistingMedia()->collapsedByDefault(),
+                Images::make('Child Images', 'child_images')->enableExistingMedia()->rules('nullable'),
+            ])->collapsedByDefault(),
 
         ];
     }

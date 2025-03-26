@@ -32,7 +32,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
                     <img
                         src="https://ink-and-thread.com/storage/166/LST420LS_LIGHT-BLUE_Multi_Model_SPRING24_1.jpg"
-                        class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-4/5 -z-10 h-[540px]'}
+                        class={'absolute top-0 object-cover right-0  align-right backdrop-opacity-25  w-4/7 -z-10 h-[540px]'}
                         alt=""
                     />
                     <For<MenuItemType[]> each={menu()}>
