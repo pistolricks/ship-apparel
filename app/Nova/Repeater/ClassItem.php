@@ -17,7 +17,7 @@ class ClassItem extends Repeatable
     public function fields(NovaRequest $request)
     {
         return [
-            Text::make('class')
+            Text::make('Text')
         ];
     }
 }

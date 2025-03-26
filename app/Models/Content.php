@@ -40,6 +40,7 @@ class Content extends Model implements HasMedia
             'description' => 'json',
             'information' => 'json',
             'data' => 'json',
+            'class' => 'json',
         ];
     }
 

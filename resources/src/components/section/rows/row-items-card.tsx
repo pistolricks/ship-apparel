@@ -23,16 +23,8 @@ const RowItemsCard: Component<PROPS> = props => {
     console.log('contents' , list())
 
     return (
-        <div class={`relative`}>
 
-            <div class="bg-gray-900">
-
-
-                <div class="relative inset-x-0 top-full text-sm text-gray-500">
-                    <div class="relative  px-4 bg-white">
-                        <div class="mx-auto max-w-7xl">
-
-                            <Grid class={className()} cols={menu()?.length}>
+                            <Grid class={'relative inset-x-0 top-full' + ' ' + className()} cols={menu()?.length}>
                                 <For each={menu()}>
                                     {(item) => (
                                         <div class={`group relative rounded-md  ${item.class}`}>
@@ -44,13 +36,9 @@ const RowItemsCard: Component<PROPS> = props => {
                                     )}
                                 </For>
                             </Grid>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
 
-        </div>
+
 
     )
 }

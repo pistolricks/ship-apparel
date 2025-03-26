@@ -48,13 +48,13 @@ class WebContent extends Resource
             ]),
             Panel::make('Details', [
                 Text::make('Class', 'class'),
-                /*
+/*
                 Repeater::make('Class', 'class')
                     ->repeatables([
                         ClassItem::make()
                     ]),
+*/
 
-                */
                 Text::make('Description', 'description')
                     ->sortable()
                     ->rules('nullable'),
