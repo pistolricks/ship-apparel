@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Central as Controllers;
+use App\Http\Controllers\Central\Api\Shop\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,8 @@ Route::get('/shop/v1/products', [Controllers\Api\Shop\ProductController::class, 
 Route::get('/shop/v1/products/brands/{brand}', Controllers\Api\Shop\BrandController::class)->name('api.brand.index');
 Route::get('/shop/v1/products/category/{category}', Controllers\Api\Shop\CategoryController::class)->name('api.category.index');
 Route::get('/shop/v1/products/category/{category}/{subCategory}', Controllers\Api\Shop\SubCategoryController::class)->name('api.subcategory.index');
+
+
+
+Route::get('/products/v1/images/import',[ProductController::class,"importImages"])->name('api.products.images.import');
+Route::get('/products/v1/images/bulk/delete',[ProductController::class,"bulkDelete"])->name('api.products.images.bulk.delete');

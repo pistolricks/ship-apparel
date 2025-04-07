@@ -31,12 +31,10 @@ class ImageDeleteAction
     {
 
         $response = Http::withHeaders([
-            'X-Auth-Email' => config('services.cloudflare.email'),
-            'X-Auth-Key' => config('services.cloudflare.token'),
-        ])->post('https://api.cloudflare.com/client/v4/accounts/1d255d4f4a8aa1ef689a5286f80516cc/images/v1/'.$id, [
-
-        ]);
-
+           // 'X-Auth-Email' => config('services.cloudflare.email'),
+           // 'X-Auth-Key' => config('services.cloudflare.token'),
+        // ])->post('https://api.cloudflare.com/client/v4/accounts/1d255d4f4a8aa1ef689a5286f80516cc/images/v1/'.$id);
+        ])->delete('http://localhost:8080/api/v1/images/'.$id);
         return $response;
 
     }

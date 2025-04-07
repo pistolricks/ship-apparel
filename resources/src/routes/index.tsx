@@ -3,7 +3,6 @@ import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
-import "../lib/color-themer"
 import RowItemsCard from "~/components/section/rows/row-items-card";
 import {CarouselCard} from "~/components/section/rows/carousel-card";
 
@@ -21,7 +20,7 @@ export const route = {
 const Home: Component<PROPS> = props => {
     const res = createAsync(async () => fetchHome());
 
-    const {apps} = useLayoutContext();
+
 
     createEffect(() => {
         console.log(res()?.menu?.[0]?.sub)

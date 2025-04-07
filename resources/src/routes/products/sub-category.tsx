@@ -1,13 +1,6 @@
-import {Component, createEffect, createMemo, createSelector, createSignal, For} from "solid-js";
+import {Component, createEffect} from "solid-js";
 import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
-import {getCategory, getProducts, getSubCategory} from "~/lib/products";
-import {Grid} from "~/components/ui/grid";
-import ProductListView from "~/components/module/products/product-list-view";
-import {SM_PRODUCT} from "~/lib/types";
-import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
-import Drawer from "@corvu/drawer";
-import {IconX} from "~/components/svg";
-import ProductView from "~/components/module/products/product-view";
+import {getSubCategory} from "~/lib/products";
 import StyleSection from "~/components/module/styles/style-section";
 
 type PROPS = {}
@@ -15,7 +8,7 @@ type PROPS = {}
 
 export const route = {
 
-    preload({ params }) {
+    preload({params}) {
         return getSubCategory(params.category, params.subCategory)
     }
 } satisfies RouteDefinition
