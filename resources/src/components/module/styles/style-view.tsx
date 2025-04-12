@@ -76,7 +76,7 @@ const StyleView: Component<{
                         <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
                             <div class="lg:col-span-5 lg:col-start-8">
                                 <div class="flex justify-between">
-                                    <h1 class="text-xl font-medium text-gray-900">{product()?.title}</h1>
+                                    <h1 class="text-xl font-medium text-gray-900">{product()?.product_title}</h1>
                                     <p class="text-xl font-medium text-gray-900">{NumberWithCurrency()}</p>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ const StyleView: Component<{
                                     <For each={images()}>
                                         {(image, i) => (
                                             <img
-                                                alt={`${product()?.title}-${i()}`}
+                                                alt={`${product()?.product_title}-${i()}`}
                                                 src={image}
                                                 class={classNames(
                                                     i() === 0 ? 'lg:col-span-2 lg:row-span-2' : 'hidden lg:block',
@@ -109,7 +109,7 @@ const StyleView: Component<{
                                     <h2 class="text-sm font-medium text-gray-900">Description</h2>
 
                                     <div class="mt-4 space-y-4 text-sm/6 text-gray-500">
-                                        {product()?.description}
+                                        {product()?.product_description}
                                     </div>
                                 </div>
 

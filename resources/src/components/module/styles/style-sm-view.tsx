@@ -1,4 +1,4 @@
-import {Component, createMemo, createSelector, createSignal, onMount} from "solid-js";
+import {Component, createEffect, createMemo, createSelector, createSignal, onMount} from "solid-js";
 import {StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
@@ -29,10 +29,10 @@ const StyleSmView: Component<PROPS> = props => {
 
     const style = () => props.style;
 
-    console.log(style())
+    console.log(style(), "style viewer")
 
     const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<StyleType | MiniProductType>(style()?.products?.[0])
+    const [getSelected, setSelected] = createSignal<StyleType | MiniProductType>(style())
     const isSelected = createSelector(getSelectedId)
 
     const [getImages, setImages] = createSignal([getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url])
@@ -72,6 +72,9 @@ const StyleSmView: Component<PROPS> = props => {
         console.log(split)
         return split
     }
+
+
+    createEffect(() => console.log("props", props))
 
     onMount(() => {
         setSelected(style()?.products?.[0])

@@ -23,10 +23,13 @@ class CategoryController extends Controller
     public function __invoke(Request $request, string $category)
     {
 
-
+        $categoryName = CategorySupport::lookupCategory($category);
 
         $response = Http::retry(3, 100)
-            ->get('http://localhost:4000/v1/styles?category_name=' . $category);
+            ->withQueryParameters([
+                'category_name' => $categoryName,
+                (array) $request
+            ])->get('http://localhost:4000/v1/styles');
 
         return response()->json([
             "menu" => config('menu'),

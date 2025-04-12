@@ -20,7 +20,7 @@ const StyleListView: Component<PROPS> = props => {
 
             <A href={href()}>
                 <img
-                    src={`${imagePath}/${props.color_product_image}/public`}
+                    src={`${imagePath}/${props.color_product_image}/gallery`}
                     alt={props.product_title}
                     class="aspect-square sm:aspect-[9/16]  rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75"/>
 

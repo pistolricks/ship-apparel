@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Style;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ProductController extends Controller
 {
@@ -21,15 +22,12 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $styles = Style::query()
-            ->select('id', 'title', 'description', 'mill', 'data', 'msrp', 'front_model_image_url',
-                'back_model_image_url', 'front_flat_image_url', 'back_flat_image_url', 'slug')
-            ->where('title', 'NOT LIKE', '%'.'Discontinued'.'%')
-            ->orderBy('id')->paginate(1000);
-
+        $response = Http::retry(3, 100)
+            ->withQueryParameters((array) $request)
+            ->get('http://localhost:4000/v1/styles');
         return response()->json([
             "menu" => config('menu'),
-            "products" => $styles,
+            "products" => $response->json(),
             "user" => $request->user(),
         ]);
     }

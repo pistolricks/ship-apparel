@@ -54,11 +54,7 @@ return [
                 'title' => 'T-Shirts',
                 'href' => 'products/t-shirts',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2017/f4/29M_oxford_model_front_032017.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/t-shirts/new'],
-                    ['title' => 'Sale', 'href' => 'products/t-shirts/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/t-shirts/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => '100% Cotton', 'href' => 'products/t-shirts/100-cotton'],
                     ['title' => '100% Polyester', 'href' => 'products/t-shirts/100-polyester'],
@@ -83,11 +79,7 @@ return [
                 'title' => 'Polos/Knits',
                 'href' => 'products/polos-knits',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2014/f13/K500P_ultramarineblue_model_front_072014.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/polos-knits/new'],
-                    ['title' => 'Sale', 'href' => 'products/polos-knits/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/polos-knits/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => "Performance", 'href' => 'products/polos-knits/performance'],
                     ['title' => "Easy Care", 'href' => 'products/polos-knits/easy-care'],
@@ -106,11 +98,7 @@ return [
                 'title' => 'Sweatshirts/Fleece',
                 'href' => 'products/sweatshirts-fleece',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2019/f15/PC78H_sangria_model_front_092019.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/sweatshirts-fleece/new'],
-                    ['title' => 'Sale', 'href' => 'products/sweatshirts-fleece/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/sweatshirts-fleece/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Crewnecks', 'href' => 'products/sweatshirts-fleece/crewnecks'],
                     ['title' => 'Hoodie', 'href' => 'products/sweatshirts-fleece/hoodie'],
@@ -130,11 +118,7 @@ return [
                 'title' => 'Caps',
                 'href' => 'products/caps',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/333114_VarsityRoyal_FlatFront_2009.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/caps/new'],
-                    ['title' => 'Sale', 'href' => 'products/caps/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/caps/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Stretch Fit', 'href' => 'products/caps/stretch-fit'],
                     ['title' => 'Performance/Team', 'href' => 'products/caps/performance-team'],
@@ -157,11 +141,7 @@ return [
                 'title' => 'Activewear',
                 'href' => 'products/activewear',
                 'src' => '//cdnp.sanmar.com/medias/sys_master/images/h06/h4c/16690109939742/424Wx635H_46779_DpRdWht-0-LST441DpRdWhtModelFront/424Wx635H-46779-DpRdWht-0-LST441DpRdWhtModelFront.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/activewear/new'],
-                    ['title' => 'Sale', 'href' => 'products/activewear/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/activewear/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Performance', 'href' => 'products/activewear/performance'],
                     ['title' => 'Jerseys', 'href' => 'products/activewear/jerseys'],
@@ -180,11 +160,7 @@ return [
                 'title' => 'Outerwear',
                 'href' => 'products/outerwear',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2016/f19/J777_navy_model_front_102016.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/outerwear/new'],
-                    ['title' => 'Sale', 'href' => 'products/outerwear/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/outerwear/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Soft Shells', 'href' => 'products/outerwear/soft-shells'],
                     ['title' => 'Polyester Fleece', 'href' => 'products/outerwear/polyester-fleece'],
@@ -206,11 +182,7 @@ return [
                 'title' => 'Woven/Dress Shirts',
                 'href' => 'products/woven-dress-shirts',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2016/f17/S654_greenaqua_model_front_102016.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/woven-dress-shirts/new'],
-                    ['title' => 'Sale', 'href' => 'products/woven-dress-shirts/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/woven-dress-shirts/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Easy Care', 'href' => 'products/woven-dress-shirts/easy-care'],
                     ['title' => 'Oxfords', 'href' => 'products/woven-dress-shirts/oxfords'],
@@ -231,11 +203,7 @@ return [
                 'title' => 'Bottoms',
                 'href' => 'products/bottoms',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/LPST880_Black_Model_Front_121010.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/bottoms/new'],
-                    ['title' => 'Sale', 'href' => 'products/bottoms/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/bottoms/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Sweatpants', 'href' => 'products/bottoms/sweatpants'],
                     ['title' => 'Joggers', 'href' => 'products/bottoms/joggers'],
@@ -251,11 +219,7 @@ return [
                 'title' => 'Workwear',
                 'href' => 'products/workwear',
                 'src' => '//cdnp.sanmar.com/medias/sys_master/images/h95/h25/26574300545054/424Wx635H_8006_DarkNavy-0-CS419DarkNavyModelFront3/424Wx635H-8006-DarkNavy-0-CS419DarkNavyModelFront3.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/workwear/new'],
-                    ['title' => 'Sale', 'href' => 'products/workwear/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/workwear/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Industrial Work Shirts', 'href' => 'products/workwear/industrial-work-shirts'],
                     ['title' => 'Stain/Soil Resistant', 'href' => 'products/workwear/stain/soil-resistant'],
@@ -271,11 +235,7 @@ return [
                 'title' => 'Bags',
                 'href' => 'products/bags',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2011/f7/411047_Black_GA12.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/bags/new'],
-                    ['title' => 'Sale', 'href' => 'products/bags/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/bags/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Briefcases/Messengers', 'href' => 'products/bags/briefcases-messengers'],
                     ['title' => 'Backpacks', 'href' => 'products/bags/backpacks'],
@@ -295,11 +255,7 @@ return [
                 'title' => 'Accessories',
                 'href' => 'products/accessories',
                 'src' => '//cdnp.sanmar.com/medias/sys_master/images/had/h7e/26568764719134/424Wx635H_6251_Black-0-A706BlackModelFront2/424Wx635H-6251-Black-0-A706BlackModelFront2.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/accessories/new'],
-                    ['title' => 'Sale', 'href' => 'products/accessories/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/accessories/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Blankets', 'href' => 'products/accessories/blankets'],
                     ['title' => 'Robes/Towels', 'href' => 'products/accessories/robes-towels'],
@@ -314,11 +270,7 @@ return [
                 'title' => 'Personal Protection',
                 'href' => 'products/personal-protection',
                 'src' => '//cdnp.sanmar.com/medias/sys_master/images/hb1/hed/26664827650078/424Wx635H_5726_SftyOrg-0-CS401LSSftyOrgModelFront3/424Wx635H-5726-SftyOrg-0-CS401LSSftyOrgModelFront3.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/personal-protection/new'],
-                    ['title' => 'Sale', 'href' => 'products/personal-protection/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/personal-protection/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'Face Coverings', 'href' => 'products/personal-protection/face-coverings'],
                     ['title' => 'Medical/Scrubs', 'href' => 'products/personal-protection/medical-scrubs'],
@@ -329,11 +281,7 @@ return [
                 'title' => "Women's",
                 'href' => 'products/womens',
                 'src' => 'https://cdnp.sanmar.com/medias/sys_master/images/h92/h34/17156006510622/1200W_6297_Black-0-FS07BlackModelFront3/1200W-6297-Black-0-FS07BlackModelFront3.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/womens/new'],
-                    ['title' => 'Sale', 'href' => 'products/womens/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/womens/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'T-Shirts', 'href' => 'products/womens/t-shirts'],
                     ['title' => 'Polos/Knits', 'href' => 'products/womens/polos/knits'],
@@ -349,11 +297,7 @@ return [
                 'title' => 'Youth',
                 'href' => 'products/youth',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2015/f9/5400B_royal_model_front_042015.jpg',
-                'special' => [
-                    ['title' => 'New', 'href' => 'products/youth/new'],
-                    ['title' => 'Sale', 'href' => 'products/youth/sale'],
-                    ['title' => 'Discontinued', 'href' => 'products/youth/discontinued'],
-                ],
+
                 'sub' => [
                     ['title' => 'T-Shirts', 'href' => 'products/youth/t-shirts'],
                     ['title' => 'Polos/Knits', 'href' => 'products/youth/polos/knits'],

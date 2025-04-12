@@ -7,43 +7,29 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Product;
 use App\Models\Style;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class StyleController extends Controller
 {
+    /**
+     * @throws ConnectionException
+     */
     public function __invoke(Request $request, Style $style)
     {
 
-        $s = $style->load('miller');
-
-        $s->miller->getFirstMediaUrl('logo');
-
-        $products = Product::query()
-            ->where('style', $s->id)
-            ->where('size', 'M')
-            ->get([
-                'id',
-                'color_name',
-                'color_square_image',
-                'available_sizes',
-                'msrp',
-                'size',
-                'front_model_image_url',
-                'back_model_image_url',
-                'front_flat_image_url',
-                'back_flat_image_url',
-                'piece_weight',
-                'case_size',
-                'gtin',
+        $response = Http::retry(3, 100)
+            ->withQueryParameters(["style" => $style['id'],
+                (array) $request
             ])
-            ->all();
+            ->get('http://localhost:4000/v1/products');
 
-        $s->products = $products;
 
         return response()->json([
             "menu" => config('menu'),
-
-            "style" => $s,
+            "style" => $style,
+            "products" => $response->json(),
 
             "user" => $request->user(),
         ]);

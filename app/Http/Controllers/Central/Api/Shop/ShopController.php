@@ -23,6 +23,7 @@ class ShopController extends Controller
     public function __invoke(Request $request)
     {
         $response = Http::retry(3, 100)
+            ->withQueryParameters((array) $request)
             ->get('http://localhost:4000/v1/styles?sort=mill,id');
 
 
