@@ -142,7 +142,7 @@ export type StyleType = {
     subcategory_name?: string;
     color_name?: string;
     color_square_image?: string;
-    color_product_image?: string;
+    color_product_image: string;
     color_product_image_thumbnail?: string;
     sizes?: string;
     inventory_key?: string;

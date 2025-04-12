@@ -1,11 +1,12 @@
-import {Component, createEffect, createMemo, createSelector, createSignal, onMount} from "solid-js";
-import {StyleType} from "~/lib/types";
+import {Component, createEffect, createMemo, createSelector, createSignal, For, onMount} from "solid-js";
+import {SM_PRODUCT, StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 
 type PROPS = {
     style: StyleType;
+    products: SM_PRODUCT[]
 }
 
 export type MiniProductType = {
@@ -28,25 +29,30 @@ export type MiniProductType = {
 const StyleSmView: Component<PROPS> = props => {
 
     const style = () => props.style;
+    const products = () => props.products;
 
     console.log(style(), "style viewer")
 
     const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<StyleType | MiniProductType>(style())
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT|StyleType|undefined>(style())
     const isSelected = createSelector(getSelectedId)
 
-    const [getImages, setImages] = createSignal([getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url])
+    const [getImages, setImages] = createSignal(
+        [getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
+    )
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
 
-    const isSrc = createSelector<string>(() => getSrc() || "")
+    const isSrc = createSelector<string|undefined>(getSrc)
 
-    function colorHandler(data: StyleType) {
+    function colorHandler(data: SM_PRODUCT) {
         setSelectedId(data.id)
         if (isSelected(data.id)) {
             setSelected(data)
             setSrc(data?.front_model_image_url)
-            setImages([data?.front_model_image_url, data?.back_model_image_url, data?.front_flat_image_url, data?.back_flat_image_url])
+            setImages(
+                [data?.front_model_image_url, data?.back_model_image_url, data?.front_flat_image_url, data?.back_flat_image_url].filter((image): image is string => !!image)
+            )
         }
         console.log(getSelected())
     }
@@ -68,14 +74,22 @@ const StyleSmView: Component<PROPS> = props => {
     }
 
 
+    const availableSizes = () => {
+
+    }
+
+
 
 
     createEffect(() => console.log("props", props))
 
     onMount(() => {
-        setSrc(style()?.products?.[0]?.front_model_image_url)
-        setImages([style()?.products?.[0]?.front_model_image_url, style()?.products?.[0]?.back_model_image_url, style()?.products?.[0]?.front_flat_image_url, style()?.products?.[0]?.back_flat_image_url])
-        isSrc(style()?.products?.[0]?.front_model_image_url)
+        setSelected(style())
+        setSrc(style().front_model_image_url)
+        setImages(
+            [style().front_model_image_url, style().back_model_image_url, style().front_flat_image_url, style().back_flat_image_url].filter((image): image is string => !!image)
+        )
+        isSrc(style().front_model_image_url)
     })
 
     return (
@@ -86,7 +100,7 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
                             <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
-                                <For each={images()}>
+                                <For<string[]> each={images()}>
                                     {(image) => (
                                         <button
                                             onClick={() => imageHandler(image)}
@@ -127,7 +141,9 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-
+                            <img src={style()?.brand_logo_image}
+                                 class={'absolute top-0 sm:static  w-[60px] h-[60px] rounded-xl object-contain'}
+                                 alt={''}/>
                         </div>
 
                         <h1 class="text-xl font-medium tracking-tight text-right text-gray-900 text-balance">{style()?.product_title}</h1>
@@ -159,7 +175,8 @@ const StyleSmView: Component<PROPS> = props => {
                                     </div>
 
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
-
+                                        <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
                                     </div>
                                 </div>
                                 <fieldset aria-label="Choose a color"
@@ -167,7 +184,7 @@ const StyleSmView: Component<PROPS> = props => {
 
 
                                     <Grid cols={8} class={'gap-2 w-full'}>
-                                        <For each={style()?.products}>
+                                        <For<SM_PRODUCT[]> each={products()}>
                                             {(product) => (
                                                 <button
                                                     onClick={() => colorHandler(product)}

@@ -22,7 +22,7 @@ const View: Component<ParentProps> = props => {
 
     return (
         <div>
-            <StyleSmView  products={response()?.products}/>
+            <StyleSmView style={response()?.style?.style} products={response()?.products?.products}/>
         </div>
     );
 };
