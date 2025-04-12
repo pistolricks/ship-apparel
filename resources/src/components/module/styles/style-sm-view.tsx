@@ -1,12 +1,11 @@
-import {Component, createEffect, createMemo, createSelector, createSignal, For, onMount} from "solid-js";
-import {SM_PRODUCT, StyleType} from "~/lib/types";
+import {Component, createEffect, createMemo, createSelector, createSignal, onMount} from "solid-js";
+import {StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 
 type PROPS = {
     style: StyleType;
-    products: SM_PRODUCT[];
 }
 
 export type MiniProductType = {
@@ -30,19 +29,17 @@ const StyleSmView: Component<PROPS> = props => {
 
     const style = () => props.style;
 
-    const products = () => props.products;
-
     console.log(style(), "style viewer")
 
     const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<StyleType | SM_PRODUCT>(style())
+    const [getSelected, setSelected] = createSignal<StyleType | MiniProductType>(style())
     const isSelected = createSelector(getSelectedId)
 
     const [getImages, setImages] = createSignal([getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url])
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
 
-    const isSrc = createSelector(getSrc)
+    const isSrc = createSelector<string>(() => getSrc() || "")
 
     function colorHandler(data: StyleType) {
         setSelectedId(data.id)
@@ -70,17 +67,12 @@ const StyleSmView: Component<PROPS> = props => {
         return <Format.Number value={Number(getSelected()?.msrp)} style="currency" currency="USD"/>
     }
 
-    const availableSizes = () => {
-        let split = (getSelected()?.available_sizes)?.split(":")
-        console.log(split)
-        return split
-    }
+
 
 
     createEffect(() => console.log("props", props))
 
     onMount(() => {
-        setSelected(products()[0])
         setSrc(style()?.products?.[0]?.front_model_image_url)
         setImages([style()?.products?.[0]?.front_model_image_url, style()?.products?.[0]?.back_model_image_url, style()?.products?.[0]?.front_flat_image_url, style()?.products?.[0]?.back_flat_image_url])
         isSrc(style()?.products?.[0]?.front_model_image_url)
@@ -135,9 +127,7 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-                            <img src={style()?.brand_logo_image}
-                                 class={'absolute top-0 sm:static  w-[60px] h-[60px] rounded-xl object-contain'}
-                                 alt={''}/>
+
                         </div>
 
                         <h1 class="text-xl font-medium tracking-tight text-right text-gray-900 text-balance">{style()?.product_title}</h1>
@@ -169,8 +159,7 @@ const StyleSmView: Component<PROPS> = props => {
                                     </div>
 
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
-                                        <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
+
                                     </div>
                                 </div>
                                 <fieldset aria-label="Choose a color"
@@ -178,7 +167,7 @@ const StyleSmView: Component<PROPS> = props => {
 
 
                                     <Grid cols={8} class={'gap-2 w-full'}>
-                                        <For<SM_PRODUCT[]> each={products()}>
+                                        <For each={style()?.products}>
                                             {(product) => (
                                                 <button
                                                     onClick={() => colorHandler(product)}
@@ -225,8 +214,7 @@ const StyleSmView: Component<PROPS> = props => {
                                             <li class="pl-2">{style()?.mill}</li>
                                             <li class="pl-2"><span class="text-[10px] uppercase font-semibold">Style</span> {style()?.id}</li>
                                             <li class="pl-2"><span class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.gtin}</li>
-                                            <li class="pl-2">{getSelected()?.piece_weight} lbs</li>
-                                            <li class="pl-2">case x{getSelected()?.case_size}</li>
+
                                         </ul>
                                     </div>
                                 </div>

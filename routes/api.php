@@ -26,13 +26,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/home/v1', Controllers\Api\HomeController::class)->name('api.home.index');
 Route::get('/shop/v1', Controllers\Api\Shop\ShopController::class)->name('api.shop.index');
 
-Route::get('/shop/v1/styles/{style}', Controllers\Api\Shop\StyleController::class)->name('api.styles.show');
+
 Route::get('/shop/v1/products', [Controllers\Api\Shop\ProductController::class, "index"])->name('api.products.index');
 Route::get('/shop/v1/products/brands/{brand}', Controllers\Api\Shop\BrandController::class)->name('api.brand.index');
 Route::get('/shop/v1/products/category/{category}', Controllers\Api\Shop\CategoryController::class)->name('api.category.index');
 Route::get('/shop/v1/products/category/{category}/{subCategory}', Controllers\Api\Shop\SubCategoryController::class)->name('api.subcategory.index');
 
-
+Route::get('/shop/v1/styles/{style}', Controllers\Api\Shop\StyleController::class)->name('api.styles.show');
 Route::get('/products/v1/images/import',[ProductController::class,"importImages"])->name('api.products.images.import');
 Route::get('/products/v1/images/bulk/delete',[ProductController::class,"bulkDelete"])->name('api.products.images.bulk.delete');
 

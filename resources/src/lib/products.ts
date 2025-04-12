@@ -10,7 +10,7 @@ export const getStyle = query(async (id: string) => {
     })
     const res: any = await response.json();
 
-    console.log(res);
+    console.log(res, "getStyle");
     return res;
 }, 'style')
 

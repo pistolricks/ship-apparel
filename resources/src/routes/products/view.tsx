@@ -1,15 +1,9 @@
-import {Component, createEffect, ParentProps, Show} from "solid-js";
+import {Component, createEffect, ParentProps} from "solid-js";
 import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
 import {getStyle} from "~/lib/products";
 import StyleSmView from "~/components/module/styles/style-sm-view";
 
 
-export const route = {
-
-    preload({params}) {
-        return getStyle(params.id)
-    }
-} satisfies RouteDefinition
 
 
 const View: Component<ParentProps> = props => {
@@ -21,14 +15,14 @@ const View: Component<ParentProps> = props => {
 
 
     createEffect(() => {
-        console.log(response())
+
+        console.log(response()?.style, response()?.products)
+
     })
 
     return (
         <div>
-            <Show when={response()}>
-            <StyleSmView style={response()?.style} products={response()?.products}/>
-            </Show>
+            <StyleSmView  products={response()?.products}/>
         </div>
     );
 };
