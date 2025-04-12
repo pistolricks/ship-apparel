@@ -52,7 +52,7 @@ const StyleSection: Component<PROPS> = props => {
 
             </Grid>
 
-TEST
+
             <DrawerContent side={"bottom"} contextId={'product-preview-1'} class={'px-2 bg-white overflow-y-hidden'}>
                 <>
                     <Drawer.Trigger
