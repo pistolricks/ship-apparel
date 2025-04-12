@@ -32,7 +32,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
                     <img
                         src={menu()?.[0]?.src}
-                        class={'absolute top-0 object-cover right-0 object-top align-right backdrop-opacity-25  w-7/8 -z-10 h-[540px]'}
+                        class={'absolute top-0 object-cover right-0 object-top align-right backdrop-opacity-25  w-full -z-10 h-[540px]'}
                         alt=""
                     />
                     <For<MenuItemType[]> each={menu()?.[0]?.sub}>

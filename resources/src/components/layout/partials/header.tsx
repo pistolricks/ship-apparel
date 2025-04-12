@@ -1,4 +1,4 @@
-import {Component} from "solid-js";
+import {Component, Show} from "solid-js";
 import {A, useLocation} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
 import {LogoIcon} from "~/components/svg";
@@ -28,7 +28,7 @@ const Header: Component<{
 
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
-                                            <img src={'https://ink-and-thread.com/storage/167/logo.png'} class="h-16" />
+                                            <img src={'/logo.png'} class="h-16" />
                                             <span class="sr-only"></span>
 
 
@@ -67,18 +67,13 @@ const Header: Component<{
             <div class={'w-full  bg-secondary/20 shadow-accent/70'}>
                 <div class="mx-auto flex max-w-7xl   h-[40px] items-center  justify-between px-6  lg:px-8" aria-label="Global">
 
-                    <Show
-                        fallback={<A href="/products" class="w-[224px]  h-[40px] flex items-center text-content    text-base font-semibold tracking-wide  hover:text-secondary">Products</A>}
+                    <Show<boolean>
                         when={location.pathname.includes('products')}>
                         <Breadcrumbs path={location?.pathname}/>
                     </Show>
 
                     <div class="hidden lg:flex lg:gap-x-12 w-full  justify-end">
 
-                        <A href="/reversible-apparel" class="text-sm/6 font-semibold text-gray-900">Reversible Apparel</A>
-                        <A href="/school-specials" class="text-sm/6 font-semibold text-gray-900">School Specials</A>
-                        <A href="/our-company" class="text-sm/6 font-semibold text-gray-900">Our Company</A>
-                        <A href="/contact-us" class="text-sm/6 font-semibold text-gray-900">Contact Us</A>
                     </div>
 
                 </div>

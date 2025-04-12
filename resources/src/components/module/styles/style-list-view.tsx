@@ -4,6 +4,7 @@ import {Format} from '@ark-ui/solid/format'
 import Drawer from "@corvu/drawer";
 import {IconTablet} from "~/components/svg";
 import {A} from "@solidjs/router";
+import {imagePath} from "~/app";
 
 type PROPS = StyleType & { onClick: () => void, href: string }
 
@@ -19,7 +20,7 @@ const StyleListView: Component<PROPS> = props => {
 
             <A href={href()}>
                 <img
-                    src={props.front_model_image_url ?? props.front_flat_image_url}
+                    src={`${imagePath}/${props.color_product_image}/public`}
                     alt={props.product_title}
                     class="aspect-square sm:aspect-[9/16]  rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75"/>
 

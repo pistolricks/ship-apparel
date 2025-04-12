@@ -4,7 +4,7 @@ import {Toaster} from "~/components/ui/toast";
 import {LayoutProvider} from "~/context/layout-provider";
 
 
-
+export const imagePath = 'https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g';
 
 const App: Component<ParentProps> = props => {
 
