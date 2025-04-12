@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Integrations\Vendors;
+
+use Saloon\Http\Connector;
+use Saloon\Traits\Plugins\AcceptsJson;
+
+class VendorConnector extends Connector
+{
+    use AcceptsJson;
+
+    /**
+     * The Base URL of the API
+     */
+    public function resolveBaseUrl(): string
+    {
+        return 'http://localhost:4000/v1';
+    }
+
+    /**
+     * Default headers for every request
+     */
+    protected function defaultHeaders(): array
+    {
+        return [
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+        ];
+    }
+
+    /**
+     * Default HTTP client options
+     */
+    protected function defaultConfig(): array
+    {
+        return [];
+    }
+}

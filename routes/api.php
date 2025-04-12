@@ -3,6 +3,7 @@
 use App\Http\Controllers\Central as Controllers;
 use App\Http\Controllers\Central\Api\Shop\ProductController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,16 @@ Route::get('/shop/v1/products/category/{category}', Controllers\Api\Shop\Categor
 Route::get('/shop/v1/products/category/{category}/{subCategory}', Controllers\Api\Shop\SubCategoryController::class)->name('api.subcategory.index');
 
 
-
 Route::get('/products/v1/images/import',[ProductController::class,"importImages"])->name('api.products.images.import');
 Route::get('/products/v1/images/bulk/delete',[ProductController::class,"bulkDelete"])->name('api.products.images.bulk.delete');
+
+
+Route::get('/v1/styles', function () {
+    return Http::retry(3, 100)
+        ->get('http://localhost:4000/v1/styles', []);
+});
+
+Route::get('/v1/products', function () {
+    return Http::retry(3, 100)
+        ->get('http://localhost:4000/v1/products', []);
+});
