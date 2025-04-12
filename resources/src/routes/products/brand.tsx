@@ -9,14 +9,14 @@ type PROPS = {}
 const Brand: Component<PROPS> = props => {
     const params = useParams();
 
-    const brand = createAsync(async () => getBrand(params.brand));
+    const response = createAsync(async () => getBrand(params.brand));
 
-    createEffect(() => console.log(brand()))
+    createEffect(() => console.log(response(), "brand"))
 
 
     return (
         <>
-            <StyleSection {...brand()?.products}/>
+            <StyleSection data={response()?.list.styles} pagination={response()?.list.metadata}/>
         </>
     );
 };

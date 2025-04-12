@@ -127,25 +127,40 @@ export type PaginationType = {
 }
 
 export type StyleType = {
-    id: string,
-    mill?: string,
-    title: string,
-    description: string,
-    spec_sheet?: string,
-    decoration_spec_sheet?: string,
-    product_measurements?: string,
-    categories?: string,
-    subcategories?: string,
-    companion_style?: string,
-    msrp?: string,
-    map_pricing?: string,
-    suggested_pricing?: string,
-    price_group?: string,
-    front_model_image_url?: string,
-    back_model_image_url?: string,
-    front_flat_image_url?: string,
-    back_flat_image_url?: string,
-    tags?: {}[],
+    id?: string;
+    product_title?: string;
+    product_description?: string;
+    available_sizes?: string;
+    brand_logo_image?: string;
+    thumbnail_image?: string;
+    color_swatch_image?: string;
+    product_image?: string;
+    spec_sheet?: string;
+    price_text?: string;
+    suggested_price?: string;
+    category_name?: string;
+    subcategory_name?: string;
+    color_name?: string;
+    color_square_image?: string;
+    color_product_image?: string;
+    color_product_image_thumbnail?: string;
+    sizes?: string;
+    inventory_key?: string;
+    size_index?: string;
+    sanmar_mainframe_color?: string;
+    mill?: string;
+    product_status?: string;
+    companion_style?: string;
+    msrp?: string;
+    map_pricing?: string;
+    front_model_image_url?: string;
+    back_model_image_url?: string;
+    front_flat_image_url?: string;
+    back_flat_image_url?: string;
+    product_measurements?: string;
+    pms_color?: string;
+    gtin?: string;
+    decoration_spec_sheet?: string;
     products?: SM_PRODUCT[]
     data?: any,
 }

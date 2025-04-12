@@ -20,7 +20,7 @@ const StyleListView: Component<PROPS> = props => {
             <A href={href()}>
                 <img
                     src={props.front_model_image_url ?? props.front_flat_image_url}
-                    alt={props.title}
+                    alt={props.product_title}
                     class="aspect-square sm:aspect-[9/16]  rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75"/>
 
                 <div class=" pt-7 text-center h-[170px]">
@@ -28,8 +28,8 @@ const StyleListView: Component<PROPS> = props => {
                         <div class={'flex flex-col w-full justify-center'}>
                             <span aria-hidden="true" class="absolute inset-0"></span>
                             <span class={'mb-4 font-semibold text-xs'}><span
-                                class={''}>{props.miller?.name}</span> - {props.id}</span>
-                            <span class={'min-h-[40px]'}>{props.title}</span>
+                                class={''}>{props.mill}</span> - {props.id}</span>
+                            <span class={'min-h-[40px]'}>{props.product_title}</span>
 
                         </div>
                     </h3>
