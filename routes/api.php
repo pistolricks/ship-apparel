@@ -42,7 +42,10 @@ Route::get('/v1/styles', function () {
         ->get('http://localhost:4000/v1/styles', []);
 });
 
-Route::get('/v1/products', function () {
+Route::get('/v1/products', function ($id, Request $request) {
     return Http::retry(3, 100)
+        ->withQueryParameters(["style" => $id,
+            (array) $request
+        ])
         ->get('http://localhost:4000/v1/products', []);
 });

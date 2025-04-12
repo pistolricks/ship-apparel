@@ -12,8 +12,9 @@ Route::view('/', 'app')->name('central.app');
 Route::view('/our-company', 'app')->name('central.our-company');
 Route::view('/contact-us', 'app')->name('central.contact-us');
 
+
 Route::view('/products', 'app')->name('central.products');
-Route::view('/products/view/{style}', 'app')->name('central.style.show');
+Route::view('/products/style/{style}', 'app')->name('central.style.show');
 Route::view('/products/brands', 'app')->name('central.products.brand.index');
 Route::view('/products/brands/{brand}', 'app')->name('central.products.brand.show');
 Route::view('/products/{category}', 'app')->name('central.products.category');

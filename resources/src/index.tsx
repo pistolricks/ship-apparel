@@ -60,7 +60,7 @@ const routes = [
 
 
     {
-        path: "/styles/view/:id",
+        path: "/products/style/:id",
         component: lazy(() => import("./routes/products/view")),
         preload: preloadStyle,
     },

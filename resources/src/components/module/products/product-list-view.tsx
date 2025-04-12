@@ -1,6 +1,7 @@
 import {Component} from "solid-js";
 import {SM_PRODUCT} from "~/lib/types";
 import { Format } from '@ark-ui/solid/format'
+import {imagePath} from "~/app";
 
 
 type PROPS = SM_PRODUCT & { onClick: () => void}
@@ -18,7 +19,7 @@ const ProductListView: Component<PROPS> = props => {
     return (
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
             <img
-                src={props.front_model_image_url ?? props.front_flat_image_url}
+                src={`${imagePath}${props.color_product_image}/gallery`}
                 alt={props.product_title} class="aspect-square sm:aspect-[9/16] rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75"/>
             <div class="pb-4 pt-10 text-center sm:min-h-[170px]">
                 <h3 class="text-sm font-semibold text-gray-900">

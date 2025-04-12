@@ -68,7 +68,7 @@ const StyleView: Component<{
     console.log(product())
 
     return (
-        <Show when={product()}>
+        <Show<boolean> when={product()}>
             <div class="relative bg-white rounded-xl overflow-y-auto scrollbar-hide">
                 <div class="pb-16 sm:pt-6 sm:pb-24">
                     <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">

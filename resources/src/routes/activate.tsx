@@ -17,10 +17,10 @@ const Activate: Component<RouteSectionProps> = props => {
     return (
         <FormLayout>
             <Switch>
-                <Match when={!currentUser?.activated}>
+                <Match<boolean> when={!currentUser?.activated}>
                     <ActivateUserForm/>
                 </Match>
-                <Match when={!currentUser}>
+                <Match<boolean> when={!currentUser}>
                     <ActivateUserForm/>
                 </Match>
             </Switch>

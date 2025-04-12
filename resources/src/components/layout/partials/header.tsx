@@ -17,7 +17,7 @@ const Header: Component<{
     return (
         <>
             <div class={'h-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 items-center flex font-light text-xs'}>
-                Manufacture Direct Supplier | Complete Custom Branded Gear
+
             </div>
             <header class="h-16 sm:h-20">
                 <nav class={''} aria-label="Top">

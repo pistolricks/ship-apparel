@@ -6,6 +6,7 @@ import {StyleListView} from "~/components/module/styles/style-list-view";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import {IconX} from "~/components/svg";
 import StyleView from "~/components/module/styles/style-view";
+import {useNavigate} from "@solidjs/router";
 
 
 type PROPS = {
@@ -15,6 +16,7 @@ type PROPS = {
 
 const StyleSection: Component<PROPS> = props => {
 
+    const navigate = useNavigate();
     const data = () => props.data;
 
     const pagination = () => props.pagination;
@@ -27,6 +29,8 @@ const StyleSection: Component<PROPS> = props => {
         setSelectedId(data.id)
         if (isSelected(data.id)) {
             setSelected(data)
+           // navigate(`/products/view/${data.id}`, { replace: true });
+
         }
 
     }
@@ -41,7 +45,7 @@ const StyleSection: Component<PROPS> = props => {
                 <For<StyleType[]> each={data()}>
                     {(style: StyleType) => (
 
-                        <StyleListView href={`/styles/view/${style.id}`} onClick={() => handler(style)} {...style} />
+                        <StyleListView href={`/products/style/${style.id}`} onClick={() => handler(style)} {...style} />
 
                     )}
                 </For>

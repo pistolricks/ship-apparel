@@ -20,10 +20,8 @@ class StyleController extends Controller
     {
 
         $response = Http::retry(3, 100)
-            ->withQueryParameters(["style" => $style['id'],
-                (array) $request
-            ])
-            ->get('http://localhost:4000/v1/products');
+            ->withQueryParameters((array) $request)
+            ->get('http://localhost:4000/v1/products?style='.$style->id);
 
 
         return response()->json([

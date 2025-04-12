@@ -5,6 +5,7 @@ import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 import RowItemsCard from "~/components/section/rows/row-items-card";
 import {CarouselCard} from "~/components/section/rows/carousel-card";
+import {Dynamic} from "solid-js/web";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
