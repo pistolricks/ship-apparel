@@ -16,6 +16,9 @@ class StyleController extends Controller
     public function __invoke(Request $request,string $id)
     {
 
+        $style = Http::retry(3, 100)
+            ->withQueryParameters(['id' => $id])
+            ->get('http://localhost:4000/v1/styles/' . $id );
 
 
         $response = Http::retry(3, 100)
@@ -26,8 +29,8 @@ class StyleController extends Controller
 
         return response()->json([
             "menu" => config('menu'),
-
-            "style" => $response->json(),
+            "style" => $style->json(),
+            "products" => $response->json(),
 
             "user" => $request->user(),
         ]);
