@@ -161,6 +161,6 @@ export type StyleType = {
     pms_color?: string;
     gtin?: string;
     decoration_spec_sheet?: string;
-    products?: SM_PRODUCT[]
+    products?: any;
     data?: any,
 }

@@ -15,15 +15,18 @@ const View: Component<ParentProps> = props => {
     const response = createAsync(async () => getStyle(params.id));
 
     const [getData, setData] = createSignal(response()?.data)
-
+    const [getProducts, setProducts] = createSignal<SM_PRODUCT[]>([])
     createEffect(() => {
         console.log("getResponse", getData())
         setData(() => response()?.data)
+        if(getData()?.style?.data) {
+           setProducts(getData()?.style?.data)
+        }
     })
 
     return (
         <Show when={getData()?.style}>
-             <StyleSmView style={getData()?.style} products={getData()?.products} />
+             <StyleSmView style={getData()?.style} products={getProducts()} />
         </Show>
     );
 };

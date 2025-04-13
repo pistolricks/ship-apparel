@@ -41,6 +41,7 @@ class StyleData extends Data
         public ?string $pms_color,
         public ?string $gtin,
         public ?string $decoration_spec_sheet,
+        public mixed $data
 
     ) {
     }

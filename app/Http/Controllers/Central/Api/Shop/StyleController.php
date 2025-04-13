@@ -21,7 +21,6 @@ class StyleController extends Controller
     {
 
         $response = Http::retry(3, 10)
-            ->withQueryParameters(['id' => $id])
             ->get('http://localhost:4000/v1/styles/' . $id );
 
 
