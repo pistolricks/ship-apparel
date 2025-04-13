@@ -86,7 +86,7 @@ const StyleView: Component<{
                                 <h2 class="sr-only">Images</h2>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                                    <For each={images()}>
+                                    <For<string[]> each={images()}>
                                         {(image, i) => (
                                             <img
                                                 alt={`${product()?.product_title}-${i()}`}
