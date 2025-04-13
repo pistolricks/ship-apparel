@@ -39,7 +39,7 @@ const StyleSmView: Component<PROPS> = props => {
     const isSelected = createSelector(getSelectedId)
 
     const [getImages, setImages] = createSignal(
-        [`${imagePath}/${getSelected()?.color_product_image}/public`,`${imagePath}/${getSelected()?.back_model_image}/public`,`${imagePath}/${getSelected()?.front_flat_image}/public`,`${imagePath}/${getSelected()?.back_flat_image}/public`].filter((image): image is string => !!image)
+        [`${imagePath}/${getSelected()?.color_product_image}/preview`,`${imagePath}/${getSelected()?.back_model_image}/preview`,`${imagePath}/${getSelected()?.front_flat_image}/preview`,`${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
     )
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
@@ -52,7 +52,7 @@ const StyleSmView: Component<PROPS> = props => {
             setSelected(data)
             setSrc(data?.front_model_image_url)
             setImages(
-                [`${imagePath}/${getSelected()?.color_product_image}/public`,`${imagePath}/${getSelected()?.back_model_image}/public`,`${imagePath}/${getSelected()?.front_flat_image}/public`,`${imagePath}/${getSelected()?.back_flat_image}/public`].filter((image): image is string => !!image)
+                [`${imagePath}/${getSelected()?.color_product_image}/preview`,`${imagePath}/${getSelected()?.back_model_image}/preview`,`${imagePath}/${getSelected()?.front_flat_image}/preview`,`${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
             )
         }
         console.log(getSelected())
@@ -197,7 +197,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                             'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
                                                             isSelected(product.id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
                                                         )}
-                                                        src={`${imagePath}/${product.color_square_image}/public`}
+                                                        src={`${imagePath}/${product.color_square_image}/thumbnail`}
                                                         alt={product.color_name}/>
                                                 </button>
                                             )}
