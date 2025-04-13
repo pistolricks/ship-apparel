@@ -3,6 +3,7 @@ import {SM_PRODUCT, StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
+import {imagePath} from "~/app";
 
 type PROPS = {
     style: StyleType;
@@ -38,7 +39,7 @@ const StyleSmView: Component<PROPS> = props => {
     const isSelected = createSelector(getSelectedId)
 
     const [getImages, setImages] = createSignal(
-        [getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
+        [`${imagePath}/${getSelected()?.color_product_image}/public`, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
     )
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
@@ -142,8 +143,8 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-                            <img src={style()?.brand_logo_image}
-                                 class={'absolute top-0 sm:static  w-[60px] h-[60px] rounded-xl object-contain'}
+                            <img src={`${imagePath}/${style()?.brand_logo_image}/brandlogo`}
+                                 class={'absolute top-0 sm:static  w-[100px] h-[25px] sm:w-[200px] sm:h-[50px]  rounded-xl object-contain'}
                                  alt={''}/>
                         </div>
 
@@ -196,7 +197,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                             'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
                                                             isSelected(product.id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
                                                         )}
-                                                        src={`https://ink-and-thread.com/storage/swatches/${product.color_square_image}`}
+                                                        src={`${imagePath}/${product.color_square_image}/public`}
                                                         alt={product.color_name}/>
                                                 </button>
                                             )}

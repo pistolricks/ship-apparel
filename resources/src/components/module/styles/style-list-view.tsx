@@ -15,6 +15,13 @@ const StyleListView: Component<PROPS> = props => {
         return <Format.Number value={Number(props.msrp)} style="currency" currency="USD"/>
     }
 
+    const name = () => {
+        let a = props.product_title.toLowerCase().replace(props.mill?.toLowerCase(), "")
+        let id = props.id?.toLowerCase();
+        let t = a.replace(id, "")
+        return t.replace(`.`, "")
+    }
+
     return (
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
 
@@ -26,11 +33,11 @@ const StyleListView: Component<PROPS> = props => {
 
                 <div class=" pt-7 text-center h-[170px]">
                     <h3 class="text-xs font-light  text-gray-900">
-                        <div class={'flex flex-col w-full justify-center'}>
+                        <div class={'flex flex-col w-full justify-center capitalize'}>
                             <span aria-hidden="true" class="absolute inset-0"></span>
                             <span class={'mb-4 font-semibold text-xs'}><span
                                 class={''}>{props.mill}</span> - {props.id}</span>
-                            <span class={'min-h-[40px]'}>{props.product_title}</span>
+                            <span class={'min-h-[40px]'}>{name()}</span>
 
                         </div>
                     </h3>

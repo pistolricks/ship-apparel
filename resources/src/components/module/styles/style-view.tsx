@@ -1,6 +1,6 @@
 import {IconCalendar, IconCircle, IconClock, IconCreditCard} from "~/components/svg";
 import {Component, For, Show} from "solid-js";
-import {StyleType} from "~/lib/types";
+import {SM_PRODUCT, StyleType} from "~/lib/types";
 import {Format} from '@ark-ui/solid/format'
 
 
@@ -36,7 +36,7 @@ export type StyleSizeType = {
 
 
 const StyleView: Component<{
-    product: StyleType;
+    product: StyleType|SM_PRODUCT;
 }> = props => {
 
     const product = () => props.product;
