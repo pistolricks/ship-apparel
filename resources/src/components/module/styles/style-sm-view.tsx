@@ -213,47 +213,47 @@ const StyleSmView: Component<PROPS> = props => {
                                     </div>
                                 </div>
                                 <Show when={groupedByColor()}>
-                                <fieldset aria-label="Choose a color"
-                                          class="w-full border-gray-200 border-b border-t py-2">
-                                    <Grid cols={8} class={'gap-2 w-full'}>
-                                        <For<string[]> each={Object.keys(groupedByColor())}>
-                                            {(key) => (
-                                                <>
-                                                    <button
-                                                        onClick={() => handleColor(key)}
-                                                        class="w-full items-center  justify-center"
-                                                        type="button">
-                                                        <img
-                                                            class={classNames(
-                                                                'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
-                                                                isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
-                                                            )}
-                                                            src={`/colors/${groupedByColor()?.[key]?.[0]?.color_square_image}`}
-                                                            alt={`/colors/${groupedByColor()?.[key]?.[0]?.color_name}`}/>
-                                                    </button>
-                                                </>
-                                            )}
-                                        </For>
-                                    </Grid>
-                                </fieldset>
-                                </Show>
-
                                     <fieldset aria-label="Choose a color"
-                                              class="w-full border-gray-200 border-b py-2">
-
-                                        <Grid cols={8} class={'gap-2 w-full items-center'}>
-                                            <For<SM_PRODUCT[]> each={groupedByColor()?.[getColor()]}>
-                                                {(product) => (
-                                                    <button
-                                                        onClick={() => handleSize(product)}
-                                                        class="w-full items-center  justify-center border border-gray-400 rounded-full size-7"
-                                                        type="button">
-                                                        {product.size}
-                                                    </button>
+                                              class="w-full border-gray-200 border-b border-t py-2">
+                                        <Grid cols={8} class={'gap-2 w-full'}>
+                                            <For<string[]> each={Object.keys(groupedByColor())}>
+                                                {(key) => (
+                                                    <>
+                                                        <button
+                                                            onClick={() => handleColor(key)}
+                                                            class="w-full items-center  justify-center"
+                                                            type="button">
+                                                            <img
+                                                                class={classNames(
+                                                                    'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
+                                                                    isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
+                                                                )}
+                                                                src={`/colors/${groupedByColor()?.[key]?.[0]?.color_square_image}`}
+                                                                alt={`/colors/${groupedByColor()?.[key]?.[0]?.color_name}`}/>
+                                                        </button>
+                                                    </>
                                                 )}
                                             </For>
                                         </Grid>
                                     </fieldset>
+                                </Show>
+
+                                <fieldset aria-label="Choose a color"
+                                          class="w-full border-gray-200 border-b py-2">
+
+                                    <Grid cols={8} class={'gap-2 w-full items-center'}>
+                                        <For<SM_PRODUCT[]> each={groupedByColor()?.[getColor()]}>
+                                            {(product) => (
+                                                <button
+                                                    onClick={() => handleSize(product)}
+                                                    class="w-full items-center  justify-center border border-gray-400 rounded-full size-7"
+                                                    type="button">
+                                                    {product.size}
+                                                </button>
+                                            )}
+                                        </For>
+                                    </Grid>
+                                </fieldset>
 
                             </div>
 
