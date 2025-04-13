@@ -7,6 +7,7 @@ use App\Actions\images\ImageImportAction;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Style;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -19,6 +20,9 @@ class ProductController extends Controller
 
     }
 
+    /**
+     * @throws ConnectionException
+     */
     public function index(Request $request)
     {
 

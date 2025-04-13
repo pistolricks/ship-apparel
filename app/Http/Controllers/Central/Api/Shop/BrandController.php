@@ -8,12 +8,16 @@ use App\Http\Integrations\Vendors\VendorConnector;
 use App\Models\Product;
 use App\Models\Style;
 use App\Support\BrandSupport;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class BrandController extends Controller
 {
+    /**
+     * @throws ConnectionException
+     */
     public function __invoke(Request $request, string $brand)
     {
         // $brandName = BrandSupport::lookupBrand($brand);

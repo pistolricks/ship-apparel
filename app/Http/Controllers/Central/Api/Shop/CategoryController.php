@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Style;
 use App\Support\BrandSupport;
 use App\Support\CategorySupport;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Saloon\Exceptions\Request\FatalRequestException;
@@ -19,6 +20,7 @@ class CategoryController extends Controller
     /**
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws ConnectionException
      */
     public function __invoke(Request $request, string $category)
     {

@@ -9,6 +9,7 @@ use App\Http\Integrations\Vendors\VendorConnector;
 use App\Models\Menu;
 use App\Models\Product;
 use App\Models\Style;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Saloon\Exceptions\Request\FatalRequestException;
@@ -19,6 +20,7 @@ class ShopController extends Controller
     /**
      * @throws FatalRequestException
      * @throws RequestException
+     * @throws ConnectionException
      */
     public function __invoke(Request $request)
     {
