@@ -84,12 +84,13 @@ const StyleSmView: Component<PROPS> = props => {
     createEffect(() => console.log("props", props))
 
     onMount(() => {
+        setSelectedId(style()?.id)
         setSelected(style())
-        setSrc(style().front_model_image_url)
+        setSrc(style()?.front_model_image_url)
         setImages(
-            [style().front_model_image_url, style().back_model_image_url, style().front_flat_image_url, style().back_flat_image_url].filter((image): image is string => !!image)
+            [style()?.front_model_image_url, style()?.back_model_image_url, style()?.front_flat_image_url, style()?.back_flat_image_url].filter((image): image is string => !!image)
         )
-        isSrc(style().front_model_image_url)
+        isSrc(style()?.front_model_image_url)
     })
 
     return (
