@@ -16,13 +16,13 @@ export const route = {
 const Shop: Component<PROPS> = props => {
     const params = useParams();
 
-    const category = createAsync(async () => getSubCategory(params.category, params.subCategory));
+    const response = createAsync(async () => getSubCategory(params.category, params.subCategory));
 
 
-    createEffect(() => console.log(category()))
+    createEffect(() => console.log(response()))
 
     return (
-        <StyleSection {...category()?.products}/>
+        <StyleSection data={response()?.list.styles} pagination={response()?.list.metadata} />
     );
 };
 

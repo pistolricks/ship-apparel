@@ -16,8 +16,8 @@ const StyleListView: Component<PROPS> = props => {
     }
 
     const name = () => {
-        let a = props.product_title.toLowerCase().replace(props.mill?.toLowerCase(), "")
-        let id = props.id?.toLowerCase();
+        let a = props.product_title.replace(props.mill, "")
+        let id = props.id;
         let t = a.replace(id, "")
         return t.replace(`.`, "")
     }

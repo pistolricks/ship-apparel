@@ -39,7 +39,7 @@ const StyleSmView: Component<PROPS> = props => {
     const isSelected = createSelector(getSelectedId)
 
     const [getImages, setImages] = createSignal(
-        [`${imagePath}/${getSelected()?.color_product_image}/public`, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
+        [`${imagePath}/${getSelected()?.color_product_image}/public`,`${imagePath}/${getSelected()?.back_model_image}/public`,`${imagePath}/${getSelected()?.front_flat_image}/public`,`${imagePath}/${getSelected()?.back_flat_image}/public`].filter((image): image is string => !!image)
     )
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
@@ -52,7 +52,7 @@ const StyleSmView: Component<PROPS> = props => {
             setSelected(data)
             setSrc(data?.front_model_image_url)
             setImages(
-                [data?.front_model_image_url, data?.back_model_image_url, data?.front_flat_image_url, data?.back_flat_image_url].filter((image): image is string => !!image)
+                [`${imagePath}/${getSelected()?.color_product_image}/public`,`${imagePath}/${getSelected()?.back_model_image}/public`,`${imagePath}/${getSelected()?.front_flat_image}/public`,`${imagePath}/${getSelected()?.back_flat_image}/public`].filter((image): image is string => !!image)
             )
         }
         console.log(getSelected())
@@ -143,7 +143,7 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-                            <img src={`${imagePath}/${style()?.brand_logo_image}/brandlogo`}
+                            <img src={`${imagePath}/${style()?.brand_logo_image}/brand`}
                                  class={'absolute top-0 sm:static  w-[100px] h-[25px] sm:w-[200px] sm:h-[50px]  rounded-xl object-contain'}
                                  alt={''}/>
                         </div>

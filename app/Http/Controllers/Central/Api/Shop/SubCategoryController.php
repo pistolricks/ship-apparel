@@ -9,6 +9,7 @@ use App\Support\BrandSupport;
 use App\Support\CategorySupport;
 use App\Support\SubCategorySupport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class SubCategoryController extends Controller
 {
@@ -19,24 +20,20 @@ class SubCategoryController extends Controller
 
         $subCategoryName = SubCategorySupport::lookupSubCategory($subCategory);
 
-        $styles = Style::query()
-            ->select('id','title','description','mill','data', 'msrp', 'front_model_image_url','back_model_image_url', 'front_flat_image_url', 'back_flat_image_url', 'slug')
-            ->where('categories','LIKE', '%'.$categoryName.'%')
-            ->orwhere('title','LIKE', '%'.$subCategoryName.'%')
-            ->orWhere('description','LIKE', '%'.$subCategoryName.'%')
-            ->where('title', 'NOT LIKE', '%'.'Discontinued'.'%')
-            ->with(['miller' => function ($query) {
-                $query->select('id','name');
-            }])
-           // ->with('tags:id,name,slug,type')
-            ->orderBy('id')
-            ->paginate(1000);
+        $categoryName = CategorySupport::lookupCategory($category);
+
+        $response = Http::retry(3, 100)
+            ->withQueryParameters([
+                'category_name' => $categoryName,
+                'sub_category_name' => $subCategoryName,
+                (array) $request
+            ])->get('http://localhost:4000/v1/styles');
 
 
 
         return response()->json([
             "menu" => config('menu'),
-            "products" => $styles,
+            "list" => $response->json(),
             "user" => $request->user(),
         ]);
     }

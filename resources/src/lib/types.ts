@@ -81,6 +81,7 @@ export type SM_PRODUCT = {
     color_product_image?: string;
     color_product_image_thumbnail?: string;
     size?: string;
+    qty?: number;
     piece_weight?: string;
     piece_price?: string;
     dozens_price?: string;
@@ -92,13 +93,13 @@ export type SM_PRODUCT = {
     sanmar_mainframe_color?: string;
     mill?: string;
     product_status?: string;
-    companion_style?: string;
+    companion_styles?: string;
     msrp?: string;
     map_pricing?: string;
     front_model_image_url?: string;
-    back_model_image_url?: string;
-    front_flat_image_url?: string;
-    back_flat_image_url?: string;
+    back_model_image?: string;
+    front_flat_image?: string;
+    back_flat_image?: string;
     product_measurements?: string;
     pms_color?: string;
     gtin?: string;

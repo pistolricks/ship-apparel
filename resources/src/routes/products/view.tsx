@@ -25,6 +25,7 @@ const View: Component<ParentProps> = props => {
     })
 
     return (
+
         <Show when={getData()?.style}>
              <StyleSmView style={getData()?.style} products={getProducts()} />
         </Show>

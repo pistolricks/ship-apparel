@@ -20,7 +20,7 @@ class BrandController extends Controller
      */
     public function __invoke(Request $request, string $brand)
     {
-        // $brandName = BrandSupport::lookupBrand($brand);
+         $brandName = BrandSupport::lookupBrand($brand);
 
         $response = Http::retry(3, 100)
             ->withQueryParameters([
@@ -29,9 +29,10 @@ class BrandController extends Controller
             ])->get('http://localhost:4000/v1/styles');
 
         return response()->json([
-            "menu" => config('menu'),
             "list" => $response->json(),
             "user" => $request->user(),
+            "banner" => $brandName,
+            "menu" => config('menu'),
         ]);
     }
 }
