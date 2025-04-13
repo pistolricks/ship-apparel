@@ -38,6 +38,8 @@ const StyleSmView: Component<PROPS> = props => {
     const [getSelected, setSelected] = createSignal<SM_PRODUCT|StyleType|undefined>(style())
     const isSelected = createSelector(getSelectedId)
 
+    const smPath = () => style()?.front_model_image_url?.replace(style()?.color_product_image, "")
+
     const [getImages, setImages] = createSignal(
         [`${imagePath}/${getSelected()?.color_product_image}/preview`,`${imagePath}/${getSelected()?.back_model_image}/preview`,`${imagePath}/${getSelected()?.front_flat_image}/preview`,`${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
     )
@@ -52,7 +54,7 @@ const StyleSmView: Component<PROPS> = props => {
             setSelected(data)
             setSrc(data?.front_model_image_url)
             setImages(
-                [`${imagePath}/${getSelected()?.color_product_image}/preview`,`${imagePath}/${getSelected()?.back_model_image}/preview`,`${imagePath}/${getSelected()?.front_flat_image}/preview`,`${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
+                [`${smPath()}/${data?.color_product_image}`,`${smPath()}/${data?.back_model_image}`,`${smPath()}/${data?.front_flat_image}`,`${smPath()}/${data?.back_flat_image}`].filter((image): image is string => !!image)
             )
         }
         console.log(getSelected())
@@ -197,7 +199,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                             'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
                                                             isSelected(product.id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
                                                         )}
-                                                        src={`${imagePath}/${product.color_square_image}/thumbnail`}
+                                                        src={`/colors/${product.color_square_image}`}
                                                         alt={product.color_name}/>
                                                 </button>
                                             )}
