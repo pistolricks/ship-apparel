@@ -33,29 +33,28 @@ const StyleSmView: Component<PROPS> = props => {
     const products = () => props.products;
 
     console.log(style(), "style viewer")
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT | StyleType | undefined>(style())
 
-    const [getSelectedId, setSelectedId] = createSignal<string>()
-    const [getSelected, setSelected] = createSignal<SM_PRODUCT|StyleType|undefined>(style())
+    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected()?.id)
+
     const isSelected = createSelector(getSelectedId)
 
     const smPath = () => style()?.front_model_image_url?.replace(style()?.color_product_image, "")
 
     const [getImages, setImages] = createSignal(
-        [`${imagePath}/${getSelected()?.color_product_image}/preview`,`${imagePath}/${getSelected()?.back_model_image}/preview`,`${imagePath}/${getSelected()?.front_flat_image}/preview`,`${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
+        [`${imagePath}/${getSelected()?.color_product_image}/preview`, `${imagePath}/${getSelected()?.back_model_image}/preview`, `${imagePath}/${getSelected()?.front_flat_image}/preview`, `${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
     )
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
 
-    const isSrc = createSelector<string|undefined>(getSrc)
+    const isSrc = createSelector<string | undefined>(getSrc)
 
-    function colorHandler(data: SM_PRODUCT) {
-        setSelectedId(data.id)
+    function handleSize(data: SM_PRODUCT) {
+
+
         if (isSelected(data.id)) {
             setSelected(data)
-            setSrc(data?.front_model_image_url)
-            setImages(
-                [`${smPath()}/${data?.color_product_image}`,`${smPath()}/${data?.back_model_image}`,`${smPath()}/${data?.front_flat_image}`,`${smPath()}/${data?.back_flat_image}`].filter((image): image is string => !!image)
-            )
+
         }
         console.log(getSelected())
     }
@@ -82,11 +81,41 @@ const StyleSmView: Component<PROPS> = props => {
     }
 
 
+    //  const orderedProducts = createMemo(() => products()?.sort((a, b) => parseFloat(a.color_name) - parseFloat(b.color_name)))
+
+    const groupedByColor = createMemo(() => products().reduce((groups, product) => {
+        const key = product.color_name; // Grouping criterion (e.g., 'color')
+        if (!groups[key]) {
+            groups[key] = []; // Initialize an array for this group
+        }
+
+        groups[key].push(product); // Add the current product to the group
+        return groups;
+    }, {}));
 
 
-    createEffect(() => console.log("props", props))
+    const [getColor, setColor] = createSignal(style()?.color_name)
+
+
+
+    const handleColor = (m: string) => {
+        setColor(() => m)
+
+        setSrc(groupedByColor()?.[m]?.[0]?.front_model_image_url)
+        setImages(
+            [`${smPath()}/${groupedByColor()?.[m]?.[0]?.color_product_image}`, `${smPath()}/${groupedByColor()?.[m]?.[0]?.back_model_image}`, `${smPath()}/${groupedByColor()?.[m]?.[0]?.front_flat_image}`, `${smPath()}/${groupedByColor()?.[m]?.[0]?.back_flat_image}`].filter((image): image is string => !!image)
+        )
+
+    }
+    const isColored = createSelector(getColor)
+
+    createEffect(() => {
+        console.log("isSelected", getSelected(), "getColor", getColor())
+        console.log("groupedByColor", groupedByColor(), "getColor", getColor())
+    })
 
     onMount(() => {
+        setColor(style()?.color_name)
         setSelectedId(style()?.id)
         setSelected(style())
         setSrc(style()?.front_model_image_url)
@@ -183,29 +212,49 @@ const StyleSmView: Component<PROPS> = props => {
                                         <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
                                     </div>
                                 </div>
+                                <Show when={groupedByColor()}>
                                 <fieldset aria-label="Choose a color"
                                           class="w-full border-gray-200 border-b border-t py-2">
-
-
                                     <Grid cols={8} class={'gap-2 w-full'}>
-                                        <For<SM_PRODUCT[]> each={products()}>
-                                            {(product) => (
-                                                <button
-                                                    onClick={() => colorHandler(product)}
-                                                    class="w-full items-center  justify-center"
-                                                    type="button">
-                                                    <img
-                                                        class={classNames(
-                                                            'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
-                                                            isSelected(product.id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
-                                                        )}
-                                                        src={`/colors/${product.color_square_image}`}
-                                                        alt={product.color_name}/>
-                                                </button>
+                                        <For<string[]> each={Object.keys(groupedByColor())}>
+                                            {(key) => (
+                                                <>
+                                                    <button
+                                                        onClick={() => handleColor(key)}
+                                                        class="w-full items-center  justify-center"
+                                                        type="button">
+                                                        <img
+                                                            class={classNames(
+                                                                'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
+                                                                isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
+                                                            )}
+                                                            src={`/colors/${groupedByColor()?.[key]?.[0]?.color_square_image}`}
+                                                            alt={`/colors/${groupedByColor()?.[key]?.[0]?.color_name}`}/>
+                                                    </button>
+                                                </>
                                             )}
                                         </For>
                                     </Grid>
                                 </fieldset>
+                                </Show>
+
+                                    <fieldset aria-label="Choose a color"
+                                              class="w-full border-gray-200 border-b py-2">
+
+                                        <Grid cols={8} class={'gap-2 w-full items-center'}>
+                                            <For<SM_PRODUCT[]> each={groupedByColor()?.[getColor()]}>
+                                                {(product) => (
+                                                    <button
+                                                        onClick={() => handleSize(product)}
+                                                        class="w-full items-center  justify-center border border-gray-400 rounded-full size-7"
+                                                        type="button">
+                                                        {product.size}
+                                                    </button>
+                                                )}
+                                            </For>
+                                        </Grid>
+                                    </fieldset>
+
                             </div>
 
                             <div class="mt-10 flex">
@@ -233,8 +282,12 @@ const StyleSmView: Component<PROPS> = props => {
                                         <ul role="list"
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
                                             <li class="pl-2">{style()?.mill}</li>
-                                            <li class="pl-2"><span class="text-[10px] uppercase font-semibold">Style</span> {style()?.id}</li>
-                                            <li class="pl-2"><span class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.gtin}</li>
+                                            <li class="pl-2"><span
+                                                class="text-[10px] uppercase font-semibold">Style</span> {style()?.id}
+                                            </li>
+                                            <li class="pl-2"><span
+                                                class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.gtin}
+                                            </li>
 
                                         </ul>
                                     </div>
