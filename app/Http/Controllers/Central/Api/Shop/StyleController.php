@@ -16,7 +16,7 @@ class StyleController extends Controller
     public function __invoke(Request $request,string $id)
     {
 
-        $response = Http::retry(3, 100)
+        $response = Http::async(true)
             ->withQueryParameters(['id' => $id])
             ->get('http://localhost:4000/v1/styles/' . $id );
 
