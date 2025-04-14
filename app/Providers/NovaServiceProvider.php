@@ -11,12 +11,12 @@ use App\Nova\Central\Domain;
 use App\Nova\Central\Mill;
 
 use App\Nova\Central\Product;
-use App\Nova\Central\Project;
+use App\Nova\Central\WebProject;
 use App\Nova\Central\StyleCollection;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
 use App\Nova\Central\WebContent;
-use App\Nova\Central\WebSection;
+use App\Nova\Central\WebMediaSection;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
@@ -130,12 +130,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 TenantResource::class,
                 Domain::class,
                 SubscriptionCancelation::class,
-                Product::class,
-                Mill::class,
-                StyleCollection::class,
-                Project::class,
+                WebProject::class,
                 WebContent::class,
-                WebSection::class,
+                WebMediaSection::class,
                 WebPage::class
             ]);
         }

@@ -12,8 +12,10 @@
         "ext-curl": "*",
         "ext-zip": "*",
         "anaseqal/nova-import": "^0.0.6",
+        "ardenthq/nova-image-gallery-field": "^2.3",
         "bissolli/nova-phone-field": "^0.0.4",
         "calebporzio/sushi": "^2.5",
+        "cdn/image-importer": "@dev",
         "chaseconey/nova-external-image": "^1.0",
         "dedmytro/laravel-cloudflare-images": "^0.2.1",
         "digital-creative/custom-relationship-field": "^1.1",
@@ -93,6 +95,10 @@
         {
             "type": "path",
             "url": "./nova-components/Inventory"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/ImageImporter"
         }
     ],
     "autoload-dev": {

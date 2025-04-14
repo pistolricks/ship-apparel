@@ -18,12 +18,9 @@ class CreateContentsTable extends Migration
             $table->json('description')->nullable();
             $table->json('information')->nullable();
             $table->string('src')->nullable();
-            $table->string('vert_src')->nullable();
             $table->string('cta')->nullable();
             $table->string('value')->nullable();
             $table->json('data')->nullable();
-            $table->string('side')->nullable();
-
 
             $table->timestamps();
         });

@@ -15,6 +15,7 @@ use App\Console\Commands\Style\StylesProductTagsCommand;
 use App\Console\Commands\Style\StylesUpdateCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Laravel\Nova\Trix\PruneStaleAttachments;
 
 class Kernel extends ConsoleKernel
 {
@@ -37,6 +38,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            (new PruneStaleAttachments)();
+        })->daily();
     }
 
     /**

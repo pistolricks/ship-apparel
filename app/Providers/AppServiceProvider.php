@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Content;
 use App\Models\Tenant;
 use App\Models\User;
+use App\Observers\ContentObserver;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Support\Carbon;
@@ -42,5 +44,7 @@ class AppServiceProvider extends ServiceProvider
                 ]
             );
         });
+
+        Content::observe(ContentObserver::class);
     }
 }

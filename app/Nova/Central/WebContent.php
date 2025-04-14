@@ -6,6 +6,7 @@ use App\Actions\images\ImageUploadAction;
 use App\Nova\Actions\ImageUpload;
 use App\Nova\Repeater\ClassItem;
 use App\Nova\Resource;
+use Ardenthq\ImageGalleryField\ImageGalleryField;
 use Chaseconey\ExternalImage\ExternalImage;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
@@ -42,22 +43,33 @@ class WebContent extends Resource
 
 
             Panel::make('Media', [
-                Images::make('Images', 'images')->enableExistingMedia(),
+
+                ImageGalleryField::make('Images')
+                    ->rules('mimes:jpeg,png,jpg,gif,webp', 'dimensions:min_width=150,min_height=150', 'max:10000')
+                    ->rulesMessages([
+                        'mimes'      => 'You must use a valid jpeg, png, jpg or gif image.',
+                        'max'        => 'The image must be less than 5MB.',
+                        'dimensions' => 'The image must be at least 150px wide and 150px tall.',
+                    ])
+                    ->help('Min size 150 x 150. Max filesize 5MB.')
+                    // Optional: add this method if you want to show the first image
+                    // of the gallery on the index page
+                    ->showOnIndex(),
+
+
                 ExternalImage::make('Image', 'src')
                     ->sortable()
-                    ->rules('nullable'),
-                ExternalImage::make('Vertical Image', 'vert_src')
-                    ->sortable()
-                    ->rules('nullable'),
+                    ->rules('nullable')
             ]),
+            /*
             Panel::make('Details', [
                 Text::make('Class', 'class'),
-/*
+
                 Repeater::make('Class', 'class')
                     ->repeatables([
                         ClassItem::make()
                     ]),
-*/
+
 
                 Text::make('Description', 'description')
                     ->sortable()
@@ -79,19 +91,8 @@ class WebContent extends Resource
                 Text::make('Data', 'data')
                     ->sortable()
                     ->rules('nullable'),
-                Select::make('Side')->default('xy')->options([
-                    'top' => 'Top',
-                    'bottom' => 'Bottom',
-                    'left' => 'Left',
-                    'right' => 'Right',
-                    'x' => 'X',
-                    'y' => 'Y',
-                    'xy' => 'XY'
-                ]),
             ])->collapsedByDefault(),
-            Panel::make('Child Images', [
-                Images::make('Child Images', 'child_images')->enableExistingMedia()->rules('nullable'),
-            ])->collapsedByDefault(),
+            */
 
         ];
     }

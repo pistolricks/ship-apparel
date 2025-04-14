@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd58378e30c8897c365fd78f95471b6b",
+    "content-hash": "d3b8ba8569e0b67d9fda615123e45fca",
     "packages": [
         {
             "name": "amphp/amp",
@@ -862,6 +862,63 @@
             "time": "2020-08-26T16:13:47+00:00"
         },
         {
+            "name": "ardenthq/nova-image-gallery-field",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ArdentHQ/nova-image-gallery-field.git",
+                "reference": "7ff33d65264bd22b8b4bc3cf0e16cbe2f44ca87e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ArdentHQ/nova-image-gallery-field/zipball/7ff33d65264bd22b8b4bc3cf0e16cbe2f44ca87e",
+                "reference": "7ff33d65264bd22b8b4bc3cf0e16cbe2f44ca87e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^8.0|^9.0|^10.0|^11.0",
+                "laravel/nova": "^4.22",
+                "php": "^8.2",
+                "spatie/laravel-medialibrary": "^10.5|^11.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.11",
+                "orchestra/testbench": "^7.9|^8.0|^9.0",
+                "pestphp/pest": "^1.22|^2.0",
+                "phpstan/phpstan": "^1.8",
+                "rector/rector": "^0.14|^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ardenthq\\ImageGalleryField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ardenthq\\ImageGalleryField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alfonso",
+                    "email": "alfonso@ardenthq.com"
+                }
+            ],
+            "description": "Field for Nova that allows you to upload multiple images and sort them",
+            "support": {
+                "issues": "https://github.com/ArdentHQ/nova-image-gallery-field/issues",
+                "source": "https://github.com/ArdentHQ/nova-image-gallery-field/tree/2.3.0"
+            },
+            "time": "2025-03-25T10:02:08+00:00"
+        },
+        {
             "name": "aws/aws-crt-php",
             "version": "v1.2.7",
             "source": {
@@ -917,16 +974,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.342.26",
+            "version": "3.342.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "99f6f8521117534990e608e040b083015465c49c"
+                "reference": "4c18299000c34ab4903100fe68721d6f26c7cdf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/99f6f8521117534990e608e040b083015465c49c",
-                "reference": "99f6f8521117534990e608e040b083015465c49c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4c18299000c34ab4903100fe68721d6f26c7cdf2",
+                "reference": "4c18299000c34ab4903100fe68721d6f26c7cdf2",
                 "shasum": ""
             },
             "require": {
@@ -1008,9 +1065,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.26"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.27"
             },
-            "time": "2025-04-11T18:10:41+00:00"
+            "time": "2025-04-14T18:08:09+00:00"
         },
         {
             "name": "azjezz/psl",
@@ -1379,6 +1436,42 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "cdn/image-importer",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/ImageImporter",
+                "reference": "59089bf478e0ddd336cea5472ee56d44d24be8ec"
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cdn\\ImageImporter\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cdn\\ImageImporter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "chaseconey/nova-external-image",
@@ -15053,6 +15146,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "cdn/image-importer": 20,
         "sanmar/inventory": 20
     },
     "prefer-stable": true,

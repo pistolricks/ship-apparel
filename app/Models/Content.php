@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
+
 class Content extends Model implements HasMedia
 {
     use InteractsWithMedia;
@@ -21,11 +22,8 @@ class Content extends Model implements HasMedia
         'description',
         'information',
         'src',
-        'vert_src',
         'cta',
         'value',
-        'data',
-        'side',
     ];
 
     public function sections(): BelongsToMany
@@ -48,16 +46,9 @@ class Content extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this
-            ->addMediaCollection('images')
-            ->withResponsiveImages();
+            ->addMediaCollection('images')->useDisk('s3');
 
-        $this
-            ->addMediaCollection('vertical_images')
-            ->withResponsiveImages();
 
-        $this
-            ->addMediaCollection('child_images')
-            ->withResponsiveImages();
 
     }
 }

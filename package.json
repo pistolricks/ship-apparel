@@ -5,7 +5,9 @@
         "dev": "vite",
         "build": "vite build",
         "build-inventory": "cd nova-components/Inventory && npm run dev",
-        "build-inventory-prod": "cd nova-components/Inventory && npm run prod"
+        "build-inventory-prod": "cd nova-components/Inventory && npm run prod",
+        "build-image-importer": "cd nova-components/ImageImporter && npm run dev",
+        "build-image-importer-prod": "cd nova-components/ImageImporter && npm run prod"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",

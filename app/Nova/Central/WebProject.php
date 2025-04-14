@@ -11,7 +11,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Panel;
 
-class Project extends Resource
+class WebProject extends Resource
 {
     public static $model = \App\Models\Project::class;
 
