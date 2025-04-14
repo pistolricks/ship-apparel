@@ -10,10 +10,13 @@ import {
     CarouselNext,
     CarouselPrevious
 } from "~/components/ui/carousel"
+import {MenuItemType} from "~/lib/types";
 
-export function CarouselAuto() {
+export function CarouselAuto(props: { slides: MenuItemType[] }) {
+
+    const slides = () => props.slides ?? Array.from({ length: 5 });
+
     const plugin = Autoplay({ delay: 4000, stopOnInteraction: true })
-
     return (
         <Carousel
             plugins={[plugin]}
@@ -22,7 +25,7 @@ export function CarouselAuto() {
             onMouseLeave={() => plugin.play(false)}
         >
             <CarouselContent>
-                <Index each={Array.from({ length: 5 })}>
+                <Index<MenuItemType[]> each={slides()}>
                     {(_, index) => (
                         <CarouselItem>
                                 <div class="flex h-[540px] min-w-full items-center justify-center border border-gray-400">

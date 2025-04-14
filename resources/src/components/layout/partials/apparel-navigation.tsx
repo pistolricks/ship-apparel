@@ -1,4 +1,4 @@
-import {Component, createSelector, createSignal, For, Show} from "solid-js"
+import {Component, createSelector, createSignal, For, Match, Show, Switch} from "solid-js"
 
 import type {Orientation} from "@kobalte/core/navigation-menu"
 import {MenuItemType} from "~/lib/types";
@@ -11,12 +11,14 @@ import {CarouselAuto} from "~/components/ui/carousel/carousel-auto";
 
 type PROPS = {
     menu: MenuItemType[]
+    slides: MenuItemType[]
     orientation?: Orientation;
 }
 
 const ApparelNavigation: Component<PROPS> = props => {
 
     const menu = () => props.menu;
+    const slides = () => props.slides;
 
 
     const [getTitle, setTitle] = createSignal<string>("")
@@ -59,24 +61,23 @@ const ApparelNavigation: Component<PROPS> = props => {
                     <For<MenuItemType[]> each={menu()?.[0]?.sub}>
                         {(item) => (
                             <TabsContent value={item.title} class="">
-                                <Show<boolean>
-                                    fallback={
-                                        <>
-                                            <div class="w-[75dvw] md:w-[85dvw] lg:w-[90dvw] animate-in fade-in duration-300">
-                                                <CarouselAuto/>
+                                <Switch>
+                                    <Match<boolean> when={getTitle() !== item.title}>
+                                        <div class={getTitle() !== item.title ? "animate-in fade-in duration-300 delay-300 w-[75dvw] md:w-[85dvw] lg:w-[90dvw]" : "w-[75dvw] md:w-[85dvw] lg:w-[90dvw]"}>
+                                            <CarouselAuto slides={slides()} />
+                                        </div>
+                                    </Match>
+                                    <Match<boolean> when={isSelected(item.title)}>
+                                        <div class="p-5">
+                                            <div class="w-full h-12">
+                                                <A href={item.href}
+                                                   class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
                                             </div>
+                                            <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
+                                        </div>
+                                    </Match>
+                                </Switch>
 
-                                        </>
-                                    }
-                                    when={isSelected(item.title)}>
-                                    <div class="p-5">
-                                    <div class="w-full h-12">
-                                        <A href={item.href}
-                                           class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
-                                    </div>
-                                        <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
-                                    </div>
-                                </Show>
                             </TabsContent>
                         )}
                     </For>
