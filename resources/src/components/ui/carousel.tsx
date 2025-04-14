@@ -155,7 +155,7 @@ const CarouselContent: Component<ComponentProps<"div">> = (props) => {
   return (
     <div ref={carouselRef} class="overflow-hidden">
       <div
-        class={cn("flex", orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", local.class)}
+        class={cn("flex", orientation === "horizontal" ? "" : "flex-col", local.class)}
         {...others}
       />
     </div>
@@ -172,7 +172,7 @@ const CarouselItem: Component<ComponentProps<"div">> = (props) => {
       aria-roledescription="slide"
       class={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "" : "",
         local.class
       )}
       {...others}

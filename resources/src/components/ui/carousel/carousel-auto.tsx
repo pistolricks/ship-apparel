@@ -12,12 +12,12 @@ import {
 } from "~/components/ui/carousel"
 
 export function CarouselAuto() {
-    const plugin = Autoplay({ delay: 2000, stopOnInteraction: true })
+    const plugin = Autoplay({ delay: 4000, stopOnInteraction: true })
 
     return (
         <Carousel
             plugins={[plugin]}
-            class="w-full max-w-xs"
+            class="w-full h-full p-0"
             onMouseEnter={plugin.stop}
             onMouseLeave={() => plugin.play(false)}
         >
@@ -25,19 +25,14 @@ export function CarouselAuto() {
                 <Index each={Array.from({ length: 5 })}>
                     {(_, index) => (
                         <CarouselItem>
-                            <div class="p-1">
-                                <Card>
-                                    <CardContent class="flex aspect-square items-center justify-center p-6">
+                                <div class="flex h-[540px] min-w-full items-center justify-center border border-gray-400">
                                         <span class="text-4xl font-semibold">{index + 1}</span>
-                                    </CardContent>
-                                </Card>
-                            </div>
+                                </div>
                         </CarouselItem>
                     )}
                 </Index>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+
         </Carousel>
     )
 }

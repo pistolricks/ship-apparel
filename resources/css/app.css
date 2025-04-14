@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @source "../views";
 @plugin "tailwind-scrollbar-hide";
-
+@plugin "tailwindcss-animate"
 :root {
 
     --color-bgBase: hsl(39deg 85% 95%);

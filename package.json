@@ -38,6 +38,7 @@
         "@types/geojson": "7946.0.16",
         "class-variance-authority": "^0.7.1",
         "cloudflare": "^4.1.0",
+        "embla-carousel-autoplay": "^8.6.0",
         "embla-carousel-solid": "^8.5.2",
         "fabric": "^6.6.1",
         "ol": "^10.4.0",

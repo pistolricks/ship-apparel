@@ -6,6 +6,7 @@ import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-righ
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A} from "@solidjs/router";
+import {CarouselAuto} from "~/components/ui/carousel/carousel-auto";
 
 
 type PROPS = {
@@ -20,9 +21,10 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     const [getTitle, setTitle] = createSignal<string>("")
 
-    const handleSelect = (data: string, event: Event) => {
-        console.log("Data:", data, "Event:", event);
-        setTitle(data)
+    const handleSelect = (data: string) => {
+        console.log("Data:", data);
+        getTitle() === data ? setTitle("") : setTitle(data)
+
     };
 
     const handleDeselect = (data: string, event: Event) => {
@@ -45,7 +47,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
 
                             <TabsTrigger as={"button"} type="button"
-                                         onClick={(event) => isSelected(item.title) ? handleDeselect("", event) : handleSelect(item.title, event)}
+                                         onClick={() => handleSelect(item.title)}
                                          class={'w-40 font-medium tracking-wide'} value={item.title}>
                                 {item.title}
                             </TabsTrigger>
@@ -53,25 +55,29 @@ const ApparelNavigation: Component<PROPS> = props => {
                     </For>
                 </TabsList>
 
-                <Grid cols={3} class="p-4">
+                <Grid cols={3} class="relative h-[540px] overflow-x-hidden">
                     <For<MenuItemType[]> each={menu()?.[0]?.sub}>
                         {(item) => (
-                                <TabsContent value={item.title} class="h-[530px] p-4">
-                                    <Show<boolean>
-                                        fallback={
-                                        <div class="w-[65dvw]">
+                            <TabsContent value={item.title} class="">
+                                <Show<boolean>
+                                    fallback={
+                                        <>
+                                            <div class="w-[75dvw] md:w-[85dvw] lg:w-[90dvw] animate-in fade-in duration-300">
+                                                <CarouselAuto/>
+                                            </div>
 
-
-                                        </div>
-                                        }
-                                        when={isSelected(item.title)}>
+                                        </>
+                                    }
+                                    when={isSelected(item.title)}>
+                                    <div class="p-5">
                                     <div class="w-full h-12">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
                                     </div>
-                                    <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
-                                    </Show>
-                                </TabsContent>
+                                        <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
+                                    </div>
+                                </Show>
+                            </TabsContent>
                         )}
                     </For>
                 </Grid>
