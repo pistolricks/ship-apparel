@@ -46,7 +46,7 @@ class Content extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this
-            ->addMediaCollection('images')->useDisk('r2');
+            ->addMediaCollection('images');
 
 
 
