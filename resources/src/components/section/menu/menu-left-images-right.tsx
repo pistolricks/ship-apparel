@@ -20,13 +20,10 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
     return (
         <div class={''}>
             <div>
-                <div class={'flex justify-start items-start w-screen max-w-[300px] sm:max-w-sm md:max-w-md'}>
+                <div class={'flex justify-start items-start w-[65dvw] space-x-4'}>
                     <ul role="list" aria-labelledby={title()}
-                        class="flex flex-col space-y-4 md:w-full">
-                        <li class="flow-root">
-                            <A href={href()}
-                               class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{title()}</A>
-                        </li>
+                        class="flex flex-col space-y-4 w-full">
+
                         <For<MenuItemType[]> each={list()}>
                             {(item, index) => (
                                 <Show<boolean> when={index() < 12}>
@@ -39,7 +36,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                         </For>
                     </ul>
                     <ul role="list" aria-labelledby={title()}
-                        class="flex flex-col space-y-4 md:w-full">
+                        class="flex flex-col space-y-4 w-full">
                         <For<MenuItemType[]>  each={list()}>
                             {(item, index) => (
                                 <Show<boolean> when={index() > 11 && index() < 25}>
@@ -52,7 +49,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                         </For>
                     </ul>
                     <ul role="list" aria-labelledby={title()}
-                        class="flex flex-col space-y-4 md:w-full">
+                        class="flex flex-col space-y-4 w-full">
                         <For<MenuItemType[]>  each={list()}>
                             {(item, index) => (
                                 <Show<boolean> when={index() > 24}>

@@ -19,7 +19,8 @@ const TabsList = <T extends ValidComponent = "div">(
     return (
         <TabsPrimitive.List
             class={cn(
-                style.tabs__list,
+                "group/menu flex w-max flex-1 list-none items-center justify-center data-[orientation=vertical]:flex-col [&>li]:w-full",
+                // style.tabs__list,
                 local.class
             )}
             {...others}
@@ -39,7 +40,7 @@ const TabsTrigger = <T extends ValidComponent = "button">(
         <TabsPrimitive.Trigger
             class={cn(
                 style.tabs__trigger,
-                "sm:w-[200px] capitalize sm:inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 border-b border-gray-200 hover:border-gray-400 lg:border-none focus:border-gray-100 focus-visible:outline-none justify-self-center whitespace-nowrap   hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700  disabled:cursor-not-allowed disabled:border-amber-300 disabled:bg-amber-100 disabled:text-amber-400 disabled:shadow-none",
+                "group/trigger inline-flex h-9 w-full items-center justify-start whitespace-nowrap   bg-gray-100 px-4 py-2 text-xs transition-colors hover:bg-bgBase/50 hover:text-content focus:bg-bgBase/50 focus:text-content focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-secondary/50 data-[expanded]:bg-bgBase",
                 local.class
             )}
             {...others}

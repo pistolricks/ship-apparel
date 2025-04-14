@@ -49,7 +49,7 @@ const ProductView: Component<{
         return <Format.Number value={Number(product()?.msrp)} style="currency" currency="USD"/>
     }
 
-    const images = () => [product()?.front_model_image_url, product()?.back_model_image_url, product()?.front_flat_image_url, product()?.back_flat_image_url].filter((image): image is string => !!image)
+    const images = () => [product()?.front_model_image_url, product()?.back_model_image, product()?.front_flat_image, product()?.back_flat_image].filter((image): image is string => !!image)
 
 
     const details = () => [`Brand: ${product()?.mill}`, `Style: ${product()?.style}`, `Status: ${product()?.product_status}`, product()?.available_sizes, `GTIN: ${product()?.gtin}`].filter((detail): detail is string => detail !== undefined)

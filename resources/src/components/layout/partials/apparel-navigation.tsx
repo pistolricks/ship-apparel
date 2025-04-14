@@ -1,14 +1,11 @@
-import {Component, createSignal, For} from "solid-js"
+import {Component, createSelector, createSignal, For, Show} from "solid-js"
 
 import type {Orientation} from "@kobalte/core/navigation-menu"
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuTrigger
-} from "~/components/ui/navigation-menu"
 import {MenuItemType} from "~/lib/types";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
+import {Grid} from "~/components/ui/grid";
+import {A} from "@solidjs/router";
 
 
 type PROPS = {
@@ -20,41 +17,68 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     const menu = () => props.menu;
 
-    const oz = () => props.orientation ?? "horizontal"
 
-    const [orientation, setOrientation] = createSignal<Orientation>(oz())
+    const [getTitle, setTitle] = createSignal<string>("")
+
+    const handleSelect = (data: string, event: Event) => {
+        console.log("Data:", data, "Event:", event);
+        setTitle(data)
+    };
+
+    const handleDeselect = (data: string, event: Event) => {
+        setTitle(data)
+    }
+
+    const isSelected = createSelector(getTitle)
+
 
     return (
 
-            <div class="relative h-[540px] flex flex-col items-left space-y-4">
+        <div class="relative h-[540px] w-full  items-left space-y-4">
 
-                <NavigationMenu class={'max-h-[540px] shadow'} orientation={orientation()}>
+            <Tabs class={'max-h-[540px] flex justify-start w-full shadow'} orientation={"horizontal"}>
 
-                    <img
-                        src={menu()?.[0]?.src}
-                        class={'absolute top-0 object-cover right-0 object-top align-right backdrop-opacity-25  w-full -z-10 h-[540px]'}
-                        alt=""
-                    />
+
+                <TabsList class="flex flex-col items-center text-left">
                     <For<MenuItemType[]> each={menu()?.[0]?.sub}>
                         {(item) => (
-                            <NavigationMenuItem>
 
-                                <NavigationMenuTrigger class={'w-40 font-medium tracking-wide'}>
-                                    {item.title}
-                                </NavigationMenuTrigger>
 
-                                <NavigationMenuContent class="h-[530px]">
-
-                                    <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
-
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
+                            <TabsTrigger as={"button"} type="button"
+                                         onClick={(event) => isSelected(item.title) ? handleDeselect("", event) : handleSelect(item.title, event)}
+                                         class={'w-40 font-medium tracking-wide'} value={item.title}>
+                                {item.title}
+                            </TabsTrigger>
                         )}
                     </For>
+                </TabsList>
 
-                </NavigationMenu>
+                <Grid cols={3} class="p-4">
+                    <For<MenuItemType[]> each={menu()?.[0]?.sub}>
+                        {(item) => (
+                                <TabsContent value={item.title} class="h-[530px] p-4">
+                                    <Show<boolean>
+                                        fallback={
+                                        <div class="w-[65dvw]">
 
-            </div>
+
+                                        </div>
+                                        }
+                                        when={isSelected(item.title)}>
+                                    <div class="w-full h-12">
+                                        <A href={item.href}
+                                           class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
+                                    </div>
+                                    <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
+                                    </Show>
+                                </TabsContent>
+                        )}
+                    </For>
+                </Grid>
+
+            </Tabs>
+
+        </div>
 
     )
 }
