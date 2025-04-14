@@ -16,9 +16,7 @@ const Header: Component<{
 
     return (
         <>
-            <div class={'h-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 items-center flex font-light text-xs'}>
 
-            </div>
             <header class="h-16 sm:h-20">
                 <nav class={''} aria-label="Top">
                     <div class="bg-primary/10 backdrop-blur-md backdrop-filter h-16 sm:h-20">
