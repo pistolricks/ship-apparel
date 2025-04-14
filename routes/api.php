@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Central as Controllers;
 use App\Http\Controllers\Central\Api\Shop\ProductController;
+use App\Http\Controllers\Central\Api\Upload\ImageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,8 @@ Route::get('/shop/v1/products/category/{category}/{subCategory}', Controllers\Ap
 Route::get('/shop/v1/styles/{style}', Controllers\Api\Shop\StyleController::class)->name('api.styles.show');
 Route::get('/products/v1/images/import',[ProductController::class,"importImages"])->name('api.products.images.import');
 Route::get('/products/v1/images/bulk/delete',[ProductController::class,"bulkDelete"])->name('api.products.images.bulk.delete');
+
+Route::post('/images/v1/upload', [ImageController::class, "create"])->name('api.images.create');
 
 
 Route::get('/v1/styles', function () {

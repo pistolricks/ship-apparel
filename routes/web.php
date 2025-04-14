@@ -25,6 +25,9 @@ Route::view('/products/{category}/{subCategory}', 'app')->name('central.products
 // Route::view('/activate', 'app')->name('app');
 
 
+Route::view('/api/login', 'app')->name('central.api.login');
+Route::view('/api/register', 'app')->name('central.api.register');
+
 Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
 Route::post('/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
 

@@ -16,7 +16,10 @@ export function CarouselAuto(props: { slides: MenuItemType[] }) {
 
     const slides = () => props.slides ?? Array.from({ length: 5 });
 
-    const plugin = Autoplay({ delay: 4000, stopOnInteraction: true })
+    const plugin = Autoplay({  delay: 2000, stopOnInteraction: true })
+
+
+
     return (
         <Carousel
             plugins={[plugin]}
@@ -25,7 +28,9 @@ export function CarouselAuto(props: { slides: MenuItemType[] }) {
             onMouseLeave={() => plugin.play(false)}
         >
             <CarouselContent>
+
                 <Index<MenuItemType[]> each={slides()}>
+
                     {(item, index) => (
                         <CarouselItem class="overflow-y-hidden">
                             <Show<boolean>

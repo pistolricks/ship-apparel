@@ -1,16 +1,16 @@
 import {Component, lazy} from "solid-js";
 import {RouteSectionProps} from "@solidjs/router";
 import {registerUserHandler} from "~/lib/users";
+import {FormLayout} from "~/components/form/form-layout";
+import {RegisterUserForm} from "~/components/module/users/register-user-form";
 
-const RegisterUserForm = lazy(() => import('~/components/module/users/register-user-form'));
-const FormLayout = lazy(() => import("~/components/form/form-layout"));
 
 type PROPS = {}
 
 const Register: Component<RouteSectionProps> = props => {
 
     return (
-        <FormLayout action={registerUserHandler} title={'Register'}>
+        <FormLayout hideLogo action={registerUserHandler} title={'Register'}>
             <RegisterUserForm/>
         </FormLayout>
     );

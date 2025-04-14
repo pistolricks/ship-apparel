@@ -26,9 +26,9 @@ class ImageUploadAction
     public function execute(string $imageUrl, string $id): void
     {
 
-        $url = config('tenancy.image_api.url');
+        $url = config('services.image_api.url');
 
-        $authorization = "Bearer " . config('tenancy.image_api.token');
+        $authorization = "Bearer " . config('services.image_api.token');
 
         $postData = [
             'url' => $imageUrl,

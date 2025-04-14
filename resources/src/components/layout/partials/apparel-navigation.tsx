@@ -62,8 +62,8 @@ const ApparelNavigation: Component<PROPS> = props => {
                         {(item) => (
                             <TabsContent value={item.title} class="">
                                 <Switch>
-                                    <Match<boolean> when={getTitle() !== item.title}>
-                                        <div class={getTitle() !== item.title ? "animate-in fade-in duration-300 delay-300 w-[75dvw] md:w-[85dvw] lg:w-[90dvw]" : "w-[75dvw] md:w-[85dvw] lg:w-[90dvw]"}>
+                                    <Match<boolean> when={getTitle() !== item.title} cl>
+                                        <div class={ "w-[75dvw] md:w-[85dvw] lg:w-[90dvw]" }>
                                             <CarouselAuto slides={slides()} />
                                         </div>
                                     </Match>
@@ -71,7 +71,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                         <div class="p-5">
                                             <div class="w-full h-12">
                                                 <A href={item.href}
-                                                   class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
+                                                   class="animate animate-out fade-out-75 -m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
                                             </div>
                                             <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
                                         </div>

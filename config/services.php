@@ -42,10 +42,11 @@ return [
         'site' => env('PLOI_SITE'),
     ],
     'image_api' => [
-        'email' => env('VITE_IMAGE_EMAIL'),
-        'account_id' => env('VITE_IMAGE_ACCOUNT_ID'),
-        'token' => env('VITE_IMAGE_TOKEN'),
-        'url' => env('VITE_IMAGE_URL'),
+        'email' => env('VITE_CF_IMAGE_EMAIL'),
+        'account_id' => env('VITE_CF_IMAGE_ACCOUNT_ID'),
+        'token' => env('VITE_CF_IMAGE_TOKEN'),
+        'url' => env('VITE_CF_IMAGE_URL'),
+        'path' => env('VITE_CF_IMAGE_PATH'),
     ],
 
 ];

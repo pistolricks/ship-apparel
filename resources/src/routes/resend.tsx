@@ -4,7 +4,7 @@ import {useLayoutContext} from "~/context/layout-provider";
 
 const ResendActivateEmailForm = lazy(() => import( "~/components/module/users/resend-activate-email-form"));
 const LoginUserForm = lazy(() => import('~/components/module/users/login-user-form'));
-const FormLayout = lazy(() => import("~/components/form/form-layout"));
+import {FormLayout} from "~/components/form/form-layout";
 
 
 const Resend: Component<RouteSectionProps> = props => {
@@ -21,10 +21,10 @@ const Resend: Component<RouteSectionProps> = props => {
 
     return (
         <FormLayout>
-            <Show
+            <Show<boolean>
                 fallback={<LoginUserForm/>}
                 when={!currentUser?.name}>
-                <Show when={!currentUser?.activated}>
+                <Show<boolean> when={!currentUser?.activated}>
                     <ResendActivateEmailForm/>
                 </Show>
             </Show>

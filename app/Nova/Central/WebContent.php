@@ -2,6 +2,8 @@
 
 namespace App\Nova\Central;
 
+use App\Actions\images\ImageUploadAction;
+use App\Nova\Actions\ImageUpload;
 use App\Nova\Repeater\ClassItem;
 use App\Nova\Resource;
 use Chaseconey\ExternalImage\ExternalImage;
@@ -11,6 +13,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Repeater;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 
 class WebContent extends Resource
@@ -22,6 +25,7 @@ class WebContent extends Resource
     public static $search = [
         'id', 'name'
     ];
+
 
     public function fields(Request $request): array
     {
@@ -107,8 +111,12 @@ class WebContent extends Resource
         return [];
     }
 
-    public function actions(Request $request): array
+    public function actions(NovaRequest $request): array
     {
-        return [];
+
+
+        return [
+             \App\Nova\Actions\ImageUpload::make()->standalone(),
+        ];
     }
 }
