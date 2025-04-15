@@ -16,7 +16,7 @@ use App\Nova\Central\StyleCollection;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
 use App\Nova\Central\WebContent;
-use App\Nova\Central\WebMediaSection;
+use App\Nova\Central\WebSection;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
@@ -132,7 +132,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 SubscriptionCancelation::class,
                 WebProject::class,
                 WebContent::class,
-                WebMediaSection::class,
+                WebSection::class,
                 WebPage::class
             ]);
         }

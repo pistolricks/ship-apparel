@@ -13,7 +13,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Panel;
 
-class WebMediaSection extends Resource
+class WebSection extends Resource
 {
     public static $model = \App\Models\Section::class;
 
