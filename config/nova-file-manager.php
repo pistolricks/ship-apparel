@@ -13,7 +13,7 @@ return [
     |
     | default: public
     */
-    'default_disk' => env('NOVA_FILE_MANAGER_DISK', 'public'),
+    'default_disk' => env('NOVA_FILE_MANAGER_DISK', 'assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,6 +28,7 @@ return [
     |
     */
     'available_disks' => [
+        'assets',
         'public',
         // 's3',
         // 'ftp',
@@ -157,7 +158,7 @@ return [
     |
     */
     'tour' => [
-        'enabled' => (bool) env('NOVA_FILE_MANAGER_TOUR_ENABLED', true),
+        'enabled' => (bool) env('NOVA_FILE_MANAGER_TOUR_ENABLED', false),
     ],
 
     /*
@@ -180,7 +181,7 @@ return [
     |
     */
 
-    'path' => '/nova-file-manager',
+    'path' => '/file-manager',
 
     /*
     |--------------------------------------------------------------------------

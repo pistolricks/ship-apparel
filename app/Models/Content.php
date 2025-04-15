@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Oneduo\NovaFileManager\Casts\AssetCollection;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -24,6 +25,7 @@ class Content extends Model implements HasMedia
         'src',
         'cta',
         'value',
+        'data'
     ];
 
     public function sections(): BelongsToMany
@@ -37,7 +39,6 @@ class Content extends Model implements HasMedia
             'href' => 'json',
             'description' => 'json',
             'information' => 'json',
-            'data' => 'json',
             'class' => 'json',
         ];
     }

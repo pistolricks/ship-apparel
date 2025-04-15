@@ -6,6 +6,7 @@ use App\Nova\Resource;
 use Ardenthq\ImageGalleryField\ImageGalleryField;
 use Chaseconey\ExternalImage\ExternalImage;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -32,8 +33,7 @@ class WebContent extends Resource
             Text::make('Name', 'name')
                 ->sortable()
                 ->rules('required'),
-
-
+            FileManager::make(__('Files'), 'data'),
             Panel::make('Media', [
 
                 ImageGalleryField::make('Images')
@@ -47,13 +47,12 @@ class WebContent extends Resource
                     // of the gallery on the index page
                     ->showOnIndex(),
 
-
                 ExternalImage::make('Image', 'src')
                     ->sortable()
                     ->rules('nullable')
             ]),
 
-            FileManager::make(__('File'), 'file'),
+
 
             /*
             Panel::make('Details', [

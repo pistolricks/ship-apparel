@@ -102,6 +102,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new Main,
+
         ];
     }
 

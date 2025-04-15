@@ -43,6 +43,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'assets' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/assets'),
+            'url' => env('APP_URL').'/storage/assets',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         'r2' => [
             'driver' => 's3',
             'key' => env('CLOUDFLARE_R2_ACCESS_KEY_ID'),
