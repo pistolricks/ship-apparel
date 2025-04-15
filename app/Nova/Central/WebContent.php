@@ -47,7 +47,7 @@ class WebContent extends Resource
                 ImageGalleryField::make('Images')
                     ->rules('mimes:jpeg,png,jpg,gif,webp,pdf,ico,svg', 'max:10000')
                     ->rulesMessages([
-                        'mimes'      => 'You must use a valid jpeg, png, jpg or gif image.',
+                        'mimes'      => 'You must use a valid jpeg, png, jpg or gif, webp, pdf, ico, svg.',
                         'max'        => 'The image must be less than 10MB.',
                     ])
                     ->help('Min size 150 x 150. Max filesize 5MB.')
