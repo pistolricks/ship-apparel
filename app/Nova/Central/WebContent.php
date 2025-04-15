@@ -45,7 +45,7 @@ class WebContent extends Resource
             Panel::make('Media', [
 
                 ImageGalleryField::make('Images')
-                    ->rules('mimes:jpeg,png,jpg,gif,webp', 'max:10000')
+                    ->rules('mimes:jpeg,png,jpg,gif,webp,pdf,ico', 'max:10000')
                     ->rulesMessages([
                         'mimes'      => 'You must use a valid jpeg, png, jpg or gif image.',
                         'max'        => 'The image must be less than 10MB.',
