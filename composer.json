@@ -40,6 +40,7 @@
         "lorisleiva/laravel-actions": "^2.9",
         "maatwebsite/excel": "^3.1",
         "maatwebsite/laravel-nova-excel": "^1.3",
+        "oneduo/nova-file-manager": "^0.13.1",
         "oriondevelops/nova-greeter": "^0.0.3",
         "pdewit/nova-external-url": "^1.0",
         "psr/simple-cache": "^2.0",
@@ -70,7 +71,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/thanks": false
+        }
     },
     "extra": {
         "laravel": {

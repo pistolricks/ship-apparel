@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Oneduo\NovaFileManager\NovaFileManager;
 use SimonHamp\LaravelNovaCsvImport\LaravelNovaCsvImport;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -110,7 +111,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools(): array
     {
         return [
-           // new NovaImport,
+            NovaFileManager::make(),
             new LaravelNovaCsvImport,
 
         ];

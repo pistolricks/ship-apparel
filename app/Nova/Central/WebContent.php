@@ -2,20 +2,15 @@
 
 namespace App\Nova\Central;
 
-use App\Actions\images\ImageUploadAction;
-use App\Nova\Actions\ImageUpload;
-use App\Nova\Repeater\ClassItem;
 use App\Nova\Resource;
 use Ardenthq\ImageGalleryField\ImageGalleryField;
 use Chaseconey\ExternalImage\ExternalImage;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Repeater;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
+use Oneduo\NovaFileManager\FileManager;
 
 class WebContent extends Resource
 {
@@ -37,9 +32,6 @@ class WebContent extends Resource
             Text::make('Name', 'name')
                 ->sortable()
                 ->rules('required'),
-            Text::make('Title', 'title')
-                ->sortable()
-                ->rules('nullable'),
 
 
             Panel::make('Media', [
@@ -47,8 +39,8 @@ class WebContent extends Resource
                 ImageGalleryField::make('Images')
                     ->rules('mimes:jpeg,png,jpg,gif,webp,svg+xml', 'max:10000')
                     ->rulesMessages([
-                        'mimes'      => 'You must use a valid jpeg, png, jpg or gif, webp, svg.',
-                        'max'        => 'The image must be less than 10MB.',
+                        'mimes' => 'You must use a valid jpeg, png, jpg or gif, webp, svg.',
+                        'max' => 'The image must be less than 10MB.',
                     ])
                     ->help('Min size 150 x 150. Max filesize 5MB.')
                     // Optional: add this method if you want to show the first image
@@ -60,6 +52,9 @@ class WebContent extends Resource
                     ->sortable()
                     ->rules('nullable')
             ]),
+
+            FileManager::make(__('File'), 'file'),
+
             /*
             Panel::make('Details', [
                 Text::make('Class', 'class'),
@@ -116,7 +111,7 @@ class WebContent extends Resource
 
 
         return [
-             \App\Nova\Actions\ImageUpload::make()->standalone(),
+            \App\Nova\Actions\ImageUpload::make()->standalone(),
         ];
     }
 }
