@@ -44,7 +44,7 @@ return [
                     ['title' => 'tentree', 'href' => '/products/brands/tentree', 'src' => 'tentree_banner'],
                     ['title' => 'The North Face', 'href' => '/products/brands/the+north+face', 'src' => 'the_north_face_banner'],
                     ['title' => 'Tommy Bahama', 'href' => '/products/brands/tommy+bahama', 'src' => 'tommy_bahama_banner'],
-                    ['title' => 'TravisMathew', 'href' => '/products/brands/travis+mathew', 'src' => 'travis_mathew_banner'],
+                    ['title' => 'TravisMathew', 'href' => '/products/brands/travismathew', 'src' => 'travis_mathew_banner'],
                     ['title' => 'Volunteer Knitwear', 'href' => '/products/brands/volunteer+knitwear', 'src' => 'volunteer_knitwear_banner'],
                     ['title' => 'Wink', 'href' => '/products/brands/wink', 'src' => 'wink_banner'],
 
