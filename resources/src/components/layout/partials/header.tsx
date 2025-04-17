@@ -65,7 +65,7 @@ const Header: Component<{
             <div class={'w-full  bg-secondary/20 shadow-accent/70'}>
                 <div class="mx-auto flex max-w-7xl   h-[40px] items-center  justify-between px-6  lg:px-8" aria-label="Global">
 
-                    <Show<boolean>
+                    <Show
                         when={location.pathname.includes('products')}>
                         <Breadcrumbs path={location?.pathname}/>
                     </Show>

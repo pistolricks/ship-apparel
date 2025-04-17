@@ -26,7 +26,6 @@ const ApparelNavigation: Component<PROPS> = props => {
     const handleSelect = (data: string) => {
         console.log("Data:", data);
         getTitle() === data ? setTitle("") : setTitle(data)
-
     };
 
     const handleDeselect = (data: string, event: Event) => {
