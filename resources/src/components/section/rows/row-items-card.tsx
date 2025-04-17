@@ -27,11 +27,11 @@ const RowItemsCard: Component<PROPS> = props => {
                             <Grid class={'relative inset-x-0 top-full' + ' ' + className()} cols={menu()?.length as Cols}>
                                 <For each={menu()}>
                                     {(item) => (
-                                        <A href={item.href ?? "#"} class={`group relative rounded-md  ${item.class}`}>
+                                        <A href={item.href ?? "#"} class={`group relative`}>
                                             <img
                                                 src={item.src}
                                                 alt={item.description}
-                                                class={`h-full w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75 `}/>
+                                                class={`h-full w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75 ${item.class}`}/>
                                         </A>
                                     )}
                                 </For>

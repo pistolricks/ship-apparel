@@ -50,7 +50,8 @@ class WebContent extends Resource
                 */
                 ExternalImage::make('Image', 'src')
                     ->sortable()
-                    ->rules('nullable')
+                    ->rules('nullable'),
+                Text::make('Class', 'class'),
             ]),
 
             Panel::make('Action', [
@@ -68,15 +69,15 @@ class WebContent extends Resource
                     ->rules('nullable'),
             ])->collapsedByDefault(),
 
-            /*
-            Panel::make('Details', [
-                Text::make('Class', 'class'),
 
+            Panel::make('Details', [
+
+/*
                 Repeater::make('Class', 'class')
                     ->repeatables([
                         ClassItem::make()
                     ]),
-
+*/
 
                 Text::make('Description', 'description')
                     ->sortable()
@@ -86,7 +87,6 @@ class WebContent extends Resource
                     ->rules('nullable'),
             ])->collapsedByDefault(),
 
-            */
 
         ];
     }
