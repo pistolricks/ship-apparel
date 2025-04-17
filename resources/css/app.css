@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @source "../views";
 @plugin "tailwind-scrollbar-hide";
 
@@ -62,12 +63,14 @@
     }
 
     /* If the user switchs dark mode */
+
     :root[data-theme="dark"] {
         --color-bgBase: 240deg 27% 18%;
         --color-content: 210deg 14% 53%;
     }
 
     /* If the user switchs light mode */
+
     :root[data-theme="light"] {
         --color-bgBase: 39deg 85% 95%;
         --color-content: 0deg 0% 20%;
@@ -76,12 +79,8 @@
 }
 
 
-
-
 @theme inline {
     /* Primary Colors */
-
-
     --color-primary-100: var(--color-primary-100);
     --color-primary-200: var(--color-primary-200);
     --color-primary-300: var(--color-primary-300);
@@ -97,8 +96,8 @@
     --color-content: var(--color-content);
 
     --color-primary: var(--color-glacier-400); /* Deep Indigo */
-    --color-primary-light:  var(--color-glacier-100);
-    --color-primary-dark:  var(--color-glacier-700);
+    --color-primary-light: var(--color-glacier-100);
+    --color-primary-dark: var(--color-glacier-700);
 
     --color-secondary: var(--color-glacier-300);
     --color-accent: var(--color-coral);
@@ -154,11 +153,6 @@
     --color-card-foreground: var(--color-glacier-400);
 
 
-
-
-
-
-
     --color-corvu-text: var(--color-cerulean-blue-950);
     --color-corvu-bg: var(--color-white);
     --color-corvu-100: var(--color-cerulean-blue-50);
@@ -206,17 +200,114 @@
     --mint: hsla(153, 47%, 51%, 1);
     --steel-blue: hsla(204, 82%, 45%, 1);
 
+
+    --animate-expand: expand 250ms cubic-bezier(0.32, 0.72, 0, 0.75);
+    --animate-collapse: collapse 250ms cubic-bezier(0.32, 0.72, 0, 0.75);
+    --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+    --animate-in: enter 150ms ease;
+    --animate-out: exit 150ms ease;
+
+    @keyframes expand {
+        0% {
+            height: 0px;
+        }
+        100% {
+            height: var(--corvu-disclosure-content-height);
+        }
+    }
+
+    @keyframes collapse {
+        0% {
+            height: var(--corvu-disclosure-content-height);
+        }
+        100% {
+            height: 0px;
+        }
+    }
+
+    @keyframes caret-blink {
+        0%, 70%, 100% {
+            opacity: 0;
+        }
+        20%, 50% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes enter {
+        from {
+            opacity: var(--tw-enter-opacity, 1);
+            transform: translate3d(
+                var(--tw-enter-translate-x, 0),
+                var(--tw-enter-translate-y, 0),
+                0
+            ) scale3d(
+                var(--tw-enter-scale, 1),
+                var(--tw-enter-scale, 1),
+                var(--tw-enter-scale, 1)
+            )
+        }
+    }
+
+    @keyframes exit {
+        to {
+            opacity: var(--tw-exit-opacity, 1);
+            transform: translate3d(
+                var(--tw-exit-translate-x, 0),
+                var(--tw-exit-translate-y, 0),
+                0
+            ) scale3d(
+                var(--tw-exit-scale, 1),
+                var(--tw-exit-scale, 1),
+                var(--tw-exit-scale, 1)
+            )
+        }
+    }
+}
+
+@utility fade-in-* {
+    --tw-enter-opacity: --value(percentage, ratio);
+}
+@utility fade-out-* {
+    --tw-exit-opacity: --value(percentage, ratio);
+}
+
+@utility zoom-in-* {
+    --tw-enter-scale: --value(percentage, ratio);
+}
+@utility zoom-out-* {
+    --tw-exit-scale: --value(percentage, ratio);
+}
+
+@utility slide-in-from-top-* {
+    --tw-enter-translate-y: calc(--value(percentage) * -1);
+    --tw-enter-translate-y: calc(--value(ratio) * -100%);
+    --tw-enter-translate-y: calc(--value(integer) * var(--spacing) * -1);
+}
+@utility slide-in-from-bottom-* {
+    --tw-enter-translate-y: --value(percentage);
+    --tw-enter-translate-y: calc(--value(ratio) * 100%);
+    --tw-enter-translate-y: calc(--value(integer) * var(--spacing));
+}
+
+@utility slide-out-to-top-* {
+    --tw-exit-translate-y: calc(--value(percentage) * -1);
+    --tw-exit-translate-y: calc(--value(ratio) * -100%);
+    --tw-exit-translate-y: calc(--value(integer) * var(--spacing) * -1);
+}
+@utility slide-out-to-bottom-* {
+    --tw-exit-translate-y: --value(percentage);
+    --tw-exit-translate-y: calc(--value(ratio) * 100%);
+    --tw-exit-translate-y: calc(--value(integer) * var(--spacing));
 }
 
 
-
-
 .glass {
-    background: rgba( 255, 255, 255, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 9.5px );
-    -webkit-backdrop-filter: blur( 9.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 

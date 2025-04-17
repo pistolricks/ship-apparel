@@ -18,8 +18,11 @@ class HomeController extends Controller
 
 
         return response()->json([
-            "carousel" => $page?->sections->where('name', 'main_carousel')->first(),
-            'page' => $page,
+            "name" => "home",
+            "title" => $page->title,
+            "description" => $page->description,
+            "carousel" => $page?->sections->where('component', 'default'),
+            'sections' => $page->sections->where('component','!=', 'default'),
             "user" => $request->user(),
             "menu" => config('menu'),
         ]);

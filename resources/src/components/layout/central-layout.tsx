@@ -3,7 +3,6 @@ import Header from "~/components/layout/partials/header";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import ProfileMenu from "~/components/layout/partials/side/profile-menu";
 import MenuComponent from "~/components/layout/partials/menu-component";
-import CategoryFilters from "~/components/layout/partials/side/category-filters";
 import {useLocation} from "@solidjs/router";
 
 type PROPS = ParentProps & {
@@ -30,6 +29,7 @@ const CentralLayout: Component<PROPS> = props => {
                     >
                         {children()}
                     </main>
+
                     <Show when={location.pathname?.includes('products') && !location.pathname?.includes('view')}>
                         <></>
                         {/*

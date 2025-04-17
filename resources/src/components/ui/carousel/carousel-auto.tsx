@@ -10,11 +10,11 @@ import {
     CarouselNext,
     CarouselPrevious
 } from "~/components/ui/carousel"
-import {MenuItemType} from "~/lib/types";
+import {ContentItemType} from "~/lib/types";
 
-export function CarouselAuto(props: { slides: MenuItemType[] }) {
+export function CarouselAuto(props: { slides: ContentItemType[] }) {
 
-    const slides = () => props.slides ?? Array.from({ length: 5 });
+    const slides = () => props.slides as ContentItemType[] ?? Array.from({ length: 5 });
 
     const plugin = Autoplay({  delay: 2000, stopOnInteraction: true })
 
@@ -29,17 +29,17 @@ export function CarouselAuto(props: { slides: MenuItemType[] }) {
         >
             <CarouselContent>
 
-                <Index<MenuItemType[]> each={slides()}>
+                <Index each={slides()}>
 
                     {(item, index) => (
                         <CarouselItem class="overflow-y-hidden">
-                            <Show<boolean>
+                            <Show
                                 fallback={
                                     <div class="flex h-[540px] min-w-full items-center justify-center border border-gray-100">
                                         <span class="text-4xl font-semibold">{index + 1}</span>
                                     </div>
                                 }
-                                when={!!item}>
+                                when={slides()?.length > 0}>
                               <img class="h-[540px] w-full object-cover" src={"//sanmarsports.com/cdn/shop/files/SanMar-Sports-HP_Slide-D-Fanwear_2337x1569_761e3de2-50c3-43ce-b6ea-958f600debe9.jpg"} alt={item.name}/>
                             </Show>
 

@@ -1,7 +1,7 @@
 import {Component, createSelector, createSignal, For, Match, Show, Switch} from "solid-js"
 
 import type {Orientation} from "@kobalte/core/navigation-menu"
-import {MenuItemType} from "~/lib/types";
+import {ContentItemType, MenuItemType} from "~/lib/types";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
@@ -11,7 +11,7 @@ import {CarouselAuto} from "~/components/ui/carousel/carousel-auto";
 
 type PROPS = {
     menu: MenuItemType[]
-    slides: MenuItemType[]
+    slides: ContentItemType[]
     orientation?: Orientation;
 }
 

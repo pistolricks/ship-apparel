@@ -1,4 +1,4 @@
-import {Component, createEffect, For, lazy, ValidComponent} from "solid-js";
+import {Component, createEffect, createSignal, For, lazy, ValidComponent} from "solid-js";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
@@ -7,6 +7,8 @@ import RowItemsCard from "~/components/section/rows/row-items-card";
 import {CarouselCard} from "~/components/section/rows/carousel-card";
 import {Dynamic} from "solid-js/web";
 import {SectionItemType} from "~/lib/types";
+import Dialog from "@corvu/dialog";
+import BaseDialog from "~/components/ui/dialog/dialog";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -23,7 +25,6 @@ const Home: Component<PROPS> = props => {
     const res = createAsync(async () => fetchHome());
 
 
-
     createEffect(() => {
         console.log(res()?.menu?.[0]?.sub)
 
@@ -35,37 +36,40 @@ const Home: Component<PROPS> = props => {
         row_items_card: RowItemsCard
     }
 
+    const [getOpen, setOpen] = createSignal(true)
 
-    return (
-
-        <div class={'w-full flex flex-col space-y-4 mx-auto'}>
-
-            <ApparelNavigation menu={res()?.menu} slides={res()?.carousel} orientation={'vertical'}/>
 
 
 
-            <For each={res()?.page?.sections}>
-                {(item: SectionItemType) => (
-                    <>
-                        <Dynamic
-                            component={components[item.component] as ValidComponent}
-                            class={item.class}
-                            list={item?.contents}
-                            start={item.start}
-                            end={item?.end ?? res()?.page?.sections?.length}
-                        />
-                    </>
-                )}
-            </For>
+    return (
+        <>
+            <div class={'w-full flex flex-col space-y-4 mx-auto'}>
+                <BaseDialog/>
+                <ApparelNavigation menu={res()?.menu} slides={res()?.carousel?.contents} orientation={'vertical'}/>
 
 
-            <div class={'h-24'}>
+                <For each={res()?.sections}>
+                    {(item: SectionItemType) => (
+                        <>
+                            <Dynamic
+                                component={components[item.component] as ValidComponent}
+                                class={item.class}
+                                list={item?.contents}
+                                start={item.start}
+                                end={item?.end ?? res()?.page?.sections?.length}
+                            />
+                        </>
+                    )}
+                </For>
+
+
+                <div class={'h-24'}>
+
+                </div>
 
             </div>
 
-        </div>
-
-
+        </>
     )
 }
 

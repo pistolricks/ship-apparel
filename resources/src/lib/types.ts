@@ -51,6 +51,24 @@ export type SectionItemType = {
     contents: MenuItemType[];
 }
 
+export type ContentItemType = {
+    id: number;
+    name: string;
+    component: string;
+    title?: string;
+    href?: string;
+    class?: string;
+    description?: string;
+    information?: string;
+    src: string;
+    cta?: string;
+    value?: string;
+    data?: any;
+    created_at: string;
+    updated_at: string;
+    pivot: any;
+}
+
 export type AUTHENTICATION_TOKEN = {
     token: string;
     expiry: string;
