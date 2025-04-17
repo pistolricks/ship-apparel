@@ -3,25 +3,18 @@
 namespace App\Providers;
 
 
-use Anaseqal\NovaImport\NovaImport;
-use App\Models\Section;
 use App\Models\Tenant;
 use App\Nova\Central\Admin;
 use App\Nova\Central\Domain;
-use App\Nova\Central\Mill;
-
-use App\Nova\Central\Product;
-use App\Nova\Central\WebProject;
-use App\Nova\Central\StyleCollection;
 use App\Nova\Central\SubscriptionCancelation;
 use App\Nova\Central\Tenant as TenantResource;
 use App\Nova\Central\WebContent;
+use App\Nova\Central\WebPage;
+use App\Nova\Central\WebProject;
 use App\Nova\Central\WebSection;
 use App\Nova\Dashboards\Main;
 use App\Nova\Tenant\Post;
 use App\Nova\Tenant\User;
-
-use App\Nova\Central\WebPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
@@ -50,10 +43,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 $tenant->createAsStripeCustomer();
             });
         });
+        /*
         MenuSection::make('CSV Import')
             ->path('/csv-import')
             ->icon('upload');
-
+        */
         Nova::footer(function (Request $request) {
             return Blade::render('
                 <p class="mt-8 text-center text-xs text-80">
@@ -70,9 +64,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function routes(): void
     {
         Nova::routes()
-                ->withAuthenticationRoutes(['tenant', 'universal', 'nova'])
-                ->withPasswordResetRoutes(['tenant', 'universal', 'nova'])
-                ->register();
+            ->withAuthenticationRoutes(['tenant', 'universal', 'nova'])
+            ->withPasswordResetRoutes(['tenant', 'universal', 'nova'])
+            ->register();
     }
 
     /**
@@ -113,7 +107,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             NovaFileManager::make(),
-            new LaravelNovaCsvImport,
 
         ];
     }

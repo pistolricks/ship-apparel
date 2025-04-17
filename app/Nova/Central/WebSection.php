@@ -2,13 +2,11 @@
 
 namespace App\Nova\Central;
 
-use App\Nova\Repeater\ClassItem;
 use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Repeater;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Panel;
@@ -42,16 +40,17 @@ class WebSection extends Resource
 
 
             Panel::make('Details', [
-                Text::make('Title', 'title')
-                    ->sortable()
-                    ->rules('nullable'),
+                /*
+                  Text::make('Title', 'title')
+                      ->sortable()
+                      ->rules('nullable'),
 
-               /*
-                Repeater::make('Class', 'class')
-                    ->repeatables([
-                        ClassItem::make()
-                    ]),
-               */
+
+                  Repeater::make('Class', 'class')
+                      ->repeatables([
+                          ClassItem::make()
+                      ]),
+                 */
                 Text::make('Href', 'href')
                     ->sortable()
                     ->default('#')

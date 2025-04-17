@@ -27,9 +27,6 @@ class WebProject extends Resource
 
             ID::make()->sortable(),
 
-            Panel::make('Gallery', [
-                Images::make('Gallery', 'gallery')->enableExistingMedia(),
-            ])->collapsable(),
 
             Panel::make('General', [
                 Text::make('Name')
@@ -65,12 +62,12 @@ class WebProject extends Resource
 
 
             Panel::make('In Progress', [
-                Images::make('In Progress', 'in-progress')->rules('nullable'),
+
 
             ]),
 
             Panel::make('Completed', [
-                Images::make('Completed', 'completed')->rules('nullable'),
+
             ])->collapsedByDefault(),
 
 

@@ -44,8 +44,8 @@ const ApparelNavigation: Component<PROPS> = props => {
 
 
                 <TabsList class="flex flex-col items-center text-left">
-                    <For<MenuItemType[]> each={menu()?.[0]?.sub}>
-                        {(item) => (
+                    <For each={menu()?.[0]?.sub}>
+                        {(item: MenuItemType) => (
 
 
                             <TabsTrigger as={"button"} type="button"
@@ -58,16 +58,16 @@ const ApparelNavigation: Component<PROPS> = props => {
                 </TabsList>
 
                 <Grid cols={3} class="relative h-[540px] overflow-x-hidden">
-                    <For<MenuItemType[]> each={menu()?.[0]?.sub}>
-                        {(item) => (
+                    <For each={menu()?.[0]?.sub}>
+                        {(item: MenuItemType) => (
                             <TabsContent value={item.title} class="">
                                 <Switch>
-                                    <Match<boolean> when={getTitle() !== item.title} cl>
+                                    <Match when={getTitle() !== item.title}>
                                         <div class={ "w-[75dvw] md:w-[85dvw] lg:w-[90dvw]" }>
                                             <CarouselAuto slides={slides()} />
                                         </div>
                                     </Match>
-                                    <Match<boolean> when={isSelected(item.title)}>
+                                    <Match when={isSelected(item.title)}>
                                         <div class="p-5">
                                             <div class="w-full h-12">
                                                 <A href={item.href}

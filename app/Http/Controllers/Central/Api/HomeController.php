@@ -17,25 +17,11 @@ class HomeController extends Controller
         $page = Page::query()->where('name', 'home')->with('sections.contents')->first();
 
 
-        $page?->sections?->each(function($section) {
-           $section?->contents->each(function($content) {
-               $content->src = $content?->getMedia('images')[0]?->getUrl();
-               $mediaItems = $content?->getMedia('images');
-               $content->images = $mediaItems->map(function($m) {
-                 return $m->getUrl();
-               });
-           });
-        });
-
-
-
-
-
         return response()->json([
-            "menu" => config('menu'),
             "carousel" => $page?->sections->where('name', 'main_carousel')->first(),
             'page' => $page,
             "user" => $request->user(),
+            "menu" => config('menu'),
         ]);
     }
 }

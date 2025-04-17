@@ -9,7 +9,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
-class Mill extends Resource
+class WebCollection extends Resource
 {
     public static $model = \App\Models\Mill::class;
 
@@ -31,9 +31,6 @@ class Mill extends Resource
                 ->sortable()
                 ->rules('nullable'),
             Text::make('Data', 'data')->rules('nullable'),
-
-            Images::make('Logo', 'logo')->rules('nullable'),
-            Images::make('Banners', 'banners')->rules('nullable')->withResponsiveImages(),
 
 
             HasMany::make('Styles', 'styles', StyleCollection::class)->sortable(),

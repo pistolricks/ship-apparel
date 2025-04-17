@@ -33,7 +33,23 @@ export type MenuItemType = {
     children?: JSXElement
 }
 
-
+export type SectionItemType = {
+    id: number;
+    name: string;
+    component: "carousel_card" | "row_items_card";
+    title?: string;
+    href: string;
+    class?: string;
+    data?: any;
+    start?: number;
+    end?: number;
+    active: boolean;
+    status: "draft" | "published" | "archived";
+    created_at: string;
+    updated_at: string;
+    pivot?: any;
+    contents: MenuItemType[];
+}
 
 export type AUTHENTICATION_TOKEN = {
     token: string;

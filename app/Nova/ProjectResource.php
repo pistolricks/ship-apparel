@@ -25,9 +25,6 @@ class ProjectResource extends Resource
         return [
             ID::make()->sortable(),
 
-            Images::make('Gallery', 'gallery')->rules('nullable')->enableExistingMedia(),
-            Images::make('In Progress', 'in-progress')->rules('nullable')->enableExistingMedia(),
-            Images::make('Completed', 'completed')->rules('nullable')->enableExistingMedia(),
 
             Text::make('Name')
                 ->sortable()

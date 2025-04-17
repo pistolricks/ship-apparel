@@ -1,4 +1,4 @@
-import {Component, createEffect, lazy} from "solid-js";
+import {Component, createEffect, For, lazy, ValidComponent} from "solid-js";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
@@ -6,6 +6,7 @@ import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation
 import RowItemsCard from "~/components/section/rows/row-items-card";
 import {CarouselCard} from "~/components/section/rows/carousel-card";
 import {Dynamic} from "solid-js/web";
+import {SectionItemType} from "~/lib/types";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -39,15 +40,15 @@ const Home: Component<PROPS> = props => {
 
         <div class={'w-full flex flex-col space-y-4 mx-auto'}>
 
-            <ApparelNavigation menu={res()?.menu} carousel={res()?.carousel} orientation={'vertical'}/>
+            <ApparelNavigation menu={res()?.menu} slides={res()?.carousel} orientation={'vertical'}/>
 
 
 
             <For each={res()?.page?.sections}>
-                {(item) => (
+                {(item: SectionItemType) => (
                     <>
                         <Dynamic
-                            component={components[item.component]}
+                            component={components[item.component] as ValidComponent}
                             class={item.class}
                             list={item?.contents}
                             start={item.start}

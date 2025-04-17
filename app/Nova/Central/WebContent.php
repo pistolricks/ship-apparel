@@ -36,6 +36,7 @@ class WebContent extends Resource
             FileManager::make(__('Files'), 'data'),
             Panel::make('Media', [
 
+                /*
                 ImageGalleryField::make('Images')
                     ->rules('mimes:jpeg,png,jpg,gif,webp,svg+xml', 'max:10000')
                     ->rulesMessages([
@@ -46,13 +47,26 @@ class WebContent extends Resource
                     // Optional: add this method if you want to show the first image
                     // of the gallery on the index page
                     ->showOnIndex(),
-
+                */
                 ExternalImage::make('Image', 'src')
                     ->sortable()
                     ->rules('nullable')
             ]),
 
-
+            Panel::make('Action', [
+                Text::make('Href', 'href')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('CTA', 'cta')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('Value', 'value')
+                    ->sortable()
+                    ->rules('nullable'),
+                Text::make('Data', 'data')
+                    ->sortable()
+                    ->rules('nullable'),
+            ])->collapsedByDefault(),
 
             /*
             Panel::make('Details', [
@@ -71,20 +85,7 @@ class WebContent extends Resource
                     ->sortable()
                     ->rules('nullable'),
             ])->collapsedByDefault(),
-            Panel::make('Action', [
-                Text::make('Href', 'href')
-                    ->sortable()
-                    ->rules('nullable'),
-                Text::make('CTA', 'cta')
-                    ->sortable()
-                    ->rules('nullable'),
-                Text::make('Value', 'value')
-                    ->sortable()
-                    ->rules('nullable'),
-                Text::make('Data', 'data')
-                    ->sortable()
-                    ->rules('nullable'),
-            ])->collapsedByDefault(),
+
             */
 
         ];

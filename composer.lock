@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12dc8c5343f9d7a0a6269e74a9841c8f",
+    "content-hash": "e581f47a346e7c7524bcbb7b59d207ca",
     "packages": [
         {
             "name": "amphp/amp",
@@ -974,16 +974,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.342.27",
+            "version": "3.342.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "4c18299000c34ab4903100fe68721d6f26c7cdf2"
+                "reference": "16cec140483869b3d244a5995b55d5365465dc58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4c18299000c34ab4903100fe68721d6f26c7cdf2",
-                "reference": "4c18299000c34ab4903100fe68721d6f26c7cdf2",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/16cec140483869b3d244a5995b55d5365465dc58",
+                "reference": "16cec140483869b3d244a5995b55d5365465dc58",
                 "shasum": ""
             },
             "require": {
@@ -1065,9 +1065,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.27"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.28"
             },
-            "time": "2025-04-14T18:08:09+00:00"
+            "time": "2025-04-16T18:13:32+00:00"
         },
         {
             "name": "azjezz/psl",
@@ -1729,75 +1729,6 @@
             "time": "2024-04-12T12:12:48+00:00"
         },
         {
-            "name": "dedmytro/laravel-cloudflare-images",
-            "version": "0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DeDmytro/laravel-cloudflare-images.git",
-                "reference": "28b1722ab30877d15b94259ce05bb93cbe7dc99c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DeDmytro/laravel-cloudflare-images/zipball/28b1722ab30877d15b94259ce05bb93cbe7dc99c",
-                "reference": "28b1722ab30877d15b94259ce05bb93cbe7dc99c",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.2.1|^7.0",
-                "illuminate/support": "^7.0|^8.0|^9.0|^10.0|^11.0",
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0|^9.0",
-                "phpunit/phpunit": "^10.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "CloudflareImages": "DeDmytro\\CloudflareImages\\Facades\\CloudflareApi"
-                    },
-                    "providers": [
-                        "DeDmytro\\CloudflareImages\\CloudflareImagesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DeDmytro\\CloudflareImages\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hodun Dmytro",
-                    "email": "godundmytro@gmail.com"
-                }
-            ],
-            "description": "Cloudflare API client and filesystem for Laravel",
-            "keywords": [
-                "CloudFlare API",
-                "cloudflare",
-                "cloudflare images",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/DeDmytro/laravel-cloudflare-images/issues",
-                "source": "https://github.com/DeDmytro/laravel-cloudflare-images"
-            },
-            "funding": [
-                {
-                    "url": "",
-                    "type": "custom"
-                }
-            ],
-            "time": "2024-03-30T07:50:54+00:00"
-        },
-        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.3",
             "source": {
@@ -1871,188 +1802,6 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.3"
             },
             "time": "2024-07-08T12:26:09+00:00"
-        },
-        {
-            "name": "digital-creative/custom-relationship-field",
-            "version": "v1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dcasia/custom-relationship-field.git",
-                "reference": "a4759e28540f1915b27b2e529a5567edb332112e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dcasia/custom-relationship-field/zipball/a4759e28540f1915b27b2e529a5567edb332112e",
-                "reference": "a4759e28540f1915b27b2e529a5567edb332112e",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0",
-                "php": ">=8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "DigitalCreative\\CustomRelationshipField\\CustomRelationshipFieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DigitalCreative\\CustomRelationshipField\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rafael Milewski"
-                }
-            ],
-            "description": "Emulate HasMany relationship without having a real relationship set between resources",
-            "homepage": "https://github.com/dcasia/custom-relationship-field",
-            "keywords": [
-                "custom",
-                "has-many",
-                "laravel",
-                "nova",
-                "nova4",
-                "relationship"
-            ],
-            "support": {
-                "issues": "https://github.com/dcasia/custom-relationship-field/issues",
-                "source": "https://github.com/dcasia/custom-relationship-field/tree/v1.1.3"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/milewski",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-07-18T12:26:18+00:00"
-        },
-        {
-            "name": "digital-creative/nova-dashboard",
-            "version": "v1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dcasia/nova-dashboard.git",
-                "reference": "f87619a493d1167fcb7c30fb169ec6c41265f600"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dcasia/nova-dashboard/zipball/f87619a493d1167fcb7c30fb169ec6c41265f600",
-                "reference": "f87619a493d1167fcb7c30fb169ec6c41265f600",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.28.0",
-                "php": ">=8.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "DigitalCreative\\NovaDashboard\\NovaDashboardServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DigitalCreative\\NovaDashboard\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The missing dashboard for nova.",
-            "keywords": [
-                "Flexible",
-                "dashboard",
-                "laravel",
-                "nova",
-                "widgets"
-            ],
-            "support": {
-                "issues": "https://github.com/dcasia/nova-dashboard/issues",
-                "source": "https://github.com/dcasia/nova-dashboard/tree/v1.1.3"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/milewski",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-03-28T03:45:31+00:00"
-        },
-        {
-            "name": "dniccum/phone-number",
-            "version": "v2.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dniccum/nova-phone-number.git",
-                "reference": "0c8a6b31243b489b1ba972432fe2d810aa5a8b00"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dniccum/nova-phone-number/zipball/0c8a6b31243b489b1ba972432fe2d810aa5a8b00",
-                "reference": "0c8a6b31243b489b1ba972432fe2d810aa5a8b00",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^9.0|^10.0|^11.0",
-                "laravel/nova": "^4.33",
-                "nova-kit/nova-packages-tool": "^1.0",
-                "php": "^8.0|^8.2",
-                "propaganistas/laravel-phone": "^5.2"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Dniccum\\PhoneNumber\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dniccum\\PhoneNumber\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Doug Niccum",
-                    "email": "dniccumdesign@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Laravel Nova phone number field with input masking and validation support.",
-            "keywords": [
-                "field",
-                "laravel",
-                "nova",
-                "number",
-                "phone"
-            ],
-            "support": {
-                "issues": "https://github.com/dniccum/nova-phone-number/issues",
-                "source": "https://github.com/dniccum/nova-phone-number/tree/v2.3.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/dniccum",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-07-15T17:19:17+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -2442,54 +2191,6 @@
             "time": "2024-10-09T13:47:03+00:00"
         },
         {
-            "name": "ebess/advanced-nova-media-library",
-            "version": "4.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ebess/advanced-nova-media-library.git",
-                "reference": "83e37c86b4c0a541245a4cecdd7220e401a76719"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ebess/advanced-nova-media-library/zipball/83e37c86b4c0a541245a4cecdd7220e401a76719",
-                "reference": "83e37c86b4c0a541245a4cecdd7220e401a76719",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^8.0|^9.0|^10.0|^11.0",
-                "laravel/nova": "^4.0",
-                "php": ">=7.4",
-                "spatie/laravel-medialibrary": "^8.0|^9.0|^10.0|^11.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Ebess\\AdvancedNovaMediaLibrary\\AdvancedNovaMediaLibraryServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ebess\\AdvancedNovaMediaLibrary\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Laravel Nova tools for managing the Spatie media library.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/ebess/advanced-nova-media-library/issues",
-                "source": "https://github.com/ebess/advanced-nova-media-library/tree/4.4.1"
-            },
-            "time": "2025-01-08T20:36:18+00:00"
-        },
-        {
             "name": "egulias/email-validator",
             "version": "4.0.4",
             "source": {
@@ -2555,62 +2256,6 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
-        },
-        {
-            "name": "emiliogrv/nova-batch-load",
-            "version": "1.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/emiliogrv/nova-batch-load.git",
-                "reference": "fe65ffc686b9323414a74ab106eae62e66afde09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/emiliogrv/nova-batch-load/zipball/fe65ffc686b9323414a74ab106eae62e66afde09",
-                "reference": "fe65ffc686b9323414a74ab106eae62e66afde09",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Emiliogrv\\NovaBatchLoad\\BatchLoadServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Emiliogrv\\NovaBatchLoad\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emilio Romero",
-                    "email": "emilio.romero1989@gmail.com"
-                }
-            ],
-            "description": "A Laravel Nova XLS & CSV importer",
-            "keywords": [
-                "csv",
-                "excel",
-                "import",
-                "laravel",
-                "nova",
-                "xls",
-                "xlsx"
-            ],
-            "support": {
-                "issues": "https://github.com/emiliogrv/nova-batch-load/issues",
-                "source": "https://github.com/emiliogrv/nova-batch-load/tree/master"
-            },
-            "time": "2019-10-23T22:31:55+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2796,84 +2441,6 @@
                 }
             ],
             "time": "2023-10-12T05:21:21+00:00"
-        },
-        {
-            "name": "giggsey/libphonenumber-for-php-lite",
-            "version": "9.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/giggsey/libphonenumber-for-php-lite.git",
-                "reference": "e4f4c5834d35773bf9d5e72e3e764cfe4e301a8c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php-lite/zipball/e4f4c5834d35773bf9d5e72e3e764cfe4e301a8c",
-                "reference": "e4f4c5834d35773bf9d5e72e3e764cfe4e301a8c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "symfony/polyfill-mbstring": "^1.17"
-            },
-            "conflict": {
-                "giggsey/libphonenumber-for-php": "*"
-            },
-            "require-dev": {
-                "ext-dom": "*",
-                "friendsofphp/php-cs-fixer": "^3.71",
-                "infection/infection": "^0.28.0",
-                "nette/php-generator": "^4.1",
-                "php-coveralls/php-coveralls": "^2.7",
-                "phpstan/extension-installer": "^1.4.3",
-                "phpstan/phpstan": "^2.1.7",
-                "phpstan/phpstan-deprecation-rules": "^2.0.1",
-                "phpstan/phpstan-phpunit": "^2.0.4",
-                "phpstan/phpstan-strict-rules": "^2.0.3",
-                "phpunit/phpunit": "^10.5.45",
-                "symfony/console": "^6.4",
-                "symfony/filesystem": "^6.4",
-                "symfony/process": "^6.4"
-            },
-            "suggest": {
-                "giggsey/libphonenumber-for-php": "Use libphonenumber-for-php for geocoding, carriers, timezones and matching"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "9.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "libphonenumber\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Joshua Gigg",
-                    "email": "giggsey@gmail.com",
-                    "homepage": "https://giggsey.com/"
-                }
-            ],
-            "description": "A lite version of giggsey/libphonenumber-for-php, which is a PHP Port of Google's libphonenumber",
-            "homepage": "https://github.com/giggsey/libphonenumber-for-php-lite",
-            "keywords": [
-                "geocoding",
-                "geolocation",
-                "libphonenumber",
-                "mobile",
-                "phonenumber",
-                "validation"
-            ],
-            "support": {
-                "issues": "https://github.com/giggsey/libphonenumber-for-php-lite/issues",
-                "source": "https://github.com/giggsey/libphonenumber-for-php-lite"
-            },
-            "time": "2025-04-11T07:36:14+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -3423,55 +2990,6 @@
                 }
             ],
             "time": "2024-12-05T14:52:50+00:00"
-        },
-        {
-            "name": "inspheric/nova-email-field",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/inspheric/nova-email-field.git",
-                "reference": "79f6c16d8f2f93f316c41adaef7cae995b31ccaf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/inspheric/nova-email-field/zipball/79f6c16d8f2f93f316c41adaef7cae995b31ccaf",
-                "reference": "79f6c16d8f2f93f316c41adaef7cae995b31ccaf",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0",
-                "php": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Inspheric\\Fields\\EmailFieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Inspheric\\Fields\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova email field.",
-            "keywords": [
-                "email",
-                "field",
-                "laravel",
-                "mailto",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/inspheric/nova-email-field/issues",
-                "source": "https://github.com/inspheric/nova-email-field/tree/v2.0.1"
-            },
-            "time": "2022-11-28T12:07:29+00:00"
         },
         {
             "name": "james-heinrich/getid3",
@@ -4426,58 +3944,6 @@
                 "source": "https://github.com/laravel/ui/tree/v4.6.1"
             },
             "time": "2025-01-28T15:15:29+00:00"
-        },
-        {
-            "name": "laravie/serialize-queries",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravie/serialize-queries.git",
-                "reference": "46b3cf05d09d1c7e35648181d2f5eadf5fe9967c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravie/serialize-queries/zipball/46b3cf05d09d1c7e35648181d2f5eadf5fe9967c",
-                "reference": "46b3cf05d09d1c7e35648181d2f5eadf5fe9967c",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "^10.48.23 || ^11.31 || ^12.0",
-                "illuminate/queue": "^10.48.23 || ^11.31 || ^12.0",
-                "laravel/serializable-closure": "^1.3 || ^2.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.20",
-                "orchestra/testbench": "^8.28 || ^9.6 || ^10.0",
-                "phpstan/phpstan": "^2.1",
-                "phpunit/phpunit": "^10.1 || ^11.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Laravie\\SerializesQuery\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com"
-                }
-            ],
-            "description": "Serializable Laravel Query Builder",
-            "support": {
-                "issues": "https://github.com/laravie/serialize-queries/issues",
-                "source": "https://github.com/laravie/serialize-queries/tree/v3.2.0"
-            },
-            "time": "2025-02-17T04:39:20+00:00"
         },
         {
             "name": "league/commonmark",
@@ -5585,64 +5051,6 @@
             "time": "2025-02-24T11:12:50+00:00"
         },
         {
-            "name": "maatwebsite/laravel-nova-excel",
-            "version": "1.3.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SpartnerNL/Laravel-Nova-Excel.git",
-                "reference": "d0bac79e9095cb8c39f95d94cc1abce23087106c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SpartnerNL/Laravel-Nova-Excel/zipball/d0bac79e9095cb8c39f95d94cc1abce23087106c",
-                "reference": "d0bac79e9095cb8c39f95d94cc1abce23087106c",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0|^5.0",
-                "laravie/serialize-queries": "^1.0|^2.0|^3.0",
-                "maatwebsite/excel": "^3.1.57",
-                "php": "^7.1||^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Maatwebsite\\LaravelNovaExcel\\LaravelNovaExcelServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Maatwebsite\\LaravelNovaExcel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Patrick Brouwers",
-                    "email": "patrick@maatwebsite.nl"
-                }
-            ],
-            "description": "Supercharged Excel exports for Laravel Nova Resources",
-            "keywords": [
-                "PHPExcel",
-                "actions",
-                "laravel",
-                "laravel-nova",
-                "nova",
-                "phpspreadsheet"
-            ],
-            "support": {
-                "issues": "https://github.com/SpartnerNL/Laravel-Nova-Excel/issues",
-                "source": "https://github.com/SpartnerNL/Laravel-Nova-Excel/tree/1.3.11"
-            },
-            "time": "2024-12-15T12:07:32+00:00"
-        },
-        {
             "name": "maennchen/zipstream-php",
             "version": "3.1.2",
             "source": {
@@ -6723,55 +6131,6 @@
             "time": "2025-03-11T14:40:46+00:00"
         },
         {
-            "name": "oriondevelops/nova-greeter",
-            "version": "v0.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/oriondevelops/nova-greeter.git",
-                "reference": "59342e1efe782f4fa89abbf480cb9307e60cb490"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/oriondevelops/nova-greeter/zipball/59342e1efe782f4fa89abbf480cb9307e60cb490",
-                "reference": "59342e1efe782f4fa89abbf480cb9307e60cb490",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0|^5.0",
-                "php": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Orion\\NovaGreeter\\CardServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orion\\NovaGreeter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova greeter card.",
-            "keywords": [
-                "card",
-                "dashboard",
-                "greeter",
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/oriondevelops/nova-greeter/issues",
-                "source": "https://github.com/oriondevelops/nova-greeter/tree/v0.0.3"
-            },
-            "time": "2024-12-29T01:19:56+00:00"
-        },
-        {
             "name": "paragonie/constant_time_encoding",
             "version": "v3.0.0",
             "source": {
@@ -7580,77 +6939,6 @@
             "time": "2025-03-19T16:30:08+00:00"
         },
         {
-            "name": "propaganistas/laravel-phone",
-            "version": "5.3.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Propaganistas/Laravel-Phone.git",
-                "reference": "89f26e8336cf8f8041609148b4fef752f0bd720e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/89f26e8336cf8f8041609148b4fef752f0bd720e",
-                "reference": "89f26e8336cf8f8041609148b4fef752f0bd720e",
-                "shasum": ""
-            },
-            "require": {
-                "giggsey/libphonenumber-for-php-lite": "^8.13.35|^9.0.0",
-                "illuminate/contracts": "^10.0|^11.0|^12.0",
-                "illuminate/support": "^10.0|^11.0|^12.0",
-                "illuminate/validation": "^10.0|^11.0|^12.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.14",
-                "orchestra/testbench": "*",
-                "phpunit/phpunit": "^10.5|^11.5.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Propaganistas\\LaravelPhone\\PhoneServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Propaganistas\\LaravelPhone\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Propaganistas",
-                    "email": "Propaganistas@users.noreply.github.com"
-                }
-            ],
-            "description": "Adds phone number functionality to Laravel based on Google's libphonenumber API.",
-            "keywords": [
-                "laravel",
-                "libphonenumber",
-                "phone",
-                "validation"
-            ],
-            "support": {
-                "issues": "https://github.com/Propaganistas/Laravel-Phone/issues",
-                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/5.3.6"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/Propaganistas",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-03-21T09:07:26+00:00"
-        },
-        {
             "name": "psr/cache",
             "version": "3.0.0",
             "source": {
@@ -8189,51 +7477,6 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
             },
             "time": "2025-03-16T03:05:19+00:00"
-        },
-        {
-            "name": "r64/nova-image-cropper",
-            "version": "1.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/64robots/nova-image-cropper.git",
-                "reference": "67f3a25e454ed2a5454d5625744d011677dbf725"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/64robots/nova-image-cropper/zipball/67f3a25e454ed2a5454d5625744d011677dbf725",
-                "reference": "67f3a25e454ed2a5454d5625744d011677dbf725",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "R64\\NovaImageCropper\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "R64\\NovaImageCropper\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova field.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/64robots/nova-image-cropper/issues",
-                "source": "https://github.com/64robots/nova-image-cropper/tree/master"
-            },
-            "time": "2019-03-29T15:50:24+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8837,62 +8080,6 @@
             "transport-options": {
                 "relative": true
             }
-        },
-        {
-            "name": "simonhamp/laravel-nova-csv-import",
-            "version": "v0.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/simonhamp/laravel-nova-csv-import.git",
-                "reference": "d7b53fa6a6e92a603caa10e1065cff0577f15147"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/simonhamp/laravel-nova-csv-import/zipball/d7b53fa6a6e92a603caa10e1065cff0577f15147",
-                "reference": "d7b53fa6a6e92a603caa10e1065cff0577f15147",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0",
-                "maatwebsite/excel": "^3.1",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.6"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SimonHamp\\LaravelNovaCsvImport\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SimonHamp\\LaravelNovaCsvImport\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A fully-fledged CSV import tool for Laravel Nova.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/simonhamp/laravel-nova-csv-import/issues",
-                "source": "https://github.com/simonhamp/laravel-nova-csv-import/tree/v0.7.2"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/simonhamp",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-08-15T02:53:55+00:00"
         },
         {
             "name": "spatie/array-to-xml",
