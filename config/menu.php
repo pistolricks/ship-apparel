@@ -234,7 +234,7 @@ return [
                 ]
             ],
             [
-                'title' => 'Woven/Dress Shirts',
+                'title' => 'Woven Shirts',
                 'href' => 'products/woven-shirts',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2016/f17/S654_greenaqua_model_front_102016.jpg',
 
