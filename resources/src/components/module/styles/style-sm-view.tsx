@@ -5,23 +5,67 @@ import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 import {imagePath} from "~/app";
 
+
+type STYLE_PRODUCT = {
+    product_id: string;
+    product_title: string;
+    product_description?: string;
+    style: string;
+    available_sizes?: string;
+    brand_logo_image?: string;
+    thumbnail_image?: string;
+    color_swatch_image?: string;
+    product_image?: string;
+    spec_sheet?: string;
+    price_text?: string;
+    suggested_price?: string;
+    category_name?: string;
+    subcategory_name?: string;
+    color_name: string;
+    color_square_image?: string;
+    color_product_image?: string;
+    color_product_image_thumbnail?: string;
+    size?: string;
+    qty?: number;
+    piece_weight?: string;
+    piece_price?: string;
+    dozens_price?: string;
+    case_price?: string;
+    price_group?: string;
+    case_size?: string;
+    inventory_key?: string;
+    size_index?: string;
+    sanmar_mainframe_color?: string;
+    mill: string;
+    product_status: "Coming Soon" | "New" | "Regular" | "Discontinued" | "Disabled" ;
+    companion_style?: string;
+    msrp?: string;
+    map_pricing?: string;
+    front_model_image_url?: string;
+    back_model_image_url?: string;
+    front_flat_image_url?: string;
+    back_flat_image_url?: string;
+    product_measurements?: string;
+    pms_color?: string;
+    gtin?: string;
+    decoration_spec_sheet?: string;
+}
+
 type PROPS = {
     style: StyleType;
-    products: SM_PRODUCT[]
+    products: SM_PRODUCT[] | STYLE_PRODUCT[];
 }
 
 
 const StyleSmView: Component<PROPS> = props => {
 
     const style = () => props.style;
-    const products = () => props.products;
+    const products = () => props.products as STYLE_PRODUCT[];
 
     console.log(style(), "style viewer")
-    const [getSelected, setSelected] = createSignal<SM_PRODUCT | StyleType>(style())
+    const [getSelected, setSelected] = createSignal<STYLE_PRODUCT>(products()?.[0] as STYLE_PRODUCT)
 
-    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected().id)
-
-    const isSelected = createSelector(getSelectedId)
+    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected().product_id)
 
 
     const [getImages, setImages] = createSignal(
@@ -32,15 +76,15 @@ const StyleSmView: Component<PROPS> = props => {
 
     const isSrc = createSelector<string | undefined>(getSrc)
 
-    function handleSize(data: SM_PRODUCT) {
+    function handleSize(data: STYLE_PRODUCT) {
 
+        setSelectedId(data.product_id)
+        setSelected(data)
 
-        if (isSelected(data.id)) {
-            setSelected(data)
-
-        }
         console.log(getSelected())
     }
+
+    const isSelected = createSelector(getSelectedId)
 
     function imageHandler(src: string) {
         setSrc(src)
@@ -50,6 +94,8 @@ const StyleSmView: Component<PROPS> = props => {
         console.log(getSrc())
 
     }
+
+
 
     const images = createMemo(() => getImages())
     const src = createMemo(() => getSrc())
@@ -66,8 +112,8 @@ const StyleSmView: Component<PROPS> = props => {
 
     //  const orderedProducts = createMemo(() => products()?.sort((a, b) => parseFloat(a.color_name) - parseFloat(b.color_name)))
 
-    const groupedByColor = createMemo(() => products().reduce((groups: Record<string, SM_PRODUCT[]>, product) => {
-        const key = product.color_name ?? ''; // Grouping criterion (e.g., 'color')
+    const groupedByColor = createMemo(() => products().reduce((groups: Record<string, STYLE_PRODUCT[]>, product) => {
+        const key = product?.color_name ?? ''; // Grouping criterion (e.g., 'color')
         if (!groups[key]) {
             groups[key] = []; // Initialize an array for this group
         }
@@ -79,7 +125,7 @@ const StyleSmView: Component<PROPS> = props => {
 
     const name = () => {
         let a = getSelected().product_title.replace(getSelected().mill, "")
-        let id = getSelected().id;
+        let id = getSelected().product_id;
         let t = a.replace(id, "")
         return t.replace(`.`, "")
     }
@@ -102,14 +148,14 @@ const StyleSmView: Component<PROPS> = props => {
     })
 
     onMount(() => {
-        setColor(style()?.color_name)
-        setSelectedId(style()?.id)
-        setSelected(style())
-        setSrc(style()?.front_model_image_url)
+        setColor(products()?.[0]?.color_name)
+        setSelectedId(products()?.[0]?.product_id)
+        setSelected(products()?.[0])
+        setSrc(products()?.[0]?.front_model_image_url)
         setImages(
-            [style()?.front_model_image_url, style()?.back_model_image_url, style()?.front_flat_image_url, style()?.back_flat_image_url].filter((image): image is string => !!image)
+            [products()?.[0]?.front_model_image_url, products()?.[0]?.back_model_image_url, products()?.[0]?.front_flat_image_url, products()?.[0]?.back_flat_image_url].filter((image): image is string => !!image)
         )
-        isSrc(style()?.front_model_image_url)
+        isSrc(products()?.[0]?.front_model_image_url)
     })
 
     return (
@@ -123,21 +169,21 @@ const StyleSmView: Component<PROPS> = props => {
                                 <For each={images()}>
                                     {(image) => (
                                         <Show when={image !== ' '}>
-                                        <button
-                                            onClick={() => imageHandler(image)}
-                                            type="button"
-                                            id="tabs-2-tab-1"
-                                            class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
-                                            aria-controls="tabs-2-panel-1" role="tab">
-                                            <span class="sr-only">Angled view</span>
-                                            <span class="absolute inset-0 overflow-hidden rounded-md">
+                                            <button
+                                                onClick={() => imageHandler(image)}
+                                                type="button"
+                                                id="tabs-2-tab-1"
+                                                class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
+                                                aria-controls="tabs-2-panel-1" role="tab">
+                                                <span class="sr-only">Angled view</span>
+                                                <span class="absolute inset-0 overflow-hidden rounded-md">
                                          <img src={image}
                                               alt="" class="size-full object-contain object-top"/>
                                        </span>
-                                            <span
-                                                class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"
-                                                aria-hidden="true"></span>
-                                        </button>
+                                                <span
+                                                    class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"
+                                                    aria-hidden="true"></span>
+                                            </button>
                                         </Show>
                                     )}
                                 </For>
@@ -197,7 +243,7 @@ const StyleSmView: Component<PROPS> = props => {
 
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
-                                       {/*
+                                        {/*
                                         <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
                                         */}
                                     </div>
@@ -205,7 +251,7 @@ const StyleSmView: Component<PROPS> = props => {
                                 <Show when={groupedByColor()}>
                                     <fieldset aria-label="Choose a color"
                                               class="w-full border-gray-200 border-b border-t py-2">
-                                        <Grid cols={8} class={'gap-2 w-full'}>
+                                        <Grid cols={8} class={'gap-x-1 gap-y-4 p-1 w-full object-fill'}>
                                             <For each={Object.keys(groupedByColor())}>
                                                 {(key) => (
                                                     <>
@@ -236,7 +282,10 @@ const StyleSmView: Component<PROPS> = props => {
                                             {(product) => (
                                                 <button
                                                     onClick={() => handleSize(product)}
-                                                    class="w-full items-center  justify-center border border-gray-400 rounded-full size-7"
+                                                    class={classNames(
+                                                        isSelected(product.product_id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200',
+                                                        "w-full items-center  justify-center border border-gray-400 rounded-md h-7"
+                                                        )}
                                                     type="button">
                                                     {product.size}
                                                 </button>

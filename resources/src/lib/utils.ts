@@ -92,7 +92,13 @@ export function lowerCaseString(str?: string) {
     return str.toLowerCase();
 }
 
-
+export const renameKey = (oldKey: string, newKey: string, map: Map<string, any>) => {
+    const old = map.get(oldKey);
+    const rest = [...map].filter(r => r[0] !== oldKey);
+    return new Map(
+        [[newKey, old],
+            ...rest]);
+}
 export const sideMenu = [
     {
         title: 'Reversible Apparel',

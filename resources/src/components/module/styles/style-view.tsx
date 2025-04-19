@@ -68,7 +68,7 @@ const StyleView: Component<{
     console.log(product())
 
     return (
-        <Show<boolean> when={product()}>
+        <Show when={product()}>
             <div class="relative bg-white rounded-xl overflow-y-auto scrollbar-hide">
                 <div class="pb-16 sm:pt-6 sm:pb-24">
                     <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -86,7 +86,7 @@ const StyleView: Component<{
                                 <h2 class="sr-only">Images</h2>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                                    <For<string[]> each={images()}>
+                                    <For each={images()}>
                                         {(image, i) => (
                                             <img
                                                 alt={`${product()?.product_title}-${i()}`}
