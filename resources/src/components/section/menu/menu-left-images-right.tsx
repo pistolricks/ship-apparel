@@ -24,9 +24,9 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                     <ul role="list" aria-labelledby={title()}
                         class="flex flex-col space-y-4 w-full">
 
-                        <For<MenuItemType[]> each={list()}>
+                        <For each={list()}>
                             {(item, index) => (
-                                <Show<boolean> when={index() < 12}>
+                                <Show when={index() < 12}>
                                     <li class="flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
@@ -37,9 +37,9 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                     </ul>
                     <ul role="list" aria-labelledby={title()}
                         class="flex flex-col space-y-4 w-full">
-                        <For<MenuItemType[]>  each={list()}>
+                        <For each={list()}>
                             {(item, index) => (
-                                <Show<boolean> when={index() > 11 && index() < 25}>
+                                <Show when={index() > 11 && index() < 25}>
                                     <li class="flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
@@ -50,9 +50,9 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                     </ul>
                     <ul role="list" aria-labelledby={title()}
                         class="flex flex-col space-y-4 w-full">
-                        <For<MenuItemType[]>  each={list()}>
+                        <For  each={list()}>
                             {(item, index) => (
-                                <Show<boolean> when={index() > 24}>
+                                <Show when={index() > 24}>
                                     <li class="flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>

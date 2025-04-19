@@ -5,6 +5,7 @@ import Drawer from "@corvu/drawer";
 import {IconTablet} from "~/components/svg";
 import {A} from "@solidjs/router";
 import {imagePath} from "~/app";
+import {classNames} from "~/lib/utils";
 
 type PROPS = StyleType & { onClick: () => void, href: string }
 
@@ -25,11 +26,17 @@ const StyleListView: Component<PROPS> = props => {
     return (
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
 
-            <A href={href()}>
+            <A href={href()}
+            class={classNames(
+                props.category_name?.includes('Caps') ? "aspect-square" : "aspect-square sm:aspect-[9/16]",
+                "rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75")}
+            >
                 <img
                     src={`${imagePath}/${props.color_product_image}/gallery`}
                     alt={props.product_title}
-                    class="aspect-square sm:aspect-[9/16]  rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75"/>
+                    class={classNames(
+                        props.category_name?.includes('Caps') ? "aspect-square" : "aspect-square sm:aspect-[9/16]",
+                        "rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75")}/>
 
                 <div class=" pt-7 text-center h-[170px]">
                     <h3 class="text-xs font-light  text-gray-900">
