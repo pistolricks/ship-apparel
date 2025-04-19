@@ -97,9 +97,9 @@ export interface Feature extends GeoJsonObject {
 
 export type SM_PRODUCT = {
     id: string;
-    product_title?: string;
+    product_title: string;
     product_description?: string;
-    style?: string;
+    style: string;
     available_sizes?: string;
     brand_logo_image?: string;
     thumbnail_image?: string;
@@ -127,13 +127,13 @@ export type SM_PRODUCT = {
     sanmar_mainframe_color?: string;
     mill?: string;
     product_status?: string;
-    companion_styles?: string;
+    companion_style?: string;
     msrp?: string;
     map_pricing?: string;
     front_model_image_url?: string;
-    back_model_image?: string;
-    front_flat_image?: string;
-    back_flat_image?: string;
+    back_model_image_url?: string;
+    front_flat_image_url?: string;
+    back_flat_image_url?: string;
     product_measurements?: string;
     pms_color?: string;
     gtin?: string;
@@ -162,8 +162,8 @@ export type PaginationType = {
 }
 
 export type StyleType = {
-    id?: string;
-    product_title?: string;
+    id: string;
+    product_title: string;
     product_description?: string;
     available_sizes?: string;
     brand_logo_image?: string;
@@ -175,7 +175,7 @@ export type StyleType = {
     suggested_price?: string;
     category_name?: string;
     subcategory_name?: string;
-    color_name?: string;
+    color_name: string;
     color_square_image?: string;
     color_product_image: string;
     color_product_image_thumbnail?: string;

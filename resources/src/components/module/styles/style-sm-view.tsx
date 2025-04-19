@@ -1,4 +1,4 @@
-import {Component, createEffect, createMemo, createSelector, createSignal, For, onMount} from "solid-js";
+import {Component, createEffect, createMemo, createSelector, createSignal, For, onMount, Show} from "solid-js";
 import {SM_PRODUCT, StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
@@ -10,22 +10,6 @@ type PROPS = {
     products: SM_PRODUCT[]
 }
 
-export type MiniProductType = {
-    id: string
-    msrp: string
-    size: string
-    available_sizes: string,
-    color_name: string
-    back_flat_image_url?: string
-    back_model_image_url?: string
-    color_square_image: string
-    front_flat_image_url?: string
-    front_model_image_url?: string
-    piece_weight?: string
-    case_size?: string
-    gtin?: string
-
-}
 
 const StyleSmView: Component<PROPS> = props => {
 
@@ -33,16 +17,16 @@ const StyleSmView: Component<PROPS> = props => {
     const products = () => props.products;
 
     console.log(style(), "style viewer")
-    const [getSelected, setSelected] = createSignal<SM_PRODUCT | StyleType | undefined>(style())
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT | StyleType>(style())
 
-    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected()?.id)
+    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected().id)
 
     const isSelected = createSelector(getSelectedId)
 
     const smPath = () => style()?.front_model_image_url?.replace(style()?.color_product_image, "")
 
     const [getImages, setImages] = createSignal(
-        [`${imagePath}/${getSelected()?.color_product_image}/preview`, `${imagePath}/${getSelected()?.back_model_image}/preview`, `${imagePath}/${getSelected()?.front_flat_image}/preview`, `${imagePath}/${getSelected()?.back_flat_image}/preview`].filter((image): image is string => !!image)
+        [getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
     )
 
     const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
@@ -83,8 +67,8 @@ const StyleSmView: Component<PROPS> = props => {
 
     //  const orderedProducts = createMemo(() => products()?.sort((a, b) => parseFloat(a.color_name) - parseFloat(b.color_name)))
 
-    const groupedByColor = createMemo(() => products().reduce((groups, product) => {
-        const key = product.color_name; // Grouping criterion (e.g., 'color')
+    const groupedByColor = createMemo(() => products().reduce((groups: Record<string, SM_PRODUCT[]>, product) => {
+        const key = product.color_name ?? ''; // Grouping criterion (e.g., 'color')
         if (!groups[key]) {
             groups[key] = []; // Initialize an array for this group
         }
@@ -103,7 +87,7 @@ const StyleSmView: Component<PROPS> = props => {
 
         setSrc(groupedByColor()?.[m]?.[0]?.front_model_image_url)
         setImages(
-            [`${smPath()}/${groupedByColor()?.[m]?.[0]?.color_product_image}`, `${smPath()}/${groupedByColor()?.[m]?.[0]?.back_model_image}`, `${smPath()}/${groupedByColor()?.[m]?.[0]?.front_flat_image}`, `${smPath()}/${groupedByColor()?.[m]?.[0]?.back_flat_image}`].filter((image): image is string => !!image)
+            [groupedByColor()?.[m]?.[0]?.front_model_image_url, groupedByColor()?.[m]?.[0]?.back_model_image_url, groupedByColor()?.[m]?.[0]?.front_flat_image_url, groupedByColor()?.[m]?.[0]?.back_flat_image_url].filter((image): image is string => !!image)
         )
 
     }
@@ -133,7 +117,7 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
                             <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
-                                <For<string[]> each={images()}>
+                                <For each={images()}>
                                     {(image) => (
                                         <button
                                             onClick={() => imageHandler(image)}
@@ -204,19 +188,21 @@ const StyleSmView: Component<PROPS> = props => {
                                     </div>
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Color</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{getSelected()?.color_name}</p>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{getColor()}</p>
                                     </div>
 
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
+                                       {/*
                                         <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
+                                        */}
                                     </div>
                                 </div>
                                 <Show when={groupedByColor()}>
                                     <fieldset aria-label="Choose a color"
                                               class="w-full border-gray-200 border-b border-t py-2">
                                         <Grid cols={8} class={'gap-2 w-full'}>
-                                            <For<string[]> each={Object.keys(groupedByColor())}>
+                                            <For each={Object.keys(groupedByColor())}>
                                                 {(key) => (
                                                     <>
                                                         <button
@@ -242,7 +228,7 @@ const StyleSmView: Component<PROPS> = props => {
                                           class="w-full border-gray-200 border-b py-2">
 
                                     <Grid cols={8} class={'gap-2 w-full items-center'}>
-                                        <For<SM_PRODUCT[]> each={groupedByColor()?.[getColor()]}>
+                                        <For each={groupedByColor()?.[getColor()]}>
                                             {(product) => (
                                                 <button
                                                     onClick={() => handleSize(product)}
@@ -292,7 +278,6 @@ const StyleSmView: Component<PROPS> = props => {
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </section>
                     </div>
