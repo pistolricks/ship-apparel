@@ -79,7 +79,7 @@ return [
                 'sub' => [
                     ['title' => "Performance", 'href' => 'products/polos-knits/performance'],
                     ['title' => "Easy Care", 'href' => 'products/polos-knits/easy-care'],
-                    ['title' => "Silk Touch", 'href' => 'products/polos-knits/silk-touch'],
+                   // ['title' => "Silk Touch", 'href' => 'products/polos-knits/silk-touch'],
                     ['title' => "Cotton", 'href' => 'products/polos-knits/cotton'],
                     ['title' => "Workwear", 'href' => 'products/polos-knits/workwear'],
                     ['title' => "Sweaters", 'href' => 'products/polos-knits/sweaters'],
@@ -114,12 +114,12 @@ return [
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/333114_VarsityRoyal_FlatFront_2009.jpg',
 
                 'sub' => [
-                    ['title' => 'Stretch Fit', 'href' => 'products/caps/stretch-fit'],
+                    ['title' => 'Stretch-to-Fit', 'href' => 'products/caps/stretch-to-fit'],
                     ['title' => 'Performance/Athletic', 'href' => 'products/caps/performance-athletic'],
                     ['title' => 'Flexfit', 'href' => 'products/caps/flexfit'],
                     ['title' => 'Mesh Back', 'href' => 'products/caps/mesh-back'],
-                    ['title' => 'Structured', 'href' => 'products/caps/structured'],
-                    ['title' => 'Unstructured', 'href' => 'products/caps/unstructured'],
+                   // ['title' => 'Structured', 'href' => 'products/caps/structured'],
+                   // ['title' => 'Unstructured', 'href' => 'products/caps/unstructured'],
                     ['title' => 'Pigment/Garment Dyed', 'href' => 'products/caps/pigment-garment-dyed'],
                     ['title' => 'Camouflage', 'href' => 'products/caps/camouflage'],
                     ['title' => 'Safety', 'href' => 'products/caps/safety'],
@@ -145,7 +145,7 @@ return [
                     ['title' => 'Pants & Shorts', 'href' => 'products/activewear/pants-and-shorts'],
                     ['title' => "Women's", 'href' => 'products/activewear/womens'],
                     ['title' => "Youth", 'href' => 'products/activewear/youth'],
-                    ['title' => "Tall", 'href' => 'products/activewear/tall'],
+                   // ['title' => "Tall", 'href' => 'products/activewear/tall'],
                 ]
             ],
             [
@@ -171,19 +171,20 @@ return [
             ],
             [
                 'title' => 'Woven/Dress Shirts',
-                'href' => 'products/woven-dress-shirts',
+                'href' => 'products/woven-shirts',
                 'src' => 'https://cdnm.sanmar.com/imglib/mresjpg/2016/f17/S654_greenaqua_model_front_102016.jpg',
 
                 'sub' => [
-                    ['title' => 'Easy Care', 'href' => 'products/woven-dress-shirts/easy-care'],
-                    ['title' => 'Oxfords', 'href' => 'products/woven-dress-shirts/oxfords'],
-                    ['title' => 'Denim', 'href' => 'products/woven-dress-shirts/denim'],
-                    ['title' => 'Cotton', 'href' => 'products/woven-dress-shirts/cotton'],
-                    ['title' => 'Fishing', 'href' => 'products/woven-dress-shirts/fishing'],
-                    ['title' => 'Camp Shirts', 'href' => 'products/woven-dress-shirts/camp-shirts'],
-                    ['title' => 'Cotton/Poly Blend', 'href' => 'products/woven-dress-shirts/cotton-poly-blend'],
-                    ['title' => '100% Cotton', 'href' => 'products/woven-dress-shirts/100-cotton'],
-                    ['title' => 'Premium Woven', 'href' => 'products/woven-dress-shirts/premium-woven'],
+                    ['title' => 'Easy Care', 'href' => 'products/woven-shirts/easy-care'],
+                    ['title' => 'Workwear', 'href' => 'products/woven-shirts/workwear'],
+                    ['title' => 'Oxfords', 'href' => 'products/woven-shirts/oxfords'],
+                    ['title' => 'Denim', 'href' => 'products/woven-shirts/denim'],
+                    ['title' => 'Cotton', 'href' => 'products/woven-shirts/cotton'],
+                    ['title' => 'Fishing', 'href' => 'products/woven-shirts/fishing'],
+                    ['title' => 'Camp Shirts', 'href' => 'products/woven-shirts/camp-shirts'],
+                    ['title' => 'Cotton/Poly Blend', 'href' => 'products/woven-shirts/cotton-poly-blend'],
+                    ['title' => '100% Cotton', 'href' => 'products/woven-shirts/100-cotton'],
+                    ['title' => 'Premium Wovens', 'href' => 'products/woven-shirts/premium-wovens'],
 
                     ['title' => "Women's", 'href' => 'products/woven-dress-shirts/womens'],
                     ['title' => "Tall", 'href' => 'products/woven-dress-shirts/tall'],
@@ -269,7 +270,7 @@ return [
 
                 'sub' => [
                     ['title' => 'T-Shirts', 'href' => 'products/womens/t-shirts'],
-                    ['title' => 'Polos/Knits', 'href' => 'products/womens/polos/knits'],
+                    ['title' => 'Polos/Knits', 'href' => 'products/womens/polos-knits'],
                     ['title' => 'Sweatshirts/Fleece', 'href' => 'products/womens/sweatshirts-fleece'],
                     ['title' => 'Woven Shirts', 'href' => 'products/womens/woven-shirts'],
                     ['title' => 'Caps', 'href' => 'products/womens/caps'],

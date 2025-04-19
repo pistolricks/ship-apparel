@@ -25,7 +25,7 @@ readonly class CategorySupport
                 'tall' => 'Tall',
                 'womens' => "Women's",
                 'workwear' => 'Workwear',
-                'woven-dress-shirts' => 'Woven Shirts',
+                'woven-shirts' => 'Woven Shirts',
                 'youth' => 'Youth',
         ])->get($category, 'T-Shirts');
     }
