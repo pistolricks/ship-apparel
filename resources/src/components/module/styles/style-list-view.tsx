@@ -26,18 +26,14 @@ const StyleListView: Component<PROPS> = props => {
     return (
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
 
-            <A href={href()}
-            class={classNames(
-                props.category_name?.includes('Caps') ? "aspect-square" : "aspect-square sm:aspect-[9/16]",
-                "rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75")}
-            >
+            <A href={href()} class="flex flex-col w-full justify-center">
+                <div class="h-[360px] w-[220px] mx-auto">
                 <img
                     src={`${imagePath}/${props.color_product_image}/gallery`}
                     alt={props.product_title}
                     class={classNames(
-                        props.category_name?.includes('Caps') ? "aspect-square" : "aspect-square sm:aspect-[9/16]",
-                        "rounded-lg bg-white object-contain sm:object-contain group-hover:opacity-75")}/>
-
+                        "rounded-lg w-full bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
+                </div>
                 <div class=" pt-7 text-center h-[170px]">
                     <h3 class="text-xs font-light  text-gray-900">
                         <div class={'flex flex-col w-full justify-center capitalize'}>
