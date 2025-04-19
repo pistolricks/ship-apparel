@@ -125,7 +125,7 @@ export type SM_PRODUCT = {
     inventory_key?: string;
     size_index?: string;
     sanmar_mainframe_color?: string;
-    mill?: string;
+    mill: string;
     product_status?: string;
     companion_style?: string;
     msrp?: string;
@@ -179,11 +179,11 @@ export type StyleType = {
     color_square_image?: string;
     color_product_image: string;
     color_product_image_thumbnail?: string;
-    sizes?: string;
+    categories?: any;
     inventory_key?: string;
     size_index?: string;
     sanmar_mainframe_color?: string;
-    mill?: string;
+    mill: string;
     product_status?: string;
     companion_style?: string;
     msrp?: string;

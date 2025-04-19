@@ -25,7 +25,7 @@ class SubCategoryController extends Controller
         $response = Http::retry(3, 100)
             ->withQueryParameters([
                 'category_name' => $categoryName,
-                'sub_category_name' => $subCategoryName,
+                'subcategory_name' => $subCategoryName,
                 (array) $request
             ])->get('http://localhost:4000/v1/styles');
 

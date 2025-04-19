@@ -24,7 +24,7 @@ class StyleData extends Data
         public ?string $color_square_image,
         public ?string $color_product_image,
         public ?string $color_product_image_thumbnail,
-        public ?string $sizes,
+        public mixed $categories,
         public ?string $inventory_key,
         public ?string $size_index,
         public ?string $sanmar_mainframe_color,

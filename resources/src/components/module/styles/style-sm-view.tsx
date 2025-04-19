@@ -23,7 +23,6 @@ const StyleSmView: Component<PROPS> = props => {
 
     const isSelected = createSelector(getSelectedId)
 
-    const smPath = () => style()?.front_model_image_url?.replace(style()?.color_product_image, "")
 
     const [getImages, setImages] = createSignal(
         [getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
@@ -78,10 +77,14 @@ const StyleSmView: Component<PROPS> = props => {
     }, {}));
 
 
+    const name = () => {
+        let a = getSelected().product_title.replace(getSelected().mill, "")
+        let id = getSelected().id;
+        let t = a.replace(id, "")
+        return t.replace(`.`, "")
+    }
+
     const [getColor, setColor] = createSignal(style()?.color_name)
-
-
-
     const handleColor = (m: string) => {
         setColor(() => m)
 
@@ -163,7 +166,7 @@ const StyleSmView: Component<PROPS> = props => {
                                  alt={''}/>
                         </div>
 
-                        <h1 class="text-xl font-medium tracking-tight text-right text-gray-900 text-balance">{style()?.product_title}</h1>
+                        <h1 class="text-xl font-medium tracking-tight text-right text-gray-900 text-balance">{name()}</h1>
                         <form class="mt-2 w-full pt-4 border-t border-gray-200">
                             <div class={'flex justify-between items-center space-x-5 sm:space-x-0'}>
                                 <div class="">

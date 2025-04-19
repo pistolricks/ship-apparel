@@ -57,22 +57,18 @@ return [
 
                 'sub' => [
                     ['title' => '100% Cotton', 'href' => 'products/t-shirts/100-cotton'],
-                    ['title' => '100% Polyester', 'href' => 'products/t-shirts/100-polyester'],
-                    ['title' => 'blends', 'href' => 'products/t-shirts/blends'],
-                    ['title' => 'Cotton Poly', 'href' => 'products/t-shirts/cotton-poly'],
-                    ['title' => 'Jersey', 'href' => 'products/t-shirts/jersey'],
-                    ['title' => 'Tri-Blend', 'href' => 'products/t-shirts/tri-blend'],
+                    ['title' => '6-6.1 100% Cotton', 'href' => 'products/t-shirts/6-6-1-100-Cotton'],
+                    ['title' => '5-5.6 100% Cotton', 'href' => 'products/t-shirts/5-5-6-100-cotton'],
+                    ['title' => 'Ring Spun', 'href' => 'products/t-shirts/ring-spun'],
                     ['title' => '50/50 Blend', 'href' => 'products/t-shirts/50-50-blend'],
                     ['title' => 'Performance', 'href' => 'products/t-shirts/performance'],
                     ['title' => 'Tanks', 'href' => 'products/t-shirts/tanks'],
                     ['title' => "Women's", 'href' => 'products/t-shirts/womens'],
                     ['title' => 'Youth', 'href' => 'products/t-shirts/youth'],
-                    ['title' => 'Ringspun', 'href' => 'products/t-shirts/ringspun'],
                     ['title' => 'Long Sleeve', 'href' => 'products/t-shirts/long-sleeve'],
                     ['title' => 'Specialty', 'href' => 'products/t-shirts/specialty'],
                     ['title' => 'Workwear', 'href' => 'products/t-shirts/workwear'],
                     ['title' => 'Tall', 'href' => 'products/t-shirts/tall'],
-                    ['title' => 'Essentials', 'href' => 'products/t-shirts/essentials'],
                 ]
             ],
             [
@@ -91,7 +87,6 @@ return [
                     ['title' => "Women's", 'href' => 'products/polos-knits/womens'],
                     ['title' => "Youth", 'href' => 'products/polos-knits/youth'],
                     ['title' => "Tall", 'href' => 'products/polos-knits/tall'],
-                    ['title' => "Essentials", 'href' => 'products/polos-knits/essentials'],
                 ]
             ],
             [
@@ -111,7 +106,6 @@ return [
                     ['title' => "Women's", 'href' => 'products/sweatshirts-fleece/womens'],
                     ['title' => "Youth", 'href' => 'products/sweatshirts-fleece/youth'],
                     ['title' => "Tall", 'href' => 'products/sweatshirts-fleece/tall'],
-                    ['title' => "Essentials", 'href' => 'products/sweatshirts-fleece/essentials'],
                 ]
             ],
             [
@@ -121,7 +115,7 @@ return [
 
                 'sub' => [
                     ['title' => 'Stretch Fit', 'href' => 'products/caps/stretch-fit'],
-                    ['title' => 'Performance/Team', 'href' => 'products/caps/performance-team'],
+                    ['title' => 'Performance/Athletic', 'href' => 'products/caps/performance-athletic'],
                     ['title' => 'Flexfit', 'href' => 'products/caps/flexfit'],
                     ['title' => 'Mesh Back', 'href' => 'products/caps/mesh-back'],
                     ['title' => 'Structured', 'href' => 'products/caps/structured'],
@@ -133,8 +127,7 @@ return [
                     ['title' => 'Visors', 'href' => 'products/caps/visors'],
                     ['title' => 'Fleece/Beanies', 'href' => 'products/caps/fleece-beanies'],
                     ['title' => 'Twill', 'href' => 'products/caps/twill'],
-                    ['title' => "Youth", 'href' => 'products/polos-knits/youth'],
-                    ['title' => "Essentials", 'href' => 'products/polos-knits/essentials'],
+                    ['title' => "Youth", 'href' => 'products/caps/youth'],
                 ]
             ],
             [
@@ -153,7 +146,6 @@ return [
                     ['title' => "Women's", 'href' => 'products/activewear/womens'],
                     ['title' => "Youth", 'href' => 'products/activewear/youth'],
                     ['title' => "Tall", 'href' => 'products/activewear/tall'],
-                    ['title' => "Essentials", 'href' => 'products/activewear/essentials'],
                 ]
             ],
             [
@@ -166,7 +158,7 @@ return [
                     ['title' => 'Polyester Fleece', 'href' => 'products/outerwear/polyester-fleece'],
                     ['title' => 'Rainwear', 'href' => 'products/outerwear/rainwear'],
                     ['title' => '3-in-1', 'href' => 'products/outerwear/3-in-1'],
-                    ['title' => 'Athletic/Warm-ups', 'href' => 'products/outerwear/athletic/warm-ups'],
+                    ['title' => 'Athletic/Warm-ups', 'href' => 'products/outerwear/athletic-warm-ups'],
                     ['title' => 'Vests', 'href' => 'products/outerwear/vests'],
                     ['title' => 'Corporate Jackets', 'href' => 'products/outerwear/corporate-jackets'],
                     ['title' => 'Work Jackets', 'href' => 'products/outerwear/work-jackets'],
@@ -175,7 +167,6 @@ return [
                     ['title' => "Women's", 'href' => 'products/outerwear/womens'],
                     ['title' => "Youth", 'href' => 'products/outerwear/youth'],
                     ['title' => "Tall", 'href' => 'products/outerwear/tall'],
-                    ['title' => "Essentials", 'href' => 'products/outerwear/essentials'],
                 ]
             ],
             [
@@ -196,7 +187,6 @@ return [
 
                     ['title' => "Women's", 'href' => 'products/woven-dress-shirts/womens'],
                     ['title' => "Tall", 'href' => 'products/woven-dress-shirts/tall'],
-                    ['title' => "Essentials", 'href' => 'products/woven-dress-shirts/essentials'],
                 ]
             ],
             [
@@ -210,8 +200,6 @@ return [
                     ['title' => 'Shorts', 'href' => 'products/bottoms/shorts'],
                     ['title' => 'Workwear', 'href' => 'products/bottoms/workwear'],
                     ['title' => 'Scrub Pants', 'href' => 'products/bottoms/scrub-pants'],
-                    ['title' => "Women's", 'href' => 'products/bottoms/womens'],
-                    ['title' => "Youth", 'href' => 'products/bottoms/youth'],
 
                 ]
             ],
@@ -228,7 +216,6 @@ return [
                     ['title' => 'Safety', 'href' => 'products/workwear/safety'],
                     ['title' => 'Aprons', 'href' => 'products/workwear/aprons'],
                     ['title' => 'Medical/Scrubs', 'href' => 'products/workwear/medical-scrubs'],
-                    ['title' => "Tall", 'href' => 'products/workwear/tall'],
                 ]
             ],
             [
@@ -248,7 +235,6 @@ return [
                     ['title' => 'Grocery Totes', 'href' => 'products/bags/grocery-totes'],
                     ['title' => 'Specialty Bags', 'href' => 'products/bags/specialty-bags'],
                     ['title' => 'Rolling Bags', 'href' => 'products/bags/rolling-bags'],
-                    ['title' => "Essentials", 'href' => 'products/bags/essentials'],
                 ]
             ],
             [
@@ -263,7 +249,6 @@ return [
                     ['title' => 'Aprons', 'href' => 'products/accessories/aprons'],
                     ['title' => 'Scarves/Gloves', 'href' => 'products/accessories/scarves-gloves'],
                     ['title' => 'Other', 'href' => 'products/accessories/other'],
-                    ['title' => 'Essential', 'href' => 'products/accessories/essential'],
                 ]
             ],
             [
@@ -300,11 +285,12 @@ return [
 
                 'sub' => [
                     ['title' => 'T-Shirts', 'href' => 'products/youth/t-shirts'],
-                    ['title' => 'Polos/Knits', 'href' => 'products/youth/polos/knits'],
+                    ['title' => 'Polos/Knits', 'href' => 'products/youth/polos-knits'],
                     ['title' => 'Sweatshirts/Fleece', 'href' => 'products/youth/sweatshirts-fleece'],
                     ['title' => 'Caps', 'href' => 'products/youth/caps'],
                     ['title' => 'Outerwear', 'href' => 'products/youth/outerwear'],
                     ['title' => 'Activewear', 'href' => 'products/youth/activewear'],
+                    ['title' => 'Bottoms', 'href' => 'products/youth/bottoms'],
                     ['title' => 'Infant & Toddler', 'href' => 'products/youth/infant-and-toddler'],
                 ]
             ],

@@ -42,7 +42,7 @@ const StyleSection: Component<PROPS> = props => {
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
 
             <Grid class={'h-full w-full'} cols={2} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
-                <For<StyleType[]> each={data()}>
+                <For each={data()}>
                     {(style: StyleType) => (
 
                         <StyleListView href={`/products/style/${style.id}`} onClick={() => handler(style)} {...style} />

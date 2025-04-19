@@ -44,7 +44,10 @@ const Home: Component<PROPS> = props => {
     return (
         <>
             <div class={'w-full flex flex-col space-y-4 mx-auto'}>
+                {/*
                 <BaseDialog/>
+                */}
+
                 <ApparelNavigation menu={res()?.menu} slides={res()?.carousel?.contents} orientation={'vertical'}/>
 
 
