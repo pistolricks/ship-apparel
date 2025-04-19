@@ -45,7 +45,7 @@ const StyleSection: Component<PROPS> = props => {
                 <For each={data()}>
                     {(style: StyleType) => (
 
-                        <StyleListView href={`/products/style/${style.id}`} onClick={() => handler(style)} {...style} />
+                        <StyleListView href={`/shop/style/${style.id}`} onClick={() => handler(style)} {...style} />
 
                     )}
                 </For>

@@ -21,10 +21,10 @@ const Resend: Component<RouteSectionProps> = props => {
 
     return (
         <FormLayout>
-            <Show<boolean>
+            <Show
                 fallback={<LoginUserForm/>}
                 when={!currentUser?.name}>
-                <Show<boolean> when={!currentUser?.activated}>
+                <Show when={!currentUser?.activated}>
                     <ResendActivateEmailForm/>
                 </Show>
             </Show>

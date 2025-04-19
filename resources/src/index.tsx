@@ -60,28 +60,28 @@ const routes = [
 
 
     {
-        path: "/products/style/:id",
+        path: "/shop/style/:id",
         component: lazy(() => import("./routes/products/view")),
         preload: preloadStyle,
     },
 
     {
-        path: "/products",
+        path: "/shop",
         component: lazy(() => import("./routes/products")),
         preload: preloadProducts,
     },
     {
-        path: "/products/brands/:brand",
+        path: "/shop/brands/:brand",
         component: lazy(() => import("~/routes/products/brand")),
         preload: preloadBrand,
     },
     {
-        path: "/products/:category",
+        path: "/shop/:category",
         component: lazy(() => import("~/routes/products/category")),
         preload: preloadCategory,
     },
     {
-        path: "/products/:category/:subCategory",
+        path: "/shop/:category/:subCategory",
         component: lazy(() => import("~/routes/products/sub-category")),
         preload: preloadSubCategory,
     },

@@ -165,7 +165,7 @@ const StyleSmView: Component<PROPS> = props => {
                 <div class="px-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-                            <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
+                            <div class="grid grid-cols-4 h-24 gap-6" aria-orientation="horizontal" role="tablist">
                                 <For each={images()}>
                                     {(image) => (
                                         <Show when={image !== ' '}>
@@ -173,7 +173,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                 onClick={() => imageHandler(image)}
                                                 type="button"
                                                 id="tabs-2-tab-1"
-                                                class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
+                                                class="relative flex h-20 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
                                                 aria-controls="tabs-2-panel-1" role="tab">
                                                 <span class="sr-only">Angled view</span>
                                                 <span class="absolute inset-0 overflow-hidden rounded-md">
@@ -251,7 +251,7 @@ const StyleSmView: Component<PROPS> = props => {
                                 <Show when={groupedByColor()}>
                                     <fieldset aria-label="Choose a color"
                                               class="w-full border-gray-200 border-b border-t py-2">
-                                        <Grid cols={8} class={'gap-x-1 gap-y-4 p-1 w-full object-fill'}>
+                                        <Grid cols={8} colsSm={10} class={'gap-x-2 gap-y-4 p-1 w-full object-fill'}>
                                             <For each={Object.keys(groupedByColor())}>
                                                 {(key) => (
                                                     <>

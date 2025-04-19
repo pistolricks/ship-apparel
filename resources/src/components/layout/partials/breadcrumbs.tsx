@@ -26,21 +26,21 @@ const Breadcrumbs: Component<{
 
 
     return (
-        <Show<boolean> when={splitPath()?.length > 0 && splitPath()?.[1]?.length > 0}>
+        <Show when={splitPath()?.length > 0 && splitPath()?.[1]?.length > 0}>
             <div class={'flex justify-between items-center w-full pt-3 mb-3 px-0.5 text-gray-normal'}>
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <BreadcrumbLink href="/" as="a">Home</BreadcrumbLink>
                         </BreadcrumbItem>
-                        <For<string[]> each={splitPath()}>
+                        <For each={splitPath()}>
                             {(path, i) => (
-                                <Show<boolean> when={i() > 0 && path?.length > 2 }>
+                                <Show when={i() > 0 && path?.length > 2 }>
                                     <BreadcrumbSeparator>
                                     </BreadcrumbSeparator>
 
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink current={i() + 1 === splitPath()?.length} href={splitPath()?.[1] === 'products' ? `/products/${path}` : `${path}`} class={"capitalize"}>{splitPath()?.[i()] }</BreadcrumbLink>
+                                        <BreadcrumbLink current={i() + 1 === splitPath()?.length} href={splitPath()?.[1] === 'shop' ? `/shop/${path}` : `${path}`} class={"capitalize"}>{splitPath()?.[i()] }</BreadcrumbLink>
                                     </BreadcrumbItem>
 
                                 </Show>

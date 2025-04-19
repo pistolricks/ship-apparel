@@ -13,24 +13,26 @@ Route::view('/our-company', 'app')->name('central.our-company');
 Route::view('/contact-us', 'app')->name('central.contact-us');
 
 
-Route::view('/products', 'app')->name('central.products');
-Route::view('/products/style/{id}', 'app')->name('central.style.show');
-Route::view('/products/brands', 'app')->name('central.products.brand.index');
-Route::view('/products/brands/{brand}', 'app')->name('central.products.brand.show');
-Route::view('/products/{category}', 'app')->name('central.products.category');
-Route::view('/products/{category}/{subCategory}', 'app')->name('central.products.category.subcategory');
-// Route::view('/login', 'app')->name('central.tenants.login');
-// Route::view('/register', 'app')->name('central.tenants.register');
-// Route::view('/resend', 'app')->name('app');
-// Route::view('/activate', 'app')->name('app');
+Route::view('/shop', 'app')->name('central.shop');
+Route::view('/shop/style/{id}', 'app')->name('central.style.show');
+Route::view('/shop/brands', 'app')->name('central.shop.brand.index');
+Route::view('/shop/brands/{brand}', 'app')->name('central.shop.brand.show');
+Route::view('/shop/{category}', 'app')->name('central.shop.category');
+Route::view('/shop/{category}/{subCategory}', 'app')->name('central.products.category.subcategory');
+
+
+Route::view('/login', 'app')->name('login');
+Route::view('/register', 'app')->name('register');
+Route::view('/resend', 'app')->name('app');
+Route::view('/activate', 'app')->name('app');
 
 
 Route::view('/api/login', 'app')->name('central.api.login');
 Route::view('/api/register', 'app')->name('central.api.register');
 
-Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
-Route::post('/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
-
-Route::get('/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
-Route::post('/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');
+// Route::get('/register', [Controllers\RegisterTenantController::class, 'show'])->name('central.tenants.register');
+// Route::post('/register/submit', [Controllers\RegisterTenantController::class, 'submit'])->name('central.tenants.register.submit');
+//
+// Route::get('/login', [Controllers\LoginTenantController::class, 'show'])->name('central.tenants.login');
+// Route::post('/login/submit', [Controllers\LoginTenantController::class, 'submit'])->name('central.tenants.login.submit');
 
