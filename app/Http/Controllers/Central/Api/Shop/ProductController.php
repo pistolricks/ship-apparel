@@ -28,12 +28,12 @@ class ProductController extends Controller
 
         $response = Http::retry(3, 100)
             ->withQueryParameters([
-                'sort' => 'product_title',
+                'sort' => 'mill',
                 (array) $request
             ])->get('http://localhost:4000/v1/styles');
         return response()->json([
             "menu" => config('menu'),
-            "products" => $response->json(),
+            "list" => $response->json(),
             "user" => $request->user(),
         ]);
     }

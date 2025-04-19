@@ -12,7 +12,7 @@ const Header: Component<{
     const location = useLocation();
     const contextId = () => props.contextId;
 
-    let path = 'products'
+    let path = 'shop'
 
     return (
         <>
@@ -66,7 +66,7 @@ const Header: Component<{
                 <div class="mx-auto flex max-w-7xl   h-[40px] items-center  justify-between px-6  lg:px-8" aria-label="Global">
 
                     <Show
-                        when={location.pathname.includes('products')}>
+                        when={location.pathname.includes('shop')}>
                         <Breadcrumbs path={location?.pathname}/>
                     </Show>
 

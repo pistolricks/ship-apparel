@@ -25,7 +25,7 @@ class BrandController extends Controller
         $response = Http::retry(3, 100)
             ->withQueryParameters([
                 'mill' => $brand,
-                'sort' => 'product_title',
+                'sort' => 'category_name',
                 (array) $request
             ])->get('http://localhost:4000/v1/styles');
 

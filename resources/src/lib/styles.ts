@@ -8,7 +8,7 @@ export const getStyles = query(async (options = {
     "use server";
 
     console.log("Style Api was called")
-    const response = await fetch(`/api/v1/styles?mill=${options.mill}category_name=${options.category_name || ""}`, {
+    const response = await fetch(`/api/shop/v1/products`, {
         headers: {
             "content-Type": "application/json",
         },
