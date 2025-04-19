@@ -27,14 +27,14 @@ const StyleListView: Component<PROPS> = props => {
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
 
             <A href={href()} class="flex flex-col w-full justify-center">
-                <div class="h-[360px] w-[220px] mx-auto">
+                <div class="h-[320px] w-[220px] mx-auto flex items-start">
                 <img
                     src={`${imagePath}/${props.color_product_image}/gallery`}
                     alt={props.product_title}
                     class={classNames(
                         "rounded-lg w-full bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
                 </div>
-                <div class=" pt-7 text-center h-[170px]">
+                <div class=" pt-7 text-center h-[170px] sm:h-[120px]">
                     <h3 class="text-xs font-light  text-gray-900">
                         <div class={'flex flex-col w-full justify-center capitalize'}>
                             <span aria-hidden="true" class="absolute inset-0"></span>

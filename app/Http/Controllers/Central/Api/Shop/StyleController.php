@@ -21,7 +21,7 @@ class StyleController extends Controller
     {
 
         $response = Http::retry(3, 10)
-            ->get('http://localhost:4000/v1/styles/' . $id );
+            ->get('http://localhost:4000/v1/styles/' . $id);
 
 
         return response()->json([

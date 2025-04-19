@@ -26,6 +26,7 @@ class SubCategoryController extends Controller
             ->withQueryParameters([
                 'category_name' => $categoryName,
                 'subcategory_name' => $subCategoryName,
+                'sort' => 'id',
                 (array) $request
             ])->get('http://localhost:4000/v1/styles');
 

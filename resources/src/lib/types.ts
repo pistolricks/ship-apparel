@@ -126,7 +126,7 @@ export type SM_PRODUCT = {
     size_index?: string;
     sanmar_mainframe_color?: string;
     mill: string;
-    product_status?: string;
+    product_status: "Coming Soon" | "New" | "Regular" | "Discontinued" | "Disabled" ;
     companion_style?: string;
     msrp?: string;
     map_pricing?: string;
@@ -184,7 +184,7 @@ export type StyleType = {
     size_index?: string;
     sanmar_mainframe_color?: string;
     mill: string;
-    product_status?: string;
+    product_status: "Coming Soon" | "New" | "Regular" | "Discontinued" | "Disabled" ;
     companion_style?: string;
     msrp?: string;
     map_pricing?: string;

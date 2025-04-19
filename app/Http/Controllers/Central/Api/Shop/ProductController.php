@@ -27,8 +27,10 @@ class ProductController extends Controller
     {
 
         $response = Http::retry(3, 100)
-            ->withQueryParameters((array) $request)
-            ->get('http://localhost:4000/v1/styles');
+            ->withQueryParameters([
+                'sort' => 'id',
+                (array) $request
+            ])->get('http://localhost:4000/v1/styles');
         return response()->json([
             "menu" => config('menu'),
             "products" => $response->json(),

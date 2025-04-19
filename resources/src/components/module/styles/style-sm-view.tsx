@@ -122,6 +122,7 @@ const StyleSmView: Component<PROPS> = props => {
                             <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
                                 <For each={images()}>
                                     {(image) => (
+                                        <Show when={image !== ' '}>
                                         <button
                                             onClick={() => imageHandler(image)}
                                             type="button"
@@ -131,13 +132,13 @@ const StyleSmView: Component<PROPS> = props => {
                                             <span class="sr-only">Angled view</span>
                                             <span class="absolute inset-0 overflow-hidden rounded-md">
                                          <img src={image}
-                                              alt="" class="size-full object-cover"/>
+                                              alt="" class="size-full object-contain object-top"/>
                                        </span>
                                             <span
                                                 class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"
                                                 aria-hidden="true"></span>
                                         </button>
-
+                                        </Show>
                                     )}
                                 </For>
 
@@ -215,7 +216,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                             <img
                                                                 class={classNames(
                                                                     'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
-                                                                    isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-transparent'
+                                                                    isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200'
                                                                 )}
                                                                 src={`/colors/${groupedByColor()?.[key]?.[0]?.color_square_image}`}
                                                                 alt={`/colors/${groupedByColor()?.[key]?.[0]?.color_name}`}/>
