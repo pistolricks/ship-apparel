@@ -1,8 +1,8 @@
 import {Component, Show} from "solid-js";
 import {A, useLocation} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
-import {LogoIcon} from "~/components/svg";
 import {Breadcrumbs} from "~/components/layout/partials/breadcrumbs";
+import {IconSearch, IconShoppingCart} from "~/components/svg";
 
 
 const Header: Component<{
@@ -17,16 +17,16 @@ const Header: Component<{
     return (
         <>
 
-            <header class="h-16 sm:h-20">
+            <header class="h-16">
                 <nav class={''} aria-label="Top">
-                    <div class="bg-primary/10 backdrop-blur-md backdrop-filter h-16 sm:h-20">
+                    <div class="bg-primary/10 backdrop-blur-md backdrop-filter h-16">
                         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                             <div>
-                                <div class="flex h-16 sm:h-20 items-center justify-between">
+                                <div class="flex h-16 items-center justify-between">
 
                                     <div class="flex lg:flex-1 lg:items-center">
                                         <A href="/">
-                                            <img src={'/logo.png'} class="h-16" />
+                                            <img src={'/logo.png'} class="h-12" alt="logo"/>
                                             <span class="sr-only"></span>
 
 
@@ -39,9 +39,20 @@ const Header: Component<{
                                         <div class="flex h-full justify-center items-center space-x-8 p-2">
 
 
+
                                         </div>
                                     </div>
-                                    <div class="flex flex-1 items-center justify-end">
+                                    <div class="flex flex-1 items-center justify-end sm:space-x-6">
+
+                                            <a href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">Search</span>
+                                                <IconSearch class="size-6"/>
+                                            </a>
+
+                                            <a href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">Search</span>
+                                                <IconShoppingCart class="size-6"/>
+                                            </a>
 
                                         <div class="flex items-center lg:ml-8">
 
@@ -62,18 +73,56 @@ const Header: Component<{
                     </div>
                 </nav>
             </header>
-            <div class={'w-full  bg-secondary/20 shadow-accent/70'}>
-                <div class="mx-auto flex max-w-7xl   h-[40px] items-center  justify-between px-6  lg:px-8" aria-label="Global">
+            <div class={'w-full bg-secondary/20 shadow-accent/70 relative hidden sm:block'}>
+                <div class="mx-auto flex max-w-7xl text-sm md:text-base  h-[60px] items-center  justify-center md:px-4 sm:space-x-4 md:space-x-6 lg:space-x-8" aria-label="Global">
 
-                    <Show
-                        when={location.pathname.includes('shop')}>
-                        <Breadcrumbs path={location?.pathname}/>
+
+                    <li role="none" class="flex items-stretch">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <span>Custom Apparel</span>
+                        </a>
+                    </li>
+
+                        <li role="none" class="flex items-stretch">
+                            <a role="menuitem" aria-current="page" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 text-sky-500 hover:text-sky-600 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                                <span>Work Apparel</span>
+                            </a>
+                        </li>
+
+                        <li role="none" class="flex items-stretch">
+                            <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                                <span>School Spirit</span>
+                            </a>
+                        </li>
+
+                    <li role="none" class="flex items-stretch">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <span>Team Athletics</span>
+                        </a>
+                    </li>
+                    <li role="none" class="flex items-stretch">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <span>Design Lab</span>
+                        </a>
+                    </li>
+                    <li role="none" class="flex items-stretch">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none" href="javascript:void(0)">
+                            <span>Pop-Up Shops</span>
+                        </a>
+                    </li>
+
+                </div>
+                <div class="h-11 w-full bg-gray-100 flex items-center">
+                    <Show when={location.pathname.includes('shop')}>
+                        <div class="  absolute bottom-0 w-full">
+                            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  flex justify-between items-center">
+                                <Breadcrumbs path={location?.pathname}/>
+
+
+
+                            </div>
+                        </div>
                     </Show>
-
-                    <div class="hidden lg:flex lg:gap-x-12 w-full  justify-end">
-
-                    </div>
-
                 </div>
             </div>
 

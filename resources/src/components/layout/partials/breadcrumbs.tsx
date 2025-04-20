@@ -6,7 +6,9 @@ import {
     BreadcrumbList,
     BreadcrumbSeparator
 } from "~/components/ui/breadcrumb";
+import {A} from "@solidjs/router";
 import * as path from "node:path";
+import {IconHome} from "~/components/svg";
 
 
 
@@ -31,7 +33,9 @@ const Breadcrumbs: Component<{
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/" as="a">Home</BreadcrumbLink>
+                            <BreadcrumbLink href="/" as={A}>
+                                <IconHome class="fill-stone-200 w-6 h-6"/>
+                            </BreadcrumbLink>
                         </BreadcrumbItem>
                         <For each={splitPath()}>
                             {(path, i) => (
