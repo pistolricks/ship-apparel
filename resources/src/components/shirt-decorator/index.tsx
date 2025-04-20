@@ -6,7 +6,8 @@ import {MenuItemType} from "~/lib/types";
 import Icon from "~/components/ui/icon";
 import {DockIcon} from "~/components/ui/dock";
 import FontFaceObserver from 'fontfaceobserver';
-import { IText } from "fabric/fabric-impl";
+import {IText} from "fabric/fabric-impl";
+import BasePopover from "~/components/ui/popover";
 
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
@@ -44,7 +45,7 @@ export default function ShirtDecorator() {
                 });
 
                 // Load shirt template
- //               loadShirtTemplate();
+                //               loadShirtTemplate();
 
                 // Set fabric as loaded
                 setFabricLoaded(true);
@@ -87,7 +88,7 @@ export default function ShirtDecorator() {
 
 
         const shirtPath = new fabric.Path('M 300,50 L 450,100 L 500,250 L 450,400 L 300,450 L 150,400 L 100,250 L 150,100 Z', {
-            fill:  "",
+            fill: "",
             stroke: '#aaaaaa',
             strokeWidth: 2,
             selectable: false,
@@ -107,7 +108,7 @@ export default function ShirtDecorator() {
 
         // Add sleeves
         const leftSleeve = new fabric.Path('M 150,100 L 50,150 L 100,250 Z', {
-            fill:  "",
+            fill: "",
             stroke: '#aaaaaa',
             strokeWidth: 2,
             selectable: false,
@@ -115,7 +116,7 @@ export default function ShirtDecorator() {
         });
 
         const rightSleeve = new fabric.Path('M 450,100 L 550,150 L 500,250 Z', {
-            fill:  "",
+            fill: "",
             stroke: '#aaaaaa',
             strokeWidth: 2,
             selectable: false,
@@ -136,18 +137,15 @@ export default function ShirtDecorator() {
     let globalImage: fabric.Image | null = null;
 
     fabric.Image.fromURL("https://cdnm.sanmar.com/imglib/mresjpg/2022/f5/5286_white_flat_front.jpg", function (img) {
-            globalImage = img;
-            img.top = -40;
-            img.left = 0;
-            img.absolutePositioned = true;
-            img.scale(0.5);
-            img.selectable = false;
-            img.evented = false;
-            fabricCanvas.add(img);
-        });
-
-
-
+        globalImage = img;
+        img.top = -40;
+        img.left = 0;
+        img.absolutePositioned = true;
+        img.scale(0.5);
+        img.selectable = false;
+        img.evented = false;
+        fabricCanvas.add(img);
+    });
 
 
     // Change shirt color
@@ -158,7 +156,6 @@ export default function ShirtDecorator() {
     // Add text to shirt
     const addText = () => {
         if (!fabricCanvas) return;
-
 
 
         const text = new fabric.IText('Custom Text', {
@@ -176,9 +173,11 @@ export default function ShirtDecorator() {
         fabricCanvas.bringToFront(text);
         fabricCanvas.setActiveObject(text);
 
-               fabricCanvas.renderAll();
+        fabricCanvas.renderAll();
 
+    };
 
+    const changeFont = (font: string) => {
         fonts.unshift('Roboto');
         const select = document.getElementById("font-family");
         if (!select) return;
@@ -206,29 +205,26 @@ export default function ShirtDecorator() {
                 }
             };
         }
+    }
+
+    function loadAndUse(font: string) {
+        const myfont = new FontFaceObserver(font)
+        myfont.load()
+            .then(function () {
+                // when font is loaded, use it.
+                const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
+                if (activeObject) {
+                    activeObject.set({fontFamily: font});
+                }
+                fabricCanvas.requestRenderAll();
+            }).catch(function (e) {
+            console.log(e)
+            alert('font loading failed ' + font);
+        });
+    }
 
 
-
-
-        function loadAndUse(font: string) {
-            const myfont = new FontFaceObserver(font)
-            myfont.load()
-                .then(function () {
-                    // when font is loaded, use it.
-                    const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
-                    if (activeObject) {
-                        activeObject.set({fontFamily: font});
-                    }
-                    fabricCanvas.requestRenderAll();
-                }).catch(function (e) {
-                console.log(e)
-                alert('font loading failed ' + font);
-            });
-        }
-    };
-
-
-    const changeShirtColor = (color: string) => {
+    const changeTextColor = (color: string) => {
         setSelectedColor(() => color);
         if (fabricCanvas) {
             const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
@@ -288,12 +284,10 @@ export default function ShirtDecorator() {
     };
 
 
-
     const handleSendToFront = () => {
-        if(!globalImage)return;
+        if (!globalImage) return;
         fabricCanvas.sendToBack(globalImage)
     }
-
 
 
     // Delete selected object
@@ -377,25 +371,6 @@ export default function ShirtDecorator() {
             flex-wrap: wrap;
         }
 
-        button {
-            padding: 8px 16px;
-            background-color: #335d92;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.2s;
-        }
-
-        button:hover {
-            background-color: #264673;
-        }
-
-        button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
 
         .file-input {
             display: none;
@@ -438,13 +413,14 @@ export default function ShirtDecorator() {
             )}
 
             <div class="controls">
+
                 <div>
                     <div class="color-options">
                         {shirtColors.map((color) => (
                             <div
                                 class={`color-option ${color.value === selectedColor() ? 'selected' : ''}`}
                                 style={{"background-color": color.value}}
-                                onClick={() => changeShirtColor(color.value)}
+                                onClick={() => changeTextColor(color.value)}
                                 title={color.name}
                             />
                         ))}
@@ -460,13 +436,27 @@ export default function ShirtDecorator() {
             </div>
 
             <BaseDock>
-
-                <DockIcon onClick={handleSendToFront}>
-                    <Icon name={"Shirt"} style={{
-                        opacity: !fabricLoaded() ? '0.5' : '1',
-                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
-                    }} class={"stroke-cyan-700 fill-sky-100"}/>
+                <DockIcon>
+                    <BasePopover title="">
+                        <div class="space-x-4">
+                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Inter")}>
+                                Inter
+                            </button>
+                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Roboto")}>
+                                Roboto
+                            </button>
+                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Open Sans")}>
+                                Open Sans
+                            </button>
+                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Montserrat")}>
+                                Montserrat
+                            </button>
+                        </div>
+                    </BasePopover>
                 </DockIcon>
+                <div class="h-full border-x mx-1"/>
+
+
 
                 <DockIcon onClick={addText}>
                     <Icon name={"Type"} style={{
@@ -474,6 +464,7 @@ export default function ShirtDecorator() {
                         cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
                     }} class={"stroke-cyan-700 fill-sky-100"}/>
                 </DockIcon>
+
 
                 <DockIcon>
                     <label class="" style={{
@@ -491,6 +482,15 @@ export default function ShirtDecorator() {
                     </label>
                 </DockIcon>
 
+                <DockIcon onClick={handleSendToFront}>
+                    <Icon name={"Shirt"} style={{
+                        opacity: !fabricLoaded() ? '0.5' : '1',
+                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
+                    }} class={"stroke-cyan-700 fill-sky-100"}/>
+                </DockIcon>
+
+
+
                 <div class="h-full border-x mx-1"/>
 
                 <DockIcon onClick={deleteSelected}>
@@ -505,14 +505,6 @@ export default function ShirtDecorator() {
                     </div>
                 )}
             </For>
-
-            <select id="font-family">
-                <option value="Inter">Inter</option>
-                <option value="Roboto">Roboto</option>
-                <option value="Open Sans">Open Sans</option>
-                <option value="Montserrat">Montserrat</option>
-            </select>
-            <p>Click and drag elements to position them. Click on text to edit.</p>
         </div>
     );
 }
