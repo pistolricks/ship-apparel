@@ -1,8 +1,12 @@
-import { createSignal, onMount, onCleanup } from "solid-js";
-import { css } from "solid-styled";
-import { fabric } from 'fabric';
-import {Dock} from "~/components/ui/dock";
-
+import {createSignal, onMount, onCleanup, createMemo, For, Show} from "solid-js";
+import {css} from "solid-styled";
+import {fabric} from 'fabric';
+import {BaseDock} from "~/components/dock";
+import {MenuItemType} from "~/lib/types";
+import Icon from "~/components/ui/icon";
+import {DockIcon} from "~/components/ui/dock";
+import FontFaceObserver from 'fontfaceobserver';
+import { IText } from "fabric/fabric-impl";
 
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
@@ -12,18 +16,22 @@ export default function ShirtDecorator() {
     let fabricCanvas: fabric.Canvas;
 
     const [canvasWidth, setCanvasWidth] = createSignal(600);
-    const [canvasHeight, setCanvasHeight] = createSignal(500);
-    const [selectedColor, setSelectedColor] = createSignal("#ffffff");
+    const [canvasHeight, setCanvasHeight] = createSignal(850);
+    const [selectedColor, setSelectedColor] = createSignal<string | null>(null);
     const [fabricLoaded, setFabricLoaded] = createSignal(false);
 
     // Available shirt colors
     const shirtColors = [
-        { name: "White", value: "#ffffff" },
-        { name: "Black", value: "#000000" },
-        { name: "Red", value: "#ff0000" },
-        { name: "Blue", value: "#0000ff" },
-        { name: "Green", value: "#008000" },
+        {name: "White", value: "#ffffff"},
+        {name: "Black", value: "#000000"},
+        {name: "Red", value: "#ff0000"},
+        {name: "Blue", value: "#0000ff"},
+        {name: "Green", value: "#008000"},
     ];
+
+
+    const fonts = ["Inter", "Roboto", "Open Sans", "Montserrat"];
+
 
     // Initialize fabric canvas
     onMount(() => {
@@ -32,11 +40,11 @@ export default function ShirtDecorator() {
                 fabricCanvas = new fabric.Canvas(canvasRef, {
                     width: canvasWidth(),
                     height: canvasHeight(),
-                    backgroundColor: selectedColor(),
+                    backgroundColor: selectedColor() ?? "",
                 });
 
                 // Load shirt template
-                loadShirtTemplate();
+ //               loadShirtTemplate();
 
                 // Set fabric as loaded
                 setFabricLoaded(true);
@@ -67,21 +75,24 @@ export default function ShirtDecorator() {
         }
     });
 
+    let shirtCanvas = {};
+
     // Load shirt template
     const loadShirtTemplate = () => {
         if (!fabricCanvas) return;
 
         // Clear canvas
         fabricCanvas.clear();
-        fabricCanvas.setBackgroundColor(selectedColor(), fabricCanvas.renderAll.bind(fabricCanvas));
+        fabricCanvas.setBackgroundColor("", fabricCanvas.renderAll.bind(fabricCanvas));
 
-        // Create basic shirt shape (simplified)
+
         const shirtPath = new fabric.Path('M 300,50 L 450,100 L 500,250 L 450,400 L 300,450 L 150,400 L 100,250 L 150,100 Z', {
-            fill: selectedColor(),
+            fill:  "",
             stroke: '#aaaaaa',
             strokeWidth: 2,
             selectable: false,
             evented: false,
+            opacity: 0.5,
         });
 
         // Add collar
@@ -91,11 +102,12 @@ export default function ShirtDecorator() {
             strokeWidth: 1,
             selectable: false,
             evented: false,
+            opacity: 0.5,
         });
 
         // Add sleeves
         const leftSleeve = new fabric.Path('M 150,100 L 50,150 L 100,250 Z', {
-            fill: selectedColor(),
+            fill:  "",
             stroke: '#aaaaaa',
             strokeWidth: 2,
             selectable: false,
@@ -103,51 +115,135 @@ export default function ShirtDecorator() {
         });
 
         const rightSleeve = new fabric.Path('M 450,100 L 550,150 L 500,250 Z', {
-            fill: selectedColor(),
+            fill:  "",
             stroke: '#aaaaaa',
             strokeWidth: 2,
             selectable: false,
             evented: false,
         });
 
+
         // Add all elements to canvas
+
+        shirtCanvas = shirtPath;
         fabricCanvas.add(shirtPath, collar, leftSleeve, rightSleeve);
+        fabricCanvas.bringToFront(shirtPath)
+
+
         fabricCanvas.renderAll();
     };
 
+    let globalImage: fabric.Image | null = null;
+
+    fabric.Image.fromURL("https://cdnm.sanmar.com/imglib/mresjpg/2022/f5/5286_white_flat_front.jpg", function (img) {
+            globalImage = img;
+            img.top = -40;
+            img.left = 0;
+            img.absolutePositioned = true;
+            img.scale(0.5);
+            img.selectable = false;
+            img.evented = false;
+            fabricCanvas.add(img);
+        });
+
+
+
+
+
     // Change shirt color
-    const changeShirtColor = (color: string) => {
-        setSelectedColor(color);
-        if (fabricCanvas) {
-            fabricCanvas.getObjects().forEach((obj: fabric.Object) => {
-                if (obj.fill !== '#dddddd') { // Don't change collar color
-                    obj.set('fill', color);
-                }
-            });
-            fabricCanvas.renderAll();
-        }
-    };
+
+
+    let textArr: fabric.IText[] = [];
 
     // Add text to shirt
     const addText = () => {
         if (!fabricCanvas) return;
 
+
+
         const text = new fabric.IText('Custom Text', {
             left: 250,
             top: 200,
-            fontFamily: 'Arial',
+            fontFamily: 'Inter',
             fontSize: 30,
             fill: selectedColor() === '#ffffff' ? '#000000' : '#ffffff',
             textAlign: 'center',
         });
 
-        fabricCanvas.add(text);
+
+        textArr.push(text);
+        fabricCanvas.add(text)
+        fabricCanvas.bringToFront(text);
         fabricCanvas.setActiveObject(text);
-        fabricCanvas.renderAll();
+
+               fabricCanvas.renderAll();
+
+
+        fonts.unshift('Roboto');
+        const select = document.getElementById("font-family");
+        if (!select) return;
+        fonts.forEach(function (font) {
+            var option = document.createElement('option');
+            option.innerHTML = font;
+            option.value = font;
+            select.appendChild(option);
+        });
+
+
+// Apply selected font on change
+        const fontSelect = document.getElementById('font-family');
+        if (fontSelect) {
+            fontSelect.onchange = function (e: Event) {
+                const select = e.target as HTMLSelectElement;
+                if (select.value !== 'Roboto') {
+                    loadAndUse(select.value);
+                } else {
+                    const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
+                    if (activeObject) {
+                        activeObject.set({fontFamily: select.value});
+                    }
+                    fabricCanvas.requestRenderAll();
+                }
+            };
+        }
+
+
+
+
+        function loadAndUse(font: string) {
+            const myfont = new FontFaceObserver(font)
+            myfont.load()
+                .then(function () {
+                    // when font is loaded, use it.
+                    const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
+                    if (activeObject) {
+                        activeObject.set({fontFamily: font});
+                    }
+                    fabricCanvas.requestRenderAll();
+                }).catch(function (e) {
+                console.log(e)
+                alert('font loading failed ' + font);
+            });
+        }
     };
 
+
+    const changeShirtColor = (color: string) => {
+        setSelectedColor(() => color);
+        if (fabricCanvas) {
+            const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
+
+            activeObject.set('fill', color);
+
+            fabricCanvas.renderAll();
+        }
+    };
+
+    let uploadedImage: fabric.Image | null = null;
+
     // Add image to shirt
-    const addImage = (e: Event) => {
+    const addImage = (e?: Event) => {
+        if (!e) return;
         if (!fabricCanvas) return;
         const input = e.target as HTMLInputElement;
 
@@ -160,6 +256,7 @@ export default function ShirtDecorator() {
 
                 imgObj.onload = () => {
                     const image = new fabric.Image(imgObj);
+                    uploadedImage = image;
 
                     // Scale image to fit on shirt
                     const maxWidth = 200;
@@ -178,9 +275,10 @@ export default function ShirtDecorator() {
                         originX: 'center',
                         originY: 'center',
                     });
-
+                    fabricCanvas.bringToFront(image);
                     fabricCanvas.add(image);
                     fabricCanvas.setActiveObject(image);
+
                     fabricCanvas.renderAll();
                 };
             };
@@ -189,6 +287,15 @@ export default function ShirtDecorator() {
         }
     };
 
+
+
+    const handleSendToFront = () => {
+        if(!globalImage)return;
+        fabricCanvas.sendToBack(globalImage)
+    }
+
+
+
     // Delete selected object
     const deleteSelected = () => {
         if (!fabricCanvas) return;
@@ -196,120 +303,132 @@ export default function ShirtDecorator() {
         const activeObject = fabricCanvas.getActiveObject();
         if (activeObject) {
             fabricCanvas.remove(activeObject);
+
+            textArr = textArr.filter(item => item !== activeObject); // Removes the object with id 2
+
+            console.log("textArr", textArr);
+
             fabricCanvas.renderAll();
         }
     };
 
+
     css`
-    .shirt-decorator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
 
-    .canvas-container {
-      margin: 20px 0;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      overflow: hidden;
-      max-width: 100%;
-    }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 20px;
-      justify-content: center;
-    }
 
-    .color-options {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
+        .shirt-decorator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-    .color-option {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid #ddd;
-      transition: transform 0.2s;
-    }
+        .canvas-container {
+            margin: 0px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            max-width: 100%;
+            max-height: 100%;
+        }
 
-    .color-option:hover {
-      transform: scale(1.1);
-    }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
 
-    .color-option.selected {
-      border: 2px solid #333;
-    }
+        .color-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
 
-    .action-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: transform 0.2s;
+        }
 
-    button {
-      padding: 8px 16px;
-      background-color: #335d92;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.2s;
-    }
+        .color-option:hover {
+            transform: scale(1.1);
+        }
 
-    button:hover {
-      background-color: #264673;
-    }
+        .color-option.selected {
+            border: 2px solid #333;
+        }
 
-    button:disabled {
-      background-color: #cccccc;
-      cursor: not-allowed;
-    }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
-    .file-input {
-      display: none;
-    }
+        button {
+            padding: 8px 16px;
+            background-color: #335d92;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
 
-    .file-label {
-      padding: 8px 16px;
-      background-color: #335d92;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.2s;
-    }
+        button:hover {
+            background-color: #264673;
+        }
 
-    .file-label:hover {
-      background-color: #264673;
-    }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
 
-    .fabric-not-loaded {
-      padding: 20px;
-      background-color: #fff3cd;
-      color: #856404;
-      border: 1px solid #ffeeba;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-  `;
+        .file-input {
+            display: none;
+        }
+
+        .file-label {
+            padding: 8px 16px;
+            background-color: #335d92;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .file-label:hover {
+            background-color: #264673;
+        }
+
+        .fabric-not-loaded {
+            padding: 20px;
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    `;
 
     return (
         <div class="shirt-decorator">
-            <h2>Custom Shirt Designer</h2>
-
             {!fabricLoaded() && (
                 <div class="fabric-not-loaded">
                     <p>Fabric.js library is not loaded. The library is included in package.json.</p>
@@ -320,23 +439,48 @@ export default function ShirtDecorator() {
 
             <div class="controls">
                 <div>
-                    <h3>Shirt Color</h3>
                     <div class="color-options">
                         {shirtColors.map((color) => (
                             <div
                                 class={`color-option ${color.value === selectedColor() ? 'selected' : ''}`}
-                                style={{ "background-color": color.value }}
+                                style={{"background-color": color.value}}
                                 onClick={() => changeShirtColor(color.value)}
                                 title={color.name}
                             />
                         ))}
                     </div>
                 </div>
+            </div>
 
-                <div class="action-buttons">
-                    <button onClick={addText} disabled={!fabricLoaded()}>Add Text</button>
-                    <label class="file-label" style={{ opacity: !fabricLoaded() ? '0.5' : '1', cursor: !fabricLoaded() ? 'not-allowed' : 'pointer' }}>
-                        Add Image
+            <div
+                class="canvas-container">
+
+                <canvas class="relative" ref={canvasRef} width={canvasWidth()} height={canvasHeight()}></canvas>
+
+            </div>
+
+            <BaseDock>
+
+                <DockIcon onClick={handleSendToFront}>
+                    <Icon name={"Shirt"} style={{
+                        opacity: !fabricLoaded() ? '0.5' : '1',
+                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
+                    }} class={"stroke-cyan-700 fill-sky-100"}/>
+                </DockIcon>
+
+                <DockIcon onClick={addText}>
+                    <Icon name={"Type"} style={{
+                        opacity: !fabricLoaded() ? '0.5' : '1',
+                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
+                    }} class={"stroke-cyan-700 fill-sky-100"}/>
+                </DockIcon>
+
+                <DockIcon>
+                    <label class="" style={{
+                        opacity: !fabricLoaded() ? '0.5' : '1',
+                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
+                    }}>
+                        <Icon name={"ImageUp"} class="stroke-cyan-700 fill-sky-100 size-full"/>
                         <input
                             type="file"
                             class="file-input"
@@ -345,16 +489,30 @@ export default function ShirtDecorator() {
                             disabled={!fabricLoaded()}
                         />
                     </label>
-                    <button onClick={deleteSelected} disabled={!fabricLoaded()}>Delete Selected</button>
-                </div>
-            </div>
+                </DockIcon>
 
-            <div class="canvas-container">
-                <canvas ref={canvasRef} width={canvasWidth()} height={canvasHeight()}></canvas>
-            </div>
+                <div class="h-full border-x mx-1"/>
+
+                <DockIcon onClick={deleteSelected}>
+                    <Icon name={"Trash"} class={"stroke-rose-700 fill-red-100"}/>
+                </DockIcon>
+            </BaseDock>
+
+            <For each={textArr}>
+                {(item: fabric.IText) => (
+                    <div class={"text-lg text-gray-500"}>
+                        {item.name}
+                    </div>
+                )}
+            </For>
+
+            <select id="font-family">
+                <option value="Inter">Inter</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Open Sans">Open Sans</option>
+                <option value="Montserrat">Montserrat</option>
+            </select>
             <p>Click and drag elements to position them. Click on text to edit.</p>
-
-            <Dock/>
         </div>
     );
 }
