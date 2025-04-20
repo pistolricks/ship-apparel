@@ -11,6 +11,7 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",
+        "@types/fabric": "^5.3.6",
         "autoprefixer": "^10.4.21",
         "axios": "1.8.3",
         "clsx": "^2.1.1",
@@ -35,6 +36,7 @@
         "@responsive-image/solid": "^1.1.0",
         "@responsive-image/vite-plugin": "^1.1.0",
         "@solid-primitives/media": "^2.3.0",
+        "@solidjs/meta": "^0.29.4",
         "@solidjs/router": "^0.15.3",
         "@tailwindcss/vite": "^4.0.13",
         "@tokens-studio/types": "^0.5.2",
@@ -43,13 +45,15 @@
         "cloudflare": "^4.1.0",
         "embla-carousel-autoplay": "^8.6.0",
         "embla-carousel-solid": "^8.5.2",
-        "fabric": "^6.6.1",
+        "fabric": "^5.3.0",
         "ol": "^10.4.0",
         "solid-canvas": "^0.0.8",
         "solid-js": "^1.9.5",
+        "solid-styled": "^0.12.0",
         "swapy": "^1.0.5",
         "swapy-solid": "^0.1.0",
         "tailwind-scrollbar-hide": "^2.0.0",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
+        "unplugin-solid-styled": "^0.12.0"
     }
 }

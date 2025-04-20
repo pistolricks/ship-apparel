@@ -3,6 +3,7 @@ import {A, useLocation} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
 import {Breadcrumbs} from "~/components/layout/partials/breadcrumbs";
 import {IconSearch, IconShoppingCart} from "~/components/svg";
+import { classNames } from "~/lib/utils";
 
 
 const Header: Component<{
@@ -44,15 +45,15 @@ const Header: Component<{
                                     </div>
                                     <div class="flex flex-1 items-center justify-end sm:space-x-6">
 
-                                            <a href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
+                                            <A href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
                                                 <span class="sr-only">Search</span>
                                                 <IconSearch class="size-6"/>
-                                            </a>
+                                            </A>
 
-                                            <a href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
+                                            <A href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
                                                 <span class="sr-only">Search</span>
                                                 <IconShoppingCart class="size-6"/>
-                                            </a>
+                                            </A>
 
                                         <div class="flex items-center lg:ml-8">
 
@@ -78,37 +79,49 @@ const Header: Component<{
 
 
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                        <A href={"/custom-apparel"} role="menuitem" aria-haspopup="false" class={classNames(
+                            location.pathname === "/custom-apparel" ? "activeClass" : "",
+                            "flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none ")}>
                             <span>Custom Apparel</span>
-                        </a>
+                        </A>
                     </li>
 
                         <li role="none" class="flex items-stretch">
-                            <a role="menuitem" aria-current="page" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 text--500 hover:text--600 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <A href={"/work-apparel"} role="menuitem"  aria-haspopup="false" class={classNames(
+                                location.pathname === "/work-apparel" ? "activeClass" : "",
+                                "flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none ")}>
                                 <span>Work Apparel</span>
-                            </a>
+                            </A>
                         </li>
 
                         <li role="none" class="flex items-stretch">
-                            <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <A href={"/school-spirit"} role="menuitem" aria-haspopup="false" class={classNames(
+                                location.pathname === "/school-spirit" ? "activeClass" : "",
+                                "flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none ")}>
                                 <span>School Spirit</span>
-                            </a>
+                            </A>
                         </li>
 
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                        <A href={"/team-athletics"} role="menuitem" aria-haspopup="false" class={classNames(
+                            location.pathname === "/team-athletics" ? "activeClass" : "",
+                            "flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none ")}>
                             <span>Team Athletics</span>
-                        </a>
+                        </A>
                     </li>
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                        <A href={"/design-lab"} role="menuitem" aria-haspopup="false" class={classNames(
+                            location.pathname === "/design-lab" ? "activeClass" : "",
+                            "flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none ")}>
                             <span>Design Lab</span>
-                        </a>
+                        </A>
                     </li>
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none" href="javascript:void(0)">
+                        <A href={"/popup-shops"} role="menuitem" aria-haspopup="false" class={classNames(
+                            location.pathname === "/popup-shops" ? "activeClass" : "",
+                            "flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none")}>
                             <span>Pop-Up Shop</span>
-                        </a>
+                        </A>
                     </li>
 
                 </div>

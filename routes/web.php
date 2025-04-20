@@ -12,6 +12,12 @@ Route::view('/', 'app')->name('central.app');
 Route::view('/our-company', 'app')->name('central.our-company');
 Route::view('/contact-us', 'app')->name('central.contact-us');
 
+Route::view('/design-lab', 'app')->name('central.design-lab');
+Route::view('/custom-apparel', 'app')->name('central.custom-apparel');
+Route::view('/work-apparel', 'app')->name('central.work-apparel');
+Route::view('/school-spirit', 'app')->name('central.school-spirit');
+Route::view('/team-athletics', 'app')->name('central.team-athletics');
+Route::view('/popup-shops', 'app')->name('central.popup-shops');
 
 Route::view('/shop', 'app')->name('central.shop');
 Route::view('/shop/style/{id}', 'app')->name('central.style.show');

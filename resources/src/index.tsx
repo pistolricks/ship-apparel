@@ -42,6 +42,26 @@ const routes = [
         component: lazy(() => import("./routes/index")),
     },
     {
+        path: "/custom-apparel",
+        component: lazy(() => import("./routes/custom-apparel")),
+    },
+    {
+        path: "/work-apparel",
+        component: lazy(() => import("./routes/work-apparel")),
+    },
+    {
+        path: "/team-athletics",
+        component: lazy(() => import("./routes/team-athletics")),
+    },
+    {
+        path: "/design-lab",
+        component: lazy(() => import("./routes/design-lab")),
+    },
+    {
+        path: "/popup-shops",
+        component: lazy(() => import("./routes/popup-shops")),
+    },
+    {
         path: "/reversible-apparel",
         component: lazy(() => import("./routes/reversible-apparel")),
     },
