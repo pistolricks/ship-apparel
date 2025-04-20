@@ -428,12 +428,13 @@ export default function ShirtDecorator() {
                 </div>
             </div>
 
-            <div
-                class="canvas-container">
+            <div class="canvas-container">
 
                 <canvas class="relative" ref={canvasRef} width={canvasWidth()} height={canvasHeight()}></canvas>
 
             </div>
+
+            <div class={"h-5"}></div>
 
             <BaseDock>
                 <DockIcon>
