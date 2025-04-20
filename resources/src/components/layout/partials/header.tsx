@@ -78,36 +78,36 @@ const Header: Component<{
 
 
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
                             <span>Custom Apparel</span>
                         </a>
                     </li>
 
                         <li role="none" class="flex items-stretch">
-                            <a role="menuitem" aria-current="page" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 text-sky-500 hover:text-sky-600 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <a role="menuitem" aria-current="page" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 text--500 hover:text--600 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
                                 <span>Work Apparel</span>
                             </a>
                         </li>
 
                         <li role="none" class="flex items-stretch">
-                            <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                            <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
                                 <span>School Spirit</span>
                             </a>
                         </li>
 
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
                             <span>Team Athletics</span>
                         </a>
                     </li>
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none " href="javascript:void(0)">
                             <span>Design Lab</span>
                         </a>
                     </li>
                     <li role="none" class="flex items-stretch">
-                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:text-sky-600 focus:outline-none focus-visible:outline-none" href="javascript:void(0)">
-                            <span>Pop-Up Shops</span>
+                        <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text--500 focus:text--600 focus:outline-none focus-visible:outline-none" href="javascript:void(0)">
+                            <span>Pop-Up Shop</span>
                         </a>
                     </li>
 
