@@ -1,6 +1,8 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 import { css } from "solid-styled";
 import { fabric } from 'fabric';
+import {Dock} from "~/components/ui/dock";
+
 
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
@@ -350,8 +352,9 @@ export default function ShirtDecorator() {
             <div class="canvas-container">
                 <canvas ref={canvasRef} width={canvasWidth()} height={canvasHeight()}></canvas>
             </div>
-
             <p>Click and drag elements to position them. Click on text to edit.</p>
+
+            <Dock/>
         </div>
     );
 }

@@ -1,0 +1,10 @@
+{
+  "framework": "tailwind",
+  "configPath": "resources/css/app.css",
+    "outputPath": "../resources/src/components/ui",
+  "tailwind": {
+    "aliases": {
+      "utils": "~/lib/utils"
+    }
+  }
+}

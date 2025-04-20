@@ -1,8 +1,7 @@
-import {Component, createEffect, createSignal, For} from 'solid-js'
-import { EmblaCarouselType } from 'embla-carousel'
+import {Component, createEffect, For} from 'solid-js'
+import {EmblaCarouselType} from 'embla-carousel'
 
 
-import type { CreateEmblaCarouselType } from "embla-carousel-solid"
 import createEmblaCarousel from "embla-carousel-solid"
 
 const CIRCLE_DEGREES = 360
@@ -116,7 +115,7 @@ export const IosPickerItem: Component<PropType> = (props) => {
         if (!emblaApi()) return
 
         emblaApi()?.on('pointerUp', (emblaApi) => {
-            const { scrollTo, target, location } = emblaApi.internalEngine()
+            const {scrollTo, target, location} = emblaApi.internalEngine()
             const diffToTarget = target.get() - location.get()
             const factor = Math.abs(diffToTarget) < WHEEL_ITEM_SIZE / 2.5 ? 10 : 0.1
             const distance = diffToTarget * factor
@@ -145,11 +144,11 @@ export const IosPickerItem: Component<PropType> = (props) => {
                 >
                     <div class="embla__ios-picker__container">
                         <For each={slides}>
-                        {(_, index) => (
-                            <div class="embla__ios-picker__slide">
-                                {index()}
-                            </div>
-                        )}
+                            {(_, index) => (
+                                <div class="embla__ios-picker__slide">
+                                    {index()}
+                                </div>
+                            )}
                         </For>
                     </div>
                 </div>
