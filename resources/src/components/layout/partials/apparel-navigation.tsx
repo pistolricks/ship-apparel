@@ -40,7 +40,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     return (
 
-        <div class="relative h-[540px] w-full  items-left space-y-4">
+        <div class="hidden sm:block relative h-[540px] w-full  items-left space-y-4">
 
             <Tabs class={'max-h-[540px] flex justify-start w-full shadow'} orientation={"horizontal"}>
 

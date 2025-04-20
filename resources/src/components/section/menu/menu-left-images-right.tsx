@@ -26,7 +26,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
 
                         <For each={list()}>
                             {(item, index) => (
-                                <Show when={index() < 12}>
+                                <Show when={index() < 16}>
                                     <li class="flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
@@ -39,7 +39,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                         class="flex flex-col space-y-4 w-full">
                         <For each={list()}>
                             {(item, index) => (
-                                <Show when={index() > 11 && index() < 25}>
+                                <Show when={index() > 15 && index() < 32}>
                                     <li class="flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
@@ -52,7 +52,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
                         class="flex flex-col space-y-4 w-full">
                         <For  each={list()}>
                             {(item, index) => (
-                                <Show when={index() > 24}>
+                                <Show when={index() > 31}>
                                     <li class="flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
