@@ -3,6 +3,7 @@
 use App\Http\Controllers\Central as Controllers;
 use App\Http\Controllers\Central\Api\Shop\ProductController;
 use App\Http\Controllers\Central\Api\Upload\ImageController;
+use App\Models\Style;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
@@ -41,8 +42,7 @@ Route::post('/images/v1/upload', [ImageController::class, "create"])->name('api.
 
 
 Route::get('/v1/styles', function () {
-    return Http::retry(3, 100)
-        ->get('http://localhost:4000/v1/styles', []);
+    return Style::query()->get();
 });
 
 Route::get('/v1/products', function ($id, Request $request) {
