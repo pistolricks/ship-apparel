@@ -199,3 +199,55 @@ export type StyleType = {
     products?: any;
     data?: any,
 }
+
+export type PRODUCT_BASIC_INFO = {
+    availableSizes: string;
+    brandName: string;
+    caseSize: string;
+    catalogColor: string;
+    category: string;
+    color: string;
+    inventoryKey: string;
+    keywords: string;
+    pieceWeight: string;
+    productDescription: string;
+    productStatus: string;
+    productTitle: string;
+    size: string;
+    sizeIndex: string;
+    style: string;
+    uniqueKey: string;
+}
+
+export type PRODUCT_IMAGE_INFO = {
+    backFlat: string;
+    backModel: string;
+    brandLogoImage: string;
+    colorProductImage: string;
+    colorProductImageThumbnail: string;
+    colorSquareImage: string;
+    colorSwatchImage: string;
+    frontFlat: string;
+    frontModel: string;
+    productImage: string;
+    sideModel: string;
+    specSheet: string;
+    threeQModel: string;
+    thumbnailImage: string;
+    titleImage: string;
+}
+
+export type PRODUCT_PRICE_INFO = {
+    casePrice: string;
+    dozensPrice: string;
+    piecePrice: string;
+    priceCode: string;
+    priceText: string;
+}
+
+
+export type PRODUCT_INFO = {
+    productBasicInfo: PRODUCT_BASIC_INFO;
+    productImageInfo: PRODUCT_IMAGE_INFO;
+    productPriceInfo: PRODUCT_PRICE_INFO;
+}

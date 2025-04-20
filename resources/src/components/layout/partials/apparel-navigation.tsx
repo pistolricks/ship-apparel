@@ -1,4 +1,4 @@
-import {Component, createSelector, createSignal, For, Match, Show, Switch} from "solid-js"
+import {Component, createSelector, createSignal, For, JSX, Match, Show, Switch} from "solid-js"
 
 import type {Orientation} from "@kobalte/core/navigation-menu"
 import {ContentItemType, MenuItemType} from "~/lib/types";
@@ -7,6 +7,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A} from "@solidjs/router";
 import {CarouselAuto} from "~/components/ui/carousel/carousel-auto";
+
 
 
 type PROPS = {
@@ -25,7 +26,9 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     const handleSelect = (data: string) => {
         console.log("Data:", data);
-        getTitle() === data ? setTitle("") : setTitle(data)
+        setTitle(() => data)
+
+
     };
 
     const handleDeselect = (data: string, event: Event) => {
@@ -47,16 +50,19 @@ const ApparelNavigation: Component<PROPS> = props => {
                         {(item: MenuItemType) => (
 
 
-                            <TabsTrigger as={"button"} type="button"
-                                         onClick={() => handleSelect(item.title)}
-                                         class={'w-40 font-medium tracking-wide'} value={item.title}>
+                            <TabsTrigger on:mouseover={(event) => {
+                                event.stopPropagation()
+                                handleSelect(item.title)
+                            }} as={A} type="button"
+                                         href={item.href}
+                                         class={'w-40 font-medium tracking-wide'} value={getTitle()}>
                                 {item.title}
                             </TabsTrigger>
                         )}
                     </For>
                 </TabsList>
 
-                <Grid cols={3} class="relative h-[540px] overflow-x-hidden">
+                <Grid cols={3} class="relative h-[540px] w-full overflow-x-hidden">
                     <For each={menu()?.[0]?.sub}>
                         {(item: MenuItemType) => (
                             <TabsContent value={item.title} class="">
@@ -68,10 +74,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                     </Match>
                                     <Match when={isSelected(item.title)}>
                                         <div class="p-5">
-                                            <div class="w-full h-12">
-                                                <A href={item.href}
-                                                   class="animate animate-out fade-out-75 -m-2 rounded hover:bg-amber-100/50 hover:text-amber-600 font-semibold focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
-                                            </div>
+
                                             <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
                                         </div>
                                     </Match>
