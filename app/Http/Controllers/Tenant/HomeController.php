@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Tenant;
+namespace App\Http\Controllers\Tenant;
 
-use App\Http\Controllers\Central\Api\Shop\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class HomeController extends Controller

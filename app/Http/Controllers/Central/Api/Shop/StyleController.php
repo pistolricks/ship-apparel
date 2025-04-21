@@ -1,13 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Central\Api\Shop;
+namespace App\Http\Controllers\Central\Api\Shop;
 
-use App\Data\ProductData;
-use App\Data\StyleData;
-use App\Http\Controllers\Central\Api\Shop\Controller;
-use App\Models\Menu;
-use App\Models\Product;
-use App\Models\Style;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -17,11 +12,11 @@ class StyleController extends Controller
     /**
      * @throws ConnectionException
      */
-    public function __invoke(Request $request,string $id)
+    public function __invoke(Request $request, string $id)
     {
 
         $response = Http::retry(3, 10)
-            ->get('http://localhost:4000/v1/styles/' . $id);
+            ->get('http://localhost:4000/v1/styles/'.$id);
 
 
         return response()->json([

@@ -1,6 +1,11 @@
 <?php
 
-use App\Http\Controllers\Central\Api\Shop\Tenant as Controllers;
+
+use App\Http\Controllers\Tenant\ApplicationSettingsController;
+use App\Http\Controllers\Tenant\DownloadInvoiceController;
+use App\Http\Controllers\Tenant\PloiWebhookController;
+use App\Http\Controllers\Tenant\PostController;
+use App\Http\Controllers\Tenant\UserSettingsController;
 use App\Http\Middleware\CheckSubscription;
 use App\Http\Middleware\OwnerOnly;
 use Illuminate\Support\Facades\Auth;
@@ -28,25 +33,25 @@ Route::middleware('tenant', PreventAccessFromCentralDomains::class)->name('tenan
         return UserImpersonation::makeResponse($token);
     })->name('impersonate');
 
-    Route::post('/ploi/webhook/certificateIssued', [Controllers\PloiWebhookController::class, 'certificateIssued'])->name('ploi.certificate.issued');
-    Route::post('/ploi/webhook/certificateRevoked', [Controllers\PloiWebhookController::class, 'certificateRevoked'])->name('ploi.certificate.revoked');
+    Route::post('/ploi/webhook/certificateIssued', [PloiWebhookController::class, 'certificateIssued'])->name('ploi.certificate.issued');
+    Route::post('/ploi/webhook/certificateRevoked', [PloiWebhookController::class, 'certificateRevoked'])->name('ploi.certificate.revoked');
 
     Route::middleware(['auth', CheckSubscription::class])->group(function () {
         Route::redirect('/home', '/posts')->name('home');
 
-        Route::get('/posts', [Controllers\PostController::class, 'index'])->name('posts.index');
-        Route::post('/posts', [Controllers\PostController::class, 'store'])->name('posts.store');
-        Route::get('/posts/create', [Controllers\PostController::class, 'create'])->name('posts.create');
-        Route::get('/posts/{post}', [Controllers\PostController::class, 'show'])->name('posts.show');
+        Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+        Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+        Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+        Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-        Route::get('/settings/user', [Controllers\UserSettingsController::class, 'show'])->name('settings.user');
-        Route::post('/settings/user/personal', [Controllers\UserSettingsController::class, 'personal'])->name('settings.user.personal');
-        Route::post('/settings/user/password', [Controllers\UserSettingsController::class, 'password'])->name('settings.user.password');
+        Route::get('/settings/user', [UserSettingsController::class, 'show'])->name('settings.user');
+        Route::post('/settings/user/personal', [UserSettingsController::class, 'personal'])->name('settings.user.personal');
+        Route::post('/settings/user/password', [UserSettingsController::class, 'password'])->name('settings.user.password');
 
         Route::middleware(OwnerOnly::class)->group(function () {
-            Route::get('/settings/application', [Controllers\ApplicationSettingsController::class, 'show'])->name('settings.application');
-            Route::post('/settings/application/configuration', [Controllers\ApplicationSettingsController::class, 'storeConfiguration'])->name('settings.application.configuration');
-            Route::get('/settings/application/invoice/{id}/download', Controllers\DownloadInvoiceController::class)->name('invoice.download');
+            Route::get('/settings/application', [ApplicationSettingsController::class, 'show'])->name('settings.application');
+            Route::post('/settings/application/configuration', [ApplicationSettingsController::class, 'storeConfiguration'])->name('settings.application.configuration');
+            Route::get('/settings/application/invoice/{id}/download', DownloadInvoiceController::class)->name('invoice.download');
         });
     });
 

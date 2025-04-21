@@ -1,11 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Central\Api\Shop;
+namespace App\Http\Controllers\Central\Api\Shop;
 
-use App\Http\Controllers\Central\Api\Shop\Controller;
-use App\Models\Product;
-use App\Models\Style;
-use App\Support\BrandSupport;
+use App\Http\Controllers\Controller;
 use App\Support\CategorySupport;
 use App\Support\SubCategorySupport;
 use Illuminate\Http\Request;
@@ -29,7 +26,6 @@ class SubCategoryController extends Controller
                 'sort' => 'product_title',
                 (array) $request
             ])->get('http://localhost:4000/v1/styles');
-
 
 
         return response()->json([

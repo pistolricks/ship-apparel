@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Tenant\Auth;
+namespace App\Http\Controllers\Tenant\Auth;
 
-use App\Http\Controllers\Central\Api\Shop\Controller;
+use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;

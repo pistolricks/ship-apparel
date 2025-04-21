@@ -1,14 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Central\Api\Shop;
+namespace App\Http\Controllers\Central\Api\Shop;
 
-use App\Data\ProductData;
-use App\Http\Controllers\Central\Api\Shop\Controller;
-use App\Http\Integrations\Vendors\Requests\StylesRequest;
-use App\Http\Integrations\Vendors\VendorConnector;
-use App\Models\Menu;
-use App\Models\Product;
-use App\Models\Style;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;

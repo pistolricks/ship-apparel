@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\AddImageToStyleAction;
+
 use App\Actions\Style\StyleAction;
 use App\Models\Product;
 

@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Central\Api;
+namespace App\Http\Controllers\Central\Api;
 
-use App\Http\Controllers\Central\Api\Shop\Controller;
-use App\Models\Menu;
+use App\Http\Controllers\Controller;
 use App\Models\Page;
-use App\Models\Section;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {

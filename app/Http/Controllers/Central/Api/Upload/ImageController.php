@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Central\Api\Upload;
+namespace App\Http\Controllers\Central\Api\Upload;
 
 use App\Actions\images\ImageUploadAction;
-use App\Http\Controllers\Central\Api\Shop\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 

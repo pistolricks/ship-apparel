@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop\Tenant;
+namespace App\Http\Controllers\Tenant;
 
-use App\Http\Controllers\Central\Api\Shop\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;

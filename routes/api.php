@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Central\Api\Shop\Central as Controllers;
-use App\Http\Controllers\Central\Api\Shop\Central\Api\Shop\ProductController;
-use App\Http\Controllers\Central\Api\Shop\Central\Api\Upload\ImageController;
+use App\Http\Controllers\Central as Controllers;
+use App\Http\Controllers\Central\Api\Shop\ProductController;
+use App\Http\Controllers\Central\Api\Upload\ImageController;
 use App\Models\Style;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;

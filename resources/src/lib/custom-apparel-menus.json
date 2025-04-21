@@ -1,0 +1,73 @@
+[
+    {
+        "name": "T-Shirts",
+        "image": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/PC54_flat_front_GA16.png",
+        "href":"/"
+    },
+    {
+        "name": "Hoodies",
+        "image": "TM1MW450_multiple_stack_GA22.png",
+        "href": "/"
+    },
+    {
+        "name": "Hats",
+        "image": "CP82_stack.png",
+        "href": "/"
+    },
+    {
+        "name": "Beanies",
+        "image": "NF0A4VUB_pair_GA21.png",
+        "href": "/"
+    },
+    {
+        "name": "Jackets",
+        "image": "578674_anthhthrblackgrey_flat_stack_ga19.png",
+        "href": "/"
+    },
+    {
+        "name": "Polo Shirts",
+        "image": "K572_flat_GA18.png",
+        "href": "/"
+    },
+    {
+        "name": "Backpacks",
+        "image": "BG217_all_bags_GA21.png",
+        "href": "/"
+    },
+    {
+        "name": "Activewear",
+        "image": "NKBQ5231_All_Stacked_ga19.png",
+        "href": "/"
+    },
+    {
+        "name": "Business Apparel",
+        "image": "S658_hanging_GA18.png",
+        "href": "/"
+    },
+    {
+        "name": "Workwear",
+        "image": "CS200_Stack_FA21.png",
+        "href": "/"
+    },
+    {
+        "name": "Pants & Shorts",
+        "image": "DT6107_multiple_flats_front_GA21.png",
+        "href": "/"
+    },
+    {
+        "name": "Accessories",
+        "image": "GL01_Stack_GH11.png",
+        "href": "/"
+    },
+    {
+        "name": "Featured Brands",
+        "image": "TM1MW450_multiple_stack_GA22.png",
+        "href": "/"
+    },
+    {
+        "name": "Women's",
+        "image": "MM3023_allcolors_lifestyle_FA22.png",
+        "href": "/"
+    }
+
+]
