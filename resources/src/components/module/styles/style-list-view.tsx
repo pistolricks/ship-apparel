@@ -27,7 +27,7 @@ const StyleListView: Component<PROPS> = props => {
         <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
 
             <A href={href()} class="flex flex-col w-full justify-center">
-                <div class="sm:h-[320px] sm:w-[220px] mx-auto flex items-start">
+                <div class="sm:h-full sm:w-full mx-auto flex items-start">
                 <img
                     src={`${imagePath}/${props.color_product_image}/gallery`}
                     alt={props.product_title}

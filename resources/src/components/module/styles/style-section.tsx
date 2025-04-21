@@ -7,6 +7,7 @@ import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import {IconX} from "~/components/svg";
 import StyleView from "~/components/module/styles/style-view";
 import {useNavigate} from "@solidjs/router";
+import CategoryFilters from "~/components/layout/partials/side/category-filters";
 
 
 type PROPS = {
@@ -40,8 +41,9 @@ const StyleSection: Component<PROPS> = props => {
 
     return (<>
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
-
-            <Grid class={'h-full w-full'} cols={2} colsSm={2} colsMd={3} colsLg={4} colsXl={5}>
+            <div class={"flex justify-start w-full h-full"}>
+            <CategoryFilters name={""}/>
+            <Grid class={'h-full w-full'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={data()}>
                     {(style: StyleType) => (
 
@@ -66,7 +68,7 @@ const StyleSection: Component<PROPS> = props => {
                 </>
             </DrawerContent>
 
-
+            </div>
         </BaseDrawer>
 
 

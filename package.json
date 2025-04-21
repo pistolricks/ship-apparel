@@ -31,6 +31,7 @@
     "dependencies": {
         "@ark-ui/solid": "^5.1.0",
         "@corvu/dialog": "^0.2.4",
+        "@corvu/disclosure": "^0.2.2",
         "@corvu/drawer": "^0.2.3",
         "@corvu/popover": "^0.2.0",
         "@kobalte/core": "^0.13.9",

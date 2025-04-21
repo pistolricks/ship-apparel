@@ -92,7 +92,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                 </Grid>
                 <Show when={getTitle() !== ""} >
                 <TabsTrigger onClick={() => handleSelect("")} value={getTitle()} class={"absolute bottom-0 right-0 w-12 bg-white cursor-pointer m-2"}>
-                    <Icon name={"CircleX"} class={"size-8"} />
+                    <Icon name={"CircleX"} class={"size-8 text-gray-500"} />
                 </TabsTrigger>
                 </Show>
             </Tabs>

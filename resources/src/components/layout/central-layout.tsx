@@ -33,7 +33,7 @@ const CentralLayout: Component<PROPS> = props => {
                     <Show when={location.pathname?.includes('shop') && !location.pathname?.includes('view')}>
                         <></>
                         {/*
-                        <nav class="order-first sm:w-[200px] bg-gray-100 overflow-y-auto"><CategoryFilters name={""}/></nav>
+
                         */}
                     </Show>
                 </div>
