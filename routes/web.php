@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Central as Controllers;
-use App\Http\Controllers\CreateStyleController;
+use App\Http\Controllers\Central\Api\Shop\Central as Controllers;
+use App\Http\Controllers\Central\Api\Shop\CreateStyleController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 

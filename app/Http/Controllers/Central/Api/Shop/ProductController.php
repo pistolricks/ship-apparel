@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop;
+namespace App\Http\Controllers\Central\Api\Shop\Central\Api\Shop;
 
 use App\Actions\images\ImageDeleteAction;
 use App\Actions\images\ImageImportAction;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Central\Api\Shop\Controller;
 use App\Models\Product;
 use App\Models\Style;
 use Illuminate\Http\Client\ConnectionException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Tenant;
+namespace App\Http\Controllers\Central\Api\Shop\Tenant;
 
 class DownloadInvoiceController
 {

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Tenant as Controllers;
+use App\Http\Controllers\Central\Api\Shop\Tenant as Controllers;
 use App\Http\Middleware\CheckSubscription;
 use App\Http\Middleware\OwnerOnly;
 use Illuminate\Support\Facades\Auth;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api;
+namespace App\Http\Controllers\Central\Api\Shop\Central\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Central\Api\Shop\Controller;
 use App\Models\Menu;
 use App\Models\Page;
 use App\Models\Section;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Central\Api\Shop;
+namespace App\Http\Controllers\Central\Api\Shop\Central\Api\Shop;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Central\Api\Shop\Controller;
 use App\Models\Product;
 use App\Models\Style;
 use App\Support\BrandSupport;

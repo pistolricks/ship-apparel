@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Central;
+namespace App\Http\Controllers\Central\Api\Shop\Central;
 
 use App\Actions\CreateTenantAction;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Central\Api\Shop\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;

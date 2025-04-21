@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Tenant\Auth;
+namespace App\Http\Controllers\Central\Api\Shop\Tenant\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Central\Api\Shop\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
