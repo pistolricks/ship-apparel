@@ -1,73 +1,101 @@
 [
     {
         "name": "T-Shirts",
-        "image": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/PC54_flat_front_GA16.png",
-        "href":"/"
+        "src": "http://localhost:8080/insecure/rs:fill:320:224:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/PC54_flat_front_GA16.png",
+        "href":"/",
+        "width": 500,
+        "height": 320
     },
     {
         "name": "Hoodies",
-        "image": "TM1MW450_multiple_stack_GA22.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:224:320:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/TM1MW450_multiple_stack_GA22.png",
+        "href": "/",
+        "width":  320,
+        "height": 320
     },
     {
         "name": "Hats",
-        "image": "CP82_stack.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:224:320:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/CP82_stack.png",
+        "href": "/",
+        "width":  223,
+        "height": 320
     },
     {
         "name": "Beanies",
-        "image": "NF0A4VUB_pair_GA21.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/NF0A4VUB_pair_GA21.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Jackets",
-        "image": "578674_anthhthrblackgrey_flat_stack_ga19.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/578674_anthhthrblackgrey_flat_stack_ga19.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Polo Shirts",
-        "image": "K572_flat_GA18.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/K572_flat_GA18.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Backpacks",
-        "image": "BG217_all_bags_GA21.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/BG217_all_bags_GA21.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Activewear",
-        "image": "NKBQ5231_All_Stacked_ga19.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/NKBQ5231_All_Stacked_ga19.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Business Apparel",
-        "image": "S658_hanging_GA18.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/S658_hanging_GA18.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Workwear",
-        "image": "CS200_Stack_FA21.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/CS200_Stack_FA21.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Pants & Shorts",
-        "image": "DT6107_multiple_flats_front_GA21.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/DT6107_multiple_flats_front_GA21.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Accessories",
-        "image": "GL01_Stack_GH11.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/GL01_Stack_GH11.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Featured Brands",
-        "image": "TM1MW450_multiple_stack_GA22.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/TM1MW450_multiple_stack_GA22.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     },
     {
         "name": "Women's",
-        "image": "MM3023_allcolors_lifestyle_FA22.png",
-        "href": "/"
+        "src": "http://localhost:8080/insecure/rs:fill:300:400:0/g:sm/plain/https://ink-and-thread.com/storage/assets/stacked/MM3023_allcolors_lifestyle_FA22.png",
+        "href": "/",
+        "width":  224,
+        "height": 320
     }
 
 ]
