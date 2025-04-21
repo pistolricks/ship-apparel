@@ -18,7 +18,7 @@ const CategoryFilters: Component<PROPS> = props => {
 
             <div class=" bg-white flex  w-[200px]">
                 <div
-                    class="relative mx-auto flex size-full max-w-xs flex-col overflow-y-auto scrollbar-hide  bg-white border-r border-l border-gray-200">
+                    class="relative mx-auto flex size-full max-w-xs flex-col overflow-y-auto scrollbar-hide  bg-white  border-l border-gray-200">
                     <form class="">
                    <Disclosure collapseBehavior="hide">
                         {(props) => (

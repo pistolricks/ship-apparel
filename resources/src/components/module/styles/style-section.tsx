@@ -43,7 +43,7 @@ const StyleSection: Component<PROPS> = props => {
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
             <div class={"flex justify-start w-full h-full"}>
             <CategoryFilters name={""}/>
-            <Grid class={'h-full w-full'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
+            <Grid class={'h-full w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={data()}>
                     {(style: StyleType) => (
 
