@@ -1,4 +1,4 @@
-import {createSignal, onMount, onCleanup, createMemo, For, Show} from "solid-js";
+import {createSignal, onMount, onCleanup, createMemo, For, Show, Component} from "solid-js";
 import {css} from "solid-styled";
 import {fabric} from 'fabric';
 import {BaseDock} from "~/components/dock";
@@ -12,9 +12,14 @@ import BasePopover from "~/components/ui/popover";
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
 
-export default function ShirtDecorator() {
+const ShirtDecorator: Component<{
+    image_url?: string
+
+}> = props => {
     let canvasRef: HTMLCanvasElement | undefined;
     let fabricCanvas: fabric.Canvas;
+
+    const image_url = () => props.image_url ?? "https://cdnm.sanmar.com/imglib/mresjpg/2022/f5/5286_white_flat_front.jpg";
 
     const [canvasWidth, setCanvasWidth] = createSignal(600);
     const [canvasHeight, setCanvasHeight] = createSignal(850);
@@ -144,7 +149,7 @@ export default function ShirtDecorator() {
 
     let globalImage: fabric.Image | null = null;
 
-    fabric.Image.fromURL("https://cdnm.sanmar.com/imglib/mresjpg/2022/f5/5286_white_flat_front.jpg", function (img) {
+    fabric.Image.fromURL(image_url(), function (img) {
         globalImage = img;
         img.top = -40;
         img.left = 0;
@@ -440,10 +445,9 @@ export default function ShirtDecorator() {
 
             </div>
 
-            <div class={"h-5"}></div>
 
-            <BaseDock>
 
+            <BaseDock class={"-mt-7"}>
                 <DockIcon onClick={handleOpen}>
                     <Icon name={"Shirt"} style={{
                         opacity: !fabricLoaded() ? '0.5' : '1',
@@ -531,3 +535,5 @@ export default function ShirtDecorator() {
         </div>
     );
 }
+
+export {ShirtDecorator};

@@ -4,6 +4,8 @@ import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 import {imagePath} from "~/app";
+import Icon from "~/components/ui/icon";
+import {ShirtDecorator} from "~/components/shirt-decorator";
 
 
 type STYLE_PRODUCT = {
@@ -67,6 +69,7 @@ const StyleSmView: Component<PROPS> = props => {
 
     const [getSelectedId, setSelectedId] = createSignal<string>(getSelected().product_id)
 
+    const [getShowDecorator, setShowDecorator] = createSignal(false)
 
     const [getImages, setImages] = createSignal(
         [getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
@@ -142,6 +145,11 @@ const StyleSmView: Component<PROPS> = props => {
     }
     const isColored = createSelector(getColor)
 
+    const handleShowDecorator = () => {
+        setShowDecorator((p) => !p)
+        console.log(getShowDecorator())
+    }
+
     createEffect(() => {
         console.log("isSelected", getSelected(), "getColor", getColor())
         console.log("groupedByColor", groupedByColor(), "getColor", getColor())
@@ -165,7 +173,7 @@ const StyleSmView: Component<PROPS> = props => {
                 <div class="px-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-                            <div class="grid grid-cols-4 h-24 gap-6" aria-orientation="horizontal" role="tablist">
+                            <div class="grid grid-cols-5 h-24 gap-6" aria-orientation="horizontal" role="tablist">
                                 <For each={images()}>
                                     {(image) => (
                                         <Show when={image !== ' '}>
@@ -176,7 +184,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                 class="relative flex h-20 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
                                                 aria-controls="tabs-2-panel-1" role="tab">
                                                 <span class="sr-only">Angled view</span>
-                                                <span class="absolute inset-0 overflow-hidden rounded-md">
+                                                <span class="absolute inset-0 overflow-hidden rounded-md  border border-amber-100">
                                          <img src={image}
                                               alt="" class="size-full object-contain object-top"/>
                                        </span>
@@ -187,7 +195,20 @@ const StyleSmView: Component<PROPS> = props => {
                                         </Show>
                                     )}
                                 </For>
-
+                                <button
+                                    onClick={handleShowDecorator}
+                                    type="button"
+                                    id="tabs-2-tab-1"
+                                    class="relative flex h-20 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
+                                    aria-controls="tabs-2-panel-1" role="tab">
+                                    <span class="sr-only">Angled view</span>
+                                    <span class="absolute inset-0 overflow-hidden rounded-md border border-amber-100">
+                                         <Icon name={"UserPen"} class="size-full p-6 object-contain object-top"/>
+                                       </span>
+                                    <span
+                                        class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"
+                                        aria-hidden="true"></span>
+                                </button>
                             </div>
                         </div>
 
@@ -195,11 +216,14 @@ const StyleSmView: Component<PROPS> = props => {
                             <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" class={'h-95 sm:h-full'}
                                  role="tabpanel" tabindex="0">
 
-
-                                <img
-                                    src={src()}
-                                    alt=""
-                                    class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"/>
+                                <Show
+                                    fallback={<ShirtDecorator image_url={src()}/>}
+                                    when={!getShowDecorator()}>
+                                    <img
+                                        src={src()}
+                                        alt=""
+                                        class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"/>
+                                </Show>
                             </div>
 
                         </div>
