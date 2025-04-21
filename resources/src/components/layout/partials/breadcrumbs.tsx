@@ -34,7 +34,7 @@ const Breadcrumbs: Component<{
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <BreadcrumbLink href="/" as={A}>
-                                <IconHome class="fill-stone-200 w-6 h-6"/>
+                                <IconHome class="fill-stone-200 w-5 h-5"/>
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <For each={splitPath()}>

@@ -20,6 +20,7 @@ export default function ShirtDecorator() {
     const [canvasHeight, setCanvasHeight] = createSignal(850);
     const [selectedColor, setSelectedColor] = createSignal<string | null>(null);
     const [fabricLoaded, setFabricLoaded] = createSignal(false);
+    const [getOpen, setOpen] = createSignal(false);
 
     // Available shirt colors
     const shirtColors = [
@@ -45,7 +46,7 @@ export default function ShirtDecorator() {
                 });
 
                 // Load shirt template
-                //               loadShirtTemplate();
+                               loadShirtTemplate();
 
                 // Set fabric as loaded
                 setFabricLoaded(true);
@@ -76,7 +77,10 @@ export default function ShirtDecorator() {
         }
     });
 
-    let shirtCanvas = {};
+    let shirtCanvas: fabric.Path | null = null;
+    let collarCanvas: fabric.Path | null = null;
+    let leftCanvas: fabric.Path | null = null;
+    let rightCanvas: fabric.Path | null = null;
 
     // Load shirt template
     const loadShirtTemplate = () => {
@@ -127,6 +131,10 @@ export default function ShirtDecorator() {
         // Add all elements to canvas
 
         shirtCanvas = shirtPath;
+        collarCanvas = collar;
+        leftCanvas = leftSleeve;
+        rightCanvas = rightSleeve;
+
         fabricCanvas.add(shirtPath, collar, leftSleeve, rightSleeve);
         fabricCanvas.bringToFront(shirtPath)
 
@@ -271,6 +279,9 @@ export default function ShirtDecorator() {
                         originX: 'center',
                         originY: 'center',
                     });
+
+                    image.clipPath?.set(shirtCanvas as fabric.Path);
+
                     fabricCanvas.bringToFront(image);
                     fabricCanvas.add(image);
                     fabricCanvas.setActiveObject(image);
@@ -283,6 +294,15 @@ export default function ShirtDecorator() {
         }
     };
 
+    const handleOpen = () => {
+        if (!globalImage) return;
+        if(!shirtCanvas) return;
+        if(!collarCanvas) return;
+        if(!leftCanvas) return;
+        if(!rightCanvas) return;
+        setOpen((prev) => !prev);
+        getOpen() ? fabricCanvas.sendToBack(globalImage) : (fabricCanvas.sendToBack(shirtCanvas), fabricCanvas.sendToBack(leftCanvas), fabricCanvas.sendToBack(rightCanvas), fabricCanvas.sendToBack(collarCanvas));
+    }
 
     const handleSendToFront = () => {
         if (!globalImage) return;
@@ -412,21 +432,7 @@ export default function ShirtDecorator() {
                 </div>
             )}
 
-            <div class="controls">
 
-                <div>
-                    <div class="color-options">
-                        {shirtColors.map((color) => (
-                            <div
-                                class={`color-option ${color.value === selectedColor() ? 'selected' : ''}`}
-                                style={{"background-color": color.value}}
-                                onClick={() => changeTextColor(color.value)}
-                                title={color.name}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
 
             <div class="canvas-container">
 
@@ -437,9 +443,38 @@ export default function ShirtDecorator() {
             <div class={"h-5"}></div>
 
             <BaseDock>
+
+                <DockIcon onClick={handleOpen}>
+                    <Icon name={"Shirt"} style={{
+                        opacity: !fabricLoaded() ? '0.5' : '1',
+                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
+                    }} class={"stroke-cyan-700 fill-sky-100"}/>
+                </DockIcon>
+
+                <div class="h-full border-x mx-1"/>
+
                 <DockIcon>
-                    <BasePopover title="">
-                        <div class="space-x-4">
+                    <BasePopover icon={"Type"} title="">
+                        <div class={"flex flex-col"}>
+                            <div class="controls w-full flex justify-center items-center space-x-2 h-10">
+
+                                <div>
+                                    <div class="color-options w-full space-x-2">
+                                        <button  onClick={addText} >
+                                            <Icon name={"Plus"} class={"size-5"}/>
+                                        </button>
+                                        {shirtColors.map((color) => (
+                                            <div
+                                                class={`color-option ${color.value === selectedColor() ? 'selected' : ''}`}
+                                                style={{"background-color": color.value}}
+                                                onClick={() => changeTextColor(color.value)}
+                                                title={color.name}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="space-x-2">
                             <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Inter")}>
                                 Inter
                             </button>
@@ -453,19 +488,9 @@ export default function ShirtDecorator() {
                                 Montserrat
                             </button>
                         </div>
+                        </div>
                     </BasePopover>
                 </DockIcon>
-                <div class="h-full border-x mx-1"/>
-
-
-
-                <DockIcon onClick={addText}>
-                    <Icon name={"Type"} style={{
-                        opacity: !fabricLoaded() ? '0.5' : '1',
-                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
-                    }} class={"stroke-cyan-700 fill-sky-100"}/>
-                </DockIcon>
-
 
                 <DockIcon>
                     <label class="" style={{
@@ -483,12 +508,9 @@ export default function ShirtDecorator() {
                     </label>
                 </DockIcon>
 
-                <DockIcon onClick={handleSendToFront}>
-                    <Icon name={"Shirt"} style={{
-                        opacity: !fabricLoaded() ? '0.5' : '1',
-                        cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
-                    }} class={"stroke-cyan-700 fill-sky-100"}/>
-                </DockIcon>
+
+
+
 
 
 
