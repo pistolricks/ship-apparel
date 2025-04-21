@@ -70,6 +70,10 @@ const routes = [
         component: lazy(() => import("./routes/school-specials")),
     },
     {
+        path: "/cart",
+        component: lazy(() => import("./routes/cart")),
+    },
+    {
         path: "/checkout",
         component: lazy(() => import("./routes/checkout")),
     },

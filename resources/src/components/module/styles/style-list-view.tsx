@@ -34,7 +34,7 @@ const StyleListView: Component<PROPS> = props => {
                     class={classNames(
                         "rounded-lg w-full bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
                 </div>
-                <div class=" pt-7 text-center h-[170px] sm:h-[120px]">
+                <div class=" pt-7 text-center h-[170px] sm:h-[140px]">
                     <h3 class="text-xs font-light  text-gray-900">
                         <div class={'flex flex-col w-full justify-center capitalize'}>
                             <span aria-hidden="true" class="absolute inset-0"></span>

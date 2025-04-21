@@ -8,7 +8,8 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
 
 Route::view('/', 'app')->name('central.app');
-
+Route::view('/cart', 'app')->name('central.cart');
+Route::view('/checkout', 'app')->name('central.checkout');
 Route::view('/our-company', 'app')->name('central.our-company');
 Route::view('/contact-us', 'app')->name('central.contact-us');
 

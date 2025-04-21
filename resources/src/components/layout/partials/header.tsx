@@ -18,7 +18,7 @@ const Header: Component<{
     return (
         <>
 
-            <header class="h-16">
+            <div class="h-16">
                 <nav class={''} aria-label="Top">
                     <div class="bg-primary/10 backdrop-blur-md backdrop-filter h-16">
                         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ const Header: Component<{
                                                 <IconSearch class="size-6"/>
                                             </A>
 
-                                            <A href="/checkout" class="hidden sm:block text-gray-400 hover:text-gray-500">
+                                            <A href="/cart" class="hidden sm:block text-gray-400 hover:text-gray-500">
                                                 <span class="sr-only">Search</span>
                                                 <IconShoppingCart class="size-6"/>
                                             </A>
@@ -73,7 +73,7 @@ const Header: Component<{
                         </div>
                     </div>
                 </nav>
-            </header>
+            </div>
             <div class={'w-full bg-secondary/20 shadow-accent/70 relative hidden sm:block'}>
                 <div class="mx-auto flex max-w-7xl text-sm md:text-base  h-[60px] items-center  justify-center md:px-4 sm:space-x-4 md:space-x-6 lg:space-x-8" aria-label="Global">
 
