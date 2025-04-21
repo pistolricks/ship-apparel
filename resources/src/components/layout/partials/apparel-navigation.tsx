@@ -7,6 +7,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A} from "@solidjs/router";
 import {CarouselAuto} from "~/components/ui/carousel/carousel-auto";
+import Icon from "~/components/ui/icon";
 
 
 
@@ -32,7 +33,8 @@ const ApparelNavigation: Component<PROPS> = props => {
     };
 
     const handleDeselect = (data: string, event: Event) => {
-        setTitle(data)
+        console.log("Data:", data);
+        setTitle(() => data)
     }
 
     const isSelected = createSelector(getTitle)
@@ -74,17 +76,25 @@ const ApparelNavigation: Component<PROPS> = props => {
                                     </Match>
                                     <Match when={isSelected(item.title)}>
                                         <div class="p-5">
-
                                             <MenuLeftImagesRight title={item.title} href={item.href} list={item?.sub}/>
+
+
+
+
+
                                         </div>
                                     </Match>
                                 </Switch>
-
                             </TabsContent>
                         )}
                     </For>
-                </Grid>
 
+                </Grid>
+                <Show when={getTitle() !== ""} >
+                <TabsTrigger onClick={() => handleSelect("")} value={getTitle()} class={"absolute bottom-0 right-0 w-12 bg-white cursor-pointer m-2"}>
+                    <Icon name={"CircleX"} class={"size-8"} />
+                </TabsTrigger>
+                </Show>
             </Tabs>
 
         </div>

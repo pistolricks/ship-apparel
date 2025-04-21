@@ -50,7 +50,7 @@ const Header: Component<{
                                                 <IconSearch class="size-6"/>
                                             </A>
 
-                                            <A href="#" class="hidden sm:block text-gray-400 hover:text-gray-500">
+                                            <A href="/checkout" class="hidden sm:block text-gray-400 hover:text-gray-500">
                                                 <span class="sr-only">Search</span>
                                                 <IconShoppingCart class="size-6"/>
                                             </A>
