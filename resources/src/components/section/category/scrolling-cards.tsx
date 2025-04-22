@@ -13,12 +13,12 @@ const ScrollingCards: Component<{
 
     return (
         <div class="bg-white">
-            <div class=" xl:mx-auto xl:max-w-7xl ">
+            <div class=" xl:mx-auto max-w-7xl ">
                 <div class="mt-4 flow-root">
                     <div class="-my-2">
-                        <div class="relative box-content h-80 overflow-hidden py-2 xl:overflow-visible">
+                        <div class="relative box-content overflow-hidden py-2 xl:overflow-visible">
                             <div
-                                class="absolute flex space-x-8 px-4 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0">
+                                class="absolute flex space-x-4 relative">
                                 <For each={categories()}>
                                     {(category) => (
                                         <A
@@ -27,7 +27,7 @@ const ScrollingCards: Component<{
                                                 height: `${category.height}px`,
                                             }}
                                             href={category.href}
-                                            class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                                            class="relative flex  flex-col overflow-hidden rounded-lg p-6 hover:opacity-75"
                                         >
                                               <span aria-hidden="true" class="absolute inset-0">
                                                 <img alt="" src={category.src} class="size-full object-cover"/>

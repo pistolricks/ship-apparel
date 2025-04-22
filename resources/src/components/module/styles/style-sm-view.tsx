@@ -185,7 +185,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                 aria-controls="tabs-2-panel-1" role="tab">
                                                 <span class="sr-only">Angled view</span>
                                                 <span class="absolute inset-0 overflow-hidden rounded-md  border border-amber-100">
-                                         <img src={image}
+                                         <img src={`http://localhost:8080/insecure/rs:fill:550:550:0/g:sm/plain/${image}`}
                                               alt="" class="size-full object-contain object-top"/>
                                        </span>
                                                 <span
@@ -220,7 +220,7 @@ const StyleSmView: Component<PROPS> = props => {
                                     fallback={<ShirtDecorator image_url={src()}/>}
                                     when={!getShowDecorator()}>
                                     <img
-                                        src={src()}
+                                        src={`http://localhost:8080/insecure/rs:fill:350:450:0/g:sm/plain/${src()}`}
                                         alt=""
                                         class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"/>
                                 </Show>

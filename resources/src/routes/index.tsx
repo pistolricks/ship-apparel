@@ -1,14 +1,11 @@
 import {Component, createEffect, createSignal, For, lazy, ValidComponent} from "solid-js";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
-import {useLayoutContext} from "~/context/layout-provider";
 import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 import RowItemsCard from "~/components/section/rows/row-items-card";
 import {CarouselCard} from "~/components/section/rows/carousel-card";
 import {Dynamic} from "solid-js/web";
 import {SectionItemType} from "~/lib/types";
-import Dialog from "@corvu/dialog";
-import BaseDialog from "~/components/ui/dialog/dialog";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -37,8 +34,6 @@ const Home: Component<PROPS> = props => {
     }
 
     const [getOpen, setOpen] = createSignal(true)
-
-
 
 
     return (
