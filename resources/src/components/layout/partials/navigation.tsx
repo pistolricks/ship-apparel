@@ -21,8 +21,6 @@ export default function Navigation(props: { contextId: string }) {
 
     return (
         <div class="bg-white">
-
-
             <header class="relative">
                 <nav aria-label="Top">
 

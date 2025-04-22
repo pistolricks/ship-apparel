@@ -40,7 +40,7 @@ export function CarouselAuto(props: { slides: ContentItemType[] }) {
                                     </div>
                                 }
                                 when={slides()?.length > 0}>
-                              <img class="h-[540px] w-full object-cover" src={"//sanmarsports.com/cdn/shop/files/SanMar-Sports-HP_Slide-D-Fanwear_2337x1569_761e3de2-50c3-43ce-b6ea-958f600debe9.jpg"} alt={item.name}/>
+                                <></>
                             </Show>
 
                         </CarouselItem>
