@@ -21,30 +21,13 @@ export default function Navigation(props: { contextId: string }) {
 
     return (
         <div class="bg-white">
-            <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
-                <div class="fixed inset-0 bg-black/25" aria-hidden="true"></div>
 
-                <div class="fixed inset-0 z-40 flex">
-                    <div class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
-                        <div class="flex px-4 pb-2 pt-5">
-                            <button type="button"
-                                    class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
-                                <span class="sr-only">Close menu</span>
-                                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                     stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <header class="relative">
                 <nav aria-label="Top">
 
                     <div class="bg-sky-400/70">
-                        <div class="mx-auto flex h-10 max-w-7xl items-center justify-between">
+                        <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
 
                             <div class="hidden lg:block lg:flex-1">
 
@@ -55,12 +38,14 @@ export default function Navigation(props: { contextId: string }) {
                                 </div>
                             </div>
 
-                            <p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">Get free delivery
-                                on orders over $100</p>
+                            <p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">
+
+                            </p>
 
                             <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                                 <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an
-                                    account</a>
+                                    account
+                                </a>
                                 <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
                                 <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
                             </div>
@@ -69,7 +54,7 @@ export default function Navigation(props: { contextId: string }) {
 
 
                     <div class="bg-white">
-                        <div class="mx-auto max-w-7xl">
+                        <div class="mx-auto max-w-7xl px-4">
                             <div class="border-b border-gray-200">
                                 <div class="flex h-16 items-center justify-between">
 
@@ -164,7 +149,6 @@ export default function Navigation(props: { contextId: string }) {
                                             <span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true"></span>
 
                                             <div class="flow-root">
-                                                <a href="#" class="group -m-2 flex items-center p-2">
                                                     <Drawer.Trigger contextId={contextId()}>
                                                         <span class="sr-only">Open menu</span>
                                                         <svg class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -176,7 +160,7 @@ export default function Navigation(props: { contextId: string }) {
                                                         <span class="sr-only">items in cart, view bag</span>
                                                     </Drawer.Trigger>
 
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>
