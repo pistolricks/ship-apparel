@@ -46,23 +46,14 @@ export default function Navigation(props: { contextId: string }) {
                     <div class="bg-sky-400/70">
                         <div class="mx-auto flex h-10 max-w-7xl items-center justify-between px-2">
 
-                            <form class="hidden lg:block lg:flex-1">
+                            <div class="hidden lg:block lg:flex-1">
 
                                 <div class="-ml-2 inline-grid grid-cols-1">
-                                    <select id="desktop-currency" name="currency" aria-label="Currency"
-                                            class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-300 py-0.5 pl-2 pr-7 text-left text-base font-medium text-white focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-white sm:text-sm/6">
-                                        <option>USD</option>
-                                    </select>
-                                    <svg
-                                        class="pointer-events-none col-start-1 row-start-1 mr-1 size-5 self-center justify-self-end fill-gray-300"
-                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                        <path fill-rule="evenodd"
-                                              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                                              clip-rule="evenodd"/>
-                                    </svg>
-                                </div>
+                                    <div class="col-start-1 row-start-1 w-full appearance-none rounded-md  py-0.5 pl-2 pr-7 text-left text-base font-medium text-white focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-white sm:text-sm/6">
 
-                            </form>
+                                    </div>
+                                </div>
+                            </div>
 
                             <p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">Get free delivery
                                 on orders over $100</p>
