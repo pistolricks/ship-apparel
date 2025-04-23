@@ -3,7 +3,7 @@ import {createAsync, useParams} from "@solidjs/router";
 import {getBrand} from "~/lib/products";
 import StyleSection from "~/components/module/styles/style-section";
 import {imagePath} from "~/app";
-import CategoryFilters from "~/components/layout/partials/side/category-filters";
+
 
 type PROPS = {}
 
@@ -22,7 +22,7 @@ const Brand: Component<PROPS> = props => {
                 <img class={'w-full'} src={`${imagePath}/${response()?.banner}/banner`} alt={""} />
             </Show>
 
-            <StyleSection data={response()?.list.styles} pagination={response()?.list.metadata}/>
+            <StyleSection data={response()?.list} pagination={response()?.list.metadata}/>
         </>
     );
 };

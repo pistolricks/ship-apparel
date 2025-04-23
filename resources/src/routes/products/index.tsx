@@ -14,7 +14,7 @@ const Shop: Component<PROPS> = props => {
 
     return (
         <>
-            <StyleSection data={response()?.list.styles} pagination={response()?.list.metadata} />
+            <StyleSection data={response()?.list} pagination={response()?.list.metadata} />
 
         </>
     );

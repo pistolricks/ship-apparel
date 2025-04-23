@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Central\Api\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Support\PiecePriceSupport;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -18,10 +19,18 @@ class StyleController extends Controller
         $response = Http::retry(3, 10)
             ->get('http://localhost:4000/v1/styles/'.$id);
 
+        $resp = $response->json();
+
+        $collection = collect($resp['style']['data']);
+
+        $filtered = PiecePriceSupport::make($collection);
+
+
+        $resp['style']['data'] = $filtered;
 
         return response()->json([
             "menu" => config('menu'),
-            "data" => $response->json(),
+            "data" => $resp,
             "user" => $request->user(),
         ]);
     }

@@ -27,7 +27,7 @@ const View: Component<ParentProps> = props => {
     return (
 
         <Show when={getData()?.style}>
-             <StyleSmView style={getData()?.style} products={getProducts()} />
+             <StyleSmView style={getData()?.[0]} products={getData()} />
         </Show>
     );
 };

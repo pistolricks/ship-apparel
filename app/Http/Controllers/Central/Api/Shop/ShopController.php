@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Central\Api\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Support\PriceSupport;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -24,10 +25,15 @@ class ShopController extends Controller
                 (array) $request
             ])->get('http://localhost:4000/v1/styles');
 
+        $resp = $response->json();
+
+        $collection = collect($resp['styles']);
+
+        $filtered = PriceSupport::make($collection);
 
         return response()->json([
             "menu" => config('menu'),
-            "products" => $response->json(),
+            "products" => $filtered,
             "user" => $request->user(),
         ]);
     }
