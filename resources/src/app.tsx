@@ -6,6 +6,7 @@ import {LayoutProvider} from "~/context/layout-provider";
 import { StyleRegistry, css } from "solid-styled";
 
 export const imagePath = 'https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g';
+export const img = 'http://localhost:8080/insecure/rs:fill:550:550:0/g:sm/plain/'
 
 function GlobalStyles() {
     css`
