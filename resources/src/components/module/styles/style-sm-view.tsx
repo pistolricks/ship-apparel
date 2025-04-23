@@ -54,7 +54,7 @@ type STYLE_PRODUCT = {
 }
 
 type PROPS = {
-    style: StyleType;
+    style: STYLE_PRODUCT;
     products: SM_PRODUCT[] | STYLE_PRODUCT[];
 }
 
@@ -67,7 +67,7 @@ const StyleSmView: Component<PROPS> = props => {
     console.log(style(), "style viewer")
     const [getSelected, setSelected] = createSignal<STYLE_PRODUCT>(products()?.[0] as STYLE_PRODUCT)
 
-    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected().product_id)
+    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected()?.product_id)
 
     const [getShowDecorator, setShowDecorator] = createSignal(false)
 
@@ -115,7 +115,7 @@ const StyleSmView: Component<PROPS> = props => {
 
     //  const orderedProducts = createMemo(() => products()?.sort((a, b) => parseFloat(a.color_name) - parseFloat(b.color_name)))
 
-    const groupedByColor = createMemo(() => products().reduce((groups: Record<string, STYLE_PRODUCT[]>, product) => {
+    const groupedByColor = createMemo(() => products()?.reduce((groups: Record<string, STYLE_PRODUCT[]>, product) => {
         const key = product?.color_name ?? ''; // Grouping criterion (e.g., 'color')
         if (!groups[key]) {
             groups[key] = []; // Initialize an array for this group
@@ -258,7 +258,7 @@ const StyleSmView: Component<PROPS> = props => {
                                 <div class="py-1  mt-6 flex justify-between items-center">
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Style</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{style()?.id}</p>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{style()?.product_id}</p>
                                     </div>
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Color</h3>
@@ -346,7 +346,7 @@ const StyleSmView: Component<PROPS> = props => {
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
                                             <li class="pl-2">{style()?.mill}</li>
                                             <li class="pl-2"><span
-                                                class="text-[10px] uppercase font-semibold">Style</span> {style()?.id}
+                                                class="text-[10px] uppercase font-semibold">Style</span> {style()?.product_id}
                                             </li>
                                             <li class="pl-2"><span
                                                 class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.gtin}

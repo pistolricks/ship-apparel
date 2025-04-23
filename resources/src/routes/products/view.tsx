@@ -17,17 +17,17 @@ const View: Component<ParentProps> = props => {
     const [getData, setData] = createSignal(response()?.data)
     const [getProducts, setProducts] = createSignal<SM_PRODUCT[]>([])
     createEffect(() => {
-        console.log("getResponse", getData())
+        console.log("getResponse", response())
         setData(() => response()?.data)
-        if(getData()?.style?.data) {
-           setProducts(getData()?.style?.data)
+        if(response()?.data) {
+           setProducts(response()?.data?.data)
         }
     })
 
     return (
 
         <Show when={getData()?.style}>
-             <StyleSmView style={getData()?.[0]} products={getData()} />
+             <StyleSmView style={getData()} products={getProducts()} />
         </Show>
     );
 };

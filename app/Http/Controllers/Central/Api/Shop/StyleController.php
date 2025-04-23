@@ -25,12 +25,16 @@ class StyleController extends Controller
 
         $filtered = PiecePriceSupport::make($collection);
 
+        $style = $resp['style'];
 
-        $resp['style']['data'] = $filtered;
+        $style = $filtered[0];
+
+        $style['data'] = $filtered;
+
 
         return response()->json([
             "menu" => config('menu'),
-            "data" => $resp,
+            "data" => $style,
             "user" => $request->user(),
         ]);
     }
