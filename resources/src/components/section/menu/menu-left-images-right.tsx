@@ -20,14 +20,14 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
     return (
         <div class={''}>
             <div>
-                <div class={'flex justify-start items-start w-[65dvw] space-x-4'}>
+                <div class={'glass h-[540px]  w-[65dvw] flex justify-start py-5 items-start  space-x-4'}>
                     <ul role="list" aria-labelledby={title()}
                         class="flex flex-col space-y-4 w-full">
 
                         <For each={list()}>
                             {(item, index) => (
                                 <Show when={index() < 16}>
-                                    <li class="flow-root">
+                                    <li class="px-5 flow-root">
                                         <A href={item.href}
                                            class="-m-2 rounded hover:bg-amber-100/50 hover:text-amber-600  focus:bg-white/25 focus:text-amber-700 block p-2 text-gray-700">{item.title}</A>
                                     </li>

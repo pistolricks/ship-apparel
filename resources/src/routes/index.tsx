@@ -44,6 +44,7 @@ const Home: Component<PROPS> = props => {
                 */}
 
             <ApparelNavigation menu={res()?.menu} slides={res()?.carousel?.contents} orientation={'vertical'}/>
+
             <div class={"w-full space-x-6 flex justify-between items-center"}>
             <img class={"w-2/3 h-[450px] p-10 object-contain"} src={"http://ink-and-thread.com/storage/assets/4_21_lp/TEAM-UNIFORM.jpg"}/>
                 <div class={"w-1/3 h-[450px] p-10 object-contain"}>
