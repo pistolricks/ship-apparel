@@ -1,8 +1,7 @@
 import {createSignal, For} from 'solid-js'
 import {RadioGroup} from "@kobalte/core/radio-group";
-import ChevronDown  from "lucide-solid/icons/chevron-down"
-import CircleCheck from "lucide-solid/icons/circle-check"
-import Trash from "lucide-solid/icons/trash"
+import {ChevronDown, CircleCheck, Trash} from "lucide-solid/icons";
+
 const products = [
     {
         id: 1,

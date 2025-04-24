@@ -5,10 +5,8 @@ import {BaseDock} from "~/components/dock";
 import {DockIcon} from "~/components/ui/dock";
 import FontFaceObserver from 'fontfaceobserver';
 import BasePopover from "~/components/ui/popover";
-import ImageUp from 'lucide-solid/icons/image-up'
-import Plus from 'lucide-solid/icons/plus'
-import Shirt from 'lucide-solid/icons/shirt'
-import Trash from 'lucide-solid/icons/trash'
+import {ImageUp, Plus, Shirt, Trash} from "lucide-solid";
+
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
 

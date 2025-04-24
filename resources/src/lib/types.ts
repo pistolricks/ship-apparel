@@ -1,7 +1,5 @@
 import {GeoJsonObject} from "geojson";
-import {Component, JSXElement, ValidComponent} from "solid-js";
-import {IconProps} from "~/components/svg";
-import {icons} from "lucide-solid";
+import {JSXElement, ValidComponent} from "solid-js";
 
 
 export type SessionUser = {
@@ -32,7 +30,7 @@ export type MenuItemType = {
     side?:  "top" | "bottom" | "both" | "left" | "right"
     onClick?: (e?: Event) => any;
     component?: ValidComponent;
-    icon?: keyof typeof icons;
+    icon?: JSXElement;
     sub?: MenuItemType[];
     children?: JSXElement
 }

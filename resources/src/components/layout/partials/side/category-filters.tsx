@@ -1,8 +1,8 @@
 import {Component} from "solid-js";
 import Disclosure from "@corvu/disclosure";
 import {classNames} from "~/lib/utils";
-import Minus from "lucide-solid/icons/minus";
-import Plus from "lucide-solid/icons/plus";
+import {Minus, Plus} from "lucide-solid";
+
 type PROPS = {
     name: string;
 }

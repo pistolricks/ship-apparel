@@ -6,7 +6,7 @@ import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-righ
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A} from "@solidjs/router";
-import CircleX from "lucide-solid/icons/circle-x";
+import {CircleX} from "lucide-solid";
 
 
 type PROPS = {
@@ -49,7 +49,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
 
                                 <TabsTrigger on:mouseover={(event) => {
-                                    event.stopPropagation()
+
                                     handleSelect(item.title)
                                 }} as={A} type="button"
                                              href={item.href}
@@ -87,7 +87,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                     <Show when={getTitle() !== ""}>
                                                         <TabsTrigger
                                                             class={"w-[65dvw] h-8 flex items-center justify-center glass"}
-                                                            onClick={() => handleSelect("")} value={getTitle()}
+                                                            onClick={() => handleSelect("")} value={item.tit}
                                                         >
                                                             <div class={"flex justify-between items-center pr-4"}>
                                                                 <CircleX

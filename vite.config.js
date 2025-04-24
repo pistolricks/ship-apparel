@@ -5,20 +5,9 @@ import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths'
 import {setupPlugins} from '@responsive-image/vite-plugin';
 import solidStyled from "unplugin-solid-styled";
-import {fileURLToPath, URL} from "node:url";
 
 
 export default defineConfig({
-    resolve: {
-        alias: {
-            "lucide-solid/icons": fileURLToPath(
-                new URL(
-                    "./node_modules/lucide-solid/dist/source/icons",
-                    import.meta.url,
-                ),
-            ),
-        }
-    },
     plugins: [
         solidStyled.vite({
             filter: {
