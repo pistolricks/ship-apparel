@@ -35,7 +35,7 @@ export default function Navigation(props: { contextId: string }) {
         <div class="bg-white">
             <header class="relative">
                 <nav aria-label="Top">
-                    <div class="hidden sm:block bg-sky-400/70">
+                    <div class="hidden sm:block bg-sky-700/70">
                         <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
 
                             <div class="hidden lg:block lg:flex-1">

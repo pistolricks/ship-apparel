@@ -7,7 +7,9 @@ const CustomApparel: Component<PROPS> = props => {
 
     return (
         <div>
+            {/*
             <Hero/>
+            */}
         </div>
     );
 };
