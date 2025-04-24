@@ -49,7 +49,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
 
                                 <TabsTrigger on:mouseover={(event) => {
-
+                                    event.stopPropagation()
                                     handleSelect(item.title)
                                 }} as={A} type="button"
                                              href={item.href}
