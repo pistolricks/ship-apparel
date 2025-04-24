@@ -87,7 +87,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                     <Show when={getTitle() !== ""}>
                                                         <TabsTrigger
                                                             class={"w-[65dvw] h-8 flex items-center justify-center glass"}
-                                                            onClick={() => handleSelect("")} value={item.tit}
+                                                            onClick={() => handleSelect("")} value={item.title}
                                                         >
                                                             <div class={"flex justify-between items-center pr-4"}>
                                                                 <CircleX
