@@ -1,20 +1,25 @@
 import {Component, createSelector, createSignal, For, Match, Show, Switch} from "solid-js"
 
-
+import type {Orientation} from "@kobalte/core/navigation-menu"
 import {ContentItemType, MenuItemType} from "~/lib/types";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
-import {A} from "@solidjs/router";
+import {A, useLocation, useNavigate} from "@solidjs/router";
 import {CircleX} from "lucide-solid";
+import {cn} from "~/lib/utils";
+import style from "~/components/ui/tab/tabs.module.css";
 
 
 type PROPS = {
     menu: MenuItemType[]
     slides: ContentItemType[]
+    orientation?: Orientation;
 }
 
 const ApparelNavigation: Component<PROPS> = props => {
+    const location = useLocation();
+
 
     const menu = () => props.menu;
     const slides = () => props.slides;
@@ -41,27 +46,36 @@ const ApparelNavigation: Component<PROPS> = props => {
 
         <div class="block relative h-[540px] w-full  items-left space-y-4">
 
-            <Tabs class={'absolute z-10 h-full w-full'} orientation={"horizontal"}>
+            <Tabs class={'absolute z-10 h-full w-full'} value={getTitle()} onChange={setTitle}
+                  orientation={"horizontal"}>
                 <div class={"absolute z-40 w-full h-full flex justify-start shadow"}>
                     <TabsList class="flex flex-col items-center text-left w-40 z-40">
                         <For each={menu()?.[0]?.sub}>
                             {(item: MenuItemType) => (
+                                <A
+                                    href={item.href}
+                                    class={cn(
+                                        style.tabs__trigger,
+                                        isSelected(item.title) ? "activeClass" : "text-gray-500",
+                                        "group/trigger inline-flex h-9 w-full items-center justify-start whitespace-nowrap   bg-gray-100 px-4 py-2 text-xs transition-colors hover:text-content focus:bg-bgBase/50 focus:text-content focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-secondary/50 data-[expanded]:bg-bgBase"
+                                    )}
+                                    on:mouseover={(event) => {
+                                        event.stopPropagation()
+                                        handleSelect(item.title)
+                                    }}
 
 
-                                <TabsTrigger on:mouseover={(event) => {
-                                    event.stopPropagation()
-                                    handleSelect(item.title)
-                                }} as={A} type="button"
-                                             href={item.href}
-                                             class={'font-medium tracking-wide'} value={item.title}>
+                                >
                                     {item.title}
-                                </TabsTrigger>
+                                </A>
+
+
                             )}
                         </For>
                     </TabsList>
                     <div class={"aspect-14/10 absolute inset-y-0 right-0 z-0 flex justify-end items-center"}>
                         <img class="w-full h-full object-cover"
-                             src={"https://ink-and-thread.com/storage/assets/4_21_lp/slider_1.png"}
+                             src={"http://ink-and-thread.com/storage/assets/4_21_lp/slider_1.png"}
                              alt={""}/>
 
 
@@ -85,17 +99,23 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                                      list={item?.sub}
                                                 >
                                                     <Show when={getTitle() !== ""}>
-                                                        <TabsTrigger
-                                                            class={"w-[65dvw] h-8 flex items-center justify-center glass"}
-                                                            onClick={() => handleSelect("")} value={item.title}
-                                                        >
-                                                            <div class={"flex justify-between items-center pr-4"}>
+                                                        <div
+                                                            class={"w-[65dvw] h-8 flex items-center justify-between glass px-4"}>
+
+                                                            <button onClick={() => handleSelect("")} value={item.title}
+                                                                    class={"flex justify-center items-center pr-4"}>
                                                                 <CircleX
                                                                     class={"size-4 text-gray-500 hover:text-red-300"}/>
-                                                                <span class={"uppercase"}>{item.title}</span>
-                                                            </div>
-                                                        </TabsTrigger>
+                                                            </button>
+
+                                                            <A
+                                                                class={"uppercase tracking-widest"}
+                                                                href={item.href}>
+                                                               {item.title}
+                                                            </A>
+                                                        </div>
                                                     </Show>
+
                                                 </MenuLeftImagesRight>
 
 
