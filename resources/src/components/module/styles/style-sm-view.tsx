@@ -1,10 +1,10 @@
 import {Component, createEffect, createMemo, createSelector, createSignal, For, lazy, onMount, Show} from "solid-js";
-import {SM_PRODUCT, StyleType} from "~/lib/types";
+import {SM_PRODUCT} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 import {imagePath} from "~/app";
-import Icon from "~/components/ui/icon";
+import {UserPen} from "lucide-solid";
 
 
 const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
@@ -204,7 +204,7 @@ const StyleSmView: Component<PROPS> = props => {
                                     aria-controls="tabs-2-panel-1" role="tab">
                                     <span class="sr-only">Angled view</span>
                                     <span class="absolute inset-0 overflow-hidden rounded-md border border-amber-100">
-                                         <Icon name={"UserPen"} class="size-full p-6 object-contain object-top"/>
+                                         <UserPen class="size-full p-6 object-contain object-top"/>
                                        </span>
                                     <span
                                         class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"

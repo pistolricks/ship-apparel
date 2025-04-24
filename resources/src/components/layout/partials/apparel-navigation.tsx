@@ -6,7 +6,7 @@ import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-righ
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A} from "@solidjs/router";
-import Icon from "~/components/ui/icon";
+import {CircleX} from "lucide-solid";
 
 
 type PROPS = {
@@ -91,8 +91,8 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                             onClick={() => handleSelect("")} value={getTitle()}
                                                         >
                                                             <div class={"flex justify-between items-center pr-4"}>
-                                                                <Icon name={"CircleX"}
-                                                                      class={"size-4 text-gray-500 hover:text-red-300"}/>
+                                                                <CircleX
+                                                                    class={"size-4 text-gray-500 hover:text-red-300"}/>
                                                                 <span class={"uppercase"}>{item.title}</span>
                                                             </div>
                                                         </TabsTrigger>

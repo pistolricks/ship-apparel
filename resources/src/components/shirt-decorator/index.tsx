@@ -1,13 +1,11 @@
-import {createSignal, onMount, onCleanup, createMemo, For, Show, Component} from "solid-js";
+import {Component, createSignal, For, onCleanup, onMount} from "solid-js";
 import {css} from "solid-styled";
 import {fabric} from 'fabric';
 import {BaseDock} from "~/components/dock";
-import {MenuItemType} from "~/lib/types";
-import Icon from "~/components/ui/icon";
 import {DockIcon} from "~/components/ui/dock";
 import FontFaceObserver from 'fontfaceobserver';
-import {IText} from "fabric/fabric-impl";
 import BasePopover from "~/components/ui/popover";
+import {ImageUp, Plus, Shirt, Trash} from "lucide-solid";
 
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
@@ -51,7 +49,7 @@ const ShirtDecorator: Component<{
                 });
 
                 // Load shirt template
-                               loadShirtTemplate();
+                loadShirtTemplate();
 
                 // Set fabric as loaded
                 setFabricLoaded(true);
@@ -301,10 +299,10 @@ const ShirtDecorator: Component<{
 
     const handleOpen = () => {
         if (!globalImage) return;
-        if(!shirtCanvas) return;
-        if(!collarCanvas) return;
-        if(!leftCanvas) return;
-        if(!rightCanvas) return;
+        if (!shirtCanvas) return;
+        if (!collarCanvas) return;
+        if (!leftCanvas) return;
+        if (!rightCanvas) return;
         setOpen((prev) => !prev);
         getOpen() ? fabricCanvas.sendToBack(globalImage) : (fabricCanvas.sendToBack(shirtCanvas), fabricCanvas.sendToBack(leftCanvas), fabricCanvas.sendToBack(rightCanvas), fabricCanvas.sendToBack(collarCanvas));
     }
@@ -438,7 +436,6 @@ const ShirtDecorator: Component<{
             )}
 
 
-
             <div class="canvas-container">
 
                 <canvas class="relative" ref={canvasRef} width={canvasWidth()} height={canvasHeight()}></canvas>
@@ -446,10 +443,9 @@ const ShirtDecorator: Component<{
             </div>
 
 
-
             <BaseDock class={"-mt-7"}>
                 <DockIcon onClick={handleOpen}>
-                    <Icon name={"Shirt"} style={{
+                    <Shirt style={{
                         opacity: !fabricLoaded() ? '0.5' : '1',
                         cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
                     }} class={"stroke-cyan-700 fill-sky-100"}/>
@@ -464,8 +460,8 @@ const ShirtDecorator: Component<{
 
                                 <div>
                                     <div class="color-options w-full space-x-2">
-                                        <button  onClick={addText} >
-                                            <Icon name={"Plus"} class={"size-5"}/>
+                                        <button onClick={addText}>
+                                            <Plus class={"size-5"}/>
                                         </button>
                                         {shirtColors.map((color) => (
                                             <div
@@ -478,20 +474,20 @@ const ShirtDecorator: Component<{
                                     </div>
                                 </div>
                             </div>
-                        <div class="space-x-2">
-                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Inter")}>
-                                Inter
-                            </button>
-                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Roboto")}>
-                                Roboto
-                            </button>
-                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Open Sans")}>
-                                Open Sans
-                            </button>
-                            <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Montserrat")}>
-                                Montserrat
-                            </button>
-                        </div>
+                            <div class="space-x-2">
+                                <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Inter")}>
+                                    Inter
+                                </button>
+                                <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Roboto")}>
+                                    Roboto
+                                </button>
+                                <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Open Sans")}>
+                                    Open Sans
+                                </button>
+                                <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Montserrat")}>
+                                    Montserrat
+                                </button>
+                            </div>
                         </div>
                     </BasePopover>
                 </DockIcon>
@@ -501,7 +497,7 @@ const ShirtDecorator: Component<{
                         opacity: !fabricLoaded() ? '0.5' : '1',
                         cursor: !fabricLoaded() ? 'not-allowed' : 'pointer'
                     }}>
-                        <Icon name={"ImageUp"} class="stroke-cyan-700 fill-sky-100 size-full"/>
+                        <ImageUp class="stroke-cyan-700 fill-sky-100 size-full"/>
                         <input
                             type="file"
                             class="file-input"
@@ -513,15 +509,10 @@ const ShirtDecorator: Component<{
                 </DockIcon>
 
 
-
-
-
-
-
                 <div class="h-full border-x mx-1"/>
 
                 <DockIcon onClick={deleteSelected}>
-                    <Icon name={"Trash"} class={"stroke-rose-700 fill-red-100"}/>
+                    <Trash class={"stroke-rose-700 fill-red-100"}/>
                 </DockIcon>
             </BaseDock>
 

@@ -1,7 +1,6 @@
 import {createSignal, For} from 'solid-js'
-import Icon from '~/components/ui/icon'
 import {RadioGroup} from "@kobalte/core/radio-group";
-import {Radio} from "lucide-solid";
+import {ChevronDown, CircleCheck, Trash} from "lucide-solid/icon";
 
 const products = [
     {
@@ -162,7 +161,7 @@ export default function Example() {
                                             <option>Canada</option>
                                             <option>Mexico</option>
                                         </select>
-                                        <Icon name={"ChevronDown"}
+                                        <ChevronDown
                                               aria-hidden="true"
                                               class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
                                         />
@@ -241,7 +240,7 @@ export default function Example() {
                           <span class="mt-6 text-sm font-medium text-gray-900">{deliveryMethod.price}</span>
                         </span>
                       </span>
-                                                <Icon name={"CircleCheck"}
+                                                <CircleCheck
                                                       aria-hidden="true"
                                                       class="size-5 text-indigo-600 group-[&:not([data-checked])]:hidden"
                                                 />
@@ -379,7 +378,7 @@ export default function Example() {
                                                         class="-m-2.5 flex items-center justify-center bg-white p-2.5 text-gray-400 hover:text-gray-500"
                                                     >
                                                         <span class="sr-only">Remove</span>
-                                                        <Icon name={"Trash"} aria-hidden="true" class="size-5"/>
+                                                        <Trash aria-hidden="true" class="size-5"/>
                                                     </button>
                                                 </div>
                                             </div>
@@ -404,7 +403,7 @@ export default function Example() {
                                                             <option value={7}>7</option>
                                                             <option value={8}>8</option>
                                                         </select>
-                                                        <Icon name={"ChevronDown"}
+                                                        <ChevronDown
                                                               aria-hidden="true"
                                                               class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
                                                         />

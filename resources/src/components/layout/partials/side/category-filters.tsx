@@ -1,7 +1,7 @@
 import {Component} from "solid-js";
 import Disclosure from "@corvu/disclosure";
-import Icon from "~/components/ui/icon";
 import {classNames} from "~/lib/utils";
+import {Minus, Plus} from "lucide-solid";
 
 type PROPS = {
     name: string;
@@ -28,13 +28,13 @@ const CategoryFilters: Component<PROPS> = props => {
                                         class="rounded-lg  p-1 transition-all duration-100 hover:text-corvu-200 active:translate-y-0.5">
                                         {props.expanded && (
                                             <>
-                                                <Icon name={"Minus"} size="20"/>
+                                                <Minus size="20"/>
                                                 <span class="sr-only">Collapse</span>
                                             </>
                                         )}
                                         {!props.expanded && (
                                             <>
-                                                <Icon name={"Plus"} size="20"/>
+                                                <Plus size="20"/>
                                                 <span class="sr-only">Expand</span>
                                             </>
                                         )}
@@ -91,13 +91,13 @@ const CategoryFilters: Component<PROPS> = props => {
                                         class="rounded-lg  p-1 transition-all duration-100 hover:text-corvu-200 active:translate-y-0.5">
                                         {props.expanded && (
                                             <>
-                                                <Icon name={"Minus"} size="20"/>
+                                                <Minus size="20"/>
                                                 <span class="sr-only">Collapse</span>
                                             </>
                                         )}
                                         {!props.expanded && (
                                             <>
-                                                <Icon name={"Plus"} size="20"/>
+                                                <Plus size="20"/>
                                                 <span class="sr-only">Expand</span>
                                             </>
                                         )}
@@ -154,13 +154,13 @@ const CategoryFilters: Component<PROPS> = props => {
                                         class="rounded-lg  p-1 transition-all duration-100 hover:text-corvu-200 active:translate-y-0.5">
                                         {props.expanded && (
                                             <>
-                                                <Icon name={"Minus"} size="20"/>
+                                                <Minus size="20"/>
                                                 <span class="sr-only">Collapse</span>
                                             </>
                                         )}
                                         {!props.expanded && (
                                             <>
-                                                <Icon name={"Plus"} size="20"/>
+                                                <Plus size="20"/>
                                                 <span class="sr-only">Expand</span>
                                             </>
                                         )}
@@ -217,13 +217,13 @@ const CategoryFilters: Component<PROPS> = props => {
                                         class="rounded-lg  p-1 transition-all duration-100 hover:text-corvu-200 active:translate-y-0.5">
                                         {props.expanded && (
                                             <>
-                                                <Icon name={"Minus"} size="20"/>
+                                                <Minus size="20"/>
                                                 <span class="sr-only">Collapse</span>
                                             </>
                                         )}
                                         {!props.expanded && (
                                             <>
-                                                <Icon name={"Plus"} size="20"/>
+                                                <Plus size="20"/>
                                                 <span class="sr-only">Expand</span>
                                             </>
                                         )}

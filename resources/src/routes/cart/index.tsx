@@ -1,5 +1,5 @@
 import {Component, For} from "solid-js";
-import Icon from "~/components/ui/icon";
+import {ChevronDown, CircleCheck, CircleX, Clock, MessageCircleQuestion} from "lucide-solid";
 
 const products = [
     {
@@ -95,7 +95,7 @@ const Cart: Component<{}> = props => {
                                                         <option value={7}>7</option>
                                                         <option value={8}>8</option>
                                                     </select>
-                                                    <Icon name={"ChevronDown"}
+                                                    <ChevronDown
                                                         aria-hidden="true"
                                                         class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
                                                     />
@@ -104,7 +104,7 @@ const Cart: Component<{}> = props => {
                                                 <div class="absolute right-0 top-0">
                                                     <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
                                                         <span class="sr-only">Remove</span>
-                                                        <Icon name={"CircleX"} aria-hidden="true" class="size-5" />
+                                                        <CircleX aria-hidden="true" class="size-5"/>
                                                     </button>
                                                 </div>
                                             </div>
@@ -112,9 +112,9 @@ const Cart: Component<{}> = props => {
 
                                         <p class="mt-4 flex space-x-2 text-sm text-gray-700">
                                             {product.inStock ? (
-                                                <Icon name={"CircleCheck"} aria-hidden="true" class="size-5 shrink-0 text-green-500" />
+                                                <CircleCheck aria-hidden="true" class="size-5 shrink-0 text-green-500"/>
                                             ) : (
-                                                <Icon name={"Clock"} aria-hidden="true" class="size-5 shrink-0 text-gray-300" />
+                                                <Clock aria-hidden="true" class="size-5 shrink-0 text-gray-300"/>
                                             )}
 
                                             <span>{product.inStock ? 'In stock' : `Ships in ${product.leadTime}`}</span>
@@ -145,7 +145,7 @@ const Cart: Component<{}> = props => {
                                     <span>Shipping estimate</span>
                                     <a href="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
                                         <span class="sr-only">Learn more about how shipping is calculated</span>
-                                        <Icon name={"MessageCircleQuestion"} aria-hidden="true" class="size-5" />
+                                        <MessageCircleQuestion aria-hidden="true" class="size-5"/>
                                     </a>
                                 </dt>
                                 <dd class="text-sm font-medium text-gray-900">$5.00</dd>
@@ -155,7 +155,7 @@ const Cart: Component<{}> = props => {
                                     <span>Tax estimate</span>
                                     <a href="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
                                         <span class="sr-only">Learn more about how tax is calculated</span>
-                                        <Icon name={"MessageCircleQuestion"} aria-hidden="true" class="size-5" />
+                                        <MessageCircleQuestion aria-hidden="true" class="size-5"/>
                                     </a>
                                 </dt>
                                 <dd class="text-sm font-medium text-gray-900">$8.32</dd>
