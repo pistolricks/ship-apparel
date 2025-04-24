@@ -75,7 +75,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                             )}
                         </For>
                     </TabsList>
-                    <div class={"aspect-14/10 absolute inset-y-0 right-0 z-0 flex justify-end items-center"}>
+                    <div class={"aspect-16/10 absolute inset-y-0 right-0 z-0 flex justify-center items-center"}>
                         <iframe
                             title={"Sports"}
                             src="https://paneflow.com/share/green-christal-84"
