@@ -9,6 +9,7 @@ import {A, useLocation} from "@solidjs/router";
 import {CircleX} from "lucide-solid";
 import {cn} from "~/lib/utils";
 import style from "~/components/ui/tab/tabs.module.css";
+import { Frame } from '@ark-ui/solid'
 
 
 type PROPS = {
@@ -42,9 +43,10 @@ const ApparelNavigation: Component<PROPS> = props => {
     const isSelected = createSelector(getTitle)
 
 
+
     return (
 
-        <div class="block relative h-[540px] w-full  items-left space-y-4">
+        <div class="block relative h-[540px] bg-black w-full  items-left space-y-4">
 
             <Tabs class={'absolute z-10 h-full w-full'} value={getTitle()} onChange={setTitle}
                   orientation={"horizontal"}>
@@ -74,10 +76,12 @@ const ApparelNavigation: Component<PROPS> = props => {
                         </For>
                     </TabsList>
                     <div class={"aspect-14/10 absolute inset-y-0 right-0 z-0 flex justify-end items-center"}>
-                        <img class="w-full h-full object-cover"
-                             src={"http://ink-and-thread.com/storage/assets/4_21_lp/slider_1.png"}
-                             alt={""}/>
-
+                        <iframe
+                            title={"Sports"}
+                            src="https://paneflow.com/share/green-christal-84"
+                            class="absolute inset-0 w-full h-full"
+                        >
+                        </iframe>
 
                     </div>
                     <Grid cols={3} class="relative h-[540px] w-full overflow-x-hidden">
