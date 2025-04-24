@@ -54,7 +54,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                     handleSelect(item.title)
                                 }} as={A} type="button"
                                              href={item.href}
-                                             class={'font-medium tracking-wide'} value={getTitle()}>
+                                             class={'font-medium tracking-wide'} value={item.title}>
                                     {item.title}
                                 </TabsTrigger>
                             )}
