@@ -10,7 +10,7 @@ type PROPS = {}
 const Register: Component<RouteSectionProps> = props => {
 
     return (
-        <FormLayout hideLogo action={registerUserHandler} title={'Register'}>
+        <FormLayout action={registerUserHandler} imageSrc={"/logo.png"} title={'Create an Account'}>
             <RegisterUserForm/>
         </FormLayout>
     );

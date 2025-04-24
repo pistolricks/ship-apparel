@@ -14,7 +14,12 @@ const LoginUserForm: Component<PROPS> = props => {
     return (
         <>
             <div class={'flex justify-center mb-4 w-full'}>
-            <p class="py-4">Don't have an account? <A href="/create-account" class="font-medium text-blue-600 hover:text-blue-500">Create an Account</A></p>
+                <p class="py-4">Don't have an account? {" "}
+                    <A href="/create-account"
+                       class="font-medium text-red-400 hover:text-red-300">
+                        Create an Account
+                    </A>
+                </p>
             </div>
             <form class={'space-y-4 w-full max-w-md mx-auto'} action={loginUserHandler} method="post">
                 <TextField>

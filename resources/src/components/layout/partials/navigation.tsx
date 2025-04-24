@@ -6,7 +6,7 @@ import Drawer from "@corvu/drawer";
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
 const menu: { name: string, href: string }[] = [
-    {name: "Custom Apparel", href: "/custom-apparel"},
+    {name: "Apparel", href: "/custom-apparel"},
     {name: "Work Apparel", href: "/work-apparel"},
     {name: "School Spirit", href: "/school-spirit"},
     {name: "Team Athletics", href: "/team-athletics"},

@@ -5,7 +5,7 @@ import {BaseDock} from "~/components/dock";
 import {DockIcon} from "~/components/ui/dock";
 import FontFaceObserver from 'fontfaceobserver';
 import BasePopover from "~/components/ui/popover";
-import {ImageUp, Plus, Shirt, Trash} from "lucide-solid";
+import {ImageUp, Plus, Shirt, Trash, Type} from "lucide-solid";
 
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
@@ -454,7 +454,9 @@ const ShirtDecorator: Component<{
                 <div class="h-full border-x mx-1"/>
 
                 <DockIcon>
-                    <BasePopover icon={"Type"} title="">
+                    <BasePopover
+                        icon={<Type class="stroke-cyan-700 fill-sky-100 size-full"/>}
+                        title="">
                         <div class={"flex flex-col"}>
                             <div class="controls w-full flex justify-center items-center space-x-2 h-10">
 

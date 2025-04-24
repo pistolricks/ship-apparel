@@ -30,9 +30,9 @@ const FormLayout: Component<{
 
     return (
         <div>
-            <div class="w-full h-[80dvh]  flex flex-col items-center justify-center px-4">
+            <div class="w-full h-[90dvh] bg-gray-200 flex flex-col items-center justify-center px-4">
                 <div class="max-w-sm w-full text-gray-600">
-                    <div class="text-center">
+                    <div class="text-center py-4">
                         <Show when={!hideLogo()}>
                             <A href={'/'}>
                                 <img width={150} class="mx-auto"
@@ -46,8 +46,9 @@ const FormLayout: Component<{
 
                         </div>
                     </div>
-
+                    <div class="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
                     {children()}
+                    </div>
 
                 </div>
             </div>
