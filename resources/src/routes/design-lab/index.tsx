@@ -1,5 +1,5 @@
 import {Component} from "solid-js";
-import {ShirtDecorator} from "~/components/shirt-decorator";
+import ShirtDecorator from "~/components/shirt-decorator";
 
 type PROPS = {
 

@@ -1,12 +1,13 @@
-import {Component, createEffect, createMemo, createSelector, createSignal, For, onMount, Show} from "solid-js";
+import {Component, createEffect, createMemo, createSelector, createSignal, For, lazy, onMount, Show} from "solid-js";
 import {SM_PRODUCT, StyleType} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 import {imagePath} from "~/app";
 import Icon from "~/components/ui/icon";
-import {ShirtDecorator} from "~/components/shirt-decorator";
 
+
+const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
 
 type STYLE_PRODUCT = {
     product_id: string;

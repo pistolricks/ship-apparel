@@ -38,7 +38,7 @@ const ApparelTabs: Component<PROPS> = props => {
 
 
     return (
-        <Show<boolean>
+        <Show
             fallback={children()}
             when={matches.sm}>
 
@@ -52,7 +52,7 @@ const ApparelTabs: Component<PROPS> = props => {
             >
 
                 <TabsList class={' overflow-y-auto scrollbar-hide'}>
-                    <For<MenuItemType[]> each={menu()}>
+                    <For each={menu()}>
                         {(item, index) => (
                             <TabsTrigger value={item.value ?? item.title} class={'text-xs h-8'}>
                                 {item?.title}
@@ -63,10 +63,12 @@ const ApparelTabs: Component<PROPS> = props => {
                 </TabsList>
 
 
-                <For<MenuItemType[]> each={menu()}>
+                <For each={menu()}>
                     {(item, index) => (
                         <TabsContent value={item?.value ?? item.title}>
-                            <MenuLeftImagesRight title={item.title} href={item.href} src={item.src} list={item?.sub}/>
+                            <MenuLeftImagesRight title={item.title} href={item.href} src={item.src} list={item?.sub}>
+                                <></>
+                            </MenuLeftImagesRight>
 
                         </TabsContent>
                     )}

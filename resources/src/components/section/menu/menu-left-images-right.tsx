@@ -1,5 +1,4 @@
 import {Component, For, JSXElement, Show} from "solid-js";
-import list from "~/components/list/list";
 import {MenuItemType} from "~/lib/types";
 import {A} from "@solidjs/router";
 

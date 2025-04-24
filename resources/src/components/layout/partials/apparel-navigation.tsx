@@ -62,10 +62,8 @@ const ApparelNavigation: Component<PROPS> = props => {
                     </TabsList>
                     <div class={"aspect-14/10 absolute inset-y-0 right-0 z-0 flex justify-end items-center"}>
                         <img class="w-full h-full object-cover"
-                             src={"http://ink-and-thread.com/storage/assets/4_21_lp/slider_1.png"}
+                             src={"https://ink-and-thread.com/storage/assets/4_21_lp/slider_1.png"}
                              alt={""}/>
-
-
 
 
                     </div>
@@ -93,8 +91,9 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                             onClick={() => handleSelect("")} value={getTitle()}
                                                         >
                                                             <div class={"flex justify-between items-center pr-4"}>
-                                                            <Icon name={"CircleX"} class={"size-4 text-gray-500 hover:text-red-300"}/>
-                                                            <span class={"uppercase"}>{item.title}</span>
+                                                                <Icon name={"CircleX"}
+                                                                      class={"size-4 text-gray-500 hover:text-red-300"}/>
+                                                                <span class={"uppercase"}>{item.title}</span>
                                                             </div>
                                                         </TabsTrigger>
                                                     </Show>

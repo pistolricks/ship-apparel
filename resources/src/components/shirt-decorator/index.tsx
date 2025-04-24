@@ -536,4 +536,4 @@ const ShirtDecorator: Component<{
     );
 }
 
-export {ShirtDecorator};
+export default ShirtDecorator;

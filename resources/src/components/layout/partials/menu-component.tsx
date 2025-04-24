@@ -1,10 +1,8 @@
 import {Component, For} from "solid-js";
-import {useLayoutContext} from "~/context/layout-provider";
 import {A} from "@solidjs/router";
 import Drawer from "@corvu/drawer";
-import image1 from "~/img/cta_sports_pack_1.png";
-import image2 from "~/img/cta_mercandise_1.jpg";
 import {sideMenu} from "~/lib/utils";
+
 type PROPS = {
     contextId: string;
 }
@@ -18,12 +16,14 @@ const MenuComponent: Component<PROPS> = props => {
             <div class="">
                 <div class="space-y-6 border-b border-gray-200 px-4 py-6">
                     <div class="flow-root">
-                        <Drawer.Trigger contextId={contextId()} as={'a'} href={"/login"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                        <Drawer.Trigger contextId={contextId()} as={'a'} href={"/login"}
+                                        class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                             Login
                         </Drawer.Trigger>
                     </div>
                     <div class="flow-root">
-                        <Drawer.Trigger contextId={contextId()} as={'a'} href={"/register"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                        <Drawer.Trigger contextId={contextId()} as={'a'} href={"/register"}
+                                        class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                             Register
                         </Drawer.Trigger>
                     </div>
@@ -31,7 +31,7 @@ const MenuComponent: Component<PROPS> = props => {
 
                 <div class="space-y-10 px-4 pb-8 pt-4" role="tabpanel" tabindex="0">
 
-                   {/*
+                    {/*
                     <div class="grid grid-cols-2 gap-x-4">
                         <div class="group relative text-sm">
                             <img
@@ -86,12 +86,14 @@ const MenuComponent: Component<PROPS> = props => {
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/about-us"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/about-us"}
+                                    class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         About Us
                     </Drawer.Trigger>
                 </div>
                 <div class="flow-root">
-                    <Drawer.Trigger contextId={contextId()} as={A} href={"/contact-us"} class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
+                    <Drawer.Trigger contextId={contextId()} as={A} href={"/contact-us"}
+                                    class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
                         Contact Us
                     </Drawer.Trigger>
                 </div>
