@@ -3,9 +3,9 @@ import {Component, createSelector, createSignal, For, Match, Show, Switch} from 
 import type {Orientation} from "@kobalte/core/navigation-menu"
 import {ContentItemType, MenuItemType} from "~/lib/types";
 import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-right";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
+import {Tabs, TabsContent, TabsList} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
-import {A, useLocation, useNavigate} from "@solidjs/router";
+import {A, useLocation} from "@solidjs/router";
 import {CircleX} from "lucide-solid";
 import {cn} from "~/lib/utils";
 import style from "~/components/ui/tab/tabs.module.css";
@@ -56,7 +56,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                     href={item.href}
                                     class={cn(
                                         style.tabs__trigger,
-                                        isSelected(item.title) ? "activeClass" : "text-gray-500",
+                                        isSelected(item.title) ? "activeClass"  : "text-gray-500",
                                         "group/trigger inline-flex h-9 w-full items-center justify-start whitespace-nowrap   bg-gray-100 px-4 py-2 text-xs transition-colors hover:text-content focus:bg-bgBase/50 focus:text-content focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-secondary/50 data-[expanded]:bg-bgBase"
                                     )}
                                     on:mouseover={(event) => {
@@ -100,7 +100,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                 >
                                                     <Show when={getTitle() !== ""}>
                                                         <div
-                                                            class={"w-[65dvw] h-8 flex items-center justify-between glass px-4"}>
+                                                            class={"w-[65dvw] h-8 flex items-center justify-between glass_primary px-4 bg-blue-50"}>
 
                                                             <button onClick={() => handleSelect("")} value={item.title}
                                                                     class={"flex justify-center items-center pr-4"}>
@@ -109,9 +109,9 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                             </button>
 
                                                             <A
-                                                                class={"uppercase tracking-widest"}
+                                                                class={"uppercase tracking-widest hover:text-red-300"}
                                                                 href={item.href}>
-                                                               {item.title}
+                                                                {item.title}
                                                             </A>
                                                         </div>
                                                     </Show>
