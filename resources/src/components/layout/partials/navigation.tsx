@@ -23,12 +23,10 @@ export default function Navigation(props: { contextId: string }) {
         <div class="bg-white">
             <header class="relative">
                 <nav aria-label="Top">
-
                     <div class="hidden sm:block bg-sky-400/70">
                         <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
 
                             <div class="hidden lg:block lg:flex-1">
-
                                 <div class="-ml-2 inline-grid grid-cols-1">
                                     <div class="col-start-1 row-start-1 w-full appearance-none rounded-md  py-0.5 pl-2 pr-7 text-left text-base font-medium text-white focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-white sm:text-sm/6">
 
@@ -57,14 +55,11 @@ export default function Navigation(props: { contextId: string }) {
                         <div class="mx-auto max-w-7xl">
                             <div class="border-b border-gray-200">
                                 <div class="flex h-16 items-center justify-between">
-
                                     <div class="hidden lg:flex lg:items-center">
-
                                         <A href="/">
                                             <img src={'/logo.png'} class="pl-4 h-8 w-auto" alt="logo"/>
                                             <span class="sr-only"></span>
                                         </A>
-
                                     </div>
 
                                     <div class="hidden h-full lg:flex">
@@ -110,7 +105,6 @@ export default function Navigation(props: { contextId: string }) {
                                         </a>
                                     </div>
 
-
                                     <A href="/" class="lg:hidden">
                                         <span class="sr-only">Custom Ink and Thread</span>
                                         <img
@@ -138,7 +132,8 @@ export default function Navigation(props: { contextId: string }) {
                                                         <span class="sr-only">Account</span>
                                                         <svg class="size-6" fill="none" viewBox="0 0 24 24"
                                                              stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                                             data-slot="icon">
+                                                             data-slot="icon"
+                                                        >
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                   d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
                                                         </svg>
