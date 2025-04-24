@@ -30,37 +30,25 @@ const FormLayout: Component<{
 
     return (
         <div>
-            <div class="h-full w-full max-w-xl mx-auto items-center justify-center  py-4 sm:p-4">
-                <div class="flex h-full min-h-full flex-col justify-center">
-                    <div class="sm:mx-auto">
-                        <Show<boolean> when={!hideLogo()}>
+            <div class="w-full h-[80dvh]  flex flex-col items-center justify-center px-4">
+                <div class="max-w-sm w-full text-gray-600">
+                    <div class="text-center">
+                        <Show when={!hideLogo()}>
                             <A href={'/'}>
-                                <img class="mx-auto h-24 w-auto rounded"
+                                <img width={150} class="mx-auto"
                                      src={imageSrc()} alt="logo"/>
                             </A>
                         </Show>
-                        <h2 class="mt-4 text-center text-2xl/9 tracking-tight text-gray-11 uppercase">
-                            {title()}
-                        </h2>
-                    </div>
-                    <div class="w-full space-y-6 text-gray-600">
-                        <div class="mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
-                            <div class="mx-auto max-w-lg container">
-                                <Show<boolean> when={sub.error} keyed>
-                                    {(error) => (
-                                            <div class="rounded-md bg-red-50 p-4 text-sm text-red-500"><b>Error alert</b>  {error.message}
-                                                <button onClick={() => sub.clear()}>
-                                                <IconX/>
-                                                </button>
-                                            </div>
-                                    )}
-                                </Show>
+                        <div class="mt-5 space-y-2">
+                            <h3 class="text-gray-800 text-2xl font-bold sm:text-3xl">
+                                {title()}
+                            </h3>
 
-                                {children()}
-                            </div>
                         </div>
-
                     </div>
+
+                    {children()}
+
                 </div>
             </div>
         </div>

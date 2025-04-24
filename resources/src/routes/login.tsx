@@ -10,7 +10,7 @@ type PROPS = {
 
 const Login: Component<PROPS> = props => {
     return (
-        <FormLayout hideLogo action={loginUserHandler}>
+        <FormLayout imageSrc={"/logo.png"} title={"Login"} action={loginUserHandler}>
             <LoginUserForm />
         </FormLayout>
     );

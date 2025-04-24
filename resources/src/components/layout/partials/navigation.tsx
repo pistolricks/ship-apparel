@@ -3,6 +3,7 @@ import {A, useLocation} from "@solidjs/router";
 import {classNames} from "~/lib/utils";
 import Drawer from "@corvu/drawer";
 
+
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
 const menu: { name: string, href: string }[] = [
     {name: "Custom Apparel", href: "/custom-apparel"},
@@ -18,6 +19,17 @@ export default function Navigation(props: { contextId: string }) {
     const [open, setOpen] = createSignal(false)
     const contextId = () => props.contextId
     const location = useLocation()
+
+
+    const [isOpen, setIsOpen] = createSignal(false);
+
+    function closeModal(): void {
+        setIsOpen(false);
+    }
+
+    function openModal(): void {
+        setIsOpen(true);
+    }
 
     return (
         <div class="bg-white">
@@ -39,13 +51,13 @@ export default function Navigation(props: { contextId: string }) {
                             </p>
 
                             <div class="hidden md:flex md:flex-1 md:items-center md:justify-end md:space-x-6">
-                                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">
+                                <A href="/create-account" class="text-sm font-medium text-white hover:text-gray-100">
                                     Create an account
-                                </a>
+                                </A>
                                 <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
-                                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">
+                                <A href="/sign-in" class="text-sm font-medium text-white hover:text-gray-100">
                                     Sign in
-                                </a>
+                                </A>
                             </div>
                         </div>
                     </div>
@@ -116,7 +128,7 @@ export default function Navigation(props: { contextId: string }) {
                                         <div class="flex items-center lg:ml-8">
                                             <div class="flex space-x-4">
                                                 <div class="hidden lg:flex">
-                                                    <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                                                    <button onClick={openModal} type={"button"}  class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                                                         <span class="sr-only">Search</span>
                                                         <svg class="size-6" fill="none" viewBox="0 0 24 24"
                                                              stroke-width="1.5" stroke="currentColor" aria-hidden="true"
@@ -124,7 +136,7 @@ export default function Navigation(props: { contextId: string }) {
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                   d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
                                                         </svg>
-                                                    </a>
+                                                    </button>
                                                 </div>
 
                                                 <div class="flex">
@@ -159,6 +171,7 @@ export default function Navigation(props: { contextId: string }) {
                     </div>
                 </nav>
             </header>
+
         </div>
 
     )

@@ -114,14 +114,14 @@ const routes = [
         preload: preloadSubCategory,
     },
 
- //   {
- //       path: "/login",
- //       component: lazy(() => import("./routes/login")),
- //   },
- //   {
- //       path: "/register",
- //       component: lazy(() => import("./routes/register")),
- //   }
+    {
+        path: "/sign-in",
+        component: lazy(() => import("./routes/login")),
+    },
+    {
+        path: "/create-account",
+        component: lazy(() => import("./routes/register")),
+    }
 ]
 
 render(() => <Router root={(props) => <App>{props.children}</App>}>{routes}</Router>, root!);

@@ -52,7 +52,7 @@ class Menu extends Model
                         ['name' => 'Spacecraft', 'path' => 'products/brands/spacecraft'],
                         ['name' => 'Sport-Tek', 'path' => 'products/brands/sport-tek'],
                         ['name' => 'Stanley/Stella', 'path' => 'products/brands/stanley-stella'],
-                        ['name' => 'tentree', 'path' => 'products/brands/tentree'],
+                        ['name' => 'Tentree', 'path' => 'products/brands/tentree'],
                         ['name' => 'The North Face', 'path' => 'products/brands/the-north-face'],
                         ['name' => 'Tommy Bahama', 'path' => 'products/brands/tommy-bahama'],
                         ['name' => 'TravisMathew', 'path' => 'products/brands/travis-mathew'],
