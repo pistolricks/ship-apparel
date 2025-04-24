@@ -82,16 +82,25 @@ const ApparelNavigation: Component<PROPS> = props => {
                                             </div>
                                         </Match>
                                         <Match when={isSelected(item.title)}>
-                                            <div class="absolute h-full w-full ">
-                                                <MenuLeftImagesRight title={item.title} href={item.href}
-                                                                     list={item?.sub}/>
+                                            <div class="relative h-full w-full">
+                                                <MenuLeftImagesRight title={item.title}
+                                                                     href={item.href}
+                                                                     list={item?.sub}
+                                                >
+                                                    <Show when={getTitle() !== ""}>
+                                                        <TabsTrigger
+                                                            class={"w-[65dvw] h-8 flex items-center justify-center glass"}
+                                                            onClick={() => handleSelect("")} value={getTitle()}
+                                                        >
+                                                            <div class={"flex justify-between items-center pr-4"}>
+                                                            <Icon name={"CircleX"} class={"size-4 text-gray-500 hover:text-red-300"}/>
+                                                            <span class={"uppercase"}>{item.title}</span>
+                                                            </div>
+                                                        </TabsTrigger>
+                                                    </Show>
+                                                </MenuLeftImagesRight>
 
-                                                <Show when={getTitle() !== ""}>
-                                                    <TabsTrigger onClick={() => handleSelect("")} value={getTitle()}
-                                                                 class={"absolute bottom-0 right-0 w-12 bg-transparent cursor-pointer m-2"}>
-                                                        <Icon name={"CircleX"} class={"size-8 text-gray-500"}/>
-                                                    </TabsTrigger>
-                                                </Show>
+
                                             </div>
                                         </Match>
                                     </Switch>

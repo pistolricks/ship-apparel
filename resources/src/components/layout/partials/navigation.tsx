@@ -24,7 +24,7 @@ export default function Navigation(props: { contextId: string }) {
             <header class="relative">
                 <nav aria-label="Top">
 
-                    <div class="bg-sky-400/70">
+                    <div class="hidden sm:block bg-sky-400/70">
                         <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
 
                             <div class="hidden lg:block lg:flex-1">
@@ -41,25 +41,27 @@ export default function Navigation(props: { contextId: string }) {
                             </p>
 
                             <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an
-                                    account
+                                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">
+                                    Create an account
                                 </a>
                                 <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
-                                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
+                                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">
+                                    Sign in
+                                </a>
                             </div>
                         </div>
                     </div>
 
 
                     <div class="bg-white">
-                        <div class="mx-auto max-w-7xl px-4">
+                        <div class="mx-auto max-w-7xl">
                             <div class="border-b border-gray-200">
                                 <div class="flex h-16 items-center justify-between">
 
                                     <div class="hidden lg:flex lg:items-center">
 
                                         <A href="/">
-                                            <img src={'/logo.png'} class="h-8 w-auto" alt="logo"/>
+                                            <img src={'/logo.png'} class="pl-4 h-8 w-auto" alt="logo"/>
                                             <span class="sr-only"></span>
                                         </A>
 
@@ -88,7 +90,7 @@ export default function Navigation(props: { contextId: string }) {
 
                                     <div class="flex flex-1 items-center lg:hidden">
 
-                                        <button type="button" class="-ml-2 rounded-md bg-white p-2 text-gray-400">
+                                        <button type="button" class="pl-4 rounded-md bg-white p-2 text-gray-400">
                                             <span class="sr-only">Open menu</span>
                                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                  stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -118,7 +120,7 @@ export default function Navigation(props: { contextId: string }) {
 
                                     <div class="flex flex-1 items-center justify-end">
                                         <div class="flex items-center lg:ml-8">
-                                            <div class="flex space-x-8">
+                                            <div class="flex space-x-4">
                                                 <div class="hidden lg:flex">
                                                     <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                                                         <span class="sr-only">Search</span>
@@ -142,23 +144,17 @@ export default function Navigation(props: { contextId: string }) {
                                                         </svg>
                                                     </a>
                                                 </div>
-                                            </div>
-
-                                            <span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true"></span>
-
-                                            <div class="flow-root">
-                                                    <Drawer.Trigger contextId={contextId()}>
-                                                        <span class="sr-only">Open menu</span>
-                                                        <svg class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
-                                                             fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                             stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
-                                                        </svg>
-                                                        <span class="sr-only">items in cart, view bag</span>
-                                                    </Drawer.Trigger>
-
-
+                                                <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                                                <Drawer.Trigger class={"pr-4"} contextId={contextId()}>
+                                                    <span class="sr-only">Open menu</span>
+                                                    <svg class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
+                                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                         stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
+                                                    </svg>
+                                                    <span class="sr-only">items in cart, view bag</span>
+                                                </Drawer.Trigger>
                                             </div>
                                         </div>
                                     </div>
