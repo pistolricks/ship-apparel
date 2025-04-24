@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css"  crossorigin="anonymous">
     <title>{{ config('app.name', 'CustomInk and Thread') }}</title>
     <title>CustomInk and Thread</title>
 </head>

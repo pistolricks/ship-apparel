@@ -6,7 +6,7 @@ import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-righ
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A} from "@solidjs/router";
-import {CircleX} from "lucide-solid";
+import CircleX from "lucide-solid/icons/circle-x";
 
 
 type PROPS = {

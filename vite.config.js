@@ -11,7 +11,12 @@ import {fileURLToPath, URL} from "node:url";
 export default defineConfig({
     resolve: {
         alias: {
-            'lucide-solid/icons': path.resolve(__dirname, './node_modules/lucide-solid/dist/source/icons'),
+            "lucide-solid/icons": fileURLToPath(
+                new URL(
+                    "./node_modules/lucide-solid/dist/source/icons",
+                    import.meta.url,
+                ),
+            ),
         }
     },
     plugins: [

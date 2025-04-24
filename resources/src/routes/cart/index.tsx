@@ -1,6 +1,9 @@
 import {Component, For} from "solid-js";
-import {ChevronDown, CircleCheck, CircleX, Clock, MessageCircleQuestion} from "lucide-solid";
-
+import ChevronDown from 'lucide-solid/icons/chevron-down'
+import CircleCheck from 'lucide-solid/icons/circle-check'
+import CircleX from 'lucide-solid/icons/circle-x'
+import Clock from 'lucide-solid/icons/clock'
+import MessageCircleQuestion from 'lucide-solid/icons/message-circle-question'
 const products = [
     {
         id: 1,

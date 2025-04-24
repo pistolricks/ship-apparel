@@ -1,6 +1,6 @@
 import Popover from '@corvu/popover'
 import type {Component, JSXElement} from 'solid-js'
-import {Cog} from "lucide-solid";
+import Cog from "lucide-solid/icons/cog";
 
 
 const BasePopover: Component<{
