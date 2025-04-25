@@ -1,4 +1,4 @@
-import {Component, createSignal, For, onCleanup, onMount} from "solid-js";
+import {Component, createEffect, createSignal, For, onCleanup, onMount} from "solid-js";
 import {css} from "solid-styled";
 import {fabric} from 'fabric';
 import {BaseDock} from "~/components/dock";
@@ -6,6 +6,8 @@ import {DockIcon} from "~/components/ui/dock";
 import FontFaceObserver from 'fontfaceobserver';
 import BasePopover from "~/components/ui/popover";
 import {ImageUp, Plus, Shirt, Trash, Type} from "lucide-solid";
+import {ColorPicker} from "~/components/color-picker";
+import {Button} from "~/components/ui/button";
 
 // Note: This component requires fabric.js and its TypeScript definitions
 // These have been added to package.json as dependencies
@@ -21,7 +23,7 @@ const ShirtDecorator: Component<{
 
     const [canvasWidth, setCanvasWidth] = createSignal(600);
     const [canvasHeight, setCanvasHeight] = createSignal(850);
-    const [selectedColor, setSelectedColor] = createSignal<string | null>(null);
+    const [selectedColor, setSelectedColor] = createSignal<string>("#ffffff");
     const [fabricLoaded, setFabricLoaded] = createSignal(false);
     const [getOpen, setOpen] = createSignal(false);
 
@@ -174,7 +176,7 @@ const ShirtDecorator: Component<{
             top: 200,
             fontFamily: 'Inter',
             fontSize: 30,
-            fill: selectedColor() === '#ffffff' ? '#000000' : '#ffffff',
+            fill: selectedColor(),
             textAlign: 'center',
         });
 
@@ -236,14 +238,15 @@ const ShirtDecorator: Component<{
 
 
     const changeTextColor = (color: string) => {
+        console.log("changeTextColor", color);
         setSelectedColor(() => color);
-        if (fabricCanvas) {
+
             const activeObject = fabricCanvas.getActiveObject() as fabric.IText;
 
-            activeObject.set('fill', color);
+        activeObject?.set('fill', selectedColor());
 
             fabricCanvas.renderAll();
-        }
+
     };
 
     let uploadedImage: fabric.Image | null = null;
@@ -329,6 +332,8 @@ const ShirtDecorator: Component<{
         }
     };
 
+
+    createEffect(() => console.log(selectedColor()));
 
     css`
 
@@ -457,25 +462,18 @@ const ShirtDecorator: Component<{
                     <BasePopover
                         icon={<Type class="stroke-cyan-700 fill-sky-100 size-full"/>}
                         title="">
-                        <div class={"flex flex-col"}>
-                            <div class="controls w-full flex justify-center items-center space-x-2 h-10">
+                        <div class={"flex flex-col w-full"}>
 
-                                <div>
-                                    <div class="color-options w-full space-x-2">
-                                        <button onClick={addText}>
-                                            <Plus class={"size-5"}/>
-                                        </button>
-                                        {shirtColors.map((color) => (
-                                            <div
-                                                class={`color-option ${color.value === selectedColor() ? 'selected' : ''}`}
-                                                style={{"background-color": color.value}}
-                                                onClick={() => changeTextColor(color.value)}
-                                                title={color.name}
-                                            />
-                                        ))}
-                                    </div>
+                            <div class="w-full flex justify-between items-center">
+                                <Button size={"icon"} class={"hover:bg-gray-300"} onClick={addText}>
+                                    <Plus class={" size-5"}/>
+                                </Button>
+                                <div class={'py-4'}>
+                                    <ColorPicker value={selectedColor()} onChange={(c: string) => changeTextColor(c)}/>
                                 </div>
-                            </div>
+                                    </div>
+
+
                             <div class="space-x-2">
                                 <button class={"p-2 hover:text-gray-300 "} onClick={() => loadAndUse("Inter")}>
                                     Inter
