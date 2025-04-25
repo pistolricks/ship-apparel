@@ -1,0 +1,200 @@
+/**
+ * PaneFlow
+ * https://paneflow.com
+ * Copyright 2025 PaneFlow
+ * Released under the PaneFlow Regular License
+ * April 25, 2025
+ */
+
+:root {
+	--pf-gap: 0px;
+	--pf-padding: 0px;
+	--pf-border-radius: 0px;
+	--pf-pagination-item-color: #aaaaaa;
+	--pf-pagination-item-active-color: #d09eff;
+	--pf-navigation-item-color: #d09eff;
+	--pf-navigation-item-bg-color: transparent;
+	--pf-autoplay-interval: 3000ms;
+}
+.paneflow {
+	position: relative;
+	container-name: paneflow;
+	container-type: size;
+	user-select: none;
+}
+.paneflow * {
+	box-sizing: border-box;
+}
+.paneflow-content {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	container-name: paneflow-content;
+	container-type: size;
+	user-select: none;
+}
+.paneflow-content * {
+	transition-timing-function: cubic-bezier(0.56, 0, 0.03, 0.99);
+}
+.paneflow-block,
+.paneflow-thumbs-item-block {
+	user-select: none;
+
+	--pf-full-minus-padding: calc(100% - 2 * var(--pf-padding, 0px));
+	--pf-cols-gap: calc((var(--pf-cols, 0px) - 1) * var(--pf-gap, 0px));
+	--pf-rows-gap: calc((var(--pf-rows, 0px) - 1) * var(--pf-gap, 0px));
+
+	width: calc(
+		(var(--pf-full-minus-padding) - var(--pf-cols-gap)) / var(--pf-cols, 0px) *
+			var(--pf-width-cols, 0px) + (var(--pf-width-cols, 0px) - 1) *
+			var(--pf-gap, 0px)
+	);
+	height: calc(
+		(var(--pf-full-minus-padding) - var(--pf-rows-gap)) / var(--pf-rows, 0px) *
+			var(--pf-height-rows, 0px) + (var(--pf-height-rows, 0px) - 1) *
+			var(--pf-gap, 0px)
+	);
+	left: calc(
+		var(--pf-padding) + (var(--pf-full-minus-padding) - var(--pf-cols-gap)) /
+			var(--pf-cols) * var(--pf-col) + var(--pf-col) * var(--pf-gap)
+	);
+	top: calc(
+		var(--pf-padding) + (var(--pf-full-minus-padding) - var(--pf-rows-gap)) /
+			var(--pf-rows) * var(--pf-row) + var(--pf-row) * var(--pf-gap)
+	);
+
+	position: absolute;
+	border-radius: var(--pf-border-radius);
+	overflow: hidden;
+}
+
+.paneflow-prev,
+.paneflow-next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	color: var(--pf-navigation-item-color);
+	background-color: var(--pf-navigation-item-bg-color);
+	border-radius: 50%;
+}
+.paneflow-prev svg,
+.paneflow-next svg {
+	width: 100%;
+	height: 100%;
+}
+.paneflow-prev {
+	left: calc(var(--pf-padding));
+}
+.paneflow-next {
+	right: calc(var(--pf-padding));
+}
+
+.paneflow-with-pagination .paneflow-content {
+	height: calc(100% - var(--pf-padding) - 10px);
+}
+.paneflow-with-pagination .paneflow-prev,
+.paneflow-with-pagination .paneflow-next {
+	top: calc(50% - 5px - var(--pf-padding) / 2);
+}
+.paneflow-pagination {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	padding-top: 0;
+	padding-bottom: var(--pf-padding);
+}
+.paneflow-pagination-clickable .paneflow-pagination-item {
+	cursor: pointer;
+}
+
+.paneflow-pagination-item {
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: var(--pf-pagination-item-color);
+	transform: scale(0.8);
+	transition-duration: var(--pf-transition-duration, 300ms);
+	flex-shrink: 0;
+	position: relative;
+	overflow: hidden;
+}
+.paneflow-pagination-item-active {
+	background-color: var(--pf-pagination-item-active-color);
+	transform: scale(1);
+}
+
+.paneflow-pagination-autoplay .paneflow-pagination-item-active {
+	width: 40px;
+	background-color: color-mix(
+		in oklab,
+		var(--pf-pagination-item-active-color) 30%,
+		transparent
+	);
+}
+.paneflow-pagination-item-active.paneflow-pagination-item-autoplay::after {
+	content: '';
+	position: absolute;
+	inset: 0px;
+	background-color: var(--pf-pagination-item-active-color);
+	border-radius: inherit;
+	animation: paneflow-pagination-item-active-animation
+		var(--pf-autoplay-interval) linear forwards;
+}
+
+@keyframes paneflow-pagination-item-active-animation {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+.paneflow-with-thumbs .paneflow-prev,
+.paneflow-with-thumbs .paneflow-next {
+	top: calc(50% - 3cqh - var(--pf-padding) / 2);
+}
+.paneflow-with-thumbs .paneflow-content {
+	height: calc(100% - var(--pf-padding) - 6cqh);
+}
+.paneflow-thumbs {
+	display: flex;
+	justify-content: center;
+}
+.paneflow-thumbs-container {
+	display: flex;
+	gap: 8px;
+	width: fit-content;
+	padding-bottom: var(--pf-padding);
+	overflow-x: auto;
+	padding-left: var(--pf-padding);
+	padding-right: var(--pf-padding);
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+.paneflow-thumbs-container::-webkit-scrollbar {
+	display: none;
+}
+.paneflow-thumbs-clickable .paneflow-thumbs-item {
+	cursor: pointer;
+}
+
+.paneflow-thumbs-item {
+	width: 6cqw;
+	height: 6cqh;
+	position: relative;
+	container-name: paneflow-thumbs-item;
+	container-type: size;
+	flex-shrink: 0;
+}
+.paneflow-thumbs-item-block {
+	background-color: var(--pf-pagination-item-color);
+	transition-duration: var(--pf-transition-duration, 300ms);
+}
+.paneflow-thumbs-item-active .paneflow-thumbs-item-block {
+	background-color: var(--pf-pagination-item-active-color);
+}

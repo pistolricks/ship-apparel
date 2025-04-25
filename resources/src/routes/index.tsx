@@ -1,11 +1,9 @@
-import {Component, createEffect, createSignal, For, lazy, ValidComponent} from "solid-js";
+import {Component, createEffect, createSignal, lazy} from "solid-js";
 import {createAsync, RouteDefinition, RouteSectionProps} from "@solidjs/router";
 import {fetchHome} from "~/lib/home";
 import {ApparelNavigation} from "~/components/layout/partials/apparel-navigation";
 import RowItemsCard from "~/components/section/rows/row-items-card";
 import {CarouselCard} from "~/components/section/rows/carousel-card";
-import {Dynamic} from "solid-js/web";
-import {SectionItemType} from "~/lib/types";
 
 const BaseCarousel = lazy(() => import('~/components/ui/carousel/carousel'));
 type PROPS = RouteSectionProps
@@ -38,15 +36,15 @@ const Home: Component<PROPS> = props => {
 
     return (
         <>
-        <div class={'w-full flex flex-col space-y-4 mx-auto'}>
-            {/*
+            <div class={'w-full flex flex-col space-y-4 mx-auto'}>
+                {/*
                 <BaseDialog/>
                 */}
 
-            <ApparelNavigation menu={res()?.menu} slides={res()?.carousel?.contents} orientation={'vertical'}/>
+                <ApparelNavigation menu={res()?.menu} slides={res()?.carousel?.contents} orientation={'vertical'}/>
 
 
-            {/*
+                {/*
 
             <img src={"http://ink-and-thread.com/storage/nova-pending-images/oxk9p2QsMCXCusZ5Ie3z58EyXbTZqrjjCp9wPqBG.jpg"} />
                 <For each={res()?.sections}>
@@ -66,12 +64,11 @@ const Home: Component<PROPS> = props => {
 
                 <div class={'h-24'}/>
 
-        </div>
+            </div>
 
 
-
-</>
-)
+        </>
+    )
 }
 
 export default Home;

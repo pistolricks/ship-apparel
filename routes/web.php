@@ -16,12 +16,12 @@ Route::view('/school-spirit', 'app')->name('central.school-spirit');
 Route::view('/team-athletics', 'app')->name('central.team-athletics');
 Route::view('/popup-shops', 'app')->name('central.popup-shops');
 
-Route::view('/shop', 'app')->name('central.shop');
-Route::view('/shop/style/{id}', 'app')->name('central.style.show');
-Route::view('/shop/brands', 'app')->name('central.shop.brand.index');
-Route::view('/shop/brands/{brand}', 'app')->name('central.shop.brand.show');
-Route::view('/shop/{category}', 'app')->name('central.shop.category');
-Route::view('/shop/{category}/{subCategory}', 'app')->name('central.products.category.subcategory');
+Route::view('/apparel', 'app')->name('central.apparel');
+Route::view('/apparel/style/{id}', 'app')->name('central.style.show');
+Route::view('/apparel/brands', 'app')->name('central.apparel.brand.index');
+Route::view('/apparel/brands/{brand}', 'app')->name('central.apparel.brand.show');
+Route::view('/apparel/{category}', 'app')->name('central.apparel.category');
+Route::view('/apparel/{category}/{subCategory}', 'app')->name('central.products.category.subcategory');
 
 
 Route::view('/login', 'app')->name('login');

@@ -6,8 +6,8 @@ import Drawer from "@corvu/drawer";
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
 const menu: { name: string, href: string }[] = [
-    {name: "Apparel", href: "/custom-apparel"},
-    {name: "Work Apparel", href: "/work-apparel"},
+    {name: "Apparel", href: "/apparel"},
+    {name: "Workwear", href: "/workwear"},
     {name: "School Spirit", href: "/school-spirit"},
     {name: "Team Athletics", href: "/team-athletics"},
     {name: "Design Lab", href: "/design-lab"},
@@ -35,27 +35,21 @@ export default function Navigation(props: { contextId: string }) {
         <div class="bg-white">
             <header class="relative">
                 <nav aria-label="Top">
-                    <div class="hidden sm:block bg-sky-700/70">
+                    <div class="hidden sm:block bg-secondary">
                         <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
 
-                            <div class="hidden lg:block lg:flex-1">
-                                <div class="-ml-2 inline-grid grid-cols-1">
-                                    <div class="col-start-1 row-start-1 w-full appearance-none rounded-md  py-0.5 pl-2 pr-7 text-left text-base font-medium text-white focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-white sm:text-sm/6">
 
-                                    </div>
-                                </div>
-                            </div>
 
-                            <p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">
-
-                            </p>
+                            <h1 class="flex-1 text-center text-sm font-medium  lg:flex-none">
+                                CUSTOM INK AND THREAD
+                            </h1>
 
                             <div class="hidden md:flex md:flex-1 md:items-center md:justify-end md:space-x-6">
-                                <A href="/create-account" class="text-sm font-medium text-white hover:text-gray-100">
+                                <A href="/create-account" class="nds-text">
                                     Create an account
                                 </A>
-                                <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
-                                <A href="/sign-in" class="text-sm font-medium text-white hover:text-gray-100">
+                                <span class="h-2.5 w-px bg-gray-600" aria-hidden="true"></span>
+                                <A href="/sign-in" class="nds-text">
                                     Sign in
                                 </A>
                             </div>
@@ -69,7 +63,7 @@ export default function Navigation(props: { contextId: string }) {
                                 <div class="flex h-16 items-center justify-between">
                                     <div class="hidden lg:flex lg:items-center">
                                         <A href="/">
-                                            <img src={'/logo.png'} class="pl-4 h-8 w-auto" alt="logo"/>
+                                            <img src={'/icons/icon180x180.png'} class="pl-4 h-8 w-auto" alt="logo"/>
                                             <span class="sr-only"></span>
                                         </A>
                                     </div>
@@ -82,7 +76,6 @@ export default function Navigation(props: { contextId: string }) {
                                                     <div class="flex h-full justify-center space-x-8">
 
                                                         <A href={item.href}
-
                                                            class={classNames(
                                                                location.pathname === item.href ? "activeClass" : "text-gray-500",
                                                                "flex items-center text-sm font-medium  hover:text-gray-800")}>

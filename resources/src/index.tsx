@@ -42,12 +42,12 @@ const routes = [
         component: lazy(() => import("./routes/index")),
     },
     {
-        path: "/custom-apparel",
-        component: lazy(() => import("./routes/custom-apparel")),
+        path: "/apparel",
+        component: lazy(() => import("./routes/apparel")),
     },
     {
-        path: "/work-apparel",
-        component: lazy(() => import("./routes/work-apparel")),
+        path: "/workwear",
+        component: lazy(() => import("./routes/workwear")),
     },
     {
         path: "/team-athletics",
@@ -88,29 +88,29 @@ const routes = [
 
 
     {
-        path: "/shop/style/:id",
-        component: lazy(() => import("./routes/products/view")),
+        path: "/apparel/style/:id",
+        component: lazy(() => import("~/routes/apparel/view")),
         preload: preloadStyle,
     },
 
     {
-        path: "/shop",
-        component: lazy(() => import("./routes/products")),
+        path: "/apparel",
+        component: lazy(() => import("./routes/apparel")),
         preload: preloadProducts,
     },
     {
-        path: "/shop/brands/:brand",
-        component: lazy(() => import("~/routes/products/brand")),
+        path: "/apparel/brands/:brand",
+        component: lazy(() => import("~/routes/apparel/brand")),
         preload: preloadBrand,
     },
     {
-        path: "/shop/:category",
-        component: lazy(() => import("~/routes/products/category")),
+        path: "/apparel/:category",
+        component: lazy(() => import("~/routes/apparel/category")),
         preload: preloadCategory,
     },
     {
-        path: "/shop/:category/:subCategory",
-        component: lazy(() => import("~/routes/products/sub-category")),
+        path: "/apparel/:category/:subCategory",
+        component: lazy(() => import("~/routes/apparel/sub-category")),
         preload: preloadSubCategory,
     },
 

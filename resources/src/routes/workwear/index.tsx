@@ -4,7 +4,7 @@ type PROPS = {
 
 }
 
-const WorkApparel: Component<PROPS> = props => {
+const Workwear: Component<PROPS> = props => {
 
     return (
         <div>
@@ -13,4 +13,4 @@ const WorkApparel: Component<PROPS> = props => {
     );
 };
 
-export default WorkApparel;
+export default Workwear;

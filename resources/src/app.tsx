@@ -12,12 +12,30 @@ function GlobalStyles() {
     css`
     @global {
       body {
-        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        font-family:  Metropolis-Regular, Inter, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
           sans-serif;
       }
 
         h1 {
-            font-weight: 400;
+            font-family: Metropolis-Bold, sans-serif;
+            color: var(--ink-color-text-primary);
+            font-weight: var(--ink-font-weight-bold);
+        }
+        p {
+            font-family: Metropolis-Regular, sans-serif;
+            font-size: var(--ink-font-size-s);
+            line-height: 24px;
+            font-weight: var(--ink-font-weight-regular);
+        }
+        a {
+            font-family: Metropolis-Medium, sans-serif;
+            color: var(--ink-color-text-primary);
+            font-size: var(--ink-font-size-s);
+            line-height: 24px;
+            font-weight: 500;
+        }
+        a:hover {
+            color: var(--ink-color-text-hover)
         }
 
   `;
