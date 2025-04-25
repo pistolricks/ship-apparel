@@ -21,5 +21,4 @@ const Header: Component<{
 
     return (<Navigation contextId={contextId()}/>)
 };
-
 export default Header;
