@@ -9,7 +9,7 @@ import {A, useLocation} from "@solidjs/router";
 import {CircleX} from "lucide-solid";
 import {cn} from "~/lib/utils";
 import style from "~/components/ui/tab/tabs.module.css";
-import TeamApparel from "~/components/panes/team-apparel/team-apparel";
+import TeamApparel from "~/components/panes/team-apparel";
 import Dismissible from 'solid-dismissible'
 
 

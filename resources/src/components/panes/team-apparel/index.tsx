@@ -1,8 +1,7 @@
-
-import {onMount, onCleanup, Component} from "solid-js";
+import {Component, onCleanup, onMount} from "solid-js";
 import PaneFlow from "../paneflow.mjs";
 import "../paneflow.css";
-import "./team-apparel.css";
+import "./style.css";
 
 const TeamApparel: Component = () => {
     let paneFlowEl: HTMLDivElement | undefined;

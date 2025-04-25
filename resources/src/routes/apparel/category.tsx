@@ -13,7 +13,7 @@ export const route = {
     }
 } satisfies RouteDefinition
 
-const Shop: Component<PROPS> = props => {
+const Category: Component<PROPS> = props => {
     const params = useParams();
 
     const response = createAsync(async () => getCategory(params.category));
@@ -26,4 +26,4 @@ const Shop: Component<PROPS> = props => {
     );
 };
 
-export default Shop;
+export default Category;

@@ -43,7 +43,6 @@ const Home: Component<PROPS> = props => {
 
                 <ApparelNavigation menu={res()?.menu} slides={res()?.carousel?.contents} orientation={'vertical'}/>
 
-
                 {/*
 
             <img src={"http://ink-and-thread.com/storage/nova-pending-images/oxk9p2QsMCXCusZ5Ie3z58EyXbTZqrjjCp9wPqBG.jpg"} />
