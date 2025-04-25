@@ -253,3 +253,35 @@ export type PRODUCT_INFO = {
     productImageInfo: PRODUCT_IMAGE_INFO;
     productPriceInfo: PRODUCT_PRICE_INFO;
 }
+
+
+export type ATHLETIC_PRODUCT = {
+    item_sku: string;
+    parent_sku: string;
+    upc_code: string;
+    item_name: string;
+    brand: string;
+    division: string;
+    item_description: string;
+    category: string;
+    msrp: number;
+    cost: number;
+    currency: string;
+    launch_date?: string;
+    features?: string;
+    main_image_url: string;
+    other_image_url?: string;
+    swatch_image_url: string;
+    size_chart_image_url: string;
+    size: string;
+    weight: number;
+    weight_unit: string;
+    volume: number;
+    volume_unit: string;
+    case_pack_qty: string;
+    variation_theme?: string;
+    color_hex_value?: string;
+    status: number;
+    productvideourl?: string;
+    ribbon?: string;
+}
