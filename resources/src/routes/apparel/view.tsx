@@ -1,10 +1,8 @@
 import {Component, createEffect, createSignal, ParentProps, Show} from "solid-js";
-import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
+import {createAsync, useParams} from "@solidjs/router";
 import {getStyle} from "~/lib/products";
 import StyleSmView from "~/components/module/styles/style-sm-view";
-import {SM_PRODUCT, StyleType} from "~/lib/types";
-
-
+import {SM_PRODUCT} from "~/lib/types";
 
 
 const View: Component<ParentProps> = props => {
@@ -14,20 +12,20 @@ const View: Component<ParentProps> = props => {
 
     const response = createAsync(async () => getStyle(params.id));
 
-    const [getData, setData] = createSignal(response()?.data)
-    const [getProducts, setProducts] = createSignal<SM_PRODUCT[]>([])
+    const [getData, setData] = createSignal<SM_PRODUCT[]>(response()?.data)
+    const [getProduct, setProduct] = createSignal<SM_PRODUCT>(response()?.product)
     createEffect(() => {
         console.log("getResponse", response())
         setData(() => response()?.data)
-        if(response()?.data) {
-           setProducts(response()?.data?.data)
+        if (response()?.product) {
+            setProduct(response()?.product)
         }
     })
 
     return (
 
-        <Show when={getData()?.style}>
-             <StyleSmView style={getData()} products={getProducts()} />
+        <Show when={getProduct()}>
+            <StyleSmView product={getProduct()} products={getData()}/>
         </Show>
     );
 };

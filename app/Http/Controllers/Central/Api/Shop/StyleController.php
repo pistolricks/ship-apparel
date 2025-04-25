@@ -17,24 +17,23 @@ class StyleController extends Controller
     {
 
         $response = Http::retry(3, 10)
-            ->get('http://localhost:4000/v1/styles/'.$id);
+            ->get('http://localhost:4000/v1/products?style='.$id);
 
         $resp = $response->json();
 
-        $collection = collect($resp['style']['data']);
+        $collection = collect($resp['products']);
 
         $filtered = PiecePriceSupport::make($collection);
 
-        $style = $resp['style'];
+        $products = $filtered;
 
-        $style = $filtered[0];
-
-        $style['data'] = $filtered;
+        $product = $filtered->first();
 
 
         return response()->json([
             "menu" => config('menu'),
-            "data" => $style,
+            "product" => $product,
+            "data" => $products,
             "user" => $request->user(),
         ]);
     }

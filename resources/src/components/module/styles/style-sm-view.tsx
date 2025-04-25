@@ -9,66 +9,22 @@ import {UserPen} from "lucide-solid";
 
 const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
 
-type STYLE_PRODUCT = {
-    product_id: string;
-    product_title: string;
-    product_description?: string;
-    style: string;
-    available_sizes?: string;
-    brand_logo_image?: string;
-    thumbnail_image?: string;
-    color_swatch_image?: string;
-    product_image?: string;
-    spec_sheet?: string;
-    price_text?: string;
-    suggested_price?: string;
-    category_name?: string;
-    subcategory_name?: string;
-    color_name: string;
-    color_square_image?: string;
-    color_product_image?: string;
-    color_product_image_thumbnail?: string;
-    size?: string;
-    qty?: number;
-    piece_weight?: string;
-    piece_price?: string;
-    dozens_price?: string;
-    case_price?: string;
-    price_group?: string;
-    case_size?: string;
-    inventory_key?: string;
-    size_index?: string;
-    sanmar_mainframe_color?: string;
-    mill: string;
-    product_status: "Coming Soon" | "New" | "Regular" | "Discontinued" | "Disabled" ;
-    companion_style?: string;
-    msrp?: string;
-    map_pricing?: string;
-    front_model_image_url?: string;
-    back_model_image_url?: string;
-    front_flat_image_url?: string;
-    back_flat_image_url?: string;
-    product_measurements?: string;
-    pms_color?: string;
-    gtin?: string;
-    decoration_spec_sheet?: string;
-}
 
 type PROPS = {
-    style: STYLE_PRODUCT;
-    products: SM_PRODUCT[] | STYLE_PRODUCT[];
+    product: SM_PRODUCT;
+    products: SM_PRODUCT[];
 }
 
 
 const StyleSmView: Component<PROPS> = props => {
 
-    const style = () => props.style;
-    const products = () => props.products as STYLE_PRODUCT[];
+    const product = () => props.product;
+    const products = () => props.products as SM_PRODUCT[];
 
-    console.log(style(), "style viewer")
-    const [getSelected, setSelected] = createSignal<STYLE_PRODUCT>(products()?.[0] as STYLE_PRODUCT)
+    console.log(product(), "product viewer")
+    const [getSelected, setSelected] = createSignal<SM_PRODUCT>(product() as SM_PRODUCT)
 
-    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected()?.product_id)
+    const [getSelectedId, setSelectedId] = createSignal<string>(getSelected()?.id)
 
     const [getShowDecorator, setShowDecorator] = createSignal(false)
 
@@ -76,13 +32,13 @@ const StyleSmView: Component<PROPS> = props => {
         [getSelected()?.front_model_image_url, getSelected()?.back_model_image_url, getSelected()?.front_flat_image_url, getSelected()?.back_flat_image_url].filter((image): image is string => !!image)
     )
 
-    const [getSrc, setSrc] = createSignal(style()?.front_model_image_url)
+    const [getSrc, setSrc] = createSignal(product()?.front_model_image_url)
 
     const isSrc = createSelector<string | undefined>(getSrc)
 
-    function handleSize(data: STYLE_PRODUCT) {
+    function handleSize(data: SM_PRODUCT) {
 
-        setSelectedId(data.product_id)
+        setSelectedId(data.id)
         setSelected(data)
 
         console.log(getSelected())
@@ -116,7 +72,7 @@ const StyleSmView: Component<PROPS> = props => {
 
     //  const orderedProducts = createMemo(() => products()?.sort((a, b) => parseFloat(a.color_name) - parseFloat(b.color_name)))
 
-    const groupedByColor = createMemo(() => products()?.reduce((groups: Record<string, STYLE_PRODUCT[]>, product) => {
+    const groupedByColor = createMemo(() => products()?.reduce((groups: Record<string, SM_PRODUCT[]>, product) => {
         const key = product?.color_name ?? ''; // Grouping criterion (e.g., 'color')
         if (!groups[key]) {
             groups[key] = []; // Initialize an array for this group
@@ -129,12 +85,12 @@ const StyleSmView: Component<PROPS> = props => {
 
     const name = () => {
         let a = getSelected().product_title.replace(getSelected().mill, "")
-        let id = getSelected().product_id;
+        let id = getSelected().id;
         let t = a.replace(id, "")
         return t.replace(`.`, "")
     }
 
-    const [getColor, setColor] = createSignal(style()?.color_name)
+    const [getColor, setColor] = createSignal<string>(product()?.color_name ?? "")
     const handleColor = (m: string) => {
         setColor(() => m)
 
@@ -157,14 +113,14 @@ const StyleSmView: Component<PROPS> = props => {
     })
 
     onMount(() => {
-        setColor(products()?.[0]?.color_name)
-        setSelectedId(products()?.[0]?.product_id)
-        setSelected(products()?.[0])
-        setSrc(products()?.[0]?.front_model_image_url)
+        setColor(product()?.color_name ?? "")
+        setSelectedId(product()?.id)
+        setSelected(product())
+        setSrc(product()?.front_model_image_url)
         setImages(
-            [products()?.[0]?.front_model_image_url, products()?.[0]?.back_model_image_url, products()?.[0]?.front_flat_image_url, products()?.[0]?.back_flat_image_url].filter((image): image is string => !!image)
+            [product()?.front_model_image_url, product()?.back_model_image_url, product()?.front_flat_image_url, product()?.back_flat_image_url].filter((image): image is string => !!image)
         )
-        isSrc(products()?.[0]?.front_model_image_url)
+        isSrc(product()?.front_model_image_url)
     })
 
     return (
@@ -233,7 +189,7 @@ const StyleSmView: Component<PROPS> = props => {
                     <div class="sm:mt-10  mt:mt-16 sm:px-0 lg:mt-0">
 
                         <div class={'w-full flex justify-end mb-2'}>
-                            <img src={`${imagePath}/${style()?.brand_logo_image}/brand`}
+                            <img src={`${imagePath}/${product()?.brand_logo_image}/brand`}
                                  class={'absolute top-0 sm:static  w-[100px] h-[25px] sm:w-[200px] sm:h-[50px]  rounded-xl object-contain'}
                                  alt={''}/>
                         </div>
@@ -259,7 +215,7 @@ const StyleSmView: Component<PROPS> = props => {
                                 <div class="py-1  mt-6 flex justify-between items-center">
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Style</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{style()?.product_id}</p>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{product()?.id}</p>
                                     </div>
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Color</h3>
@@ -308,7 +264,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                 <button
                                                     onClick={() => handleSize(product)}
                                                     class={classNames(
-                                                        isSelected(product.product_id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200',
+                                                        isSelected(product.id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200',
                                                         "w-full items-center  justify-center border border-gray-400 rounded-md h-7"
                                                         )}
                                                     type="button">
@@ -328,7 +284,7 @@ const StyleSmView: Component<PROPS> = props => {
                                     <h3 class="sr-only">Description</h3>
 
                                     <div class="space-y-6 text-sm text-gray-700">
-                                        <p>{style()?.product_description}</p>
+                                        <p>{product()?.product_description}</p>
                                     </div>
                                 </div>
 
@@ -345,9 +301,9 @@ const StyleSmView: Component<PROPS> = props => {
                                     <div class="mt-6 pb-6" id="disclosure-1">
                                         <ul role="list"
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
-                                            <li class="pl-2">{style()?.mill}</li>
+                                            <li class="pl-2">{product()?.mill}</li>
                                             <li class="pl-2"><span
-                                                class="text-[10px] uppercase font-semibold">Style</span> {style()?.product_id}
+                                                class="text-[10px] uppercase font-semibold">Style</span> {product()?.id}
                                             </li>
                                             <li class="pl-2"><span
                                                 class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.gtin}
