@@ -78,7 +78,7 @@ export default function Navigation(props: { contextId: string }) {
                                                         <A href={item.href}
                                                            class={classNames(
                                                                location.pathname === item.href ? "activeClass" : "text-gray-500",
-                                                               "flex items-center text-sm font-medium  hover:text-gray-800")}>
+                                                               "flex items-center text-sm nav-text")}>
                                                             {item.name}
                                                         </A>
                                                     </div>

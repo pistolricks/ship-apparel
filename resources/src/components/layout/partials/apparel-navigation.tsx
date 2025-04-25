@@ -60,7 +60,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                 <Tabs class={'absolute z-10 h-full w-full'} value={getTitle()} onChange={setTitle}
                       orientation={"horizontal"}>
                     <div class={"absolute z-40 w-full h-full flex justify-start shadow"}>
-                        <TabsList class="flex flex-col items-center text-left w-40 z-40  bg-secondary ">
+                        <TabsList class="flex flex-col items-center text-left space-y-3.5 w-40 z-40  bg-secondary">
                             <For each={menu()?.[0]?.sub}>
                                 {(item: MenuItemType) => (
                                     <A
@@ -68,7 +68,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                         class={cn(
                                             style.tabs__trigger,
                                             isSelected(item.title) ? "activeClass" : "text-gray-500  font-display",
-                                            "group/trigger inline-flex h-9 w-40 items-center justify-start whitespace-nowrap   px-4 py-2  transition-colors disabled:pointer-events-none disabled:opacity-50 data-[active]:text-black data-[expanded]:text-black"
+                                            "group/trigger inline-flex w-40 items-center justify-start whitespace-nowrap   px-4  transition-colors disabled:pointer-events-none disabled:opacity-50 data-[active]:text-black data-[expanded]:text-black"
                                         )}
                                         on:mouseover={(event) => {
                                             event.stopPropagation()
@@ -84,7 +84,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                 )}
                             </For>
                         </TabsList>
-                        <div class={"aspect-16/10 absolute inset-y-0 h-[640px]  right-0 overflow-hidden z-0 flex justify-end items-center"}>
+                        <div class={"aspect-16/10 absolute inset-y-0 h-[640px] left-40 overflow-hidden z-0 flex justify-end items-center"}>
 
                             <TeamApparel/>
 
@@ -95,7 +95,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                         <Grid cols={3} class=" relative h-full  w-full overflow-hidden">
                             <For each={menu()?.[0]?.sub}>
                                 {(item: MenuItemType) => (
-                                    <TabsContent value={item.title} class="absolute inset-0 h-full w-full overflow-hidden">
+                                    <TabsContent value={item.title} class="absolute inset-0 h-full w-full overflow-hidden glass">
 
                                         <Switch>
                                             <Match when={getTitle() !== item.title}>
@@ -107,7 +107,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                             <Match when={isSelected(item.title)}>
                                                 <Show when={getTitle() !== ""}>
                                                     <div
-                                                        class={"glass w-full h-8 flex items-center justify-between px-4"}>
+                                                        class={"w-full h-8 flex items-center justify-between px-4 border-b border-primary"}>
 
                                                         <button onClick={() => handleSelect("")}
                                                                 value={item.title}

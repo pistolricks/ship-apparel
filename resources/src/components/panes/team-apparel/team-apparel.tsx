@@ -10,12 +10,12 @@ const TeamApparel: Component = () => {
 
     const paneFlowOnClick0 = (e: MouseEvent): void => {
         e.stopPropagation();
-        window.open(`https://example.com/team-apparel`, "_self");
+        window.open(`/team-athletics`, "_self");
     };
 
     const paneFlowOnClick1 = (e: MouseEvent): void => {
         e.stopPropagation();
-        window.open(`https://example.com/nike-apparel`, "_self");
+        window.open(`/`, "_self");
     };
 
     onMount(() => {
@@ -634,7 +634,7 @@ const TeamApparel: Component = () => {
             <div class="paneflow-content">
                 <div class="paneflow-block paneflow-block-benINp">
                     <img
-                        src="https://medialibrary1.widen.net/content/ymbeniqkwa/png/ST100LS_True%20Royal_white_Multi_Model_SMS24_2.png"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_1.png/public"
                         class="paneflow-bg-image paneflow-item-qVqUQz"
                     />
                     <div class="paneflow-text paneflow-item-lc4v5e">
@@ -645,43 +645,43 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-grh2X9">
                     <img
-                        src="https://medialibrary1.widen.net/content/ptyabbywcu/png/Nike_Logo_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/nike.png"
                         class="paneflow-bg-image paneflow-item-Dok8Ya"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-heg4hu">
                     <img
-                        src="https://medialibrary1.widen.net/content/epaj5udh4n/png/Champion%20Logo.png"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_4.png/public"
                         class="paneflow-bg-image paneflow-item-mwmpM5"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-FJTj9m">
                     <img
-                        src="https://medialibrary1.widen.net/content/4cnjdnypdb/png/LST800_BLACK_WHITE_Multi_Model_SPRING24-2_2.png"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/model_soccer.png/public"
                         class="paneflow-bg-image paneflow-item-aHhUOM"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-2nuIwD">
                     <img
-                        src="https://medialibrary1.widen.net/content/3z6yrkctgw/png/ST440_SP25_Catalog_ST_003_Lifestyle_Model.png"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_3.png/public"
                         class="paneflow-bg-image paneflow-item-zCnBSD"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-Uph1My">
                     <img
-                        src="https://medialibrary1.widen.net/content/uv0nybhfr8/png/OGIO%20Logo%202000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/ogio.png"
                         class="paneflow-bg-image paneflow-item-j7zxUg"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-V3IFgN">
                     <img
-                        src="https://medialibrary1.widen.net/content/evkdxsvuz5/png/ST800_WHITE_IRON%20GREY_Multi_Model_SP24-2_1.png"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_4.png/public"
                         class="paneflow-image paneflow-item-D9Le4C"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-Ak6kXf">
                     <img
-                        src="https://medialibrary1.widen.net/content/yomzqjdlvx/png/TNF_Logo_BW_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/nike.png"
                         class="paneflow-bg-image paneflow-item-yzKdhw"
                     />
                 </div>
@@ -694,7 +694,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-5f3OR4">
                     <img
-                        src="https://paneflow.com/templates/iphone-16-demo/5912d9537ec939899f3c.jpg"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/blurred_background.jpg"
                         class="paneflow-bg-image paneflow-item-MsZqAY"
                     />
                     <img
@@ -703,7 +703,7 @@ const TeamApparel: Component = () => {
                         onClick={paneFlowOnClick0}
                     />
                     <img
-                        src="https://medialibrary1.widen.net/content/ptyabbywcu/png/Nike_Logo_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
                         class="paneflow-image paneflow-item-gcvf5U"
                     />
                 </div>
@@ -712,31 +712,31 @@ const TeamApparel: Component = () => {
                     onClick={paneFlowOnClick1}
                 >
                     <img
-                        src="https://medialibrary1.widen.net/content/sj0ccayeqh/png/ST440_SP25_Catalog_ST_009_Lifestyle_Model.png"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/models_group_sports.png/public"
                         class="paneflow-bg-image paneflow-item-ZJKuhs"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-id107i">
                     <img
-                        src="https://medialibrary1.widen.net/content/6nzegzhoan/png/Jerzees_TriBlend_Logo_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/jerzees.png"
                         class="paneflow-bg-image paneflow-item-F01TEf"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-F9Z8vt">
                     <img
-                        src="https://medialibrary1.widen.net/content/zjabdi3obt/png/Carhartt_logo_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
                         class="paneflow-bg-image paneflow-item-gs0HIA"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-HNyDpw">
                     <img
-                        src="https://medialibrary1.widen.net/content/hbfrrkaevv/png/Sport-Tek_Logo_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/sport-tek.png"
                         class="paneflow-bg-image paneflow-item-cHR1zm"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-b5WF7C">
                     <img
-                        src="https://medialibrary1.widen.net/content/zjabdi3obt/png/Carhartt_logo_2000px.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
                         class="paneflow-bg-image paneflow-item-JnBdL0"
                     />
                 </div>

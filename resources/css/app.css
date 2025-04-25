@@ -60,17 +60,9 @@
         src: url("./fonts/Metropolis-ExtraBold.woff") format("woff"),
         url("./fonts/Metropolis-ExtraBold.otf") format("opentype");
     }
-    --font-sans: Metropolis-Regular, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: Metropolis, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    --font-display: "Metropolis-Regular";
-    --font-diplay-bold: "Metropolis-Bold";
-    --font-display-medium: "Metropolis-Medium";
-    --font-display-light: "Metropolis-ExtraLight";
-    --font-display-extrabold: "Metropolis-ExtraBold";
-    --font-display-black: "Metropolis-Black";
-
-    --font-body: "Metropolis-Regular";
-    --font-heading: "Metropolis-Bold";
+    --font-display: "Metropolis";
 
 
     --ink-breakpoint-xs: 320px;
@@ -449,6 +441,21 @@
 
 }
 
+.activeClass {
+    color: var(--color-accent)
+}
+
+.selectClass {
+    color: var(--ink-color-bg-tertiary-hover-on-dark)
+}
+
+.nav-text {
+    font-size: var(--ink-font-size-s);
+    font-weight: var(--ink-font-weight-bold);
+    line-height: 28px;
+    letter-spacing: normal;
+
+}
 
 .nds-text {
     font-size: var(--ink-font-size-xxs);
@@ -515,13 +522,7 @@
     scroll-snap-align: start;
 }
 
-.activeClass {
-    color: var(--color-accent)
-}
 
-.selectClass {
-    color: var(--ink-color-bg-tertiary-hover-on-dark)
-}
 
 [data-corvu-accordion-content][data-collapsed] {
     animation: collapse 200ms linear;

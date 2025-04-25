@@ -20,7 +20,7 @@ const MenuLeftImagesRight: Component<PROPS> = props => {
     return (
         <div class={''}>
             <div>
-                <div class={'glass h-[588px]  min-w-full flex flex-col'}>
+                <div class={'h-[588px]  min-w-full flex flex-col'}>
                     <div class={" min-w-full flex justify-end items-center"}>
                         {children()}
                     </div>
