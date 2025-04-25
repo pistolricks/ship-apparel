@@ -113,7 +113,7 @@ export default function Navigation(props: { contextId: string }) {
                                     <A href="/" class="lg:hidden">
                                         <span class="sr-only">Custom Ink and Thread</span>
                                         <img
-                                            src={'/logo.png'}
+                                            src={'/icons/icon180x180.png'}
                                             alt="" class="h-8 w-auto"/>
                                     </A>
 
