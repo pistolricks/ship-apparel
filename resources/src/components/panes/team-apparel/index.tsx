@@ -693,15 +693,6 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-5f3OR4">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/blurred_background.jpg"
-                        class="paneflow-bg-image paneflow-item-MsZqAY"
-                    />
-                    <img
-                        src="https://paneflow.com/templates/iphone-16-demo/ee6a9937589054284e0c.svg"
-                        class="paneflow-image paneflow-item-QWijAP"
-                        onClick={paneFlowOnClick0}
-                    />
-                    <img
                         src="http://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
                         class="paneflow-image paneflow-item-gcvf5U"
                     />
