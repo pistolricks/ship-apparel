@@ -2,7 +2,7 @@ import {Component, onCleanup, onMount} from "solid-js";
 import PaneFlow from "../paneflow.mjs";
 import "../paneflow.css";
 import "./style.css";
-import {img, imgSelect, imgSq} from "~/app";
+import { img } from "~/app";
 
 const TeamAthleticsPane: Component = () => {
     let paneFlowEl: HTMLDivElement | undefined;
@@ -51,13 +51,7 @@ const TeamAthleticsPane: Component = () => {
         );
     };
 
-    const paneFlowOnClick8 = (e: MouseEvent) => {
-        e.stopPropagation();
-        paneFlowInstanceRef?.setPane(0);
-    };
-
-
-    const paneFlowOnClick9 = (e: MouseEvent) => {
+    const onClickBasketball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
             `https://ink-and-thread.com/team-athletics/sports/basketball`,
@@ -65,15 +59,7 @@ const TeamAthleticsPane: Component = () => {
         );
     };
 
-    const paneFlowOnClick10 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(
-            `https://ink-and-thread.com/team-athletics/sports/cheer`,
-            "_self",
-        );
-    };
-
-    const paneFlowOnClick11 = (e: MouseEvent) => {
+    const onClickTennis = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
             `https://ink-and-thread.com/team-athletics/sports/tennis`,
@@ -81,7 +67,15 @@ const TeamAthleticsPane: Component = () => {
         );
     };
 
-    const paneFlowOnClick12 = (e: MouseEvent) => {
+    const onClickCheer = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/cheer`,
+            "_self",
+        );
+    };
+
+    const onClickSoftball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
             `https://ink-and-thread.com/team-athletics/sports/softball`,
@@ -89,7 +83,7 @@ const TeamAthleticsPane: Component = () => {
         );
     };
 
-    const paneFlowOnClick13 = (e: MouseEvent) => {
+    const onClickFootball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
             `https://ink-and-thread.com/team-athletics/sports/football`,
@@ -97,7 +91,7 @@ const TeamAthleticsPane: Component = () => {
         );
     };
 
-    const paneFlowOnClick14 = (e: MouseEvent) => {
+    const onClickBaseball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
             `https://ink-and-thread.com/team-athletics/sports/baseball`,
@@ -105,6 +99,10 @@ const TeamAthleticsPane: Component = () => {
         );
     };
 
+    const paneFlowOnClick8 = (e: MouseEvent) => {
+        e.stopPropagation();
+        paneFlowInstanceRef?.setPane(0);
+    };
     onMount(() => {
         if (paneFlowEl) {
             paneFlowInstanceRef = new PaneFlow({
@@ -2751,38 +2749,38 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick6}
                 >
                     <img
-                        src={`${imgSq}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg`}
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg`}
                         class="paneflow-bg-image paneflow-item-XmK2SJ"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-KokXrP"></div>
                 <div class="paneflow-block paneflow-block-r0kXoA">
                     <img
-                        src={`${imgSq}https://static.augustasportswear.com/product/1661_098.jpg`}
+                        src={`${img}https://static.augustasportswear.com/product/1661_098.jpg`}
                         class="paneflow-bg-image paneflow-item-T06xhD"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-hcJhTw">
                     <img
-                        src={`${imgSq}https://static.augustasportswear.com/product/1661_280.jpg`}
+                        src={`${img}https://static.augustasportswear.com/product/1661_280.jpg`}
                         class="paneflow-bg-image paneflow-item-lG1HlN"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-sOrwiw">
                     <img
-                        src={`${imgSq}https://static.augustasportswear.com/product/1661_321.jpg`}
+                        src={`${img}https://static.augustasportswear.com/product/1661_321.jpg`}
                         class="paneflow-bg-image paneflow-item-do4wrh"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-UO4hBY">
                     <img
-                        src={`${imgSq}https://static.augustasportswear.com/product/1557_110.jpg`}
+                        src={`${img}https://static.augustasportswear.com/product/1557_110.jpg`}
                         class="paneflow-bg-image paneflow-item-FNpLlt"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-UJFvnu">
                     <img
-                        src={`${imgSq}https://static.augustasportswear.com/product/1557_690.jpg`}
+                        src={`${img}https://static.augustasportswear.com/product/1557_690.jpg`}
                         class="paneflow-bg-image paneflow-item-AnVB5B"
                     />
                 </div>
@@ -2798,7 +2796,7 @@ const TeamAthleticsPane: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-7xl0Pl">
                     <img
-                        src={`${imgSq}https://static.augustasportswear.com/product/1557_671.jpg`}
+                        src={`${img}https://static.augustasportswear.com/product/1557_671.jpg`}
                         class="paneflow-bg-image paneflow-item-jti14Z"
                     />
                 </div>
@@ -2822,81 +2820,81 @@ const TeamAthleticsPane: Component = () => {
                         VOLLEYBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-LTg6pY"
-                     onClick={paneFlowOnClick9}
-                >
+                <div
+                    onClick={onClickBasketball}
+                    class="paneflow-block paneflow-block-LTg6pY">
                     <div class="paneflow-text paneflow-item-WOPbVl">
                         SHOP
                         <br/>
                         BASKETBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-kmhxBc"
-                     onClick={paneFlowOnClick10}
-                >
+                <div
+                    onClick={onClickBasketball}
+                    class="paneflow-block paneflow-block-kmhxBc">
                     <div class="paneflow-text paneflow-item-cPRLEw">
                         SHOP
                         <br/>
                         BASKETBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-ctMFXEa"
-                     onClick={paneFlowOnClick11}
-                >
+                <div
+                    onClick={onClickCheer}
+                    class="paneflow-block paneflow-block-ctMFXE">
                     <div class="paneflow-text paneflow-item-qoFSR1">
                         SHOP
                         <br/>
                         CHEER
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-f4nPJ6"
-                     onClick={paneFlowOnClick14}
-                >
+                <div
+                    onClick={onClickBaseball}
+                    class="paneflow-block paneflow-block-f4nPJ6">
                     <div class="paneflow-text paneflow-item-rWkuvq">
                         SHOP
                         <br/>
                         BASEBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-wyrldH"
-                     onClick={paneFlowOnClick14}
-                >
+                <div
+                    onClick={onClickBaseball}
+                    class="paneflow-block paneflow-block-wyrldH">
                     <div class="paneflow-text paneflow-item-jkZLQZ">
                         SHOP
                         <br/>
                         BASBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-vGluDt"
-                     onClick={paneFlowOnClick13}
-                >
+                <div
+                    onClick={onClickFootball}
+                    class="paneflow-block paneflow-block-vGluDt">
                     <div class="paneflow-text paneflow-item-LwxSdv">
                         SHOP
                         <br/>
                         FOOTBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-YBjRke"
-                     onClick={paneFlowOnClick13}
-                >
+                <div
+                    onClick={onClickFootball}
+                    class="paneflow-block paneflow-block-YBjRke">
                     <div class="paneflow-text paneflow-item-uR3b9Q">
                         SHOP
                         <br/>
                         FOOTBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-l5l3gh"
-                     onClick={paneFlowOnClick12}
-                >
+                <div
+                    onClick={onClickSoftball}
+                    class="paneflow-block paneflow-block-l5l3gh">
                     <div class="paneflow-text paneflow-item-dUgwsl">
                         SHOP
                         <br/>
                         SOFTBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-DUDRK8"
-                     onClick={paneFlowOnClick12}
-                >
+                <div
+                    onClick={onClickSoftball}
+                    class="paneflow-block paneflow-block-DUDRK8">
                     <div class="paneflow-text paneflow-item-LNqoNo">
                         SHOP
                         <br/>
@@ -2904,9 +2902,9 @@ const TeamAthleticsPane: Component = () => {
                     </div>
                 </div>
                 <div class="paneflow-block paneflow-block-zrX4uv"></div>
-                <div class="paneflow-block paneflow-block-7Zdtcf"
-                     onClick={paneFlowOnClick11}
-                >
+                <div
+                    onClick={onClickTennis}
+                    class="paneflow-block paneflow-block-7Zdtcf">
                     <div class="paneflow-text paneflow-item-v3Gnj1">
                         SHOP
                         <br/>
