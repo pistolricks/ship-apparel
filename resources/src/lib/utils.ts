@@ -41,7 +41,20 @@ export function handleCamelCase(arr?: string[]) {
     return newArr.join('');
 }
 
-
+export function uniq_fast(a: any) {
+    var seen: { [key: string]: number } = {};
+    var out = [];
+    var len = a.length;
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+        var item = a[i];
+        if(seen[item] !== 1) {
+            seen[item] = 1;
+            out[j++] = item;
+        }
+    }
+    return out;
+}
 
 export function handleUserName(string?: string) {
     if(!string) return;
@@ -121,5 +134,6 @@ export const sideMenu = [
         description: "We're happy to answer questions and get you acquainted with Custom Ink and Thread."
     }
 ]
+
 
 

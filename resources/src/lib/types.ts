@@ -260,7 +260,7 @@ export type ATHLETIC_PRODUCT = {
     parent_sku: string;
     upc_code: string;
     item_name: string;
-    brand: string;
+    brand: number;
     division: string;
     item_description: string;
     category: string;
@@ -284,4 +284,14 @@ export type ATHLETIC_PRODUCT = {
     status: number;
     productvideourl?: string;
     ribbon?: string;
+    images?: ATHLETIC_IMAGE[];
+}
+
+
+export type ATHLETIC_IMAGE = {
+    id: string;
+    parent_sku: string;
+    style_color?: string;
+    view_angle: string;
+    image_url: string;
 }

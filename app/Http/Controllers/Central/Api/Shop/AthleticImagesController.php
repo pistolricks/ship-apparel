@@ -10,34 +10,29 @@ use Illuminate\Support\Facades\Http;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 
-class AthleticsController extends Controller
+class AthleticImagesController extends Controller
 {
     /**
      * @throws FatalRequestException
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, string $id)
     {
         $response = Http::retry(3, 100)
             ->withQueryParameters([
-                'sort' => 'brand',
-                (array) $request
-            ])->get('http://localhost:4000/v1/athletics');
+                'style_color' => $id
+            ])->get('http://localhost:4000/v1/athletic-images');
 
         $resp = $response->json();
-
-         $collection = collect($resp['athletics']);
 
 
 
         // $filtered = PriceSupport::make($collection);
 
         return response()->json([
-            "menu" => config('menu'),
-            "list" => $collection,
+            "images" => $resp,
             "metadata" => $resp['metadata'],
-            "user" => $request->user(),
         ]);
     }
 }

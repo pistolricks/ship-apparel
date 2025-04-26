@@ -15,6 +15,10 @@ Route::view('/work-apparel', 'app')->name('central.work-apparel');
 Route::view('/school-spirit', 'app')->name('central.school-spirit');
 Route::view('/team-athletics', 'app')->name('central.team-athletics');
 Route::view('/team-athletics/{id}', 'app')->name('central.team-athletics.show');
+
+
+Route::view('/team-athletics/sports/{category}', 'app')->name('central.team-athletics.sports.show');
+
 Route::view('/popup-shops', 'app')->name('central.popup-shops');
 
 Route::view('/apparel', 'app')->name('central.apparel');

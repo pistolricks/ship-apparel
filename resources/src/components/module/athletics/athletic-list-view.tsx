@@ -4,10 +4,11 @@ import {Format} from '@ark-ui/solid/format'
 import Drawer from "@corvu/drawer";
 import {IconTablet} from "~/components/svg";
 import {A} from "@solidjs/router";
-import {imagePath} from "~/app";
+import {imagePath, img} from "~/app";
 import {classNames} from "~/lib/utils";
+import { brands } from "~/lib/athletics";
 
-type PROPS = ATHLETIC_PRODUCT & { onClick: () => void, href: string }
+type PROPS = ATHLETIC_PRODUCT & {  href: string }
 
 const AthleticListView: Component<PROPS> = props => {
 
@@ -19,8 +20,8 @@ const AthleticListView: Component<PROPS> = props => {
     const name = () => {
         let a = props.item_name
         let id = props.item_sku;
-        let t = a.replace(id, "")
-        return t.replace(`.`, "")
+        let t = a?.replace(id, "")
+        return t?.replace(`.`, "")
     }
 
     return (
@@ -29,17 +30,17 @@ const AthleticListView: Component<PROPS> = props => {
             <A href={href()} class="flex flex-col w-full justify-center">
                 <div class="sm:h-full sm:w-full mx-auto flex items-start">
                     <img
-                        src={props.main_image_url}
+                        src={`${img}${props.main_image_url}`}
                         alt={props.item_name}
                         class={classNames(
-                            "rounded-lg w-full bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
+                            "rounded-lg w-full  max-h-[150px] bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
                 </div>
                 <div class=" pt-7 text-center h-[170px] sm:h-[140px]">
                     <h3 class="text-xs font-light  text-gray-900">
                         <div class={'flex flex-col w-full justify-center capitalize'}>
                             <span aria-hidden="true" class="absolute inset-0"></span>
                             <span class={'mb-4 font-semibold text-xs'}><span
-                                class={''}>{props.brand}</span> - {props.item_sku}</span>
+                                class={''}>{brands(props.brand)}</span> - {props.parent_sku}</span>
                             <span class={'min-h-[40px]'}>{name()}</span>
 
                         </div>
@@ -48,12 +49,7 @@ const AthleticListView: Component<PROPS> = props => {
                     <p class="mt-4 text-sm font-medium text-gray-900">{NumberWithCurrency()}+</p>
                 </div>
             </A>
-            <Drawer.Trigger
-                onClick={props.onClick}
-                class="absolute bottom-1 right-1 w-6 h-6"
-                contextId={'product-preview-1'}>
-                <IconTablet class={'stroke-gray-500 hover:stroke-amber-700 hover:fill-amber-300 size-6'}/>
-            </Drawer.Trigger>
+
         </div>
     )
 };

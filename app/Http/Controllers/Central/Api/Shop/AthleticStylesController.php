@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 
-class AthleticsController extends Controller
+class AthleticStylesController extends Controller
 {
     /**
      * @throws FatalRequestException
@@ -23,13 +23,11 @@ class AthleticsController extends Controller
             ->withQueryParameters([
                 'sort' => 'brand',
                 (array) $request
-            ])->get('http://localhost:4000/v1/athletics');
+            ])->get('http://localhost:4000/v1/athletic-styles');
 
         $resp = $response->json();
 
-         $collection = collect($resp['athletics']);
-
-
+        $collection = collect($resp['athletics']);
 
         // $filtered = PriceSupport::make($collection);
 

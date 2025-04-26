@@ -38,7 +38,10 @@ Route::get('/shop/v1/products/category/{category}/{subCategory}', Controllers\Ap
 Route::get('/shop/v1/styles/{style}', Controllers\Api\Shop\StyleController::class)->name('api.styles.show');
 
 Route::get('/shop/v1/athletics', Controllers\Api\Shop\AthleticsController::class)->name('api.athletics.index');
+
 Route::get('/shop/v1/athletics/{id}', Controllers\Api\Shop\AthleticController::class)->name('api.athletics.show');
+Route::get('/shop/v1/athletic-styles', Controllers\Api\Shop\AthleticStylesController::class)->name('api.athletics-styles.index');
+Route::get('/shop/v1/athletic-images/{style_color}', Controllers\Api\Shop\AthleticImagesController::class)->name('api.athletics-images.index');
 
 Route::get('/products/v1/images/import',[ProductController::class,"importImages"])->name('api.products.images.import');
 Route::get('/products/v1/images/bulk/delete',[ProductController::class,"bulkDelete"])->name('api.products.images.bulk.delete');

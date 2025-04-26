@@ -14,7 +14,7 @@ type PROPS = {
     pagination?: PaginationType;
 }
 
-const AthleticSection: Component<PROPS> = props => {
+const AthleticCategory: Component<PROPS> = props => {
 
     const navigate = useNavigate();
     const data = () => props.data;
@@ -39,15 +39,14 @@ const AthleticSection: Component<PROPS> = props => {
 
 
     return (<>
-        <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
-            <div class={"flex justify-start w-full h-full"}>
-                <CategoryFilters name={""}/>
-                <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5}
+
+
+                <Grid class={'h-full w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5}
                       colsXl={6}>
                     <For each={data()}>
                         {(style: ATHLETIC_PRODUCT) => (
 
-                            <AthleticListView href={`/team-athletics/${style.parent_sku}`}{...style} />
+                            <AthleticListView href={`/team-athletics/${style.parent_sku}`} {...style} />
 
                         )}
                     </For>
@@ -55,26 +54,7 @@ const AthleticSection: Component<PROPS> = props => {
                 </Grid>
 
 
-
-
-                <DrawerContent side={"bottom"} contextId={'product-preview-1'}
-                               class={'px-2 bg-white overflow-y-hidden'}>
-                    <>
-                        <Drawer.Trigger
-                            contextId={'product-preview-1'}
-                            class="hidden sm:block absolute p-1 top-1 left-1 z-50 border border-gray-400 rounded-full hover:border-accent/80 backdrop-blur-2xl">
-                            <IconX class={'size-8 hover:stroke-accent/50'}/>
-                        </Drawer.Trigger>
-
-
-                    </>
-                </DrawerContent>
-
-            </div>
-        </BaseDrawer>
-
-
     </>);
 };
 
-export default AthleticSection;
+export default AthleticCategory;

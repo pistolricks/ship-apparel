@@ -10,9 +10,16 @@ export const getAthletic = query(async (id: string) => {
     })
     const res: any = await response.json();
 
+
+
     console.log(res, "getAthletic");
+
+
+
+
+
     return res;
-}, 'style')
+}, 'athletics-all')
 
 export const getAthletics = query(async () => {
     "use server";
@@ -74,5 +81,43 @@ export const getSubCategory = query(async (category: string, subCategory: string
     return res;
 }, "subcategory")
 
+export const getAthleticStyles = query(async () => {
+    "use server";
 
+    console.log("Product Api was called")
+    const response = await fetch(`/api/shop/v1/athletic-styles`, {
+        headers: {
+            "content-Type": "application/json",
+        },
+    })
+    const res: any = await response.json();
 
+    console.log(res);
+    return res;
+}, "athletic-styles")
+
+export const getAthleticImages = async (style_color: string) => {
+    "use server";
+
+    console.log("Images Api was called")
+    const response = await fetch(`/api/shop/v1/athletic-images/${style_color}`, {
+        headers: {
+            "content-Type": "application/json",
+        },
+    })
+    const res: any = await response.json();
+
+    console.log(res['images'], 'images');
+    return res;
+}
+
+export const brands: (brand: number) => string = (brand: number) => {
+    const brandMap: { [key: number]: string } = {
+        10: "ASI",
+        17: "Holloway",
+        60: "Russell",
+        15: "HighFive",
+        18: "Pacific Headwear",
+    };
+    return brandMap[brand] || "";
+}

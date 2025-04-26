@@ -32,7 +32,7 @@ const StyleListView: Component<PROPS> = props => {
                     src={`${imagePath}/${props.color_product_image}/gallery`}
                     alt={props.product_title}
                     class={classNames(
-                        "rounded-lg w-full bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
+                        "rounded-lg w-full max-h-[175px]  md:max-h-[150px] bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
                 </div>
                 <div class=" pt-7 text-center h-[170px] sm:h-[140px]">
                     <h3 class="text-xs font-light  text-gray-900">

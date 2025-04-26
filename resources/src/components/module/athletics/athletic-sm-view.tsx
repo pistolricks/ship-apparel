@@ -1,10 +1,12 @@
 import {Component, createEffect, createMemo, createSelector, createSignal, For, lazy, onMount, Show} from "solid-js";
 import {ATHLETIC_PRODUCT} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
-import {classNames} from "~/lib/utils";
+import {classNames, cn} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
 import {imagePath} from "~/app";
 import {UserPen} from "lucide-solid";
+import {css} from "solid-styled";
+import {brands, getAthleticImages} from "~/lib/athletics";
 
 
 const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
@@ -84,19 +86,29 @@ const AthleticSmView: Component<PROPS> = props => {
 
 
     const name = () => {
-        let a = getSelected().item_name.replace(getSelected().brand, "")
-        let id = getSelected().item_sku;
+        let a = getSelected()?.item_name?.replace(String(getSelected()?.brand), "")
+        let id = getSelected()?.item_sku;
         let t = a.replace(id, "")
         return t.replace(`.`, "")
     }
 
     const [getColor, setColor] = createSignal<string>(product()?.color_hex_value ?? "")
-    const handleColor = (m: string) => {
-        setColor(() => m)
+    const handleColor = async(m: ATHLETIC_PRODUCT) => {
+        setColor(() => m?.color_hex_value ?? "")
 
-        setSrc(groupedByColor()?.[m]?.[0]?.main_image_url)
+
+
+        const response = await getAthleticImages(m?.item_sku?.replace(`.${getSelected()?.size}`, ""))
+
+        let results = await response?.images;
+
+        console.log(await response?.images, results, "response")
+
+        setSrc(groupedByColor()?.[m?.color_hex_value ?? '']?.[0]?.main_image_url)
         setImages(
-            [groupedByColor()?.[m]?.[0]?.main_image_url, groupedByColor()?.[m]?.[0]?.other_image_url].filter((image): image is string => !!image)
+            [groupedByColor()?.[m.color_hex_value ?? ""]?.[0]?.main_image_url, groupedByColor()?.[m?.color_hex_value ?? ""]?.[0]?.other_image_url,
+            ...results?.images?.map((image: any) => image.image_url)
+            ].filter((image): image is string => !!image)
         )
 
     }
@@ -108,12 +120,14 @@ const AthleticSmView: Component<PROPS> = props => {
     }
 
     createEffect(() => {
-        console.log("isSelected", getSelected(), "getColor", getColor())
+        console.log("isSelected", getSelected(), "getColor", getColor(), getSelectedId())
         console.log("groupedByColor", groupedByColor(), "getColor", getColor())
     })
 
     onMount(() => {
-        setColor(product()?.color_hex_value ?? "")
+
+        handleColor(product()).then((r) => console.log(r))
+
         setSelectedId(product()?.item_sku)
         setSelected(product())
         setSrc(product()?.main_image_url)
@@ -122,6 +136,33 @@ const AthleticSmView: Component<PROPS> = props => {
         )
         isSrc(product()?.main_image_url)
     })
+
+    css`
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: transform 0.2s;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border: 2px solid #333;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+
+    `
 
     return (
         <div
@@ -218,7 +259,7 @@ const AthleticSmView: Component<PROPS> = props => {
                                 <div class="py-1  mt-6 flex justify-between items-center">
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Style</h3>
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{product()?.item_sku}</p>
+                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{getSelected()?.parent_sku}</p>
                                     </div>
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">Color</h3>
@@ -240,16 +281,24 @@ const AthleticSmView: Component<PROPS> = props => {
                                                 {(key) => (
                                                     <>
                                                         <button
-                                                            onClick={() => handleColor(key)}
+                                                            onClick={() => handleColor(groupedByColor()?.[key]?.[0])}
                                                             class="w-full items-center  justify-center"
                                                             type="button">
-                                                            <img
-                                                                class={classNames(
-                                                                    'relative -m-0.5 flex cursor-pointer  rounded-full p-0.5  focus:outline-none object-center',
-                                                                    isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200'
-                                                                )}
-                                                                src={`/colors/${groupedByColor()?.[key]?.[0]?.color_hex_value}`}
-                                                                alt={`/colors/${groupedByColor()?.[key]?.[0]?.color_hex_value}`}/>
+
+                                                            <div class="color-options">
+
+                                                                    <div
+                                                                        class={cn(`color-option ${isColored(key)} ? 'selected' : ''}`,
+                                                                            isColored(key) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200'
+                                                                        )}
+                                                                        style={{"background-color": groupedByColor()?.[key]?.[0]?.color_hex_value}}
+                                                                        onClick={() => handleColor(groupedByColor()?.[key]?.[0])}
+                                                                        title={groupedByColor()?.[key]?.[0]?.color_hex_value}
+                                                                    />
+
+
+
+                                                            </div>
                                                         </button>
                                                     </>
                                                 )}
@@ -304,14 +353,16 @@ const AthleticSmView: Component<PROPS> = props => {
                                     <div class="mt-6 pb-6" id="disclosure-1">
                                         <ul role="list"
                                             class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
-                                            <li class="pl-2">{product()?.brand}</li>
+                                            <li class="pl-2">{brands(getSelected()?.brand)}</li>
                                             <li class="pl-2"><span
-                                                class="text-[10px] uppercase font-semibold">Style</span> {product()?.item_sku}
+                                                class="text-[10px] uppercase font-semibold">Style</span> {getSelected()?.item_sku}
                                             </li>
                                             <li class="pl-2"><span
                                                 class="text-[10px] uppercase font-semibold">GTIN</span> {getSelected()?.upc_code}
                                             </li>
-
+                                            <li class="pl-2"><span
+                                                class="text-[10px] uppercase font-semibold">Categories</span> {getSelected()?.category}
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

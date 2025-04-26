@@ -1,10 +1,11 @@
-import {Component, createMemo, For, Show} from "solid-js";
+import {Component, createEffect, createMemo, createSignal, For, Match, Show, Switch} from "solid-js";
 import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
+import AthleticSecton from "~/components/module/athletics/athletic-section";
 import {getAthletics, getAthleticStyles} from "~/lib/athletics";
 import {ATHLETIC_PRODUCT} from "~/lib/types";
+import AthleticCategory from "~/components/module/athletics/athletic-category";
 import {Grid} from "~/components/ui/grid";
 import {AthleticListView} from "~/components/module/athletics/athletic-list-view";
-import TeamAthleticsPane from "~/components/panes/team-athletics";
 
 type PROPS = {}
 
@@ -16,7 +17,7 @@ export const route = {
     }
 } satisfies RouteDefinition
 
-const TeamAthletics: Component<PROPS> = props => {
+const Soccer: Component<PROPS> = props => {
     const params = useParams();
 
     const response = createAsync(async () => getAthleticStyles());
@@ -29,17 +30,12 @@ const TeamAthletics: Component<PROPS> = props => {
 
     return (
         <>
-            <div class={"bg-secondary"}>
-            <TeamAthleticsPane/>
-            </div>
-
-            <div class={'h-16 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
                     {(item: ATHLETIC_PRODUCT) => (
 
-                        <Show when={item.category.includes("TOPS")}>
+                        <Show when={item.category.includes("SOCCER | TOPS")  || item.category.includes("SOCCER | ON-FIELD TOPS") || item.category.includes("TEES | TOPS")}>
                             <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
                         </Show>
                     )}
@@ -47,14 +43,31 @@ const TeamAthletics: Component<PROPS> = props => {
 
             </Grid>
 
-            <div class={'h-12 bg-secondary w-full'}/>
+            <div class={'h-12 bg-gray-500 w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
                     {(item: ATHLETIC_PRODUCT) => (
 
                         <>
-                            <Show when={item.category.includes("BOTTOMS")}>
+                            <Show when={item.category.includes("SOCCER | BOTTOMS")  || item.category.includes("SOCCER | ON-FLD BOTTOMS") || item.category.includes(" BOTTOMS")}>
+                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                            </Show>
+
+
+                        </>
+                    )}
+                </For>
+
+            </Grid>
+            <div class={'h-12 bg-gray-500 w-full'}/>
+
+            <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
+                <For each={items()}>
+                    {(item: ATHLETIC_PRODUCT) => (
+
+                        <>
+                            <Show when={item.category.includes("OUTERWEAR")}>
                                 <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
                             </Show>
 
@@ -65,8 +78,7 @@ const TeamAthletics: Component<PROPS> = props => {
 
             </Grid>
 
-
-            <div class={'h-12 bg-secondary w-full'}/>
+            <div class={'h-12 bg-gray-500 w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
@@ -83,9 +95,8 @@ const TeamAthletics: Component<PROPS> = props => {
                 </For>
 
             </Grid>
-
         </>
     );
 };
 
-export default TeamAthletics;
+export default Soccer;

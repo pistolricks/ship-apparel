@@ -117,7 +117,7 @@ return [
                     ['title' => 'Tanks', 'href' => 'apparel/t-shirts/tanks'],
                     ['title' => '50/50 Blend', 'href' => 'apparel/t-shirts/50-50-blend'],
                     ['title' => '5-5.6 100% Cotton', 'href' => 'apparel/t-shirts/5-5-6-100-cotton'],
-                 //   ['title' => 'Juniors & Young Men', 'href' => 'apparel/t-shirts/juniors-and-young-men'],
+                    //   ['title' => 'Juniors & Young Men', 'href' => 'apparel/t-shirts/juniors-and-young-men'],
                     ['title' => 'Eco-Friendly', 'href' => 'apparel/t-shirts/eco-friendly'],
                 ]
             ],
@@ -159,7 +159,7 @@ return [
                     ['title' => "Women's", 'href' => 'apparel/sweatshirts-fleece/womens'],
                     ['title' => "Performance", 'href' => 'apparel/sweatshirts-fleece/performance'],
                     ['title' => "Tall", 'href' => 'apparel/sweatshirts-fleece/tall'],
-                   // ['title' => "Juniors & Young Men", 'href' => 'apparel/sweatshirts-fleece/juniors-and-young-men'],
+                    // ['title' => "Juniors & Young Men", 'href' => 'apparel/sweatshirts-fleece/juniors-and-young-men'],
                 ]
             ],
             [
@@ -279,7 +279,10 @@ return [
                     ['title' => 'Polos', 'href' => 'apparel/workwear/polos'],
                     ['title' => 'Medical/Scrubs', 'href' => 'apparel/workwear/medical-scrubs'],
                     ['title' => 'Work  Jackets', 'href' => 'apparel/workwear/work-jackets'],
-                    ['title' => 'Industrial Work Pants/Shorts', 'href' => 'apparel/workwear/industrial-work-pants-shorts'],
+                    [
+                        'title' => 'Industrial Work Pants/Shorts',
+                        'href' => 'apparel/workwear/industrial-work-pants-shorts'
+                    ],
                     ['title' => 'Flame-Resistant', 'href' => 'apparel/workwear/flame-resistant'],
                     ['title' => 'Stain/Soil Resistant', 'href' => 'apparel/workwear/stain-soil-resistant'],
                     ['title' => 'Safety', 'href' => 'apparel/workwear/safety'],
@@ -396,24 +399,428 @@ return [
         ]
     ],
     [
-        'title' => 'Reversible Apparel',
-        'href' => 'reversible-apparel',
+        'title' => 'Workwear',
+        'href' => 'workwear',
         'description' => "Looking for a unique and comfortable sweatshirt that will have you turning heads. Our reversible sweatshirts allow you to have two looks in one.",
 
     ],
     [
-        'title' => 'School Specials',
-        'href' => 'school-specials',
+        'title' => 'School Spirit',
+        'href' => 'school-spirit',
         'description' => "Bring your school’s pride to life with custom graphics!  From screen printing to embroidery, heat press and DTG printing.  We offer endless options to showcase your school spirit. T-shirts, sweatshirts, hoodies, and more - designed just for you!",
     ],
     [
-        'title' => 'Our Company',
-        'href' => 'our-company',
+        'title' => 'Team Athletics',
+        'href' => 'team-athletics',
         'description' => "You envision It. We create It.",
+        'sub' => [
+            [
+                'title' => 'Adult',
+                'href' => '/team-athletics/adult',
+                'src' => '',
+                'sub' => [
+                    'title' => "Baseball",
+                    'href' => '/team-athletics/baseball',
+                    'sub' => [],
+                ]
+                , [
+                'title' => "Basketball",
+                'href' => '/team-athletics/basketball',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Bottoms",
+                'href' => '/team-athletics/bottoms',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Fleece",
+                'href' => '/team-athletics/fleece',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Football",
+                'href' => '/team-athletics/football',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Headwear",
+                'href' => '/team-athletics/headwear',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Lacrosse",
+                'href' => '/team-athletics/lacrosse',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Lifestyle",
+                'href' => '/team-athletics/lifestyle',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Multi",
+                'href' => '/team-athletics/multi',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Outerwear",
+                'href' => '/team-athletics/outerwear',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Polos",
+                'href' => '/team-athletics/polos',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Pullovers",
+                'href' => '/team-athletics/pullovers',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Soccer",
+                'href' => '/team-athletics/soccer',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Socks",
+                'href' => '/team-athletics/socks',
+                'sub' => [],
+            ]
+                , [
+                'title' => "Tees",
+                'href' => '/team-athletics/tees',
+                'sub' => [],
+            ]
+
+            ],
+            [
+                'title' => 'Ladies',
+                'href' => '/team-athletics/ladies',
+                'src' => '',
+                'sub' => [
+                    [
+                        "title" => "Basketball",
+                        "href" => "basketball",
+                        'sub' => [
+                            [
+                                'title' => "On-field Tops",
+                                'href' => "On-field Tops"
+                            ],
+                            [
+                                'title' => "On-fld Bottoms",
+                                'href' => "On-fld Bottoms"
+                            ],
+                            [
+                                'title' => "Tops",
+                                'href' => "Tops"
+                            ],
+                            [
+                                "title" => "Bottoms", "href" => "bottoms",
+                                'sub' => ['title' => "Bottoms", 'href' => "Bottoms"]
+                            ],
+                        ],
+                        [
+                            "title" => "Cheer",
+                            "href" => "cheer",
+                            'sub' =>
+                                ['title' => "Tops", 'href' => "Tops"],
+                        ],
+                        ['title' => "On-fld Bottoms", "href" => "On - fld Bottoms"],
+                        ['title' => "Bottoms", 'href' => "Bottoms"],
+                    ],
+                    [
+                        "title" => "Fleece",
+                        "href" => "fleece",
+                        'sub' => [
+                            ['title' => "Tops", 'href' => "Tops"],
+                            ['title' => "Bottoms", 'href' => "Bottoms"],
+                            ['title' => "Outerwear", 'href' => "Outerwear"]
+                        ],
+                    ],
+                    [
+                        "title" => "Football",
+                        "href" => "football",
+                        'sub' => [
+                            ['title' => "On - field Tops", 'href' => "On - field Tops"]
+                        ]
+
+                    ],
+                    [
+                        "title" => "Headwear",
+                        "href" => "headwear",
+                        'sub' => [
+                            ['title' => "Headwear", 'href' => "Headwear"]
+
+                        ]
+
+                    ],
+                    [
+                        "title" => "Lacrosse",
+                        "href" => "lacrosse",
+                        'sub' => [
+                            ['title' => "Bottoms", 'href' => "Bottoms"],
+                            ['title' => "On - field Tops", 'href' => "On - field Tops"]
+                        ]
+
+                    ],
+                    [
+                        "title" => "Lifestyle",
+                        "href" => "lifestyle",
+                        'sub' => [
+                            ['title' => "Tops", 'href' => "Tops"],
+                            ['title' => "Bottoms", 'href' => "Bottoms"]
+                        ]
+                    ],
+                    [
+                        "title" => "Multi - sport",
+                        "href" => "multi - sport",
+                        'sub' => [
+                            ['title' => "Bottoms", 'href' => "Bottoms"],
+                            ['title' => "Outerwear", 'href' => "Outerwear"]
+                        ]
+
+                    ],
+                    [
+                        "title" => "Outerwear",
+                        "href" => "outerwear",
+                        'sub' => [
+                            ['title' => "Outerwear", 'href' => "Outerwear"],
+                            ['title' => "Tops", 'href' => "Tops"]
+                        ]
+
+                    ],
+                    [
+                        "title" => "Polos",
+                        "href" => "polos",
+                        'sub' => [
+                            ['title' => "Tops", 'href' => "Tops"]
+                        ]
+                    ],
+                    [
+                        "title" => "Pullovers",
+                        "href" => "pullovers",
+                        'sub' => [
+                            ['title' => "Tops", 'href' => "Tops"],
+                            ['title' => "Outerwear", 'href' => "outerwear"]
+                        ]
+                    ],
+
+                    [
+                        "title" => "Soccer",
+                        "href" => "soccer",
+                        'sub' => [
+                            ['title' => "On - field Tops", 'href' => "on-field-tops"],
+                            ['title' => "On - fld Bottoms", 'href' => "on-fld-bottoms"]
+                        ]
+                    ],
+                    [
+                        [
+                            "title" => "Softball",
+                            "href" => "softball",
+                            'sub' => [
+                                ['title' => "Bottoms", 'href' => "bottoms"],
+                                ['title' => "On - field Tops", 'href' => "on-field-tops"],
+                                ['title' => "On - fld Bottoms", 'href' => "on-fld-bottoms"],
+                                ['title' => "Tops", 'href' => "tops"]
+                            ]
+                        ],
+                        [
+                            "title" => "Tees",
+                            "href" => "tees",
+                            'sub' => [
+                                ['title' => "Tops", 'href' => "tops"]
+                            ]
+                        ],
+                        [
+                            "title" => "Track & Field",
+                            "href" => "track-field",
+                            'sub' => [
+                                ['title' => "Bottoms", 'href' => "bottoms"],
+                                ['title' => "On - field Tops", 'href' => "on-field-tops"],
+                                ['title' => "On - fld Bottoms", 'href' => "on-fld-bottoms"],
+                                ['title' => "Tops", 'href' => "tops"]
+                            ]
+                        ],
+                        [
+                            "title" => "Volleyball",
+                            "href" => "volleyball",
+                            'sub' => [
+                                ['title' => "Bottoms", 'href' => "bottoms"],
+                                ['title' => "On - field Tops", 'href' => "on-field-tops"],
+                                ['title' => "On - fld Bottoms", 'href' => "on-fld-bottoms"],
+                                ['title' => "Tops", 'href' => "tops"]
+                            ]
+                        ]
+                    ],
+                    [
+                        'title' => 'Youth',
+                        'href' => '/team-athletics/youth',
+                        'src' => '',
+                        'sub' => [
+                            [
+                                "title" => "Baseball",
+                                "href" => "baseball",
+                                "sub" => [
+                                    ["title" => "On - field Tops", "href" => "on-field-tops"],
+                                    ["title" => "On - fld Bottoms", "href" => "on-fld-bottoms"],
+                                    ["title" => "Tops", "href" => "tops"],
+                                    ["title" => "Accessories", "href" => "accessories"]
+                                ]
+                            ],
+                            [
+                                "title" => "Basketball",
+                                "href" => "basketball",
+                                "sub" => [
+                                    ["title" => "Bottoms", "href" => "bottoms"],
+                                    ["title" => "On - field Tops", "href" => "on-field-tops"],
+                                    ["title" => "On - fld Bottoms", "href" => "on-fld-bottoms"],
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Bottoms",
+                                "href" => "bottoms",
+                                "sub" => [
+                                    ["title" => "Bottoms", "href" => "bottoms"]
+                                ]
+                            ],
+                            [
+                                "title" => "Fleece",
+                                "href" => "fleece",
+                                "sub" => [
+                                    ["title" => "Bottoms", "href" => "bottoms"],
+                                    ["title" => "Outerwear", "href" => "outerwear"],
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Football",
+                                "href" => "football",
+                                "sub" => [
+                                    ["title" => "Bottoms", "href" => "bottoms"],
+                                    ["title" => "On - field Tops", "href" => "on-field-tops"],
+                                    ["title" => "On - fld Bottoms", "href" => "on-fld-bottoms"],
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Headwear",
+                                "href" => "headwear",
+                                "sub" => [
+                                    ["title" => "Headwear", "href" => "headwear"]
+                                ]
+                            ],
+                            [
+                                "title" => "Lacrosse",
+                                "href" => "lacrosse",
+                                "sub" => [
+                                    ["title" => "On - field Tops", "href" => "on-field-tops"],
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Lifestyle",
+                                "href" => "lifestyle",
+                                "sub" => [
+                                    ["title" => "Tops", "href" => "tops"],
+                                    ["title" => "Bottoms", "href" => "bottoms"]
+                                ]
+                            ],
+                            [
+                                "title" => "Multi - sport",
+                                "href" => "multi-sport",
+                                "sub" => [
+                                    ["title" => "Accessories", "href" => "accessories"],
+                                    ["title" => "Bottoms", "href" => "bottoms"],
+                                    ["title" => "Outerwear", "href" => "outerwear"],
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Outerwear",
+                                "href" => "outerwear",
+                                "sub" => [
+                                    ["title" => "Outerwear", "href" => "outerwear"]
+                                ]
+                            ],
+                            [
+                                "title" => "Polos",
+                                "href" => "polos",
+                                "sub" => [
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Pullovers",
+                                "href" => "pullovers",
+                                "sub" => [
+                                    ["title" => "Tops", "href" => "tops"],
+                                    ["title" => "Outerwear", "href" => "outerwear"]
+                                ]
+                            ],
+                            [
+                                "title" => "Soccer",
+                                "href" => "soccer",
+                                "sub" => [
+                                    ["title" => "On - field Tops", "href" => "on-field-tops"],
+                                    ["title" => "On - fld Bottoms", "href" => "on-fld-bottoms"],
+                                    ["title" => "Tops", "href" => "tops"],
+                                    ["title" => "Bottoms", "href" => "bottoms"]
+                                ]
+                            ],
+                            [
+                                "title" => "Socks",
+                                "href" => "socks",
+                                "sub" => [
+                                    ["title" => "Accessories", "href" => "accessories"]
+                                ]
+                            ],
+                            [
+                                "title" => "Tees",
+                                "href" => "tees",
+                                "sub" => [
+                                    ["title" => "Tops", "href" => "tops"]
+                                ]
+                            ],
+                            [
+                                "title" => "Track & Field",
+                                "href" => "track-field",
+                                "sub" => [
+                                    ["title" => "Tops", "href" => "tops"],
+                                    ["title" => "Bottoms", "href" => "bottoms"],
+                                    ["title" => "On - field Tops", "href" => "on-field-tops"],
+                                    ["title" => "On - fld Bottoms", "href" => "on-fld-bottoms"]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+
+                [
+                    'title' => 'Girls',
+                    'href' => '/team-athletics/girls',
+                    'src' => '',
+                    'sub' => [
+
+
+                    ],
+                ],
+                [
+                    'title' => 'Toddler',
+                    'href' => '/team-athletics/toddler',
+                    'src' => '',
+                    'sub' => [
+
+
+                    ],
+                ],
+
+            ],
+            [
+                'title' => 'Contact Us', 'href' => 'contact-us',
+            ],
+        ],
     ],
-    [
-        'title' => 'Contact Us',
-        'href' => 'contact-us',
-        'description' => "We're happy to answer questions and get you acquainted with Custom Ink and Thread.",
-    ]
 ];

@@ -124,6 +124,46 @@ const routes = [
         component: lazy(() => import("~/routes/team-athletics/view")),
         preload: preloadAthletic,
     },
+    {
+        path: "/team-athletics/sports/baseball",
+        component: lazy(() => import("~/routes/team-athletics/sports/baseball")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/basketball",
+        component: lazy(() => import("~/routes/team-athletics/sports/basketball")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/football",
+        component: lazy(() => import("~/routes/team-athletics/sports/football")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/cheer",
+        component: lazy(() => import("~/routes/team-athletics/sports/cheer")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/volleyball",
+        component: lazy(() => import("~/routes/team-athletics/sports/volleyball")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/softball",
+        component: lazy(() => import("~/routes/team-athletics/sports/softball")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/tennis",
+        component: lazy(() => import("~/routes/team-athletics/sports/tennis")),
+        preload: preloadAthletic,
+    },
+    {
+        path: "/team-athletics/sports/soccer",
+        component: lazy(() => import("~/routes/team-athletics/sports/soccer")),
+        preload: preloadAthletic,
+    },
 
     {
         path: "/sign-in",
