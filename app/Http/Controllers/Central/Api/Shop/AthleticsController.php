@@ -27,13 +27,14 @@ class AthleticsController extends Controller
 
         $resp = $response->json();
 
-        $collection = collect($resp['styles']);
+         $collection = collect($resp['athletics']);
 
         // $filtered = PriceSupport::make($collection);
 
         return response()->json([
             "menu" => config('menu'),
-            "products" => $resp,
+            "list" => $collection,
+            "metadata" => $resp['metadata'],
             "user" => $request->user(),
         ]);
     }

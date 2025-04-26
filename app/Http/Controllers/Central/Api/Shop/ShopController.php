@@ -33,7 +33,8 @@ class ShopController extends Controller
 
         return response()->json([
             "menu" => config('menu'),
-            "products" => $filtered,
+            "list" => $filtered,
+            "metadata" => $resp['metadata'],
             "user" => $request->user(),
         ]);
     }

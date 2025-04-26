@@ -38,6 +38,7 @@ class BrandController extends Controller
 
         return response()->json([
             "list" => $filtered,
+            "metadata" => $resp['metadata'],
             "user" => $request->user(),
             "banner" => $brandName,
             "menu" => config('menu'),

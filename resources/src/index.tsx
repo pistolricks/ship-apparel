@@ -5,6 +5,7 @@ import {RouteDefinition, Router} from "@solidjs/router";
 import {lazy} from "solid-js";
 import "../css/app.css"
 import {getStyle, getBrand, getCategory, getProducts, getSubCategory} from "~/lib/products";
+import {getAthletic} from "~/lib/athletics";
 
 const root = document.getElementById('root');
 
@@ -16,6 +17,10 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 function preloadStyle({ params  }: { params: any }) {
     void getStyle(params.id)
+}
+
+function preloadAthletic({ params  }: { params: any }) {
+    void getAthletic(params.id)
 }
 
 
@@ -112,6 +117,12 @@ const routes = [
         path: "/apparel/:category/:subCategory",
         component: lazy(() => import("~/routes/apparel/sub-category")),
         preload: preloadSubCategory,
+    },
+
+    {
+        path: "/team-athletics/:id",
+        component: lazy(() => import("~/routes/team-athletics/view")),
+        preload: preloadAthletic,
     },
 
     {

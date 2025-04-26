@@ -1,7 +1,8 @@
 import {Component, createEffect} from "solid-js";
 import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
 import {getCategory} from "~/lib/products";
-import StyleSection from "~/components/module/styles/style-section";
+import AthleticSecton from "~/components/module/athletics/athletic-section";
+import {getAthletics} from "~/lib/athletics";
 
 type PROPS = {}
 
@@ -9,20 +10,20 @@ type PROPS = {}
 export const route = {
 
     preload({params}) {
-        return getCategory("activewear")
+        return getAthletics()
     }
 } satisfies RouteDefinition
 
 const TeamAthletics: Component<PROPS> = props => {
     const params = useParams();
 
-    const response = createAsync(async () => getCategory("activewear"));
+    const response = createAsync(async () => getAthletics());
 
 
     createEffect(() => console.log(response(), "category_page"))
 
     return (
-        <StyleSection data={response()?.list} pagination={response()?.list.metadata}/>
+        <AthleticSecton data={response()?.list} pagination={response()?.metadata}/>
     );
 };
 

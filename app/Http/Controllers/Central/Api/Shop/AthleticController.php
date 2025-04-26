@@ -33,7 +33,7 @@ class AthleticController extends Controller
         return response()->json([
             "menu" => config('menu'),
             "product" => $product,
-            "data" => $athletics,
+            "data" => $resp['athletics'],
             "user" => $request->user(),
         ]);
     }

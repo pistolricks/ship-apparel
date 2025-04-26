@@ -3,7 +3,7 @@ import {query} from "@solidjs/router";
 export const getAthletic = query(async (id: string) => {
     "use server";
 
-    const response = await fetch(`/api/shop/v1/athletics?parent_sku=${id}`, {
+    const response = await fetch(`/api/shop/v1/athletics/${id}`, {
         headers: {
             "content-Type": "application/json",
         },

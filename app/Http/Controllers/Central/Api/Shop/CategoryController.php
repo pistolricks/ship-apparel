@@ -39,6 +39,7 @@ class CategoryController extends Controller
         return response()->json([
             "menu" => config('menu'),
             "list" => $filtered,
+            "metadata" => $resp['metadata'],
             "user" => $request->user(),
         ]);
     }
