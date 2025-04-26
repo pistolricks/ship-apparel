@@ -38,7 +38,8 @@ const AthleticSection: Component<PROPS> = props => {
     console.log(pagination(), data())
 
 
-    return (<>
+    return (
+        <>
         <BaseDrawer side={'bottom'} contextId={'product-preview-1'}>
             <div class={"flex justify-start w-full h-full"}>
                 <CategoryFilters name={""}/>

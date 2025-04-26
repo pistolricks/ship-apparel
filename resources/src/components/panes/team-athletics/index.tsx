@@ -2,6 +2,7 @@ import {Component, onCleanup, onMount} from "solid-js";
 import PaneFlow from "../paneflow.mjs";
 import "../paneflow.css";
 import "./style.css";
+import {img, imgSelect, imgSq} from "~/app";
 
 const TeamAthleticsPane: Component = () => {
     let paneFlowEl: HTMLDivElement | undefined;
@@ -2680,7 +2681,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick0}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/BasketBallPlayer.jpg"
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/BasketBallPlayer.jpg`}
                         class="paneflow-bg-image paneflow-item-yPc2tt"
                     />
                     <div class="paneflow-text paneflow-item-axIWfF">
@@ -2693,7 +2694,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick1}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_229772_229773_6702_6004_silo1.jpg"
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_229772_229773_6702_6004_silo1.jpg`}
                         class="paneflow-bg-image paneflow-item-sGNaYn"
                     />
                     <div class="paneflow-text paneflow-item-ekUfR1">CHEER</div>
@@ -2703,7 +2704,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick2}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/TennisPlayer.jpg"
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/TennisPlayer.jpg`}
                         class="paneflow-bg-image paneflow-item-5XQhrj"
                     />
                     <div class="paneflow-text paneflow-item-3PhC8O">TENNIS</div>
@@ -2713,7 +2714,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick3}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_1567_1340_silo3.jpg"
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_1567_1340_silo3.jpg`}
                         class="paneflow-bg-image paneflow-item-6dkPiI"
                     />
                     <div class="paneflow-text paneflow-item-3MA3pp">SOFTBALL</div>
@@ -2723,7 +2724,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick4}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_9580_silo1.jpg"
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_9580_silo1.jpg`}
                         class="paneflow-bg-image paneflow-item-pB5RXX"
                     />
                     <div class="paneflow-text paneflow-item-HdtXDZ">
@@ -2741,7 +2742,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick5}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_221025_silo2.jpg"
+                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_221025_silo2.jpg`}
                         class="paneflow-bg-image paneflow-item-pzJC7P"
                     />
                 </div>
@@ -2750,38 +2751,38 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick6}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg"
+                        src={`${imgSq}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg`}
                         class="paneflow-bg-image paneflow-item-XmK2SJ"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-KokXrP"></div>
                 <div class="paneflow-block paneflow-block-r0kXoA">
                     <img
-                        src="https://static.augustasportswear.com/product/1661_098.jpg"
+                        src={`${imgSq}https://static.augustasportswear.com/product/1661_098.jpg`}
                         class="paneflow-bg-image paneflow-item-T06xhD"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-hcJhTw">
                     <img
-                        src="https://static.augustasportswear.com/product/1661_280.jpg"
+                        src={`${imgSq}https://static.augustasportswear.com/product/1661_280.jpg`}
                         class="paneflow-bg-image paneflow-item-lG1HlN"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-sOrwiw">
                     <img
-                        src="https://static.augustasportswear.com/product/1661_321.jpg"
+                        src={`${imgSq}https://static.augustasportswear.com/product/1661_321.jpg`}
                         class="paneflow-bg-image paneflow-item-do4wrh"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-UO4hBY">
                     <img
-                        src="https://static.augustasportswear.com/product/1557_110.jpg"
+                        src={`${imgSq}https://static.augustasportswear.com/product/1557_110.jpg`}
                         class="paneflow-bg-image paneflow-item-FNpLlt"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-UJFvnu">
                     <img
-                        src="https://static.augustasportswear.com/product/1557_690.jpg"
+                        src={`${imgSq}https://static.augustasportswear.com/product/1557_690.jpg`}
                         class="paneflow-bg-image paneflow-item-AnVB5B"
                     />
                 </div>
@@ -2797,7 +2798,7 @@ const TeamAthleticsPane: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-7xl0Pl">
                     <img
-                        src="https://static.augustasportswear.com/product/1557_671.jpg"
+                        src={`${imgSq}https://static.augustasportswear.com/product/1557_671.jpg`}
                         class="paneflow-bg-image paneflow-item-jti14Z"
                     />
                 </div>

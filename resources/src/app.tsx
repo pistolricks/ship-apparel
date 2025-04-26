@@ -7,7 +7,11 @@ import { StyleRegistry, css } from "solid-styled";
 
 export const imagePath = 'https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g';
 export const img = 'http://localhost:8080/insecure/rs:fill:500:500:0/resizing_type:fit/g:sm/plain/'
+export const imgGallery = 'http://localhost:8080/insecure/rs:fill:200:150:0/resizing_type:fit/g:sm/plain/'
 
+export const imgSelect = 'http://localhost:8080/insecure/rs:fill:151:359:0/resizing_type:fit/g:sm/plain/'
+
+export const imgSq = 'http://localhost:8080/insecure/rs:fill:250:250:0/resizing_type:fit/g:sm/plain/'
 function GlobalStyles() {
     css`
     @global {

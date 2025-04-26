@@ -3,7 +3,7 @@ import {ATHLETIC_PRODUCT} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames, cn} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
-import {imagePath} from "~/app";
+import {imagePath, img, imgGallery} from "~/app";
 import {UserPen} from "lucide-solid";
 import {css} from "solid-styled";
 import {brands, getAthleticImages} from "~/lib/athletics";
@@ -183,7 +183,7 @@ const AthleticSmView: Component<PROPS> = props => {
                                                 aria-controls="tabs-2-panel-1" role="tab">
                                                 <span class="sr-only">Angled view</span>
                                                 <span class="absolute inset-0 overflow-hidden rounded-md  border border-amber-100">
-                                         <img src={`${image}`}
+                                         <img src={`${imgGallery}${image}`}
                                               alt="" class="size-full object-contain object-top"/>
                                        </span>
                                                 <span
@@ -218,7 +218,7 @@ const AthleticSmView: Component<PROPS> = props => {
                                     fallback={<ShirtDecorator image_url={src()}/>}
                                     when={!getShowDecorator()}>
                                     <img
-                                        src={`${src()}`}
+                                        src={`${img}${src()}`}
                                         alt=""
                                         class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"/>
                                 </Show>

@@ -1,14 +1,12 @@
 import {Component} from "solid-js";
 import {ATHLETIC_PRODUCT} from "~/lib/types";
 import {Format} from '@ark-ui/solid/format'
-import Drawer from "@corvu/drawer";
-import {IconTablet} from "~/components/svg";
 import {A} from "@solidjs/router";
-import {imagePath, img} from "~/app";
+import {img, imgGallery} from "~/app";
 import {classNames} from "~/lib/utils";
-import { brands } from "~/lib/athletics";
+import {brands} from "~/lib/athletics";
 
-type PROPS = ATHLETIC_PRODUCT & {  href: string }
+type PROPS = ATHLETIC_PRODUCT & { href: string }
 
 const AthleticListView: Component<PROPS> = props => {
 
@@ -30,7 +28,7 @@ const AthleticListView: Component<PROPS> = props => {
             <A href={href()} class="flex flex-col w-full justify-center">
                 <div class="sm:h-full sm:w-full mx-auto flex items-start">
                     <img
-                        src={`${img}${props.main_image_url}`}
+                        src={`${imgGallery}${props.main_image_url}`}
                         alt={props.item_name}
                         class={classNames(
                             "rounded-lg w-full  max-h-[150px] bg-white object-bottom object-contain sm:object-contain group-hover:opacity-75")}/>
