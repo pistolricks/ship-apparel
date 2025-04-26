@@ -54,6 +54,56 @@ const TeamAthleticsPane: Component = () => {
         e.stopPropagation();
         paneFlowInstanceRef?.setPane(0);
     };
+
+
+    const paneFlowOnClick9 = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/basketball`,
+            "_self",
+        );
+    };
+
+    const paneFlowOnClick10 = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/cheer`,
+            "_self",
+        );
+    };
+
+    const paneFlowOnClick11 = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/tennis`,
+            "_self",
+        );
+    };
+
+    const paneFlowOnClick12 = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/softball`,
+            "_self",
+        );
+    };
+
+    const paneFlowOnClick13 = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/football`,
+            "_self",
+        );
+    };
+
+    const paneFlowOnClick14 = (e: MouseEvent) => {
+        e.stopPropagation();
+        window.open(
+            `https://ink-and-thread.com/team-athletics/sports/baseball`,
+            "_self",
+        );
+    };
+
     onMount(() => {
         if (paneFlowEl) {
             paneFlowInstanceRef = new PaneFlow({
@@ -2759,7 +2809,9 @@ const TeamAthleticsPane: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-TxjpSx"></div>
                 <div class="paneflow-block paneflow-block-LB7rGi"></div>
-                <div class="paneflow-block paneflow-block-JZhdVY">
+                <div class="paneflow-block paneflow-block-JZhdVY"
+                     onClick={paneFlowOnClick7}
+                >
                     <div class="paneflow-text paneflow-item-nGxgL3">
                         <br/>
                     </div>
@@ -2769,63 +2821,81 @@ const TeamAthleticsPane: Component = () => {
                         VOLLEYBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-LTg6pY">
+                <div class="paneflow-block paneflow-block-LTg6pY"
+                     onClick={paneFlowOnClick9}
+                >
                     <div class="paneflow-text paneflow-item-WOPbVl">
                         SHOP
                         <br/>
                         BASKETBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-kmhxBc">
+                <div class="paneflow-block paneflow-block-kmhxBc"
+                     onClick={paneFlowOnClick10}
+                >
                     <div class="paneflow-text paneflow-item-cPRLEw">
                         SHOP
                         <br/>
                         BASKETBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-ctMFXE">
+                <div class="paneflow-block paneflow-block-ctMFXEa"
+                     onClick={paneFlowOnClick11}
+                >
                     <div class="paneflow-text paneflow-item-qoFSR1">
                         SHOP
                         <br/>
                         CHEER
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-f4nPJ6">
+                <div class="paneflow-block paneflow-block-f4nPJ6"
+                     onClick={paneFlowOnClick14}
+                >
                     <div class="paneflow-text paneflow-item-rWkuvq">
                         SHOP
                         <br/>
                         BASEBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-wyrldH">
+                <div class="paneflow-block paneflow-block-wyrldH"
+                     onClick={paneFlowOnClick14}
+                >
                     <div class="paneflow-text paneflow-item-jkZLQZ">
                         SHOP
                         <br/>
                         BASBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-vGluDt">
+                <div class="paneflow-block paneflow-block-vGluDt"
+                     onClick={paneFlowOnClick13}
+                >
                     <div class="paneflow-text paneflow-item-LwxSdv">
                         SHOP
                         <br/>
                         FOOTBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-YBjRke">
+                <div class="paneflow-block paneflow-block-YBjRke"
+                     onClick={paneFlowOnClick13}
+                >
                     <div class="paneflow-text paneflow-item-uR3b9Q">
                         SHOP
                         <br/>
                         FOOTBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-l5l3gh">
+                <div class="paneflow-block paneflow-block-l5l3gh"
+                     onClick={paneFlowOnClick12}
+                >
                     <div class="paneflow-text paneflow-item-dUgwsl">
                         SHOP
                         <br/>
                         SOFTBALL
                     </div>
                 </div>
-                <div class="paneflow-block paneflow-block-DUDRK8">
+                <div class="paneflow-block paneflow-block-DUDRK8"
+                     onClick={paneFlowOnClick12}
+                >
                     <div class="paneflow-text paneflow-item-LNqoNo">
                         SHOP
                         <br/>
@@ -2833,7 +2903,9 @@ const TeamAthleticsPane: Component = () => {
                     </div>
                 </div>
                 <div class="paneflow-block paneflow-block-zrX4uv"></div>
-                <div class="paneflow-block paneflow-block-7Zdtcf">
+                <div class="paneflow-block paneflow-block-7Zdtcf"
+                     onClick={paneFlowOnClick11}
+                >
                     <div class="paneflow-text paneflow-item-v3Gnj1">
                         SHOP
                         <br/>

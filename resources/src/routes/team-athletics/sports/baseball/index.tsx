@@ -43,7 +43,7 @@ const Baseball: Component<PROPS> = props => {
 
             </Grid>
 
-            <div class={'h-12 bg-gray-500 w-full'}/>
+            <div class={'h-12 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
@@ -61,7 +61,7 @@ const Baseball: Component<PROPS> = props => {
 
             </Grid>
 
-            <div class={'h-12 bg-gray-500 w-full'}/>
+            <div class={'h-12 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
@@ -71,26 +71,21 @@ const Baseball: Component<PROPS> = props => {
                             <Show when={item.category.includes("OUTERWEAR")}>
                                 <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
                             </Show>
-
-
                         </>
                     )}
                 </For>
 
             </Grid>
 
-            <div class={'h-12 bg-gray-500 w-full'}/>
+            <div class={'h-12 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
                     {(item: ATHLETIC_PRODUCT) => (
-
                         <>
                             <Show when={item.category.includes("BAGS")}>
                                 <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
                             </Show>
-
-
                         </>
                     )}
                 </For>

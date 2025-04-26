@@ -43,7 +43,7 @@ const Cheer: Component<PROPS> = props => {
 
             </Grid>
 
-            <div class={'h-12 bg-gray-500 w-full'}/>
+            <div class={'h-12 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
@@ -61,7 +61,7 @@ const Cheer: Component<PROPS> = props => {
 
             </Grid>
 
-            <div class={'h-12 bg-gray-500 w-full'}/>
+            <div class={'h-12 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
@@ -79,7 +79,7 @@ const Cheer: Component<PROPS> = props => {
 
             </Grid>
 
-            <div class={'h-12 bg-gray-500 w-full'}/>
+            <div class={'h-12 bg-secondary w-full'}/>
 
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
