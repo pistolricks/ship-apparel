@@ -57,7 +57,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                 enabled={getOpen()}
                 onDismiss={() => setTitle("")}
             >
-                <Tabs class={'absolute z-10 h-full w-full'} value={getTitle()} onChange={setTitle}
+                <Tabs class={'absolute z-10 h-full w-full rounded-l-2xl'} value={getTitle()} onChange={setTitle}
                       orientation={"horizontal"}>
                     <div class={"absolute z-40 w-full h-full flex justify-start shadow"}>
                         <TabsList class="flex flex-col items-center text-left space-y-3.5 w-40 z-40  bg-secondary">
@@ -84,7 +84,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                 )}
                             </For>
                         </TabsList>
-                        <div class={"aspect-16/10 absolute inset-y-0 h-[640px] left-40 overflow-hidden z-0 flex justify-end items-center"}>
+                        <div class={"aspect-16/10 absolute inset-y-0 h-[640px] rounded-2xl left-40 overflow-hidden z-0 flex justify-end items-center"}>
 
                             <TeamApparel/>
 
@@ -95,7 +95,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                         <Grid cols={3} class=" relative h-full  w-full overflow-hidden">
                             <For each={menu()?.[0]?.sub}>
                                 {(item: MenuItemType) => (
-                                    <TabsContent value={item.title} class="absolute inset-0 h-full w-full overflow-hidden glass">
+                                    <TabsContent value={item.title} class="absolute inset-0 h-full w-full overflow-hidden glass rounded-2xl">
 
                                         <Switch>
                                             <Match when={getTitle() !== item.title}>
