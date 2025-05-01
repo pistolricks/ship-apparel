@@ -171,7 +171,7 @@ const ShirtDecorator: Component<{
         if (!fabricCanvas) return;
 
 
-        const text = new fabric.IText('Custom Text', {
+        const text = new fabric.IText('Text', {
             left: 250,
             top: 200,
             fontFamily: 'Inter',

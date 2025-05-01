@@ -280,11 +280,16 @@ const StyleSmView: Component<PROPS> = props => {
                             <div class="mt-10 flex">
 
 
-                                <div class="mt-6">
+                                <div class="">
                                     <h3 class="sr-only">Description</h3>
 
-                                    <div class="space-y-6 text-sm text-gray-700">
-                                        <p>{product()?.product_description}</p>
+                                    <div class="space-y-2 text-gray-700">
+                                        <For each={product()?.product_description?.split(". ")}>
+                                            {(item) => (
+                                                <p>{item}</p>
+                                            )}
+                                        </For>
+                                        <p></p>
                                     </div>
                                 </div>
 
