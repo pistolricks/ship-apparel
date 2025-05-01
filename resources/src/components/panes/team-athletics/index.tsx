@@ -46,7 +46,7 @@ const TeamAthleticsPane: Component = () => {
     const paneFlowOnClick7 = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/volleyball`,
+            `/team-athletics/sports/volleyball`,
             "_self",
         );
     };
@@ -54,7 +54,7 @@ const TeamAthleticsPane: Component = () => {
     const onClickBasketball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/basketball`,
+            `/team-athletics/sports/basketball`,
             "_self",
         );
     };
@@ -62,7 +62,7 @@ const TeamAthleticsPane: Component = () => {
     const onClickTennis = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/tennis`,
+            `/team-athletics/sports/tennis`,
             "_self",
         );
     };
@@ -70,7 +70,7 @@ const TeamAthleticsPane: Component = () => {
     const onClickCheer = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/cheer`,
+            `/team-athletics/sports/cheer`,
             "_self",
         );
     };
@@ -78,7 +78,7 @@ const TeamAthleticsPane: Component = () => {
     const onClickSoftball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/softball`,
+            `/team-athletics/sports/softball`,
             "_self",
         );
     };
@@ -86,7 +86,7 @@ const TeamAthleticsPane: Component = () => {
     const onClickFootball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/football`,
+            `/team-athletics/sports/football`,
             "_self",
         );
     };
@@ -94,7 +94,7 @@ const TeamAthleticsPane: Component = () => {
     const onClickBaseball = (e: MouseEvent) => {
         e.stopPropagation();
         window.open(
-            `https://ink-and-thread.com/team-athletics/sports/baseball`,
+            `/team-athletics/sports/baseball`,
             "_self",
         );
     };
@@ -2679,7 +2679,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick0}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/BasketBallPlayer.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/BasketBallPlayer.jpg`}
                         class="paneflow-bg-image paneflow-item-yPc2tt"
                     />
                     <div class="paneflow-text paneflow-item-axIWfF">
@@ -2692,7 +2692,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick1}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_229772_229773_6702_6004_silo1.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_229772_229773_6702_6004_silo1.jpg`}
                         class="paneflow-bg-image paneflow-item-sGNaYn"
                     />
                     <div class="paneflow-text paneflow-item-ekUfR1">CHEER</div>
@@ -2702,7 +2702,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick2}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/TennisPlayer.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/TennisPlayer.jpg`}
                         class="paneflow-bg-image paneflow-item-5XQhrj"
                     />
                     <div class="paneflow-text paneflow-item-3PhC8O">TENNIS</div>
@@ -2712,7 +2712,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick3}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_1567_1340_silo3.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_1567_1340_silo3.jpg`}
                         class="paneflow-bg-image paneflow-item-6dkPiI"
                     />
                     <div class="paneflow-text paneflow-item-3MA3pp">SOFTBALL</div>
@@ -2722,7 +2722,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick4}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_9580_silo1.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_9580_silo1.jpg`}
                         class="paneflow-bg-image paneflow-item-pB5RXX"
                     />
                     <div class="paneflow-text paneflow-item-HdtXDZ">
@@ -2740,7 +2740,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick5}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_221025_silo2.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_221025_silo2.jpg`}
                         class="paneflow-bg-image paneflow-item-pzJC7P"
                     />
                 </div>
@@ -2749,7 +2749,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick6}
                 >
                     <img
-                        src={`${img}http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg`}
+                        src={`${img}https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg`}
                         class="paneflow-bg-image paneflow-item-XmK2SJ"
                     />
                 </div>

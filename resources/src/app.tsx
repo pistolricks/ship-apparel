@@ -6,8 +6,8 @@ import {LayoutProvider} from "~/context/layout-provider";
 import {css, StyleRegistry} from "solid-styled";
 
 export const imagePath = 'https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g';
-export const img = 'http://localhost:8080/insecure/rs:fill:500:500:0/resizing_type:fit/g:sm/plain/'
-export const imgGallery = 'http://localhost:8080/insecure/rs:fill:200:150:0/resizing_type:fit/g:sm/plain/'
+export const img = 'http://localhost:8080/insecure/rs:fill:500:500:0/resizing_type:fit/format:webp/g:sm/plain/'
+export const imgGallery = 'http://localhost:8080/insecure/rs:fill:200:150:0/resizing_type:fit/format:webp/g:sm/plain/'
 
 export const imgSelect = 'http://localhost:8080/insecure/rs:fill:151:359:0/resizing_type:fit/g:sm/plain/'
 

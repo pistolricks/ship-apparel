@@ -190,7 +190,7 @@ const StyleSmView: Component<PROPS> = props => {
 
                         <div class={'w-full flex justify-end mb-2'}>
                             <img src={`${imagePath}/${product()?.brand_logo_image}/brand`}
-                                 class={'absolute top-0 sm:static  w-[100px] h-[25px] sm:w-[200px] sm:h-[50px]  rounded-xl object-contain'}
+                                 class={'absolute top-0 sm:static  w-[100px] h-[25px] sm:w-[200px] sm:h-[50px] object-contain'}
                                  alt={''}/>
                         </div>
 

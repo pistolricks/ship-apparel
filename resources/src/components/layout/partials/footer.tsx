@@ -5,8 +5,8 @@ type PROPS = {}
 const Footer: Component<PROPS> = props => {
 
     return (
-        <footer class="bg-secondary">
-            <div class="mx-auto max-w-7xl px-6 py-8 md:flex md:items-center md:justify-between lg:px-8">
+        <footer class="hidden md:block bg-secondary">
+            <div class="mx-auto max-w-7xl px-6 py-2 md:flex md:items-center md:justify-between lg:px-8">
                 <div class="flex justify-center gap-x-6 md:order-2">
                     <a href="#" class="text-gray-600 hover:text-gray-800">
                         <span class="sr-only">Facebook</span>
