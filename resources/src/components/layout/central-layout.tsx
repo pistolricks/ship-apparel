@@ -4,6 +4,7 @@ import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import ProfileMenu from "~/components/layout/partials/side/profile-menu";
 import MenuComponent from "~/components/layout/partials/menu-component";
 import {useLocation} from "@solidjs/router";
+import Footer from "~/components/layout/partials/footer";
 
 type PROPS = ParentProps & {
     name: string,
@@ -47,13 +48,7 @@ const CentralLayout: Component<PROPS> = props => {
                     <MenuComponent contextId={contextId()}/>
 
                 </DrawerContent>
-                <footer class={'bg-gray-200/50'}>
-                    <div class="">
-                        <div class="flex  items-center px-4">
-
-                        </div>
-                    </div>
-                </footer>
+                <Footer/>
             </div>
         </BaseDrawer>
     );
