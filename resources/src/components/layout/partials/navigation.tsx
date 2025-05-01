@@ -37,9 +37,6 @@ export default function Navigation(props: { contextId: string }) {
                 <nav aria-label="Top">
                     <div class="hidden sm:block bg-secondary">
                         <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
-
-
-
                             <h1 class="flex-1 text-center text-sm font-medium  lg:flex-none">
                                 CUSTOM INK AND THREAD
                             </h1>
