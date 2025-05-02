@@ -50,7 +50,7 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     return (
 
-        <div class="block relative h-[620px] overflow-hidden bg-secondary w-full  items-left space-y-4">
+        <div class="block relative h-[620px] overflow-hidden bg-linear-to-l from-white to-secondary w-full  items-left space-y-4">
             <Dismissible
                 noOutsidePointerEvents={false}
                 element={contentRef}
