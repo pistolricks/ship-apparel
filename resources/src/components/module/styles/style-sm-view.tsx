@@ -309,7 +309,7 @@ const StyleSmView: Component<PROPS> = props => {
                                     disabled={getIsDisabled()}
                                     onClick={() => addCartItem(getSelected())}
                                     type="button"
-                                        class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-gray-400 disabled:bg-gray-200 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
+                                        class="flex max-w-xs flex-1  items-center justify-center rounded-sm border border-transparent bg-gray-400 disabled:bg-gray-200 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
                                      Add to<span class={'hidden sm:block px-1'}>Cart</span>
                                 </button>
                             </div>

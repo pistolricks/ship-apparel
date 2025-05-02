@@ -48,12 +48,14 @@ const StyleListView: Component<PROPS> = props => {
                     <p class="mt-4 text-sm font-medium text-gray-900">{NumberWithCurrency()}+</p>
                 </div>
             </A>
+            {/*
             <Drawer.Trigger
                 onClick={props.onClick}
                 class="absolute bottom-1 right-1 w-6 h-6"
                 contextId={'product-preview-1'}>
                 <IconTablet class={'stroke-gray-500 hover:stroke-amber-700 hover:fill-amber-300 size-6'}/>
             </Drawer.Trigger>
+            */}
         </div>
     )
 };
