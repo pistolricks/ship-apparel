@@ -19,6 +19,7 @@ import {imagePath} from "~/app";
 import {QrCodeIcon, UserPen} from "lucide-solid";
 import {QRCodeWithOverlay} from "~/components/ui/qr-code";
 import {useLocation} from "@solidjs/router";
+import {useLayoutContext} from "~/context/layout-provider";
 
 
 const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
@@ -33,6 +34,10 @@ type PROPS = {
 const StyleSmView: Component<PROPS> = props => {
 
     const location = useLocation();
+
+    const [getIsDisabled, setIsDisabled] = createSignal(false);
+
+    const {cartStore, setCartStore} = useLayoutContext();
 
     const product = () => props.product;
     const products = () => props.products as SM_PRODUCT[];
@@ -133,9 +138,50 @@ const StyleSmView: Component<PROPS> = props => {
         console.log(getShowQrCode())
     }
 
+
+    const addCartItem = (item: SM_PRODUCT) => {
+        setCartStore("items", (currentItems: any) => {
+            // Check if the item already exists in the cart
+            const itemExists = currentItems.some((cartItem: any) =>
+                cartItem.id === item.id &&
+                cartItem.size === item.size &&
+                cartItem.color === item.color_name
+            );
+
+            // If item exists, return the current items unchanged
+            if (itemExists) {
+                return currentItems;
+            }
+
+            // Otherwise, add the new item
+            return [
+                ...currentItems,
+                {
+                    id: item.id,
+                    name: item.product_title,
+                    image: item.color_square_image,
+                    price: item.msrp,
+                    slug: `${import.meta.env.VITE_APP_URL}${location.pathname}`,
+                    brand: item.mill,
+                    style: item.style,
+                    gtin: item?.gtin,
+                    color: item.color_name,
+                    size: item.size,
+                    quantity: 1,
+                },
+            ];
+        });
+
+            console.log(cartStore)
+    };
+
+
     createEffect(() => {
         console.log("isSelected", getSelected(), "getColor", getColor())
         console.log("groupedByColor", groupedByColor(), "getColor", getColor())
+
+        console.log(cartStore?.items?.at(-1))
+        setCartStore("count", cartStore?.items?.length)
     })
 
     onMount(() => {
@@ -257,9 +303,12 @@ const StyleSmView: Component<PROPS> = props => {
                                 </div>
 
 
-                                <button type="button"
-                                        class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-blue-500 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
-                                    Login for <span class={'hidden sm:block px-1'}> Inventory / </span> Pricing
+                                <button
+                                    disabled={getIsDisabled()}
+                                    onClick={() => addCartItem(getSelected())}
+                                    type="button"
+                                        class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-gray-400 disabled:bg-gray-200 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
+                                     Add to<span class={'hidden sm:block px-1'}>Cart</span>
                                 </button>
                             </div>
 

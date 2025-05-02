@@ -91,6 +91,7 @@ const Cart: Component<{}> = props => {
                                             <div class="mt-4 sm:mt-0 sm:pr-9">
                                                 <div class="grid w-full max-w-16 grid-cols-1">
                                                     <select
+                                                        id={`quantity-${index()}`}
                                                         name={`quantity-${index()}`}
                                                         aria-label={`Quantity, ${product.name}`}
                                                         class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
