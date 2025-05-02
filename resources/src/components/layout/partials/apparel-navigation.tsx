@@ -50,15 +50,19 @@ const ApparelNavigation: Component<PROPS> = props => {
 
     return (
 
-        <div class="block relative h-[620px] bg-secondary w-full  items-left space-y-4">
+        <div class="block relative h-[620px] overflow-hidden bg-secondary w-full  items-left space-y-4">
             <Dismissible
                 noOutsidePointerEvents={false}
                 element={contentRef}
                 enabled={getOpen()}
                 onDismiss={() => setTitle("")}
             >
-                <Tabs class={'absolute z-10 h-full w-full rounded-l-2xl'} value={getTitle()} onChange={setTitle}
-                      orientation={"horizontal"}>
+                <div class={"aspect-16/10 absolute inset-y-0 h-[640px] rounded-2xl left-0 sm:left-40 overflow-hidden z-0 flex justify-end items-center"}>
+
+                    <TeamApparel/>
+
+                </div>
+                <Tabs class={'hidden sm:block absolute z-10 h-full w-full rounded-l-2xl'} value={getTitle()} onChange={setTitle} orientation={"horizontal"}>
                     <div class={"absolute z-40 w-full h-full flex justify-start shadow"}>
                         <TabsList class="flex flex-col items-center text-left space-y-3.5 w-40 z-40  bg-secondary">
                             <For each={menu()?.[0]?.sub}>
@@ -84,11 +88,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                                 )}
                             </For>
                         </TabsList>
-                        <div class={"aspect-16/10 absolute inset-y-0 h-[640px] rounded-2xl left-40 overflow-hidden z-0 flex justify-end items-center"}>
 
-                            <TeamApparel/>
-
-                        </div>
 
 
 
