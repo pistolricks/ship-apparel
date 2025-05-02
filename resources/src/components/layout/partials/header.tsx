@@ -14,7 +14,7 @@ const Header: Component<{
         {name: "Custom Apparel", href: "/custom-apparel"},
         {name: "Work Apparel", href: "/work-apparel"},
        // {name: "School Spirit", href: "/school-spirit"},
-        {name: "Team Athletics", href: "/team-uniforms"},
+        {name: "Team Uniforms", href: "/team-uniforms"},
         {name: "Design Lab", href: "/design-lab"},
         {name: "Popup Shops", href: "/popup-shops"}
     ]
