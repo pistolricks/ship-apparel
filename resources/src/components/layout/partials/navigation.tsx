@@ -1,4 +1,4 @@
-import {createEffect, createSignal, For, onCleanup} from 'solid-js'
+import {createEffect, createSignal, For, onCleanup, Show} from 'solid-js'
 import {A, useLocation} from "@solidjs/router";
 import {classNames} from "~/lib/utils";
 import Drawer from "@corvu/drawer";
@@ -6,6 +6,7 @@ import ProfileMenu from "~/components/layout/partials/side/profile-menu";
 import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
 import Cart from "~/routes/cart";
 import BaseCommand from "~/components/ui/command/command";
+import {useLayoutContext} from "~/context/layout-provider";
 
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
@@ -23,6 +24,9 @@ export default function Navigation(props: { contextId: string }) {
     const [open, setOpen] = createSignal(false)
 
     const [getOpenSearch, setOpenSearch] = createSignal(false)
+
+
+    const {cartStore, setCartStore} = useLayoutContext();
 
     const contextId = () => props.contextId
     const location = useLocation()
@@ -42,6 +46,8 @@ export default function Navigation(props: { contextId: string }) {
 
 
     createEffect(() => {
+
+        console.log(cartStore?.count, "cartStore?.count")
         const down = (e: KeyboardEvent) => {
             if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
                 e.preventDefault()
@@ -182,9 +188,9 @@ export default function Navigation(props: { contextId: string }) {
                                                         </svg>
                                                     </Drawer.Trigger>
                                                 </div>
-                                                <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+
                                                 <BaseDrawer side={"right"} contextId={"right-menu-01"}>
-                                                    <Drawer.Trigger class={"pr-4"} contextId={"right-menu-01"}>
+                                                    <Drawer.Trigger class={"mr-4 px-2 space-x-1 py-1 border border-gray-100 rounded-sm flex justify-start items-center"} contextId={"right-menu-01"}>
                                                         <span class="sr-only">Open menu</span>
                                                         <svg
                                                             class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -193,6 +199,12 @@ export default function Navigation(props: { contextId: string }) {
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                   d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
                                                         </svg>
+
+                                                        <Show when={cartStore?.count > 0}>
+                                                            <span class={"bg-white rounded-sm tex-gray-100"}>{cartStore?.count}</span>
+                                                        </Show>
+
+
                                                         <span class="sr-only">items in cart, view bag</span>
                                                     </Drawer.Trigger>
 

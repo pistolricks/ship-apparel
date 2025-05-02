@@ -10,7 +10,7 @@ import {
     Show,
     Switch
 } from "solid-js";
-import {ATHLETIC_PRODUCT} from "~/lib/types";
+import {ATHLETIC_PRODUCT, SM_PRODUCT} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames, cn} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
@@ -19,6 +19,7 @@ import {QrCodeIcon, UserPen} from "lucide-solid";
 import {css} from "solid-styled";
 import {brands, getAthleticImages} from "~/lib/athletics";
 import {QRCodeWithOverlay} from "~/components/ui/qr-code";
+import {useLayoutContext} from "~/context/layout-provider";
 
 
 const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
@@ -31,6 +32,8 @@ type PROPS = {
 
 
 const AthleticSmView: Component<PROPS> = props => {
+
+    const {cartStore, setCartStore} = useLayoutContext();
 
     const product = () => props.product;
     const products = () => props.products as ATHLETIC_PRODUCT[];
@@ -135,9 +138,50 @@ const AthleticSmView: Component<PROPS> = props => {
         console.log(getShowQrCode())
     }
 
+
+    const addCartItem = (item: ATHLETIC_PRODUCT) => {
+        setCartStore("items", (currentItems: any) => {
+            // Check if the item already exists in the cart
+            const itemExists = currentItems.some((cartItem: any) =>
+                cartItem.id === item.item_sku &&
+                cartItem.size === item.size &&
+                cartItem.color === item.color_hex_value
+            );
+
+            // If item exists, return the current items unchanged
+            if (itemExists) {
+                return currentItems;
+            }
+
+            // Otherwise, add the new item
+            return [
+                ...currentItems,
+                {
+                    id: item.item_sku,
+                    name: item.item_name,
+                    image: images()?.[0],
+                    price: item.msrp,
+                    slug: `${import.meta.env.VITE_APP_URL}${location.pathname}`,
+                    brand: item.brand,
+                    style: item.parent_sku,
+                    gtin: item?.upc_code,
+                    color: item.color_hex_value,
+                    size: item.size,
+                    quantity: 1,
+                    inStock: true,
+                    leadTime: "1-2 days"
+                },
+            ];
+        });
+
+        console.log(cartStore)
+    };
+
     createEffect(() => {
         console.log("isSelected", getSelected(), "getColor", getColor(), getSelectedId())
         console.log("groupedByColor", groupedByColor(), "getColor", getColor())
+        console.log(cartStore?.items?.at(-1))
+        setCartStore("count", cartStore?.items?.length)
     })
 
     onMount(() => {
@@ -290,9 +334,11 @@ const AthleticSmView: Component<PROPS> = props => {
                                 </div>
 
 
-                                <button type="button"
-                                        class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-blue-500 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
-                                    Login for <span class={'hidden sm:block px-1'}> Inventory / </span> Pricing
+                                <button
+                                    onClick={() => addCartItem(getSelected())}
+                                    type="button"
+                                    class="flex max-w-xs flex-1 items-center justify-center rounded-sm border border-transparent bg-gray-400 disabled:bg-gray-200 px-2 sm:px-8 py-1.5 text-sm sm:text-base font-light text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
+                                    Add to<span class={'hidden sm:block px-1'}>Cart</span>
                                 </button>
                             </div>
 

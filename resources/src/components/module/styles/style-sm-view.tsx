@@ -159,7 +159,7 @@ const StyleSmView: Component<PROPS> = props => {
                 {
                     id: item.id,
                     name: item.product_title,
-                    image: item.color_square_image,
+                    image: images()?.[0],
                     price: item.msrp,
                     slug: `${import.meta.env.VITE_APP_URL}${location.pathname}`,
                     brand: item.mill,
@@ -168,6 +168,8 @@ const StyleSmView: Component<PROPS> = props => {
                     color: item.color_name,
                     size: item.size,
                     quantity: 1,
+                    inStock: true,
+                    leadTime: "1-2 days"
                 },
             ];
         });
