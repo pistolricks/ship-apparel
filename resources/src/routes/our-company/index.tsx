@@ -8,7 +8,7 @@ const OurCompany: Component<PROPS> = props => {
 
             <div class="relative isolate -z-10">
                 <svg
-                    class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+                    class="absolute inset-x-0 top-0 -z-10 h-[62rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
                     aria-hidden="true">
                     <defs>
                         <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1"
@@ -36,7 +36,7 @@ const OurCompany: Component<PROPS> = props => {
                         <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                             <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                                 <h1 class="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-                                Custom Ink & Thread
+                                    {import.meta.env.VITE_APP_NAME}
                                 </h1>
                                 <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
                                     Custom t-shirts and embroidery services offer a unique way to express individuality, promote businesses, commemorate events, or create team unity. At *CustomInk and Thread*, we specialize in transforming ordinary garments into personalized statements through cutting-edge printing techniques and meticulous embroidery craftsmanship.

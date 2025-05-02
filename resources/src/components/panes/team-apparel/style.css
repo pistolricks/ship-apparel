@@ -76,13 +76,13 @@
     object-position: center;
 }
 
-.paneflow-block-FJTj9m {
-    background-color: rgba(0, 0, 0, 1);
+.third_block_01 {
+    background-color: var(--ink-color-bg-primary);
     border: 0.1cqw solid rgba(255, 255, 255, 0.27);
 }
 
-.paneflow-item-aHhUOM {
-    object-fit: cover;
+.third_block_01_image_01 {
+    object-fit: contain;
     object-position: center;
 }
 
@@ -239,7 +239,7 @@
 
 .second_block_01,
 .paneflow-block-heg4hu,
-.paneflow-block-FJTj9m,
+.third_block_01,
 .paneflow-block-2nuIwD,
 .paneflow-block-Uph1My,
 .paneflow-block-V3IFgN,

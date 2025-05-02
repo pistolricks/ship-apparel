@@ -6,7 +6,7 @@ import MenuLeftImagesRight from "~/components/section/menu/menu-left-images-righ
 import {Tabs, TabsContent, TabsList} from "~/components/ui/tabs";
 import {Grid} from "~/components/ui/grid";
 import {A, useLocation} from "@solidjs/router";
-import {CircleX} from "lucide-solid";
+import {CircleX, XIcon} from "lucide-solid";
 import {cn} from "~/lib/utils";
 import style from "~/components/ui/tab/tabs.module.css";
 import TeamApparel from "~/components/panes/team-apparel";
@@ -112,8 +112,8 @@ const ApparelNavigation: Component<PROPS> = props => {
                                                         <button onClick={() => handleSelect("")}
                                                                 value={item.title}
                                                                 class={"flex justify-center items-center pr-4"}>
-                                                            <CircleX
-                                                                class={"size-4 text-gray-500 hover:text-red-300"}/>
+                                                            <XIcon
+                                                                class={"size-5 text-gray-500 hover:text-red-300"}/>
                                                         </button>
 
                                                         <A

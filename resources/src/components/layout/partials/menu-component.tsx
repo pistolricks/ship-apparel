@@ -16,16 +16,16 @@ const MenuComponent: Component<PROPS> = props => {
             <div class="">
                 <div class="space-y-6 border-b border-gray-200 px-4 py-6">
                     <div class="flow-root">
-                        <Drawer.Trigger contextId={contextId()} as={'a'} href={"/login"}
+                        <Drawer.Close contextId={contextId()} as={'a'} href={"/sign-in"}
                                         class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
-                            Login
-                        </Drawer.Trigger>
+                            Sign In
+                        </Drawer.Close>
                     </div>
                     <div class="flow-root">
-                        <Drawer.Trigger contextId={contextId()} as={'a'} href={"/register"}
+                        <Drawer.Close contextId={contextId()} as={'a'} href={"/create-account"}
                                         class="p-4 hover:bg-amber-200 hover:text-sky-400 hover:rounded-lg -m-2 block text-gray-500">
-                            Register
-                        </Drawer.Trigger>
+                            Create Account
+                        </Drawer.Close>
                     </div>
                 </div>
 

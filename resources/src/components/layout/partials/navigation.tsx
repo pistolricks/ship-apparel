@@ -37,8 +37,8 @@ export default function Navigation(props: { contextId: string }) {
                 <nav aria-label="Top">
                     <div class="hidden sm:block bg-secondary">
                         <div class="mx-auto flex h-10 max-w-7xl px-4 items-center justify-between">
-                            <h1 class="flex-1 text-center text-sm font-medium  lg:flex-none">
-                                CUSTOM INK AND THREAD
+                            <h1 class="flex-1 text-center text-sm font-medium uppercase lg:flex-none">
+                                {import.meta.env.VITE_APP_NAME}
                             </h1>
 
                             <div class="hidden md:flex md:flex-1 md:items-center md:justify-end md:space-x-6">
@@ -108,7 +108,7 @@ export default function Navigation(props: { contextId: string }) {
                                     </div>
 
                                     <A href="/" class="lg:hidden">
-                                        <span class="sr-only">Custom Ink and Thread</span>
+                                        <span class="sr-only">{import.meta.env.VITE_APP_NAME}</span>
                                         <img
                                             src={'/icons/icon180x180.png'}
                                             alt="" class="h-8 w-auto"/>
@@ -130,7 +130,7 @@ export default function Navigation(props: { contextId: string }) {
                                                 </div>
 
                                                 <div class="flex">
-                                                    <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                                                    <Drawer.Trigger class={"pr-4"} contextId={contextId()}>
                                                         <span class="sr-only">Account</span>
                                                         <svg class="size-6" fill="none" viewBox="0 0 24 24"
                                                              stroke-width="1.5" stroke="currentColor" aria-hidden="true"
@@ -139,7 +139,7 @@ export default function Navigation(props: { contextId: string }) {
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                   d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
                                                         </svg>
-                                                    </a>
+                                                    </Drawer.Trigger>
                                                 </div>
                                                 <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
                                                 <Drawer.Trigger class={"pr-4"} contextId={contextId()}>
