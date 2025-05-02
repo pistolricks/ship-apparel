@@ -43,7 +43,7 @@ export default function Navigation(props: { contextId: string }) {
 
     createEffect(() => {
         const down = (e: KeyboardEvent) => {
-            if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+            if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
                 e.preventDefault()
                 setOpenSearch((open) => !open)
             }

@@ -28,7 +28,7 @@ const BaseCommand: Component<{
                 <CommandEmpty class={"flex flex-col items-center mx-auto space-y-2"}>
                     No results found.
                     <kbd class="pointer-events-none inline-flex h-5 select-none items-center gap-1 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                        <span class="text-xs">⌘</span>J
+                        <span class="text-xs">⌘</span>K
                     </kbd>
                 </CommandEmpty>
                 <CommandGroup heading="Search">
@@ -38,7 +38,7 @@ const BaseCommand: Component<{
                             <span>Search Results</span>
 
                             <kbd class="pointer-events-none inline-flex h-5 select-none items-center gap-1 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                            <span class="text-xs">⌘</span>J
+                            <span class="text-xs">⌘</span>K
                         </kbd>
                         </span>
 

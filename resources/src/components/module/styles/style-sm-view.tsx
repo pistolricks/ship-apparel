@@ -318,7 +318,7 @@ const StyleSmView: Component<PROPS> = props => {
                                                     onClick={() => handleSize(product)}
                                                     class={classNames(
                                                         isSelected(product.id) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200',
-                                                        "w-full items-center  justify-center border border-gray-400 rounded-md h-7"
+                                                        "w-full items-center  justify-center border border-gray-400 rounded-md text-sm h-full"
                                                     )}
                                                     type="button">
                                                     {product.size}

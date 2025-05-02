@@ -353,13 +353,13 @@ const AthleticSmView: Component<PROPS> = props => {
                                           class="w-full border-gray-200 border-b py-2">
 
                                     <Grid cols={8} class={'gap-2 w-full items-center'}>
-                                        <For each={groupedByColor()?.[getColor()]}>
+                                        <For each={groupedByColor()?.[getColor()]?.reverse()}>
                                             {(product) => (
                                                 <button
                                                     onClick={() => handleSize(product)}
                                                     class={classNames(
                                                         isSelected(product.item_sku) ? 'ring-2 ring-amber-400 bg-amber-200 ' : 'ring-2 ring-gray-200',
-                                                        "w-full items-center  justify-center border border-gray-400 rounded-md h-7"
+                                                        "w-full items-center  justify-center border border-gray-400 rounded-md h-full text-sm"
                                                         )}
                                                     type="button">
                                                     {product.size}
