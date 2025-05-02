@@ -18,6 +18,7 @@ const CentralLayout: Component<PROPS> = props => {
     const side: () => 'top' | 'right' | 'bottom' | 'left' = () => "right"
     const children = () => props.children;
 
+
     /* md:px-6 lg:px-8 */
     return (
         <BaseDrawer side={side()} contextId={contextId()}>

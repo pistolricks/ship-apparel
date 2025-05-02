@@ -2,6 +2,10 @@ import {createSignal, For} from 'solid-js'
 import {A, useLocation} from "@solidjs/router";
 import {classNames} from "~/lib/utils";
 import Drawer from "@corvu/drawer";
+import ProfileMenu from "~/components/layout/partials/side/profile-menu";
+import MenuComponent from "~/components/layout/partials/menu-component";
+import BaseDrawer, {DrawerContent} from "~/components/ui/drawer/drawer";
+import Cart from "~/routes/cart";
 
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
@@ -86,16 +90,26 @@ export default function Navigation(props: { contextId: string }) {
 
 
                                     <div class="flex flex-1 items-center lg:hidden">
-
-                                        <button type="button" class="pl-4 rounded-md bg-white p-2 text-gray-400">
+                                        <BaseDrawer side={"left"} contextId={"left-menu-01"}>
+                                        <Drawer.Trigger contextId={"left-menu-01"} as="button" class="pl-4 rounded-md bg-white p-2 text-gray-400">
                                             <span class="sr-only">Open menu</span>
                                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                  stroke="currentColor" aria-hidden="true" data-slot="icon">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                       d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                                             </svg>
-                                        </button>
+                                        </Drawer.Trigger>
 
+                                            <DrawerContent
+                                                side={"left"}
+                                                contextId={"left-menu-01"}
+                                            >
+
+                                                <ProfileMenu contextId={"left-menu-01"}/>
+
+                                            </DrawerContent>
+
+                                        </BaseDrawer>
 
                                         <a href="#" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
                                             <span class="sr-only">Search</span>
@@ -128,7 +142,6 @@ export default function Navigation(props: { contextId: string }) {
                                                         </svg>
                                                     </button>
                                                 </div>
-
                                                 <div class="flex">
                                                     <Drawer.Trigger class={"pr-4"} contextId={contextId()}>
                                                         <span class="sr-only">Account</span>
@@ -142,7 +155,8 @@ export default function Navigation(props: { contextId: string }) {
                                                     </Drawer.Trigger>
                                                 </div>
                                                 <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                                                <Drawer.Trigger class={"pr-4"} contextId={contextId()}>
+                                                <BaseDrawer side={"right"} contextId={"right-menu-01"}>
+                                                <Drawer.Trigger class={"pr-4"} contextId={"right-menu-01"}>
                                                     <span class="sr-only">Open menu</span>
                                                     <svg class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
                                                          fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -152,6 +166,18 @@ export default function Navigation(props: { contextId: string }) {
                                                     </svg>
                                                     <span class="sr-only">items in cart, view bag</span>
                                                 </Drawer.Trigger>
+
+
+                                                    <DrawerContent
+                                                        side={"right"}
+                                                        contextId={"right-menu-01"}
+                                                    >
+
+                                                        <Cart/>
+
+                                                    </DrawerContent>
+
+                                                </BaseDrawer>
                                             </div>
                                         </div>
                                     </div>

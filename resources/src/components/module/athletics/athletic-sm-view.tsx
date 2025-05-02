@@ -187,7 +187,7 @@ const AthleticSmView: Component<PROPS> = props => {
                 <div class="px-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full mb-2 max-w-2xl sm:block lg:max-w-none">
-                            <div class={`grid grid-cols-6 h-auto gap-6`} aria-orientation="horizontal" role="tablist">
+                            <div class={`grid grid-cols-5 h-auto gap-6`} aria-orientation="horizontal" role="tablist">
                                 <For each={images()}>
                                     {(image) => (
                                         <Show when={image !== ' '}>
@@ -311,7 +311,7 @@ const AthleticSmView: Component<PROPS> = props => {
                                     <div class="-ml-2 -mt-2 flex flex-wrap items-baseline">
                                         <h3 class="ml-2 mt-2 text-sm font-semibold text-gray-900">{availableSizes()?.[0]}</h3>
                                         {/*
-                                        <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
+                                            <p class="ml-2 mt-1 truncate text-sm text-gray-500">{availableSizes()?.[1]?.replace('Sizes available vary by color.', '')}</p>
                                         */}
                                     </div>
                                 </div>
