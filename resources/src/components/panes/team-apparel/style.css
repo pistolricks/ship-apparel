@@ -20,7 +20,7 @@
     object-position: center;
 }
 
-.paneflow-block-benINp {
+.first_block_01 {
     background-color: rgba(255, 255, 255, 1);
     border: 0.1cqw solid rgba(255, 255, 255, 0.27);
     --pf-cols: 4;
@@ -31,7 +31,7 @@
     --pf-height-rows: 2;
 }
 
-.paneflow-item-qVqUQz {
+.first_block_01_image_01 {
     object-fit: cover;
     object-position: center;
     transform: translate3d(0px, 0px, 0) scale(1) rotate(0deg);
@@ -39,7 +39,7 @@
     opacity: 1;
 }
 
-.paneflow-item-lc4v5e {
+.first_block_01_text_01 {
     position: absolute;
     left: 0;
     top: 0;
@@ -57,11 +57,11 @@
     opacity: 1;
 }
 
-.paneflow-block-grh2X9 {
+.second_block_01 {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.paneflow-item-Dok8Ya {
+.second_block_01_image_01 {
     object-fit: contain;
     object-position: center;
 }
@@ -237,7 +237,7 @@
     object-position: center;
 }
 
-.paneflow-block-grh2X9,
+.second_block_01,
 .paneflow-block-heg4hu,
 .paneflow-block-FJTj9m,
 .paneflow-block-2nuIwD,
