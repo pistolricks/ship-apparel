@@ -410,94 +410,94 @@ return [
         'description' => "Bring your school’s pride to life with custom graphics!  From screen printing to embroidery, heat press and DTG printing.  We offer endless options to showcase your school spirit. T-shirts, sweatshirts, hoodies, and more - designed just for you!",
     ],
     [
-        'title' => 'Team Athletics',
-        'href' => 'team-athletics',
+        'title' => 'Team Uniforms',
+        'href' => 'team-uniforms',
         'description' => "You envision It. We create It.",
         'sub' => [
             [
                 'title' => 'Adult',
-                'href' => '/team-athletics/adult',
+                'href' => '/team-uniforms/adult',
                 'src' => '',
                 'sub' => [
                     'title' => "Baseball",
-                    'href' => '/team-athletics/baseball',
+                    'href' => '/team-uniforms/baseball',
                     'sub' => [],
                 ]
                 , [
                 'title' => "Basketball",
-                'href' => '/team-athletics/basketball',
+                'href' => '/team-uniforms/basketball',
                 'sub' => [],
             ]
                 , [
                 'title' => "Bottoms",
-                'href' => '/team-athletics/bottoms',
+                'href' => '/team-uniforms/bottoms',
                 'sub' => [],
             ]
                 , [
                 'title' => "Fleece",
-                'href' => '/team-athletics/fleece',
+                'href' => '/team-uniforms/fleece',
                 'sub' => [],
             ]
                 , [
                 'title' => "Football",
-                'href' => '/team-athletics/football',
+                'href' => '/team-uniforms/football',
                 'sub' => [],
             ]
                 , [
                 'title' => "Headwear",
-                'href' => '/team-athletics/headwear',
+                'href' => '/team-uniforms/headwear',
                 'sub' => [],
             ]
                 , [
                 'title' => "Lacrosse",
-                'href' => '/team-athletics/lacrosse',
+                'href' => '/team-uniforms/lacrosse',
                 'sub' => [],
             ]
                 , [
                 'title' => "Lifestyle",
-                'href' => '/team-athletics/lifestyle',
+                'href' => '/team-uniforms/lifestyle',
                 'sub' => [],
             ]
                 , [
                 'title' => "Multi",
-                'href' => '/team-athletics/multi',
+                'href' => '/team-uniforms/multi',
                 'sub' => [],
             ]
                 , [
                 'title' => "Outerwear",
-                'href' => '/team-athletics/outerwear',
+                'href' => '/team-uniforms/outerwear',
                 'sub' => [],
             ]
                 , [
                 'title' => "Polos",
-                'href' => '/team-athletics/polos',
+                'href' => '/team-uniforms/polos',
                 'sub' => [],
             ]
                 , [
                 'title' => "Pullovers",
-                'href' => '/team-athletics/pullovers',
+                'href' => '/team-uniforms/pullovers',
                 'sub' => [],
             ]
                 , [
                 'title' => "Soccer",
-                'href' => '/team-athletics/soccer',
+                'href' => '/team-uniforms/soccer',
                 'sub' => [],
             ]
                 , [
                 'title' => "Socks",
-                'href' => '/team-athletics/socks',
+                'href' => '/team-uniforms/socks',
                 'sub' => [],
             ]
                 , [
                 'title' => "Tees",
-                'href' => '/team-athletics/tees',
+                'href' => '/team-uniforms/tees',
                 'sub' => [],
             ]
 
             ],
             [
                 'title' => 'Ladies',
-                'href' => '/team-athletics/ladies',
+                'href' => '/team-uniforms/ladies',
                 'src' => '',
                 'sub' => [
                     [
@@ -656,7 +656,7 @@ return [
                     ],
                     [
                         'title' => 'Youth',
-                        'href' => '/team-athletics/youth',
+                        'href' => '/team-uniforms/youth',
                         'src' => '',
                         'sub' => [
                             [
@@ -800,7 +800,7 @@ return [
 
                 [
                     'title' => 'Girls',
-                    'href' => '/team-athletics/girls',
+                    'href' => '/team-uniforms/girls',
                     'src' => '',
                     'sub' => [
 
@@ -809,7 +809,7 @@ return [
                 ],
                 [
                     'title' => 'Toddler',
-                    'href' => '/team-athletics/toddler',
+                    'href' => '/team-uniforms/toddler',
                     'src' => '',
                     'sub' => [
 

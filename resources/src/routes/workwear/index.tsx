@@ -2,6 +2,8 @@ import {Component, createEffect} from "solid-js";
 import {createAsync, RouteDefinition, useParams} from "@solidjs/router";
 import {getCategory} from "~/lib/products";
 import StyleSection from "~/components/module/styles/style-section";
+import WorkwearPane from "~/components/panes/workwear";
+
 
 type PROPS = {}
 
@@ -22,7 +24,12 @@ const Workwear: Component<PROPS> = props => {
     createEffect(() => console.log(response(), "category_page"))
 
     return (
+        <>
+            <div class={"bg-secondary"}>
+                <WorkwearPane/>
+            </div>
         <StyleSection data={response()?.list} pagination={response()?.list.metadata}/>
+            </>
     );
 };
 

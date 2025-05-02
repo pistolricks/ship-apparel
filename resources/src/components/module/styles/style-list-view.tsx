@@ -24,7 +24,7 @@ const StyleListView: Component<PROPS> = props => {
     }
 
     return (
-        <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
+        <div class="group relative border-b border-r border-l border-gray-200 p-4 sm:p-6">
 
             <A href={href()} class="flex flex-col w-full justify-center">
                 <div class="sm:h-full sm:w-full mx-auto flex items-start">

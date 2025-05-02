@@ -16,7 +16,7 @@ export const route = {
     }
 } satisfies RouteDefinition
 
-const TeamAthletics: Component<PROPS> = props => {
+const TeamUniforms: Component<PROPS> = props => {
     const params = useParams();
 
     const response = createAsync(async () => getAthleticStyles());
@@ -40,7 +40,7 @@ const TeamAthletics: Component<PROPS> = props => {
                     {(item: ATHLETIC_PRODUCT) => (
 
                         <Show when={item.category.includes("TOPS")}>
-                            <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                            <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                         </Show>
                     )}
                 </For>
@@ -55,7 +55,7 @@ const TeamAthletics: Component<PROPS> = props => {
 
                         <>
                             <Show when={item.category.includes("BOTTOMS")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
 
 
@@ -74,7 +74,7 @@ const TeamAthletics: Component<PROPS> = props => {
 
                         <>
                             <Show when={item.category.includes("BAGS")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
 
 
@@ -88,4 +88,4 @@ const TeamAthletics: Component<PROPS> = props => {
     );
 };
 
-export default TeamAthletics;
+export default TeamUniforms;

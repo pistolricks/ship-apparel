@@ -10,14 +10,13 @@ Route::view('/our-company', 'app')->name('central.our-company');
 Route::view('/contact-us', 'app')->name('central.contact-us');
 
 Route::view('/design-lab', 'app')->name('central.design-lab');
-Route::view('/custom-apparel', 'app')->name('central.custom-apparel');
-Route::view('/work-apparel', 'app')->name('central.work-apparel');
+Route::view('/workwear', 'app')->name('central.workwear');
 Route::view('/school-spirit', 'app')->name('central.school-spirit');
-Route::view('/team-athletics', 'app')->name('central.team-athletics');
-Route::view('/team-athletics/{id}', 'app')->name('central.team-athletics.show');
+Route::view('/team-uniforms', 'app')->name('central.team-uniforms');
+Route::view('/team-uniforms/{id}', 'app')->name('central.team-uniforms.show');
 
 
-Route::view('/team-athletics/sports/{category}', 'app')->name('central.team-athletics.sports.show');
+Route::view('/team-uniforms/sports/{category}', 'app')->name('central.team-uniforms.sports.show');
 
 Route::view('/popups', 'app')->name('central.popups');
 

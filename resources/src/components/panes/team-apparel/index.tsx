@@ -9,7 +9,7 @@ const TeamApparel: Component = () => {
 
     const paneFlowOnClick0 = (e: MouseEvent): void => {
         e.stopPropagation();
-        window.open(`/team-athletics`, "_self");
+        window.open(`/team-uniforms`, "_self");
     };
 
     const paneFlowOnClick1 = (e: MouseEvent): void => {

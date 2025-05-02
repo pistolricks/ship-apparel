@@ -13,8 +13,8 @@ const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
 const menu: { name: string, href: string }[] = [
     {name: "Apparel", href: "/apparel"},
     {name: "Workwear", href: "/workwear"},
-    {name: "School Spirit", href: "/school-spirit"},
-    {name: "Team Athletics", href: "/team-athletics"},
+   // {name: "School Spirit", href: "/school-spirit"},
+    {name: "Team Athletics", href: "/team-uniforms"},
     {name: "Design Lab", href: "/design-lab"},
     {name: "Popups", href: "/popups"},
 ]

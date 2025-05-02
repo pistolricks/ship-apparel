@@ -17,7 +17,7 @@ export const route = {
     }
 } satisfies RouteDefinition
 
-const Cheer: Component<PROPS> = props => {
+const Baseball: Component<PROPS> = props => {
     const params = useParams();
 
     const response = createAsync(async () => getAthleticStyles());
@@ -35,8 +35,8 @@ const Cheer: Component<PROPS> = props => {
                 <For each={items()}>
                     {(item: ATHLETIC_PRODUCT) => (
 
-                        <Show when={item.category.includes("CHEER | TOPS") || item.category.includes("CHEER | ON-FIELD TOPS") || item.category.includes("CHEER | ACCESSORIES") || item.category.includes("TEES | TOPS")}>
-                            <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                        <Show when={item.category.includes("BASEBALL | TOPS")  || item.category.includes("BASEBALL | ON-FIELD TOPS")}>
+                            <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                         </Show>
                     )}
                 </For>
@@ -50,8 +50,8 @@ const Cheer: Component<PROPS> = props => {
                     {(item: ATHLETIC_PRODUCT) => (
 
                         <>
-                            <Show when={item.category.includes("VOLLEYBALL | BOTTOMS")  || item.category.includes("VOLLEYBALL | ON-FLD BOTTOMS") || item.category.includes("BOTTOMS | BOTTOMS") || item.category.includes("CHEER | BOTTOMS") || item.category.includes("CHEER | ON-FLD BOTTOMS")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                            <Show when={item.category.includes("BASEBALL | BOTTOMS")  || item.category.includes("BASEBALL | ON-FLD BOTTOMS")}>
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
 
 
@@ -69,10 +69,8 @@ const Cheer: Component<PROPS> = props => {
 
                         <>
                             <Show when={item.category.includes("OUTERWEAR")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
-
-
                         </>
                     )}
                 </For>
@@ -84,21 +82,17 @@ const Cheer: Component<PROPS> = props => {
             <Grid class={'w-full border-l border-gray-200'} cols={2} colsSm={2} colsMd={3} colsLg={5} colsXl={6}>
                 <For each={items()}>
                     {(item: ATHLETIC_PRODUCT) => (
-
                         <>
                             <Show when={item.category.includes("BAGS")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
-
-
                         </>
                     )}
                 </For>
 
             </Grid>
-
         </>
     );
 };
 
-export default Cheer;
+export default Baseball;

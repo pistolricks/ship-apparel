@@ -48,7 +48,7 @@ const AthleticSection: Component<PROPS> = props => {
                     <For each={data()}>
                         {(style: ATHLETIC_PRODUCT) => (
 
-                            <AthleticListView href={`/team-athletics/${style.parent_sku}`}{...style} />
+                            <AthleticListView href={`/team-uniforms/${style.parent_sku}`}{...style} />
 
                         )}
                     </For>

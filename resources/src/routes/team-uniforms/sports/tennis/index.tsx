@@ -17,7 +17,7 @@ export const route = {
     }
 } satisfies RouteDefinition
 
-const Football: Component<PROPS> = props => {
+const Tennis: Component<PROPS> = props => {
     const params = useParams();
 
     const response = createAsync(async () => getAthleticStyles());
@@ -35,8 +35,8 @@ const Football: Component<PROPS> = props => {
                 <For each={items()}>
                     {(item: ATHLETIC_PRODUCT) => (
 
-                        <Show when={item.category.includes("FOOTBALL | TOPS") || item.category.includes("FOOTBALL | ON-FIELD TOPS") || item.category.includes("HEADWEAR | HEADWEAR")}>
-                            <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                        <Show when={item.category.includes("POLOS | TOPS") || item.category.includes("FLEECE | TOPS") || item.category.includes("PULLOVERS | TOPS")}>
+                            <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                         </Show>
                     )}
                 </For>
@@ -50,8 +50,8 @@ const Football: Component<PROPS> = props => {
                     {(item: ATHLETIC_PRODUCT) => (
 
                         <>
-                            <Show when={item.category.includes("FOOTBALL | BOTTOMS")  || item.category.includes("FOOTBALL | ON-FLD BOTTOMS")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                            <Show when={item.category.includes("VOLLEYBALL | BOTTOMS")  || item.category.includes("VOLLEYBALL | ON-FLD BOTTOMS") || item.category.includes("BOTTOMS | BOTTOMS")}>
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
 
 
@@ -68,7 +68,7 @@ const Football: Component<PROPS> = props => {
 
                         <>
                             <Show when={item.category.includes("OUTERWEAR")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
 
 
@@ -86,7 +86,7 @@ const Football: Component<PROPS> = props => {
 
                         <>
                             <Show when={item.category.includes("BAGS")}>
-                                <AthleticListView href={`/team-athletics/${item.parent_sku}`} {...item} />
+                                <AthleticListView href={`/team-uniforms/${item.parent_sku}`} {...item} />
                             </Show>
 
 
@@ -99,4 +99,4 @@ const Football: Component<PROPS> = props => {
     );
 };
 
-export default Football;
+export default Tennis;

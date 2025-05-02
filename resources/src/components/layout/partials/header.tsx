@@ -13,8 +13,8 @@ const Header: Component<{
     const navigation = [
         {name: "Custom Apparel", href: "/custom-apparel"},
         {name: "Work Apparel", href: "/work-apparel"},
-        {name: "School Spirit", href: "/school-spirit"},
-        {name: "Team Athletics", href: "/team-athletics"},
+       // {name: "School Spirit", href: "/school-spirit"},
+        {name: "Team Athletics", href: "/team-uniforms"},
         {name: "Design Lab", href: "/design-lab"},
         {name: "Popup Shops", href: "/popup-shops"}
     ]

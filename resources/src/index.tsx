@@ -55,8 +55,8 @@ const routes = [
         component: lazy(() => import("./routes/workwear")),
     },
     {
-        path: "/team-athletics",
-        component: lazy(() => import("./routes/team-athletics")),
+        path: "/team-uniforms",
+        component: lazy(() => import("./routes/team-uniforms")),
     },
     {
         path: "/design-lab",
@@ -120,48 +120,48 @@ const routes = [
     },
 
     {
-        path: "/team-athletics/:id",
-        component: lazy(() => import("~/routes/team-athletics/view")),
+        path: "/team-uniforms/:id",
+        component: lazy(() => import("~/routes/team-uniforms/view")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/baseball",
-        component: lazy(() => import("~/routes/team-athletics/sports/baseball")),
+        path: "/team-uniforms/sports/baseball",
+        component: lazy(() => import("~/routes/team-uniforms/sports/baseball")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/basketball",
-        component: lazy(() => import("~/routes/team-athletics/sports/basketball")),
+        path: "/team-uniforms/sports/basketball",
+        component: lazy(() => import("~/routes/team-uniforms/sports/basketball")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/football",
-        component: lazy(() => import("~/routes/team-athletics/sports/football")),
+        path: "/team-uniforms/sports/football",
+        component: lazy(() => import("~/routes/team-uniforms/sports/football")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/cheer",
-        component: lazy(() => import("~/routes/team-athletics/sports/cheer")),
+        path: "/team-uniforms/sports/cheer",
+        component: lazy(() => import("~/routes/team-uniforms/sports/cheer")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/volleyball",
-        component: lazy(() => import("~/routes/team-athletics/sports/volleyball")),
+        path: "/team-uniforms/sports/volleyball",
+        component: lazy(() => import("~/routes/team-uniforms/sports/volleyball")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/softball",
-        component: lazy(() => import("~/routes/team-athletics/sports/softball")),
+        path: "/team-uniforms/sports/softball",
+        component: lazy(() => import("~/routes/team-uniforms/sports/softball")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/tennis",
-        component: lazy(() => import("~/routes/team-athletics/sports/tennis")),
+        path: "/team-uniforms/sports/tennis",
+        component: lazy(() => import("~/routes/team-uniforms/sports/tennis")),
         preload: preloadAthletic,
     },
     {
-        path: "/team-athletics/sports/soccer",
-        component: lazy(() => import("~/routes/team-athletics/sports/soccer")),
+        path: "/team-uniforms/sports/soccer",
+        component: lazy(() => import("~/routes/team-uniforms/sports/soccer")),
         preload: preloadAthletic,
     },
 
