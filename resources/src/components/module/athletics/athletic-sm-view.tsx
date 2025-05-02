@@ -1,12 +1,24 @@
-import {Component, createEffect, createMemo, createSelector, createSignal, For, lazy, onMount, Show} from "solid-js";
+import {
+    Component,
+    createEffect,
+    createMemo,
+    createSelector,
+    createSignal,
+    For,
+    lazy, Match,
+    onMount,
+    Show,
+    Switch
+} from "solid-js";
 import {ATHLETIC_PRODUCT} from "~/lib/types";
 import {Grid} from "~/components/ui/grid";
 import {classNames, cn} from "~/lib/utils";
 import {Format} from '@ark-ui/solid/format'
-import {imagePath, img, imgGallery} from "~/app";
-import {UserPen} from "lucide-solid";
+import {imagePath, img, imgFull, imgGallery} from "~/app";
+import {QrCodeIcon, UserPen} from "lucide-solid";
 import {css} from "solid-styled";
 import {brands, getAthleticImages} from "~/lib/athletics";
+import {QRCodeWithOverlay} from "~/components/ui/qr-code";
 
 
 const ShirtDecorator = lazy(() => import('~/components/shirt-decorator'));
@@ -29,6 +41,8 @@ const AthleticSmView: Component<PROPS> = props => {
     const [getSelectedId, setSelectedId] = createSignal<string>(getSelected()?.item_sku)
 
     const [getShowDecorator, setShowDecorator] = createSignal(false)
+
+    const [getShowQrCode, setShowQrCode] = createSignal(false)
 
     const [getImages, setImages] = createSignal(
         [getSelected()?.main_image_url, getSelected()?.other_image_url].filter((image): image is string => !!image)
@@ -53,6 +67,8 @@ const AthleticSmView: Component<PROPS> = props => {
         if (isSrc(src)) {
             setSrc(src)
         }
+        setShowDecorator(false)
+        setShowQrCode(false)
         console.log(getSrc())
 
     }
@@ -95,15 +111,9 @@ const AthleticSmView: Component<PROPS> = props => {
     const [getColor, setColor] = createSignal<string>(product()?.color_hex_value ?? "")
     const handleColor = async(m: ATHLETIC_PRODUCT) => {
         setColor(() => m?.color_hex_value ?? "")
-
-
-
         const response = await getAthleticImages(m?.item_sku?.replace(`.${getSelected()?.size}`, ""))
-
         let results = await response?.images;
-
         console.log(await response?.images, results, "response")
-
         setSrc(groupedByColor()?.[m?.color_hex_value ?? '']?.[0]?.main_image_url)
         setImages(
             [groupedByColor()?.[m.color_hex_value ?? ""]?.[0]?.main_image_url, groupedByColor()?.[m?.color_hex_value ?? ""]?.[0]?.other_image_url,
@@ -117,6 +127,12 @@ const AthleticSmView: Component<PROPS> = props => {
     const handleShowDecorator = () => {
         setShowDecorator((p) => !p)
         console.log(getShowDecorator())
+    }
+
+    const handleShowQrCode = () => {
+        setShowQrCode((p) => !p)
+        setShowDecorator(false)
+        console.log(getShowQrCode())
     }
 
     createEffect(() => {
@@ -170,8 +186,8 @@ const AthleticSmView: Component<PROPS> = props => {
             <div class="mx-auto max-w-2xl lg:max-w-none">
                 <div class="px-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <div class="flex flex-col-reverse">
-                        <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-                            <div class="grid grid-cols-5 h-24 gap-6" aria-orientation="horizontal" role="tablist">
+                        <div class="mx-auto mt-6 hidden w-full mb-2 max-w-2xl sm:block lg:max-w-none">
+                            <div class={`grid grid-cols-6 h-auto gap-6`} aria-orientation="horizontal" role="tablist">
                                 <For each={images()}>
                                     {(image) => (
                                         <Show when={image !== ' '}>
@@ -207,21 +223,47 @@ const AthleticSmView: Component<PROPS> = props => {
                                         class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"
                                         aria-hidden="true"></span>
                                 </button>
+                                <button
+                                    onClick={handleShowQrCode}
+                                    type="button"
+                                    id="tabs-2-tab-1"
+                                    class="relative flex h-20 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500/50 focus:ring-offset-4"
+                                    aria-controls="tabs-2-panel-1" role="tab">
+                                    <span class="sr-only">Angled view</span>
+                                    <span class="absolute inset-0 overflow-hidden rounded-md border border-amber-100">
+                                         <QrCodeIcon class="size-full p-6 object-contain object-top"/>
+                                       </span>
+                                    <span
+                                        class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2"
+                                        aria-hidden="true"></span>
+                                </button>
                             </div>
                         </div>
 
                         <div>
                             <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" class={'h-95 sm:h-full'}
                                  role="tabpanel" tabindex="0">
+                                <Switch
+                                    fallback={
+                                        <img
+                                            src={`${img}${src()}`}
+                                            alt=""
+                                            class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"
+                                        />
+                                    }
+                                >
+                                    <Match when={getShowDecorator()}>
+                                        <ShirtDecorator image_url={`${imgFull}${src()}`}/>
+                                    </Match>
+                                    <Match when={getShowQrCode()}>
+                                        <div class={"p-4"}>
+                                            <QRCodeWithOverlay
+                                                value={`${import.meta.env.VITE_APP_URL}${location.pathname}`}
+                                                src={"/icons/icon180x180.png"}/>
+                                        </div>
+                                    </Match>
+                                </Switch>
 
-                                <Show
-                                    fallback={<ShirtDecorator image_url={src()}/>}
-                                    when={!getShowDecorator()}>
-                                    <img
-                                        src={`${img}${src()}`}
-                                        alt=""
-                                        class="sm:aspect-square w-full object-cover sm:object-contain sm:rounded-lg"/>
-                                </Show>
                             </div>
 
                         </div>

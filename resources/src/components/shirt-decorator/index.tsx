@@ -155,6 +155,7 @@ const ShirtDecorator: Component<{
         img.left = 0;
         img.absolutePositioned = true;
         img.scale(0.5);
+        img.opacity = 0.8;
         img.selectable = false;
         img.evented = false;
         fabricCanvas.add(img);

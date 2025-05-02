@@ -156,7 +156,7 @@ const StyleSmView: Component<PROPS> = props => {
                 <div class="px-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <div class="flex flex-col-reverse">
                         <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-                            <div class="grid grid-cols-5 h-24 gap-6" aria-orientation="horizontal" role="tablist">
+                            <div class={`grid grid-cols-${images()?.length + 2} h-24 gap-6`} aria-orientation="horizontal" role="tablist">
                                 <For each={images()}>
                                     {(image) => (
                                         <Show when={image !== ' '}>
