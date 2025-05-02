@@ -3,7 +3,9 @@ import PaneFlow from "../paneflow.mjs";
 import "../paneflow.css";
 import "./style.css";
 
-const TeamAthleticsPane: Component = () => {
+const TeamAthleticsPane: Component<{
+    homeClick?: () => void;
+}> = props => {
     let paneFlowEl: HTMLDivElement | undefined;
     let paneFlowInstanceRef: PaneFlow | undefined;
 
