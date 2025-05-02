@@ -281,7 +281,7 @@
     --ink-color-text-disabled-inverse: var(--ink-color-gray-600);
     --ink-color-text-disabled-on-light: var(--ink-color-gray-400);
     --ink-color-text-disabled-on-dark: var(--ink-color-gray-600);
-    --ink-color-text-hover: var(--ink-color-gray-500);
+    --ink-color-text-hover: var(--ink-color-gray-400);
     --ink-color-text-hover-inverse: var(--ink-color-gray-200);
     --ink-color-text-hover-on-light: var(--ink-color-gray-500);
     --ink-color-text-hover-on-dark: var(--ink-color-gray-200);

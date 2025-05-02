@@ -129,7 +129,7 @@ return [
                 'sub' => [
                     ['title' => "Easy Care", 'href' => 'apparel/polos-knits/easy-care'],
                     ['title' => "Performance", 'href' => 'apparel/polos-knits/performance'],
-                    ['title' => "Women's", 'href' => "products/polos-knits/womens"],
+                    ['title' => "Women's", 'href' => "apparel/polos-knits/womens"],
                     ['title' => "Cotton", 'href' => 'apparel/polos-knits/cotton'],
                     ['title' => "Tall", 'href' => 'apparel/polos-knits/tall'],
                     ['title' => "Youth", 'href' => 'apparel/polos-knits/youth'],
@@ -199,15 +199,15 @@ return [
                 'src' => '//cdnp.sanmar.com/medias/sys_master/images/h06/h4c/16690109939742/424Wx635H_46779_DpRdWht-0-LST441DpRdWhtModelFront/424Wx635H-46779-DpRdWht-0-LST441DpRdWhtModelFront.jpg',
 
                 'sub' => [
-                    ["title" => "Pants & Shorts", 'href' => "products/activewear/pants-and-shorts"],
-                    ["title" => "Tanks", 'href' => "products/activewear/tanks"],
-                    ["title" => "Performance", 'href' => "products/activewear/performance"],
-                    ["title" => "Youth", 'href' => "products/activewear/youth"],
-                    ["title" => "Women's", 'href' => "products/activewear/womens"],
-                    ["title" => "Athletic/Warm-Ups", 'href' => "products/activewear/athletic-warm-ups"],
-                    ["title" => "Jerseys", 'href' => "products/activewear/jerseys"],
-                    ["title" => "Baseball", 'href' => "products/activewear/baseball"],
-                    ["title" => "Basketball", 'href' => "products/activewear/basketball"],
+                    ["title" => "Pants & Shorts", 'href' => "apparel/activewear/pants-and-shorts"],
+                    ["title" => "Tanks", 'href' => "apparel/activewear/tanks"],
+                    ["title" => "Performance", 'href' => "apparel/activewear/performance"],
+                    ["title" => "Youth", 'href' => "apparel/activewear/youth"],
+                    ["title" => "Women's", 'href' => "apparel/activewear/womens"],
+                    ["title" => "Athletic/Warm-Ups", 'href' => "apparel/activewear/athletic-warm-ups"],
+                    ["title" => "Jerseys", 'href' => "apparel/activewear/jerseys"],
+                    ["title" => "Baseball", 'href' => "apparel/activewear/baseball"],
+                    ["title" => "Basketball", 'href' => "apparel/activewear/basketball"],
                 ]
             ],
             [
@@ -316,12 +316,12 @@ return [
                 'src' => '//cdnp.sanmar.com/medias/sys_master/images/had/h7e/26568764719134/424Wx635H_6251_Black-0-A706BlackModelFront2/424Wx635H-6251-Black-0-A706BlackModelFront2.jpg',
 
                 'sub' => [
-                    ["title" => "Blankets", 'href' => "products/accessories/blankets"],
-                    ["title" => "Aprons", 'href' => "products/accessories/aprons"],
-                    ["title" => "Other", 'href' => "products/accessories/other"],
-                    ["title" => "Robes/Towels", 'href' => "products/accessories/robes-towels"],
-                    ["title" => "Scarves/Gloves", 'href' => "products/accessories/scarves-gloves"],
-                    ["title" => "Golf Towels", 'href' => "products/accessories/golf-towels"],
+                    ["title" => "Blankets", 'href' => "apparel/accessories/blankets"],
+                    ["title" => "Aprons", 'href' => "apparel/accessories/aprons"],
+                    ["title" => "Other", 'href' => "apparel/accessories/other"],
+                    ["title" => "Robes/Towels", 'href' => "apparel/accessories/robes-towels"],
+                    ["title" => "Scarves/Gloves", 'href' => "apparel/accessories/scarves-gloves"],
+                    ["title" => "Golf Towels", 'href' => "apparel/accessories/golf-towels"],
                 ]
             ],
             [

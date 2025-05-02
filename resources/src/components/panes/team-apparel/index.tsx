@@ -28,21 +28,21 @@ const TeamApparel: Component = () => {
                 blockBorderRadius: "3cqw",
                 initialPaneIndex: 0,
                 autoplay: { enabled: true, interval: 3000 },
-               // pagination: { enabled: true, clickable: true, type: "bullets" },
+                // pagination: { enabled: true, clickable: true, type: "bullets" },
                 panes: [
                     {
                         cols: 4,
                         rows: 2,
                         blocks: [
                             {
-                                el: ".first_block_01",
+                                el: ".paneflow-block-benINp",
                                 col: 0,
                                 row: 0,
                                 widthCols: 4,
                                 heightRows: 2,
                                 children: [
                                     {
-                                        el: ".first_block_01_image_01",
+                                        el: ".paneflow-item-qVqUQz",
                                         translateX: 0,
                                         translateY: 0,
                                         translateZ: 0,
@@ -52,8 +52,8 @@ const TeamApparel: Component = () => {
                                         opacity: 1,
                                     },
                                     {
-                                        el: ".first_block_01_text_01",
-                                        translateX: "2.4000000000cqw",
+                                        el: ".paneflow-item-lc4v5e",
+                                        translateX: "17.4000000000cqw",
                                         translateY: "20.5000000000cqw",
                                         translateZ: 0,
                                         rotate: 0,
@@ -73,14 +73,14 @@ const TeamApparel: Component = () => {
                         rows: 2,
                         blocks: [
                             {
-                                el: ".first_block_01",
+                                el: ".paneflow-block-benINp",
                                 col: 0,
                                 row: 0,
                                 widthCols: 2,
                                 heightRows: 1,
                                 children: [
                                     {
-                                        el: ".first_block_01_image_01",
+                                        el: ".paneflow-item-qVqUQz",
                                         translateX: 0,
                                         translateY: 0,
                                         translateZ: 0,
@@ -90,8 +90,8 @@ const TeamApparel: Component = () => {
                                         opacity: 1,
                                     },
                                     {
-                                        el: ".first_block_01_text_01",
-                                        translateX: "-8.3000000000cqw",
+                                        el: ".paneflow-item-lc4v5e",
+                                        translateX: "-6.3000000000cqw",
                                         translateY: "5.3000000000cqw",
                                         translateZ: 0,
                                         rotate: 0,
@@ -104,14 +104,14 @@ const TeamApparel: Component = () => {
                                 exitTo: "bottom",
                             },
                             {
-                                el: ".second_block_01",
-                                col: 0,
-                                row: 1,
+                                el: ".paneflow-block-grh2X9",
+                                col: 2,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 1,
                                 children: [
                                     {
-                                        el: ".second_block_01_image_01",
+                                        el: ".paneflow-item-Dok8Ya",
                                         translateX: 0,
                                         translateY: 0,
                                         translateZ: 0,
@@ -147,14 +147,14 @@ const TeamApparel: Component = () => {
                                 exitTo: "bottom",
                             },
                             {
-                                el: ".third_block_01",
+                                el: ".paneflow-block-FJTj9m",
                                 col: 1,
                                 row: 1,
-                                widthCols: 1,
+                                widthCols: 2,
                                 heightRows: 1,
                                 children: [
                                     {
-                                        el: ".third_block_01_image_01",
+                                        el: ".paneflow-item-aHhUOM",
                                         translateX: 0,
                                         translateY: 0,
                                         translateZ: 0,
@@ -260,19 +260,19 @@ const TeamApparel: Component = () => {
                                 exitTo: "bottom",
                             },
                             {
-                                el: ".third_block_01",
+                                el: ".paneflow-block-FJTj9m",
                                 col: 0,
                                 row: 2,
                                 widthCols: 1,
                                 heightRows: 1,
                                 children: [
                                     {
-                                        el: ".third_block_01_image_01",
+                                        el: ".paneflow-item-aHhUOM",
                                         translateX: 0,
-                                        translateY: 0,
+                                        translateY: "2.9cqw",
                                         translateZ: 0,
                                         rotate: 0,
-                                        scale: 1,
+                                        scale: 1.5,
                                         transformOrigin: "left",
                                         opacity: 1,
                                     },
@@ -309,10 +309,10 @@ const TeamApparel: Component = () => {
                         blocks: [
                             {
                                 el: ".paneflow-block-Ak6kXf",
-                                col: 0,
+                                col: 1,
                                 row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
+                                widthCols: 2,
+                                heightRows: 4,
                                 children: [
                                     {
                                         el: ".paneflow-item-yzKdhw",
@@ -631,27 +631,21 @@ const TeamApparel: Component = () => {
             class="paneflow paneflow-green-christal-84 paneflow-with-pagination"
         >
             <div class="paneflow-content">
-                <div class="paneflow-block first_block_01">
+                <div class="paneflow-block paneflow-block-benINp">
                     <img
                         src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_1.png/public"
-                        class="paneflow-bg-image first_block_01_image_01"
+                        class="paneflow-bg-image paneflow-item-qVqUQz"
                     />
-                    <div class="paneflow-text first_block_01_text_01">
+                    <div class="paneflow-text paneflow-item-lc4v5e">
                         Team
                         <br />
                         Apparel
                     </div>
                 </div>
-                <div class="paneflow-block second_block_01">
+                <div class="paneflow-block paneflow-block-grh2X9">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/nike.png"
-                        class="paneflow-bg-image second_block_01_image_01"
-                    />
-                </div>
-                <div class="paneflow-block third_block_01">
-                    <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
-                        class="paneflow-bg-image third_block_01_image_01"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/nike.png"
+                        class="paneflow-bg-image paneflow-item-Dok8Ya"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-heg4hu">
@@ -660,16 +654,21 @@ const TeamApparel: Component = () => {
                         class="paneflow-bg-image paneflow-item-mwmpM5"
                     />
                 </div>
-
+                <div class="paneflow-block paneflow-block-FJTj9m">
+                    <img
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/model_soccer.png/public"
+                        class="paneflow-bg-image paneflow-item-aHhUOM"
+                    />
+                </div>
                 <div class="paneflow-block paneflow-block-2nuIwD">
                     <img
-                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_4.png/public"
+                        src="https://ink-and-thread.com/cdn-cgi/imagedelivery/jYAILuSxmZBHJW3H5LQP5g/slide_3.png/public"
                         class="paneflow-bg-image paneflow-item-zCnBSD"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-Uph1My">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/ogio.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/ogio.png"
                         class="paneflow-bg-image paneflow-item-j7zxUg"
                     />
                 </div>
@@ -681,7 +680,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-Ak6kXf">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/nike.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/nike.png"
                         class="paneflow-bg-image paneflow-item-yzKdhw"
                     />
                 </div>
@@ -694,7 +693,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-5f3OR4">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
                         class="paneflow-image paneflow-item-gcvf5U"
                     />
                 </div>
@@ -709,25 +708,25 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-id107i">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/jerzees.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/jerzees.png"
                         class="paneflow-bg-image paneflow-item-F01TEf"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-F9Z8vt">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
                         class="paneflow-bg-image paneflow-item-gs0HIA"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-HNyDpw">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/sport-tek.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/sport-tek.png"
                         class="paneflow-bg-image paneflow-item-cHR1zm"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-b5WF7C">
                     <img
-                        src="https://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
+                        src="http://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
                         class="paneflow-bg-image paneflow-item-JnBdL0"
                     />
                 </div>
