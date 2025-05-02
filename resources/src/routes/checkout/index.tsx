@@ -1,6 +1,7 @@
-import {createSignal, For} from 'solid-js'
+import {createEffect, createSignal, For} from 'solid-js'
 import {RadioGroup} from "@kobalte/core/radio-group";
 import {ChevronDown, CircleCheck, Trash} from "lucide-solid/icons";
+import {useLayoutContext} from "~/context/layout-provider";
 
 const products = [
     {
@@ -27,6 +28,31 @@ const paymentMethods = [
 
 export default function Example() {
     const [selectedDeliveryMethod, setSelectedDeliveryMethod] = createSignal(deliveryMethods[0])
+
+
+    const {cartStore, setCartStore} = useLayoutContext();
+
+
+    const calculateCartTotal = () => {
+        if (!cartStore?.items || cartStore.items.length === 0) {
+            return "0.00";
+        }
+
+        const total = cartStore.items.reduce((sum: number, item: any) => {
+            // Parse price to number, multiply by quantity, and add to sum
+            const itemPrice = parseFloat(item.price) * (item.quantity || 1);
+            return sum + itemPrice;
+        }, 0);
+
+        // Format to 2 decimal places
+        return total.toFixed(2);
+    };
+
+
+    createEffect(() => {
+        console.log(cartStore?.items?.at(-1))
+        setCartStore("count", cartStore?.items?.length)
+    })
 
     return (
         <div class="relative isolate bg-white">
@@ -353,19 +379,20 @@ export default function Example() {
                         <div class="mt-4 rounded-lg border border-gray-200 bg-white shadow-sm">
                             <h3 class="sr-only">Items in your cart</h3>
                             <ul role="list" class="divide-y divide-gray-200">
-                                {products.map((product) => (
+                                <For each={cartStore.items}>
+                                    {(product, index) => (
                                     <li class="flex px-4 py-6 sm:px-6">
                                         <div class="shrink-0">
-                                            <img alt={product.imageAlt} src={product.imageSrc} class="w-20 rounded-md"/>
+                                            <img alt={product.name} src={product.image} class="w-20 rounded-md"/>
                                         </div>
 
                                         <div class="ml-6 flex flex-1 flex-col">
                                             <div class="flex">
                                                 <div class="min-w-0 flex-1">
                                                     <h4 class="text-sm">
-                                                        <a href={product.href}
+                                                        <a href={product.slug}
                                                            class="font-medium text-gray-700 hover:text-gray-800">
-                                                            {product.title}
+                                                            {product.name}
                                                         </a>
                                                     </h4>
                                                     <p class="mt-1 text-sm text-gray-500">{product.color}</p>
@@ -374,6 +401,10 @@ export default function Example() {
 
                                                 <div class="ml-4 flow-root shrink-0">
                                                     <button
+                                                        onClick={() => setCartStore({
+                                                            ...cartStore,
+                                                            items: cartStore.items.filter((item: any) => item.id !== product.id)
+                                                        })}
                                                         type="button"
                                                         class="-m-2.5 flex items-center justify-center bg-white p-2.5 text-gray-400 hover:text-gray-500"
                                                     >
@@ -389,9 +420,9 @@ export default function Example() {
                                                 <div class="ml-4">
                                                     <div class="grid grid-cols-1">
                                                         <select
-                                                            id="quantity"
-                                                            name="quantity"
-                                                            aria-label="Quantity"
+                                                            id={`quantity-${index()}`}
+                                                            name={`quantity-${index()}`}
+                                                            aria-label={`Quantity, ${product.name}`}
                                                             class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                         >
                                                             <option value={1}>1</option>
@@ -402,6 +433,18 @@ export default function Example() {
                                                             <option value={6}>6</option>
                                                             <option value={7}>7</option>
                                                             <option value={8}>8</option>
+                                                            <option value={9}>9</option>
+                                                            <option value={10}>10</option>
+                                                            <option value={11}>11</option>
+                                                            <option value={12}>12</option>
+                                                            <option value={13}>13</option>
+                                                            <option value={14}>14</option>
+                                                            <option value={15}>15</option>
+                                                            <option value={16}>16</option>
+                                                            <option value={17}>17</option>
+                                                            <option value={18}>18</option>
+                                                            <option value={19}>19</option>
+                                                            <option value={20}>20</option>
                                                         </select>
                                                         <ChevronDown
                                                               aria-hidden="true"
@@ -412,24 +455,29 @@ export default function Example() {
                                             </div>
                                         </div>
                                     </li>
-                                ))}
+                                )}
+                                </For>
                             </ul>
                             <dl class="space-y-6 border-t border-gray-200 px-4 py-6 sm:px-6">
                                 <div class="flex items-center justify-between">
+                                    <dt class="text-sm">Quantity</dt>
+                                    <dd class="text-sm font-medium text-gray-900">{cartStore.count}</dd>
+                                </div>
+                                <div class="flex items-center justify-between">
                                     <dt class="text-sm">Subtotal</dt>
-                                    <dd class="text-sm font-medium text-gray-900">$64.00</dd>
+                                    <dd class="text-sm font-medium text-gray-900">${calculateCartTotal()}</dd>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <dt class="text-sm">Shipping</dt>
-                                    <dd class="text-sm font-medium text-gray-900">$5.00</dd>
+                                    <dd class="text-sm font-medium text-gray-900">$0.00</dd>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <dt class="text-sm">Taxes</dt>
-                                    <dd class="text-sm font-medium text-gray-900">$5.52</dd>
+                                    <dd class="text-sm font-medium text-gray-900">$0.00</dd>
                                 </div>
                                 <div class="flex items-center justify-between border-t border-gray-200 pt-6">
                                     <dt class="text-base font-medium">Total</dt>
-                                    <dd class="text-base font-medium text-gray-900">$75.52</dd>
+                                    <dd class="text-base font-medium text-gray-900">${calculateCartTotal()}</dd>
                                 </div>
                             </dl>
 

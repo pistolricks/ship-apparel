@@ -1,8 +1,9 @@
-import {Component, For, Show} from "solid-js";
+import {Component, createEffect, For, Show} from "solid-js";
 import {ChevronDown, CircleX, MessageCircleQuestion, XIcon} from "lucide-solid";
 import Drawer from "@corvu/drawer";
 import {useLayoutContext} from "~/context/layout-provider";
 import { Format } from "@ark-ui/solid/format";
+import {A} from "@solidjs/router";
 
 const products = [
     {
@@ -42,6 +43,7 @@ const Cart: Component<{}> = props => {
         // Format to 2 decimal places
         return total.toFixed(2);
     };
+
 
 
     return (
@@ -113,7 +115,7 @@ const Cart: Component<{}> = props => {
                                                         id={`quantity-${index()}`}
                                                         name={`quantity-${index()}`}
                                                         aria-label={`Quantity, ${product.name}`}
-                                                        class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                                        class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6"
                                                     >
                                                         <option value={1}>1</option>
                                                         <option value={2}>2</option>
@@ -207,15 +209,17 @@ const Cart: Component<{}> = props => {
                                 </div>
                             </dl>
 
-                            <div class="mt-6">
-                                <button
-                                    type="submit"
-                                    class="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                                >
-                                    Checkout
-                                </button>
-                            </div>
                         </section>
+                        <div class="mt-6 w-full col-span-full">
+                            <Drawer.Close
+                                contextId={'right-menu-01'}
+                                as={A}
+                                href={"/checkout"}
+                                class="bg-gray-200 min-w-full rounded-md border border-transparent col-span-full px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                            >
+                                Checkout
+                            </Drawer.Close>
+                        </div>
                     </section>
 
                     {/* Order summary */}
