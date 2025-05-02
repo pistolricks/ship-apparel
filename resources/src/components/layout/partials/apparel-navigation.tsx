@@ -57,7 +57,7 @@ const ApparelNavigation: Component<PROPS> = props => {
                 enabled={getOpen()}
                 onDismiss={() => setTitle("")}
             >
-                <div class={"aspect-16/10 absolute inset-y-0 h-[640px] rounded-2xl left-0 sm:left-40 overflow-hidden z-0 flex justify-end items-center"}>
+                <div class={"aspect-16/10 absolute inset-y-0 h-[640px] rounded-4xl  left-0 sm:left-40 overflow-hidden z-0 flex justify-end items-center"}>
 
                     <TeamApparel/>
 

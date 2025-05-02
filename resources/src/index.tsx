@@ -63,8 +63,8 @@ const routes = [
         component: lazy(() => import("./routes/design-lab")),
     },
     {
-        path: "/popup-shops",
-        component: lazy(() => import("./routes/popup-shops")),
+        path: "/popups",
+        component: lazy(() => import("./routes/popups")),
     },
     {
         path: "/reversible-apparel",

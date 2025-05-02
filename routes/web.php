@@ -19,7 +19,7 @@ Route::view('/team-athletics/{id}', 'app')->name('central.team-athletics.show');
 
 Route::view('/team-athletics/sports/{category}', 'app')->name('central.team-athletics.sports.show');
 
-Route::view('/popup-shops', 'app')->name('central.popup-shops');
+Route::view('/popups', 'app')->name('central.popups');
 
 Route::view('/apparel', 'app')->name('central.apparel');
 Route::view('/apparel/style/{id}', 'app')->name('central.style.show');

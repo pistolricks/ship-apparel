@@ -16,7 +16,7 @@ const menu: { name: string, href: string }[] = [
     {name: "School Spirit", href: "/school-spirit"},
     {name: "Team Athletics", href: "/team-athletics"},
     {name: "Design Lab", href: "/design-lab"},
-    {name: "Popup Shops", href: "/popup-shops"},
+    {name: "Popups", href: "/popups"},
 ]
 
 

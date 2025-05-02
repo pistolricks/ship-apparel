@@ -823,4 +823,19 @@ return [
             ],
         ],
     ],
+    [
+        'title' => 'Design Lab',
+        'href' => 'design-lab',
+        'description' => "",
+    ],
+    [
+        'title' => 'Popups',
+        'href' => 'popups',
+        'description' => "",
+        'sub' => [
+            ['title' => 'Group Ordering', 'href' => '/popups/group-ordering'],
+            ['title' => 'Fundraising', 'href' => '/popups/fundraising'],
+            ['title' => 'Online Store', 'href' => '/popups/online-store'],
+        ]
+    ],
 ];

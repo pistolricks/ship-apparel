@@ -4,7 +4,7 @@ type PROPS = {
 
 }
 
-const PopupShop: Component<PROPS> = props => {
+const Popups: Component<PROPS> = props => {
 
     return (
         <div>
@@ -13,4 +13,4 @@ const PopupShop: Component<PROPS> = props => {
     );
 };
 
-export default PopupShop;
+export default Popups;
