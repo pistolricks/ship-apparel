@@ -143,9 +143,6 @@ export default function Navigation(props: { contextId: string }) {
 
                                         <button onClick={() => setOpenSearch((p) => !p)} type={"button"} class="ml-2 p-2 text-gray-400 hover:text-gray-500">
                                             <span class="sr-only">Search</span>
-                                            <kbd class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                                                <span class="text-xs">⌘</span>J
-                                            </kbd>
                                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                  stroke="currentColor" aria-hidden="true" data-slot="icon">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
