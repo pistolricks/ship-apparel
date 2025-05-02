@@ -2,12 +2,16 @@ import {Component, onCleanup, onMount} from "solid-js";
 import PaneFlow from "../paneflow.mjs";
 import "../paneflow.css";
 import "./style.css";
-import { img } from "~/app";
 
 const TeamAthleticsPane: Component = () => {
     let paneFlowEl: HTMLDivElement | undefined;
     let paneFlowInstanceRef: PaneFlow | undefined;
 
+
+    const  paneHome = (e: MouseEvent) => {
+        e.stopPropagation();
+        paneFlowInstanceRef?.setPane(0);
+    };
 
     const paneFlowOnClick0 = (e: MouseEvent) => {
         e.stopPropagation();
@@ -44,71 +48,6 @@ const TeamAthleticsPane: Component = () => {
         paneFlowInstanceRef?.setPane(1);
     };
 
-    const paneFlowOnClick7 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/volleyball`, "_self");
-    };
-
-    const paneFlowOnClick8 = (e: MouseEvent) => {
-        e.stopPropagation();
-        paneFlowInstanceRef?.setPane(0);
-    };
-
-    const paneFlowOnClick9 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/volleyball`, "_self");
-    };
-
-    const paneFlowOnClick10 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/basketball`, "_self");
-    };
-
-    const paneFlowOnClick11 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/basketball`, "_self");
-    };
-
-    const paneFlowOnClick12 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/cheer`, "_self");
-    };
-
-    const paneFlowOnClick13 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/baseball`, "_self");
-    };
-
-    const paneFlowOnClick14 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/baseball`, "_self");
-    };
-
-    const paneFlowOnClick15 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/football`, "_self");
-    };
-
-    const paneFlowOnClick16 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/football`, "_self");
-    };
-
-    const paneFlowOnClick17 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/softball`, "_self");
-    };
-
-    const paneFlowOnClick18 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/softball`, "_self");
-    };
-
-    const paneFlowOnClick19 = (e: MouseEvent) => {
-        e.stopPropagation();
-        window.open(`/team-uniforms/sports/tennis`, "_self");
-    };
-
     onMount(() => {
         if (paneFlowEl) {
             paneFlowInstanceRef = new PaneFlow({
@@ -133,8 +72,8 @@ const TeamAthleticsPane: Component = () => {
                                 children: [
                                     {
                                         el: ".paneflow-item-S7VzJy",
-                                        translateX: "22.6cqw",
-                                        translateY: "6.9cqw",
+                                        translateX: "24.9cqw",
+                                        translateY: "3.2cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -178,16 +117,6 @@ const TeamAthleticsPane: Component = () => {
                                         el: ".paneflow-item-yPc2tt",
                                         translateX: 0,
                                         translateY: 0,
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                    },
-                                    {
-                                        el: ".paneflow-item-axIWfF",
-                                        translateX: "3.0000000000cqw",
-                                        translateY: "50cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -267,16 +196,6 @@ const TeamAthleticsPane: Component = () => {
                                         transformOrigin: "center",
                                         opacity: 1,
                                     },
-                                    {
-                                        el: ".paneflow-item-3MA3pp",
-                                        translateX: "3cqw",
-                                        translateY: "50cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                    },
                                 ],
                                 enterFrom: "right",
                                 exitTo: "bottom",
@@ -292,16 +211,6 @@ const TeamAthleticsPane: Component = () => {
                                         el: ".paneflow-item-pB5RXX",
                                         translateX: 0,
                                         translateY: 0,
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                    },
-                                    {
-                                        el: ".paneflow-item-HdtXDZ",
-                                        translateX: "17.7cqw",
-                                        translateY: "50cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -337,79 +246,15 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-TXscGx",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-YBWNE1",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-2JZxye",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-4WKVIf",
-                                        translateX: "9.2000000000cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1.71,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-EAIyt0",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-XmK2SJ",
@@ -427,11 +272,11 @@ const TeamAthleticsPane: Component = () => {
                                 exitTo: "left",
                             },
                             {
-                                el: ".paneflow-block-I66S1E",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                el: ".paneflow-block-140TsE",
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -439,94 +284,20 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-GCQlQv",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-7uRbko",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-LTg6pY",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-WOPbVl",
-                                        translateX: "5.3cqw",
-                                        translateY: "1.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-kxUvOt",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-yPc2tt",
                                         translateX: 0,
                                         translateY: 0,
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                    },
-                                    {
-                                        el: ".paneflow-item-axIWfF",
-                                        translateX: "3.0000000000cqw",
-                                        translateY: "47cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -539,10 +310,10 @@ const TeamAthleticsPane: Component = () => {
                             },
                             {
                                 el: ".paneflow-block-MJXlZD",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -550,89 +321,15 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-prWTSt",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-xehs1k",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-plq9Qf",
-                                col: 3,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-ctMFXE",
-                                col: 4,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-qoFSR1",
-                                        translateX: "2cqw",
-                                        translateY: "1.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-WlzHhC",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-sGNaYn",
@@ -650,10 +347,10 @@ const TeamAthleticsPane: Component = () => {
                             },
                             {
                                 el: ".paneflow-block-CbWjqU",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -661,89 +358,15 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-0KHGEA",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-166lGG",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-wyefJW",
-                                col: 3,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-7Zdtcf",
-                                col: 4,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-v3Gnj1",
-                                        translateX: "1.3cqw",
-                                        translateY: "1.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-bnscRC",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-5XQhrj",
@@ -771,10 +394,10 @@ const TeamAthleticsPane: Component = () => {
                             },
                             {
                                 el: ".paneflow-block-6io05X",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -782,94 +405,20 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-YEQ2TQ",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-Qhulyi",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-l5l3gh",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-dUgwsl",
-                                        translateX: "8.3cqw",
-                                        translateY: "1.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-H8fiJk",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-6dkPiI",
                                         translateX: 0,
                                         translateY: 0,
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                    },
-                                    {
-                                        el: ".paneflow-item-3MA3pp",
-                                        translateX: "3cqw",
-                                        translateY: "50cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -882,10 +431,10 @@ const TeamAthleticsPane: Component = () => {
                             },
                             {
                                 el: ".paneflow-block-19otq9",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -893,94 +442,20 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-HTXNOX",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-VjCONZ",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-vGluDt",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-LwxSdv",
-                                        translateX: "8.2cqw",
-                                        translateY: "1.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-Z1PFhE",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-pB5RXX",
                                         translateX: 0,
                                         translateY: 0,
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                    },
-                                    {
-                                        el: ".paneflow-item-HdtXDZ",
-                                        translateX: "17.7cqw",
-                                        translateY: "50cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -993,10 +468,10 @@ const TeamAthleticsPane: Component = () => {
                             },
                             {
                                 el: ".paneflow-block-LB7rGi",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -1004,79 +479,15 @@ const TeamAthleticsPane: Component = () => {
                         ],
                     },
                     {
-                        cols: 5,
-                        rows: 5,
+                        cols: 9,
+                        rows: 3,
                         blocks: [
-                            {
-                                el: ".paneflow-block-NDhgmR",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-SIQYke",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-Bc8euw",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-pgNVtP",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-f4nPJ6",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-rWkuvq",
-                                        translateX: "8.1cqw",
-                                        translateY: "1.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-4ICLmf",
                                 col: 0,
-                                row: 1,
-                                widthCols: 1,
-                                heightRows: 4,
+                                row: 0,
+                                widthCols: 2,
+                                heightRows: 3,
                                 children: [
                                     {
                                         el: ".paneflow-item-pzJC7P",
@@ -1095,10 +506,10 @@ const TeamAthleticsPane: Component = () => {
                             },
                             {
                                 el: ".paneflow-block-SSB8ja",
-                                col: 1,
-                                row: 1,
-                                widthCols: 4,
-                                heightRows: 4,
+                                col: 2,
+                                row: 0,
+                                widthCols: 7,
+                                heightRows: 3,
                                 children: [],
                                 enterFrom: "right",
                                 exitTo: "left",
@@ -1128,20 +539,16 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick0}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/BasketBallPlayer.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/BasketBallPlayer.jpg"
                         class="paneflow-bg-image paneflow-item-yPc2tt"
                     />
-                    <div class="paneflow-text paneflow-item-axIWfF">
-                        BASKETBALL
-                        <br />
-                    </div>
                 </div>
                 <div
                     class="paneflow-block paneflow-block-WlzHhC"
                     onClick={paneFlowOnClick1}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_229772_229773_6702_6004_silo1.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_229772_229773_6702_6004_silo1.jpg"
                         class="paneflow-bg-image paneflow-item-sGNaYn"
                     />
                 </div>
@@ -1150,7 +557,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick2}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/TennisPlayer.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/TennisPlayer.jpg"
                         class="paneflow-bg-image paneflow-item-5XQhrj"
                     />
                     <div class="paneflow-text paneflow-item-3PhC8O">TENNIS</div>
@@ -1160,23 +567,18 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick3}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_1567_1340_silo3.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_1567_1340_silo3.jpg"
                         class="paneflow-bg-image paneflow-item-6dkPiI"
                     />
-                    <div class="paneflow-text paneflow-item-3MA3pp">SOFTBALL</div>
                 </div>
                 <div
                     class="paneflow-block paneflow-block-Z1PFhE"
                     onClick={paneFlowOnClick4}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_9580_silo1.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_9580_silo1.jpg"
                         class="paneflow-bg-image paneflow-item-pB5RXX"
                     />
-                    <div class="paneflow-text paneflow-item-HdtXDZ">
-                        FOOTBALL
-                        <br />
-                    </div>
                 </div>
                 <div class="paneflow-block paneflow-block-VPh6uV">
                     <div class="paneflow-text paneflow-item-S7VzJy">
@@ -1188,7 +590,7 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick5}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_221025_silo2.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_221025_silo2.jpg"
                         class="paneflow-bg-image paneflow-item-pzJC7P"
                     />
                 </div>
@@ -1197,81 +599,17 @@ const TeamAthleticsPane: Component = () => {
                     onClick={paneFlowOnClick6}
                 >
                     <img
-                        src="http://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg"
+                        src="https://ink-and-thread.com/storage/assets/TEAM UNIFORMS/_342202_silo4.jpg"
                         class="paneflow-bg-image paneflow-item-XmK2SJ"
                     />
                 </div>
-                <div
-                    class="paneflow-block paneflow-block-2JZxye"
-                    onClick={paneFlowOnClick7}
-                >
-                    <div class="paneflow-text paneflow-item-4WKVIf">VOLLEYBALL</div>
-                </div>
-                <div
-                    class="paneflow-block paneflow-block-NDhgmR"
-                    onClick={paneFlowOnClick8}
-                >
-                    <div class="paneflow-text paneflow-item-SIQYke">BACK</div>
-                </div>
                 <div class="paneflow-block paneflow-block-LB7rGi"></div>
-                <div
-                    class="paneflow-block paneflow-block-LTg6pY"
-                    onClick={paneFlowOnClick9}
-                >
-                    <div class="paneflow-text paneflow-item-WOPbVl">BASKETBALL</div>
-                </div>
-                <div
-                    class="paneflow-block paneflow-block-ctMFXE"
-                    onClick={paneFlowOnClick10}
-                >
-                    <div class="paneflow-text paneflow-item-qoFSR1">CHEER</div>
-                </div>
-                <div
-                    class="paneflow-block paneflow-block-f4nPJ6"
-                    onClick={paneFlowOnClick11}
-                >
-                    <div class="paneflow-text paneflow-item-rWkuvq">BASEBALL</div>
-                </div>
-                <div
-                    class="paneflow-block paneflow-block-vGluDt"
-                    onClick={paneFlowOnClick12}
-                >
-                    <div class="paneflow-text paneflow-item-LwxSdv">FOOTBALL</div>
-                </div>
-                <div
-                    class="paneflow-block paneflow-block-l5l3gh"
-                    onClick={paneFlowOnClick13}
-                >
-                    <div class="paneflow-text paneflow-item-dUgwsl">SOFTBALL</div>
-                </div>
-                <div
-                    class="paneflow-block paneflow-block-7Zdtcf"
-                    onClick={paneFlowOnClick14}
-                >
-                    <div class="paneflow-text paneflow-item-v3Gnj1">TENNIS</div>
-                </div>
-                <div class="paneflow-block paneflow-block-TXscGx"></div>
-                <div class="paneflow-block paneflow-block-YBWNE1"></div>
-                <div class="paneflow-block paneflow-block-GCQlQv"></div>
-                <div class="paneflow-block paneflow-block-7uRbko"></div>
                 <div class="paneflow-block paneflow-block-MJXlZD"></div>
-                <div class="paneflow-block paneflow-block-I66S1E"></div>
-                <div class="paneflow-block paneflow-block-plq9Qf"></div>
-                <div class="paneflow-block paneflow-block-xehs1k"></div>
-                <div class="paneflow-block paneflow-block-prWTSt"></div>
                 <div class="paneflow-block paneflow-block-CbWjqU"></div>
-                <div class="paneflow-block paneflow-block-0KHGEA"></div>
-                <div class="paneflow-block paneflow-block-166lGG"></div>
-                <div class="paneflow-block paneflow-block-wyefJW"></div>
                 <div class="paneflow-block paneflow-block-6io05X"></div>
-                <div class="paneflow-block paneflow-block-Qhulyi"></div>
-                <div class="paneflow-block paneflow-block-YEQ2TQ"></div>
                 <div class="paneflow-block paneflow-block-19otq9"></div>
-                <div class="paneflow-block paneflow-block-VjCONZ"></div>
-                <div class="paneflow-block paneflow-block-HTXNOX"></div>
-                <div class="paneflow-block paneflow-block-Bc8euw"></div>
-                <div class="paneflow-block paneflow-block-pgNVtP"></div>
                 <div class="paneflow-block paneflow-block-SSB8ja"></div>
+                <div class="paneflow-block paneflow-block-140TsE"></div>
             </div>
         </div>
     );

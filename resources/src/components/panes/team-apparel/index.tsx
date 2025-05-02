@@ -644,7 +644,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-grh2X9">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/nike.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/nike.png"
                         class="paneflow-bg-image paneflow-item-Dok8Ya"
                     />
                 </div>
@@ -668,7 +668,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-Uph1My">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/ogio.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/ogio.png"
                         class="paneflow-bg-image paneflow-item-j7zxUg"
                     />
                 </div>
@@ -680,7 +680,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-Ak6kXf">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/nike.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/nike.png"
                         class="paneflow-bg-image paneflow-item-yzKdhw"
                     />
                 </div>
@@ -693,7 +693,7 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-5f3OR4">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/the_north_face.png"
                         class="paneflow-image paneflow-item-gcvf5U"
                     />
                 </div>
@@ -708,25 +708,25 @@ const TeamApparel: Component = () => {
                 </div>
                 <div class="paneflow-block paneflow-block-id107i">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/jerzees.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/jerzees.png"
                         class="paneflow-bg-image paneflow-item-F01TEf"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-F9Z8vt">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
                         class="paneflow-bg-image paneflow-item-gs0HIA"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-HNyDpw">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/sport-tek.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/sport-tek.png"
                         class="paneflow-bg-image paneflow-item-cHR1zm"
                     />
                 </div>
                 <div class="paneflow-block paneflow-block-b5WF7C">
                     <img
-                        src="http://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
+                        src="https://ink-and-thread.com/storage/assets/panes/sports/carhartt.png"
                         class="paneflow-bg-image paneflow-item-JnBdL0"
                     />
                 </div>

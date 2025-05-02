@@ -9,17 +9,17 @@ const WorkwearPane: Component = () => {
 
     const paneFlowOnClick0 = (e: MouseEvent) => {
         e.stopPropagation();
-        paneFlowInstanceRef?.setPane(2);
+        paneFlowInstanceRef?.setPane(3)
     };
 
     const paneFlowOnClick1 = (e: MouseEvent) => {
         e.stopPropagation();
-        paneFlowInstanceRef?.setPane(3);
+        paneFlowInstanceRef?.setPane(4);
     };
 
     const paneFlowOnClick2 = (e: MouseEvent) => {
         e.stopPropagation();
-        paneFlowInstanceRef?.setPane(4);
+        paneFlowInstanceRef?.setPane(1);
     };
 
     const paneFlowOnClick3 = (e: MouseEvent) => {
@@ -39,13 +39,9 @@ const WorkwearPane: Component = () => {
 
     const paneFlowOnClick6 = (e: MouseEvent) => {
         e.stopPropagation();
-        paneFlowInstanceRef?.setPane(1);
+        paneFlowInstanceRef?.setPane(2);
     };
 
-    const paneFlowOnClick7 = (e: MouseEvent) => {
-        e.stopPropagation();
-        paneFlowInstanceRef?.setPane(0);
-    };
 
 
     onMount(() => {
@@ -65,15 +61,15 @@ const WorkwearPane: Component = () => {
                         blocks: [
                             {
                                 el: ".paneflow-block-VPh6uV",
-                                col: 2,
+                                col: 1,
                                 row: 0,
-                                widthCols: 3,
+                                widthCols: 5,
                                 heightRows: 1,
                                 children: [
                                     {
                                         el: ".paneflow-item-S7VzJy",
-                                        translateX: "11.7cqw",
-                                        translateY: "6.9cqw",
+                                        translateX: "26cqw",
+                                        translateY: "2.8cqw",
                                         translateZ: 0,
                                         rotate: 0,
                                         scale: 1,
@@ -247,76 +243,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-ACuDLA",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-3DL9cY",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-ON7uoe",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-Ti2FfL",
-                                        translateX: "10.2cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-bnscRC",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -347,7 +279,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-wWdZfU",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -358,76 +290,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-6Kb5cm",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-eQKpH9",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-C5BCFh",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-WHOC1v",
-                                        translateX: "11.8cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-EAIyt0",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -449,7 +317,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-Gyi2pd",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -460,76 +328,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-7nwpPp",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-Pv3gqF",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-nPCXgm",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-7Ym5J9",
-                                        translateX: "8.3cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-kxUvOt",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -550,7 +354,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-3zKtQF",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -561,76 +365,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-sEmi2a",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-7ctZTz",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-WNnhSh",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-2sMEgI",
-                                        translateX: "13.4cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-WlzHhC",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -651,7 +391,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-Yzz1Pp",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -662,76 +402,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-hDASNF",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-asUX9S",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-98xsQ1",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-aGyVCR",
-                                        translateX: "9.5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-H8fiJk",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -752,7 +428,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-3sYUuX",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -763,76 +439,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-0w40z4",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-yFG4v9",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-Lvi7kD",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-rIgvyB",
-                                        translateX: "11.3cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-Z1PFhE",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -853,7 +465,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-UIZE0j",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -864,76 +476,12 @@ const WorkwearPane: Component = () => {
                     },
                     {
                         cols: 5,
-                        rows: 5,
+                        rows: 4,
                         blocks: [
-                            {
-                                el: ".paneflow-block-kT4TNX",
-                                col: 0,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-DjP6h1",
-                                        translateX: "5cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-F8ILRv",
-                                col: 1,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-KJWArV",
-                                col: 2,
-                                row: 0,
-                                widthCols: 1,
-                                heightRows: 1,
-                                children: [],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
-                            {
-                                el: ".paneflow-block-6A0Wl0",
-                                col: 3,
-                                row: 0,
-                                widthCols: 2,
-                                heightRows: 1,
-                                children: [
-                                    {
-                                        el: ".paneflow-item-agLTsL",
-                                        translateX: "6.2cqw",
-                                        translateY: "2.7cqw",
-                                        translateZ: 0,
-                                        rotate: 0,
-                                        scale: 1,
-                                        transformOrigin: "center",
-                                        opacity: 1,
-                                        parallax: 0,
-                                    },
-                                ],
-                                enterFrom: "right",
-                                exitTo: "left",
-                            },
                             {
                                 el: ".paneflow-block-4ICLmf",
                                 col: 0,
-                                row: 1,
+                                row: 0,
                                 widthCols: 1,
                                 heightRows: 4,
                                 children: [
@@ -955,7 +503,7 @@ const WorkwearPane: Component = () => {
                             {
                                 el: ".paneflow-block-cS79PD",
                                 col: 1,
-                                row: 1,
+                                row: 0,
                                 widthCols: 4,
                                 heightRows: 4,
                                 children: [],
@@ -1052,51 +600,6 @@ const WorkwearPane: Component = () => {
                         class="paneflow-bg-image paneflow-item-XmK2SJ"
                     />
                 </div>
-                <div class="paneflow-block paneflow-block-kT4TNX">
-                    <div
-                        class="paneflow-text paneflow-item-DjP6h1"
-                        onClick={paneFlowOnClick7}
-                    >
-                        back
-                    </div>
-                </div>
-                <div class="paneflow-block paneflow-block-C5BCFh">
-                    <div class="paneflow-text paneflow-item-WHOC1v">security</div>
-                </div>
-                <div class="paneflow-block paneflow-block-eQKpH9"></div>
-                <div class="paneflow-block paneflow-block-6Kb5cm"></div>
-                <div class="paneflow-block paneflow-block-ON7uoe">
-                    <div class="paneflow-text paneflow-item-Ti2FfL">industrial</div>
-                </div>
-                <div class="paneflow-block paneflow-block-nPCXgm">
-                    <div class="paneflow-text paneflow-item-7Ym5J9">contractors</div>
-                </div>
-                <div class="paneflow-block paneflow-block-Pv3gqF"></div>
-                <div class="paneflow-block paneflow-block-7nwpPp"></div>
-                <div class="paneflow-block paneflow-block-sEmi2a"></div>
-                <div class="paneflow-block paneflow-block-WNnhSh">
-                    <div class="paneflow-text paneflow-item-2sMEgI">safety</div>
-                </div>
-                <div class="paneflow-block paneflow-block-7ctZTz"></div>
-                <div class="paneflow-block paneflow-block-hDASNF"></div>
-                <div class="paneflow-block paneflow-block-asUX9S"></div>
-                <div class="paneflow-block paneflow-block-98xsQ1">
-                    <div class="paneflow-text paneflow-item-aGyVCR">hospitality</div>
-                </div>
-                <div class="paneflow-block paneflow-block-0w40z4"></div>
-                <div class="paneflow-block paneflow-block-yFG4v9"></div>
-                <div class="paneflow-block paneflow-block-Lvi7kD">
-                    <div class="paneflow-text paneflow-item-rIgvyB">lab work</div>
-                </div>
-                <div class="paneflow-block paneflow-block-F8ILRv"></div>
-                <div class="paneflow-block paneflow-block-KJWArV"></div>
-                <div class="paneflow-block paneflow-block-6A0Wl0">
-                    <div class="paneflow-text paneflow-item-agLTsL">
-                        medical scrubs
-                    </div>
-                </div>
-                <div class="paneflow-block paneflow-block-3DL9cY"></div>
-                <div class="paneflow-block paneflow-block-ACuDLA"></div>
                 <div class="paneflow-block paneflow-block-wWdZfU"></div>
                 <div class="paneflow-block paneflow-block-Gyi2pd"></div>
                 <div class="paneflow-block paneflow-block-3zKtQF"></div>
