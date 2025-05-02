@@ -4,6 +4,8 @@ type PROPS = {}
 
 const Footer: Component<PROPS> = props => {
 
+    const year = new Date().getFullYear();
+
     return (
         <footer class="hidden md:block bg-secondary">
             <div class="mx-auto max-w-7xl px-6 py-2 md:flex md:items-center md:justify-between lg:px-8">
@@ -39,7 +41,7 @@ const Footer: Component<PROPS> = props => {
                         </svg>
                     </a>
                 </div>
-                <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0">&copy; 2024 Custom Ink & Thread, All rights reserved.</p>
+                <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0">&copy; {year} {import.meta.env.VITE_APP_NAME}, All rights reserved.</p>
             </div>
         </footer>
 
