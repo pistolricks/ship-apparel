@@ -43,7 +43,7 @@ const Cart: Component<{}> = props => {
         <div class="bg-white">
             <div
                 class="flex flex-col gap-0 min-h-[2rem] items-start justify-start min-w-0 text-center border-b border-t border-gray-200 ">
-                <div class={"flex justify-start items-center p-2"}>
+                <div class={"flex justify-start items-center p-2 space-x-2"}>
                     <Drawer.Close contextId={'right-menu-01'} as={"div"} class=""><XIcon class={"stroke-red-400"}/></Drawer.Close>
                     <h2 class="w-full text-base truncate text-slate-700 uppercase">
                         Shopping Cart

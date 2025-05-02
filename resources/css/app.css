@@ -2,6 +2,7 @@
 
 /* @source "../views"; */
 @plugin "tailwind-scrollbar-hide";
+@plugin "tailwindcss-animate";
 
 :root, .light, .light-theme {
 
