@@ -47,7 +47,7 @@ export default function Navigation(props: { contextId: string }) {
 
     createEffect(() => {
 
-        console.log(cartStore?.count, "cartStore?.count")
+       // console.log(cartStore?.count, "cartStore?.count")
         const down = (e: KeyboardEvent) => {
             if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
                 e.preventDefault()

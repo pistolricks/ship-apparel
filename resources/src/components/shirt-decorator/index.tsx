@@ -157,7 +157,7 @@ const ShirtDecorator: Component<{
         img.scale(0.5);
         img.selectable = false;
         img.evented = false;
-        fabricCanvas.add(img);
+        fabricCanvas?.add(img);
     });
 
 
